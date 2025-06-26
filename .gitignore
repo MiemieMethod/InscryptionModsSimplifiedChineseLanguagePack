@@ -1,0 +1,12 @@
+.vs/
+obj/
+*.dll
+*.pdb
+!LanguageLoader.dll
+Properties/
+lib/*
+bin/*
+packages/*
+!lib/Sirenix.Serialization.dll
+*.sln
+*.csproj.user

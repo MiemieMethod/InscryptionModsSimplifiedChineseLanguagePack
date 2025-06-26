@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<IsPackable>false</IsPackable>
+		<TargetFramework>net472</TargetFramework>
+		<AssemblyName>SimplifiedChineseLanguagePack</AssemblyName>
+		<RootNamespace>SimplifiedChineseLanguagePack</RootNamespace>
+		<LangVersion>10</LangVersion>
+		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+		<Configurations>Debug;Release;HotReload;Thunderstore</Configurations>
+		<Platforms>AnyCPU</Platforms>
+<!--		<ManagedFolder>C:\Program Files (x86)\GOG Galaxy\Games\Inscryption\Inscryption_Data\Managed</ManagedFolder>-->
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Assets\**" />
+	  <EmbeddedResource Remove="Assets\**" />
+	  <None Remove="Assets\**" />
+	</ItemGroup>
+
+	<!-- BepInEx dependencies -->
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" IncludeAssets="all" />
+		<PackageReference Include="BepInEx.Core" Version="5.4.19" />
+		<PackageReference Include="HarmonyX" Version="2.9.0" />
+		<PackageReference Include="Inscryption.GameLibs" Version="1.9.0-r.0" />
+		<PackageReference Include="UnityEngine.Modules" Version="2019.4.24" IncludeAssets="compile" />
+	</ItemGroup>
+
+	<ItemGroup>
+<!--		<Reference Include="$(ManagedFolder)/UnityEngine.*.dll" />-->
+		<Reference Include="InscryptionAPI">
+			<HintPath>lib\InscryptionAPI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="InscryptionCommunityPatch">
+		  <HintPath>lib\InscryptionCommunityPatch.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+
+</Project>
