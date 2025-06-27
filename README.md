@@ -1,12 +1,13 @@
 # Simplified Chinese Language Pack for Mods
 
-This mod is a Simplified Chinese Language Pack Pathcing for some Inscryption mods.
+This mod is a Simplified Chinese Language Pack Patching for some Inscryption mods.
 
 Current Supportted Mods:
 
 - API >= 2.23.2
 - Achievements >= 1.0.0
 - Grimora Mod >= 7.6.4
+- Magnificus Mod >= 3.6.2
 - More Adding...
 
 Please contact me if you find problems.
@@ -16,8 +17,9 @@ Please contact me if you find problems.
 目前已汉化的模组：
 
 - API >= 2.23.2
-- Achievements >= 1.0.0
-- Grimora Mod >= 7.6.4
+- 成就 Achievements >= 1.0.0
+- 格里魔拉模组 Grimora Mod >= 7.6.4
+- 蔓尼菲科模组 Magnificus Mod >= 3.6.2
 - 正在加入更多……
 
 如果有任何问题请联系我修复。
