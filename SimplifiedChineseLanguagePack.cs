@@ -1107,7 +1107,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Custom Mod Cards To Deck", "自定义模组卡牌加入牌组", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Debug Tools", "调试工具", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Debug Encounters", "调试遭遇战", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Disable Combat Bell", "禁用战斗钟声", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Disable Combat Bell", "禁用换手铃", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Disable Hammer", "禁用锤子", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Disable Hand Model", "禁用手部模型", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Base Mod Cards To Hand", "基础模组卡牌加入手牌", Language.ChineseSimplified);
@@ -1119,8 +1119,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn All Opponent Slots", "生成所有对手槽位", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start at Twin Giants", "从双子巨人处开始", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start at Bonelord", "从骨王处开始", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Win Round", "赢得回合", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lose Round", "输掉回合", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Win Round", "赢得本轮", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lose Round", "输掉本轮", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Add Bones", "添加骨头", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Add Energy", "添加能量", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Clear Deck", "清空牌组", Language.ChineseSimplified);
@@ -2327,10 +2327,10 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You got so far.....", "你都走到这一步了……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Weak.", "真弱。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]Farewell,[c:] [c:g3]young[c:] [c:g2]mage![c:] [c:g3]'Twas[c:] [c:g2]a[c:] [c:g3]fantastic[c:] [c:g2]duel.[c:]", "[c:g2]再会了，[c:][c:g3]年轻的[c:][c:g2]法师！[c:][c:g3]真是[c:][c:g2]一场[c:][c:g3]精彩[c:][c:g2]对决。[c:]", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Goo Dungeon ~", "~黏液地牢~", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Lava Dungeon ~", "~熔岩地牢~", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Void Dungeon ~", "~虚空地牢~", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Tower of Magicks ~", "~魔法之塔~", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Goo Dungeon ~", "~ 黏液地牢 ~", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Lava Dungeon ~", "~ 熔岩地牢 ~", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Void Dungeon ~", "~ 虚空地牢 ~", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Tower of Magicks ~", "~ 魔法之塔 ~", Language.ChineseSimplified);
             for (int currency = 0; currency <= 100; currency++)
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g3]~ " + currency + " Crystals ~[c:]", "[c:g3]~ " + currency + "枚水晶 ~[c:]", Language.ChineseSimplified);
@@ -2342,7 +2342,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Weaker Bleach", "弱效漂白剂", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Bleaching Event can no longer remove negative sigils.", "漂白事件将不再能移除负面印记", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Turn Wipeout", "回合崩盘", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When you ring the bell past turn 6 (12 on bosses) you take 1 damage.", "若在第6回合后（首领战为第12回合）敲铃，你将受到1点伤害", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When you ring the bell past turn 6 (12 on bosses) you take 1 damage.", "若在第6回合后（首领战为第12回合）敲换手铃，你将受到1点伤害", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stronger Opponent", "更强对手", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your battle opponent starts with 5 extra health points.", "对战对手初始额外获得5点生命值", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tiny Spellbook", "微型法术书", Language.ChineseSimplified);
@@ -2361,7 +2361,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An unwelcome prescence will follow you into card battles.", "不受欢迎的存在将跟随你进入卡牌对战", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Master Bosses", "大师头目", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every bossfight is replaced with one of the Mox Masters.", "所有头目战都会替换为玛珂大师之一", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gem Dependant Starters", "宝石依赖初始牌组", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gem Dependant Starters", "宝石依赖的开局", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards in your starting deck have the gem dependant sigil.", "起始手牌中的卡牌均带有宝石依赖印记", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magnificus Challenge Level: {0}", "蔓尼菲科挑战关卡：{0}", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magnificus Challenge Points: {0}", "蔓尼菲科挑战点数：{0}", Language.ChineseSimplified);
