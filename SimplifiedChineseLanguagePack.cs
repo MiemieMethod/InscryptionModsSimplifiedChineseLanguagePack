@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
 using BepInEx;
 using DiskCardGame;
 using InscryptionAPI;
 using InscryptionAPI.Localizing;
+using TMPro;
+using Unity.Audio;
 using UnityEngine;
 
 namespace SimplifiedChineseLanguagePack
@@ -23,10 +26,45 @@ namespace SimplifiedChineseLanguagePack
         private void Awake()
         {
             Logger.LogInfo($"Loaded {Name}!");
+            FixSimplifiedChineseFonts();
             APIMod.RegisterTranslations();
             AchievementsMod.RegisterTranslations();
             GrimoraMod.RegisterTranslations();
             MagnificusMod.RegisterTranslations();
+        }
+        private void FixSimplifiedChineseFonts()
+        {
+            Debug.Log("Fixing Simplified Chinese Fonts");
+            FontReplacement DAGGERSQUAREReplacement = Resources.Load<FontReplacement>("data/localization/fontreplacement/DAGGERSQUARE_to_SC-SANS");
+            FontReplacement MISC3DReplacement = Resources.Load<FontReplacement>("data/localization/fontreplacement/MISC3D_to_SC-SCRIPT");
+            string bundlePath = Path.Combine(Paths.PluginPath, "MiemieMethod-Simplified_Chinese_Language_Pack_for_Mods", "chinese_font");
+            var bundle = AssetBundle.LoadFromFile(bundlePath);
+            if (bundle == null)
+            {
+                Logger.LogError("字体AssetBundle加载失败！");
+                return;
+            }
+            TMP_FontAsset NotoSans = bundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notosans_sc sdf.asset");
+            TMP_FontAsset NotoSerif = bundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notoserif_sc sdf.asset");
+            SetPrivateTMPFont(DAGGERSQUAREReplacement, NotoSans);
+            SetPrivateTMPFont(MISC3DReplacement, NotoSerif);
+        }
+        private void SetPrivateTMPFont(FontReplacement replacement, TMP_FontAsset fontAsset)
+        {
+            if (replacement == null)
+            {
+                Logger.LogError("FontReplacement为空，无法设置字体！");
+                return;
+            }
+            var type = typeof(FontReplacement);
+            var field = type.GetField("replacementTMPFont", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (field == null)
+            {
+                Logger.LogError("找不到replacementTMPFont字段，无法替换字体！");
+                return;
+            }
+            field.SetValue(replacement, fontAsset);
+            Logger.LogInfo($"成功替换{replacement.name}的TMP字体为 {fontAsset.name}");
         }
     }
     public class APIMod
@@ -38,7 +76,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SELECT CHALLENGES", "选择挑战", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CHALLENGE UNAVAILABLE", "挑战不可用", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "APPENDIX XII, SUBSECTION I - MOD BOONS {0}", "附录12，第一节 - 模组奖励{0}", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "APPENDIX XII, SUBSECTION I - SLOT EFFECTS {0}", "附录12，第一节 - 槽位效果{0}", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "APPENDIX XII, SUBSECTION I - SLOT EFFECTS {0}", "附录12，第一节 - 场地效果{0}", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "APPENDIX XII, SUBSECTION I - MOD ABILITIES {0}", "附录12，第一节 - 模组能力{0}", Language.ChineseSimplified);
 
             // Config
@@ -80,10 +118,10 @@ namespace SimplifiedChineseLanguagePack
             // SetText
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start Grimora Mod", "启动格里魔拉模组", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "RESET RUN", "重置对局", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW LESHY RUN", "新的莱西对局", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE LESHY RUN", "继续莱西对局", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW GRIMORA RUN", "新的格里魔拉对局", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE GRIMORA RUN", "继续格里魔拉对局", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW LESHY RUN", "新的莱西对局（为防止格里魔拉模组出错，以下三个按钮暂不能汉化）", Language.ChineseSimplified);
+            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE LESHY RUN", "继续莱西对局", Language.ChineseSimplified);
+            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW GRIMORA RUN", "新的格里魔拉对局", Language.ChineseSimplified);
+            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE GRIMORA RUN", "继续格里魔拉对局", Language.ChineseSimplified);
 
             // Config
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This option will allow you to see what cards are left in your deck.", "启用此选项可查看牌组剩余卡牌", Language.ChineseSimplified);
@@ -164,7 +202,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike its adjacent slots, except other Raiders.", "[creature]会攻击其相邻位置，但不会攻击其他掠夺者。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, it carves its Sigils into adjacent Cards.", "使用[creature]时，其印记会铭刻到相邻卡牌上。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sculptor", "铭刻师", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will attempt to find a host in an adjacent friendly slot, hiding under it providing a +1/+1 buff. Cards on the left take priority.", "[creature]会尝试在相邻的友方槽位寻找宿主，藏身其下并提供+1/+1增益。左侧卡牌优先。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will attempt to find a host in an adjacent friendly slot, hiding under it providing a +1/+1 buff. Cards on the left take priority.", "[creature]会尝试在相邻的友方位置寻找宿主，藏身其下并提供+1/+1增益。左侧卡牌优先。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] hits an opposing card, one of the targets adjacent allies will take damage as well ", "当[creature]攻击对面卡牌时，目标相邻的一个友方单位也会受到伤害", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, it provides an energy soul to its owner.", "当使用[creature]时，能为持牌人提供一个灵魂。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HellHound's Thirst", "地狱犬之渴", Language.ChineseSimplified);
@@ -696,7 +734,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TREES START SPROUTING AROUND YOU.AN [c:G]OVERGROWTH[c:] IS INBOUND!", "树苗在你周围萌芽。[c:G]疯长[c:]即将到来！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " [c:G]Trees will sprout every turn![c:]", "[c:G]每回合都会长出树木！[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "YOU HEAR WITCHES CHANTING.THE CLOCK STRIKES THE [c:G]WITCHING HOUR[c:]!", "你听到女巫在吟唱。时钟敲响了[c:G]午夜时刻[c:]！", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " [c:G]Cards on enchanted slots will gain more attack and health![c:]", "[c:G]位于附魔槽位上的卡牌将获得更多攻击和生命！[c:]", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " [c:G]Cards on enchanted slots will gain more attack and health![c:]", "[c:G]位于附魔位置上的卡牌将获得更多攻击和生命！[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A CAULDRON IS BUBBLING IN THE DISTANCE.YOUR CARDS ARE PUT IN THE [c:G]WITCHES CAULDRON[c:]!", "远处的大锅在沸腾。你的卡牌被投入[c:G]女巫的坩埚[c:]！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " [c:G]2 Cards will swap after the end of the turn![c:]", "[c:G]回合结束后2张卡牌将交换位置！[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SKELETONS START DANCING IN THE DISTANCE, YOU CAN SEE GHOSTS MOVE AROUND.ITS THE [c:G]NIGHT OF THE LIVING DEAD[c:]!", "骷髅在远处起舞，鬼影四处游荡。这是[c:G]亡灵之夜[c:]！", Language.ChineseSimplified);
@@ -791,24 +829,24 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ARE YOU WILLING TO SACRIFICE ONE OF YOUR STARTING-", "你愿意牺牲一张初始卡牌吗", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "WAIT", "且慢", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "IT SEEMS YOU BEAR A TERRIBLE CURSE", "看来你身负可怕的诅咒", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "YOU SHALL KEEP THE BOON, BUT FOR A FAR GREATER SACRIFICE", "你可保留恩赐，但需付出更沉重的代价", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "YOU SHALL KEEP THE BOON, BUT FOR A FAR GREATER SACRIFICE", "你可保留奖励，但需付出更沉重的代价", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CAN YOU GIVE UP YOUR ETERNAL ASHES?", "你愿意放弃永恒之灰吗", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ARE YOU WILLING TO SACRIFICE ONE OF YOUR STARTING BONES", "你愿意牺牲初始骨头储备吗", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A BRAVE SOUL", "勇敢的灵魂啊", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE GODS ANSWER YOUR PRAYERS, NOW CHOOSE", "诸神回应了你的祈祷，现在做出选择吧", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BOON OF THE INANIMATE", "无生者恩赐", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BOON OF THE INANIMATE", "无生者之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "AT THE START OF A BATTLE, A DEAD TREE WILL SPAWN IN ON A RANDOM SPACE ON THE BOARD", "战斗开始时，一棵枯树会随机出现在场地上", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BOON OF THE SUN KINGDOM", "太阳王国恩赐", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BOON OF THE SUN KINGDOM", "太阳王国之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ON THE 4TH TURN OF A BATTLE, DRAW 2 RANDOM EGYPT CARDS", "战斗第4回合时，随机抽取2张埃及卡牌", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE BOON OF REPENTANCE", "忏悔恩赐", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE BOON OF REPENTANCE", "忏悔之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "GAIN AN ADDITIONAL SOUL AT THE START OF A BATTLE", "战斗开始时获得1个额外灵魂", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE BOON OF EBONY EYES", "乌木之瞳恩赐", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE BOON OF EBONY EYES", "乌木瞳之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TERRAIN CARDS WILL PROVIDE 2 BONES ON DEATH", "地形牌被摧毁时将提供2根骨头", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BOON OF THE ADVERSARY", "宿敌恩赐", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "AT THE START OF A BOSS BATTLE, GAIN 3 EXTRA BONES", "Boss战开始时获得3根额外骨头", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BOON OF THE SEASICK", "晕船恩赐", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BOON OF THE ADVERSARY", "宿敌之奖", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "AT THE START OF A BOSS BATTLE, GAIN 3 EXTRA BONES", "头目战开始时获得3根额外骨头", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BOON OF THE SEASICK", "晕船之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "AFTER PLACING 3 CARDS, A PIRATE SKELETON WILL BE PLAYED ON A RANDOM SPACE ON THE BOARD", "放置3张牌后，一个海盗骷髅会随机出现在场地上", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE BOON OF THE CUT FINGER", "断指恩赐", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE BOON OF THE CUT FINGER", "断指之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "DRAW AN ADDITIONAL CARD AT THE START OF A BATTLE", "战斗开始时额外抽取1张牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A WISE CHOICE, NOW LEAVE BEFORE THE GODS GET TOO HUNGRY", "明智的选择，趁诸神尚未饥渴，速速离去吧", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "We spent a lot of time here, I'm sure you are eager to get going again!", "我们在此共度了不少时光，想必你已迫不及待要再度启程！", Language.ChineseSimplified);
@@ -1112,11 +1150,11 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Disable Hand Model", "禁用手部模型", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Base Mod Cards To Hand", "基础模组卡牌加入手牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Custom Mod Cards To Hand", "自定义模组卡牌加入手牌", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn Opponent Slot 1", "生成对手1号槽位", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn Opponent Slot 2", "生成对手2号槽位", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn Opponent Slot 3", "生成对手3号槽位", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn Opponent Slot 4", "生成对手4号槽位", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn All Opponent Slots", "生成所有对手槽位", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn Opponent Slot 1", "生成对手1号位", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn Opponent Slot 2", "生成对手2号位", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn Opponent Slot 3", "生成对手3号位", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn Opponent Slot 4", "生成对手4号位", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spawn All Opponent Slots", "生成所有对手卡片位", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start at Twin Giants", "从双子巨人处开始", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start at Bonelord", "从骨王处开始", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Win Round", "赢得本轮", Language.ChineseSimplified);
@@ -1151,7 +1189,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Energy Drone Game Object", "能量无人机游戏对象", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Additional Dialogue", "附加对话", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dialogue Help", "对话协助", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon Artwork, miscellanious work", "恩赐的美术与杂项工作", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon Artwork, miscellanious work", "奖励的美术与杂项工作", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Creator of Inscryption", "《邪恶冥刻》创作者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dog", "狗", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Suprisingly, also a Dog", "意外地，也是狗", Language.ChineseSimplified);
@@ -1185,7 +1223,6 @@ namespace SimplifiedChineseLanguagePack
             // SetText
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "New Magnificus Run", "新的蔓尼菲科对局", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW MAGNIFICUS RUN", "新的蔓尼菲科对局", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE MAGNIFICUS RUN", "继续蔓尼菲科对局", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "View Deck", "查看牌组", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TOWER OF MAGICKS", "魔法之塔", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "GOO DUNGEON", "黏液地牢", Language.ChineseSimplified);

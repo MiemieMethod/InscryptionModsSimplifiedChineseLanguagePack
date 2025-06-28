@@ -1,6 +1,6 @@
 # Simplified Chinese Language Pack for Mods
 
-This mod is a Simplified Chinese Language Pack Patching for some Inscryption mods.
+This mod is a Simplified Chinese Language Pack Patching for some Inscryption mods, with characters display fix.
 
 Current Supportted Mods:
 
@@ -12,7 +12,7 @@ Current Supportted Mods:
 
 Please contact me if you find problems.
 
-本模组是为各个《邪恶冥刻》模组设计的简体中文语言包补丁。
+本模组是为各个《邪恶冥刻》模组设计的简体中文语言包补丁，同时修复了汉字显示缺字问题。
 
 目前已汉化的模组：
 
