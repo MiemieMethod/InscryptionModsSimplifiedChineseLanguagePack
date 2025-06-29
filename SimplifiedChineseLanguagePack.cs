@@ -21,7 +21,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.2.1";
+        private const string Version = "1.2.2";
 
         private void Awake()
         {
@@ -186,7 +186,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Haunting Call", "魂牵梦萦", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every turn [creature] is on the Board, it will take a Bone from you, if you have no Bones, it perishes.", "[creature]在场时每回合会消耗你一根骨头，若你无骨头可用，该造物将阵亡。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, the creature in the opposing slot is dragged onto the owner's side of the board.", "[creature]阵亡时，会将正对面位置的造物拖拽至持牌人侧牌桌。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a non-brittle ally card perishes, [creature] gains 1 power.", "当非脆弱的友方造物阵亡时，[creature]增加1点力量。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a non-brittle ally card perishes, [creature] gains 1 power.", "当不带有脆骨印记的友方造物阵亡时，[creature]增加1点力量。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike the opposing slot as if the board was flipped. A card in the far left slot will attack the opposing far right slot.", "[creature]会以棋盘翻转后的方式攻击对面位置。位于最左侧位置的卡牌将攻击对面的最右侧位置。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, its owner chooses a creature to gain the Bonedigger sigil.", "[creature]阵亡时，其持牌人需选定下一个继承掘骨人印记的造物。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, its owner chooses a creature to gain the Waterborne sigil.", "[creature]阵亡时，其持牌人需选定下一个继承水袭印记的造物。", Language.ChineseSimplified);
@@ -1220,8 +1220,8 @@ namespace SimplifiedChineseLanguagePack
         {
             Debug.Log("Registering Tanslations for Magnificus Mod");
             // SetText
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "New Magnificus Run", "新的蔓尼菲科冒险", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW MAGNIFICUS RUN", "新的蔓尼菲科冒险", Language.ChineseSimplified);
+            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "New Magnificus Run", "新的蔓尼菲科冒险", Language.ChineseSimplified);
+            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW MAGNIFICUS RUN", "新的蔓尼菲科冒险", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "View Deck", "查看牌组", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TOWER OF MAGICKS", "魔法之塔", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "GOO DUNGEON", "黏液地牢", Language.ChineseSimplified);
@@ -1270,8 +1270,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mental Gemnastics", "头脑风宝", Language.ChineseSimplified);
             RegisterAbility("Mental Gemnastics", "头脑风宝");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, draw cards from your deck based on how many Gems are on the board.", "当使用带有该印记的卡牌时，根据牌桌上宝石数量从牌组抽取相应数量的卡牌", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Loot", "掠夺者", Language.ChineseSimplified);
-            RegisterAbility("Loot", "掠夺者");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Loot", "劫掠者", Language.ChineseSimplified);
+            RegisterAbility("Loot", "劫掠者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil deals direct damage, draw cards from your deck based on how much damage was dealt.", "当带有该印记的卡牌造成直接伤害时，根据造成的伤害数值从牌组抽取相应数量的牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Life Steal", "生命窃取", Language.ChineseSimplified);
             RegisterAbility("Life Steal", "生命窃取");

@@ -1,8 +1,12 @@
 # Changelog
 
+## 1.2.2
+
+Rollback Kaycee's Mod Start/Continue Some-Scrybe Run buttons' translations to avoid bugs.
+
 ## 1.2.1
 
-Fix all texts mis-translated
+Fix all texts mis-translated.
 
 ## 1.2.0
 
