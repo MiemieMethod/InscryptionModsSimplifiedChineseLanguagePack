@@ -21,7 +21,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.1.0";
+        private const string Version = "1.2.1";
 
         private void Awake()
         {
@@ -64,7 +64,7 @@ namespace SimplifiedChineseLanguagePack
                 return;
             }
             field.SetValue(replacement, fontAsset);
-            Logger.LogInfo($"成功替换{replacement.name}的TMP字体为 {fontAsset.name}");
+            Logger.LogInfo($"成功替换{replacement.name}的TMP字体为{fontAsset.name}");
         }
     }
     public class APIMod
@@ -117,11 +117,11 @@ namespace SimplifiedChineseLanguagePack
             Debug.Log("Registering Tanslations for Grimora Mod");
             // SetText
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start Grimora Mod", "启动格里魔拉模组", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "RESET RUN", "重置对局", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW LESHY RUN", "新的莱西对局（为防止格里魔拉模组出错，以下三个按钮暂不能汉化）", Language.ChineseSimplified);
-            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE LESHY RUN", "继续莱西对局", Language.ChineseSimplified);
-            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW GRIMORA RUN", "新的格里魔拉对局", Language.ChineseSimplified);
-            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE GRIMORA RUN", "继续格里魔拉对局", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "RESET RUN", "重置冒险", Language.ChineseSimplified);
+            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW LESHY RUN", "新的莱西冒险", Language.ChineseSimplified);
+            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE LESHY RUN", "继续莱西冒险", Language.ChineseSimplified);
+            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW GRIMORA RUN", "新的格里魔拉冒险", Language.ChineseSimplified);
+            //LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE GRIMORA RUN", "继续格里魔拉冒险", Language.ChineseSimplified);
 
             // Config
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This option will allow you to see what cards are left in your deck.", "启用此选项可查看牌组剩余卡牌", Language.ChineseSimplified);
@@ -138,14 +138,14 @@ namespace SimplifiedChineseLanguagePack
             // Ability
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 3 Souls to select any card on the board, [creature] will deal 1 damage to the selected card if it is an opponent card, if it isn't, [creature] will heal it for 1 health.", "消耗3个灵魂选择场上任意卡牌，若为敌方卡牌则[creature]对其造成1点伤害，否则[creature]为其恢复1点生命值。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Comin' right up!", "马上就来！", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Soul Shot", "灵魂射击", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Soul Shot", "灵魂冲击", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 1 Soul to deal 1 damage to the creature across from [creature].", "消耗1个灵魂，可对[creature]对面的造物造成1点伤害。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Disinter", "掘墓", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Disinter", "开坟掘墓", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 1 Bone to create a Skeleton in your hand.", "消耗1根骨头来在你的手牌中创造一个骷髅。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Materialize", "物化", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Materialize", "魂影具象", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 2 Souls for [creature] to summon a copy in your hand.", "消耗2个灵魂使[creature]在手牌中召唤一个复制体。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 2 Souls, [creature] will trap a random opponent card in a coffin, which will release the original card again upon perishing.", "消耗2个灵魂，[creature]会将一张随机敌方卡牌封入棺木，该棺木被摧毁时将释放原卡牌。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Funeral Rites", "葬仪", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Funeral Rites", "殡仪之棺", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Soul Sucker", "噬魂者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When an opponent creature perishes, [creature] will store a charge of soul energy, up to 4. Activating this sigil will add 3 soul energy to your current energy counter, and one max energy.", "当敌方造物阵亡时，[creature]会储存1个灵魂能量（上限4个）。激活该印记可为当前能量计数器增加3点能量，并提升1点能量上限。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Weighted Die", "加权骰子", Language.ChineseSimplified);
@@ -157,22 +157,21 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] kills another creature, gain 2 bones.", "当[creature]击杀其他造物时，获得2根骨头。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] takes 1 Soul from you at the end of every turn and stores it as 2 Bones, up to a maximum of 8. When [creature] dies, you gain all bones contained in it.", "[creature]在每回合结束时从你这里获取1个灵魂，并将其储存为2根骨头，最多可储存8根。当[creature]死亡时，你将获得其中储存的所有骨头。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] empowers each Skeleton on the owner's side of the board, providing a +1 buff to their power.", "[creature]会强化持牌人一侧牌桌上的所有骷髅牌，使其力量增加1点。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sea Shanty", "船歌", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] empowers each Skeleton on the owner's side of the board, providing a +1 buff to their power.", "[creature]在你的回合结束时受到1点伤害；当它被其他卡牌攻击时，攻击者会被点燃。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sea Shanty", "海洋船歌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike the opposing slots to the left, right, and center of it randomly, up to 3 times.", "[creature]会随机攻击正对面的左右两侧和中间位置，最多攻击3次。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, the card opposing it is Frozen Away if not already frozen.", "当[creature]阵亡时，若对面的卡牌未被冻结，则将其冰封禁锢。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] dies, gain a consumable item, if you have a free slot.", "当[creature]死亡时，若道具栏有空位，则获得一个消耗品道具。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, a Skeleton is created in each empty space on the owner's side. [define:Skeleton]", "使用[creature]时，己方所有空位均会出现骷髅牌。[define:Skeleton]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skeleton Horde", "骷髅军团", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shipwreck Finder", "沉船搜寻者", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, a Shipwreck is created on each empty adjacent space. [define:arackulele.inscryption.grimoramod_Shipwreck_Dams]", "使用[creature]时，相邻空位均会出现沉船卡牌。[define:arackulele.inscryption.grimoramod_Shipwreck_Dams]", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shipwreck Finder", "寻船者", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, a Shipwreck is created on each empty adjacent space. [define:arackulele.inscryption.grimoramod_Shipwreck_Dams]", "使用[creature]时，相邻空位均会出现沉船的浮木残骸。[define:arackulele.inscryption.grimoramod_Shipwreck_Dams]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skeletons Within", "骸骨之躯", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Once [creature] is struck, draw a card from your Skeleton pile.", "[creature]受到攻击时，可从骷髅堆中抽一张牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Full o' candy", "糖果满溢", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will yield candy upon death, maybe this will be useful for later.", "[creature]死亡时将掉落糖果，或许之后能派上用场。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move in a random direction.", "持牌人回合结束时，[creature]将随机选择一个方向移动。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whenever [creature] moves, it leaves a trail of Embers. [define:arackulele.inscryption.grimoramod_Flames]", "[creature]移动时会在路径上留下余烬轨迹。[define:arackulele.inscryption.grimoramod_Flames]", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Guarding Presence", "守护之灵", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Guarding Presence", "守护者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When an opposing creature is placed opposite to an empty space, [creature] will move to that empty space.", "如对手的造物对面位置是空的，则[creature]会进入那个位置。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Starved", "骨饥者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If you have no Bones, at the start of your turn [creature] deals 2 more damage.", "若你没有骨头，在你的回合开始时[creature]会造成额外2点伤害。", Language.ChineseSimplified);
@@ -181,10 +180,10 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike each opposing space.", "[creature]会攻击对面所有位置。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fledgling", "幼雏", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "After one turn on the board, [creature] will evolve into a greater form.", "[creature]在牌桌上1个回合后将进化为更强大的形态。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Random Ability", "随机印记", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Random Ability", "无形之物", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is drawn, this sigil is replaced with another sigil at random.", "抽到[creature]时，此印记将被随机替换为另一印记。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, it haunts the space it died in. The first creature played on this space gain its old sigils.", "当[creature]阵亡时，它会变成原位置的地缚灵。首个打在该位置的造物将继承它的印记。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Haunting Call", "幽魂呼唤", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Haunting Call", "魂牵梦萦", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every turn [creature] is on the Board, it will take a Bone from you, if you have no Bones, it perishes.", "[creature]在场时每回合会消耗你一根骨头，若你无骨头可用，该造物将阵亡。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, the creature in the opposing slot is dragged onto the owner's side of the board.", "[creature]阵亡时，会将正对面位置的造物拖拽至持牌人侧牌桌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a non-brittle ally card perishes, [creature] gains 1 power.", "当非脆弱的友方造物阵亡时，[creature]增加1点力量。", Language.ChineseSimplified);
@@ -195,11 +194,11 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] would be struck, a severed limb is created in its place and this card moves into an adjacent open slot.", "当[creature]有可能受到攻击时，会在原地留下一截断肢，[creature]自身则会移动至相邻的空位。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Each time [creature] deals damage directly, it loses 1 power and health.", "每当[creature]直接造成伤害时，会损失1点力量和1点生命。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, also play the cards in your hand that were adjacent to this card for free.", "当使用[creature]时，可免费打出你手牌中与之相邻的所有卡牌。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Douse", "浸没", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Douse", "浇灭", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When played,[creature] will extinguish all cards on the Board.", "使用[creature]时，将熄灭牌桌上所有卡牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] cannot be attacked from the opposing slot. The opposing slot, if possible, instead attacks one of its adjacent friendly cards.", "[creature]无法从正对面位置被攻击。若可能，正对面位置会转而攻击其相邻的友方卡牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards on the owner's side of the field are unaffected by Brittle.", "持牌人一侧牌桌上的卡牌不受脆骨印记影响。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike its adjacent slots, except other Raiders.", "[creature]会攻击其相邻位置，但不会攻击其他掠夺者。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike its adjacent slots, except other Raiders.", "[creature]会攻击其相邻位置，但不会攻击其他劫掠之徒。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, it carves its Sigils into adjacent Cards.", "使用[creature]时，其印记会铭刻到相邻卡牌上。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sculptor", "铭刻师", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will attempt to find a host in an adjacent friendly slot, hiding under it providing a +1/+1 buff. Cards on the left take priority.", "[creature]会尝试在相邻的友方位置寻找宿主，藏身其下并提供+1/+1增益。左侧卡牌优先。", Language.ChineseSimplified);
@@ -211,7 +210,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A card bearing this sigil has 10 attack, 1 for each Candy Bucket Sawyer has left.", "带有该印记的卡牌拥有10点力量，索耶每剩余1个糖果桶便增加1点力量。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Trusty ol' Crew", "可靠的老船员", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A card bearing this sigil gains 1 attack for every pirate on the board.", "带有该印记的卡牌会根据场上每名海盗增加1点攻击力。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inanimate Attack", "无生命攻击", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inanimate Attack", "死物锐击", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A card bearing this sigil gains 1 attack for every card that has 0 attack on the board.", "牌桌上每存在一张0点攻击力的卡牌，带有该印记的卡牌就会获得1点攻击力", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "One Half Bones", "半根骨头", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The value represented with this sigil will be equal to the number of Bones that the owner has on their side of the table.", "该印记代表的数值等于持牌人侧牌桌上存在的兽骨数量。", Language.ChineseSimplified);
@@ -221,31 +220,31 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Alternating Strike", "交替打击", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Anchored", "锚定", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Area Of Effect Strike", "范围打击", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blood Guzzler", "嗜血者", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blood Guzzler", "鲜血吞噬者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boneless", "无骨者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Thief", "窃骨者", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bounty", "赏金", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bounty", "赏金猎手", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Burning", "燃烧", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] takes 1 Damage at the end of your turn, when it gets attacked by another Card, that card gets set on fire.", "[creature]在你的回合结束时受到1点伤害；当它被其他卡牌攻击时，攻击者会被点燃", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chaos Strike", "混沌打击", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cold Front", "寒潮", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Collector", "收集者", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chaos Strike", "混沌三击", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cold Front", "寒流骤至", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Collector", "收藏家", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Erratic", "飘忽不定", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Flame Strafe", "火焰突袭", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Giant Strike", "巨力打击", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Haunter", "缠身灵", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Haunter", "阴魂不散", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hook Line And Sinker", "全套诱饵", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Imbued", "灌注", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inverted Strike", "逆反打击", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Latch Bone Digger", "掘骨传花", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Latch Submerge", "沉没传花", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Latch Submerge", "水袭传花", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lit Fuse", "引信", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Loose Limb", "断肢", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Loose Limb", "断肢求逝", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Malnourishment", "营养不良", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Marching Dead", "行军亡者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Possessive", "占有欲", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Puppeteer", "傀儡师", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Raider", "掠夺者", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Raider", "劫掠之徒", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skin Crawler", "爬肤者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Slasher", "劈砍者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spirit Bearer", "灵媒", Language.ChineseSimplified);
@@ -261,8 +260,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Apparition", "幽魂", Language.ChineseSimplified);
             RegisterCard("Apparition", "幽魂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Only a fool would need such assistance.", "只有蠢材才需要这种帮助。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Graven Ashes", "墓尘", Language.ChineseSimplified);
-            RegisterCard("Graven Ashes", "墓尘");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Graven Ashes", "刻墓之烬", Language.ChineseSimplified);
+            RegisterCard("Graven Ashes", "刻墓之烬");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It's foul breath doesn't concern me, it's the Tampered Coffins it leaves behind!", "它那恶臭的吐息不足为惧，真正要当心的是它留下的被动过手脚的棺材！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bal-Bal", "墓穴食尸鬼", Language.ChineseSimplified);
             RegisterCard("Bal-Bal", "墓穴食尸鬼");
@@ -308,11 +307,11 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Heap", "骨堆", Language.ChineseSimplified);
             RegisterCard("Bone Heap", "骨堆");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "IF I AM TRAPPED, SO WILL YOU. YOU CANNOT END THIS.", "若我受困于此，你也休想逃脱。这场游戏永无终局。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Prince", "骨之王子", Language.ChineseSimplified);
-            RegisterCard("Bone Prince", "骨之王子");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Prince", "骨王子", Language.ChineseSimplified);
+            RegisterCard("Bone Prince", "骨王子");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SHE FEEDS ON PEOPLES BREATH, MAYBE ONE IS STANDING RIGHT BEHIND YOU RIGHT NOW.", "她以人类的呼吸为食，说不定此刻就站在你身后。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boo Hag", "布哈格", Language.ChineseSimplified);
-            RegisterCard("Boo Hag", "布哈格");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boo Hag", "阴灵女巫", Language.ChineseSimplified);
+            RegisterCard("Boo Hag", "阴灵女巫");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SHE COMMANDS OTHERS WITH STRENGTH AND GLAMOUR. THEY WILL FOLLOW HER EVERYWHERE.", "她以力量与魅力统御众生，追随者们将如影随形。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Calavera Catrina", "骷髅夫人", Language.ChineseSimplified);
             RegisterCard("Calavera Catrina", "骷髅夫人");
@@ -322,21 +321,21 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Centurion", "百夫长", Language.ChineseSimplified);
             RegisterCard("Centurion", "百夫长");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A heavily armoured warrior. Last of his century, leader to none.", "身披重甲的战士。所属军团最后的幸存者，无兵可率。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Compound Fracture", "复合骨折", Language.ChineseSimplified);
-            RegisterCard("Compound Fracture", "复合骨折");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Compound Fracture", "混魂碎骨", Language.ChineseSimplified);
+            RegisterCard("Compound Fracture", "混魂碎骨");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CRUSHED BY THE ROOF OF HIS OWN HOUSE. LIVING ON AS A PILE OF GOO.", "被自家屋顶压碎。化作一滩粘液苟活。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A SPIRIT THAT TAKES THE FORM OF AN EGG. ITS PRESENCE HARMS THOSE THAT GAZE UPON IT.", "以蛋形态示人的怨灵。直视它的存在会遭受伤害。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dalgyal", "达格亚尔", Language.ChineseSimplified);
-            RegisterCard("Dalgyal", "达格亚尔");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dalgyal", "魔蛋", Language.ChineseSimplified);
+            RegisterCard("Dalgyal", "魔蛋");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "FOREVER BOUND TOGETHER BY A TERRIBLE CURSE, THIS GROUP DANCES ONWARD INTO DOOM.", "这群被可怕诅咒永远束缚的舞者，正跳着迈向毁灭的舞步。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Danse Macabre", "死亡之舞", Language.ChineseSimplified);
-            RegisterCard("Danse Macabre", "死亡之舞");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Deadeye", "死眼", Language.ChineseSimplified);
-            RegisterCard("Deadeye", "死眼");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Danse Macabre", "亡灵舞者", Language.ChineseSimplified);
+            RegisterCard("Danse Macabre", "亡灵舞者");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Deadeye", "死人眼", Language.ChineseSimplified);
+            RegisterCard("Deadeye", "死人眼");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SOME SAY THIS EYE ONCE BELONGED TO AN ANCIENT GOD. IT GAZES UPON YOUR ARMY, PICKING ITS FAVORITE TO AID IT ON THE BATTLEFIELD.", "传说此眼曾属于某位远古神明。它凝视着你的军队，挑选最中意的战士为其战场助力。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SOME SAY THIS HAND ONCE BELONGED TO AN ANCIENT GOD. ANYTHING IT TOUCHES ROTS. AS WITH ANYTHING THAT ENDS, IT IS ALSO A NEW BEGINNING.", "传说这只手曾属于远古神明。凡其所触之物皆会腐朽。正如万物的终结，亦意味着新的开端。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Hand", "死寂之手", Language.ChineseSimplified);
-            RegisterCard("Dead Hand", "死寂之手");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Hand", "死人手", Language.ChineseSimplified);
+            RegisterCard("Dead Hand", "死人手");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A DOOMED FATE SHOULD DISCOURAGE ONE FROM GOING ON, AT LEAST THATS WHAT A STILL LIVING MAN WOULD TELL YOU.", "命数已尽本该令人却步，至少活人会这么劝你。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Man Walking", "行尸走肉", Language.ChineseSimplified);
             RegisterCard("Dead Man Walking", "行尸走肉");
@@ -344,10 +343,10 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pharaoh's Pets", "法老之宠", Language.ChineseSimplified);
             RegisterCard("Pharaoh's Pets", "法老之宠");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "FOR WHOM THE BELL TOLLS? FOR WHOM THE TAP DRIPS DRY AND THE BATHWATER RUNS COLD.", "丧钟为谁而鸣？为那枯竭的水龙头与冰冷的浴水。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Death Knell", "丧钟", Language.ChineseSimplified);
-            RegisterCard("Death Knell", "丧钟");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chime", "钟鸣", Language.ChineseSimplified);
-            RegisterCard("Chime", "钟鸣");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Death Knell", "鸣钟亡灵", Language.ChineseSimplified);
+            RegisterCard("Death Knell", "鸣钟亡灵");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chime", "丧钟", Language.ChineseSimplified);
+            RegisterCard("Chime", "丧钟");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This lonesome doll was returned from seas of slate and silent shores... it stares lifelessly.", "这个孤独的人偶从灰暗的海域与寂静的岸边归来……它空洞地凝视着。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Doll", "人偶", Language.ChineseSimplified);
             RegisterCard("Doll", "人偶");
@@ -357,9 +356,9 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "WHAT A SAD SIGHT, NO ONE SHALL KNOW WHAT LIES AT THE BOTTOM OF THAT WELL.", "多么可悲的景象，无人知晓那井底究竟藏着什么。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Drowned Soul", "淹死鬼", Language.ChineseSimplified);
             RegisterCard("Drowned Soul", "淹死鬼");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NO ONE KNOWS WHAT EXACTLY THE DYBBUK IS, SOME SAY IT IS BETTER LEFT UNKNOWN.", "无人知晓迪布克究竟为何物，有人说最好永远别知道。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dybbuk", "迪布克", Language.ChineseSimplified);
-            RegisterCard("Dybbuk", "迪布克");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NO ONE KNOWS WHAT EXACTLY THE DYBBUK IS, SOME SAY IT IS BETTER LEFT UNKNOWN.", "无人知晓附鬼究竟为何物，有人说最好永远别知道。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dybbuk", "附鬼", Language.ChineseSimplified);
+            RegisterCard("Dybbuk", "罪魂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ectoplasm", "灵质", Language.ChineseSimplified);
             RegisterCard("Ectoplasm", "灵质");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE ESSENCE OF A SPIRIT, HIDDEN IN EVERY CORNER AND EVERY SHADOW. ONCE YOU SEE ONE, YOU WILL FIND THE REST SOON ENOUGH.", "游魂之精魄，潜藏于每个角落与阴影。一旦发现其一，余者自会接踵显现。", Language.ChineseSimplified);
@@ -396,17 +395,17 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Frank & Stein", "弗兰肯和斯坦", Language.ChineseSimplified);
             RegisterCard("Frank & Stein", "弗兰肯和斯坦");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A ghastly guardian spirit. It's presence lingers behind as it sprints through the dark.", "阴森可怖的守护灵。它在黑暗中疾驰而过，身后残留着不散的灵体。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fylgja", "守护灵", Language.ChineseSimplified);
-            RegisterCard("Fylgja", "守护灵");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fylgja", "陪伴者", Language.ChineseSimplified);
+            RegisterCard("Fylgja", "陪伴者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Warding Presence", "警戒之影", Language.ChineseSimplified);
             RegisterCard("Warding Presence", "警戒之影");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "WHAT CREATED THESE BONES, WAR, FAMINE OR ANOTHER TRAGEDY? It may be insignificant now, but I fear what it might become...", "这些骸骨因何而生，战争、饥荒还是其他灾祸？此刻或许微不足道，但我恐惧它将孕育之物……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mass Grave", "万人冢", Language.ChineseSimplified);
             RegisterCard("Mass Grave", "万人冢");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rising Hunger", "升腾饥渴", Language.ChineseSimplified);
-            RegisterCard("Rising Hunger", "升腾饥渴");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gashadokuro", "饿者骷髅", Language.ChineseSimplified);
-            RegisterCard("Gashadokuro", "饿者骷髅");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rising Hunger", "暴食", Language.ChineseSimplified);
+            RegisterCard("Rising Hunger", "暴食");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gashadokuro", "饿死鬼", Language.ChineseSimplified);
+            RegisterCard("Gashadokuro", "饿死鬼");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE PIRATES CALL THIS SHIP THEIR HOME, EVEN IN DEATH. A SLAIN GIANTS SKULL SERVES AS THEIR FIGUREHEAD.", "海盗们将这艘船视为归宿，即便死后亦然。一颗被斩杀的巨人颅骨成了他们的船首像。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ghost Ship", "幽灵船", Language.ChineseSimplified);
             RegisterCard("Ghost Ship", "幽灵船");
@@ -420,8 +419,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gravebard", "墓吟者", Language.ChineseSimplified);
             RegisterCard("Gravebard", "墓吟者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HE HAS SPENT HIS LIFE CARVING THESE CREATURES, THIS CARD CONTAINS A PART OF HIS SOUL.", "他穷尽一生雕琢这些造物，这张卡承载着他灵魂的一部分。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Grave Carver", "墓穴雕魂师", Language.ChineseSimplified);
-            RegisterCard("Grave Carver", "墓穴雕魂师");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Grave Carver", "刻墓人", Language.ChineseSimplified);
+            RegisterCard("Grave Carver", "刻墓人");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HE SPENDS HIS TIME ALONE DIGGING FOR BONES IN HOPES OF FINDING A TREASURE. JUST LIKE HIS GRANDMA BEFORE HIM.", "他独自挖掘着骨头，希望能找到宝藏，就像他祖母当年那样。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gravedigger", "掘墓人", Language.ChineseSimplified);
             RegisterCard("Gravedigger", "掘墓人");
@@ -429,8 +428,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sporedigger", "掘孢人", Language.ChineseSimplified);
             RegisterCard("Sporedigger", "掘孢人");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A devoted guardian spirit. Even when dispelled, it grants a protective blessing.", "忠实的守护之灵。即使被驱散，也会赐予保护祝福。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Haltia", "哈尔提亚", Language.ChineseSimplified);
-            RegisterCard("Haltia", "哈尔提亚");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Haltia", "哈尔蒂亚", Language.ChineseSimplified);
+            RegisterCard("Haltia", "哈尔蒂亚");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I advise against staring into it, you won't like what stares back.", "我建议你别盯着看——你不会喜欢回望你的东西。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Haunted Mirror", "闹鬼魔镜", Language.ChineseSimplified);
             RegisterCard("Haunted Mirror", "闹鬼魔镜");
@@ -440,8 +439,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I WOULDN'T GET TOO CLOSE DEAR. YOU CAN'T BREAK THE HOLD FROM THE DEEPEST PITS OF HELL, ONCE IT LATCHES ON.", "亲爱的，可别靠太近。一旦被地狱最深处伸出的魔爪攫住，就再也无法挣脱了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hellhand", "地狱魔爪", Language.ChineseSimplified);
             RegisterCard("Hellhand", "地狱魔爪");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hell Hound", "地狱猎犬", Language.ChineseSimplified);
-            RegisterCard("Hell Hound", "地狱猎犬");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hell Hound", "地狱犬", Language.ChineseSimplified);
+            RegisterCard("Hell Hound", "地狱犬");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A RABID DOG. IT KILLED ONE OF MY GHOULS.", "一条疯犬。它杀死了我的一个食尸鬼。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "LEGENDS HAVE BEEN TOLD ABOUT THE LEGENDARY HYDRA, THE BEAST THAT SWALLOWS ALL AND THE BANE OF ALL THAT SAIL THE SEAS.", "关于传说中的九头蛇，流传着这样的传说：它是吞噬万物的凶兽，也是所有航海者的梦魇。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hydra", "九头蛇", Language.ChineseSimplified);
@@ -454,8 +453,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Glacier", "冰川", Language.ChineseSimplified);
             RegisterCard("Glacier", "冰川");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I WONDER WHAT HAS BEEN FROZEN AWAY FOR SO LONG.", "我很好奇究竟是何物被冰封了如此之久。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Frost Giant", "霜巨人", Language.ChineseSimplified);
-            RegisterCard("Frost Giant", "霜巨人");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Frost Giant", "冰霜巨人", Language.ChineseSimplified);
+            RegisterCard("Frost Giant", "冰霜巨人");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ice Cube", "冰块", Language.ChineseSimplified);
             RegisterCard("Ice Cube", "冰块");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A CORPSE WHO DIED WITH HIS HEAD IN A GLACIAL STREAM. AFTER HIS REANIMATION, HE COULDN'T BEAR TO PART WITH THE ICE THAT HAD FORMED.", "一具将头颅浸在冰河中死去的尸体。复生后仍执意保留凝结的寒冰。", Language.ChineseSimplified);
@@ -465,9 +464,9 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Manananggal", "魔娜娜迦", Language.ChineseSimplified);
             RegisterCard("Manananggal", "魔娜娜迦");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NO BRUTALITY SATIATES THE MANANANGGAL. WHEN YOU SEE HER SEVER FROM HER TORSO, YOU TOO WILL BE A VICTIM OF THE HUNT.", "残暴无法满足魔娜娜迦。当你目睹她腰斩分躯之时，你也将成为这场猎杀的牺牲品。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Moroi, also known as the hairy ghost. It leeches the souls from those struck down near it.", "莫洛伊，又称毛鬼。它会吸取附近阵亡者的灵魂。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Moroi", "莫洛伊", Language.ChineseSimplified);
-            RegisterCard("Moroi", "莫洛伊");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Moroi, also known as the hairy ghost. It leeches the souls from those struck down near it.", "魔洛伊，又称毛鬼。它会吸取附近阵亡者的灵魂。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Moroi", "魔洛伊", Language.ChineseSimplified);
+            RegisterCard("Moroi", "魔洛伊");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HIS AGE OF GLORY IS LONG GONE, YET IT IS WHAT KEEPS HIM GOING.", "昔日荣光早已消逝，却仍支撑他蹒跚前行。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mummy Lord", "木乃伊之王", Language.ChineseSimplified);
             RegisterCard("Mummy Lord", "木乃伊之王");
@@ -487,8 +486,8 @@ namespace SimplifiedChineseLanguagePack
             RegisterCard("One Armed Bandit", "独臂强盗");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Took the ten paces, that ordeal cost him an arm, and his life.", "十步试炼夺走了他一条胳膊，最终要了他的命。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "IT IS SAID ALL IS WELL THAT ENDS. IT IS SAID TIME IS LIKE AN OUROBOROS, IT DOES NOT END, IT ONLY REPEATS ITSELF.", "常言道善终即善。常言时间如衔尾之蛇，无始无终，唯有轮回。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ourobones", "衔尾骨", Language.ChineseSimplified);
-            RegisterCard("Ourobones", "衔尾骨");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ourobones", "衔骨蛇", Language.ChineseSimplified);
+            RegisterCard("Ourobones", "衔骨蛇");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Plague Doctor", "瘟疫医生", Language.ChineseSimplified);
             RegisterCard("Plague Doctor", "瘟疫医生");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HE HAS DETERMINED THE UNDEAD ARE SICK WITH A TERRIBLE ILLNESS. THE ONLY CURE IS DEATH.", "他诊断出亡灵们罹患恶疾。唯一的解药就是死亡。", Language.ChineseSimplified);
@@ -499,11 +498,11 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Possessed Armour", "附魔铠甲", Language.ChineseSimplified);
             RegisterCard("Possessed Armour", "附魔铠甲");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "AN EXPERIMENT GONE WRONG, IN A FUTILE ATTEMPT TO CREATE A DANSE MACCABRE. THEY DO NOT FUNCTION TOGETHER.", "一场失败的实验，妄图创造死亡之舞却徒劳无功。它们无法协同运作。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Project", "项目实验", Language.ChineseSimplified);
-            RegisterCard("Project", "项目实验");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Project", "实验体", Language.ChineseSimplified);
+            RegisterCard("Project", "实验体");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You shouldnt be seeing this right now", "你不该看到这个", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Random Cards", "随机卡牌", Language.ChineseSimplified);
-            RegisterCard("Random Cards", "随机卡牌");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Random Cards", "无形造物", Language.ChineseSimplified);
+            RegisterCard("Random Cards", "无形造物");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BRINGING THE SCYTHE OF DEATH, THE REVENANT SEEKS ONLY REVENGE.", "手持死亡镰刀的复生亡灵，只为复仇而生。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Revenant", "复生亡灵", Language.ChineseSimplified);
             RegisterCard("Revenant", "复生亡灵");
@@ -560,8 +559,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Slinger's Soul", "枪手之魂", Language.ChineseSimplified);
             RegisterCard("Slinger's Soul", "枪手之魂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THEY SHOW UP OUT OF NOWHERE AND RELOCATE PEOPLE AS THEY PLEASE.", "它们凭空出现，随心所欲地转移人类。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sluagh", "斯劳格", Language.ChineseSimplified);
-            RegisterCard("Sluagh", "斯劳格");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sluagh", "幽灵鬼影", Language.ChineseSimplified);
+            RegisterCard("Sluagh", "幽灵鬼影");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Trick or treat!", "不给糖就捣蛋！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Candy Bucket", "糖果桶", Language.ChineseSimplified);
             RegisterCard("Candy Bucket", "糖果桶");
@@ -570,17 +569,17 @@ namespace SimplifiedChineseLanguagePack
             RegisterCard("Candy Monster", "糖果怪兽");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spectrabbit", "幽灵兔", Language.ChineseSimplified);
             RegisterCard("Spectrabbit", "幽灵兔");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE SPECTRE EMITS A FLUTE LIKE CALL, AN OMEN OF BOTH DEATH AND DESCTRUCTION", "怨灵发出笛声般的哀鸣，既是死亡的预兆，也是毁灭的凶兆", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spectre", "怨灵", Language.ChineseSimplified);
-            RegisterCard("Spectre", "怨灵");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE SPECTRE EMITS A FLUTE LIKE CALL, AN OMEN OF BOTH DEATH AND DESCTRUCTION", "大幽灵发出笛声般的哀鸣，既是死亡的预兆，也是毁灭的凶兆", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spectre", "大幽灵", Language.ChineseSimplified);
+            RegisterCard("Spectre", "大幽灵");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "DEATH IS A CRUEL FATE. STARVATION AN EVEN CRUELER ONE. WHY DO YOU FIGHT, OH HUNGRY CHILD.", "死亡何其残酷。饥饿更甚。为何而战，饥饿的孩子。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Starved Man", "饿殍", Language.ChineseSimplified);
             RegisterCard("Starved Man", "饿殍");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HE HAS SPENT YEARS IN HIS STUDY, IN A TIRELESS ATTEMPT TO CHANGE HIS FATE. YET FATE IS A CRUEL MISTRESS.", "他在书房中耗费数年光阴，不知疲倦地试图改写命运。然而命运终究是位残酷的情人。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Summoner", "召唤师", Language.ChineseSimplified);
             RegisterCard("Summoner", "召唤师");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tampered Coffin", "被动过的棺材", Language.ChineseSimplified);
-            RegisterCard("Tampered Coffin", "被动过的棺材");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tampered Coffin", "捣毁之棺", Language.ChineseSimplified);
+            RegisterCard("Tampered Coffin", "捣毁之棺");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Tree", "枯树", Language.ChineseSimplified);
             RegisterCard("Dead Tree", "枯树");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Its low cost is justified only by its low stats.", "低廉的代价只配得上它贫弱的身板。", Language.ChineseSimplified);
@@ -614,13 +613,13 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Placeholder", "占位符", Language.ChineseSimplified);
             RegisterCard("Placeholder", "占位符");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE VAMPIRE IS A CREATURE OF LEGENDS. IN REALITY, LITTLE BLOOD TO DRINK AFTER EVERYONE HAS DIED.", "传说中的吸血鬼。现实中，等人都死光了哪还有血可吸。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vampire", "吸血鬼", Language.ChineseSimplified);
-            RegisterCard("Vampire", "吸血鬼");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vampire", "吸血伯爵", Language.ChineseSimplified);
+            RegisterCard("Vampire", "吸血伯爵");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vellum", "羊皮纸", Language.ChineseSimplified);
             RegisterCard("Vellum", "羊皮纸");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TO NEVER BE SATISFIED, TO ALWAYS WANT MORE. THIS SPIRIT SHALL NEVER FIND ITS PEACE.", "永不满足，贪得无厌。此怨灵永世不得安息。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vengeful Spirit", "怨灵", Language.ChineseSimplified);
-            RegisterCard("Vengeful Spirit", "怨灵");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vengeful Spirit", "复仇之魂", Language.ChineseSimplified);
+            RegisterCard("Vengeful Spirit", "复仇之魂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THIS GELID SPECTER ENVELOPS WOULD-BE ATTACKERS IN AN ICY MIST.", "这具阴冷的幽魂会用冰雾笼罩胆敢进犯之敌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Warthr", "寒霜幽魂", Language.ChineseSimplified);
             RegisterCard("Warthr", "寒霜幽魂");
@@ -644,7 +643,7 @@ namespace SimplifiedChineseLanguagePack
 
             // Achievement
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Grimora Mod Achievements", "格里魔拉模组成就", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Grim Reminder", "阴森提醒", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Grim Reminder", "恶兆", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Defeat Kaycee and thaw at least 5 of your cards.", "击败凯茜并解冻至少5张你的卡牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cowards End", "懦夫末路", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Defeat Sawyers second phase without hurting the hellhound.", "在不伤害地狱犬的情况下击败索耶的第二阶段", Language.ChineseSimplified);
@@ -663,7 +662,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wail Of The Damned", "受诅者之嚎", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Use the dead hand item when your deck is empty.", "在牌组为空时使用亡者之手道具", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Something Ends...", "某事终结...", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "...Something Begins. Get an ourobones to deal 6 damage.", "...某事伊始。让衔尾骨造成6点伤害", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "...Something Begins. Get an ourobones to deal 6 damage.", "...某事伊始。让衔骨蛇造成6点伤害", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cull the weak", "剔除弱者", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sacrifice an Obol with 5 sigils to the Bonelord.", "向骨王献祭一枚带有5个印记的银币", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gateway to Dis", "通往冥府之门", Language.ChineseSimplified);
@@ -673,10 +672,9 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Horn", "骨号角", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Bone Horn, drains all of your current Soul but you gain a bone for each soul consumed.", "骨号角会耗尽你当前所有的灵魂，但每消耗1个灵魂可获得1根骨头。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gives you a bone for each of your Souls, which are spent in the process, an unfortunate, but worthwhile sacrifice.", "消耗你的全部灵魂，每消耗1个灵魂给予1根骨头。虽是不幸的牺牲，但物有所值。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Hand", "死寂之手", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Dead Hand, draws you a new Hand of cards at the cost of your old one.", "死寂之手会以牺牲旧手牌为代价，为你抽取新的手牌", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The severed hand of a forgotten god, left to take on a life of its own. You know what this does.", "遗忘之神的断掌，已自成生命。你知晓其威能", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Hand", "死寂之手", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Hand", "死人手", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Dead Hand, draws you a new Hand of cards at the cost of your old one.", "死人手会以牺牲旧手牌为代价，为你抽取新的手牌", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The severed hand of a forgotten god, left to take on a life of its own. You know what this does.", "某位忘却之神的断掌，已自成生命。你知晓其威能", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Embalming Fluid", "防腐液", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Embalming Fluid, pour it over a card and it will gain one health and attack.", "将防腐液倒在卡牌上，可使其获得1点生命值与1点攻击力。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Prepare to put a member of your army to rest, increasing its stamina and vigor as you do so!", "准备为你的军团成员进行防腐处理，在此过程中提升其耐力与活力！", Language.ChineseSimplified);
@@ -742,7 +740,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ZOMBIES ARE APPROACHING FROM ALL SIDES.A [c:G]ZOMBIE INVASION[c:] WILL APPROACH!", "丧尸从四面八方逼近。[c:G]丧尸大军[c:]即将压境！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " [c:G]Every card is now a Zombie![c:]", "[c:G]所有卡牌都将变为丧尸！[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE DIRT IS PLAGUED WITH SPIRITS FROM CENTURIES PAST.YOU'VE APPROACHED THE [c:G]HAUNTED GROUNDS[c:]!", "泥土中盘踞着百年怨灵。你已踏入[c:G]恶鬼缠身之地[c:]！", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " [c:G]Every non Skeletal Card will gain Haunter![c:]", "[c:G]所有非骷髅卡牌都将获得缠身灵印记！[c:]", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " [c:G]Every non Skeletal Card will gain Haunter![c:]", "[c:G]所有非骷髅卡牌都将获得阴魂不散印记！[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE MOON RISES, GLOWING RED.A [c:G]BLOODMOON[c:] IS STARTING!", "赤月当空，血色弥漫。[c:G]血月[c:]开始了！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " [c:G]All cards loose a random sigil after being played![c:]", "[c:G]所有卡牌打出后将随机失去一个印记！[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An ancient Guard stands in front of you, noticing you are trying to sneak past.", "一位古老的守卫挡在你面前，察觉到你正试图潜行通过。", Language.ChineseSimplified);
@@ -820,7 +818,7 @@ namespace SimplifiedChineseLanguagePack
             {
                 string key = "[c:R]" + kvp.Key + "[c:]";
                 string value = "[c:R]" + kvp.Value + "[c:]";
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "YOh dear, you've made " + key + " quite angry.", "哎呀，你把" + value + "彻底惹恼了。", Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh dear, you've made " + key + " quite angry.", "哎呀，你把" + value + "彻底惹恼了。", Language.ChineseSimplified);
             }
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A WISE CHOICE, NOW LEAVE BEFORE THE GODS GET TOO HUNGRY", "明智的选择，趁诸神尚未饥肠辘辘速速离去", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NO? A TERRIBLE FATE WILL AWAIT YOU", "不？可怕的命运正等着你", Language.ChineseSimplified);
@@ -1064,7 +1062,7 @@ namespace SimplifiedChineseLanguagePack
             foreach (var value in Cards.Values)
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Bonelord has been generous.\n[c:bR]" + value + "[c:] bone cost has decreased!", "骨王慷慨解囊。\n[c:bR]" + value + "[c:]的骨头消耗降低了！", Language.ChineseSimplified);
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Bonelord has been generous.\n[c:bR]" + value + "[c:] base health has increased!", "骨王慷慨解囊。\n[c:bR]{0[c:]的基础生命值提升了！", Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Bonelord has been generous.\n[c:bR]" + value + "[c:] base health has increased!", "骨王慷慨解囊。\n[c:bR]\" + value + \"[c:]的基础生命值提升了！", Language.ChineseSimplified);
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh dear, it looks like [c:bR]" + value + "[c:] bone cost has decreased!", "哎呀，看来[c:bR]" + value + "[c:]的骨头消耗降低了！", Language.ChineseSimplified);
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Bonelord has been generous.\n[c:bR]" + value + "[c:] bone cost has decreased greatly!", "骨王慷慨解囊。\n[c:bR]" + value + "[c:]的骨头消耗大幅降低了！", Language.ChineseSimplified);
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Bonelord has been very generous.\n[c:bR]" + value + "[c:] base health has increased greatly!", "骨王极为慷慨。\n[c:bR]" + value + "[c:]的基础生命值大幅提升了！", Language.ChineseSimplified);
@@ -1204,6 +1202,7 @@ namespace SimplifiedChineseLanguagePack
 
         }
     }
+
     public class MagnificusMod
     {
         public static Dictionary<string, string> Cards = new();
@@ -1221,8 +1220,8 @@ namespace SimplifiedChineseLanguagePack
         {
             Debug.Log("Registering Tanslations for Magnificus Mod");
             // SetText
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "New Magnificus Run", "新的蔓尼菲科对局", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW MAGNIFICUS RUN", "新的蔓尼菲科对局", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "New Magnificus Run", "新的蔓尼菲科冒险", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW MAGNIFICUS RUN", "新的蔓尼菲科冒险", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "View Deck", "查看牌组", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TOWER OF MAGICKS", "魔法之塔", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "GOO DUNGEON", "黏液地牢", Language.ChineseSimplified);
@@ -1241,8 +1240,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blank Mox", "空白玛珂", Language.ChineseSimplified);
             RegisterAbility("Blank Mox", "空白玛珂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is drawn, it will materialize into a random Mox Crystal. \n When on another card, the card will generate a random Mox Crystal.", "抽到带有该印记的卡牌时，它会实体化为随机一种玛珂水晶。\n当该印记存在于其他卡牌上时，该卡牌会生成随机一种玛珂水晶。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undecided Mox", "未定玛珂", Language.ChineseSimplified);
-            RegisterAbility("Undecided Mox", "未定玛珂");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undecided Mox", "无形玛珂", Language.ChineseSimplified);
+            RegisterAbility("Undecided Mox", "无形玛珂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, select a mox type for this card to provide.", "当带有该印记的卡牌打出时，选择一种玛珂类型供其提供", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ruby Heart", "红宝石之心", Language.ChineseSimplified);
             RegisterAbility("Ruby Heart", "红宝石之心");
@@ -1253,14 +1252,14 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Marrow", "骨髓", Language.ChineseSimplified);
             RegisterAbility("Bone Marrow", "骨髓");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When one of your non-gem cards perishes, a card bearing this sigil gains 1 power, maxing out at 5.", "当你的非宝石卡牌阵亡时，带有该印记的卡牌获得1点力量，最高可叠加至5点", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stimulation", "激励", Language.ChineseSimplified);
-            RegisterAbility("Stimulation", "激励");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stimulation", "刺激", Language.ChineseSimplified);
+            RegisterAbility("Stimulation", "刺激");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of every turn, a card bearing this sigil gains 1 power, maxing out at 4.", "每回合结束时，带有该印记的卡牌增加1点力量，最高不超过4点", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stimulation (Health)", "激励（生命）", Language.ChineseSimplified);
-            RegisterAbility("Stimulation (Health)", "激励（生命）");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stimulation (Health)", "刺激（生命）", Language.ChineseSimplified);
+            RegisterAbility("Stimulation (Health)", "刺激（生命）");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of every turn, a card bearing this sigil gains 2 health, maxes out at 10.", "每回合结束时，带有该印记的卡牌获得2点生命值，上限为10点", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Draw", "死抽", Language.ChineseSimplified);
-            RegisterAbility("Dead Draw", "死抽");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Draw", "死亡掠夺", Language.ChineseSimplified);
+            RegisterAbility("Dead Draw", "死亡掠夺");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a non-gem card dies, draw a card from your deck.", "当非宝石卡牌阵亡时，从牌组中抽取一张卡牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Emerald Heart", "绿宝石之心", Language.ChineseSimplified);
             RegisterAbility("Emerald Heart", "绿宝石之心");
@@ -1271,27 +1270,27 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mental Gemnastics", "头脑风宝", Language.ChineseSimplified);
             RegisterAbility("Mental Gemnastics", "头脑风宝");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, draw cards from your deck based on how many Gems are on the board.", "当使用带有该印记的卡牌时，根据牌桌上宝石数量从牌组抽取相应数量的卡牌", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Loot", "劫掠", Language.ChineseSimplified);
-            RegisterAbility("Loot", "劫掠");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Loot", "掠夺者", Language.ChineseSimplified);
+            RegisterAbility("Loot", "掠夺者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil deals direct damage, draw cards from your deck based on how much damage was dealt.", "当带有该印记的卡牌造成直接伤害时，根据造成的伤害数值从牌组抽取相应数量的牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Life Steal", "生命窃取", Language.ChineseSimplified);
             RegisterAbility("Life Steal", "生命窃取");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil deals direct damage, the amount dealt will be healed to the owner of this card.", "当带有该印记的卡牌造成直接伤害时，伤害值将转化为持牌人的生命恢复", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Knockback Hit", "击退打击", Language.ChineseSimplified);
-            RegisterAbility("Knockback Hit", "击退打击");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Knockback Hit", "驱时之触", Language.ChineseSimplified);
+            RegisterAbility("Knockback Hit", "驱时之触");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil hits an opposing card, the opposing card will be kicked in the direction inscrybed in the sigil.", "带有该印记的卡牌击中对手卡牌时，会将对手卡牌朝印记所示方向击退", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Impaled", "穿刺", Language.ChineseSimplified);
-            RegisterAbility("Impaled", "穿刺");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil perishes, it creates a Spear in its placed. A spear is defined as Sharp, 0 power, 3 health.", "带有该印记的卡牌阵亡时，会在其位置生成一柄长矛。长矛具有：尖刺，0点力量，3点生命值。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Impaled", "长矛召唤", Language.ChineseSimplified);
+            RegisterAbility("Impaled", "长矛召唤");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil perishes, it creates a Spear in its placed. A spear is defined as Sharp, 0 power, 3 health.", "带有该印记的卡牌阵亡时，会在其位置生成一柄长矛。长矛具有：0点力量，3点生命，尖刺铠甲。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magnus Mox", "至尊玛珂", Language.ChineseSimplified);
             RegisterAbility("Magnus Mox", "至尊玛珂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "While a card bearing this sigil is on the board, it provides an orange gem, a blue gem and a green gem to its owner.", "当牌桌上有带有该印记的卡牌时，可为持牌人提供橙、蓝、绿三色玛珂各一颗", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Resurrection", "复活", Language.ChineseSimplified);
             RegisterAbility("Resurrection", "复活");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a non-gem card perishes, the dead card will be brought back to life, but this card loses 3 health.", "当非宝石卡阵亡时，这张死亡的卡牌会复活，但此卡失去3点生命值", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rerolls", "重掷", Language.ChineseSimplified);
-            RegisterAbility("Rerolls", "重掷");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of every turn, a card bearing this sigils' base power will be increased by a random value between 0 and 3.", "每回合结束时，带有该印记的卡牌基础力量会随机增加0至3点", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rerolls", "骰子力量", Language.ChineseSimplified);
+            RegisterAbility("Rerolls", "骰子力量");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of every turn, a card bearing this sigils' base power will be increased by a random value between 0 and 3.", "每回合结束时，带有该印记的卡牌基础力量会变成0至3的随机数", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Steel Trap", "铁兽夹", Language.ChineseSimplified);
             RegisterAbility("Steel Trap", "铁兽夹");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil perishes, the opposing card also perishes.", "带有该印记的卡牌阵亡时，对面的卡牌也会同时阵亡", Language.ChineseSimplified);
@@ -1307,8 +1306,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gem Absorber", "宝石吸收者", Language.ChineseSimplified);
             RegisterAbility("Gem Absorber", "宝石吸收者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, all gems on your side of the board will perish. For each gem absorbed, gain 1 power and 2 health.", "当带有该印记的卡牌使用时，你方场上的所有宝石将被摧毁。每吸收一个宝石，获得1点力量和2点生命。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Submerge", "下潜", Language.ChineseSimplified);
-            RegisterAbility("Submerge", "下潜");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Submerge", "水袭", Language.ChineseSimplified);
+            RegisterAbility("Submerge", "水袭");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the turn, a card bearing this sigil will submerge. Upon resubmerging, this card will become a random Tentacle Card.", "回合结束时，带有该印记的卡牌会下潜。重新上浮时，该卡牌会变为随机触手卡牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Familiar", "使魔", Language.ChineseSimplified);
             RegisterAbility("Familiar", "使魔");
@@ -1316,8 +1315,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fading", "消逝", Language.ChineseSimplified);
             RegisterAbility("Fading", "消逝");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A card bearing this sigil will perish at the end of the turn.", "带有该印记的卡牌会在回合结束时消亡", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Morph", "变形", Language.ChineseSimplified);
-            RegisterAbility("Morph", "变形");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Morph", "不定变体", Language.ChineseSimplified);
+            RegisterAbility("Morph", "不定变体");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, it will mimic the card opposing it. If there is no card opposing it, this card will perish.", "当带有该印记的卡牌被使用时，会复制对面位置的卡牌。若对面无卡牌，则该卡牌会死亡", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiplication", "增殖", Language.ChineseSimplified);
             RegisterAbility("Multiplication", "增殖");
@@ -1325,17 +1324,17 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox Cycle", "玛珂循环", Language.ChineseSimplified);
             RegisterAbility("Mox Cycle", "玛珂循环");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of every turn, all the mox on the board will cycle into different gems.", "每回合结束时，牌桌上所有玛珂牌会循环转换为其他宝石类型", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox Strafe", "玛珂突进", Language.ChineseSimplified);
-            RegisterAbility("Mox Strafe", "玛珂突进");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the turn, this card will move to the direction inscrybed on the sigil, and leave behind a mox.", "回合结束时，此卡牌会按照印记标记的方向突进，并在原地留下一颗玛珂", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Purist", "纯粹者", Language.ChineseSimplified);
-            RegisterAbility("Purist", "纯粹者");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox Strafe", "玛珂掉落", Language.ChineseSimplified);
+            RegisterAbility("Mox Strafe", "玛珂掉落");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the turn, this card will move to the direction inscrybed on the sigil, and leave behind a mox.", "回合结束时，此卡牌会按照印记标记的方向突进，并在原地留下一颗随机玛珂", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Purist", "纯粹主义", Language.ChineseSimplified);
+            RegisterAbility("Purist", "纯粹主义");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Any card directly opposing this one will have all it's sigils removed.", "任何直接与该卡牌对位的卡牌将失去所有印记", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Brewery", "酿造坊", Language.ChineseSimplified);
             RegisterAbility("Brewery", "酿造坊");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of every turn, you automatically draw a mox card from your side deck.", "每回合结束时，自动从副牌组抽取一张玛珂牌", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ignite", "点燃", Language.ChineseSimplified);
-            RegisterAbility("Ignite", "点燃");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ignite", "引火", Language.ChineseSimplified);
+            RegisterAbility("Ignite", "引火");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, every empty opposing slot will be filled with flames. A flame is defined as a 0/1, Annoying.", "当带有该印记的卡牌被使用时，所有对侧空位将被火焰填满。火焰具有：0点力量，1点生命值，惹人生厌印记。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Projection", "投影", Language.ChineseSimplified);
             RegisterAbility("Projection", "投影");
@@ -1343,18 +1342,18 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell Book", "法术书", Language.ChineseSimplified);
             RegisterAbility("Spell Book", "法术书");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, draw a random spell card.", "带有该印记的卡牌打出时，随机抽取一张法术牌", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Scholar", "学者", Language.ChineseSimplified);
-            RegisterAbility("Scholar", "学者");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Scholar", "法术学者", Language.ChineseSimplified);
+            RegisterAbility("Scholar", "法术学者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, draw a random one of Bleene's Books.", "带有该印记的卡牌打出时，随机抽取一本蓝绿橙大师的书", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Midas' Touch", "点金手", Language.ChineseSimplified);
-            RegisterAbility("Midas' Touch", "点金手");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Midas' Touch", "黄金之触", Language.ChineseSimplified);
+            RegisterAbility("Midas' Touch", "黄金之触");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil attacks another card, the attacked card will lose all of it's attack and turn to gold.", "带有该印记的卡牌攻击其他卡牌时，被攻击的卡牌将失去所有力量并转化为黄金", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Made of Gold", "黄金之躯", Language.ChineseSimplified);
             RegisterAbility("Made of Gold", "黄金之躯");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil perishes, the killer will gain 2 crystals.", "带有该印记的卡牌阵亡时，击杀者将获得2颗水晶", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Summon Runes", "召唤符文", Language.ChineseSimplified);
-            RegisterAbility("Summon Runes", "召唤符文");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, it will summon two runes beside it. A rune is defined as 0 power, 1 health, Detonator.", "当带有该印记的卡牌被使用时，会在其相邻位置召唤两个符文。符文具有：0点力量、1点生命，引爆器印记。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Summon Runes", "引爆召唤", Language.ChineseSimplified);
+            RegisterAbility("Summon Runes", "引爆召唤");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, it will summon two runes beside it. A rune is defined as 0 power, 1 health, Detonator.", "当带有该印记的卡牌被使用时，会在其相邻位置召唤两个魔法炸弹符文。符文具有：0点力量、1点生命，引爆器。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Health", "生命咒术", Language.ChineseSimplified);
             RegisterAbility("Spell of Health", "生命咒术");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board gain +2 health.", "当带有该印记的法术牌被使用时，你方牌桌上所有卡牌获得+2生命值", Language.ChineseSimplified);
@@ -1364,14 +1363,14 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Frost Spell", "寒霜咒", Language.ChineseSimplified);
             RegisterAbility("Frost Spell", "寒霜咒");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards belonging to the opponent will have their attack set to 0, but given +2 health.", "当使用带有该印记的咒术牌时，对手所有卡牌的攻击力将归零，但生命值+2", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Wind", "风之咒", Language.ChineseSimplified);
-            RegisterAbility("Spell of Wind", "风之咒");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Wind", "强风咒", Language.ChineseSimplified);
+            RegisterAbility("Spell of Wind", "强风咒");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board will become airborne.", "当使用带有该印记的法术时，你方牌桌上的所有卡牌将获得空袭能力", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ruckus", "喧闹", Language.ChineseSimplified);
-            RegisterAbility("Ruckus", "喧闹");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ruckus", "时针顺碎语", Language.ChineseSimplified);
+            RegisterAbility("Ruckus", "时针顺碎语");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, all cards on the board will move clockwise.", "当带有该印记的卡牌被使用时，牌桌上所有卡牌均会按顺时针方向移动", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Water", "水之咒", Language.ChineseSimplified);
-            RegisterAbility("Spell of Water", "水之咒");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Water", "净水咒", Language.ChineseSimplified);
+            RegisterAbility("Spell of Water", "净水咒");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, every card on the board will have their sigils erased.", "当带有该印记的咒语牌被使用时，牌桌上所有卡牌的印记将被清除", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Flame", "火焰咒", Language.ChineseSimplified);
             RegisterAbility("Spell of Flame", "火焰咒");
@@ -1382,8 +1381,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "One Time Spell", "一次性法术", Language.ChineseSimplified);
             RegisterAbility("One Time Spell", "一次性法术");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When the turn ends, a spell bearing this sigil will perish and be removed from your deck.", "当回合结束时，带有该印记的法术会阵亡并从你的牌组移除", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vase of Greed", "贪婪之瓮", Language.ChineseSimplified);
-            RegisterAbility("Vase of Greed", "贪婪之瓮");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vase of Greed", "贪欲之壶", Language.ChineseSimplified);
+            RegisterAbility("Vase of Greed", "贪欲之壶");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, discard your current hand and draw 4 new cards.", "当带有该印记的法术牌被使用时，弃掉当前手牌并抽取4张新牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gnomification", "侏儒化", Language.ChineseSimplified);
             RegisterAbility("Gnomification", "侏儒化");
@@ -1403,8 +1402,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fireball", "火球术", Language.ChineseSimplified);
             RegisterAbility("Fireball", "火球术");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select a card to take 2 damage.", "选择一张卡牌使其受到2点伤害", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cold to the Touch", "冰冷之触", Language.ChineseSimplified);
-            RegisterAbility("Cold to the Touch", "冰冷之触");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cold to the Touch", "冰封之触", Language.ChineseSimplified);
+            RegisterAbility("Cold to the Touch", "冰封之触");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigils attack another card, that card will lose 1 attack.", "带有该印记的卡牌攻击其他卡牌时，被攻击卡牌会失去1点力量", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Frozen", "冰封", Language.ChineseSimplified);
             RegisterAbility("Frozen", "冰封");
@@ -1435,8 +1434,8 @@ namespace SimplifiedChineseLanguagePack
             RegisterAbility("Spell Power", "法术力量");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The value represented with this sigil will be equal to total amount of spells played during this current dungeon.", "该印记代表的数值等于当前地牢中已施放的法术总数", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The value represented with this sigil will be equal to total amount of spells played during the battle.", "该印记代表的数值等于战斗期间已施放的法术总数", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Counterbattery Power", "反击蓄能", Language.ChineseSimplified);
-            RegisterAbility("Counterbattery Power", "反击蓄能");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Counterbattery Power", "反击力量", Language.ChineseSimplified);
+            RegisterAbility("Counterbattery Power", "反击力量");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The value represented with this sigil will be equal to the amount of damage taken by you this battle, divided by two.", "该印记代表的数值等于本场战斗你受到的总伤害值除以二", Language.ChineseSimplified);
             foreach (Ability ability in Enum.GetValues(typeof(Ability)))
             {
@@ -1486,8 +1485,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magnus Mox", "至尊玛珂", Language.ChineseSimplified);
             RegisterCard("Magnus Mox", "至尊玛珂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "is the return of bin laden", "是本·拉登的回归", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wolf Familiar", "狼之使魔", Language.ChineseSimplified);
-            RegisterCard("Wolf Familiar", "狼之使魔");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wolf Familiar", "熟悉的狼", Language.ChineseSimplified);
+            RegisterCard("Wolf Familiar", "熟悉的狼");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It rips into its enemies with little to no remorse.", "它撕咬敌人时几乎毫无悔意", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Trading Obelisk", "交易方尖碑", Language.ChineseSimplified);
             RegisterCard("Trading Obelisk", "交易方尖碑");
@@ -1495,10 +1494,10 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Crystal Worm", "水晶蠕虫", Language.ChineseSimplified);
             RegisterCard("Crystal Worm", "水晶蠕虫");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Its body is made out of pure mana.. Gleaming and transforming into other gems.", "它的身躯由纯粹魔力构成……闪耀着光芒并能转化为其他宝石", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox Larva", "玛珂幼虫", Language.ChineseSimplified);
-            RegisterCard("Mox Larva", "玛珂幼虫");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox Beast", "玛珂兽", Language.ChineseSimplified);
-            RegisterCard("Mox Beast", "玛珂兽");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox Larva", "宝石幼虫", Language.ChineseSimplified);
+            RegisterCard("Mox Larva", "宝石幼虫");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox Beast", "宝石魔兽", Language.ChineseSimplified);
+            RegisterCard("Mox Beast", "宝石魔兽");
             RegisterCard("Snowy Fir", "雪压冷杉");
             RegisterCard("Grand Fir", "大冷杉");
             RegisterCard("Stump", "树桩");
@@ -1514,17 +1513,17 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Techno Mage", "科技法师", Language.ChineseSimplified);
             RegisterCard("Techno Mage", "科技法师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "sponsored by me", "由我赞助", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Necro Mage", "死灵法师", Language.ChineseSimplified);
-            RegisterCard("Necro Mage", "死灵法师");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Necro Mage", "苏生法师", Language.ChineseSimplified);
+            RegisterCard("Necro Mage", "苏生法师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "sponsored by me again", "再次由我赞助", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ouroberyl", "衔尾绿", Language.ChineseSimplified);
-            RegisterCard("Ouroberyl", "衔尾绿");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ouroberyl", "衔宝蛇", Language.ChineseSimplified);
+            RegisterCard("Ouroberyl", "衔宝蛇");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It gleams and takes different forms.. How majestic..", "它闪烁着光芒，形态万千……何等威严……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spellcaster", "施法者", Language.ChineseSimplified);
             RegisterCard("Spellcaster", "施法者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It reads out spells from its book and casts them directly to your hand.", "它会从书中诵读咒语，并直接施放到你的手牌中。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chaos Magician", "混沌法师", Language.ChineseSimplified);
-            RegisterCard("Chaos Magician", "混沌法师");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chaos Magician", "无形法师", Language.ChineseSimplified);
+            RegisterCard("Chaos Magician", "无形法师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A scholar proficient in Chaos Theory, channeling a scramble unto the entire board.", "精通混沌理论的学者，能将全场搅得天翻地覆", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magic Spell", "魔法咒语", Language.ChineseSimplified);
             RegisterCard("Magic Spell", "魔法咒语");
@@ -1542,22 +1541,22 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Deflector", "偏转器", Language.ChineseSimplified);
             RegisterCard("Deflector", "偏转器");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You would not want to end up on the wrong side of it..", "你不会想站错边的……", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Auspex", "占卜玛珂", Language.ChineseSimplified);
-            RegisterCard("Auspex", "占卜玛珂");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Auspex", "占星师", Language.ChineseSimplified);
+            RegisterCard("Auspex", "占星师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It harnesses the power of the stars for you..", "它能为你汲取星辰之力", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Astral Sorcerer", "星界巫师", Language.ChineseSimplified);
             RegisterCard("Astral Sorcerer", "星界巫师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A sorcerer proficient in summoning astral projections to protect itself when in danger", "擅长在危急时刻召唤星界投影保护自身的巫师", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Astral Projection", "星体投射", Language.ChineseSimplified);
-            RegisterCard("Astral Projection", "星体投射");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Astral Projection", "星体投影", Language.ChineseSimplified);
+            RegisterCard("Astral Projection", "星体投影");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "real", "真实", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Trinket Bearer", "道具商", Language.ChineseSimplified);
             RegisterCard("Trinket Bearer", "道具商");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A mischevious little goblin creature. It carries around valueables in its backpack.", "鬼鬼祟祟的小妖精。它总在背包里藏着些值钱玩意儿。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Backpack", "背包", Language.ChineseSimplified);
             RegisterCard("Backpack", "背包");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stimbot", "强化机器人", Language.ChineseSimplified);
-            RegisterCard("Stimbot", "强化机器人");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stimbot", "刺激机器人", Language.ChineseSimplified);
+            RegisterCard("Stimbot", "刺激机器人");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Powered by stimulation, and steam..", "由刺激与蒸汽驱动", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magimorph", "魔形怪", Language.ChineseSimplified);
             RegisterCard("Magimorph", "魔形怪");
@@ -1589,8 +1588,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Soda Mage", "苏打法师", Language.ChineseSimplified);
             RegisterCard("Soda Mage", "苏打法师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This pathetic mage melted away from drinking too much carbonated liquid..", "这个可悲的法师因饮用过多碳酸饮料而融化了", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whitesmith", "白匠", Language.ChineseSimplified);
-            RegisterCard("Whitesmith", "白匠");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whitesmith", "银匠", Language.ChineseSimplified);
+            RegisterCard("Whitesmith", "银匠");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Their life's work was dedicated to reinforcing gems.", "他们毕生致力于强化玛珂", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Puppeteer", "傀儡师", Language.ChineseSimplified);
             RegisterCard("Puppeteer", "傀儡师");
@@ -1604,8 +1603,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Valkyrie", "女武神", Language.ChineseSimplified);
             RegisterCard("Valkyrie", "女武神");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A student that has trained under Master Orlu. It has become an expert in airborne magicks.", "师从橙蓝绿大师的学徒。已精通空战魔法。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Valkyrie Thief", "女武神窃贼", Language.ChineseSimplified);
-            RegisterCard("Valkyrie Thief", "女武神窃贼");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Valkyrie Thief", "女武神盗贼", Language.ChineseSimplified);
+            RegisterCard("Valkyrie Thief", "女武神盗贼");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "liar liar chicken friar.", "骗子骗子鸡毛掸子", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Emerald Maniac", "绿宝石狂徒", Language.ChineseSimplified);
             RegisterCard("Emerald Maniac", "绿宝石狂徒");
@@ -1619,14 +1618,14 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Druid", "德鲁伊", Language.ChineseSimplified);
             RegisterCard("Druid", "德鲁伊");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Just look at what you've done..", "看看你都干了些什么……", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chained Legs", "锁链之腿", Language.ChineseSimplified);
-            RegisterCard("Chained Legs", "锁链之腿");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sealed Body", "封印躯干", Language.ChineseSimplified);
-            RegisterCard("Sealed Body", "封印躯干");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chained Legs", "链锁之腿", Language.ChineseSimplified);
+            RegisterCard("Chained Legs", "链锁之腿");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sealed Body", "封印之躯", Language.ChineseSimplified);
+            RegisterCard("Sealed Body", "封印之躯");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bound Arms", "束缚之臂", Language.ChineseSimplified);
             RegisterCard("Bound Arms", "束缚之臂");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Imprisoned Tyrant", "囚禁暴君", Language.ChineseSimplified);
-            RegisterCard("Imprisoned Tyrant", "囚禁暴君");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Imprisoned Tyrant", "囚禁的暴君", Language.ChineseSimplified);
+            RegisterCard("Imprisoned Tyrant", "囚禁的暴君");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiplication mage", "增殖法师", Language.ChineseSimplified);
             RegisterCard("Multiplication mage", "增殖法师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This cycle can go on forever..", "此循环可永续不止", Language.ChineseSimplified);
@@ -1660,8 +1659,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Aurumtact", "点金术士", Language.ChineseSimplified);
             RegisterCard("Aurumtact", "点金术士");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An elder scholar, cursed for his greed, entombing anything he touches in pure gold.", "一位因贪婪而被诅咒的年迈学者，能将触碰之物尽数化为纯金", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chained Mox", "锁链玛珂", Language.ChineseSimplified);
-            RegisterCard("Chained Mox", "锁链玛珂");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chained Mox", "连环玛珂", Language.ChineseSimplified);
+            RegisterCard("Chained Mox", "连环玛珂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A collection of 3 moxen, tangled together, combining their mana energy.", "三颗玛珂纠缠而成的集合体，能融合它们的魔力能量。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Maux", "马可", Language.ChineseSimplified);
             RegisterCard("Maux", "马可");
@@ -1679,11 +1678,11 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bookworm", "书虫", Language.ChineseSimplified);
             RegisterCard("Bookworm", "书虫");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A rare kind of insect that absorbs knowledge out of books.", "一种能从书本中汲取知识的稀有昆虫", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Alchemist", "炼金师", Language.ChineseSimplified);
-            RegisterCard("Alchemist", "炼金师");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Alchemist", "炼金术士", Language.ChineseSimplified);
+            RegisterCard("Alchemist", "炼金术士");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A supporting one. It brews potions to empower your cards.", "辅助型单位。它能调配药剂来强化你的卡牌。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chime Mage", "鸣铃法师", Language.ChineseSimplified);
-            RegisterCard("Chime Mage", "鸣铃法师");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chime Mage", "鸣钟法师", Language.ChineseSimplified);
+            RegisterCard("Chime Mage", "鸣钟法师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Its chime can prove to be quite annoying..", "它的铃声确实烦人得很……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Revivor", "复生者", Language.ChineseSimplified);
             RegisterCard("Revivor", "复生者");
@@ -1700,10 +1699,10 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rune", "符文", Language.ChineseSimplified);
             RegisterCard("Rune", "符文");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This is the last call, for alcohol.", "这是最后的召唤，为了烈酒", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Flame", "玛珂焰", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Flame", "魔焰", Language.ChineseSimplified);
             RegisterCard("Flame", "玛珂焰");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This is the last call, for alcohol.", "这是最后的召唤，为了烈酒。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rabbit", "玛珂兔", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rabbit", "兔子", Language.ChineseSimplified);
             RegisterCard("Rabbit", "玛珂兔");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This is the last call, for alcohol.", "这是最后的召唤，为了烈酒", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This is the last call, for booze.", "这是最后的召唤，为了豪饮", Language.ChineseSimplified);
@@ -1722,8 +1721,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Phoenix", "凤凰", Language.ChineseSimplified);
             RegisterCard("Phoenix", "凤凰");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Majestic avian, rumoured to have been an accomplice to Master Orlu...", "威严的飞禽，据传曾是橙蓝绿大师的同谋……", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bleenehound", "蓝绿橙猎犬", Language.ChineseSimplified);
-            RegisterCard("Bleenehound", "蓝绿橙猎犬");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bleenehound", "寻宝猎犬", Language.ChineseSimplified);
+            RegisterCard("Bleenehound", "寻宝猎犬");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Loyalist canine, rumoured to have been Master Bleene's loyal companion.", "忠诚犬类，据传曾是蓝绿橙大师的忠实伙伴", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Alchemy 101", "炼金术入门", Language.ChineseSimplified);
             RegisterCard("Alchemy 101", "炼金术入门");
@@ -1767,8 +1766,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Moon", "月亮", Language.ChineseSimplified);
             RegisterCard("The Moon", "月亮");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "OH THE MOON O HTHEMOON OH THE MOON O H THE MOON.", "月亮啊月亮月亮啊月亮月亮啊月亮", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Earth", "大地", Language.ChineseSimplified);
-            RegisterCard("The Earth", "大地");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Earth", "地球", Language.ChineseSimplified);
+            RegisterCard("The Earth", "地球");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The urth.", "原初之土", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cause we are the aqua teens, make the homies say ho and the girlies wanna scream", "因为我们是水行少年 让兄弟喊哇塞 让妹子尖叫", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Head of Emerald", "绿宝石之首", Language.ChineseSimplified);
@@ -1804,8 +1803,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Saturn", "土星", Language.ChineseSimplified);
             RegisterCard("Saturn", "土星");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Its a me saturn!", "是我，土星！", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Horven", "可怖海怪", Language.ChineseSimplified);
-            RegisterCard("The Horven", "可怖海怪");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Horven", "魔法克拉肯", Language.ChineseSimplified);
+            RegisterCard("The Horven", "魔法克拉肯");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A terrible creature of the sea.. Posessing 3 strange and powerful appendages.", "深海中的恐怖存在……生有三条诡异而强壮的触须", Language.ChineseSimplified);
             RegisterCard("Bleene's Mox", "蓝绿橙的玛珂");
             RegisterCard("Goranj's Mox", "绿橙蓝的玛珂");
@@ -1832,11 +1831,11 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Carnage", "屠戮", Language.ChineseSimplified);
             RegisterCard("Carnage", "屠戮");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This spell channels raw hellcow energy unto your cards.. Boosting their attack.", "该法术将地狱蛮牛之力灌注至你的卡牌中，提升其攻击力", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blizzard", "暴雪", Language.ChineseSimplified);
-            RegisterCard("Blizzard", "暴雪");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blizzard", "暴风雪", Language.ChineseSimplified);
+            RegisterCard("Blizzard", "暴风雪");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Freeze over your opponents side with a mighty blizzard..", "用强大的暴雪冻结对手的战场", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cyclone", "旋风术", Language.ChineseSimplified);
-            RegisterCard("Cyclone", "旋风术");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cyclone", "强风咒", Language.ChineseSimplified);
+            RegisterCard("Cyclone", "强风咒");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This spell shall summon a whirlwind that boosts your cards into the air.", "此法术将召唤旋风使你的卡牌获得飞行能力", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Flood", "洪流", Language.ChineseSimplified);
             RegisterCard("Flood", "洪流");
@@ -1848,9 +1847,9 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ethereal Gems", "虚空宝石", Language.ChineseSimplified);
             RegisterCard("Ethereal Gems", "虚空宝石");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A frail spirit of a late magnus mox.. Only sustains for a turn.", "已逝至尊玛珂的脆弱精魄..仅能存续一回合", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vase of Greed", "贪婪之瓮", Language.ChineseSimplified);
-            RegisterCard("Vase of Greed", "贪婪之瓮");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The vase of greed.. Look at its smug face..", "贪婪之瓮……瞧瞧它那副得意的嘴脸……", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vase of Greed", "贪欲之壶", Language.ChineseSimplified);
+            RegisterCard("Vase of Greed", "贪欲之壶");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The vase of greed.. Look at its smug face..", "贪欲之壶……瞧瞧它那副得意的嘴脸……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gnomification", "侏儒化", Language.ChineseSimplified);
             RegisterCard("Gnomification", "侏儒化");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Conjure a plain old garden gnome on the board..", "在牌桌上召唤一个普通的老旧花园地精。", Language.ChineseSimplified);
@@ -1869,8 +1868,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fireball", "火球术", Language.ChineseSimplified);
             RegisterCard("Fireball", "火球术");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Conjure up a fireball, and shoot it towards your enemy.", "召唤火球并射向敌人", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Potion", "药水", Language.ChineseSimplified);
-            RegisterCard("Potion", "药水");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Potion", "魔药", Language.ChineseSimplified);
+            RegisterCard("Potion", "魔药");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Conjure up a fireball, and shoot it towards your enemy.", "召唤一枚火球，射向你的敌人", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gnome", "侏儒", Language.ChineseSimplified);
             RegisterCard("Gnome", "侏儒");
@@ -1913,7 +1912,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Card of Sacrifice", "牺牲之卡", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Have 10 or less cards by the time you reach the final boss.", "在抵达最终首领时持有10张或更少卡牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Owl of the Black Forest", "黑森林猫头鹰", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Banish the Ficticious Master Magnus.", "放逐虚构的大师蔓尼格斯", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Banish the Ficticious Master Magnus.", "放逐虚构的至尊大师", Language.ChineseSimplified);
 
             // Consumable
 
@@ -2099,7 +2098,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Alas, I have no choice but to allow it..", "唉，我也只能听之任之……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Just what is going on here..?", "这是怎么回事…？", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "These cards,", "这些卡牌，", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Did that [c:g2]foul little..[c:] get in here..?", "那个[c:g2]肮脏的小东西…[c:][c:]闯进来了…？", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Did that [c:g2]foul little..[c:] get in here..?", "那个[c:g2]肮脏的小东西…[c:]闯进来了…？", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I believe you are in the wrong place, challenger.", "挑战者，你恐怕来错地方了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hold still.", "别动", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You are a simpleton for expecting scales.", "指望天平？你可真天真。", Language.ChineseSimplified);
@@ -2279,7 +2278,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "... Curious.", "……有点意思", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I thought I had completely removed this.. [c:g2]filth[c:].", "我还以为我已经彻底清除了这…[c:g2]污秽[c:]。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You humor me challenger..", "你倒挺会逗我开心啊，挑战者……", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Did you expect your measely [c:g1]hammer[c:] to work on such a creature as the [c:g1]ouroberyl[c:]?", "你以为区区[c:g1]锤子[c:]能对[c:g1]衔尾绿[c:]起作用？", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Did you expect your measely [c:g1]hammer[c:] to work on such a creature as the [c:g1]ouroberyl[c:]?", "你以为区区[c:g1]锤子[c:]能对[c:g1]衔宝蛇[c:]起作用？", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "How foolish.", "何其愚蠢。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your hammer is now [c:g1]broken[c:], and may not be used for the remainder of the battle.", "你的锤子现已[c:g1]损毁[c:]，本场战斗无法再使用。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It seems that you lost..", "看来你输了……", Language.ChineseSimplified);
@@ -2304,7 +2303,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Though, I do NOT approve of this.", "但我绝不认可这种行为。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It appears that the ficticious Master Magnus has showed itself.", "看来那个虚构的至尊大师现身了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "That horrid [c:g1]thing[c:] rears it's ugly head.", "那[c:g1]怪物[c:]正探出它丑陋的脑袋。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The released Master Magnus approaches.", "被释放的至尊大师正在逼近。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The released Master Magnus approaches.", "解缚的至尊大师正在逼近。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Careful. That horrible master is here.", "当心，那个可怕的大师来了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Master Magnus has arrived. Be cautious.", "至尊大师已至，务必小心", Language.ChineseSimplified);
 
@@ -2376,7 +2375,7 @@ namespace SimplifiedChineseLanguagePack
             // Challenge
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blank Mox", "空白玛珂", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your sidedeck's mox is completely random.", "你的副牌组玛珂效果完全随机", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Weaker Bleach", "弱效漂白剂", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Weaker Bleach", "弱漂白剂", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Bleaching Event can no longer remove negative sigils.", "漂白事件将不再能移除负面印记", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Turn Wipeout", "回合崩盘", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When you ring the bell past turn 6 (12 on bosses) you take 1 damage.", "若在第6回合后（首领战为第12回合）敲换手铃，你将受到1点伤害", Language.ChineseSimplified);
@@ -2405,4 +2404,5 @@ namespace SimplifiedChineseLanguagePack
 
         }
     }
+
 }

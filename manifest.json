@@ -1,0 +1,9 @@
+{
+	"name": "Simplified_Chinese_Language_Pack_for_Mods",
+	"version_number": "1.2.1",
+	"website_url": "https://github.com/MiemieMethod/InscryptionModsSimplifiedChineseLanguagePack",
+	"description": "A Simplified Chinese Language Pack Patching for some Inscryption mods, with characters display fix. 为各个《邪恶冥刻》模组设计的简体中文语言包补丁，同时修复汉字缺字显示问题。",
+	"dependencies": [
+		"API_dev-API-2.23.2"
+	]
+}

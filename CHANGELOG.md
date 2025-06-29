@@ -1,6 +1,10 @@
 # Changelog
 
-## 1.2.
+## 1.2.1
+
+Fix all texts mis-translated
+
+## 1.2.0
 
 Fix characters missing problem in Chinese Simplified.
 
