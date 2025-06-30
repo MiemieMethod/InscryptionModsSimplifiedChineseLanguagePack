@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Xml.Linq;
 using BepInEx;
 using DiskCardGame;
 using InscryptionAPI;
+using InscryptionAPI.Card;
 using InscryptionAPI.Dialogue;
 using InscryptionAPI.Localizing;
 using InscryptionAPI.Pelts;
 using TMPro;
-using Unity.Audio;
 using UnityEngine;
-using UnityEngine.TextCore;
 
 namespace SimplifiedChineseLanguagePack
 {
@@ -24,7 +19,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.2.4";
+        private const string Version = "1.2.5";
 
         private void Awake()
         {
@@ -189,7 +184,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] yields no bones upon death.", "[creature]死亡时不会产生骨头。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] kills another creature, gain 2 bones.", "当[creature]击杀其他造物时，获得2根骨头。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] takes 1 Soul from you at the end of every turn and stores it as 2 Bones, up to a maximum of 8. When [creature] dies, you gain all bones contained in it.", "[creature]在每回合结束时从你这里获取1个灵魂，并将其储存为2根骨头，最多可储存8根。当[creature]死亡时，你将获得其中储存的所有骨头。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] empowers each Skeleton on the owner's side of the board, providing a +1 buff to their power.", "[creature]会强化持牌人一侧牌桌上的所有骷髅牌，使其力量增加1点。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] empowers each Skeleton on the owner's side of the board, providing a +1 buff to their power.", "[creature]会强化持牌人侧牌桌上的所有骷髅牌，使其力量增加1点。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sea Shanty", "海洋船歌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike the opposing slots to the left, right, and center of it randomly, up to 3 times.", "[creature]会随机攻击正对面的左右两侧和中间位置，最多攻击3次。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, the card opposing it is Frozen Away if not already frozen.", "当[creature]阵亡时，若对面的卡牌未被冻结，则将其冰封禁锢。", Language.ChineseSimplified);
@@ -230,7 +225,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Douse", "浇灭", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When played,[creature] will extinguish all cards on the Board.", "使用[creature]时，将熄灭牌桌上所有卡牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] cannot be attacked from the opposing slot. The opposing slot, if possible, instead attacks one of its adjacent friendly cards.", "[creature]无法从正对面位置被攻击。若可能，正对面位置会转而攻击其相邻的友方卡牌。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards on the owner's side of the field are unaffected by Brittle.", "持牌人一侧牌桌上的卡牌不受脆骨印记影响。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards on the owner's side of the field are unaffected by Brittle.", "持牌人侧牌桌上的卡牌不受脆骨印记影响。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike its adjacent slots, except other Raiders.", "[creature]会攻击其相邻位置，但不会攻击其他劫掠之徒。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, it carves its Sigils into adjacent Cards.", "使用[creature]时，其印记会铭刻到相邻卡牌上。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sculptor", "铭刻师", Language.ChineseSimplified);
@@ -427,6 +422,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BEST FRIENDS, BROTHERS, AND FIGHTERS.", "至交好友，手足兄弟，并肩战士。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Frank & Stein", "弗兰肯和斯坦", Language.ChineseSimplified);
             RegisterCard("Frank & Stein", "弗兰肯和斯坦");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "FrankNStein", "弗兰肯和斯坦", Language.ChineseSimplified); // why becomed this after chaired?
+            RegisterCard("FrankNStein", "弗兰肯和斯坦");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A ghastly guardian spirit. It's presence lingers behind as it sprints through the dark.", "阴森可怖的守护灵。它在黑暗中疾驰而过，身后残留着不散的灵体。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fylgja", "陪伴者", Language.ChineseSimplified);
             RegisterCard("Fylgja", "陪伴者");
@@ -1332,13 +1329,13 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, all gems on the board gain a shield.", "使用带有该印记的卡牌时，牌桌上所有宝石均获得护盾", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Plating Work", "镀层工艺", Language.ChineseSimplified);
             RegisterAbility("Plating Work", "镀层工艺");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "While a card bearing this sigil is on the board, all gems on your side of the board gain the Sharp Quills sigil, and 2 health.", "当带有该印记的卡牌在场时，你方所有宝石获得尖刺铠甲印记和2点生命值", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "While a card bearing this sigil is on the board, all gems on your side of the board gain the Sharp Quills sigil, and 2 health.", "当带有该印记的卡牌在场时，持牌人侧牌桌上所有宝石获得尖刺铠甲印记和2点生命值", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Animator", "操偶师", Language.ChineseSimplified);
             RegisterAbility("Animator", "操偶师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "While a card bearing this sigil is on the board, all non-mox cards with 0 power gain 2 power", "当带有该印记的卡牌在场时，所有力量为0的非玛珂卡牌获得2点力量", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gem Absorber", "宝石吸收者", Language.ChineseSimplified);
             RegisterAbility("Gem Absorber", "宝石吸收者");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, all gems on your side of the board will perish. For each gem absorbed, gain 1 power and 2 health.", "当带有该印记的卡牌使用时，你方场上的所有宝石将被摧毁。每吸收一个宝石，获得1点力量和2点生命。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, all gems on your side of the board will perish. For each gem absorbed, gain 1 power and 2 health.", "当带有该印记的卡牌使用时，持牌人侧牌桌上的所有宝石将被摧毁。每吸收一个宝石，获得1点力量和2点生命。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Submerge", "水袭", Language.ChineseSimplified);
             RegisterAbility("Submerge", "水袭");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the turn, a card bearing this sigil will submerge. Upon resubmerging, this card will become a random Tentacle Card.", "回合结束时，带有该印记的卡牌会下潜。重新上浮时，该卡牌会变为随机触手卡牌。", Language.ChineseSimplified);
@@ -1389,16 +1386,16 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, it will summon two runes beside it. A rune is defined as 0 power, 1 health, Detonator.", "当带有该印记的卡牌被使用时，会在其相邻位置召唤两个魔法炸弹符文。符文具有：0点力量、1点生命，引爆器。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Health", "生命咒术", Language.ChineseSimplified);
             RegisterAbility("Spell of Health", "生命咒术");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board gain +2 health.", "当带有该印记的法术牌被使用时，你方牌桌上所有卡牌获得+2生命值", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board gain +2 health.", "当带有该印记的法术牌被使用时，持牌人侧牌桌上所有卡牌获得+2生命值", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Attack", "攻击咒术", Language.ChineseSimplified);
             RegisterAbility("Spell of Attack", "攻击咒术");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board gain +1 attack.", "当带有该印记的咒术被使用时，你方场上所有卡牌获得+1攻击力", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board gain +1 attack.", "当带有该印记的咒术被使用时，持牌人侧牌桌上所有卡牌获得+1攻击力", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Frost Spell", "寒霜咒", Language.ChineseSimplified);
             RegisterAbility("Frost Spell", "寒霜咒");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards belonging to the opponent will have their attack set to 0, but given +2 health.", "当使用带有该印记的咒术牌时，对手所有卡牌的攻击力将归零，但生命值+2", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Wind", "强风咒", Language.ChineseSimplified);
             RegisterAbility("Spell of Wind", "强风咒");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board will become airborne.", "当使用带有该印记的法术时，你方牌桌上的所有卡牌将获得空袭能力", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board will become airborne.", "当使用带有该印记的法术时，持牌人侧牌桌上的所有卡牌将获得空袭能力", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ruckus", "时针顺碎语", Language.ChineseSimplified);
             RegisterAbility("Ruckus", "时针顺碎语");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, all cards on the board will move clockwise.", "当带有该印记的卡牌被使用时，牌桌上所有卡牌均会按顺时针方向移动", Language.ChineseSimplified);
@@ -2220,7 +2217,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Seems like I'm forced to train spellcasting in here.", "看来我被迫要在这儿练习法术了", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Give me a [c:g1]spell[c:] of yours, and make it quick.", "给我一个你的[c:g1]法术[c:]，动作快点", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Greetings..", "你好……", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Give me one of your [c:g1]spells[c:].", "给我一个你的[c:g1]法术[c:]", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Give me one of your [c:g1]spells[c:]", "给我一个你的[c:g1]法术[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh.. Greetings... I don't believe we've been introduced..", "哦…你好……我们似乎还没正式认识……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I've been force- er.. asked to train my spellcasting here.", "我被强制-呃…受邀来这儿练习法术", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Why don't you give me some of your [c:g1]spells[c:]?", "不如给我些你的[c:g1]法术[c:]如何？", Language.ChineseSimplified);
@@ -2339,6 +2336,10 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The released Master Magnus approaches.", "解缚的至尊大师正在逼近。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Careful. That horrible master is here.", "当心，那个可怕的大师来了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Master Magnus has arrived. Be cautious.", "至尊大师已至，务必小心", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You glance at a {0}. ", "你瞥见一张{0}。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A {0} appears from within the portrait. ", "{0}从肖像画中浮现。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You gaze at a {0}. ", "你凝视着一张{0}。", Language.ChineseSimplified);
+
 
             // ShowThenClear
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Choose wisely.", "认真选吧", Language.ChineseSimplified);
@@ -2421,7 +2422,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Armored Shell", "坚甲之壳", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your opponent cant take more than 4 damage per turn.", "每回合敌方最多承受4点伤害", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Iron Maiden", "铁处女", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every turn, each mox on your side of the board takes 1 damage.", "每回合开始时，你方场上的每张玛珂牌会受到1点伤害", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every turn, each mox on your side of the board takes 1 damage.", "每回合开始时，持牌人侧牌桌上的每张玛珂牌会受到1点伤害", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magickal Paint", "魔法涂料", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Queued cards will occasionally get additional sigils painted on them.", "待出卡牌偶尔会被额外绘制上印记", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fleeting Life", "转瞬生命", Language.ChineseSimplified);

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.5
+
+Fix some texts.
+
 ## 1.2.4
 
 Fix some texts.
