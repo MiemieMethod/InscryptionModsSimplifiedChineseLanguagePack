@@ -7,10 +7,13 @@ using System.Xml.Linq;
 using BepInEx;
 using DiskCardGame;
 using InscryptionAPI;
+using InscryptionAPI.Dialogue;
 using InscryptionAPI.Localizing;
+using InscryptionAPI.Pelts;
 using TMPro;
 using Unity.Audio;
 using UnityEngine;
+using UnityEngine.TextCore;
 
 namespace SimplifiedChineseLanguagePack
 {
@@ -21,7 +24,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.2.2";
+        private const string Version = "1.2.3";
 
         private void Awake()
         {
@@ -86,6 +89,36 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When true, randomises the order card cost choices are presented in Act 1.", "启用时，第一章卡牌费用选择项的呈现顺序将被随机打乱。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When true bosses will not spawn their scenery. (eg: Prospector's trees) This can improve performance on low-end machines.", "启用时，头目战不会生成场景装饰物（如矿工的冷杉），可提升低配置设备的运行性能。", Language.ChineseSimplified);
 
+            // DialogueEvent
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You don't have enough [v:1] gems for that.", "你的[v:1]宝石不足", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Not enough [v:1] gems on the table? Then you can't play it.", "牌桌上[v:1]宝石不够？你无法使用此牌", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You need more [v:1] gems on the board in order to play that [v:0].", "牌桌上需要更多[v:1]宝石才能使用这张[v:0]", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Play the required [v:1] gems... then you can play that.", "必须先使用[v:1]宝石……才能打出此牌", Language.ChineseSimplified);
+            Dictionary<string, string> peltTypes = new Dictionary<string, string>
+            {
+                // BasePeltNames
+                { "pelthare", "野兔" },
+                { "peltwolf", "狼" },
+                { "peltgolden", "金羊" },
+            };
+            foreach (PeltManager.PeltData peltData in PeltManager.AllPeltsAvailableAtTrader())
+            {
+                string text = peltData.peltTierName ?? PeltManager.GetTierNameFromData(peltData);
+                if (!peltTypes.ContainsKey(text))
+                {
+                    Debug.LogWarning($"未找到毛皮等级{text}的中文翻译，已跳过");
+                    continue;
+                }
+                string dialogueId = "TraderPelts" + text;
+                if (text.Contains("pelt") || text.Contains("pelt"))
+                {
+                    LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, text + "pelts...", peltTypes[text] + "皮……", Language.ChineseSimplified);
+                }
+                else
+                {
+                    LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, text + "...", peltTypes[text] + "……", Language.ChineseSimplified);
+                }
+            }
         }
     }
     public class AchievementsMod
@@ -520,7 +553,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Yellowbeard", "黄胡子", Language.ChineseSimplified);
             RegisterCard("Yellowbeard", "黄胡子");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "His songs raise the morale of only Skeletons, as no one else seems to like it.", "他的船歌只能鼓舞骷髅兵的士气，毕竟其他人都欣赏不来。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A DISTANT RELATIVE OF THE SCREAMING SKULL, HE IS NOW THE SYMBOL OF PIRACY ALL AROUND THE WORLD", "尖叫头骨的远亲，如今已成为全球海盗的象征", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A DISTANT RELATIVE OF THE SCREAMING SKULL, HE IS NOW THE SYMBOL OF PIRACY ALL AROUND THE WORLD", "尖叫颅骨的远亲，如今已成为全球海盗的象征", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Crossbones", "骷髅旗", Language.ChineseSimplified);
             RegisterCard("Crossbones", "骷髅旗");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Davy Jones", "戴维·琼斯", Language.ChineseSimplified);
@@ -1650,8 +1683,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skelesage", "骸骨贤者", Language.ChineseSimplified);
             RegisterCard("Skelesage", "骸骨贤者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "One of my own Junior Sages, lost and revived.", "我曾失去又复生的初级贤者之一。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Erratic Scholar", "狂躁学者", Language.ChineseSimplified);
-            RegisterCard("Erratic Scholar", "狂躁学者");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Erratic Scholar", "烦躁学者", Language.ChineseSimplified);
+            RegisterCard("Erratic Scholar", "烦躁学者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A panicked scholar.. Always running from its problems..", "惊慌失措的学者……永远在逃避自己的问题……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox Mage", "玛珂法师", Language.ChineseSimplified);
             RegisterCard("Mox Mage", "玛珂法师");
