@@ -24,7 +24,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.2.3";
+        private const string Version = "1.2.4";
 
         private void Awake()
         {
@@ -1036,9 +1036,9 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE FRAIL THING WILL SHATTER AFTER EXCESSIVE USE. THREE STRIKES, AND IT'S OUT, FOR THIS BATTLE AT LEAST.", "这脆弱的玩意儿用过头就会碎。三击过后，至少本场战斗内它就报废了。", Language.ChineseSimplified);
             foreach (var kvp in Cards)
             {
-                string key = "[c:blGr]" + kvp.Key + "[c:]";
-                string value = "[c:blGr]" + kvp.Value + "[c:]";
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh... it will be rather difficult to haunt " + key + " with their abilities at max capacity.", "噢……要让" + value + "在能力全开状态下被附体可不太容易", Language.ChineseSimplified);
+                string key = "[c:lGr]" + kvp.Key + "[c:]";
+                string value = "[c:lGr]" + kvp.Value + "[c:]";
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh... it will be rather difficult to haunt " + key + " with their abilities at max capacity.", "噢……要让" + value + "在能力开满的状态下被附体可不太容易", Language.ChineseSimplified);
             }
             foreach (var value in Cards.Values)
             {
@@ -1073,7 +1073,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "PREPARE TO HOLD YEE BREATH!", "都给老子屏住呼吸！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HOLY FISHPASTE, YE FOUND DAVY JONES TREASURE", "我嘞个鱼酱啊，你居然找到了戴维·琼斯的宝藏", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "YARRG, TWAS JUST DA FIRST ROUND!\nLETS SEE HOW YE FARE 'GAINST ME PERSONAL SHIP AN CREW!", "呵！这才第一回合！\n看看你咋对付老子的亲兵船队！", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HOW NICE OF YOU TO COME KNOCK AT MY DOORSTEP ON THIS TRULY SPOOKY DAY! DO YOU PREFER TREATS, OR TRICKS?", "在这阴森可怖的日子来敲我的门真是太好了！你是想要款待，还是恶作剧？", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HOW NICE OF YOU TO COME KNOCK AT MY DOORSTEP ON THIS TRULY SPOOKY DAY! DO YOU PREFER TREATS, OR TRICKS?", "在这阴森可怖的日子来敲我的门真是太好了！你是想要给糖，还是要我捣蛋？", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "LOOK AWAY, LOOK AWAY! IF YOU WANT TO FIGHT, GET IT OVER QUICK!", "别看这边，别看这边！想打架就速战速决！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "oh... I- I see you're here again... Please, get rid of that monster and maybe I'll find some more time for you", "哦...我-我又见到你了...拜托解决掉那个怪物，也许我就能多抽点时间陪你了", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "YOU HAVE BEATEN THE VICIOUS CANDY MONSTER AND SAVED HALLOWEEN!", "你击败了凶残的糖果怪物，拯救了万圣节！", Language.ChineseSimplified);
@@ -1119,8 +1119,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Choose one.", "选一张。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It is time to rest.", "该休息一下了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go Bartender! Drink up!", "上吧，酒保！喝个痛快！", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go Undertaker! Dont scream!", "上吧，殡葬师！可别尖叫！", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go Slingers Soul! Time for a duel!", "上吧，投手之魂！决斗时刻到了！", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go Undertaker! Dont scream!", "上吧，掘墓人！可别尖叫！", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go Slingers Soul! Time for a duel!", "上吧，枪手之魂！决斗时刻到了！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go One Armed Bandit! I hope i get lucky!", "上吧，独臂强盗！但愿我能走运！", Language.ChineseSimplified);
             for (int amnt = 0; amnt < 10; amnt++)
             {
@@ -2280,7 +2280,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "But this is where we say farewell..", "但此刻我们该道别了……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Just hold still for a second.", "保持片刻别动", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I will base it off of cards in your deck.", "我会根据你牌组里的卡牌来决定。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "First, the stats.", "首先，是属性值。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "First, the stats.", "首先，是属性。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The [c:g1]sigils[c:].", "然后是[c:g1]印记[c:]。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hmm.. You're out of paint.", "唔……你的颜料用完了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You can bleach your drawing.. or consider it finished.", "你可以漂白画作……或者就此收笔。", Language.ChineseSimplified);
