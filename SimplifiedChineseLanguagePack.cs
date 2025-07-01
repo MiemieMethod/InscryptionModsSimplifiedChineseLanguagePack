@@ -2516,50 +2516,167 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The corpse of a stiff terrestrial creation.", "僵硬的陆地生物的尸体。", Language.ChineseSimplified);
 
 
-            //UndeadTempleINKCM_Ability
+            //UndeadTempleINKCM_Ability_and_Pack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skeleader", "亡灵领袖", Language.ChineseSimplified);
             RegisterAbility("Skeleader", "亡灵领袖");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When placing [creature], skeleton cards will appear in nearby empty spaces. Skeleton has: 1 power, 1 health, Brittle.", "当放置[creature]时，骷髅牌将出现在相邻的空位。骷髅有：1力量，1生命，脆骨。", Language.ChineseSimplified);
-            
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Original Undead Card", "原版亡灵部落卡牌", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The cards for the Undead Tribe are in the original game.(ACT2)", "原版第二幕中的亡灵部落卡包。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NonOriginal Undead Card", "非原版亡灵部落卡包", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The expansion cards for the Undead Tribe are not in the original game.", "由模组作者原创的非原版亡灵部落卡包。", Language.ChineseSimplified);
+
             //WLD_Card
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Amalgam Pup", "缝合兽幼崽", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When you grow up, you can see that it is terrible.", "当其长大之后，你便能知晓其可怕之处。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chicken", "鸡", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dud Egg", "废物蛋", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An egg that doesn't grow? Maybe you can help it.", "一颗无法成长的蛋？你能帮帮它吗？", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Funny chiking", "有趣的鸡", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A very stinky chicken, but it has a sharp beak.", "一只很臭的鸡，但它有着锋利的喙。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Roc", "大鹏", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stinky Chiking", "臭鸡丁", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every chicken has a dream.", "每一只小鸡都有梦想。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Annoying Dog", "神烦狗", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Such an annoying dog, perhaps, is the author of a certain pixel game.", "这样一只讨厌的狗，也许是某个像素游戏的作者。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Arctic Fox", "北极狐", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A solitary Vulpes lagopus with great strength.", "一只孤独的、具有神力的北极狐。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Dog", "寻骨小狗", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Running and running, just to find its bones.", "跑来跑去，只为了找到它的骨头。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fox", "狐狸", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hyena", "鬣狗", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone seeking bandits in the wilderness.", "荒野中的寻骨强盗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Loky", "狼王洛基", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The king of the whole pack of wolves, very, very powerful.", "狼中之王，非常非常强大。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pastoral Dog", "中华田园犬", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Loyal Chinese pastoral dogs, they guard and protect their owners' houses.", "忠诚的中华田园犬，守卫和保护主人的房子。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spotted Hyena", "斑鬣狗", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spotted hyenas searching for bones, they grow stronger with their thirst for blood.", "斑鬣狗寻找骨头，它们因渴望血液而变得更强壮。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lion", "狮子", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A strong lion with a fairly strong attack.", "攻击力相当强的健壮狮子。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lioness", "雌狮", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The lioness guarding the lion herd are always on guard against external invasions.", "守护狮子群的母狮总是警惕外来入侵。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lynx", "猞猁", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The solitary Lynx attacks with its sharp claws and teeth.", "孤独的猞猁用锋利的爪子和牙齿攻击。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Puma", "美洲狮", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Strong Puma, the leader among feline animals.", "强壮的美洲狮，猫科动物中的领头。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Puma Cub", "美洲狮幼崽", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The immature Puma cub. It will grow into a Puma after a turn.", "幼年的美洲狮幼崽。它一回合就会长成一只美洲狮。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thunder Tiger", "雷虎", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "They came with thunder and then suddenly left.", "它随雷声而来，然后忽的离去。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Axolotl", "美西螈", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This cute little guy has a very special tail.", "这个可爱的小家伙有一条非常特别的尾巴。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Axolotl Tail", "美西螈尾巴", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Carp", "鲤鱼", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The fish in the Chinese totem is said to have unfathomable powers.", "中国图腾中的鲤鱼据说有着不可估量的力量。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Coral Polyp", "珊瑚虫", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "They coexist with the terrain.", "它们与地形相伴相生。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Globefish", "河豚", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Any creature that dreams of harming it will regret it.", "任何想伤害它的生物都会后悔的。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shark Egg", "鲨鱼蛋", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I've never seen a shark egg look like this before.", "我从来没见过鲨鱼蛋，原来长这样。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Squidge", "鱿鱼", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "What kind of creature will the little one grow into?", "这个小家伙会长成什么样的造物？", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Poor little ones......", "可怜的小家伙们....", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Joannes", "约安尼斯", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A peculiar creature that only exists in nightmares.", "一种只存在于噩梦中的奇特生物。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "God Joannes", "约安尼斯神", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Miemie Method", "方法放寒假", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A little cute who can write code.", "一只会写代码的小可爱。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Potato Elk", "土豆鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The potatoes have sprouted.", "如今土豆已经发芽了。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Potato Elk Cub", "土豆小鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A deer with potatoes on its antlers, it seems that the potato is the owner.", "一只鹿角上有土豆的小鹿，看起来土豆才是它的主人。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wapiti", "马鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A strong and vital deer.", "强壮而有活力的鹿。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cicada", "蝉", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "They gather in groups, calling on friends, which is annoying.", "它们聚在一起，走亲访友，这很烦人。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dragonfly", "蜻蜓", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dragonflies that point to where to hit.", "指哪打哪的蜻蜓。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Giant Centipede", "巨人蜈蚣", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The giant centipedes hidden deep underground use their sharp fangs to defend their territory.", "隐藏在地下深处的巨型蜈蚣用锋利的尖牙保卫自己的领地。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Leafcutter ant", "切叶蚁", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "They have sharp claws.", "它们有锋利的爪子。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Locust swarms", "蝗虫群", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A large number of locusts swept in, and it was a disaster for the peasants.", "大批蝗虫飞来，对农民来说是一场灾难。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shield bug", "臭蝽", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Disgusting stink bugs, no one wants to approach them.", "恶心的臭蝽，没人想接近它们。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Soldier Ant", "军蚁", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Soldier Ant that point to where to hit.", "指哪打哪的军蚁。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Acorn", "橡果", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Armadillo", "犰狳", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The 'Shield Dwarves' of the wilderness have both offense and defense when curled up.", "荒野中的“坚盾矮人”，蜷缩在一起时攻防兼备。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CowBoy", "西部牛仔", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The skilled marksman cowboy who hits every shot.", "百发百中的神枪手牛仔。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Elephant", "大象", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The largest creation on land, it has tenacious vitality and defense.", "陆地上最大的创造物，它有顽强的生命力和防御力。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Grizzly Cub", "灰熊幼崽", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The little bear has not yet grown up, but it is already prepared to face the darkness.", "小熊还没有长大，但它已经准备好面对黑暗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Honey badger", "蜜獾", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The vengeful honey badgers never feel afraid.", "复仇心强的蜜獾从不畏惧。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Meerkat", "猫鼬", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The watchful Meerkat, it attacks swiftly upon detecting a threat.", "警惕的猫鼬，一旦发现威胁就迅速攻击。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mongoose", "狐獴", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The incorruptable Mongoose is resistent to most toxins.", "永不腐败的狐獴对大多数毒素都有抵抗力。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stunted Grizzly", "弱熊", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Such a poor, scarred beast- what must have befallen it?", "这么一只可怜的、伤痕累累的野兽，它怎么了？", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Uri", "小毛球", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Abandoned children learn to be independent outside.", "被遗弃的孩子将在野外学会独立。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Uryli", "野人", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A wild man who has learned to be independent.", "学会了独立的野人。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chipmunk", "花栗鼠", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A small striped rodent of the forest, carrying an acorn with it as a meal.", "森林中的一种带条纹的小啮齿动物，带着橡子作为食物。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pushing Mouse", "推推鼠", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A huge southern mouse.", "一只巨大的南方老鼠。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rat Cub", "鼠崽", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A weak rat can grow into a noble rat king.", "弱小的老鼠可以成长为高贵的鼠王。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Buff Frog", "变异牛蛙", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A mutated frog that has gained power.", "获得力量的变异青蛙。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "God Frog", "变异牛蛙神", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Creeper", "苦力怕", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A terrifying creature from the world of Minecraft.", "我的世界里的可怕生物。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Crocodile", "鳄鱼", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An animal with a strong biting force.", "有很强咬合力的动物。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rattler egg", "响尾蛇蛋", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A snake egg that is about to hatch, although it is very fragile.", "即将孵化的蛇卵，虽然很脆弱。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sea Turtle", "大海龟", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vibrant sea turtles will not die even after being sacrificed.", "生命力顽强的海龟即使被献祭也不会死亡。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thorny Devil", "刺蜥", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This guy's characteristics are just like its name.", "这家伙的性格和名字一模一样。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thorny Devil Tail", "刺蜥的尾巴", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Free Rattler egg", "免费响尾蛇蛋", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Amalgam Egg", "缝合蛋", Language.ChineseSimplified);
+
+            //WLD_Other
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wilderness Legend", "荒野传说", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Add some simple cards based on the original imprint.", "在原有印记的基础上添加一些简单的卡片。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Acorns", "找寻橡果", Language.ChineseSimplified);
+            RegisterAbility("Acorns", "找寻橡果");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When placing [creature], draw an acorn.", "当放置[creature]时，获得一张橡果卡牌。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cutting Wings", "剪翼者", Language.ChineseSimplified);
+            RegisterAbility("Cutting Wings", "剪翼者");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Flying cards struck by [creature] will take 1 damage each time it declares an attack, and renders their wings useless.", "被[creature]击中的带有空袭印记的造物每次宣告攻击时将受到1点伤害，并使其空袭印记失效。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Swarm", "鸣蝉之夏", Language.ChineseSimplified);
+            RegisterAbility("Swarm", "鸣蝉之夏");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "when [creature] is placed, the remaining slots on the owner's side are filled with cicadas", "当[creature]被放置时，持牌人一侧的剩余空位将被蝉群填满。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Terrain Creator", "地形创建者", Language.ChineseSimplified);
+            RegisterAbility("Terrain Creator", "地形创建者");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When placing [creature] on the field, randomly draw a terrain card.", "将[creature]放置到场上时，随机抽取一张地形卡。", Language.ChineseSimplified);
 
 
-            
+
+
+            //OriginalModified_All
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Amoeba Squirrel", "阿米巴松鼠", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Annoying Aquasquirrel", "恼人水松鼠", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bloody Stone", "献祭之石", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Explosion Aquasquirrel", "自爆水松鼠", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Explosion Squirrel", "自爆松鼠", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Killer Bee", "杀人蜂", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Quality Squirrel", "优质松鼠", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Reach Squirrel", "高跳松鼠", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sacrificable Boulder", "可祭磐石", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tail Squirrel", "长尾松鼠", Language.ChineseSimplified);
+
+
 
         }
