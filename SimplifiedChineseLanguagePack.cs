@@ -2458,6 +2458,94 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A diligent gravedigger, he constantly supplies bones.", "作为一个勤劳的掘墓人，他不断地提供骨头。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Death Knight, the assassin in hell.", "死亡骑士，地狱中的刺客。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Knight", "觉醒骑士", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Horn", "觉醒的号角", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "the bonelord sheds its old horns, they take on a life of their own, to one day usurp their masters.", "骨王摆脱了它的旧角，开始了自己的魔生，有朝一日将篡夺其主。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mummy God", "木乃伊之神", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The King of Terror.", "此乃恐怖之王。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Necromancer", "觉醒的死灵法师", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Born solely for revenge.", "生来就是为了复仇。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Revenant", "觉醒的复生亡灵", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A formidable sarcophagus with terrifying creations sealed inside.", "一个可怕的石棺，里面封印着恶魔。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Pile", "一堆骨头", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Bone Pile", "觉醒的一堆骨头", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Tomb Robber", "觉醒的盗墓贼", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Even if he dies, he still robs tombs.", "即使死了，仍然盗墓。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A desperate man.", "一个绝望之人", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Zombie", "觉醒的丧尸", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Devouring Soul", "噬魂亡灵", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A skeleton devouring the soul.", "一个噬魂的骷髅。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Devouring Soul", "觉醒的噬魂亡灵", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Dead Eye", "觉醒的死人眼", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Both Deadeye and Dead Hand are said to be body parts of the same, now dead, god.", "与死人手一同，犹如某个神的一部分身体。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ferry Crow", "渡灵骨鸦", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Ferry Crow", "觉醒的渡灵骨鸦", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The mournful cry of looking down upon the undead after death.", "死亡的灵鸦，俯视众生的哀嚎", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Grave", "墓碑", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I hope no one will disturb it.", "我希望不会有人来打扰它", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Headless Man", "无头人", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An incompetent headless person, as if searching for something he had lost.", "一个不称职的无头人，好像在寻找他丢失的东西。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Kennel", "觉醒的犬舍", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A dog house, hopefully no one will mess with the things inside.", "一个犬舍，希望没人会打扰里面的东西。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pharmacist", "药剂师", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Pharmacist", "觉醒的药剂师", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A dead pharmacist who poisons all creations that oppose him.", "一个死去的药剂师，他将毒死所有反对他的造物。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skeleader", "亡灵领袖", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A skeleton leader, once on stage, is surrounded by skeletons.", "亡灵领袖一旦上场，便会被骷髅包围。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Skeleader", "觉醒的亡灵领袖", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skeleton Sniper", "骷髅狙击手", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A dead sniper.", "一位死去的狙击手。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Skeleton Sniper", "觉醒的骷髅狙击手", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Threaded Skeleton", "欺诈者", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Some people are born puppets, while others still control others after death.", "有些人生来就是傀儡，有些人死后仍掌控他人。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Threaded Skeleton", "觉醒的欺诈者", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undead Elk", "不死麋鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The undead elk, a former husk of of what it once was.", "不死麋鹿，生前的躯壳。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undead Elk Cub", "不死小麋鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Even death carries vitality and desire.", "甚至死后也带着活力和欲望。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undead Moose", "不死驼鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A rotting carcass of a long-departed imposing beast.", "一具久已逝去的雄伟野兽腐烂的尸体。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Undead Moose", "觉醒的不死驼鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undead Predator", "劫掠亡灵", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Warriors who die in war will never bow down.", "在战争中牺牲的战士永远不会屈服。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Undead Predator", "觉醒的劫掠亡灵", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undead RedHart", "不死红鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "its decaying mind retains the strength of sacrifice.", "它腐朽的心灵保留着牺牲的力量。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Undead RedHart", "觉醒的不死红鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undead Snapper", "鳄龟残骸", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Undead Snapper", "觉醒的鳄龟残骸", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The corpse of a stiff terrestrial creation.", "僵硬的陆地生物的尸体。", Language.ChineseSimplified);
+
+
+            //UndeadTempleINKCM_Ability
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skeleader", "亡灵领袖", Language.ChineseSimplified);
+            RegisterAbility("Skeleader", "亡灵领袖");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When placing [creature], skeleton cards will appear in nearby empty spaces. Skeleton has: 1 power, 1 health, Brittle.", "当放置[creature]时，骷髅牌将出现在相邻的空位。骷髅有：1力量，1生命，脆骨。", Language.ChineseSimplified);
+            
+            //WLD_Card
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
@@ -2471,5 +2559,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
 
+
+            
 
         }
