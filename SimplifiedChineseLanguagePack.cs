@@ -1348,8 +1348,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Morph", "不定变体", Language.ChineseSimplified);
             RegisterAbility("Morph", "不定变体");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, it will mimic the card opposing it. If there is no card opposing it, this card will perish.", "当带有该印记的卡牌被使用时，会复制对面位置的卡牌。若对面无卡牌，则该卡牌会死亡", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiplication", "增殖", Language.ChineseSimplified);
-            RegisterAbility("Multiplication", "增殖");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiplication", "矩阵乘法", Language.ChineseSimplified);
+            RegisterAbility("Multiplication", "矩阵乘法");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, draw another of this card, but with a different gem cost.", "使用带有该印记的卡牌时，抽一张同名卡牌，但其宝石需求会发生变化", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox Cycle", "玛珂循环", Language.ChineseSimplified);
             RegisterAbility("Mox Cycle", "玛珂循环");
@@ -1656,8 +1656,8 @@ namespace SimplifiedChineseLanguagePack
             RegisterCard("Bound Arms", "束缚之臂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Imprisoned Tyrant", "囚禁的暴君", Language.ChineseSimplified);
             RegisterCard("Imprisoned Tyrant", "囚禁的暴君");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiplication mage", "增殖法师", Language.ChineseSimplified);
-            RegisterCard("Multiplication mage", "增殖法师");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiplication mage", "矩阵法师", Language.ChineseSimplified);
+            RegisterCard("Multiplication mage", "矩阵法师");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This cycle can go on forever..", "此循环可永续不止", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Invisible mage", "隐形法师", Language.ChineseSimplified);
             RegisterCard("Invisible mage", "隐形法师");
@@ -2436,7 +2436,17 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magnificus Challenge Level: {0}", "蔓尼菲科挑战关卡：{0}", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magnificus Challenge Points: {0}", "蔓尼菲科挑战点数：{0}", Language.ChineseSimplified);
 
+            //UndeadTempleINKCM_Card
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Banshee", "觉醒的女妖", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A pile of bones, paying for bones in exchange for strength.", "一堆骨头，用骨头换取力量。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Bone Heap", "觉醒的骨堆", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Bonehound", "觉醒的寻骨猎犬", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+    
         }
-    }
-
-}
