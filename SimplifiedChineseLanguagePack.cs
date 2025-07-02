@@ -2739,17 +2739,17 @@ namespace SimplifiedChineseLanguagePack
         public static void RegisterTranslations()
         {
             //All
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "How the mod should handle side deck card backs for side decks that don't add their own custom card back. If enabled, automatically generates a unique card back based on the side deck's main card's portrait. Otherwise, the default squirrel back will be used.", "模组作者应该如何处理侧牌的卡牌背面，不添加自己的自定义卡背面。如果启用，将根据侧牌的卡面自动生成唯一的卡牌背面纹理。否则，将使用默认的松鼠卡背纹理。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whether to automatically add an Aqua version of all custom side decks. Buggy, not recommended.", "是否自动添加所有自定义侧牌的水生版本。不推荐。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whether or not Aquasquirrels and custom side decks marked as `CSDIsAqua` should be shown as options even when the Squirrel Fish challenge isn't on.", "即使松鼠鱼挑战未开启，是否应将水生松鼠和标记为“仅水生”的自定义侧牌显示为选项。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "How the mod should handle side deck card backs for side decks that don't add their own custom card back. If enabled, automatically generates a unique card back based on the side deck's main card's portrait. Otherwise, the default squirrel back will be used.", "模组作者应该如何处理副牌组的卡牌背面，不添加自己的自定义卡背面。如果启用，将根据副牌的卡面自动生成唯一的卡牌背面纹理。否则，将使用默认的松鼠卡背纹理。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whether to automatically add an Aqua version of all custom side decks. Buggy, not recommended.", "是否自动添加所有自定义副牌组的水生版本。不推荐。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whether or not Aquasquirrels and custom side decks marked as `CSDIsAqua` should be shown as options even when the Squirrel Fish challenge isn't on.", "即使松鼠鱼挑战未开启，是否应将水生松鼠和标记为“仅水生”的自定义副牌组显示为选项。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ConfCard{0}", "配置卡牌{0}", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CSDOption{0}", "CSD选项{0}", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CSDCard{0}", "CSD卡牌{0}", Language.ChineseSimplified); 
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Configure Side Deck", "配置侧牌", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Configure Side Deck", "配置副牌组", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "</color> Challenge Points", "</color> 挑战点数", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CURRENT SIDE DECK: ", "当前选择侧牌：", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CURRENT SIDE DECK: ", "当前选择副牌：", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Total Challenge Points: <color=#eef4c6>", "总挑战点数：<color=#eef4c6>", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select Side Deck", "侧牌选择", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select Side Deck", "副牌组选择", Language.ChineseSimplified);
 
             
         }
