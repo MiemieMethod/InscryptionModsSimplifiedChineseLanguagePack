@@ -2754,4 +2754,67 @@ namespace SimplifiedChineseLanguagePack
             
         }
     }
+
+    public class KCMLoadouts
+    {
+
+        public static void RegisterTranslations()
+        {
+            //All
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SELECT LOADOUT", "选择加载配置", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ITEMS: ", "道具：", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BONUS CARDS: ", "奖励卡牌：", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "FIRST NODE: ", "首个节点：", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TOTEMS: ", "图腾：", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "</color> TOP on <color=#eef4c6>", "</color> 头部在 <color=#eef4c6>", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "</color> BOTTOM", "</color> 底部", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, ", with ", "，和", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "</color> TOPs and <color=#eef4c6>+", "</color> 头部和 <color=#eef4c6>+", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "</color> BOTTOMs", "</color> 底部", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TEETH: <color=#eef4c6>", "初始货币：<color=#eef4c6>", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "REGION: <color=#eef4c6>", "区域：<color=#eef4c6>", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BOONS: ", "有利之处：", Language.ChineseSimplified);
+        }
+    }
+
+    public class PackManagement
+    {
+
+        public static void RegisterTranslations()
+        {
+            //All
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Contains {0} encounters from {1}.", "包含{0}场来自{1}的遭遇战。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Encounters Pack: ", "遭遇战卡包：", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "1 encounter", "1场遭遇战", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "{0} encounters", "{0}场遭遇战", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "1 region", "1个额外区域", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "{0} regions", "{0}个额外区域", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " and ", "和", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Card Pack: ", "卡牌包：", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards in this pack: {0} and {1} other{2}.", "此卡包中的卡牌：{0}和{1}其他{2}。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Can only use bool constructor if bool is true.", "只能在布尔值为true时使用构造函数。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inscryption: Beastly Card Expansion Pack", "邪恶冥刻：野兽卡牌拓展包", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The original set of cards featured in Leshy's cabin. Featuring wolves, mantises, and the occasional cockroach.", "莱西的小屋里放着的一套最原始的卡片，里面有狼獾，螳螂，偶尔还有蟑螂。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inscryption: Techno Card Expansion Pack", "邪恶冥刻：机械卡牌拓展包", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The original set of robotic cards, exclusively using the energy mechanic.", "最初的一套机械卡牌，专门使用能量的机械卡。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inscryption: Undead Card Expansion Pack", "邪恶冥刻：亡灵卡牌拓展包", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Powered by the bones of the dead, these cards have come back from the grave to fight for you.", "由死者的骨头提供动力，这些卡从坟墓里归来为你而战。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inscryption: Magickal Card Expansion Pack", "邪恶冥刻：魔法卡牌拓展包", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Harness the might of the moxen to summon forth apprentices and fight in the most honorable of duels.", "利用玛珂的力量召唤四个学徒，在最光荣的对决中战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Miscellaneous Community Cards", "其他社区卡牌包", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The unusual, unsorted, and unruly cards that have been added by mods but not properly sorted into packs.", "不寻常的、未分类的、难以控制的卡片，由各个模组添加，但未正确分类成卡包。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inscryption: Beastly Encounters", "邪恶冥刻：野兽遭遇战", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The original set of [summary] that Leshy has carefully curated for the ideal gaming experience.", "莱西精心策划的一套原始[summary]是为了获得理想的游戏体验。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Unsorted Regions and Encounters", "未分类区域和遭遇战", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "These [summary] have been added by mods but not properly sorted into packs.", "这些[summary]已由模组添加，但未正确分类到卡包中。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Evaluating pack {0} with {1}; split by temple {2}. Temple is {3}", "用{1}计算卡包{0}；被神庙{2}分割。神庙为{3}", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "{0} is in an active pack; setting temple to {1}", "{0}在激活卡包中；将神庙设置为{1}", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, " is NOT in an active pack; clearing metacategories", "不在激活卡包中；清除元类别", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The final card pool has {0} cards and {1} abilities", "最后的卡池中有{0}张卡和{1}个能力", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Filtering regions with packs ", "使用卡包过滤区域", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Region {0} started with {1} encounters. Filtered to zero by active packs; resetting to default encounters. There are now {2} encounters.", "区域{0}以{1}次遭遇战开始。由激活卡包过滤至零；重置为默认遭遇战。现在有{2}次遭遇战。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Region {0} started with {1} encounters. Filtered to {2} by active packs.", "区域{0}从{1}次遭遇战开始。已由激活卡包筛选到{2}。", Language.ChineseSimplified);
+
+        }
+    }
 }
