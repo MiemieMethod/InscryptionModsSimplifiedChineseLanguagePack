@@ -8,6 +8,9 @@ Current Supportted Mods:
 - [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
 - [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
 - [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
+- [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
+- [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
+- [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
 - More Adding...
 
 Please contact me if you find problems.
@@ -36,6 +39,9 @@ Authors List:
 - 成就 [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
 - 格里魔拉模组 [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
 - 蔓尼菲科模组 [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
+- 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
+- 凯茜的死亡神庙 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
+- 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
 - 正在加入更多……
 
 如果有任何问题请联系我修复。

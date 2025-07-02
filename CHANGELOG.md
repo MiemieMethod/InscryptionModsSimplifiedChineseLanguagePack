@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0
+
+Add supports for WildernessLegend-1.2.5, OriginalModified-1.3.5 and UndeadTempleINKCM-1.3.5.
+
 ## 1.2.5
 
 Fix some texts.

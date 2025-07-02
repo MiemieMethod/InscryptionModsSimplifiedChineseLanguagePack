@@ -2,10 +2,12 @@
 using System.Reflection;
 using BepInEx;
 using DiskCardGame;
+using HarmonyLib;
 using InscryptionAPI;
 using InscryptionAPI.Card;
 using InscryptionAPI.Dialogue;
 using InscryptionAPI.Localizing;
+using InscryptionAPI.Nodes;
 using InscryptionAPI.Pelts;
 using TMPro;
 using UnityEngine;
@@ -19,52 +21,80 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.2.5";
+        private const string Version = "1.3.0";
+
+        public static bool LanguageLoaded = false;
 
         private void Awake()
         {
             Logger.LogInfo($"Loaded {Name}!");
-            FixSimplifiedChineseFonts();
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), GUID);
             APIMod.RegisterTranslations();
             AchievementsMod.RegisterTranslations();
             GrimoraMod.RegisterTranslations();
             MagnificusMod.RegisterTranslations();
+            UndeadTempleINKCMMod.RegisterTranslations();
+            WildernessLegendMod.RegisterTranslations();
+            OriginalModifiedMod.RegisterTranslations();
         }
-        private void FixSimplifiedChineseFonts()
+
+        [HarmonyPatch(typeof(FontReplacementData), "Initialize")]
+        public class LanguagePatch
+        {
+            public static void Postfix()
+            {
+                if (!LanguageLoaded)
+                {
+                    FixSimplifiedChineseFonts();
+                }
+            }
+        }
+
+        private static void FixSimplifiedChineseFonts()
         {
             Debug.Log("Fixing Simplified Chinese Fonts");
-            FontReplacement DAGGERSQUAREReplacement = Resources.Load<FontReplacement>("data/localization/fontreplacement/DAGGERSQUARE_to_SC-SANS");
-            FontReplacement MISC3DReplacement = Resources.Load<FontReplacement>("data/localization/fontreplacement/MISC3D_to_SC-SCRIPT");
-            string bundlePath = Path.Combine(Paths.PluginPath, "MiemieMethod-Simplified_Chinese_Language_Pack_for_Mods", "chinese_font");
+            FontReplacement DAGGERSQUAREReplacement =
+                Resources.Load<FontReplacement>("data/localization/fontreplacement/DAGGERSQUARE_to_SC-SANS");
+            FontReplacement MISC3DReplacement =
+                Resources.Load<FontReplacement>("data/localization/fontreplacement/MISC3D_to_SC-SCRIPT");
+            string bundlePath = Path.Combine(Paths.PluginPath, "MiemieMethod-Simplified_Chinese_Language_Pack_for_Mods",
+                "chinese_font");
             var bundle = AssetBundle.LoadFromFile(bundlePath);
             if (bundle == null)
             {
-                Logger.LogError("字体AssetBundle加载失败！");
+                Debug.LogError("字体AssetBundle加载失败！");
                 return;
             }
+
             TMP_FontAsset NotoSans = bundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notosans_sc sdf.asset");
-            TMP_FontAsset NotoSerif = bundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notoserif_sc sdf.asset");
+            TMP_FontAsset NotoSerif =
+                bundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notoserif_sc sdf.asset");
             SetPrivateTMPFont(DAGGERSQUAREReplacement, NotoSans);
             SetPrivateTMPFont(MISC3DReplacement, NotoSerif);
+            LanguageLoaded = true;
         }
-        private void SetPrivateTMPFont(FontReplacement replacement, TMP_FontAsset fontAsset)
+
+        private static void SetPrivateTMPFont(FontReplacement replacement, TMP_FontAsset fontAsset)
         {
             if (replacement == null)
             {
-                Logger.LogError("FontReplacement为空，无法设置字体！");
+                Debug.LogError("FontReplacement为空，无法设置字体！");
                 return;
             }
+
             var type = typeof(FontReplacement);
             var field = type.GetField("replacementTMPFont", BindingFlags.NonPublic | BindingFlags.Instance);
             if (field == null)
             {
-                Logger.LogError("找不到replacementTMPFont字段，无法替换字体！");
+                Debug.LogError("找不到replacementTMPFont字段，无法替换字体！");
                 return;
             }
+
             field.SetValue(replacement, fontAsset);
-            Logger.LogInfo($"成功替换{replacement.name}的TMP字体为{fontAsset.name}");
+            Debug.Log($"成功替换{replacement.name}的TMP字体为{fontAsset.name}");
         }
     }
+
     public class APIMod
     {
         public static void RegisterTranslations()
@@ -74,7 +104,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SELECT CHALLENGES", "选择挑战", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CHALLENGE UNAVAILABLE", "挑战不可用", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "APPENDIX XII, SUBSECTION I - MOD BOONS {0}", "附录12，第一节 - 模组奖励{0}", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "APPENDIX XII, SUBSECTION I - SLOT EFFECTS {0}", "附录12，第一节 - 场地效果{0}", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "APPENDIX XII, SUBSECTION I - SLOT EFFECTS {0}", "附录12，第一节 - 卡槽效果{0}", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "APPENDIX XII, SUBSECTION I - MOD ABILITIES {0}", "附录12，第一节 - 模组能力{0}", Language.ChineseSimplified);
 
             // Config
@@ -104,6 +134,7 @@ namespace SimplifiedChineseLanguagePack
                     Debug.LogWarning($"未找到毛皮等级{text}的中文翻译，已跳过");
                     continue;
                 }
+
                 string dialogueId = "TraderPelts" + text;
                 if (text.Contains("pelt") || text.Contains("pelt"))
                 {
@@ -116,6 +147,7 @@ namespace SimplifiedChineseLanguagePack
             }
         }
     }
+
     public class AchievementsMod
     {
         public static void RegisterTranslations()
@@ -132,6 +164,7 @@ namespace SimplifiedChineseLanguagePack
 
         }
     }
+
     public class GrimoraMod
     {
         public static Dictionary<string, string> Cards = new();
@@ -140,6 +173,7 @@ namespace SimplifiedChineseLanguagePack
         {
             Cards.Add(en, zh);
         }
+
         public static void RegisterTranslations()
         {
             Debug.Log("Registering Tanslations for Grimora Mod");
@@ -1242,10 +1276,12 @@ namespace SimplifiedChineseLanguagePack
         {
             Cards.Add(en, zh);
         }
+
         public static void RegisterAbility(string en, string zh)
         {
             Abilities.Add(en, zh);
         }
+
         public static void RegisterTranslations()
         {
             Debug.Log("Registering Tanslations for Magnificus Mod");
@@ -2218,6 +2254,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Give me a [c:g1]spell[c:] of yours, and make it quick.", "给我一个你的[c:g1]法术[c:]，动作快点", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Greetings..", "你好……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Give me one of your [c:g1]spells[c:]", "给我一个你的[c:g1]法术[c:]", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Give me one of your [c:g1]spells[c:].", "给我一个你的[c:g1]法术[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh.. Greetings... I don't believe we've been introduced..", "哦…你好……我们似乎还没正式认识……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I've been force- er.. asked to train my spellcasting here.", "我被强制-呃…受邀来这儿练习法术", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Why don't you give me some of your [c:g1]spells[c:]?", "不如给我些你的[c:g1]法术[c:]如何？", Language.ChineseSimplified);
@@ -2436,7 +2473,15 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magnificus Challenge Level: {0}", "蔓尼菲科挑战关卡：{0}", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magnificus Challenge Points: {0}", "蔓尼菲科挑战点数：{0}", Language.ChineseSimplified);
 
-            //UndeadTempleINKCM_Card
+        }
+    }
+
+    public class UndeadTempleINKCMMod
+    {
+
+        public static void RegisterTranslations()
+        {
+            //Card
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Banshee", "觉醒的女妖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A pile of bones, paying for bones in exchange for strength.", "一堆骨头，用骨头换取力量。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Bone Heap", "觉醒的骨堆", Language.ChineseSimplified);
@@ -2516,16 +2561,23 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The corpse of a stiff terrestrial creation.", "僵硬的陆地生物的尸体。", Language.ChineseSimplified);
 
 
-            //UndeadTempleINKCM_Ability_and_Pack
+            //Ability_and_Pack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skeleader", "亡灵领袖", Language.ChineseSimplified);
-            RegisterAbility("Skeleader", "亡灵领袖");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When placing [creature], skeleton cards will appear in nearby empty spaces. Skeleton has: 1 power, 1 health, Brittle.", "当放置[creature]时，骷髅牌将出现在相邻的空位。骷髅有：1力量，1生命，脆骨。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Original Undead Card", "原版亡灵部落卡牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The cards for the Undead Tribe are in the original game.(ACT2)", "原版第二幕中的亡灵部落卡包。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NonOriginal Undead Card", "非原版亡灵部落卡包", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The expansion cards for the Undead Tribe are not in the original game.", "由模组作者原创的非原版亡灵部落卡包。", Language.ChineseSimplified);
 
-            //WLD_Card
+        }
+    }
+
+    public class WildernessLegendMod
+    {
+
+        public static void RegisterTranslations()
+        {
+            //Card
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Amalgam Pup", "缝合兽幼崽", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When you grow up, you can see that it is terrible.", "当其长大之后，你便能知晓其可怕之处。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chicken", "鸡", Language.ChineseSimplified);
@@ -2646,26 +2698,27 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Free Rattler egg", "免费响尾蛇蛋", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Amalgam Egg", "缝合蛋", Language.ChineseSimplified);
 
-            //WLD_Other
+            //Other
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wilderness Legend", "荒野传说", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Add some simple cards based on the original imprint.", "在原有印记的基础上添加一些简单的卡片。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Acorns", "找寻橡果", Language.ChineseSimplified);
-            RegisterAbility("Acorns", "找寻橡果");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When placing [creature], draw an acorn.", "当放置[creature]时，获得一张橡果卡牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cutting Wings", "剪翼者", Language.ChineseSimplified);
-            RegisterAbility("Cutting Wings", "剪翼者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Flying cards struck by [creature] will take 1 damage each time it declares an attack, and renders their wings useless.", "被[creature]击中的带有空袭印记的造物每次宣告攻击时将受到1点伤害，并使其空袭印记失效。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Swarm", "鸣蝉之夏", Language.ChineseSimplified);
-            RegisterAbility("Swarm", "鸣蝉之夏");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "when [creature] is placed, the remaining slots on the owner's side are filled with cicadas", "当[creature]被放置时，持牌人一侧的剩余空位将被蝉群填满。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Terrain Creator", "地形创建者", Language.ChineseSimplified);
-            RegisterAbility("Terrain Creator", "地形创建者");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When placing [creature] on the field, randomly draw a terrain card.", "将[creature]放置到场上时，随机抽取一张地形卡。", Language.ChineseSimplified);
 
+        }
+    }
 
+    public class OriginalModifiedMod
+    {
 
-
-            //OriginalModified_All
+        public static void RegisterTranslations()
+        {
+            //All
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Amoeba Squirrel", "阿米巴松鼠", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Annoying Aquasquirrel", "恼人水松鼠", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bloody Stone", "献祭之石", Language.ChineseSimplified);
@@ -2678,5 +2731,6 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tail Squirrel", "长尾松鼠", Language.ChineseSimplified);
 
 
-
         }
+    }
+}
