@@ -2814,7 +2814,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Filtering regions with packs ", "使用卡包过滤区域", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Region {0} started with {1} encounters. Filtered to zero by active packs; resetting to default encounters. There are now {2} encounters.", "区域{0}以{1}次遭遇战开始。由激活卡包过滤至零；重置为默认遭遇战。现在有{2}次遭遇战。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Region {0} started with {1} encounters. Filtered to {2} by active packs.", "区域{0}从{1}次遭遇战开始。已由激活卡包筛选到{2}。", Language.ChineseSimplified);
-
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Average Power Level: {0}", "平均力量等级：{0}", Language.ChineseSimplified);
         }
     }
 }
