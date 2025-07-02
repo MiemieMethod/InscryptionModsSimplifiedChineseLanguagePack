@@ -2733,4 +2733,37 @@ namespace SimplifiedChineseLanguagePack
 
         }
     }
+    public class CustomSideDeck
+    {
+
+        public static void RegisterTranslations()
+        {
+            //All
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "How the mod should handle side deck card backs for side decks that don't add their own custom card back. If enabled, automatically generates a unique card back based on the side deck's main card's portrait. Otherwise, the default squirrel back will be used.", "模组作者应该如何处理侧牌的卡牌背面，不添加自己的自定义卡背面。如果启用，将根据侧牌的卡面自动生成唯一的卡牌背面纹理。否则，将使用默认的松鼠卡背纹理。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whether to automatically add an Aqua version of all custom side decks. Buggy, not recommended.", "是否自动添加所有自定义侧牌的水生版本。不推荐。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whether or not Aquasquirrels and custom side decks marked as `CSDIsAqua` should be shown as options even when the Squirrel Fish challenge isn't on.", "即使松鼠鱼挑战未开启，是否应将水生松鼠和标记为“仅水生”的自定义侧牌显示为选项。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ConfCard{0}", "配置卡牌{0}", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Advanced", "高级", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ConfIndex", "配置索引", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "MainDeck", "主卡牌", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "EditSideDeck", "编辑侧牌", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Aqua", "水生", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "conf", "形态", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "def", "优质", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "self", "自我的", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SideDeck", "侧牌", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SideDeckValue", "侧牌价值", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SetCount", "设置计数", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CSDOption{0}", "CSD选项{0}", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CSDCard{0}", "CSD卡牌{0}", Language.ChineseSimplified); 
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ChoosePile", "选择卡堆", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Configure Side Deck", "配置侧牌", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "</color> Challenge Points", "</color> 挑战点数", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CURRENT SIDE DECK: ", "当前选择侧牌：", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Total Challenge Points: <color=#eef4c6>", "总挑战点数：<color=#eef4c6>", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select Side Deck", "侧牌选择", Language.ChineseSimplified);
+
+            
+        }
+    }
 }
