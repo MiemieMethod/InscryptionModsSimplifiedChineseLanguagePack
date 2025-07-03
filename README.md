@@ -11,6 +11,8 @@ Current Supportted Mods:
 - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
 - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
 - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
+- [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
+- [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
 - More Adding...
 
 Please contact me if you find problems.
@@ -42,6 +44,8 @@ Authors List:
 - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
 - 凯茜的死亡神庙 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
 - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
+- 自定义副牌组 [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
+- 卡包管理器API [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
 - 正在加入更多……
 
 如果有任何问题请联系我修复。
