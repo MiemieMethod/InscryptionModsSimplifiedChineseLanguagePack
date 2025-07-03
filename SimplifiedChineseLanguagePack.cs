@@ -22,7 +22,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.3.1";
+        private const string Version = "1.3.2";
 
         public static bool LanguageLoaded = false;
 
@@ -1540,17 +1540,18 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It draws its power from the mana of the mox on the board.", "它从牌桌上玛珂的法力中汲取力量", Language.ChineseSimplified);
             RegisterCard("Blue Mage", "蓝色法师", "Never doubt its utility.", "永远不要质疑它的实用性");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Never doubt its utility.", "永远不要质疑它的实用性", Language.ChineseSimplified);
-            RegisterCard("Blue Sporemage", "蓝色孢子法师", "A mage, proficient in a martial stance which allows it block nearly anything..", "精通武学架势的法师，几乎能格挡一切攻击。");
+            RegisterCard("Blue Sporemage", "蓝色孢子法师", "", "");
+            RegisterCard("Force Mage", "强力法师", "A mage, proficient in a martial stance which allows it block nearly anything..", "精通武学架势的法师，几乎能格挡一切攻击。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A mage, proficient in a martial stance which allows it block nearly anything..", "精通武学架势的法师，几乎能格挡一切攻击。", Language.ChineseSimplified);
-            RegisterCard("Force Mage", "强力法师", "A wretched, unstable creature of gems. It can tear through anything.", "可悲而不稳定的宝石造物。它能撕碎任何东西。");
+            RegisterCard("Gem Fiend", "宝石魔鬼", "A wretched, unstable creature of gems. It can tear through anything.", "可悲而不稳定的宝石造物。它能撕碎任何东西。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A wretched, unstable creature of gems. It can tear through anything.", "可悲而不稳定的宝石造物。它能撕碎任何东西。", Language.ChineseSimplified);
-            RegisterCard("Gem Fiend", "宝石魔鬼", "Using its spells it soars high to hit directly", "借助法术腾空而起，可直接攻击");
+            RegisterCard("Hover Mage", "悬浮法师", "Using its spells it soars high to hit directly", "借助法术腾空而起，可直接攻击");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Using its spells it soars high to hit directly", "借助法术腾空而起，可直接攻击", Language.ChineseSimplified);
-            RegisterCard("Hover Mage", "悬浮法师", "An intimidating and towering defense, however requiring gems to stay stable.", "令人望而生畏的巍峨防御，但需消耗玛珂来维持稳定。");
+            RegisterCard("Mage Knight", "法师骑士", "An intimidating and towering defense, however requiring gems to stay stable.", "令人望而生畏的巍峨防御，但需消耗玛珂来维持稳定。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An intimidating and towering defense, however requiring gems to stay stable.", "令人望而生畏的巍峨防御，但需消耗玛珂来维持稳定。", Language.ChineseSimplified);
-            RegisterCard("Mage Knight", "法师骑士", "Using its spells, it boosts the damage of all gems.", "运用法术强化所有宝石的攻击力");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Using its spells, it boosts the damage of all gems.", "运用法术强化所有宝石的攻击力", Language.ChineseSimplified);
-            RegisterCard("Orange Mage", "橙色法师", "A lifeless practice target.. standing tall enough to block any attacks.", "无生命的练习靶标……巍然矗立，足以格挡一切攻击。");
+            RegisterCard("Orange Mage", "橙色法师", "Using its spells, it boosts the damage of all gems.", "运用他的法术，能强化所有宝石的攻击力");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Using its spells, it boosts the damage of all gems.", "运用他的法术，能强化所有宝石的攻击力", Language.ChineseSimplified);
+            RegisterCard("Practice Wizard", "陪练巫师", "A lifeless practice target.. standing tall enough to block any attacks.", "无生命的练习靶标……巍然矗立，足以格挡一切攻击。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A lifeless practice target.. standing tall enough to block any attacks.", "无生命的练习靶标……巍然矗立，足以格挡一切攻击。", Language.ChineseSimplified);
             RegisterCard("Ruby Golem", "红宝石魔像", "A construct powered by Mox.As it perishes it leaves behind parts of itself.", "由玛珂供能的构装体。阵亡时会留下部分残骸");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A construct powered by Mox.As it perishes it leaves behind parts of itself.", "由玛珂供能的构装体。阵亡时会留下部分残骸", Language.ChineseSimplified);
@@ -1762,8 +1763,11 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rune Mage", "符文法师", Language.ChineseSimplified);
             RegisterCard("Rune Mage", "符文法师", "It conjures explosive runes alongside it when summoned. Not a good idea, I must say.", "召唤时会同时生成爆炸符文。说真的，这可不是个好主意。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It conjures explosive runes alongside it when summoned. Not a good idea, I must say.", "召唤时会同时生成爆炸符文。说真的，这可不是个好主意。", Language.ChineseSimplified);
+            RegisterCard("--~~--~~--", "--~~--~~--", "So it arrives.", "它来了");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "So it arrives.", "它来了", Language.ChineseSimplified);
+            RegisterCard("~-~-~-~-~-~", "~-~-~-~-~-~", "I foresaw its arrival.", "我早已预见它的到来");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I foresaw its arrival.", "我早已预见它的到来", Language.ChineseSimplified);
+            RegisterCard("~~--~~--~~", "~~--~~--~~", "At last, it is here.", "终于，它来了");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At last, it is here.", "终于，它来了", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sniper Sage", "狙击贤者", Language.ChineseSimplified);
             RegisterCard("Sniper Sage", "狙击贤者", "A mage whose training allows it to cast spells from afar.", "经过训练的法师，可从远处施放法术");
@@ -1953,9 +1957,6 @@ namespace SimplifiedChineseLanguagePack
             RegisterCard("Unsealed Body", "解封之躯", "", "");
             RegisterCard("Released Arms", "解放之臂", "", "");
             RegisterCard("Unleashed Tyrant", "解缚的暴君", "", "");
-            RegisterCard("--~~--~~--", "--~~--~~--", "", "");
-            RegisterCard("~-~-~-~-~-~", "~-~-~-~-~-~", "", "");
-            RegisterCard("~~--~~--~~", "~~--~~--~~", "", "");
             foreach (var kvp in Cards)
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~" + kvp.Key + "~", "~" + kvp.Value + "~", Language.ChineseSimplified);

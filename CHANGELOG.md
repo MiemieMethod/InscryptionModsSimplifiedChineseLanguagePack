@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.2
+
+Fix some texts.
+
 ## 1.3.1
 
 Add supports for CustomSideDeck-2.3.1, PackManagementAPI-1.2.2.
