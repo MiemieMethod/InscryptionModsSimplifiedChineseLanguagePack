@@ -2952,12 +2952,16 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hatched by magic eggs.", "由魔蛋孕育而生。", Language.ChineseSimplified);
             // sigils
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Coffee Time", "咖啡时间", Language.ChineseSimplified);
+            RegisterAbility("Coffee Time", "咖啡时间");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] receives the first damage, it gains 2 strength.", "当[creature]受到第一次伤害时，它获得2点力量。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Death of Arrogance", "傲慢之死", Language.ChineseSimplified);
+            RegisterAbility("Death of Arrogance", "傲慢之死");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, adjacent cards gain 2 power.", "当[creature]死亡时，与之相邻卡牌获得2点力量。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Death of Greed", "贪婪之死", Language.ChineseSimplified);
+            RegisterAbility("Death of Greed", "贪婪之死");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, adjacent cards gain 3 health.", "当[creature]死亡时，与之相邻卡牌获得3点生命。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "God Made", "上帝造物", Language.ChineseSimplified);
+            RegisterAbility("God Made", "上帝造物");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, a Homunculus is created on each empty adjacent space. The Homunculus has : 1 power, 1 health, Familiar.", "当[creature]被放置到场上时，将在每个相邻的空位上生成一个人造人。人造人具有：1 点力量，1 点生命，使魔。", Language.ChineseSimplified);
             // Other
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magic Expansion", "魔法扩展", Language.ChineseSimplified);
