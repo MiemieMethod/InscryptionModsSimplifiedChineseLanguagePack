@@ -2915,28 +2915,40 @@ namespace SimplifiedChineseLanguagePack
         {
             // card
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Angry Witch", "愤怒魔女", Language.ChineseSimplified);
+            RegisterCard("Angry Witch", "愤怒魔女", "The witch in charge of anger will ignite flames in the opposite battlefield.", "掌控愤怒之力的魔女，将在对方战场上点燃火焰。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The witch in charge of anger will ignite flames in the opposite battlefield.", "掌控愤怒之力的魔女，将在对方战场上点燃火焰。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Arrogant Witch", "傲慢魔女", Language.ChineseSimplified);
+            RegisterCard("Arrogant Witch", "傲慢魔女", "The witch who mastered the power of arrogance appeared with the demon.", "掌控傲慢之力的魔女，总是伴随着使魔一起出现。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The witch who mastered the power of arrogance appeared with the demon.", "掌控傲慢之力的魔女，总是伴随着使魔一起出现。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Coffee Mage", "咖啡法师", Language.ChineseSimplified);
+            RegisterCard("Coffee Mage", "咖啡法师", "Mages who love coffee use gems to regulate their breath.", "喜欢咖啡的法师用宝石来调息。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mages who love coffee use gems to regulate their breath.", "喜欢咖啡的法师用宝石来调息。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Funny MagiChiking", "有趣的魔法鸡", Language.ChineseSimplified);
+            RegisterCard("Funny MagiChiking", "有趣的魔法鸡", "A smelly Rooster who has learned magic.", "一只学会了魔法的臭公鸡。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A smelly Rooster who has learned magic.", "一只学会了魔法的臭公鸡。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gluttonous Witch", "暴食魔女", Language.ChineseSimplified);
+            RegisterCard("Gluttonous Witch", "暴食魔女", "The witch in charge of gluttony committed a terrible sin.", "掌管暴食的魔女犯下了可怕的罪孽，总是令人生畏。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The witch in charge of gluttony committed a terrible sin.", "掌管暴食的魔女犯下了可怕的罪孽，总是令人生畏。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Greedy Witch", "贪婪魔女", Language.ChineseSimplified);
+            RegisterCard("Greedy Witch", "贪婪魔女", "The witch who controls the power of greed, unfortunately, can only bring value to us after death.", "掌管贪婪之力的魔女，可惜只有死后才能带来更多价值。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The witch who controls the power of greed, unfortunately, can only bring value to us after death.", "掌管贪婪之力的魔女，可惜只有死后才能带来更多价值。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inquisitive Witch", "强欲魔女", Language.ChineseSimplified);
+            RegisterCard("Inquisitive Witch", "强欲魔女", "Nothing is more powerful than her curiosity.", "没有什么比她的好奇心更强大的了。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nothing is more powerful than her curiosity.", "没有什么比她的好奇心更强大的了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Jealous Witch", "嫉妒魔女", Language.ChineseSimplified);
+            RegisterCard("Jealous Witch", "嫉妒魔女", "The witch in charge of jealousy has powerful magic and power.", "掌管嫉妒的魔女拥有强大的魔法和力量。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The witch in charge of jealousy has powerful magic and power.", "掌管嫉妒的魔女拥有强大的魔法和力量。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lazy Witch", "怠惰魔女", Language.ChineseSimplified);
+            RegisterCard("Lazy Witch", "怠惰魔女", "The witch in charge of the power of laziness is really a lazy guy.", "掌控怠惰之力的魔女，真是个懒惰的家伙。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The witch in charge of the power of laziness is really a lazy guy.", "掌控怠惰之力的魔女，真是个懒惰的家伙。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lust Witch", "色欲魔女", Language.ChineseSimplified);
+            RegisterCard("Lust Witch", "色欲魔女", "The witch in charge of lust, don't look into her eyes.", "掌控色欲之力的魔女，不要看她的眼睛。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The witch in charge of lust, don't look into her eyes.", "掌控色欲之力的魔女，不要看她的眼睛。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nine Color Deer", "九色鹿", Language.ChineseSimplified);
+            RegisterCard("Nine Color Deer", "九色鹿", "The colorful nine color deer has precious value.", "缤纷多彩的九色鹿具有宝贵的价值。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The colorful nine color deer has precious value.", "缤纷多彩的九色鹿具有宝贵的价值。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stinky MagiChiking", "魔法臭鸡丁", Language.ChineseSimplified);
+            RegisterCard("Stinky MagiChiking", "魔法臭鸡丁", "Hatched by magic eggs.", "由魔蛋孕育而生。");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hatched by magic eggs.", "由魔蛋孕育而生。", Language.ChineseSimplified);
             // sigils
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Coffee Time", "咖啡时间", Language.ChineseSimplified);
