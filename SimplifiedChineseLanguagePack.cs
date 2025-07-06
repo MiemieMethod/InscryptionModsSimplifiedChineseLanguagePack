@@ -1408,8 +1408,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ignite", "引火", Language.ChineseSimplified);
             RegisterAbility("Ignite", "引火");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, every empty opposing slot will be filled with flames. A flame is defined as a 0/1, Annoying.", "当带有该印记的卡牌被使用时，所有对侧空位将被火焰填满。火焰具有：0点力量，1点生命值，惹人生厌印记。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Projection", "投影", Language.ChineseSimplified);
-            RegisterAbility("Projection", "投影");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Projection", "星空投影", Language.ChineseSimplified);
+            RegisterAbility("Projection", "星空投影");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is stuck, it will move and leave behind an astral projection of itself.", "带有该印记的卡牌受击时会移动，并留下自身的星界投影", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell Book", "法术大全", Language.ChineseSimplified);
             RegisterAbility("Spell Book", "法术大全");
@@ -1661,8 +1661,8 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Soda Mage", "碳酸法师", Language.ChineseSimplified);
             RegisterCard("Soda Mage", "碳酸法师", "This pathetic mage melted away from drinking too much carbonated liquid..", "这个可悲的法师因饮用过多碳酸饮料而融化了");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This pathetic mage melted away from drinking too much carbonated liquid..", "这个可悲的法师因饮用过多碳酸饮料而融化了", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whitesmith", "神宝工匠", Language.ChineseSimplified);
-            RegisterCard("Whitesmith", "神宝工匠", "Their life's work was dedicated to reinforcing gems.", "他们毕生致力于强化玛珂");
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whitesmith", "锻宝匠", Language.ChineseSimplified);
+            RegisterCard("Whitesmith", "锻宝匠", "Their life's work was dedicated to reinforcing gems.", "他们毕生致力于强化玛珂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Their life's work was dedicated to reinforcing gems.", "他们毕生致力于强化玛珂", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Puppeteer", "傀儡师", Language.ChineseSimplified);
             RegisterCard("Puppeteer", "傀儡师", "Its mastery of control magicks lets even Practice Wizards contribute.", "它精通的操控魔法能让陪练巫师也派上用场");
@@ -2908,5 +2908,53 @@ namespace SimplifiedChineseLanguagePack
             //    }
             //}
         }
+    public class Magic_Expansion
+    {
+
+        public static void RegisterTranslations()
+        {
+            // card
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Angry Witch", "愤怒魔女", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            // sigils
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "", "", Language.ChineseSimplified);  
+        }
+    }
     }
 }
