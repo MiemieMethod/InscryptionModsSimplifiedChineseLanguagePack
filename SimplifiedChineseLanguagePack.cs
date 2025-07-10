@@ -22,7 +22,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.3.2";
+        private const string Version = "1.3.3";
 
         public static bool LanguageLoaded = false;
 
@@ -1308,6 +1308,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Show a grid around the player in tabletop mode.", "在桌面模式下显示玩家周围的网格。", Language.ChineseSimplified);
 
             // Ability
+            Debug.Log("开始注册蔓尼菲科模组印记");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blank Mox", "空白玛珂", Language.ChineseSimplified);
             RegisterAbility("Blank Mox", "空白玛珂");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is drawn, it will materialize into a random Mox Crystal. \n When on another card, the card will generate a random Mox Crystal.", "抽到带有该印记的卡牌时，它会实体化为随机一种玛珂水晶。\n当该印记存在于其他卡牌上时，该卡牌会生成随机一种玛珂水晶。", Language.ChineseSimplified);
@@ -1518,8 +1519,10 @@ namespace SimplifiedChineseLanguagePack
                 }
                 RegisterAbility(info.rulebookName, Localization.Translate(info.rulebookName));
             }
+            Debug.Log($"蔓尼菲科模组印记已注册{Abilities.Count}个");
 
             // Card
+            Debug.Log("开始注册蔓尼菲科模组卡牌");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox", "玛珂", Language.ChineseSimplified);
             RegisterCard("Mox", "玛珂", "its a me moxio", "是我，玛珂奥");
             RegisterCard("Ruby Mox", "红宝石玛珂", "its a me moxio", "是我，玛珂奥");
@@ -1964,8 +1967,10 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cardpack ruby", "红宝石卡包", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cardpack emerald", "绿宝石卡包", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fill In Minimap", "填充小地图", Language.ChineseSimplified);
+            Debug.Log($"蔓尼菲科模组卡牌已注册{Cards.Count}个");
 
             // Achievement
+            Debug.Log("开始注册蔓尼菲科模组成就");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magnificus Mod Achievements", "蔓尼菲科模组成就", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magical Labyrinth", "魔法迷宫", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Defeat the final boss.", "击败最终首领", Language.ChineseSimplified);
@@ -1992,6 +1997,7 @@ namespace SimplifiedChineseLanguagePack
             // Consumable
 
             // ShowUntilInput
+            Debug.Log("开始注册蔓尼菲科模组ShowUntilInput");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "WHAT? BUT DON'T I GET TO LEAVE?", "什么？难道我不能离开吗？", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I STILL HAVE SO MUCH STIMULATION TO GET!!", "我还有那么多刺激没体验呢！！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]PLEASE, CHALLENGER,[c:] YOU HAVE TO GET ME-", "[c:g2]求你了挑战者[c:]，你必须带我-", Language.ChineseSimplified);
@@ -2006,10 +2012,12 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your olden sigils shant be of any use in this battle.", "你原有的印记在这场战斗中毫无用处", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "As the smoke of combat clears, the mysterious runes reveal themselves to you.", "当战斗的硝烟散去，神秘的符文在你面前显现。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ah, but this one does not interest the runes.", "啊，但这张可引不起符文的兴趣。", Language.ChineseSimplified);
+            Debug.Log("特殊对话：契约正在对你的[creature]生效：开始");
             foreach (var kvp in Cards)
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The pact takes its effect on your " + kvp.Key + "..", "契约正在对你的" + kvp.Value + "生效……", Language.ChineseSimplified);
             }
+            Debug.Log("特殊对话：契约正在对你的[creature]生效：结束");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The sigil, replaced, for better or for worse.", "印记已被替换，福祸难料。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g3]Hmm..?[c:] [c:g1]Another[c:] [c:g3]student[c:] [c:g1]here?[c:]", "[c:g3]嗯…？[c:][c:g1]又来[c:][c:g3]一个[c:][c:g1]学徒？[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g3]Have[c:] [c:g1]you[c:] [c:g3]come[c:] [c:g1]to[c:] [c:g3]assist[c:] [c:g1]my[c:] [c:g3]studies?[c:]", "[c:g3]是[c:][c:g1]来[c:][c:g3]协助[c:][c:g1]我[c:][c:g3]研习[c:][c:g1]的吗？[c:]", Language.ChineseSimplified);
@@ -2227,14 +2235,17 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I DON'T THINK WE'VE MET BEFORE!", "我们素未谋面！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "YOU ARENT SUPPOSED TO SEE ME UNTILL LATER, BUT..", "你本不该此时见我，但……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, ".. It appears you have nothing else to offer..", "..看来你已无物可供……", Language.ChineseSimplified);
+            Debug.Log("特殊对话：你的[creature]正位于附魔之地……\\n你可以选择让它留在那里接受附魔……：开始");
             foreach (var value in Cards.Values)
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your" + value + " sits on the enchanted grounds...\nYou could either leave it there, to enchant it..", "你的" + value + "正位于附魔之地……\n你可以选择让它留在那里接受附魔……", Language.ChineseSimplified);
             }
+            Debug.Log("特殊对话：你的[creature]正位于附魔之地……\\n你可以选择让它留在那里接受附魔……：结束");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Or you can slaughter it to improve the enchantment, dictated by the [c:g1]Ethereal Sigils[c:].", "或者根据[c:g1]虚空印记[c:]的指引，献祭它以强化附魔效果", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The choice is yours.", "选择权在你手中", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g1]Ethereal Sigils[c:] hover around the grounds.", "[c:g1]虚空印记[c:]在场地周围浮动", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You may use them to predict a possible outcome..", "你可以借此预判可能的结果……", Language.ChineseSimplified);
+            Debug.Log("特殊对话：你的[creature]获得了[sigil]祝福/被施加了[sigil]诅咒！：开始");
             foreach (var value in Cards.Values)
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your " + value + " has been burdened with Glass Cannon!", "你的" + value + "被施加了玻璃大炮的诅咒！", Language.ChineseSimplified);
@@ -2248,6 +2259,7 @@ namespace SimplifiedChineseLanguagePack
                     LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your" + value + " has been burdened with " + kvp.Key + "!", "你的" + value + "被施加了" + kvp.Value + "诅咒！", Language.ChineseSimplified);
                 }
             }
+            Debug.Log("特殊对话：你的[creature]获得了[sigil]祝福/被施加了[sigil]诅咒！：结束");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The [c:g1]Sacrifical Grounds[c:] stand before you.\nLegends tell of cards growing exponentially in power here, under the right circumstances..", "[c:g1]献祭之地[c:]矗立眼前。\n传说在特定条件下，卡牌能在此获得指数级的力量提升……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, ".. However, it appears that you don't have anything to offer to the enchanted grounds..", "……但看来你并未携带适合这片附魔之地的祭品", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Enchanted Grounds seem to be slightly improved.", "附魔之地似乎略有擢升。", Language.ChineseSimplified);
@@ -2282,6 +2294,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Now your spell will last forever..", "现在，你的法术将永世长存……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "So, you truly wish to release that tyrant..", "所以，你当真要释放那个暴君……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I hope you understand the type of power you are dealing with..", "希望你明白自己正在染指何种力量……", Language.ChineseSimplified);
+            Debug.Log("特殊对话：你的[creature]现已摆脱了[sigil]的束缚……：开始");
             foreach (var kvp in Cards)
             {
                 foreach (var kvp2 in Abilities)
@@ -2289,6 +2302,7 @@ namespace SimplifiedChineseLanguagePack
                     LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your " + kvp.Key + " is now free of its " + kvp2.Key + "...", "你的" + kvp.Value + "现已摆脱了" + kvp2.Value + "的束缚……", Language.ChineseSimplified);
                 }
             }
+            Debug.Log("特殊对话：你的[creature]现已摆脱了[sigil]的束缚……：结束");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hmm.. The essence of that sigil does not resonate with your card..", "嗯……该印记的精髓与你的卡牌并不契合……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "..It appears nothing was gained", "……看来一无所获", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The essence of the sigil has imbued the card with more power.", "印记的精髓使卡牌获得了更多能量", Language.ChineseSimplified);
@@ -2340,6 +2354,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Or, remove one of your spells..", "要么移除你的一张法术……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You don't have any cards to use that [c:g1]potion[c:] on.", "没有可施加[c:g1]药剂[c:]的卡牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You won't have any cards to use that spell on.", "你已无卡牌可施法。", Language.ChineseSimplified);
+            Debug.Log("特殊对话：你的[creature]未持有魔力。：开始");
             foreach (var value in Cards.Values)
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your " + value + " wields no mana.", "你的" + value + "未持有魔力。", Language.ChineseSimplified);
@@ -2349,6 +2364,7 @@ namespace SimplifiedChineseLanguagePack
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The " + value + " has no mana.", value + "未持有魔力。", Language.ChineseSimplified);
             }
+            Debug.Log("特殊对话：你的[creature]未持有魔力。：结束");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You can not draw mana from that.", "你无法从中汲取魔力。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Through this maze of paintings and illusions, there may be some that deign to join your deck.\nChoose carefully.", "穿越这幅画作与幻象的迷宫，或有存在愿屈尊加入你的牌组\n认真选吧", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "... Curious.", "……有点意思", Language.ChineseSimplified);
@@ -2382,17 +2398,24 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The released Master Magnus approaches.", "解缚的至尊大师正在逼近。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Careful. That horrible master is here.", "当心，那个可怕的大师来了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Master Magnus has arrived. Be cautious.", "至尊大师已至，务必小心", Language.ChineseSimplified);
+            Debug.Log("特殊对话：你瞥见一张[creature]。[description]：开始");
             foreach (var kvp in Cards)
             {
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You glance at a " + kvp.Key + ". " + CardsDescription[kvp.Key].Key, "你瞥见一张" + kvp.Value + "。" + CardsDescription[kvp.Key].Value, Language.ChineseSimplified);
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A " + kvp.Key + " appears from within the portrait. " + CardsDescription[kvp.Key].Key, kvp.Value + "从肖像画中浮现。" + CardsDescription[kvp.Key].Value, Language.ChineseSimplified);
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You gaze at a " + kvp.Key + ". " + CardsDescription[kvp.Key].Key, "你凝视着一张" + kvp.Value + "。" + CardsDescription[kvp.Key].Value, Language.ChineseSimplified);
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You glance at an " + kvp.Key + ". " + CardsDescription[kvp.Key].Key, "你瞥见一张" + kvp.Value + "。" + CardsDescription[kvp.Key].Value, Language.ChineseSimplified);
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An " + kvp.Key + " appears from within the portrait. " + CardsDescription[kvp.Key].Key, kvp.Value + "从肖像画中浮现。" + CardsDescription[kvp.Key].Value, Language.ChineseSimplified);
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You gaze at an " + kvp.Key + ". " + CardsDescription[kvp.Key].Key, "你凝视着一张" + kvp.Value + "。" + CardsDescription[kvp.Key].Value, Language.ChineseSimplified);
+                var key = kvp.Key;
+                var value = kvp.Value;
+                var descKey = CardsDescription[key].Key;
+                var descValue = CardsDescription[key].Value;
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You glance at a " + key + ". " + descKey, "你瞥见一张" + value + "。" + descValue, Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A " + key + " appears from within the portrait. " + descKey, value + "从肖像画中浮现。" + descValue, Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You gaze at a " + key + ". " + descKey, "你凝视着一张" + value + "。" + descValue, Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You glance at an " + key + ". " + descKey, "你瞥见一张" + value + "。" + descValue, Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An " + key + " appears from within the portrait. " + descKey, value + "从肖像画中浮现。" + descValue, Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You gaze at an " + key + ". " + descKey, "你凝视着一张" + value + "。" + descValue, Language.ChineseSimplified);
             }
+            Debug.Log("特殊对话：你瞥见一张[creature]。[description]：结束");
 
             // ShowThenClear
+            Debug.Log("开始注册蔓尼菲科模组ShowThenClear");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Choose wisely.", "认真选吧", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ARRGH!!!", "呃啊！！！", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g1]STRIKE![c:]", "[c:g1]攻击！[c:]", Language.ChineseSimplified);
@@ -2408,21 +2431,22 @@ namespace SimplifiedChineseLanguagePack
                 { GemType.Blue, "蓝色" },
                 { GemType.Green, "绿色" },
             };
-            Debug.Log("gemType loop start");
+            Debug.Log("特殊对话：你的[gem]玛珂不足两颗，无法使用此牌：开始");
             foreach (var gemType in gemTypes.Keys)
             {
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You don't have two " + HintsHandler.GetColorCodeForGem(gemType) + Localization.Translate(gemType.ToString()) + "</color> gems to play that.", "你的" + HintsHandler.GetColorCodeForGem(gemType) + Localization.Translate(gemType.ToString()) + "</color>玛珂不足两颗，无法使用此牌", Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You don't have two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color> gems to play that.", "你的" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>玛珂不足两颗，无法使用此牌", Language.ChineseSimplified);
                 foreach (var value in Cards.Values)
                 {
-                    LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + Localization.Translate(gemType.ToString()) + "</color> gems to play your " + value + ".", "需要两颗" + HintsHandler.GetColorCodeForGem(gemType) + Localization.Translate(gemType.ToString()) + "</color>玛珂才能使用你的" + value, Language.ChineseSimplified);
-                    LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You don't have enough " + HintsHandler.GetColorCodeForGem(gemType) + Localization.Translate(gemType.ToString()) + "</color> gems on the board to play that " + value + ".", "牌桌上的" + HintsHandler.GetColorCodeForGem(gemType) + Localization.Translate(gemType.ToString()) + "</color>玛珂数量不足，无法使用这张" + value, Language.ChineseSimplified);
+                    LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color> gems to play your " + value + ".", "需要两颗" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>玛珂才能使用你的" + value, Language.ChineseSimplified);
+                    LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You don't have enough " + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color> gems on the board to play that " + value + ".", "牌桌上的" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>玛珂数量不足，无法使用这张" + value, Language.ChineseSimplified);
                 }
-                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You need two " + HintsHandler.GetColorCodeForGem(gemType) + Localization.Translate(gemType.ToString()) + "</color> gems on the board.", "牌桌上需要有两颗" + HintsHandler.GetColorCodeForGem(gemType) + Localization.Translate(gemType.ToString()) + "</color>玛珂", Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You need two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color> gems on the board.", "牌桌上需要有两颗" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>玛珂", Language.ChineseSimplified);
             }
-            Debug.Log("gemType loop end");
+            Debug.Log("特殊对话：你的[gem]玛珂不足两颗，无法使用此牌：结束");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You need at least one [v:1] gem on the board to play that [v:0].", "牌桌上至少需有一颗[v:1]宝石才能使用这张[v:0]。", Language.ChineseSimplified); // 原版翻译修正
 
             // ShowMessage
+            Debug.Log("开始注册蔓尼菲科模组ShowMessage");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "whats up", "咋了", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "My [c:g1]Goo Mage[c:] falls by your hands.. I expected more from him..", "我的[c:g1]黏液法师[c:]败于你手……我本对他期望更高些……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hmph.. My [c:g1]Goo Mage[c:] dissapoints me again..", "哼……我的[c:g1]黏液法师[c:]又一次让我失望……", Language.ChineseSimplified);
@@ -2454,12 +2478,15 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Lava Dungeon ~", "~ 熔岩地牢 ~", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Void Dungeon ~", "~ 虚空地牢 ~", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "~ Tower of Magicks ~", "~ 魔法之塔 ~", Language.ChineseSimplified);
+            Debug.Log("特殊对话：~ [count]枚水晶 ~：开始");
             for (int currency = 0; currency <= 100; currency++)
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g3]~ " + currency + " Crystals ~[c:]", "[c:g3]~ " + currency + "枚水晶 ~[c:]", Language.ChineseSimplified);
             }
+            Debug.Log("特殊对话：~ [count]枚水晶 ~：结束");
 
             // Challenge
+            Debug.Log("开始注册蔓尼菲科模组挑战");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blank Mox", "空白玛珂", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your sidedeck's mox is completely random.", "你的副牌组玛珂效果完全随机", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Weaker Bleach", "弱漂白剂", Language.ChineseSimplified);

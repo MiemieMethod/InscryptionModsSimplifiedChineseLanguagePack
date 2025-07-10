@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.3
+
+Add supports for MagicExpansion-0.1.5.
+
 ## 1.3.2
 
 Fix some texts.
