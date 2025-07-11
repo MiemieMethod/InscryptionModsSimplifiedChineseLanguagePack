@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.4
+
+Add supports for NevernamedsSigilarium-0.16.0.
+
 ## 1.3.3
 
 Add supports for MagicExpansion-0.1.5.

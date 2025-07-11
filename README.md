@@ -4,16 +4,21 @@ This mod is a Simplified Chinese Language Pack Patching for some Inscryption mod
 
 Current Supportted Mods:
 
-- [API](https://thunderstore.io/c/inscryption/p/API_dev/API/) >= 2.23.2
-- [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
-- [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
-- [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
-- [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
-- [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
-- [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
-- [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
-- [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
-- [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
+- Story Mods:
+    - [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
+    - [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
+- Support Mods:
+    - [API](https://thunderstore.io/c/inscryption/p/API_dev/API/) >= 2.23.2
+    - [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
+    - [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
+    - [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
+- Sigilarium Mods:
+    - [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
+- Card Mods:
+    - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
+    - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
+    - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
+    - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
 - More Adding...
 
 Please contact me if you find problems.
@@ -38,16 +43,21 @@ Authors List:
 
 目前已汉化的模组：
 
-- [API](https://thunderstore.io/c/inscryption/p/API_dev/API/) >= 2.23.2
-- 成就 [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
-- 格里魔拉模组 [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
-- 蔓尼菲科模组 [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
-- 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
-- 凯茜的死亡神庙 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
-- 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
-- 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
-- 自定义副牌组 [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
-- 卡包管理器API [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
+- 剧情模组：
+    - 格里魔拉模组 [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
+    - 蔓尼菲科模组 [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
+- 辅助模组：
+    - [API](https://thunderstore.io/c/inscryption/p/API_dev/API/) >= 2.23.2
+    - 成就 [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
+    - 自定义副牌组 [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
+    - 卡包管理器API [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
+- 印记模组：
+    - Nevernamed的自定义印记 [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
+- 制卡模组：
+    - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
+    - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
+    - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
+    - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
 - 正在加入更多……
 
 如果有任何问题请联系我修复。
