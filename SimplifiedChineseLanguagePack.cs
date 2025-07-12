@@ -2780,7 +2780,12 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Reach Squirrel", "高跳松鼠", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sacrificable Boulder", "可祭磐石", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tail Squirrel", "长尾松鼠", Language.ChineseSimplified);
-
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hawk", "鹰", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The vicious hawk. One of the most effective flying attackers.", "凶猛的鹰。最有效的制空手段之一。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Salmon", "鲑鱼", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The athletic salmon. It swims quickly upstream.", "健壮的鲑鱼。它能逆流快速游动。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Squirrel Ball", "松鼠球", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The peculiar squirrel ball. When it rolls, it leaves behind some stray squirrels.", "奇特的松鼠球。滚动时会留下几只迷途松鼠。", Language.ChineseSimplified);
 
         }
     }
