@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.5
+
+Add supports for AllTheSigils-3.0.6.
+
 ## 1.3.4
 
 Add supports for NevernamedsSigilarium-0.16.0.

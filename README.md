@@ -14,6 +14,7 @@ Current Supportted Mods:
     - [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
 - Sigilarium Mods:
     - [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
+    - [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
 - Card Mods:
     - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
     - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
@@ -53,6 +54,7 @@ Authors List:
     - 卡包管理器API [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
 - 印记模组：
     - Nevernamed的自定义印记 [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
+    - 印记大全 [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
 - 制卡模组：
     - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
     - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
