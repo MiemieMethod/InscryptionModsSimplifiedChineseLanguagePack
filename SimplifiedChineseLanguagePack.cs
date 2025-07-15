@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Reflection;
 using BepInEx;
 using DiskCardGame;
@@ -46,7 +47,6 @@ namespace SimplifiedChineseLanguagePack
             BittysSigilsMod.RegisterTranslations();
             BittysChallengesMod.RegisterTranslations();
         }
-
         [HarmonyPatch(typeof(FontReplacementData), "Initialize")]
         public class LanguagePatch
         {
@@ -54,8 +54,23 @@ namespace SimplifiedChineseLanguagePack
             {
                 if (!LanguageLoaded)
                 {
+                    PostRegisterTranslations();
                     FixSimplifiedChineseFonts();
                 }
+            }
+        }
+        private static void PostRegisterTranslations()
+        {
+            Debug.Log("Post Register Translations");
+            foreach (var value in CardManager.BaseGameCards)
+            {
+                LocalizationManager.Translate(GUID, null, "Weak " + value.DisplayedNameEnglish, "虚弱" + value.DisplayedNameLocalized, Language.ChineseSimplified);
+            }
+            var field = typeof(CardManager).GetField("NewCards", BindingFlags.NonPublic | BindingFlags.Static);
+            var newCards = field.GetValue(null) as ObservableCollection<CardInfo>;
+            foreach (var value in newCards)
+            {
+                LocalizationManager.Translate(GUID, null, "Weak " + value.DisplayedNameEnglish, "虚弱" + value.DisplayedNameLocalized, Language.ChineseSimplified);
             }
         }
 
@@ -3355,7 +3370,7 @@ namespace SimplifiedChineseLanguagePack
                 { GemType.Blue, "蓝色" },
                 { GemType.Green, "绿色" },
             };
-            Debug.Log("特殊对话：你的[gem]玛珂不足两颗，无法使用此牌：开始");
+            Debug.Log("特殊对话：需要两颗[gem]宝石才能使用这张：开始");
             foreach (var gemType in gemTypes.Keys)
             {
                 foreach (var value in CardManager.BaseGameCards)
@@ -3365,6 +3380,7 @@ namespace SimplifiedChineseLanguagePack
                 }
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You do not have the two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "[c:] Gems needed to play that. Gain Gems by playing Mox cards.", "你的" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "[c:]宝石不足两颗，无法使用此牌。可通过打出玛珂牌获取宝石", Language.ChineseSimplified);
             }
+            Debug.Log("特殊对话：需要两颗[gem]宝石才能使用这张：结束");
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The gem skeptic sigil prevents you from playing that gem.", "宝石质疑者印记阻止你使用该宝石", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You can't play that until you're 3 off dying.", "生命值剩余3点及以下时才能使用此牌", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You want to play that? Start losing.", "想用这张牌？先掉点血吧", Language.ChineseSimplified);
@@ -5155,6 +5171,178 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I think you'll find this one quite...", "你会发现这个相当……", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shocking.", "电人。", Language.ChineseSimplified);
 
+            // Challenge
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ascender's Bane", "攀登者的祸根", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You start with a useless card in the deck.", "你的初始牌组中多了一张无用的牌。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Champions", "优胜冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Opponent cards have a chance to become a champion.", "对手牌有概率获得各色冠军印记。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environmental Effects", "环境影响", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the start of each battle, a random environmental effect may activate.", "在每次战斗开始时都可能会激活一个随机的环境效果。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Famine", "饥荒", Language.ChineseSimplified);
+            for (int amnt = 0; amnt < 10; amnt++)
+            {
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The side deck has " + amnt.ToString() + " more cards.", "副牌组卡牌将多出" + amnt.ToString() + "张。", Language.ChineseSimplified);
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The side deck has " + amnt.ToString() + " less cards.", "副牌组卡牌将减少" + amnt.ToString() + "张。", Language.ChineseSimplified);
+            }
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Runaway Side Deck", "失控副牌", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your Side Deck cards have the Fleeting sigil.", "你的副牌获得稍纵即逝印记。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Golden Fleece", "金色羊皮", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A Golden Ram appears randomly throughout the run.", "在整个游戏过程中随机出现一只金羊。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Harder Bosses", "更强的头目", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bosses' main cards are more powerful, and bosses are more agressive.", "头目的主力牌更强大，头目更具攻击性。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "True Pirate", "真正的海盗", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pirates invade Bosses. The Final Boss Challenge is harder.", "海盗入侵头目战。最终的头目挑战更难。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Extra Lives", "额外生命", Language.ChineseSimplified);
+            for (int amnt = 0; amnt < 10; amnt++)
+            {
+                LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The scales will reset once they hit 0, up to " + amnt.ToString() + " times for each candle.", "天平刻度一旦达到0，就会重置，每支蜡烛最多重置" + amnt.ToString() + "次。", Language.ChineseSimplified);
+            }
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Botched Experiments", "拙劣实验", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Mycologists have a chance to make mistakes while fusing cards.", "菌学家在融合卡片时有可能出错。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Old Fecundity", "无尽丰产", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Reverts the Fecundity Nerf.", "丰产之巢印记回归至与原版一致。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mulligan", "重新尝试", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You may redraw your hand at the start of each battle.", "你可以在每场战斗开始时重新抽取你的手牌。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Reverse Scales", "反向天平不平", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start all battles with 1 damage on the opponent's side of the scale.", "在天平的敌对一侧受到1点伤害的情况下开始所有战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shocked Starters", "惊魂未定的开局", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards in starting deck attack every other turn.", "起始牌组中的牌每隔一回合才会攻击一次。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sprintmaggedon", "奔腾灾难", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "All cards get a random Sprinter sigil when drawn.", "所有卡牌在抽取时都会获得一个随机移动印记。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Traveling Ouroboros", "旅行衔尾蛇", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A traveling Ouroboros appears throughout the run.", "一只旅行的衔尾蛇出现在整个冒险过程中。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Unfair Hand", "不公之手", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your starting hand is randomly drawn.", "你的起始手牌是完全随机抽取的。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Explosive Noise", "爆炸噪音", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card dies, a loud boom will play. All cards explode on death.", "当一张牌死了，就会响起一声巨响。所有卡牌在死亡时都会爆炸。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Aquatic Starters", "水袭的开局", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards in starting deck have the Waterborne sigil.", "起始牌组中的牌拥有水袭印记。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Unspirited Starters", "失魂的开局", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards in the starting deck may not have their sigils transferred.", "起始牌组中的牌拥有孱弱之魂印记。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Weak Starters", "虚弱的开局", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards in the starting deck have 1 less health.", "起始牌组中的牌的生命值减少1。", Language.ChineseSimplified);
+
+            // Ability
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blue Champion", "蓝色冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion will cause all other non-Terrain cards on the same side to gain flight, as long as the champion is alive.", "只要此冠军还存活在场，此冠军就会让同一侧的所有其他非地形卡获得空袭印记。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bright Red Champion", "鲜红冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the start of each turn, this champion will heal all other non-terrain creatures on the opponent's side by 1.", "在每个回合开始时，此冠军将治愈对手一侧的所有非地形生物1点生命。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cyan Champion", "青色冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this champion perishes, it will deal 1 damage to every other creature on the board.", "当这位冠军死亡时，它将对场上的其他造物造成1点伤害。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Explosive", "爆炸性之物", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Other cards may be placed on top of [creature]; the other card, adjacent cards, and opposing cards will all be dealt 10 damage.", "其他卡片可以放在[creature]的上方；相邻卡牌和对位卡牌都将受到10点伤害。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, a copy of it is created in the opponent's hand.", "当[creature]死亡时，它会回到你手中。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fragile", "虚弱", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature] perishes, it is permanently removed from your deck.", "如果带有该印记的卡牌死亡，它将从你的牌组中永久移除。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Green Champion", "绿色冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion will deal 1 damage directly to you, after it destroys another creature.", "这位冠军在摧毁另一个造物后，将直接对其持有者造成1点伤害。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Light Blue Champion", "淡蓝冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this champion perishes, it will deal 3 damage to creatures to the left and right of it as well as the opposing creature.", "当这位冠军死亡时，它将对其左右两侧的造物以及对方造物造成3点伤害。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Light Green Champion", "浅绿冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion will prevent all damage from the first strike dealt to it. Damage from effects like sigils will not be prevented.", "这位冠军将阻止第一次攻击造成的所有伤害。印记等效果造成的伤害将无法阻止。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magenta Champion", "品红冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the start of each turn, this champion will attack for 1 damage in a random space on your side.", "在每个回合开始时，这位冠军将在你一侧的随机空间造成1点伤害。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Muddy", "污泥浊浪", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Other cards may be placed on top of [creature], but will be unable to attack for one turn and will gain Muddy. If [creature] is sacrificed, the sacrificing creature will be unable to attack for one turn.", "其他牌可以放在带有该印记的卡牌的上方，但一回合内无法攻击，将获得污泥浊浪印记。如果带有该印记的卡牌被献祭，献祭其上场的生物第一回合无法攻击。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sacrificial Slab", "献祭石板", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Other cards may be placed on top of [creature]; the other card will die.", "其他卡片可以放在带有该印记的卡牌的上方；另一张卡将会被杀死。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Orange Champion", "橙色冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion will steal 2 golden teeth from you if it damages you directly.", "如果直接对你造成伤害，这位冠军会从你身上偷走2个货币金牙。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] may not attack every other turn.", "带有该印记的卡牌每隔一回合才会攻击一次。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Purple Champion", "紫色冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Each time you play a card, if the space opposing this champion is empty, that card will move to that space.", "每次你出牌时，如果这位冠军的对位是空的，该牌就会移动到那个空间。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Seaworthy", "适航状态", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Other cards may be placed on top of [creature], any Waterborne sigils on the card will be negated.", "其他卡牌可以放在带有该印记的卡牌的顶部，卡牌上的任何水袭印记都将失效。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Red Champion", "红色冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion starts with 2 additional Health.", "此冠军额外获得2点生命值。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shelter", "避难所", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Adjacent cards are sheltered from environmental effects.", "与带有该印记的卡牌相邻的卡牌不受环境影响。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Avalancher", "雪崩", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil. Creatures in the way will be killed. If [creature] is at the right most side of the board, it dies.", "在持牌人的回合结束时，带有该印记的卡牌将按印记标注方向移动。相撞的造物将被杀死。如果带有该印记的卡牌位于场地最右侧，它将死亡。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil. Creatures in the way will be killed.", "在持牌人的回合结束时，带有该印记的卡牌将按印记标注方向移动。相撞的造物将被杀死。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move to the right, jumping over any creatures in its path. If it encounters the edge of the board, it will loop over to the other side.", "持牌人的回合结束时，带有该印记的卡牌将向右移动，跳过其路径上的任何造物，如果遇到场地边缘，它将绕到另一边。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "White Champion", "白色冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this champion perishes, it will create a Boulder in its space. [define:Boulder]", "当这个冠军死亡时，它将在自己的空间里生成一个磐石。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Yellow Champion", "黄色冠军", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion starts with 1 additional Power.", "此冠军额外获得1点力量。", Language.ChineseSimplified);
+
+            // Boon
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Angler's Pond", "环境：渔夫池塘", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The opponent will start the battle with Bait Buckets.", "对手将以拥有鱼饵的方式展开战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Blizzard", "环境：暴雪", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the start of each turn, if there is not an Avalanche present on the board, one will be created on the left-most side of the board.", "在每回合开始时，如果场上没有雪崩，则会在场上的最左侧生成一个雪崩。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Blood Moon", "环境：血月", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The opponent will start the battle with Dire Wolf Pups.", "对手将以拥有冰原狼幼崽的情况下开始战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Breeze", "环境：微风", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the start of every turn, all creatures gain or lose Airborne. Terrain, and creatures with Waterborne or Burrower are ignored.", "在每个回合开始时，场上所有造物都会获得或失去空袭印记；此环境对地形和拥有水袭或钻地龙印记的造物无效。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Carrot Patch", "环境：胡萝卜切片", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The opponent will start the battle with Rabbits.", "对手将以拥有兔子的情况下开始战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Cliffside", "环境：陡崖", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the start of the battle, the leftmost lane will be blocked with Cliffs.", "在战斗开始时，最左侧的道路将被陡崖封锁。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Factory", "环境：工厂", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "On Upkeep, all cards are rotated clockwise.", "维持状态下，场上所有卡牌均顺时针旋转1格。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Dark Forest", "环境：黑森林", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The opponent will start the battle with Trees. All of the opponent's terrain have +1 power.", "对手将在拥有森林的情况下展开战斗。对手的所有地形卡都+1力量。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Prospector's Camp", "环境：勘探者营地", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You will start the battle with Dynamite on some of your spaces.", "您将在某些位置上与潜在的危险人物展开战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Electrical Storm", "环境：雷暴", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card is played, it takes 1 damage and gains 1 power.", "放置一张牌时，它会受到1点伤害，并获得1点力量。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Flash Growth", "环境：快速生长", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card is played, any sigils that activate at the start of the turn are activated.", "当一张牌被放置时，任何在回合开始时激活的印记都被激活一次。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Flood", "环境：洪水", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whenever a creature is played, it gains Waterborne. Terrain, and creatures with Airborne are ignored.", "每放置一张造物，其获得水袭印记；此环境对地形和具有空袭印记的造物无效。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Gem Sanctuary", "环境：宝石保护区", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "All gems have +1 power.", "所有宝石都+1力量。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Graveyard", "环境：墓地", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a creature dies, it dies again.", "当一个造物死亡时，它会立即复活并再次死亡。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Hail Storm", "环境：冰雹", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the start of each turn, all of the turn owner's non-terrain cards take 1 damage.", "在每个回合开始时，回合所有者的所有非地形卡受到1点伤害。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Pirate's Hollow", "环境：海盗谷", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The opponent will start the battle with a Minicello.", "对手将用迷你柠檬琴开始战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Mud Swamp", "环境：泥沼", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You will start the battle with Mud on some of your spaces.", "你将在场上有泥沼的情况下开始战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Fungal Field", "环境：真菌场", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The opponent will start the battle with Mushrooms.", "对手将使用蘑菇开始战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Obelisk", "环境：方尖碑", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The opponent will start the battle with an Obelisk.", "对手将在拥有方尖碑的情况下开始战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Cursed Totem", "环境：诅咒图腾", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The opponent will start the battle with Cursed Totems.", "对手将使用诅咒图腾以开始战斗。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Environment: Trapper's Hunting Grounds", "环境：猎人的狩猎场", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The opponent will start the battle with Steel Traps.", "对手将使用钢制陷阱以开始战斗。", Language.ChineseSimplified);
+
+            // Card
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ascender's Bane", "攀登者的祸根", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A reminder of past challengers.", "提醒过去的挑战者。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Avalanche", "雪崩", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A monsterous mound of snow.", "巨大的雪堆。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cliff", "陡崖", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A solid wall of rock.", "坚固的岩石墙。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Clover", "三叶草", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A loyal member of Royal's crew.", "罗亚尔船员中忠诚的成员。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dynamite", "炸药", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A box of dynamite.", "一盒炸药。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chrysomallos", "金缕梅", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A mystical, glittering being.", "神秘的、闪闪发光的生物。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ice Cube", "冰块", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A block of ice.", "一块冰。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Minicello", "迷你柠檬琴号", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A miniture version of a famous pirate's ship.", "一艘著名海盗船的微型版。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mud", "泥沼", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mushrooms", "蘑菇", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A collection of strange mushrooms. They attract anything nearby.", "一批奇怪的蘑菇。它们吸引附近的任何东西。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Obelisk", "方尖碑", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A tall mysterious stone.", "一块高高的神秘石头。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sacrificial Altar", "献祭祭坛", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A flat mysterious stone.", "一块扁平的神秘石头。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Raft", "木筏", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A dry patch in the flood.", "洪水中的一块干地。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shelter", "避难所", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shelter from the storm.", "躲避暴风雨的避难所。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cursed Totem", "诅咒图腾", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A totem surrounded in mysterious energy.", "被神秘能量包围的图腾。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "My very own Ouroboros.", "我自己的衔尾蛇。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wooden Board", "木板", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A regular wooden board.", "一块普通的木板。", Language.ChineseSimplified);
         }
     }
 }
