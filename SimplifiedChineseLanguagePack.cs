@@ -5245,7 +5245,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Muddy", "污泥浊浪", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Other cards may be placed on top of [creature], but will be unable to attack for one turn and will gain Muddy. If [creature] is sacrificed, the sacrificing creature will be unable to attack for one turn.", "其他牌可以放在带有该印记的卡牌的上方，但一回合内无法攻击，将获得污泥浊浪印记。如果带有该印记的卡牌被献祭，献祭其上场的生物第一回合无法攻击。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sacrificial Slab", "献祭石板", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Other cards may be placed on top of [creature]; the other card will die.", "其他卡片可以放在带有该印记的卡牌的上方；另一张卡将会被杀死。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Other cards may be placed on top of [creature]; the other card will die.", "其他卡牌可以放在带有该印记的卡牌的上方；另一张牌将会被杀死。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Orange Champion", "橙色冠军", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion will steal 2 golden teeth from you if it damages you directly.", "如果直接对你造成伤害，这位冠军会从你身上偷走2个货币金牙。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] may not attack every other turn.", "带有该印记的卡牌每隔一回合才会攻击一次。", Language.ChineseSimplified);
@@ -5321,7 +5321,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A loyal member of Royal's crew.", "罗亚尔船员中忠诚的成员。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dynamite", "炸药", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A box of dynamite.", "一盒炸药。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chrysomallos", "金缕梅", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chrysomallos", "金羊", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A mystical, glittering being.", "神秘的、闪闪发光的生物。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ice Cube", "冰块", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A block of ice.", "一块冰。", Language.ChineseSimplified);
