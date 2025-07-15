@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.6
+
+Add supports for BittysSigils-2.1.2, BittysChallenges-5.3.0.
+
 ## 1.3.5
 
 Add supports for AllTheSigils-3.0.6.

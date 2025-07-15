@@ -24,7 +24,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.3.5";
+        private const string Version = "1.3.6";
 
         public static bool LanguageLoaded = false;
 
