@@ -5843,6 +5843,15 @@ namespace SimplifiedChineseLanguagePack
             {
                 LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "High Score: " + score.ToString(), "最高分：" + score.ToString(), Language.ChineseSimplified);
             }
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Picked up your new deck.", "已拾取新牌组。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The card was added to your collection.", "这张卡牌已加入你的牌库。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "buh", "啊", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Choose a card type.", "选择一种卡牌。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You need at least 20 cards in your deck!", "你的牌组至少需要20张卡牌！", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "...", "……", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Good offering.", "不错的祭品。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Have this.", "拿去吧。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You have a choice of merging two cards here..", "你可以选择在此合并两张卡牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bounty", "赏金", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every 3 succesful battles, you gain a bounty star. With bounty stars, random bounty hunters will start to spawn in battles.", "每3次战斗胜利，你就获得一颗悬赏星星。随着悬赏星星的增加，随机的赏金猎人将开始出现在战斗中。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon", "奖励", Language.ChineseSimplified);
@@ -5850,9 +5859,9 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Elite", "精英", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every regular card battle is replaced with an elite battle.", "每一次常规的卡牌战斗都会被精英战斗所取代。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Don't merge.", "放弃缝合", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Merge FieldMouse", "缝合田鼠", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Merge SentryBot", "缝合哨兵无人机", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Merge BlueMage", "缝合蓝色法师", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Merge Field Mice", "缝合田鼠", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Merge Sentry Drone", "缝合哨兵无人机", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Merge Blue Mage", "缝合蓝色法师", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Merge Gravedigger", "缝合掘墓人", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You have a choice of merging two cards here..", "你可以选择在此处缝合两张卡牌...", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select the {} deck?", "选择{}牌组？", Language.ChineseSimplified);
@@ -5875,32 +5884,48 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nuzlocke", "魔法", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Luck", "幸运之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start each battle with a clover.", "每一场战斗开始时获得一张三叶草。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Start each battle with a clover.", "当装备该奖励时，每一场战斗开始时获得一张三叶草。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Flesh", "血肉之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mox may be sacrificed.", "玛珂牌可以被献祭。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Mox may be sacrificed.", "当装备该奖励时，玛珂牌可以被献祭。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Voltage", "脉冲之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When you sacrifice a beast card, you increase your max energy and gain an energy cell.", "当你献祭一张野兽卡牌时，你将增加你的最大能量并获得一个能量槽。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, When you sacrifice a beast card, you increase your max energy and gain an energy cell.", "当装备该奖励时，当你献祭一张野兽卡牌时，你将增加你的最大能量并获得一个能量槽。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Reincarnation", "轮回之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a Skeleton is sacrificed, draw a squirrel.", "你献祭骷髅卡牌时，获得一张松鼠牌。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, When a Skeleton is sacrificed, draw a squirrel.", "当装备该奖励时，你献祭骷髅卡牌时，获得一张松鼠牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Necromancy", "死灵之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a Skeleton dies, a random mox is placed in it's place.", "当一张骷髅死亡时，将在其位置生成一张随机玛珂牌。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, When a Skeleton dies, a random mox is placed in it's place.", "当装备该奖励时，当一张骷髅死亡时，将在其位置生成一张随机玛珂牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Scrap", "碎屑之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whenever you reach full energy, you gain a bone.", "每当你达到满能量时，你就会获得一块骨头。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Whenever you reach full energy, you gain a bone.", "当装备该奖励时，每当你达到满能量时，你就会获得一块骨头。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Construct", "构筑之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Any tech card that costs more than 2 energy will drop a random mox on death.", "任何成本超过2能量的科技卡牌都会在死亡时掉落一张随机玛珂牌。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Any tech card that costs more than 2 energy will drop a random mox on death.", "当装备该奖励时，任何成本超过2能量的科技卡牌都会在死亡时掉落一张随机玛珂牌。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of The Saving Grace", "救赎恩典", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whenever you would recieve fatal damage, the scales are only tipped down to 4.\nONCE PER BATTLE", "每当你受到致命伤害时，会给你保留1点生命。（每场战斗限触发一次）", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Whenever you would recieve fatal damage, the scales are only tipped down to 4.\nONCE PER BATTLE", "当装备该奖励时，每当你受到致命伤害时，会给你保留1点生命。（每场战斗限触发一次）", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start each battle with a black goat on the board.", "每场战斗开始时，在你一侧的场上放一只黑山羊。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Start each battle with a black goat on the board.", "当装备该奖励时，每场战斗开始时，在你一侧的场上放一只黑山羊。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start each battle with +3 bones.", "每一场战斗开始时就有3块骨头。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Start each battle with +3 bones.", "当装备该奖励时，每一场战斗开始时就有3块骨头。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Draw 2 cards each turn instead of 1, but it will only function if you have less than 20 cards in your deck while battling.", "每回合抽2张牌，而不是1张，但只有当你战斗时牌组中的牌少于20张时，它才会起作用。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Draw 2 cards each turn instead of 1, but it will only function if you have less than 20 cards in your deck while battling.", "当装备该奖励时，每回合抽2张牌，而不是1张，但只有当你战斗时牌组中的牌少于20张时，它才会起作用。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start each battle with 2 firs in your hand.", "每一场战斗开始时，你手中获得两张大冷杉。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Start each battle with 2 firs in your hand.", "当装备该奖励时，每一场战斗开始时，你手中获得两张大冷杉。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Fossils", "化石之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Terrain cards yield 3 bones on death instead of 1.", "地形卡在死亡时产生3根骨头，而不是1根。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Terrain cards yield 3 bones on death instead of 1.", "当装备该奖励时，地形卡在死亡时产生3根骨头，而不是1根。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Marrow", "骨髓之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sacrificing undead cards yields 2 bones instead of 1.", "献祭亡灵卡牌会产生2根骨头而不是1根。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, Sacrificing undead cards yields 2 bones instead of 1.", "当装备该奖励时，献祭亡灵卡牌会产生2根骨头而不是1根。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Bloodstone", "石中取血之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You may sacrifice terrain cards.", "你可以献祭地形卡。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, You may sacrifice terrain cards.", "当装备该奖励时，你可以献祭地形卡。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boon of Ouroboros", "衔尾蛇之奖", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You get a different effect depending on the region:\nBeast Dungeon:+2 Starting bones each battle.\nDeath Dungeon:+1 Starting Energy each battle\nTech Dungeon:Start the game with two random mox in your hand.\nMagick Dungeon:Start the game with 2 Squirrels in your hand.", "根据区域不同，您会获得不同的效果：\n野兽地牢：每场战斗开始时+2根起始骨头。\n死亡地牢：每场战斗开始时+1个起始能量。\n科技地牢：每场战斗开始时获得额外两张随机玛珂牌。\n魔法地牢：每场战斗开始时获得两张额外松鼠。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, You get a different effect depending on the region:\nBeast Dungeon:+2 Starting bones each battle.\nDeath Dungeon:+1 Starting Energy each battle\nTech Dungeon:Start the game with two random mox in your hand.\nMagick Dungeon:Start the game with 2 Squirrels in your hand.", "当装备该奖励时，根据区域不同，您会获得不同的效果：\n野兽地牢：每场战斗开始时+2根起始骨头。\n死亡地牢：每场战斗开始时+1个起始能量。\n科技地牢：每场战斗开始时获得额外两张随机玛珂牌。\n魔法地牢：每场战斗开始时获得两张额外松鼠。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ay yo yaw cant stand right here", "哎呀，你不能站在这儿。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fir", "大冷杉", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tombstone", "墓石", Language.ChineseSimplified);
@@ -6001,7 +6026,7 @@ namespace SimplifiedChineseLanguagePack
                 foreach (var s in bountySuffix)
                 {
                     var name = n.Key + s.Key;
-                    var namechinese = n.Value + s.Value
+                    var namechinese = n.Value + s.Value;
                     LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, name, namechinese, Language.ChineseSimplified);
                     LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "But this ain't the last of " + name + "!", "但这不是" + namechinese + "的终结！", Language.ChineseSimplified);
                     LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, name + ". Seeking revenge..", namechinese + "。来报仇了……", Language.ChineseSimplified);
