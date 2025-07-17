@@ -18,6 +18,15 @@ Current Supportted Mods:
     - [BittysSigils](https://thunderstore.io/c/inscryption/p/bitty45/BittysSigils/) >= 2.1.2
 - Gameplay Mods:
     - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
+    - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
+    - [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) >= 1.0.1
+    - [PermaDeath](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/PermaDeath/) >= 1.0.4
+    - [KCMHammer](https://thunderstore.io/c/inscryption/p/TVFLabs/KCMHammer/) >= 1.0.1
+    - [BetterTotems](https://thunderstore.io/c/inscryption/p/TVFLabs/BetterTotems/) >= 1.0.0
+    - [Eye And Dagger](https://thunderstore.io/c/inscryption/p/Void_Slime/Eye_And_Dagger/) >= 1.2.0
+    - [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) >= 1.0.2
+    - [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
+    - [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
     - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
     - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
@@ -60,6 +69,15 @@ Authors List:
     - Bitty的印记 [BittysSigils](https://thunderstore.io/c/inscryption/p/bitty45/BittysSigils/) >= 2.1.2
 - 玩法模组：
     - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
+    - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
+    - 死亡卡挑战 [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) >= 1.0.1
+    - 永久死亡 [PermaDeath](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/PermaDeath/) >= 1.0.4
+    - KCM锤子 [KCMHammer](https://thunderstore.io/c/inscryption/p/TVFLabs/KCMHammer/) >= 1.0.1
+    - 更好的图腾 [BetterTotems](https://thunderstore.io/c/inscryption/p/TVFLabs/BetterTotems/) >= 1.0.0
+    - 眼与匕首 [Eye And Dagger](https://thunderstore.io/c/inscryption/p/Void_Slime/Eye_And_Dagger/) >= 1.2.0
+    - 更少的副牌 [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) >= 1.0.2
+    - 诅咒 [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
+    - 无尽第二章 [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
     - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
     - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.7
+
+Add supports for PeltsOnly-1.0.0, DeathcardChallenges-1.0.1, PermaDeath-1.0.4, KCMHammer-1.0.1, BetterTotems-1.0.0, EyeAndDagger-1.2.0, LesserSideDeck-1.0.2, Curses-1.1.4, EndlessAct2-1.3.0.
+
 ## 1.3.6
 
 Add supports for BittysSigils-2.1.2, BittysChallenges-5.3.0.
