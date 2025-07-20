@@ -2816,6 +2816,12 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thorny Devil Tail", "刺蜥的尾巴", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Free Rattler egg", "免费响尾蛇蛋", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Amalgam Egg", "缝合蛋", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Walking Stone", "走石", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A stone that has traveled over mountains and rivers.", "跋山涉水的走石。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stone Deer", "石鹿", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A stone deer statue carved by skilled craftsmen.", "由能工巧匠雕刻而成的石鹿。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stone Wolf", "石狼", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A stone wolf statue carved by skilled craftsmen.", "由能工巧匠雕刻而成的石狼。", Language.ChineseSimplified);
 
             // Other
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wilderness Legend", "荒野传说", Language.ChineseSimplified);
