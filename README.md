@@ -16,6 +16,7 @@ Current Supportted Mods:
     - [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
     - [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
     - [BittysSigils](https://thunderstore.io/c/inscryption/p/bitty45/BittysSigils/) >= 2.1.2
+    - [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
 - Gameplay Mods:
     - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
     - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
@@ -27,6 +28,7 @@ Current Supportted Mods:
     - [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) >= 1.0.2
     - [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
     - [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
+    - [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
     - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
     - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
@@ -67,6 +69,7 @@ Authors List:
     - Nevernamed的自定义印记 [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
     - 印记大全 [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
     - Bitty的印记 [BittysSigils](https://thunderstore.io/c/inscryption/p/bitty45/BittysSigils/) >= 2.1.2
+    - WhistleWind异常印记 [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
 - 玩法模组：
     - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
     - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
@@ -78,6 +81,7 @@ Authors List:
     - 更少的副牌 [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) >= 1.0.2
     - 诅咒 [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
     - 无尽第二章 [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
+    - TVF的头目 [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
     - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
     - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
