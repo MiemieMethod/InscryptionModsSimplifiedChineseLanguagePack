@@ -6362,7 +6362,7 @@ namespace SimplifiedChineseLanguagePack
         public static void RegisterTranslations()
         {
             Debug.Log("Registering Tanslations for TVFsBosses Mod");
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Though there was no one in sight, some offerings were laid out before you.", "虽然这里空无一人，但有一些祭品摆在你面前。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Though there was no one in sight, some offerings were laid out before you.", "虽然这里空无一人，但有一些雕刻品摆在你面前。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "There was no [c:bR]Woodcarver[c:] nearby.", "附近不再有[c:bR]木雕师[c:]了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Still, her totem pieces remained.", "尽管如此，她的图腾部件仍然存在。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The old [c:bR]Woodcarver[c:] was nowhere to be found.", "那个年老的[c:bR]木雕师[c:]已经不见了。", Language.ChineseSimplified);
@@ -6372,7 +6372,7 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An ancient woman approached.", "一位老妇人走近了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "She looked intensely displeased with you.", "她看起来对你非常不满。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nearby branches rustled as The [c:bR]Woodcarver[c:] revealed herself.", "附近的树枝沙沙作响，[c:bR]木雕师[c:]露出面容。", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "She had no offerings this time.", "这次她没有祭品。", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "She had no offerings this time.", "这次她没有拿出雕刻品。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:bR]Leave.[c:]", "[c:bR]离开。[c:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Turn back.", "往回走。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You are not prepared.", "你还没准备好。", Language.ChineseSimplified);
@@ -6392,11 +6392,11 @@ namespace SimplifiedChineseLanguagePack
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[size:3]Satisfactory results.[size:]", "[size:3]这样的结果令人满意。[size:]", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "B- But there is only one challenger?", "但……但是只有一个挑战者？", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "We... We need your body?", "我……我们需要你的身体？", Language.ChineseSimplified);
-            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Y- You will... not submit your body for our experiments?", "你-你不会……把你的身体献给我们做实验吧？", Language.ChineseSimplified);
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Y- You will... not submit your body for our experiments?", "你…你不会……把你的身体献给我们做实验吧？", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mycologists Boss", "菌学家头目", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Angler is replaced as the boss of the Wetlands.", "渔夫头目战被菌学家所替换了。", Language.ChineseSimplified);
             LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Experiment", "实验体", Language.ChineseSimplified);
-
+            LocalizationManager.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "GOOD.", "非常好。", Language.ChineseSimplified);
 
         }
     }
