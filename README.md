@@ -32,6 +32,7 @@ Current Supportted Mods:
     - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
     - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
+    - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.0
     - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
 - More Adding...
 
@@ -52,6 +53,9 @@ Known Issues:
 Authors List:
 - MiemieMethod
 - [NONECARD](https://thunderstore.io/c/inscryption/p/NONECARD/)
+
+Acknowledgement:
+- QIYAO
 
 本模组是为各个《邪恶冥刻》模组设计的简体中文语言包补丁，同时修复了汉字显示缺字问题。
 
@@ -85,6 +89,7 @@ Authors List:
     - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.3.5
     - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.2.5
+    - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.0
     - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
 - 正在加入更多……
 
@@ -105,3 +110,6 @@ Authors List:
 作者列表：
 - MiemieMethod（方法放寒假）
 - [NONECARD](https://thunderstore.io/c/inscryption/p/NONECARD/)
+
+致谢：
+- QIYAO（七幺）

@@ -2,6 +2,10 @@
 
 ## 1.3.8
 
+Greatly inscrease the loading time, and add supports for DLCFairyTale-0.9.0.
+
+## 1.3.8
+
 Add supports for WhistleWindAbnormalSigils-1.1.2, TVFsBosses-2.0.0.
 
 ## 1.3.7
