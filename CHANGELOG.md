@@ -1,6 +1,10 @@
 # Changelog
 
-## 1.3.8
+## 1.4.0
+
+Add supports for P03Sigilarium-1.1.16.
+
+## 1.3.9
 
 Greatly inscrease the loading time, and add supports for DLCFairyTale-0.9.0.
 
