@@ -6127,6 +6127,48 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "AmmoBot", "弹药机器人", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "DummyCard", "哑卡牌", Language.ChineseSimplified);
 
+            // Consumable
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Please! You've got to help me get out of here!", "求你了！快帮我逃出这里！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thank you! I hope he doesn't notice me here...", "谢谢！希望他没发现我在这儿……", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thank you!", "多谢！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "So much power, but so much pain...", "力量如此强大，痛苦却如此剧烈……", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Good riddance to that little freak.", "总算摆脱那个小怪物了。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Goobert", "沽伯特", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Please! You've got to help me get out of here!", "求你了！快帮我逃出这里！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Data Cube", "数据魔方", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Can be placed on the scales for some damage, if you're into that sort of thing.", "可以放在天平上造成些伤害，如果你就好这口的话。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Laser Rifle", "激光步枪", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This will give one of your cards the Sniper sigil for the rest of the battle. It's a gun - what else do you want?", "本场战斗中为你的卡牌附加狙击印记。这可是把枪——你还想要啥？", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Amplification Coil", "增幅线圈", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Increases your max energy by 2. I suppose you can find some use for this.", "提升2点能量上限。这玩意儿应该能派上点用场。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "UFO", "UFO", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Abducts a card of your choice. It gets the job done I suppose", "可劫持任意一张卡牌。勉强能用吧", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wiseclock", "时针顺", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It rotates the board clockwise or something. I stole it from Leshy. Do you think he'll notice?", "能让牌桌顺时针旋转之类的。我从莱西那儿顺来的。你觉得他会发现吗？", Language.ChineseSimplified);
+
+            // Rule
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I play a Mr:Clock", "我打出一张钟表:先生", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "a random card becomes a fish", "随机一张卡牌变为鱼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "1 of your lanes catches fire", "你的1条路线燃起大火", Language.ChineseSimplified);
+
+            // Mode
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Traps", "陷阱", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It seems there are some [c:bR]traps[c:] here", "看起来这儿有几个[c:bR]陷阱[c:]", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your bots will have to fight past them to get to me", "你的机器人得先解决它们才能碰到我", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Random Rule", "随机规则", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "For this battle, I'm going to add an additional rule.", "这场对战我要加一条额外规则", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Conveyor", "传送带", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It appears someone activated the [c:bR]conveyor belt[c:]", "看来有人启动了[c:bR]传送带[c:]", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cards will rotate clockwise every turn", "卡牌每回合会顺时针轮转", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Explosive", "爆炸性之物", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hm", " it looks like the cards in this battle will [c:bR]explode[c:] when they die;嗯，看来这场战斗中的卡牌死亡时会[c:bR]爆炸[c:]", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "That seems dangerous", "这看起来有点危险", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stickers", "贴纸", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "See those [c:bR]stickers[c:]? They give my cards extra abilities.", "看到那些[c:bR]贴纸[c:]了吗？它们能给我的卡牌附加额外能力。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You don't mind an extra challenge, do you?", "你应该不介意多点儿挑战吧？", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Missiles", "导弹", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh, there appears to be a malfunctioning missile launcher here", "哦，这里好像有个故障的导弹发射器", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Watch out for rogue missile strikes I guess", "小心点，可能会有导弹乱飞", Language.ChineseSimplified);
         }
     }
     public class P03ExpansionPack3Mod
