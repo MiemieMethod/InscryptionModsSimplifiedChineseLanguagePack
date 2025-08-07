@@ -5665,7 +5665,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gain a random item.", "获得一个随机道具。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Overcharge", "过载", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 4 Energy to increase the Power of this card by 1.", "消耗4点能量使该卡牌的力量+1。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Enrage", "激怒", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Enrage", "超频领袖", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay Energy equal to the Power of this card plus 2 to increase the Power of this card by 1.", "消耗等同于该卡牌力量值加2点的能量，使该卡牌的力量值增加1点。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Drive", "驱动", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spend one fuel: move in the direction inscribed in this sigil. This ability can only be activated once per turn.", "消耗1点燃料：向该印记标注的方向移动。该能力每回合只能发动一次。", Language.ChineseSimplified);
