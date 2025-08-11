@@ -578,8 +578,8 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BEST FRIENDS, BROTHERS, AND FIGHTERS.", "至交好友，手足兄弟，并肩战士。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Frank & Stein", "弗兰肯和斯坦", Language.ChineseSimplified);
             RegisterCard("Frank & Stein", "弗兰肯和斯坦");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "FrankenStein", "弗兰肯和斯坦", Language.ChineseSimplified);
-            RegisterCard("FrankenStein", "弗兰肯和斯坦");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "FrankenStein", "弗兰肯斯坦", Language.ChineseSimplified);
+            RegisterCard("FrankenStein", "弗兰肯斯坦");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A ghastly guardian spirit. It's presence lingers behind as it sprints through the dark.", "阴森可怖的守护灵。它在黑暗中疾驰而过，身后残留着不散的灵体。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fylgja", "陪伴者", Language.ChineseSimplified);
             RegisterCard("Fylgja", "陪伴者");
@@ -796,8 +796,10 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undertaker", "掘墓人", Language.ChineseSimplified);
             RegisterCard("Undertaker", "掘墓人");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "His service no longer needed, this lost soul buries without purpose..", "这个迷失的灵魂已无人需要其服务，只能漫无目的地埋葬亡者。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Walking Coffin", "行走棺椁", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Walking Coffin", "行走之棺", Language.ChineseSimplified);
             RegisterCard("Walking Coffin", "行走棺椁");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Running Coffin", "奔走之棺", Language.ChineseSimplified);
+            RegisterCard("Running Coffin", "奔走之棺");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Placeholder", "占位符", Language.ChineseSimplified);
             RegisterCard("Placeholder", "占位符");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE VAMPIRE IS A CREATURE OF LEGENDS. IN REALITY, LITTLE BLOOD TO DRINK AFTER EVERYONE HAS DIED.", "传说中的吸血鬼。现实中，等人都死光了哪还有血可吸。", Language.ChineseSimplified);
@@ -1012,7 +1014,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NO? A TERRIBLE FATE WILL AWAIT YOU", "不？可怕的命运正等着你", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I FEEL WATCHED SOMEHOW", "我总觉得被什么注视着", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "AN ANCIENT ENERGY DEMANDS YOUR SACRIFICE", "一股古老的力量要求你献上祭品", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ARE YOU WILLING TO SACRIFICE ONE OF YOUR STARTING-", "你愿意牺牲一张初始卡牌吗", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ARE YOU WILLING TO SACRIFICE ONE OF YOUR STARTING-", "你愿意牺牲初始……", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "WAIT", "且慢", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "IT SEEMS YOU BEAR A TERRIBLE CURSE", "看来你身负可怕的诅咒", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "YOU SHALL KEEP THE BOON, BUT FOR A FAR GREATER SACRIFICE", "你可保留奖励，但需付出更沉重的代价", Language.ChineseSimplified);
@@ -1272,10 +1274,10 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Choose as you will...", "随你选择吧……", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Choose one.", "选一张。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It is time to rest.", "该休息一下了。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go Bartender! Drink up!", "上吧，酒保！喝个痛快！", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go Undertaker! Dont scream!", "上吧，掘墓人！可别尖叫！", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go Slingers Soul! Time for a duel!", "上吧，枪手之魂！决斗时刻到了！", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Go One Armed Bandit! I hope i get lucky!", "上吧，独臂强盗！但愿我能走运！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:bG]Go Bartender![c:] Drink up!", "[c:bG]上吧，酒保！[c:]喝个痛快！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:bG]Go Undertaker! Dont scream!", "上吧，掘墓人！[c:]可别尖叫！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:bG]Go Slingers Soul! Time for a duel!", "上吧，枪手之魂！[c:]决斗时刻到了！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:bG]Go One Armed Bandit! I hope i get lucky!", "[c:bG]上吧，独臂强盗！[c:]但愿我能走运！", Language.ChineseSimplified);
             for (int amnt = 0; amnt < 10; amnt++)
             {
                 SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your score is " + amnt.ToString() + ", acceptable.", "你的分数是" + amnt.ToString() + "，尚可。", Language.ChineseSimplified);
@@ -3200,7 +3202,12 @@ namespace SimplifiedChineseLanguagePack
             RegisterEncounter("NonOriginal Undead Card", "非原版亡灵部落卡包", "The expansion cards for the Undead Tribe are not in the original game.", "由模组作者原创的非原版亡灵部落卡包。"); // UndeadTempleINKCM
             RegisterEncounter("Wilderness Legend", "荒野传说", "Add some simple cards based on the original imprint.", "在原有印记的基础上添加一些简单的卡片。"); // WildernessLegend
             RegisterEncounter("DLC_Fairy_Tale", "荒野传说DLC：璀璨童话", "Added some cards based on myths, legends, and fictional elements.", "添加了一些基于神话、传说和虚构元素的卡牌。"); // WildernessLegend
-            RegisterEncounter("P03KCM", "P03KCM", "", ""); 
+            RegisterEncounter("P03KCM", "P03KCM", "", "");
+            RegisterEncounter("Kaycee's P03 Expansion Pack #1", "凯茜的P03扩展包#1", "The first expansion pack from the developers of 'P03 in Kaycees Mod' adds [count] new cards across all four regions of Botopia.", "来自“凯茜模组中的P03模组”开发团队的首个扩展包，为机托邦四大区域新增[count]张卡牌。");  // P03KCM
+            RegisterEncounter("Kaycee's P03 Expansion Pack #2", "凯茜的P03扩展包#2", "The second official expansion pack, with [count] firey new cards that command an explosive reaction!", "官方第二弹扩展包，内含[count]张能引发爆炸性反应的火热新卡！");  // P03KCM
+            RegisterEncounter("Inscryption: Rogue Bots of Botopia", "邪恶冥刻：机托邦的失控机器人", "Botopia has become overrun with rogue bots! These [count] encounters have been rebalanced for Kaycee's Mod.", "机托邦已被失控机器人占领！这些[count]个遭遇战已针对凯茜模组重新平衡。");  // P03KCM
+            RegisterEncounter("Kaycee's P03 Encounter Expansion #1", "凯茜的P03遭遇战扩展#1", "[count] additional encounters that feature cards from the first official P03 expansion pack.", "新增[count]个包含首款P03官方扩展包卡牌的遭遇战。");  // P03KCM
+            RegisterEncounter("Kaycee's P03 Encounter Expansion #2", "凯茜的P03遭遇战扩展#2", "[count] additional encounters that feature cards from the second official P03 expansion pack.", "新增[count]个包含第二款P03官方扩展包卡牌的遭遇战。");  // P03KCM
             foreach (var kvp in EncountersTitle)
             {
                 SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Card Pack: " + kvp.Value, "卡包：" + kvp.Value, Language.ChineseSimplified);
@@ -5974,6 +5981,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Deals damage directly to the target.", "对目标造成直接伤害。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Urchin Spawn Conduit", "海胆生成管道", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Empty spaces within a circuit completed by [creature] spawn Urchin Cells at the end of the owner's turn.", "由[creature]构成的回路中的空位置可在持牌人回合结束时生成海胆电池。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 2 Energy to set the power of [creature] randomly between 1 and 6.", "消耗2点能量，使[creature]力量设为1至6之间的随机数值。", Language.ChineseSimplified);
         }
     }
     public class P03InKayceesModMod
@@ -5981,6 +5989,17 @@ namespace SimplifiedChineseLanguagePack
         public static void RegisterTranslations()
         {
             Debug.Log("Registering Tanslations for P03InKayceesMod Mod");
+            // Ability
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Double Death", "双重死亡", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Head Shot", "爆头射击", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] is immune to the effects of Touch of Death, Stinky, and fire.", "[creature]可免疫死神之触、臭臭印记和火焰的效果", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature]'s owner controls no Gem Vessels, [creature] perishes", "如果[creature]持牌人未打出玛珂容器，则[creature]会阵亡。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mine Cryptocurrency", "加密货币矿机", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When part of a conduit, [creature] will generate cryptocurrency.", "当[creature]作为管道的一部分时，将会生成加密货币。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stamp Paperwork", "盖章文件", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 1 Energy to stamp this paperwork as properly filed and ready for further processing.", "支付1点能量为这份文件盖章，确认其已妥善归档并准备进入下一流程", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Big Strike", "强力打击", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] attacks all cards in all lanes opposing it, or attacks just the center opposing lane if there are no cards it can attack.", "[creature]会攻击对面所有路线上的卡牌，如果对面没有卡牌则会攻击正中间路线。", Language.ChineseSimplified);
 
             // Card: Base
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mega Gunner", "四枪手", Language.ChineseSimplified);
@@ -6042,11 +6061,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Heal Conduit", "治疗管道", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Experiment #1", "实验体1号", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skeleton Master", "骷髅大师", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Double Death", "双重死亡", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Head Shot", "爆头射击", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] is immune to the effects of Touch of Death, Stinky, and fire.", "[creature]可免疫死神之触、臭臭印记和火焰的效果", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "M0l0t0v", "机械燃油弹", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature]'s owner controls no Gem Vessels, [creature] perishes", "如果[creature]持牌人未打出玛珂容器，则[creature]会阵亡。", Language.ChineseSimplified);
             // Card: ExpansionPack1
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "B30WULF", "机械冰原狼", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "PYTH0N", "机械响尾蛇", Language.ChineseSimplified);
@@ -6276,7 +6291,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Evolve", "进化", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gems", "宝石", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Stall", "拖延", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Annoying", "烦人精", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Annoying", "惹人生厌", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fire", "燃烧", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Recharge", "充能", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NoCharge", "无充能", Language.ChineseSimplified);
@@ -6323,8 +6338,20 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Community API", "社区API", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Super-Duper Unity Editor", "超级无敌Unity编辑器", Language.ChineseSimplified);
 
-        // DialogueEvent
-                    SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Well that was neat. I see you've made it all the way to the end.", "不错嘛。看来你一路打到了最后。", Language.ChineseSimplified);
+            // Pack
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Kaycee's P03 Expansion Pack #1", "凯茜的P03扩展包#1", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The first expansion pack from the developers of 'P03 in Kaycees Mod' adds [count] new cards across all four regions of Botopia.", "来自“凯茜模组中的P03模组”开发团队的首个扩展包，为机托邦四大区域新增[count]张卡牌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Kaycee's P03 Expansion Pack #2", "凯茜的P03扩展包#2", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The second official expansion pack, with [count] firey new cards that command an explosive reaction!", "官方第二弹扩展包，内含[count]张能引发爆炸性反应的火热新卡！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Inscryption: Rogue Bots of Botopia", "邪恶冥刻：机托邦的失控机器人", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Botopia has become overrun with rogue bots! These [count] encounters have been rebalanced for Kaycee's Mod.", "机托邦已被失控机器人占领！这些[count]个遭遇战已针对凯茜模组重新平衡。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Kaycee's P03 Encounter Expansion #1", "凯茜的P03遭遇战扩展#1", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[count] additional encounters that feature cards from the first official P03 expansion pack.", "新增[count]个包含首款P03官方扩展包卡牌的遭遇战。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Kaycee's P03 Encounter Expansion #2", "凯茜的P03遭遇战扩展#2", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[count] additional encounters that feature cards from the second official P03 expansion pack.", "新增[count]个包含第二款P03官方扩展包卡牌的遭遇战。", Language.ChineseSimplified);
+
+            // DialogueEvent
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Well that was neat. I see you've made it all the way to the end.", "不错嘛。看来你一路打到了最后。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I bet you think there's going to be some sort of final boss fight.", "我猜你肯定在期待什么最终决战吧。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "But that stupid [c:bR]modder[c:] hasn't gotten around to it yet!", "但那个蠢[c:bR]模组作者[c:]还没做到那一步呢！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "So instead, I'm just going to have to do this…", "所以呢，我只能这样……", Language.ChineseSimplified);
