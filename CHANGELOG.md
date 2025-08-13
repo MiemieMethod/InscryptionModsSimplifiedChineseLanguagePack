@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1
+
+Add supports for P03InKaycees Mod-5.0.41, P03ExpansionPack3-1.0.0, NewSpellCardToolkit-1.2.5.
+
 ## 1.4.0
 
 Add supports for P03Sigilarium-1.1.16.

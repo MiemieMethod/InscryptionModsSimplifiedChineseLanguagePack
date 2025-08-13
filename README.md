@@ -7,11 +7,13 @@ Current Supportted Mods:
 - Story Mods:
     - [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
     - [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
+    - [P03 In Kaycees Mod](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_In_Kaycees_Mod/) >= 5.0.41
 - Support Mods:
     - [API](https://thunderstore.io/c/inscryption/p/API_dev/API/) >= 2.23.2
     - [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
     - [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
     - [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
+    - [New Spell Card Toolkit](https://thunderstore.io/c/inscryption/p/WhistleWind/New_Spell_Card_Toolkit/) >= 1.2.5
 - Sigilarium Mods:
     - [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
     - [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
@@ -19,6 +21,7 @@ Current Supportted Mods:
     - [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
     - [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
 - Gameplay Mods:
+    - [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
     - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
     - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
     - [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) >= 1.0.1
@@ -65,11 +68,13 @@ Acknowledgement:
 - 剧情模组：
     - 格里魔拉模组 [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
     - 蔓尼菲科模组 [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
+    - 凯西模组中的P03 [P03 In Kaycees Mod](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_In_Kaycees_Mod/) >= 5.0.41
 - 辅助模组：
     - [API](https://thunderstore.io/c/inscryption/p/API_dev/API/) >= 2.23.2
     - 成就 [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
     - 自定义副牌组 [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
     - 卡包管理器API [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
+    - 新法术卡工具箱 [New Spell Card Toolkit](https://thunderstore.io/c/inscryption/p/WhistleWind/New_Spell_Card_Toolkit/) >= 1.2.5
 - 印记模组：
     - Nevernamed的自定义印记 [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
     - 印记大全 [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
@@ -77,6 +82,7 @@ Acknowledgement:
     - WhistleWind异常印记 [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
     - P03自定义印记 [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
 - 玩法模组：
+    - P03扩展包#3 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
     - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
     - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
     - 死亡卡挑战 [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) >= 1.0.1

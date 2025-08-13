@@ -7,7 +7,7 @@
     <IsPackable>false</IsPackable>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>SimplifiedChineseLanguagePack</AssemblyName>
-    <VersionPrefix>1.4.0</VersionPrefix>
+    <VersionPrefix>1.4.1</VersionPrefix>
     <RootNamespace>SimplifiedChineseLanguagePack</RootNamespace>
     <LangVersion>10</LangVersion>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
@@ -37,6 +37,9 @@
     </Reference>
     <Reference Include="InscryptionCommunityPatch">
       <HintPath>lib\InscryptionCommunityPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="Infiniscryption.P03KayceeRun">
+      <HintPath>lib\Infiniscryption.P03KayceeRun.dll</HintPath>
     </Reference>
   </ItemGroup>
 
