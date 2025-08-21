@@ -21,6 +21,9 @@ Current Supportted Mods:
     - [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
     - [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
 - Gameplay Mods:
+    - [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
+    - [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
+    - [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
     - [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
     - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
     - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
@@ -33,10 +36,11 @@ Current Supportted Mods:
     - [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
     - [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
     - [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
+    - [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
     - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.0
     - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.3.6
-    - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.4
+    - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.6
     - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
 - More Adding...
 
@@ -53,6 +57,9 @@ Known Issues:
     - NEW LESHY RUN: Because of the same name with Grimora's first button, this cannot be translated, or Grimora's will be translated too
     - NEW MAGNIFICUS RUN: If the first button is not translated but this one is, starters screen will be in chaos and the challenge screen will show Leshy's challenges
 	- New Magnificus Run: This is the button on the main screen. As in the same name of the one in Kaycee's Mod, this one also cannot be translated
+- When P03KCM Mod installed, these 2 buttons cannot be translated due to an unknown bug:
+    - NEW LESHY RUN: Because of the same name with Grimora's first button, this cannot be translated, or Grimora's will be translated too
+    - NEW P03 RUN: If the first button is not translated but this one is, starters screen will be in chaos and the challenge screen will show Leshy's challenges
 
 Authors List:
 - MiemieMethod
@@ -82,6 +89,9 @@ Acknowledgement:
     - WhistleWind异常印记 [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
     - P03自定义印记 [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
 - 玩法模组：
+    - 植物大战僵尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
+    - 格里魔拉模组扩展 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
+    - 格里魔拉模组冒险扩展 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
     - P03扩展包#3 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
     - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
     - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
@@ -94,10 +104,11 @@ Acknowledgement:
     - 诅咒 [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
     - 无尽第二章 [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
     - TVF的头目 [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
+    - Zepht阳光 [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
     - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.0
     - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.3.6
-    - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.4
+    - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.6
     - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
 - 正在加入更多……
 
@@ -114,6 +125,9 @@ Acknowledgement:
     - NEW LESHY RUN 新的莱西冒险：因为和格里魔拉模组第一个按钮同名，无法被汉化。否则格里魔拉模组中同名按钮也会被汉化
     - NEW MAGNIFICUS RUN 新的蔓尼菲科冒险：如果上个按钮未被汉化，该按钮却被汉化的话，会引起初始牌组选择屏幕混乱，并且挑战屏幕会显示莱西的挑战
 	- New Magnificus Run 新的蔓尼菲科冒险：该按钮是指主界面的那个按钮。因为文本和凯茜模组中的按钮同名，所以也无法被汉化
+- 因为P03KCM模组的未知问题，以下两个按钮不能汉化，否则会出现问题：
+    - NEW LESHY RUN 新的莱西冒险：因为和格里魔拉模组第一个按钮同名，无法被汉化。否则格里魔拉模组中同名按钮也会被汉化
+    - NEW P03 RUN 新的P03冒险：如果上个按钮未被汉化，该按钮却被汉化的话，会引起初始牌组选择屏幕混乱，并且挑战屏幕会显示莱西的挑战
 
 作者列表：
 - MiemieMethod（方法放寒假）

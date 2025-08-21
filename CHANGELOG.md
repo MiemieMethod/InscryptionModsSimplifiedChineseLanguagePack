@@ -1,8 +1,12 @@
 # Changelog
 
+## 1.4.2
+
+Add supports for ZephtSun-1.0.0, PlantsVsZombies-0.7.0.
+
 ## 1.4.1
 
-Add supports for P03InKaycees Mod-5.0.41, P03ExpansionPack3-1.0.0, NewSpellCardToolkit-1.2.5.
+Add supports for P03InKayceesMod-5.0.41, P03ExpansionPack3-1.0.0, NewSpellCardToolkit-1.2.5.
 
 ## 1.4.0
 
