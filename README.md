@@ -42,6 +42,8 @@ Current Supportted Mods:
     - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.3.6
     - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.6
     - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
+    - [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
+    - [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
 - More Adding...
 
 Please contact me if you find problems.
@@ -67,6 +69,7 @@ Authors List:
 
 Acknowledgement:
 - QIYAO
+- goatterman233
 
 本模组是为各个《邪恶冥刻》模组设计的简体中文语言包补丁，同时修复了汉字显示缺字问题。
 
@@ -110,6 +113,8 @@ Acknowledgement:
     - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.3.6
     - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.6
     - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
+    - 微调：九头蛇 [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
+    - 更多道具 [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
 - 正在加入更多……
 
 如果有任何问题请联系我修复。
@@ -135,3 +140,4 @@ Acknowledgement:
 
 致谢：
 - QIYAO（七幺）
+- goatterman233

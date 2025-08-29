@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.3
+
+Add supports for SmallTweakHydra-1.0.0, MoreItems-0.3.0.
+
 ## 1.4.2
 
 Add supports for ZephtSun-1.0.0, PlantsVsZombies-0.7.0.
