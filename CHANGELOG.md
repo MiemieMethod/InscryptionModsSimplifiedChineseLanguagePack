@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.4
+
+Add supports for DinoMod-1.5.0.
+
 ## 1.4.3
 
 Add supports for SmallTweakHydra-1.0.0, MoreItems-0.3.0.
