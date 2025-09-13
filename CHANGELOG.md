@@ -2,6 +2,10 @@
 
 ## 1.4.4
 
+Update texts.
+
+## 1.4.4
+
 Add supports for DinoMod-1.5.0.
 
 ## 1.4.3

@@ -21,7 +21,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.4.4";
+        private const string Version = "1.4.5";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -3146,6 +3146,11 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The docile little ones don't like to fight.", "温顺的小家伙们不喜欢打架。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Elaphe Taeniura", "黑眉锦蛇", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The black browed snake, who loves squirrels, can unleash its true power by catering to its preferences.", "喜欢松鼠的黑眉锦蛇,投其所好便可释放其真正的力量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Juvenile Lammergeier", "胡鹫雏鸟", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The ambitious Juvenile Lammergeier store food and have a promising future ahead.", "雄心勃勃的胡鹫幼鸟储存食物，未来可期。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mutated Hamster", "突变仓鼠", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Moon Cat", "玥猫", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The moon cat with mysterious words on its forehead.", "额头上写着东方神秘文字的玥猫。", Language.ChineseSimplified);
 
             //WLDLC-other
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cowardly Aquasquirrel", "胆小水松鼠", Language.ChineseSimplified);
@@ -3418,6 +3423,7 @@ namespace SimplifiedChineseLanguagePack
         {
             Debug.Log("Registering Tanslations for NevernamedsSigilarium Mod");
             // Consumable
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NevernamedsSigils", "无名者的印记", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pliers", "老虎钳", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Scissors", "剪刀", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bleach", "漂白剂", Language.ChineseSimplified);

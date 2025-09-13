@@ -39,8 +39,8 @@ Current Supportted Mods:
     - [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
     - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.0
     - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
-    - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.3.6
-    - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.6
+    - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.3.8
+    - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.0.0
     - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
     - [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
     - [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
@@ -111,8 +111,8 @@ Acknowledgement:
     - Zepht阳光 [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
     - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.0
     - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
-    - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.3.6
-    - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 0.9.6
+    - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.3.8
+    - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.0.0
     - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
     - 微调：九头蛇 [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
     - 更多道具 [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
