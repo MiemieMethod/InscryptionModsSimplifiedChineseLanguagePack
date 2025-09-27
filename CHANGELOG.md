@@ -1,6 +1,10 @@
 # Changelog
 
-## 1.4.4
+## 1.4.6
+
+Update texts.
+
+## 1.4.5
 
 Update texts.
 

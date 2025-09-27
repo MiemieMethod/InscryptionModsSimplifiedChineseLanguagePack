@@ -21,7 +21,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.4.5";
+        private const string Version = "1.4.6";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -3151,6 +3151,19 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mutated Hamster", "突变仓鼠", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Moon Cat", "玥猫", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The moon cat with mysterious words on its forehead.", "额头上写着东方神秘文字的玥猫。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wolf Magpie", "狼鹊", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The physique of wolves and the posture of magpies combine bravery and agility.", "狼魄鹊姿，它们集勇猛与灵动与一身。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Skeleton Grizzly", "骷髅灰熊", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "For some reason, even death cannot stop its thirst for food and blood.", "不知为何，即便死亡也无法阻挡它对食物与血液的渴望。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Skeleton Grizzly", "觉醒的骷髅灰熊", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Will there still be people who sympathize with the nameless dead?", "没有名字的死亡之人，还会有人来怜悯吗？", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nameless Dead", "无名亡者", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Name", "名字", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Slow Cooling Bone", "慢冷滞骸", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Aweakend Slow Cooling Bone", "觉醒的慢冷滞骸", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Who can comprehend the true meaning of death? Even Grimora cannot comprehend it.", "谁能领悟死亡的真谛呢？即便是格里魔拉也无法参透。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Green Anaconda", "森蚺", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The parthenogenetic Green Anaconda can swallow humans.", "能够孤雌生殖的森蚺，它们巨可吞人。", Language.ChineseSimplified);
 
             //WLDLC-other
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cowardly Aquasquirrel", "胆小水松鼠", Language.ChineseSimplified);
@@ -6159,7 +6172,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] attacks all cards in all lanes opposing it, or attacks just the center opposing lane if there are no cards it can attack.", "[creature]会攻击对面所有路线上的卡牌，如果对面没有卡牌则会攻击正中间路线。", Language.ChineseSimplified);
             // Ability: Multiverse
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiverse Bomb Latch", "多元宇宙炸弹传花", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, its owner chooses a creature in any universe to gain the Multiverse Detonator sigil", "[creature]阵亡时，其持牌人需在任意宇宙中选定一个造物继承多元宇宙引爆器印记", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, its owner chooses a creature in any universe to gain the Multiverse Detonator sigil.", "[creature]阵亡时，其持牌人需在任意宇宙中选定一个造物继承多元宇宙引爆器印记", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiverse Brittle Latch", "多元宇宙脆骨传花", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, its owner chooses a creature in any universe to gain the Brittle sigil.", "[creature]阵亡时，其持牌人需在任意宇宙中选定一个造物继承脆骨印记。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiverse Detonator", "多元宇宙引爆器", Language.ChineseSimplified);
@@ -6180,7 +6193,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a creature moves into the space opposing [creature] in any universe, they are dealt 1 damage.", "任何造物在任意宇宙中进入[creature]对面的位置时，均会受到1点伤害。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiverse Shield Latch", "多元宇宙坚盾传花", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, its owner chooses a creature in any universe to gain the Nano Armor sigil.", "[creature]阵亡时，其持牌人可选择任意宇宙中的造物继承纳米铠甲印记。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiverse Rampager", "多元宇宙横冲直撞", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiverse Sprinter", "多元宇宙冲刺能手", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move to the next universe.", "持牌人回合结束时，[creature]将跃迁至下一个宇宙。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiverse Double Strike", "多重宇宙双重攻击", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike each opposing space in every universe other than its own.", "[creature]会攻击除自身所在宇宙外所有平行宇宙中的对应位置", Language.ChineseSimplified);
