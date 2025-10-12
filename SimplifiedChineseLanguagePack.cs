@@ -21,7 +21,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.4.7";
+        private const string Version = "1.4.8";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -1467,13 +1467,21 @@ namespace SimplifiedChineseLanguagePack
     public class MagnificusMod
     {
         public static Dictionary<string, string> Cards = new();
-        public static Dictionary<string, KeyValuePair<string, string>> CardsDescription = new();
+        public static Dictionary<string, List<KeyValuePair<string, string>>> CardsDescription = new();
+
         public static Dictionary<string, string> Abilities = new();
 
         public static void RegisterCard(string en, string zh, string desen, string deszh)
         {
-            Cards.Add(en, zh);
-            CardsDescription.Add(en, new KeyValuePair<string, string>(desen, deszh));
+            if (!Cards.ContainsKey(en))
+            {
+                Cards.Add(en, zh);
+            }
+            if (!CardsDescription.ContainsKey(en))
+            {
+                CardsDescription[en] = new List<KeyValuePair<string, string>>();
+            }
+            CardsDescription[en].Add(new KeyValuePair<string, string>(desen, deszh));
         }
 
         public static void RegisterAbility(string en, string zh)
@@ -2606,14 +2614,17 @@ namespace SimplifiedChineseLanguagePack
             {
                 var key = kvp.Key;
                 var value = kvp.Value;
-                var descKey = CardsDescription[key].Key;
-                var descValue = CardsDescription[key].Value;
-                SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You glance at a " + key + ". " + descKey, "你瞥见一张" + value + "。" + descValue, Language.ChineseSimplified);
-                SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A " + key + " appears from within the portrait. " + descKey, value + "从肖像画中浮现。" + descValue, Language.ChineseSimplified);
-                SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You gaze at a " + key + ". " + descKey, "你凝视着一张" + value + "。" + descValue, Language.ChineseSimplified);
-                SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You glance at an " + key + ". " + descKey, "你瞥见一张" + value + "。" + descValue, Language.ChineseSimplified);
-                SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An " + key + " appears from within the portrait. " + descKey, value + "从肖像画中浮现。" + descValue, Language.ChineseSimplified);
-                SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You gaze at an " + key + ". " + descKey, "你凝视着一张" + value + "。" + descValue, Language.ChineseSimplified);
+                foreach (var kv in CardsDescription[key])
+                {
+                    var descKey = kv.Key;
+                    var descValue = kv.Value;
+                    SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You glance at a " + key + ". " + descKey, "你瞥见一张" + value + "。" + descValue, Language.ChineseSimplified);
+                    SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A " + key + " appears from within the portrait. " + descKey, value + "从肖像画中浮现。" + descValue, Language.ChineseSimplified);
+                    SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You gaze at a " + key + ". " + descKey, "你凝视着一张" + value + "。" + descValue, Language.ChineseSimplified);
+                    SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You glance at an " + key + ". " + descKey, "你瞥见一张" + value + "。" + descValue, Language.ChineseSimplified);
+                    SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An " + key + " appears from within the portrait. " + descKey, value + "从肖像画中浮现。" + descValue, Language.ChineseSimplified);
+                    SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You gaze at an " + key + ". " + descKey, "你凝视着一张" + value + "。" + descValue, Language.ChineseSimplified);
+                }
             }
             Debug.Log("特殊对话：你瞥见一张[creature]。[description]：结束");
 

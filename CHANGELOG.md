@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.8
+
+Fix a fatal error.
+
 ## 1.4.7
 
 Update texts.
