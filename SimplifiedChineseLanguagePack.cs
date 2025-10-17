@@ -21,7 +21,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.4.8";
+        private const string Version = "1.4.9";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -1672,7 +1672,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select a card to swap stats.", "选择一张卡牌交换其属性。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rage", "狂怒", Language.ChineseSimplified);
             RegisterAbility("Rage", "狂怒");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select a card to kill. The opponent of the card will recieve damage equal to the amount of health the card had.", "选择一张卡牌消灭。该卡牌对面的造物将受到等同于被消灭卡牌生命值的伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select a card to kill. The opponent of the card will recieve damage equal to the amount of health the card had.", "选择一张卡牌消灭。该卡牌的对手本体将受到等同于被消灭卡牌生命值的伤害。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fireball", "火球术", Language.ChineseSimplified);
             RegisterAbility("Fireball", "火球术");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select a card to take 2 damage.", "选择一张卡牌使其受到2点伤害。", Language.ChineseSimplified);
@@ -3175,10 +3175,30 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nameless Dead", "无名亡者", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Name", "名字", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Slow Cooling Bone", "慢冷滞骸", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Aweakend Slow Cooling Bone", "觉醒的慢冷滞骸", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Slow Cooling Bone", "觉醒的慢冷滞骸", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Who can comprehend the true meaning of death? Even Grimora cannot comprehend it.", "谁能领悟死亡的真谛呢？即便是格里魔拉也无法参透。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Green Anaconda", "森蚺", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The parthenogenetic Green Anaconda can swallow humans.", "能够孤雌生殖的森蚺，它们巨可吞人。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ghost Rider", "恶灵骑士", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Ghost Rider who emphasizes killing justice will burn away the sins of all things with anger.", "讲究杀戮正义的恶灵骑士，它将用愤怒燃尽万物的罪孽。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Ghost Rider", "觉醒的恶灵骑士", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ghost Fire", "幽冥火", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Ghost Fire", "觉醒的幽冥火", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Big Black Mouse", "大黑耗子", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The big black rats, who are home everywhere, are insatiable and helpless like weeds on the wall.", "四海为家的大黑耗子，它们如墙头草一般无依无靠。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Camel", "骆驼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Camels who work tirelessly are frequent visitors on the Silk Road.", "任劳任怨的骆驼，乃丝绸之路之常客。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thin Camel", "嶙峋骆驼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A thin and shapeless camel, I don't know who could draw such a picture.", "一只瘦的不成样子的嶙峋骆驼，不知这画作出自何人。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakened Thin Camel", "觉醒的嶙峋骆驼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Board Tentacle", "木板触手", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I don't remember taking a photo of it.", "我不曾记得我为它照相。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Golden Tentacle", "金之触手", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "They traded death for their hands.", "它们以触手换取死亡。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Item Tentacle", "道具触手", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "They become excited when they see props.", "它们看到道具时异常兴奋。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Scaleten Tentacle", "比例触手", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Viscera Tentacle", "内脏触手", Language.ChineseSimplified);
 
             //WLDLC-other
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cowardly Aquasquirrel", "胆小水松鼠", Language.ChineseSimplified);
@@ -8868,7 +8888,7 @@ namespace SimplifiedChineseLanguagePack
         public static void RegisterTranslations()
         {
             Debug.Log("Registering Tanslations for SmallTweak_Hydra Mod");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A card bearing this Sigil hatches when drawn if 5 unique numbers are in the Health of creatures in your deck, and in their Power, and if there is a creature of 5 unique tribes in your deck. [This Excludes all cards bearing this sigil]", "[creature]在抽取时的孵化条件如下：你的牌组中的造物的生命和力量包含5个不同的数字，且有至少来自5个不同族群的造物各一张（[creature]将不会纳入此印记的计算）。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A card bearing this Sigil hatches when drawn if 5 unique numbers are in the Health of creatures in your deck, and in their Power, and if there is a creature of 5 unique tribes in your deck. [This Excludes all cards bearing this sigil]", "[creature]在抽取时的孵化条件如下：你的牌组中的造物的生命和力量包含5个不同的数字，且有至少来自5个不同族群的造物各一张（所有带有此印记的卡牌将不会纳入此印记的计算）。", Language.ChineseSimplified);
 
 
         }
@@ -8988,7 +9008,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Velociraptor, a flighty, agile beast.", "伶盗龙，一种飞行敏捷的野兽。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Strange Vial", "奇怪的药瓶", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A demonic fluid in a vile. Under the right conditions it can evolve into a horryfying beast.", "一种邪恶的液体。在适当的条件下，它可以进化成可怕的野兽。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Call Allies", "呼叫盟友", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Call Allies", "呼朋引伴", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, it will summon allies adjacent of where the card is placed.", "当[creature]被打出时，它将在相邻空位复制两个与其相同的造物。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dino-Mod Card Pack", "恐龙模组卡包", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Adds silly dinos and prehistoric beasts to the game!", "将愚蠢的恐龙和史前野兽添加到游戏中！", Language.ChineseSimplified);
