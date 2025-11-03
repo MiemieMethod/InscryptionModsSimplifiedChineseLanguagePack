@@ -7,7 +7,7 @@ Current Supportted Mods:
 - Story Mods:
     - [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
     - [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
-    - [P03 In Kaycees Mod](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_In_Kaycees_Mod/) >= 5.0.41
+    - [P03 In Kaycees Mod](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_In_Kaycees_Mod/) >= 5.0.42
 - Support Mods:
     - [API](https://thunderstore.io/c/inscryption/p/API_dev/API/) >= 2.23.2
     - [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
@@ -79,7 +79,7 @@ Acknowledgement:
 - 剧情模组：
     - 格里魔拉模组 [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) >= 7.6.4
     - 蔓尼菲科模组 [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) >= 3.6.2
-    - 凯西模组中的P03 [P03 In Kaycees Mod](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_In_Kaycees_Mod/) >= 5.0.41
+    - 凯西模组中的P03 [P03 In Kaycees Mod](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_In_Kaycees_Mod/) >= 5.0.42
 - 辅助模组：
     - [API](https://thunderstore.io/c/inscryption/p/API_dev/API/) >= 2.23.2
     - 成就 [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) >= 1.0.0
