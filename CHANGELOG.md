@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.11
+
+Update texts.
+
 ## 1.4.10
 
 Update texts.

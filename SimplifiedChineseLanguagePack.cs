@@ -21,7 +21,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.4.10";
+        private const string Version = "1.4.11";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -513,8 +513,8 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Animator", "操偶师", Language.ChineseSimplified);
             RegisterCard("Animator", "操偶师");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A formless Creature, that yet lingers. Truly a horrific sight.", "无形无相却徘徊不去的造物。着实令人毛骨悚然。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Apparition", "幽魂", Language.ChineseSimplified);
-            RegisterCard("Apparition", "幽魂");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Apparition", "幽灵鬼影", Language.ChineseSimplified);
+            RegisterCard("Apparition", "幽灵鬼影");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Only a fool would need such assistance.", "只有蠢材才需要这种帮助。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Graven Ashes", "刻墓之烬", Language.ChineseSimplified);
             RegisterCard("Graven Ashes", "刻墓之烬");
@@ -746,8 +746,8 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "IT IS SAID ALL IS WELL THAT ENDS. IT IS SAID TIME IS LIKE AN OUROBOROS, IT DOES NOT END, IT ONLY REPEATS ITSELF.", "常言道善终即善。常言时间如衔尾之蛇，无始无终，唯有轮回。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ourobones", "衔骨蛇", Language.ChineseSimplified);
             RegisterCard("Ourobones", "衔骨蛇");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Plague Doctor", "瘟疫医生", Language.ChineseSimplified);
-            RegisterCard("Plague Doctor", "瘟疫医生");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Plague Doctor", "疫医", Language.ChineseSimplified);
+            RegisterCard("Plague Doctor", "疫医");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "HE HAS DETERMINED THE UNDEAD ARE SICK WITH A TERRIBLE ILLNESS. THE ONLY CURE IS DEATH.", "他诊断出亡灵们罹患恶疾。唯一的解药就是死亡。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "AN EVIL TRICKSTER, THE POLTERGEIST HAS ENJOYED THEIR DEATH VERY MUCH.", "邪恶的捣蛋鬼，恶灵非常享受自己的死亡。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Poltergeist", "恶灵", Language.ChineseSimplified);
@@ -819,8 +819,8 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Slinger's Soul", "枪手之魂", Language.ChineseSimplified);
             RegisterCard("Slinger's Soul", "枪手之魂");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THEY SHOW UP OUT OF NOWHERE AND RELOCATE PEOPLE AS THEY PLEASE.", "它们凭空出现，随心所欲地转移人类。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sluagh", "幽灵鬼影", Language.ChineseSimplified);
-            RegisterCard("Sluagh", "幽灵鬼影");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sluagh", "幽魂军团", Language.ChineseSimplified);
+            RegisterCard("Sluagh", "幽魂军团");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Trick or treat!", "不给糖就捣蛋！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Candy Bucket", "糖果桶", Language.ChineseSimplified);
             RegisterCard("Candy Bucket", "糖果桶");
@@ -3199,6 +3199,15 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "They become excited when they see props.", "它们看到道具时异常兴奋。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Scaleten Tentacle", "比例触手", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Viscera Tentacle", "内脏触手", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Strengthen Eagle", "强化猎鹰", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bomb Mechanical Dog", "炸弹机械犬", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Is sacrificing one's life for something insignificant the purpose of creating machinery?", "为不值一提的事牺牲自己的性命，终是机械被创造的宿命吗？", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bomb Mechanical Dog 2.0", "炸弹机械犬2.0", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Salt Fish", "咸鱼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It's just a dead fish...", "不过一条死鱼罢了...", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Turning over salt fish", "翻身咸鱼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ice scaled Snow Snake", "冰鳞玄蛇", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ice cast scales, cold snake hearts.", "冰冻的蛇鳞，凛冽的蛇心。", Language.ChineseSimplified);
 
             //WLDLC-other
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cowardly Aquasquirrel", "胆小水松鼠", Language.ChineseSimplified);
@@ -5883,7 +5892,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Move to the lane to the right, if it is empty.", "若右侧路线为空，则移动至该位置。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Submerge", "下潜", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spend one fuel: submerge during the opponent's turn. While submerged, opposing creatures attack its owner directly.", "消耗1点燃料：在对手回合期间潜入水下。潜水时，敌方造物将直接攻击其持有者。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tow Hook", "拖曳钩", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tow Hook", "拖拽钩", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spend one fuel: tow an opposing creature to your side of the board until end of turn. Creatures being towed cannot be hammered. This ability can only be activated once per turn.", "消耗1点燃料：将对方一个造物拖曳至你这一侧牌桌，持续到回合结束。被拖曳的造物无法被锤击。该能力每回合只能激活一次。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Button Pusher", "按键狂魔", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, all activated sigils and sigils that trigger on play or on death are activated.", "当使用[creature]时，所有可激活印记以及登场或死亡时触发的印记都会立即激活。", Language.ChineseSimplified);
@@ -6066,7 +6075,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The card in this slot will provide a Green Mox.", "放置在该卡槽的卡牌会提供绿色玛珂。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Great Mox Slot", "至尊玛珂卡槽", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The card in this slot will provide all three moxen.", "放置在该卡槽的卡牌会同时提供三种玛珂。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Miner", "挖矿手", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Miner", "探矿者", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] buries itself during its opponent's turn. While buried, opposing creatures attack its owner directly. When it comes back up, it creates a card in its owner's hand.", "[creature]会在对手回合时潜入地下。潜地期间，敌方造物将直接攻击其持牌人。当它重返地面时，会为持牌人创造一张新卡牌。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rubber Stamp", "橡皮图章", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whenever you play [creature], it becomes a copy of another creature of your choosing. If this creature has other abilities, those abilities will be transferred (up to the maximum of 4).", "当你使用[creature]时，它会变成你选择的另一个造物的复制品。若该造物具有其他能力，这些能力也将被转移（最多4个）。", Language.ChineseSimplified);
