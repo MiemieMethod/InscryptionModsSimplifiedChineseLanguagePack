@@ -9,6 +9,7 @@ using InscryptionAPI.Pelts;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
+using Sirenix.Serialization.Utilities;
 using TMPro;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.4.11";
+        private const string Version = "1.5.0";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -122,6 +123,9 @@ namespace SimplifiedChineseLanguagePack
             SmallTweakHydraMod.RegisterTranslations();
             MoreItemsMod.RegisterTranslations();
             DinoMod.RegisterTranslations();
+            TribalPeltsMod.RegisterTranslations();
+            SmallTweakBorneMod.RegisterTranslations();
+            TooManySigilsMod.RegisterTranslations();
             stopwatch.Stop();
             Debug.Log($"RegisterTranslations 执行时间: {stopwatch.ElapsedMilliseconds} ms");
             LanguageLoaded = true;
@@ -135,10 +139,12 @@ namespace SimplifiedChineseLanguagePack
             Debug.Log("Post Register Translations for BittysChallenges");
             foreach (var value in CardManager.BaseGameCards)
             {
+                if (value.SafeIsUnityNull() || value.DisplayedNameEnglish == null) continue;
                 Translate(GUID, null, "Weak " + value.DisplayedNameEnglish, "虚弱" + value.DisplayedNameLocalized, Language.ChineseSimplified);
             }
             foreach (var value in newCards)
             {
+                if (value.SafeIsUnityNull() || value.DisplayedNameEnglish == null) continue;
                 Translate(GUID, null, "Weak " + value.DisplayedNameEnglish, "虚弱" + value.DisplayedNameLocalized, Language.ChineseSimplified);
             }
 
@@ -152,6 +158,7 @@ namespace SimplifiedChineseLanguagePack
             };
             foreach (var value in CardManager.BaseGameCards)
             {
+                if (value.SafeIsUnityNull() || value.DisplayedNameEnglish == null) continue;
                 foreach (var gemType in gemTypes.Keys)
                 {
                     Translate(GUID, null, "You need two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + " </color> gems to play that " + value.DisplayedNameLocalized, "需要两颗" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>宝石才能使用这张" + value.DisplayedNameLocalized, Language.ChineseSimplified);
@@ -164,6 +171,7 @@ namespace SimplifiedChineseLanguagePack
             }
             foreach (var value in newCards)
             {
+                if (value.SafeIsUnityNull() || value.DisplayedNameEnglish == null) continue;
                 foreach (var gemType in gemTypes.Keys)
                 {
                     Translate(GUID, null, "You need two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + " </color> gems to play that " + value.DisplayedNameLocalized, "需要两颗" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>宝石才能使用这张" + value.DisplayedNameLocalized, Language.ChineseSimplified);
@@ -179,6 +187,7 @@ namespace SimplifiedChineseLanguagePack
             Debug.Log("Post Register Translations for P03InKCM");
             foreach (var value in CardManager.BaseGameCards)
             {
+                if (value.SafeIsUnityNull() || value.DisplayedNameEnglish == null) continue;
                 string name;
                 string nameLoc;
                 if (value.DisplayedNameEnglish.ToLowerInvariant().Contains("skel-e"))
@@ -192,16 +201,17 @@ namespace SimplifiedChineseLanguagePack
                     nameLoc = value.DisplayedNameLocalized + "外骨骼";
                 }
                 Translate(GUID, null, name, nameLoc, Language.ChineseSimplified);
-                for (int score = 0; score <= 100; score++)
+                for (int score = 0; score <= 10; score++)
                 {
                     Translate(GUID, null, value.DisplayedNameEnglish + " " + score.ToString() + ".0", value.DisplayedNameLocalized + " " + score.ToString() + ".0", Language.ChineseSimplified);
                 }
             }
             foreach (var value in newCards)
             {
+                if (value.SafeIsUnityNull() || value.DisplayedNameEnglish == null) continue;
                 string name;
                 string nameLoc;
-                if (value.DisplayedNameEnglish != null && value.DisplayedNameEnglish.ToLowerInvariant().Contains("skel-e"))
+                if (value.DisplayedNameEnglish.ToLowerInvariant().Contains("skel-e"))
                 {
                     name = "Skel-E-" + value.DisplayedNameEnglish.Replace(" ", "-");
                     nameLoc = value.DisplayedNameLocalized + "骷髅";
@@ -212,7 +222,7 @@ namespace SimplifiedChineseLanguagePack
                     nameLoc = value.DisplayedNameLocalized + "外骨骼";
                 }
                 Translate(GUID, null, name, nameLoc, Language.ChineseSimplified);
-                for (int score = 0; score <= 100; score++)
+                for (int score = 0; score <= 10; score++)
                 {
                     Translate(GUID, null, value.DisplayedNameEnglish + " " + score.ToString() + ".0", value.DisplayedNameLocalized + " " + score.ToString() + ".0", Language.ChineseSimplified);
                 }
@@ -1591,7 +1601,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A card bearing this sigil will perish at the end of the turn.", "[creature]会在回合结束时消亡。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Morph", "不定变体", Language.ChineseSimplified);
             RegisterAbility("Morph", "不定变体");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, it will mimic the card opposing it. If there is no card opposing it, this card will perish.", "当[creature]被使用时，会复制对面位置的卡牌。若对面无卡牌，则该卡牌会死亡。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, it will mimic the card opposing it. If there is no card opposing it, this card will perish.", "当[creature]被使用时，会复制对面位置的卡牌。若对面无卡牌，则该卡牌会阵亡。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Multiplication", "矩阵乘法", Language.ChineseSimplified);
             RegisterAbility("Multiplication", "矩阵乘法");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, draw another of this card, but with a different gem cost.", "使用[creature]时，抽一张同名卡牌，但其宝石需求会发生变化。", Language.ChineseSimplified);
@@ -1648,10 +1658,10 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, every card on the board will have their sigils erased.", "当带有该印记的咒语牌被使用时，牌桌上所有卡牌的印记将被清除。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Flame", "火焰咒", Language.ChineseSimplified);
             RegisterAbility("Spell of Flame", "火焰咒");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select a side of the board, every card on that side will lose 2 health (without perishing) and have their attack increased by 1.", "选择牌桌一侧，该侧所有卡牌生命值减少2点（但不会死亡）且攻击力增加1点。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Select a side of the board, every card on that side will lose 2 health (without perishing) and have their attack increased by 1.", "选择牌桌一侧，该侧所有卡牌生命值减少2点（但不会阵亡）且攻击力增加1点。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Set Ablaze", "点燃", Language.ChineseSimplified);
             RegisterAbility("Set Ablaze", "点燃");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every card on the opposite side will lose 2 health (without perishing) and have their attack increased by 1.", "对方所有卡牌将失去2点生命值（不会死亡）且攻击力增加1点。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every card on the opposite side will lose 2 health (without perishing) and have their attack increased by 1.", "对方所有卡牌将失去2点生命值（但不会阵亡）且攻击力增加1点。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "One Time Spell", "一次性法术", Language.ChineseSimplified);
             RegisterAbility("One Time Spell", "一次性法术");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When the turn ends, a spell bearing this sigil will perish and be removed from your deck.", "当回合结束时，带有该印记的法术会阵亡并从你的牌组移除。", Language.ChineseSimplified);
@@ -3462,10 +3472,10 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] receives the first damage, it gains 2 strength.", "当[creature]受到第一次伤害时，它获得2点力量。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Death of Arrogance", "傲慢之死", Language.ChineseSimplified);
             MagnificusMod.RegisterAbility("Death of Arrogance", "傲慢之死");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, adjacent cards gain 2 power.", "当[creature]死亡时，与之相邻卡牌获得2点力量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, adjacent cards gain 2 power.", "当[creature]阵亡时，与之相邻卡牌获得2点力量。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Death of Greed", "贪婪之死", Language.ChineseSimplified);
             MagnificusMod.RegisterAbility("Death of Greed", "贪婪之死");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, adjacent cards gain 3 health.", "当[creature]死亡时，与之相邻卡牌获得3点生命。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, adjacent cards gain 3 health.", "当[creature]阵亡时，与之相邻卡牌获得3点生命。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "God Made", "上帝造物", Language.ChineseSimplified);
             MagnificusMod.RegisterAbility("God Made", "上帝造物");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, a Homunculus is created on each empty adjacent space. The Homunculus has : 1 power, 1 health, Familiar.", "当[creature]被放置到场上时，将在每个相邻的空位上生成一个人造人。人造人具有：1 点力量，1 点生命，使魔。", Language.ChineseSimplified);
@@ -3960,8 +3970,8 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bloated", "肥美多汁", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] is worth blood equal to its health when sacrificed.", "[creature]在献祭时可算作等同于其生命值的血量。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blood Artist", "血液艺术家", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every three cards which perish by combat while [creature] is on the board, [creature] will give it's owner a deathcard constructed from the cost, stats, and sigils of those creatures.", "当牌桌上有[creature]时，每有三张卡牌因战斗阵亡，[creature]将为持牌人制作一张由这些造物的费用、属性和印记构成的死亡卡牌。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] constructs a deathcard from previous creatures deaths...", "[creature]会根据先前阵亡造物制作死亡卡牌……", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Every three cards which perish by combat while [creature] is on the board, [creature] will give it's owner a deathcard constructed from the cost, stats, and sigils of those creatures.", "当牌桌上有[creature]时，每有三张卡牌因战斗阵亡，[creature]将为持牌人制作一张由这些造物的费用、属性和印记构成的死亡卡。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] constructs a deathcard from previous creatures deaths...", "[creature]会根据先前阵亡造物制作死亡卡……", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is sacrificed, it transforms to or from it's alternate form instead of perishing.", "当[creature]被献祭时，它会切换形态而非阵亡。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blood Dependent", "血液依赖", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature] does not strike another creature during the attack phase, it will perish at the start of the owner's next turn.", "若[creature]在攻击阶段未能击中其他造物，则会在持牌人下个回合开始时阵亡。", Language.ChineseSimplified);
@@ -3985,7 +3995,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, a Payload is created in the opposing slot. [define:SigilNevernamed Payload]", "使用[creature]时，对面位置会出现一个有效载荷。[define:SigilNevernamed Payload]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] drops a payload into the opposing slot!", "[creature]向对面位置空投了一个有效载荷！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Dependent", "骨头依赖", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If the user has 0 Bones, [creature] will perish.", "若使用者骨头数为零，[creature]将立即死亡。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If the user has 0 Bones, [creature] will perish.", "若使用者骨头数为零，[creature]将立即阵亡。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Duke", "骨公爵", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] dies, 3 Bones are awarded instead of 1.", "[creature]死亡时，原本获得的1根骨头将变为3根。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bonelust", "骨欲", Language.ChineseSimplified);
@@ -4242,13 +4252,13 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move in the direction inscrybed in the sigil. You may search your deck for any 'frog' or 'toad' creatures, and play them in [creature]'s old space.", "持牌人回合结束时，[creature]将向印记标注的方向移动。你可以从牌组中搜寻任意“蛙”或“蟾蜍”造物，并将其放置在[creature]原先的位置上。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Emerald Dependant", "绿宝石依赖", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature]'s owner controls no green mox gems, it will perish.", "如果[creature]的持牌人未打出绿色玛珂，则[creature]会阵亡", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] requires an emerald mox to exist and perishes.", "[creature]需要绿宝石玛珂才能存在，否则会死亡", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] requires an emerald mox to exist and perishes.", "[creature]需要绿宝石玛珂才能存在，否则会阵亡", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ruby Dependant", "红宝石依赖", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature]'s owner controls no orange mox gems, it will perish.", "如果[creature]的持牌人未打出橙色玛珂，则[creature]会阵亡", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] requires a ruby mox to exist and perishes.", "[creature]需要红宝石玛珂才能存在，否则会死亡", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] requires a ruby mox to exist and perishes.", "[creature]需要红宝石玛珂才能存在，否则会阵亡", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sapphire Dependant", "蓝宝石依赖", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature]'s owner controls no blue mox gems, it will perish.", "如果[creature]的持牌人未打出蓝宝石玛珂，则[creature]会阵亡", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] requires a sapphire mox to exist and perishes.", "[creature]需要蓝宝石玛珂才能存在，否则会死亡", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] requires a sapphire mox to exist and perishes.", "[creature]需要蓝宝石玛珂才能存在，否则会阵亡", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gem Shedder", "玛珂掉落", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move in the direction inscrybed in the sigil and drop a random Gem in its old place.", "持牌人回合结束时，[creature]将向印记标注的方向移动，并在原地随机留下一颗玛珂", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gem Skeptic", "宝石质疑者", Language.ChineseSimplified);
@@ -4605,7 +4615,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tooth Puller", "拔牙器", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will add one damage to the scales in the owner's favour, regardless of it's attack power or obstruction.", "持牌人回合结束时，[creature]会无视其攻击力或阻挡状态，为天平增加1点对持牌人有利的伤害。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Toxic", "剧毒之物", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is struck but does not perish, the striker perishes. Does not affect Made of Stone cards.", "当[creature]受到攻击但未阵亡时，攻击者将立即死亡。对磐石之身卡牌无效。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is struck but does not perish, the striker perishes. Does not affect Made of Stone cards.", "当[creature]受到攻击但未阵亡时，攻击者将立即阵亡。对磐石之身卡牌无效。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature]s toxicity kills instantly!", "[creature]的剧毒一击必杀！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Traitor", "叛徒", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, it will move onto the opponent's side of the board if unobstructed.", "当使用[creature]时，若路径未被阻挡，它将移动至对手侧牌桌。", Language.ChineseSimplified);
@@ -5060,13 +5070,13 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] attacks the card in queue behind it's initial target first when declaring an attack.", "[creature]在声明攻击时，首先攻击其初始目标后面的队列中的卡牌。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "My creatures!", "我的造物！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Poisonous", "剧毒腐蚀", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, the creature that killed it perishes as well.", "当[creature]死亡时，杀死它的卡牌也会死亡。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, the creature that killed it perishes as well.", "当[creature]阵亡时，杀死它的卡牌也会阵亡。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Attacking something poisonous, isn't that smart.", "攻击有毒之物，不是明智的选择。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Possessor", "灵魂附身", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, it will grant a random friendly card that is on the board it's base power and health.", "当[creature]死亡时，它将赋予一个随机友方卡牌基于该卡牌的基础力量和生命的属性。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, it will grant a random friendly card that is on the board it's base power and health.", "当[creature]阵亡时，它将赋予一个随机友方卡牌基于该卡牌的基础力量和生命的属性。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It passes it's strength onto those who remain", "它把力量传给剩余的造物。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Powerful Possessor", "强力附身", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, it will grant a random friendly card that is on the board it's base plus modified power and base plus modified health.", "当[creature]死亡时，它将赋予一个随机友方卡牌基于该卡牌的当前力量和生命的属性。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, it will grant a random friendly card that is on the board it's base plus modified power and base plus modified health.", "当[creature]阵亡时，它将赋予一个随机友方卡牌基于该卡牌的当前力量和生命的属性。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Predator", "掠食者", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will gain 1 power for each instance of Predator, when the opposing slot has a card.", "当其对位有卡牌时，[creature]将为每个拥有掠食者印记的实例增加1点力量。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Prideful", "骄傲", Language.ChineseSimplified);
@@ -5101,7 +5111,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will regen to full health.", "在持牌人回合结束时，[creature]将恢复至满血。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This creature will heal to full Health at the end of it's owner's turn.", "这个造物将在持牌人回合结束时恢复全部生命值。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Repellant", "拒人千里", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, the creature that killed it gets pushed into the back row.", "当[creature]死亡时，杀死它的造物会被推到后排。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, the creature that killed it gets pushed into the back row.", "当[creature]阵亡时，杀死它的造物会被推到后排。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Resistant", "抗性提升", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will only ever take 1 damage from most things. Some effects might bypass this.", "[creature]通常只会受到大多数造物的1点伤害。有些效果可能会绕过这一点。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A hardy creature that one is.", "它是一个顽强的造物。", Language.ChineseSimplified);
@@ -5162,14 +5172,14 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thick Shell", "厚重甲壳", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When attacked, [creature] takes 1 less damage.", "当[creature]被攻击时，少受1点伤害。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The thick shell on that creature protected it from one damage!", "那个造物身上的厚壳保护它少受1点伤害！", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will try to steal a random default sigil from an opposing creature when played, or at the start of the owner's turn until it does.", "[creature]在战斗时或在持牌人的回合开始时，将尝试从对位造物那里偷取一个随机的默认印记，直到成功为止。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will try to steal a random default sigil from a card in the opposing lane when played, or at the start of the owner's turn until it does.", "[creature]在战斗时或在持牌人的回合开始时，将尝试从对位造物那里偷取一个随机的默认印记，直到成功为止。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If only I could steal the moon...", "要是能偷月亮就好了……", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone prince 3", "骨后", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] dies, 3 bones are rewarded instead of 1.", "当[creature]死亡时，奖励3根骨头，而不是1根。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone hoarder 3", "三重骨礼", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, 3 bones are rewarded.", "[creature]被放置时，给予持有者3块骨头。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tooth Bargain", "牙齿交易", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, it will put 1 point of damage of it's opponent's side of the scale. When it perishes, it will put 2 damage on the owner's side of the scale.", "当[creature]被召唤时，它将对对手的天平一侧造成1点伤害。当它死亡时，它将对持牌人的天平一侧造成2点伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, it will put 1 point of damage of it's opponent's side of the scale. When it perishes, it will put 2 damage on the owner's side of the scale.", "当[creature]被召唤时，它将对对手的天平一侧造成1点伤害。当它阵亡时，它将对持牌人的天平一侧造成2点伤害。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A deal with a devil I see...", "我看到了和魔鬼的交易……", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Toothpuller", "拔牙器", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will add one point of damage to the opponent's scale.", "在持牌人回合结束时，[creature]将对对手的天平造成一点伤害。", Language.ChineseSimplified);
@@ -5658,16 +5668,16 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bright Red Champion", "鲜红冠军", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the start of each turn, this champion will heal all other non-terrain creatures on the opponent's side by 1.", "在每个回合开始时，此冠军将治愈对手一侧的所有非地形生物1点生命。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cyan Champion", "青色冠军", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this champion perishes, it will deal 1 damage to every other creature on the board.", "当这位冠军死亡时，它将对场上的其他造物造成1点伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this champion perishes, it will deal 1 damage to every other creature on the board.", "当这位冠军阵亡时，它将对场上的其他造物造成1点伤害。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Explosive", "爆炸性之物", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Other cards may be placed on top of [creature]; the other card, adjacent cards, and opposing cards will all be dealt 10 damage.", "其他卡片可以放在[creature]的上方；相邻卡牌和对位卡牌都将受到10点伤害。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, a copy of it is created in the opponent's hand.", "当[creature]死亡时，它会回到你手中。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, a copy of it is created in the opponent's hand.", "当[creature]阵亡时，它会回到你手中。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fragile", "虚弱", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature] perishes, it is permanently removed from your deck.", "如果带有该印记的卡牌死亡，它将从你的牌组中永久移除。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature] perishes, it is permanently removed from your deck.", "如果带有该印记的卡牌阵亡，它将从你的牌组中永久移除。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Green Champion", "绿色冠军", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion will deal 1 damage directly to you, after it destroys another creature.", "这位冠军在摧毁另一个造物后，将直接对其持有者造成1点伤害。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Light Blue Champion", "淡蓝冠军", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this champion perishes, it will deal 3 damage to creatures to the left and right of it as well as the opposing creature.", "当这位冠军死亡时，它将对其左右两侧的造物以及对方造物造成3点伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this champion perishes, it will deal 3 damage to creatures to the left and right of it as well as the opposing creature.", "当这位冠军阵亡时，它将对其左右两侧的造物以及对方造物造成3点伤害。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Light Green Champion", "浅绿冠军", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion will prevent all damage from the first strike dealt to it. Damage from effects like sigils will not be prevented.", "这位冠军将阻止第一次攻击造成的所有伤害。印记等效果造成的伤害将无法阻止。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magenta Champion", "品红冠军", Language.ChineseSimplified);
@@ -5692,7 +5702,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil. Creatures in the way will be killed.", "在持牌人的回合结束时，带有该印记的卡牌将按印记标注方向移动。相撞的造物将被杀死。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move to the right, jumping over any creatures in its path. If it encounters the edge of the board, it will loop over to the other side.", "持牌人的回合结束时，带有该印记的卡牌将向右移动，跳过其路径上的任何造物，如果遇到场地边缘，它将绕到另一边。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "White Champion", "白色冠军", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this champion perishes, it will create a Boulder in its space. [define:Boulder]", "当这个冠军死亡时，它将在自己的空间里生成一个磐石。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this champion perishes, it will create a Boulder in its space. [define:Boulder]", "当这个冠军阵亡时，它将在自己的空间里生成一个磐石。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Yellow Champion", "黄色冠军", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This champion starts with 1 additional Power.", "此冠军额外获得1点力量。", Language.ChineseSimplified);
 
@@ -8414,7 +8424,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gardener", "园丁", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When an allied card is killed, create a Sapling in their place. [define:wstl_parasiteTreeSapling]", "当一张同盟卡牌被杀死时，在其位置创建一颗树苗。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "They proliferate and become whole. Can you feel it?", "它们增殖并变得完整。你能感觉到吗？", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A sapling grows out of the dead card's corpse.", "一棵小树从死亡卡牌的尸体上长出来。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A sapling grows out of the dead card's corpse.", "一棵小树从死亡的卡牌尸体上长了出来。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gift Giver", "赠礼者", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, create a random card in your hand.", "放置[creature]时，你获得一张随机的牌。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A gift for you.", "一个给你的礼物。", Language.ChineseSimplified);
@@ -9031,6 +9041,118 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Experimental Vial", "实验药瓶", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil dies, it will transform into a monster.", "当[creature]死亡时，它将变成怪物。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "DinoMod", "恐龙模组", Language.ChineseSimplified);
+        }
+    }
+    public class TribalPeltsMod
+    {
+        public static void RegisterTranslations()
+        {
+            Debug.Log("Registering Tanslations for Tribal_Pelts Mod");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Raven Epidermis", "渡鸦羽毛皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Coyote Pelt", "郊狼皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Deer Pelt", "鹿皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Moth Molt", "飞蛾蜕皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Crocodile Hide", "鳄鱼皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Human Remains", "死人遗骸", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shark Leather", "鲨鱼皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tiger Pelt", "虎皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blaster Pelt", "爆破者皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Block Pelt", "块状皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blooper Pelt", "墨鱼怪皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bob-Omb Pelt", "炸弹兵壳", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Boo Pelt", "幽灵皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chain Chomp Pelt", "链球怪皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cheep-Cheep Pelt", "啾啾鱼皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Conkdor Pelt", "撞头秃鹫皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dragon Pelt", "龙皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dry Bones Pelt", "枯骨皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Goomba Pelt", "板栗仔壳", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Koopa Pelt", "库巴皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Piranha Plant Pelt", "食人花皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pokey Pelt", "仙人掌怪皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Power-Up Pelt", "增益皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ram Pelt", "公羊皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shroob Pelt", "许鲁布皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shy Guy Pelt", "害羞小子皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spike Pelt", "尖刺怪皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Star Pelt", "星皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tanuki Pelt", "狸猫皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thwomp Pelt", "石锤怪皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Waddlewing Pelt", "摇摆翼怪皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wiggler Pelt", "摇摆虫皮", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lobster Shell", "龙虾壳", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spider Skin", "蜘蛛壳", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Beaver Pelt", "河狸皮", Language.ChineseSimplified);
+
+        }
+    }
+    public class SmallTweakBorneMod
+    {
+        public static void RegisterTranslations()
+        {
+            Debug.Log("Registering Tanslations for SmallTweak_Borne Mod");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will strike an opponent directly, even if there is a creature opposing it, unless the creature has this sigil.", "[creature]带有该印记的卡牌将直接攻击一名敌人，即使其对面有其他造物也无妨，除非该造物也有此印记。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] submerges itself during its opponent's turn. While submerged, opposing creatures attack its owner directly, unless that creature has this sigil.", "[creature]在对手的回合潜入水下，其潜水时，敌对造物会直接攻击其主人，除非该造物也有此印记。", Language.ChineseSimplified);
+
+        }
+    }
+    public class TooManySigilsMod
+    {
+        public static void RegisterTranslations()
+        {
+            Debug.Log("Registering Tanslations for TooManySigils Mod");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ants Minus", "蚂蚁减法", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This cards power is equal to the amount of Ant's on field, minus this one.", "此印记代表的数值等于场上蚂蚁的数量，减去这张牌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this card is damaged, It takes half the Damage it would normally.", "当[creature]受到伤害时，它通常只受到原来一半的伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bell Presser", "钟压机", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This cards power is equal to the amount of times the bell has been rung.", "此印记代表的数值等于铃铛被敲响的次数。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Borrowed Time", "借来的时间", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this card perishes its Icecube is summoned if done in time, or else if over the EvolveTurns a corrupt version will be summoned.", "带有该印记的卡牌如果及时阵亡，它冰封禁锢的造物将被召唤；否则下回合开始时（幼雏印记触发的时间），其将召唤一个损坏的版本。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Coins Within", "内心之币", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this card is struck it provides 1 foil to its owner, as long as it lives anyway.", "当带有该印记的卡牌被击中时，只要它仍存活，其就会为持牌人提供1枚货币。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Covalesce", "修养", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If a card bearing this sigil is alive during your endstep, This card gains 1 health.", "带有该印记的卡牌如果在你的回合结束时仍然存活，则该牌获得1点生命值。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dead Pack", "死亡包裹", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil perishes, it provides 1 Item to its owner.", "当带有该印记的卡牌阵亡时，它会向其所有者提供1个物品道具。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fish Out Of Water", "如鱼离水", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the turn, this card switches from having Airborne to Waterborne and so on. If neither are present will start with Waterborne.", "回合结束时，带有该印记的卡牌状态会从空袭和水袭之间互相切换，依此类推。如果两者都不存在，则将从水袭状态开始。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gain One Battery", "获得一节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner gains one Max Energy.", "当带有该印记的卡牌被打出时，持牌人获得1点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gain Two Batteries", "获得两节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner gains two Max Energy.", "当带有该印记的卡牌被打出时，持牌人获得2点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gain Three Batteries", "获得三节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner gains three Max Energy.", "当带有该印记的卡牌被打出时，持牌人获得3点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gain Four Batteries", "获得四节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner gains four Max Energy.", "当带有该印记的卡牌被打出时，持牌人获得4点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gain Five Batteries", "获得五节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner gains five Max Energy.", "当带有该印记的卡牌被打出时，持牌人获得5点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gain Six Batteries", "获得六节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner gains six Max Energy.", "当带有该印记的卡牌被打出时，持牌人获得6点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Heart Locked", "心锁", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is damaged, It only takes 1 Damage.", "当带有该印记的卡牌受到伤害时，其只会受到1点伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is damaged, a card is added to your hand.", "当带有该印记的卡牌受伤时，你手中会获得一张卡牌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If a card bearing this sigil is on the field during your endstep, a card is launched to one of your empty spaces.", "带有该印记的卡牌若在你的回合结束时仍在场上，则你一侧的随机空位会生成一张卡牌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lose One Battery", "失去一节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner loses one Max Energy.", "当带有该印记的卡牌被打出时，持牌人失去1点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lose Two Batteries", "失去两节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner loses two Max Energy.", "当带有该印记的卡牌被打出时，持牌人失去2点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lose Three Batteries", "失去三节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner loses three Max Energy.", "当带有该印记的卡牌被打出时，持牌人失去3点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lose Four Batteries", "失去四节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner loses four Max Energy.", "当带有该印记的卡牌被打出时，持牌人失去4点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lose Five Batteries", "失去五节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner loses five Max Energy.", "当带有该印记的卡牌被打出时，持牌人失去5点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lose Six Batteries", "失去六节电池", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, the owner loses six Max Energy.", "当带有该印记的卡牌被打出时，持牌人失去6点最大能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "One Fourth Chance Instakill", "概率死触", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When this card would be attacked, there is a 25% chance that the striker perishes.", "当带有该印记的卡牌受到攻击时，攻击者有四分之一的几率阵亡。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rotting", "腐烂", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If a card bearing this sigil is alive during your endstep, this card loses 1 power and 1 health.", "持牌人的回合结束时，若带有该印记的卡牌仍然存活在场，其会失去1点力量和1点生命值。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If a card bearing this sigil is on field during your endstep, this card moves in the direction inscribed in the sigil, and a card is played in its previous space.", "在持牌人的回合结束时，带有该印记的卡牌将按照印记标注的方向移动，并在其原来的位置创造另一个造物。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is damaged, It takes 1 less Damage.", "当带有该印记的卡牌受到伤害时，其会少受1点伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Treasure Tracker", "寻宝者", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At The end of the Owners turn, this card will provide the owner with 1 foil.", "在持牌人的回合结束时，带有该印记的卡牌将为持牌人提供1枚货币。", Language.ChineseSimplified);
+
         }
     }
 }

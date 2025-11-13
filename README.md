@@ -20,6 +20,7 @@ Current Supportted Mods:
     - [BittysSigils](https://thunderstore.io/c/inscryption/p/bitty45/BittysSigils/) >= 2.1.2
     - [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
     - [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
+    - [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) >= 2.7.0
 - Gameplay Mods:
     - [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
     - [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
@@ -45,6 +46,8 @@ Current Supportted Mods:
     - [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
     - [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
     - [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
+    - [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
+    - [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
 - More Adding...
 
 Please contact me if you find problems.
@@ -92,6 +95,7 @@ Acknowledgement:
     - Bitty的印记 [BittysSigils](https://thunderstore.io/c/inscryption/p/bitty45/BittysSigils/) >= 2.1.2
     - WhistleWind异常印记 [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
     - P03自定义印记 [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
+    - 海量印记 [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) >= 2.7.0
 - 玩法模组：
     - 植物大战僵尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
     - 格里魔拉模组扩展 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
@@ -117,6 +121,8 @@ Acknowledgement:
     - 微调：九头蛇 [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
     - 更多道具 [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
     - 恐龙模组 [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
+    - 族群毛皮 [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
+    - 微调：空水袭 [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
 - 正在加入更多……
 
 如果有任何问题请联系我修复。

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0
+
+Add supports for TribalPelts-3.0.0, SmallTweakBorne-1.1.0, TooManySigils-2.7.0.
+
 ## 1.4.11
 
 Update texts.
