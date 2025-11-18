@@ -7,7 +7,7 @@
     <IsPackable>false</IsPackable>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>SimplifiedChineseLanguagePack</AssemblyName>
-    <VersionPrefix>1.5.0</VersionPrefix>
+    <VersionPrefix>1.5.1</VersionPrefix>
     <RootNamespace>SimplifiedChineseLanguagePack</RootNamespace>
     <LangVersion>10</LangVersion>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>

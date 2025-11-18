@@ -41,13 +41,14 @@ Current Supportted Mods:
     - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.0
     - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
-    - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.0
+    - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.2
     - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
     - [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
     - [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
     - [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
     - [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
     - [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
+    - [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
 - More Adding...
 
 Please contact me if you find problems.
@@ -116,13 +117,14 @@ Acknowledgement:
     - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.0
     - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
     - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
-    - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.0
+    - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.2
     - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
     - 微调：九头蛇 [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
     - 更多道具 [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
     - 恐龙模组 [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
     - 族群毛皮 [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
     - 微调：空水袭 [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
+    - 披萨塔卡牌 [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
 - 正在加入更多……
 
 如果有任何问题请联系我修复。
