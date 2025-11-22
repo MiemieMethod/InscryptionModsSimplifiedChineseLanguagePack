@@ -49,6 +49,8 @@ Current Supportted Mods:
     - [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
     - [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
     - [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
+    - [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
+    - [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
 - More Adding...
 
 Please contact me if you find problems.
@@ -125,6 +127,8 @@ Acknowledgement:
     - 族群毛皮 [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
     - 微调：空水袭 [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
     - 披萨塔卡牌 [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
+    - 游戏内卡牌创建器 [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
+    - Aga的蔓尼菲科模组扩展 [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
 - 正在加入更多……
 
 如果有任何问题请联系我修复。

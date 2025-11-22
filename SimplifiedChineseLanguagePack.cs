@@ -13,6 +13,7 @@ using Sirenix.Serialization.Utilities;
 using TMPro;
 using UnityEngine;
 using static InscryptionAPI.Card.TribeManager;
+using GracesGames.Common.Scripts;
 
 namespace SimplifiedChineseLanguagePack
 {
@@ -23,7 +24,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.5.1";
+        private const string Version = "1.5.2";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -94,6 +95,7 @@ namespace SimplifiedChineseLanguagePack
             AchievementsMod.RegisterTranslations();
             GrimoraMod.RegisterTranslations();
             MagicExpansionMod.RegisterTranslations();
+            AgasMagnificusExpansionMod.RegisterTranslations();
             MagnificusMod.RegisterTranslations();
             UndeadTempleINKCMMod.RegisterTranslations();
             WildernessLegendMod.RegisterTranslations();
@@ -138,8 +140,6 @@ namespace SimplifiedChineseLanguagePack
             Debug.Log("Post Register Translations");
             var field1 = typeof(CardManager).GetField("NewCards", BindingFlags.NonPublic | BindingFlags.Static);
             var newCards = field1.GetValue(null) as ObservableCollection<CardInfo>;
-            var field2 = typeof(TribeManager).GetField("tribes", BindingFlags.NonPublic | BindingFlags.Static);
-            var tribes = field2.GetValue(null) as List<TribeInfo>;
             // BittysChallenges
             Debug.Log("Post Register Translations for BittysChallenges");
             foreach (var value in CardManager.BaseGameCards)
@@ -252,13 +252,6 @@ namespace SimplifiedChineseLanguagePack
                     Translate(GUID, null, "sigil of " + value.name, Localization.Translate(value.name) + "印记", Language.ChineseSimplified);
                 }
             }
-            foreach (var value in tribes)
-            {
-                if (value.name != null)
-                {
-                    Translate(GUID, null, value.name + " tribe", Localization.Translate(value.name) + "族群", Language.ChineseSimplified);
-                }
-            }
             foreach (var value in CardManager.BaseGameCards)
             {
                 if (value.SafeIsUnityNull() || value.DisplayedNameEnglish == null) continue;
@@ -274,11 +267,14 @@ namespace SimplifiedChineseLanguagePack
                 if (value.SafeIsUnityNull() || value.DisplayedNameEnglish == null) continue;
                 Translate(GUID, null, "A special [c:bR]Power of " + value.DisplayedNameEnglish + "[c:].", "特殊的来自[c:bR]" + value.DisplayedNameLocalized + "的力量[c:]。", Language.ChineseSimplified);
                 Translate(GUID, null, "A portrait of [c:bR]" + value.DisplayedNameEnglish + "[c:].", "来自[c:bR]" + value.DisplayedNameLocalized + "[c:]的卡面。", Language.ChineseSimplified);
-                Translate(GUID, null, "A [c:bR]" + value.DisplayedNameEnglish + "[c:] card.", "[c:bR]" + value.DisplayedNameLocalized + "[c:]卡牌。", Language.ChineseSimplified);
-                Translate(GUID, null, "A complexity of [c:bR]" + value.DisplayedNameEnglish + "[c:].", "来自[c:bR]" + value.DisplayedNameLocalized + "[c:]的复杂程度。", Language.ChineseSimplified);
                 Translate(GUID, null, "An evolution to [c:bR]" + value.DisplayedNameEnglish + "[c:].", "来自[c:bR]" + value.DisplayedNameLocalized + "[c:]的进化目标。", Language.ChineseSimplified);
                 Translate(GUID, null, "[c:bR]" + value.DisplayedNameEnglish + "[c:]?", "[c:bR]" + value.DisplayedNameLocalized + "[c:]？", Language.ChineseSimplified);
             }
+            foreach (CardComplexity value in Enum.GetValues(typeof(CardComplexity)))
+            {
+                Translate(GUID, null, "A complexity of [c:bR]" + value.ToString() + "[c:].", "[c:bR]" + Localization.Translate(value.ToString()) + "[c:]的复杂程度。", Language.ChineseSimplified);
+            }
+            
 
 
             Debug.Log("Post Register Translations Ended");
@@ -3398,6 +3394,7 @@ namespace SimplifiedChineseLanguagePack
             RegisterEncounter("Kaycee's P03 Encounter Expansion #2", "凯茜的P03遭遇战扩展#2", "[count] additional encounters that feature cards from the second official P03 expansion pack.", "新增[count]个包含第二款P03官方扩展包卡牌的遭遇战。");  // P03KCM
             RegisterEncounter("Kaycee's P03 Expansion Pack #3", "凯茜的P03扩展包#3", "They said it would never happen, but it's here! The third official expansion pack breaks all of the rules, with [count] new cards that bring bones, blood, and gems to Botopia!", "他们说这永远不会发生，但它来了！第三个官方扩展包打破了所有规则，为机托邦带来了[count]张包含骨头、血量和宝石的新卡牌！");  // P03KCM EXP3
             RegisterEncounter("Kaycee's P03 Encounter Expansion #3", "凯茜的P03遭遇战扩展#3", "[count] additional encounters that feature cards from the third official P03 expansion pack.", "[count]个额外遭遇战，包含来自第三个官方P03扩展包的卡牌。");  // P03KCM EXP3
+            RegisterEncounter("Aga's Magnificus Expansion", "Aga的蔓尼菲科模组扩展", "An unofficial expansion to the Magnificus Mod featuring [count] unique and colourful mages", "蔓尼菲科模组的非官方扩展，拥有[count]位独特而丰富多彩的法师");  // AgasMagnificusExpansion
             foreach (var kvp in EncountersTitle)
             {
                 SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Card Pack: " + kvp.Value, "卡包：" + kvp.Value, Language.ChineseSimplified);
@@ -9381,26 +9378,26 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "GreenGems", "绿宝石数", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mirror", "镜子", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SacrificesThisTurn", "本回合献祭数", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "DeathcardCreationNonOption", "不可作为死亡卡创建时的待选项", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "DeathcardCreationNonOption", "非死亡卡创建待选项", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fused", "缝合", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gem", "宝石", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "KillsSurvivors", "在篝火处可毒杀幸存者", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "KillsSurvivors", "可毒杀幸存者", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pelt", "毛皮", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SatisfiesRingTrial", "可满足圆环试炼", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Terrain", "地形", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Uncuttable", "对剪刀和鱼钩道具免疫", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Uncuttable", "免疫剪刀和鱼钩", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bear", "熊", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blind", "眼盲", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "EatsWarrens", "可像白鼬一样通过献祭吃掉兔窝而变成胀气版本（原版未使用）", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "FeedsStoat", "可像兔窝一样被通过献祭喂给白鼬使其变成胀气白鼬（原版未使用）", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "EatsWarrens", "可吃掉兔窝", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "FeedsStoat", "可喂给白鼬", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Juvenile", "幼崽", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "LikesHoney", "像灰熊一样喜欢蜂蜜从而自动移动到蜂巢的对面（原版未使用）", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "LikesHoney", "喜爱蜂蜜", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Structure", "结构", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ProtectsCub", "像狼一样保护它的幼崽（原版未使用）", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "ProtectsCub", "保护幼崽", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Undead", "死灵", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BellProximity", "铃铛接近度", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BrokenCoinLeft", "破碎硬币（左）", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BrokenCoinRight", "破碎硬币（右）", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BrokenCoinLeft", "破碎银币（左）", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BrokenCoinRight", "破碎银币（右）", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Daus", "达欧斯", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "GiantCard", "巨型卡牌", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "GiantMoon", "巨型月亮", Language.ChineseSimplified);
@@ -9409,8 +9406,8 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "JerseyDevil", "13号孩子", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "RandomCard", "随机卡牌", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "SpawnLice", "繁衍虱子", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TalkingCardChooser", "可以被会说话的卡牌选择器赋予永久行为", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TrapSpawner", "可通过陷阱创建器在死后留下一个跳跃陷阱", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TalkingCardChooser", "会说话的卡牌选择器", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TrapSpawner", "陷阱生成器", Language.ChineseSimplified);
             for (int value = 0; value <= 100; value++)
             {
                 SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, value + " blood", value + "点血量", Language.ChineseSimplified);
@@ -9454,6 +9451,241 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "simple", "简单", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "intermediate", "中等", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "advanced", "高级", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A [c:bR]regular[c:] card.", "[c:bR]常规[c:]卡牌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A [c:bR]rare[c:] card.", "[c:bR]稀有[c:]卡牌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A [c:bR]hidden[c:] card.", "[c:bR]隐藏[c:]卡牌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "squirrel tribe", "松鼠族群", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "bird tribe", "鸟类族群", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "canine tribe", "犬类族群", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "hooved tribe", "有蹄类族群", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "reptile tribe", "爬行类族群", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "insect tribe", "昆虫类族群", Language.ChineseSimplified);
+
+        }
+    }
+    public class AgasMagnificusExpansionMod
+    {
+        public static void RegisterTranslations()
+        {
+            Debug.Log("Registering Translations for AgasMagnificusExpansion Mod");
+
+            // Pack
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Aga's Magnificus Expansion", "Aga的蔓尼菲科模组扩展", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An unofficial expansion to the Magnificus Mod featuring [count] unique and colourful mages", "蔓尼菲科模组的非官方扩展，拥有[count]位独特而丰富多彩的法师", Language.ChineseSimplified);
+
+            // Card
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ascension Mage", "飞升法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Ascension Mage", "飞升法师", "Utilising the power of time they grant knowledge and experience from far beyond", "他们利用时间的力量，传授远远超出他们的知识和经验。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Utilising the power of time they grant knowledge and experience from far beyond", "他们利用时间的力量，传授远远超出他们的知识和经验。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ash Mage", "灰烬法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Ash Mage", "灰烬法师", "Ashes he sheds from his own body, scorching any and all who oppose him", "他从自己身上剥落灰烬，灼烧所有反对他的人。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ashes he sheds from his own body, scorching any and all who oppose him", "他从自己身上剥落灰烬，灼烧所有反对他的人。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Broken Egg", "破碎的蛋", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Broken Egg", "破碎的蛋", "Only the greatest of trainers might find this treasure", "只有最伟大的训练师才能找到这个宝藏。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Only the greatest of trainers might find this treasure", "只有最伟大的训练师才能找到这个宝藏。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chosen One", "天选之子", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Chosen One", "天选之子", "My selected favourite. He still clings to his elders though...", "我选择的最爱的存在。尽管如此，他仍然依恋他的长辈...");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "My selected favourite. He still clings to his elders though...", "我选择的最爱的存在。尽管如此，他仍然依恋他的长辈...", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cleanliness Mage", "清洁法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Cleanliness Mage", "清洁法师", "The proudest of all my pupils. None come close to his bath superpowers", "我所有学生中最自豪的。没有人能比得上他的洗澡超能力。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The proudest of all my pupils. None come close to his bath superpowers", "我所有学生中最自豪的。没有人能比得上他的洗澡超能力。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cleric", "牧师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Cleric", "牧师", "With the virtue of his divine Magicks, he bears the pain of all and rids them of their wounds", "凭借他的神圣魔法，他承受了所有人的痛苦，并消除了他们的伤痕。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With the virtue of his divine Magicks, he bears the pain of all and rids them of their wounds", "凭借他的神圣魔法，他承受了所有人的痛苦，并消除了他们的伤痕。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Clock Mage", "时钟法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Clock Mage", "时钟法师", "A wizard with a mastery over time itself. When he nears his demise, he reverts to the past, and comes back to life", "一个精通时间的巫师。当他接近死亡时，他会回到过去，重获新生。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A wizard with a mastery over time itself. When he nears his demise, he reverts to the past, and comes back to life", "一个精通时间的巫师。当他接近死亡时，他会回到过去，重获新生。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Creature Collector", "造物收藏家", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Creature Collector", "造物收藏家", "He had searched far and wide for his little companion, you see", "你看，他四处寻找他的小伙伴。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "He had searched far and wide for his little companion, you see", "你看，他四处寻找他的小伙伴。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Division Mage", "分裂法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Division Mage", "分歧法师", "So the card says at least... I assumed those freaks were long dealth with", "至少卡牌上这么说...我以为那些怪胎已经交往很久了。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "So the card says at least... I assumed those freaks were long dealth with", "至少卡牌上这么说...我以为那些怪胎已经交往很久了。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Egg", "蛋", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Egg", "蛋", "Only the greatest of trainers might find this treasure", "只有最伟大的训练师才能找到这个宝藏。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Only the greatest of trainers might find this treasure", "只有最伟大的训练师才能找到这个宝藏。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Druid", "德鲁伊", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Druid", "德鲁伊", "Nature's primal devotee, feeding on sapped mana to cure his allies", "大自然的原始奉献者，以消耗的法力为食来治愈他的盟友。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nature's primal devotee, feeding on sapped mana to cure his allies", "大自然的原始奉献者，以消耗的法力为食来治愈他的盟友。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Enchanter", "附魔师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Enchanter", "附魔师", "He spews cosmic magicks upon his demise, enchanting everything nearby", "他临死时喷出宇宙魔法，让附近的一切都附上魔力。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "He spews cosmic magicks upon his demise, enchanting everything nearby", "他临死时喷出宇宙魔法，让附近的一切都附上魔力。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "EveryMage", "全能法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("EveryMage", "全能法师", "", "");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "mage", "法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("mage", "法师", "", "");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Evoker", "塑能师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Evoker", "塑能师", "The ominous crettin of disgusting teachings. It's summonable snakes are of the deadliest caliber", "令人厌恶的教义的不祥秘密。可归纳之蛇是最致命的。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The ominous crettin of disgusting teachings. It's summonable snakes are of the deadliest caliber", "令人厌恶的教义的不祥秘密。可归纳之蛇是最致命的。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Serpent Summon", "蛇之召", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Serpent Summon", "蛇之召", "", "");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Firebender", "纵火狂", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Firebender", "纵火狂", "Chipper in the heat of battle, he is always on the hunt for the next victim of his fireballs", "在战斗最激烈的时候，他总是在寻找下一个火球的受害者。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chipper in the heat of battle, he is always on the hunt for the next victim of his fireballs", "在战斗最激烈的时候，他总是在寻找下一个火球的受害者。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Foresight Mage", "前瞻法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Foresight Mage", "前瞻法师", "As he gazes upon your future, attacks that may come his way he forever predicts", "当他凝视着你的未来，他永远预言着可能会到来的攻击。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "As he gazes upon your future, attacks that may come his way he forever predicts", "当他凝视着你的未来，他永远预言着可能会到来的攻击。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Foresight Mage", "前瞻法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Foresight Mage", "前瞻法师", "Gazing into the future, he may see any body who dares make an approach", "展望未来，他可能会看到任何敢于接近的人。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gazing into the future, he may see any body who dares make an approach", "展望未来，他可能会看到任何敢于接近的人。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Glacier", "冰川", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Glacier", "冰川", "", "");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gashadokuro", "饿者骷髅", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Gashadokuro", "饿者骷髅", "", "");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gem Sentinel", "宝石哨兵", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Gem Sentinel", "宝石哨兵", "the elite warrior unit enchanted with the aura of my moxen", "被我的玛珂光辉迷住的精英战士部队。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "the elite warrior unit enchanted with the aura of my moxen", "被我的玛珂光辉迷住的精英战士部队。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Grand Astrologer", "研星者", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Grand Astrologer", "研星者", "The battlefield is forever his playground, and space is his weapon. All is bare before him.", "战场永远是他的游乐场，太空是他的武器。一切在他面前都是光秃秃的。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The battlefield is forever his playground, and space is his weapon. All is bare before him.", "战场永远是他的游乐场，太空是他的武器。一切在他面前都是光秃秃的。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gravity Mage", "重力法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Gravity Mage", "重力法师", "A master of the forces of gravity. Any and all mox bend to his unwavering will", "重力的大师。任何人都会屈从于他坚定不移的意志。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A master of the forces of gravity. Any and all mox bend to his unwavering will", "重力的大师。任何人都会屈从于他坚定不移的意志。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Illusion Mage", "幻术师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Illusion Mage", "幻术师", "Dawning his tricks and disguises, there is none scarier. At first glance", "乍一看，他的诡计和伪装，没有比这更可怕的了。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Dawning his tricks and disguises, there is none scarier. At first glance", "乍一看，他的诡计和伪装，没有比这更可怕的了。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Infestation Mage", "感染法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Infestation Mage", "感染法师", "I suppose a usurping challenger such as yourself could endulge in a dosage of skinwalking", "我想像你这样的篡位挑战者可以忍受一定量的变身邪术。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I suppose a usurping challenger such as yourself could endulge in a dosage of skinwalking", "我想像你这样的篡位挑战者可以忍受一定量的变身邪术。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Insulting Mirror", "侮辱魔镜", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Insulting Mirror", "侮辱魔镜", "The Magick Menace Flies About All Spitting Taunts And Hurling Cheeky Comments, Your Anger, It Channels Into A Strength Of It's Own", "魔法的威胁在所有谈吐中嘲讽和粗鲁的评论中飞舞；你越愤怒，它越将转化为自己的力量。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Magick Menace Flies About All Spitting Taunts And Hurling Cheeky Comments, Your Anger, It Channels Into A Strength Of It's Own", "魔法的威胁在所有谈吐中嘲讽和粗鲁的评论中飞舞；你越愤怒，它越将转化为自己的力量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Iron Maiden", "铁处女", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Iron Maiden", "铁处女", "My finest of paladins working the finest of hours. No soul goes through his grand wall", "我最优秀的圣骑士们工作时间最长。没有人能穿过他的长城。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "My finest of paladins working the finest of hours. No soul goes through his grand wall", "我最优秀的圣骑士们工作时间最长。没有人能穿过他的长城。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Kickmoxer", "玛珂戮魔", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Kickmoxer", "玛珂戮魔", "He dedicated his life to the art of combat, and may adapt to whomever he faces", "他毕生致力于战斗艺术，并可能适应他所面对的任何人。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "He dedicated his life to the art of combat, and may adapt to whomever he faces", "他毕生致力于战斗艺术，并可能适应他所面对的任何人。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mass Grave", "万人冢", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Mass Grave", "万人冢", "", "");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Master Agairan", "阿盖兰大师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Master Agairan", "阿盖兰大师", "The Crimson Chimera. The teacher of alchemy instills the deadliest of toxins", "深红奇美拉。炼金术老师灌输最致命的毒素。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Crimson Chimera. The teacher of alchemy instills the deadliest of toxins", "深红奇美拉。炼金术老师灌输最致命的毒素。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Master Bluetwo", "双蓝大师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Master Bluetwo", "双蓝大师", "The steel knight of sapphire. Even after death her psychic presence commands our foes", "蓝宝石的钢铁骑士。即使死后，她的精神存在也指挥着我们的敌人。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The steel knight of sapphire. Even after death her psychic presence commands our foes", "蓝宝石的钢铁骑士。即使死后，她的精神存在也指挥着我们的敌人。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Master Doublin", "道布林大师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Master Doublin", "道布林大师", "The Bone Lord's messiah. The teacher of prayer has learned apt essence stealing.", "骨王的救世主。祈祷的老师学会了如何窃取精华。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Bone Lord's messiah. The teacher of prayer has learned apt essence stealing.", "骨王的救世主。祈祷的老师学会了如何窃取精华。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Megawizard", "超级巫师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Megawizard", "超级巫师", "Hulking he is in his menace, meanacing he is in his dim. Such raw power would never last an eternity", "他装腔作势，意味着他昏昏沉沉。这种原始力量永远不会持久。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hulking he is in his menace, meanacing he is in his dim. Such raw power would never last an eternity", "他装腔作势，意味着他昏昏沉沉。这种原始力量永远不会持久。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Meteorologist", "气象学者", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Meteorologist", "气象学者", "They carefully observe the universe, casting storms of meteors upon whom they see fit. Maybe they're cruel? Maybe not? Only they know", "他们仔细观察宇宙，向他们认为合适的人投掷流星风暴。也许他们很残忍？也许不是？只有他们自己知道。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "They carefully observe the universe, casting storms of meteors upon whom they see fit. Maybe they're cruel? Maybe not? Only they know", "他们仔细观察宇宙，向他们认为合适的人投掷流星风暴。也许他们很残忍？也许不是？只有他们自己知道。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Miniwizard", "迷你巫师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Miniwizard", "迷你巫师", "A mage accursed by it's miniscule size. Worry not though, to such ends he found a solution.", "一个被它的微小尺寸所诅咒的法师。不过不用担心，他找到了解决办法。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A mage accursed by it's miniscule size. Worry not though, to such ends he found a solution.", "一个被它的微小尺寸所诅咒的法师。不过不用担心，他找到了解决办法。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Phantom Thief", "幻灵盗贼", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Phantom Thief", "幻灵盗贼", "A billowing cloud of crime, darting in and out, and stealing his foes", "滚滚罪孽乌云，进进出出，偷窃它之宿敌。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A billowing cloud of crime, darting in and out, and stealing his foes", "滚滚罪孽乌云，进进出出，偷窃它之宿敌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Preformence Mage", "序言法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Preformence Mage", "序言法师", "Who knows to what ends his mystery rabbit has been through", "谁知道他的神秘兔子到底经历了什么。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Who knows to what ends his mystery rabbit has been through", "谁知道他的神秘兔子到底经历了什么。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Queen's Familiar", "皇后使魔", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Queen's Familiar", "皇后使魔", "A majestic chimera of beautiful beasts. It keeps it's armies close inside", "美丽野兽的雄伟幻影。它其中关着一支军队。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A majestic chimera of beautiful beasts. It keeps it's armies close inside", "美丽野兽的雄伟幻影。它其中关着一支军队。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "RisingHunger", "加剧的饥饿", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("RisingHunger", "加剧的饥饿", "", "");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Roach Familiar", "蟑螂仆从", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Roach Familiar", "蟑螂仆从", "A spiritually manufacrued cockroach. It's will allows it ressurection abilities! that ultimately fail.", "一只由精神制造的蟑螂。这将使它具有压迫能力！这最终失败了。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A spiritually manufacrued cockroach. It's will allows it ressurection abilities! that ultimately fail.", "一只由精神制造的蟑螂。这将使它具有压迫能力！这最终失败了。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shadow Wizard", "幻影巫师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Shadow Wizard", "幻影巫师", "A mobster of the underseen. He calls the shadows to gang on it's foes", "卧底暴徒。他号召阴影们联合起来对付敌人。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A mobster of the underseen. He calls the shadows to gang on it's foes", "卧底暴徒。他号召阴影们联合起来对付敌人。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shinobi", "忍者", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Shinobi", "忍者", "Warrior of the dark, They strike from the unawares, where nobody lays claim or sight", "黑暗的战士，他们在不知不觉中发起攻击，在那里没有人提出要求或视线。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Warrior of the dark, They strike from the unawares, where nobody lays claim or sight", "黑暗的战士，他们在不知不觉中发起攻击，在那里没有人提出要求或视线。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shower Mage", "淋浴法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Shower Mage", "淋浴法师", "The outcast of my school and rightfully so! His levels of stentch could only be described with magic...", "我学院的弃子，这是理所当然的！他的腐败只能用魔法来形容...");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The outcast of my school and rightfully so! His levels of stentch could only be described with magic...", "我学院的弃子，这是理所当然的！他的腐败只能用魔法来形容...", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sludge Mage", "淤泥法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Sludge Mage", "淤泥法师", "An entity of unknown origins, powered off the ill spreading plague to all", "一个来源不明的实体，为向所有人传播的瘟疫提供能量。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An entity of unknown origins, powered off the ill spreading plague to all", "一个来源不明的实体，为向所有人传播的瘟疫提供能量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sui-Sage", "隋圣人", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Sui-Sage", "隋圣人", "The leader of a pack, soon to be packed away", "一个群体的首领，很快就要走人了。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The leader of a pack, soon to be packed away", "一个群体的首领，很快就要走人了。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Summoner", "召唤师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Summoner", "召唤师", "A mad man of the arts of life. He creates it out of thin air, and with frightning sensibilities", "一个生活艺术的疯子。他凭空创造了它，并带着令人恐惧的情感。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A mad man of the arts of life. He creates it out of thin air, and with frightning sensibilities", "一个生活艺术的疯子。他凭空创造了它，并带着令人恐惧的情感。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Symmetrical Mage", "对称法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Symmetrical Mage", "对称法师", "Everyone has two sides to them, you see. Especially once they mess with my temper", "你看，每个人都有两面性。尤其是当他们惹我生气的时候。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Everyone has two sides to them, you see. Especially once they mess with my temper", "你看，每个人都有两面性。尤其是当他们惹我生气的时候。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Teleportation Mage", "传送法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Teleportation Mage", "传送法师", "A herald of endless portals, jolting around the battlefield in infinitum and negating incoming strikes", "无尽门户的先驱，在战场上无限颠簸，否定即将到来的袭击。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A herald of endless portals, jolting around the battlefield in infinitum and negating incoming strikes", "无尽门户的先驱，在战场上无限颠簸，否定即将到来的袭击。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Torrent Mage", "洪流法师", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Torrent Mage", "洪流法师", "An apprentice of the ocean utilising it to drown the lands and the terrain above", "海洋的学徒利用它淹没陆地和上面的地形。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An apprentice of the ocean utilising it to drown the lands and the terrain above", "海洋的学徒利用它淹没陆地和上面的地形。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Untamed Dragon", "狂野魔龙", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Untamed Dragon", "狂野魔龙", "Legends whisper this beast, was once a companion to the mox master Goranj", "传说这头野兽，曾经是魔神绿橙蓝大师的伙伴。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Legends whisper this beast, was once a companion to the mox master Goranj", "传说这头野兽，曾经是魔神绿橙蓝大师的伙伴。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Warlock", "邪术士", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Warlock", "邪术士", "A blackened wizard pursuiting the studies of the blood magicks. Such bleeding he turns into a horrible weapon", "一个被熏黑的巫师在研究血魔。如此流血，他变成了可怕的武器。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A blackened wizard pursuiting the studies of the blood magicks. Such bleeding he turns into a horrible weapon", "一个被熏黑的巫师在研究血魔。如此流血，他变成了可怕的武器。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wicked Witch", "罪恶魔女", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Wicked Witch", "罪恶魔女", "A flying jesting witch, laughing your sorrows and posioning your armies", "一个飞行的滑稽魔女，她嘲笑你的悲伤，为你的军队搔首弄姿。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A flying jesting witch, laughing your sorrows and posioning your armies", "一个飞行的滑稽魔女，她嘲笑你的悲伤，为你的军队搔首弄姿。", Language.ChineseSimplified);
+
+            // Ability
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Acid Aura", "尖酸气质", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Acid Aura", "尖酸气质");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] deals 1 damage to the creature opposing it every turn", "[creature]每回合对敌方造物造成1点伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Awakening", "羽化登仙", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Awakening", "羽化登仙");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, it's owner chooses an ally creature to evolve into a higher form.", "当[creature]被放置时，其持牌人选择一个友方生物进化成更高的形态。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Backfire Strike", "反噬打击", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Backfire Strike", "反噬打击");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] damages creatures that oppose those it attacks.", "[creature]会对其攻击目标的敌对生物造成伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Blood Guzzler", "鲜血吞噬者", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Blood Guzzler", "鲜血吞噬者");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] deals damage, it gains 1 health for each damage dealt.", "当[creature]造成伤害时，其每造成一点伤害，获得1点生命值。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Brute Parasite", "残忍寄生", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Brute Parasite", "残忍寄生");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, an Egg is created on the opposing space.", "当放置[creature]时，会在对面空间上创建一个蛋。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Deluge", "洪流", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Deluge", "洪流");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, opponent creatures with 0 power drown and get given the Waterborne sigil.", "当放置[creature]时，具有0力量的对手生物会下潜并获得水袭印记。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Division", "分裂", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Division", "分裂");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "After attacking, [creature] splits into 2 identical clones, each bearing half of it's original stats.", "攻击后，[creature]将分裂成2个相同的克隆体，每个克隆体都有其原始属性的一半。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sentry", "哨兵", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Sentry", "哨兵");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a creature moves into the space opposing [creature], they are dealt 1 damage.", "当一个造物移动到与[creature]相对的空间时，它们会受到1点伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ah, let one never underestimate the speed of a Foresight Mage.", "啊，永远不要低估一个前瞻法师的速度。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Healing Aura", "治愈光环", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Healing Aura", "治愈光环");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] heals nearby allied creatures. The healing is proportionate to it's power.", "[creature]治愈附近的友方造物。治愈的值与它的力量成正比。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Heart Stealer", "偷心者", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Heart Stealer", "偷心者");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "when [creature] kills a creature, it gets added to your hand.", "当[creature]杀死一个造物时，其会被添加到你的手上。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ignis Incant", "火焰魔咒", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Ignis Incant", "火焰魔咒");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 1 blood for [creature] to deal 2 damage to a chosen opposing slot.", "为[creature]支付1点血量，对选定的对手位置造成2点伤害。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Intimidate", "恐吓", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Intimidate", "恐吓");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is placed on the board, the creature opposing it will flee to their right.", "当[creature]上场时，面对其的造物会向右侧逃跑。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lonesome", "孤独", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Lonesome", "孤独");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] gains +1 power for each adjacent empty space.", "[creature]每有一个相邻空位便增加1点力量。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magic Burst", "魔法爆发", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Magic Burst", "魔法爆发");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "After perishing, creatures adjascent to [creature] have their powers increased by 1.", "死亡后，与[creature]相邻的造物的力量加1。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Psystrike", "精神破坏", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Psystrike", "精神破坏");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "After [creature] perishes, it manipulates the creature opposing it to strike both of it's adjascent allies.", "在[creature]死亡后，它操纵与之相对的造物攻击其相邻的盟友。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Serpent Master", "训蛇大师", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Serpent Master", "训蛇大师");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the start of every turn, [creature] spawns a Summon Serpent on a space of it's owner's choosing. A Summon Serpent is defined as: 1 power, 1 health.", "在每个回合开始时，[creature]都会在持牌人选择的一个空间产生蛇之召。蛇之召被定义为：1点力量，1点生命。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Shadow Strike", "幻影冲击", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Shadow Strike", "幻影冲击");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] calls upon the shadows of creatures adjascent to it's target to strike it as well.", "[creature]也会召唤其目标附近造物的幻影来攻击它。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tidal Lock", "潮汐锁定", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Tidal Lock", "潮汐锁定");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the beginning of it's owner's turn, [creature] will pull small creatures, like squirrels, into it's orbit.", "在持牌人回合之初，[creature]会将松鼠之类的小造物拉入自身卫星轨道。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wizard's Heart", "巫师之心", Language.ChineseSimplified);
+            MagnificusMod.RegisterAbility("Wizard's Heart", "巫师之心");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, a Mox card corresponding to the current gems you control takes it's place.", "当[creature]死亡时，与您控制的当前宝石相对应的玛珂牌将取代其的位置。", Language.ChineseSimplified);
 
         }
     }
