@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.3
+
+Add supports for MagModExpansion-2.2.2.
+
 ## 1.5.2
 
 Add supports for InGameCardCreator-2.5.2, AgasMagnificusExpansion-2.0.0.

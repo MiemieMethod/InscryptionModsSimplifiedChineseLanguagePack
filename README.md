@@ -38,8 +38,8 @@ Current Supportted Mods:
     - [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
     - [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
     - [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
-    - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.0
-    - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
+    - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.9
+    - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
     - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
     - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.2
     - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
@@ -51,6 +51,7 @@ Current Supportted Mods:
     - [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
     - [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
     - [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
+    - [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
 - More Adding...
 
 Please contact me if you find problems.
@@ -116,8 +117,8 @@ Acknowledgement:
     - 无尽第二章 [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
     - TVF的头目 [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
     - Zepht阳光 [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
-    - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.0
-    - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.5
+    - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.9
+    - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
     - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
     - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.2
     - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
@@ -128,7 +129,8 @@ Acknowledgement:
     - 微调：空水袭 [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
     - 披萨塔卡牌 [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
     - 游戏内卡牌创建器 [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
-    - Aga的蔓尼菲科模组扩展 [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
+    - Aga的蔓尼菲科扩展 [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
+    - 蔓尼菲科模组扩展 [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
 - 正在加入更多……
 
 如果有任何问题请联系我修复。
