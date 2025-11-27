@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.4
+
+Update texts.
+
 ## 1.5.3
 
 Add supports for MagModExpansion-2.2.2.
