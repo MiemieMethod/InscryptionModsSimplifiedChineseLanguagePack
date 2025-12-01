@@ -24,7 +24,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.5.5";
+        private const string Version = "1.5.6";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -540,7 +540,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bone Thief", "窃骨者", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bounty", "赏金猎手", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Burning", "燃烧", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] takes 1 Damage at the end of your turn, when it gets attacked by another Card, that card gets set on fire.", "[creature]在你的回合结束时受到1点伤害；当它被其他卡牌攻击时，攻击者会被点燃", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] takes 1 Damage at the end of your turn, when it gets attacked by another Card, that card gets set on fire.", "[creature]在你的回合结束时受到1点伤害；当它被其他卡牌攻击时，攻击者会被点燃。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Chaos Strike", "混沌打击", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cold Front", "寒流骤至", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Collector", "收藏家", Language.ChineseSimplified);
@@ -889,7 +889,7 @@ namespace SimplifiedChineseLanguagePack
             RegisterCard("Candy Monster", "糖果怪兽");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spectrabbit", "幽灵兔", Language.ChineseSimplified);
             RegisterCard("Spectrabbit", "幽灵兔");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE SPECTRE EMITS A FLUTE LIKE CALL, AN OMEN OF BOTH DEATH AND DESCTRUCTION", "大幽灵发出笛声般的哀鸣，既是死亡的预兆，也是毁灭的凶兆", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE SPECTRE EMITS A FLUTE LIKE CALL, AN OMEN OF BOTH DEATH AND DESCTRUCTION", "大幽灵发出笛声般的哀鸣，既是死亡的预兆，也是毁灭的凶兆。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spectre", "大幽灵", Language.ChineseSimplified);
             RegisterCard("Spectre", "大幽灵");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "DEATH IS A CRUEL FATE. STARVATION AN EVEN CRUELER ONE. WHY DO YOU FIGHT, OH HUNGRY CHILD.", "死亡何其残酷。饥饿更甚。为何而战，饥饿的孩子。", Language.ChineseSimplified);
@@ -2094,7 +2094,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]Introduction to Runes[c:]\n[c:g3]'Twas[c:] [c:g1]an[c:] [c:g3]absolute[c:] [c:g1]nightmare[c:] [c:g3]learning[c:] [c:g1]all[c:] [c:g3]those[c:] [c:g1]runes.[c:]", "[c:g2]《符文导论》[c:]\n[c:g3]学习[c:][c:g1]所有[c:][c:g3]这些[c:][c:g1]符文[c:][c:g3]简直是[c:][c:g1]噩梦[c:]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gooey Book", "黏糊的书", Language.ChineseSimplified);
             RegisterCard("Gooey Book", "黏糊的书", "[c:g2]A Brief Hist-[c:] [c:g3]Wait[c:] [c:g1]a[c:] [c:g3]minute..[c:] [c:g1]Some[c:] [c:g3]vandal[c:] [c:g1]ruined[c:] [c:g3]this[c:] [c:g1]one![c:]", "[c:g2]《简史-[c:] [c:g3]等等……[c:][c:g1]有[c:g3]人[c:][c:g1]毁了[c:g3]这本[c:][c:g1]书！[c:]");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]A Brief Hist-[c:] [c:g3]Wait[c:] [c:g1]a[c:] [c:g3]minute..[c:] [c:g1]Some[c:] [c:g3]vandal[c:] [c:g1]ruined[c:] [c:g3]this[c:] [c:g1]one![c:]", "[c:g2]《简史-[c:] [c:g3]等等……[c:][c:g1]有[c:][c:g3]人[c:][c:g1]毁了[c:][c:g3]这本[c:][c:g1]书！[c:]", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]A Brief Hist-[c:] [c:g3]Wait[c:] [c:g1]a[c:] [c:g3]minute..[c:] [c:g1]Some[c:] [c:g3]vandal[c:] [c:g1]ruined[c:] [c:g3]this[c:] [c:g1]one![c:]", "[c:g2]《简史-[c:][c:g3]等等……[c:][c:g1]竟[c:][c:g3]有人[c:][c:g1]毁了[c:][c:g3]这本[c:][c:g1]书！[c:]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bogbound Spells", "沼泽咒术", Language.ChineseSimplified);
             RegisterCard("Bogbound Spells", "沼泽咒术", "[c:g2]Bogbound Spells[c:]\n[c:g3]Eurgh,[c:] [c:g1]it's[c:] [c:g3]in[c:] [c:g1]way[c:] [c:g3]worse[c:] [c:g1]condition[c:] [c:g3]than[c:] [c:g1]I[c:] [c:g3]remember.[c:]", "[c:g2]《沼泽咒术》[c:]\n[c:g3]呃[c:][c:g1]它的[c:g3]状况[c:][c:g1]比[c:g3]我[c:][c:g1]记忆[c:g3]中的[c:][c:g1]更糟[c:]");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]Bogbound Spells[c:]\n[c:g3]Eurgh,[c:] [c:g1]it's[c:] [c:g3]in[c:] [c:g1]way[c:] [c:g3]worse[c:] [c:g1]condition[c:] [c:g3]than[c:] [c:g1]I[c:] [c:g3]remember.[c:]", "[c:g2]《沼泽咒术》[c:]\n[c:g3]呃[c:][c:g1]它的[c:g3]状况[c:][c:g1]比[c:][c:g3]我[c:][c:g1]记忆[c:][c:g3]中的[c:][c:g1]更糟[c:]", Language.ChineseSimplified);
@@ -3546,6 +3546,7 @@ namespace SimplifiedChineseLanguagePack
             MagnificusMod.RegisterCard("Jade Turtle", "翡翠魔龟", "A turtle draped in emeralds from head to toe—I can't help but marvel that such a painting even exists.", "一只从头到脚都裹着绿宝石的乌龟——我不禁惊叹于竟然有这样一幅画作。");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A turtle draped in emeralds from head to toe—I can't help but marvel that such a painting even exists.", "一只从头到脚都裹着绿宝石的乌龟——我不禁惊叹于竟然有这样一幅画作。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Magic Cheese", "魔法奶酪", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Magic Cheese", "魔法奶酪", "", "");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Scarlet Cuckoo", "猩红布谷鸟", Language.ChineseSimplified);
             MagnificusMod.RegisterCard("Scarlet Cuckoo", "猩红布谷鸟", "The success or failure of the angry magic bird often depends on its face.", "愤怒的魔法布谷鸟，你的成败往往取决于它的脸色。");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The success or failure of the angry magic bird often depends on its face.", "愤怒的魔法布谷鸟，你的成败往往取决于它的脸色。", Language.ChineseSimplified);
@@ -3582,7 +3583,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, adjacent cards gain 3 health.", "当[creature]阵亡时，与之相邻卡牌获得3点生命。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "God Made", "上帝造物", Language.ChineseSimplified);
             MagnificusMod.RegisterAbility("God Made", "上帝造物");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, a Homunculus is created on each empty adjacent space. The Homunculus has : 1 power, 1 health, Familiar.", "当[creature]被放置到场上时，将在每个相邻的空位上生成一个人造人。人造人具有：1 点力量，1 点生命，使魔。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, a Homunculus is created on each empty adjacent space. The Homunculus has : 1 power, 1 health, Familiar.", "当[creature]被放置到场上时，将在每个相邻的空位上生成一个人造人。人造人具有：1点力量，1点生命，使魔。", Language.ChineseSimplified);
             MagnificusMod.RegisterAbility("Fir Caller", "唤林者");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, the empty slot on the cardholder's side is filled with Great Firs. Great Fir has: 0 Power, 3 Health, Mighty Leap.", "当[creature]消亡时，持牌人一侧的空位将被大冷杉填满。大冷杉具有：0点力量，3点生命，高跳。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lingering Taste", "回味无穷", Language.ChineseSimplified);
@@ -3976,7 +3977,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Carnivore", "食肉动物", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 2 blood to increase the power of [creature] by 3.", "消耗2点血量使[creature]的力量增加3点。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Causality", "因果关系", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 1 currency to trigger a random effect.", "消耗1点货币触发随机效果：无效果、直接对对手造成 1 点伤害、使你一张卡牌的攻击力增加 1，或使你一张卡牌的生命值增加 1。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pay 1 currency to trigger a random effect.", "消耗1点货币触发随机效果：无效果、直接对对手造成1点伤害、使你一张卡牌的攻击力增加1，或使你一张卡牌的生命值增加1。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The universe seems in harmony already... nothing changes.", "宇宙似乎已然和谐……毫无变化。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nothing happened...", "无事发生……", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nothing? Huh, that's disappointing.", "没效果？哼，真扫兴。", Language.ChineseSimplified);
@@ -7517,11 +7518,11 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]YES YES YES [c:][w:0.3][anim:voice.]Hahahahah![w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]对！对！对！[c:][w:0.3][anim:voice.]哈哈哈哈！[w:0.3]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]LET ME OUT [c:][w:0.3][anim:voice.]Enough from you![w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]放！我！出！去！[c:][w:0.3][anim:voice.]你够了！[w:0.3]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]NO NO NO NO [c:][w:0.3][anim:voice.]We'd... I'd rather you didn't...[w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]不！不！不！不！[c:][w:0.3][anim:voice.]我们…我宁愿你别……[w:0.3]", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]NO NO NO NO [c:][w:0.3][anim:voice.]Do as you must.[w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]不！不！不！不 ！[c:][w:0.3][anim:voice.]随你便吧。[w:0.3]", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]NO NO NO NO [c:][w:0.3][anim:voice.]Do as you must.[w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]不！不！不！不！[c:][w:0.3][anim:voice.]随你便吧。[w:0.3]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "As you see fit...[w:0.3]", "随你心意……[w:0.3]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]DON'T.[c:][w:0.3][anim:voice.][w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]不！要！[c:][w:0.3][anim:voice.][w:0.3]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]PAIN [c:][w:0.3][anim:voice.]Greetings![w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]痛！苦！[c:][w:0.3][anim:voice.]你好哇！[w:0.3]", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]HELP ME [c:][w:0.3][anim:voice.]Lucky draw![w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]救！救！我 ！[c:][w:0.3][anim:voice.]幸运一抽！[w:0.3]", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]HELP ME [c:][w:0.3][anim:voice.]Lucky draw![w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]救！救！我！[c:][w:0.3][anim:voice.]幸运一抽！[w:0.3]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]IT HURTS [c:][w:0.3][anim:voice.]Hello again![w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]好！痛！[c:][w:0.3][anim:voice.]又见面了！[w:0.3]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]STOP IT [c:][w:0.3][anim:voice.]Hello![w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]住！手！[c:][w:0.3][anim:voice.]你好！[w:0.3]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[anim:voice.speechblip_jamescobb_internal][c:bR]SAVE ME [c:][w:0.3][anim:voice.]I'm drawn![w:0.3]", "[anim:voice.speechblip_jamescobb_internal][c:bR]救！救！我！[c:][w:0.3][anim:voice.]我被抽到了！[w:0.3]", Language.ChineseSimplified);
@@ -9867,7 +9868,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It'll use the slime against the enemies, to drop their attack whence struck.", "它们会以粘液御敌，遭到攻击时削弱敌人攻击力。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Smug Witch", "臭美女巫", Language.ChineseSimplified);
             MagnificusMod.RegisterCard("Smug Witch", "臭美女巫", "The smuggest pupil in all the land. Legends say his Smug Throw is unrivaled.", "全岛最臭美的学生，传闻其 “臭美投掷” 出神入化，无人能及。");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The smuggest pupil in all the land. Legends say his Smug Throw is unrivaled.", "全岛最臭美的学生，传闻其 “臭美投掷” 出神入化，无人能及。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The smuggest pupil in all the land. Legends say his Smug Throw is unrivaled.", "全岛最臭美的学生，传闻其“臭美投掷”出神入化，无人能及。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Summon Spear", "召唤之矛", Language.ChineseSimplified);
             MagnificusMod.RegisterCard("Summon Spear", "召唤之矛", "Roots up a spear from the ground, acting as a sturdy counter.", "从地上拔出长矛，作为坚固的反击。");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Roots up a spear from the ground, acting as a sturdy counter.", "从地上拔出长矛，作为坚固的反击。", Language.ChineseSimplified);
@@ -9879,10 +9880,10 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I LOVE DINO MOD!!!!!", "我爱恐龙模组！！！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Virtual King", "虚拟君主", Language.ChineseSimplified);
             MagnificusMod.RegisterCard("Virtual King", "虚拟君主", "Self-proclaimed ruler of the virtual lands who won't abide to measly “card game rules”.", "自封虚拟界君主，区区 “卡牌规则”，他根本不屑一顾！");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Self-proclaimed ruler of the virtual lands who won't abide to measly “card game rules”.", "自封虚拟界君主，区区 “卡牌规则”，他根本不屑一顾！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Self-proclaimed ruler of the virtual lands who won't abide to measly “card game rules”.", "自封虚拟界君主，区区“卡牌规则”，他根本不屑一顾！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Moron Core", "低能核心", Language.ChineseSimplified);
             MagnificusMod.RegisterCard("Moron Core", "低能核心", "An odd core hailing from an abandoned factory, hates the word \"moron\".", "一枚诞于废弃工厂的怪异核心，最是反感 “蠢货” 这般字眼。");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An odd core hailing from an abandoned factory, hates the word \"moron\".", "一枚诞于废弃工厂的怪异核心，最是反感 “蠢货” 这般字眼。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An odd core hailing from an abandoned factory, hates the word \"moron\".", "一枚诞于废弃工厂的怪异核心，最是反感“蠢货”这般字眼。", Language.ChineseSimplified);
 
             // Pack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Smughtro's MagMod Expansion", "Smughtro的蔓尼菲科模组扩展", Language.ChineseSimplified);

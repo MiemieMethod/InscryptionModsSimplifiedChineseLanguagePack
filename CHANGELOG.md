@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.6
+
+Update texts.
+
 ## 1.5.5
 
 Update texts.
