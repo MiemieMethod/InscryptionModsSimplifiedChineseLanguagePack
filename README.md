@@ -42,7 +42,7 @@ Current Supportted Mods:
     - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
     - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
     - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.5
-    - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
+    - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.2.0
     - [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
     - [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
     - [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
@@ -121,7 +121,7 @@ Acknowledgement:
     - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
     - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
     - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.5
-    - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.1.5
+    - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.2.0
     - 微调：九头蛇 [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
     - 更多道具 [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
     - 恐龙模组 [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
