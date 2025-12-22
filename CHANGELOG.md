@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.0
+
+Add supports for WhistleWindLobotomyMod-2.1.1.
+
 ## 1.5.7
 
 Update texts.

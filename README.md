@@ -1,5 +1,7 @@
 # Simplified Chinese Language Pack for Mods
 
+中文简介请往后拉。
+
 This mod is a Simplified Chinese Language Pack Patching for some Inscryption mods, with characters display fix.
 
 Current Supportted Mods:
@@ -22,6 +24,7 @@ Current Supportted Mods:
     - [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
     - [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) >= 2.7.0
 - Gameplay Mods:
+    - [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
     - [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
     - [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
     - [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
@@ -101,6 +104,7 @@ Acknowledgement:
     - P03自定义印记 [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
     - 海量印记 [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) >= 2.7.0
 - 玩法模组：
+    - WhistleWind脑叶公司模组 [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
     - 植物大战僵尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
     - 格里魔拉模组扩展 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
     - 格里魔拉模组冒险扩展 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
