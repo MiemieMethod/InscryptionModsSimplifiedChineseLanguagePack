@@ -55,6 +55,8 @@ Current Supportted Mods:
     - [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
     - [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
     - [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
+    - [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
+    - [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
 - More Adding...
 
 Please contact me if you find problems.
@@ -135,6 +137,8 @@ Acknowledgement:
     - 游戏内卡牌创建器 [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
     - Aga的蔓尼菲科扩展 [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
     - 蔓尼菲科模组扩展 [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
+    - 小花模组 [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
+    - 传说之下模组 [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
 - 正在加入更多……
 
 如果有任何问题请联系我修复。

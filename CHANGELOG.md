@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.1
+
+Add supports for FloweysMod-0.0.2, UndertaleMod-1.2.2.
+1
 ## 1.6.0
 
 Add supports for WhistleWindLobotomyMod-2.1.1.
