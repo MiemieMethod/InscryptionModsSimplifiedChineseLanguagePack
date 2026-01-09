@@ -57,6 +57,8 @@ Current Supportted Mods:
     - [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
     - [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
     - [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
+    - [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) >= 0.0.19
+    - [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod//) >= 1.1.1
 - More Adding...
 
 Please contact me if you find problems.
@@ -139,6 +141,8 @@ Acknowledgement:
     - 蔓尼菲科模组扩展 [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
     - 小花模组 [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
     - 传说之下模组 [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
+    - 亡魂模组 [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) >= 0.0.19
+    - 松鼠炸弹模组 [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod//) >= 1.1.1
 - 正在加入更多……
 
 如果有任何问题请联系我修复。

@@ -1,9 +1,13 @@
 # Changelog
 
+## 1.6.2
+
+Add supports for RevenantMod-0.0.19, SquirrelBombMod-1.1.1.
+
 ## 1.6.1
 
 Add supports for FloweysMod-0.0.2, UndertaleMod-1.2.2.
-1
+
 ## 1.6.0
 
 Add supports for WhistleWindLobotomyMod-2.1.1.
