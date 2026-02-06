@@ -312,7 +312,7 @@ namespace SimplifiedChineseLanguagePack
                 Translate(GUID, null, text5, text5Loc, Language.ChineseSimplified);
                 Translate(GUID, null, "While " + value.DisplayedNameLocalized + " is on the board, remove ally Terrain and Pelt cards and transform the rest into random Apostles.", "当" + value.DisplayedNameLocalized + "在场上时，移除友方地形和毛皮，并将剩余的卡牌随机转化为使徒。", Language.ChineseSimplified);
                 Translate(GUID, null, "[c:bR]The Clock[c:] and your [c:bR]" + value.DisplayedNameLocalized + "[c:] will remain in that abandoned time.", "[c:bR]时钟[c:]和你的[c:bR]" + value.DisplayedNameLocalized + "[c:]将留在那个被遗弃的时刻里。", Language.ChineseSimplified);
-                Translate(GUID, null, "False " + value.displayedName, "假的" + value.DisplayedNameLocalized, Language.ChineseSimplified);
+                Translate(GUID, null, "False " + value.DisplayedNameLocalized, "伪" + value.DisplayedNameLocalized, Language.ChineseSimplified);
                 Translate(GUID, null, "[c:bB]That " + value.DisplayedNameLocalized + " costs more energy than you have.[c:]", "[c:bB]能量不足，无法使用" + value.DisplayedNameLocalized + "。[c:]", Language.ChineseSimplified);
             }
             foreach (var value in newCards)
@@ -343,7 +343,7 @@ namespace SimplifiedChineseLanguagePack
                 Translate(GUID, null, text5, text5Loc, Language.ChineseSimplified);
                 Translate(GUID, null, "While " + value.DisplayedNameLocalized + " is on the board, remove ally Terrain and Pelt cards and transform the rest into random Apostles.", "当" + value.DisplayedNameLocalized + "在场上时，移除友方地形和毛皮，并将剩余的卡牌随机转化为使徒。", Language.ChineseSimplified);
                 Translate(GUID, null, "[c:bR]The Clock[c:] and your [c:bR]" + value.DisplayedNameLocalized + "[c:] will remain in that abandoned time.", "[c:bR]时钟[c:]和你的[c:bR]" + value.DisplayedNameLocalized + "[c:]将留在那个被遗弃的时刻里。", Language.ChineseSimplified);
-                Translate(GUID, null, "False " + value.displayedName, "假的" + value.DisplayedNameLocalized, Language.ChineseSimplified);
+                Translate(GUID, null, "False " + value.DisplayedNameLocalized, "伪" + value.DisplayedNameLocalized, Language.ChineseSimplified);
                 Translate(GUID, null, "[c:bB]That " + value.DisplayedNameLocalized + " costs more energy than you have.[c:]", "[c:bB]能量不足，无法使用" + value.DisplayedNameLocalized + "。[c:]", Language.ChineseSimplified);
             }
             for (int max = 1; max <= 10; max++)
@@ -1441,7 +1441,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I'VE BEEN WAITING FOR A WORTHY FIGHT!", "我正等着来场像样的对决呢！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "IT SEEMS A STORM IS BREWING, I HOPE ME SHIP CAN HANDLE IT", "风暴将至，但愿我的船扛得住", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "OH, I SEE YEE ARE SEVERELY HAUNTED!", "哈！看来你被恶灵缠得不轻啊！", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "REVENANT, PACK YE BAGS, YOURE GETTING THROWN OVERBOARD!", "亡魂，收拾收拾准备喂鱼吧！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "REVENANT, PACK YE BAGS, YOURE GETTING THROWN OVERBOARD!", "复生的亡灵，收拾收拾准备喂鱼吧！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I OVERESTIMATED ME SKILL, GOOD LUCK CHALLENGER.", "高估了老身的本事，祝你好运啊挑战者。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "LET'S SEE, THE NEXT AREA IS MY VERY OWN CRYPT.", "让老身瞧瞧，下一站正是老身的墓室。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "PERHAPS YOU CAN BEAT ALL ODDS AND TRIUMPH!", "说不定你真能逆天改命呢！", Language.ChineseSimplified);
@@ -1776,15 +1776,15 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Summon Runes", "引爆召唤", Language.ChineseSimplified);
             RegisterAbility("Summon Runes", "引爆召唤");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a card bearing this sigil is played, it will summon two runes beside it. A rune is defined as 0 power, 1 health, Detonator.", "当[creature]被使用时，会在其相邻位置召唤两个魔法炸弹符文。符文具有：0点力量、1点生命，引爆器。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Health", "生命咒术", Language.ChineseSimplified);
-            RegisterAbility("Spell of Health", "生命咒术");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Health", "生命法术", Language.ChineseSimplified);
+            RegisterAbility("Spell of Health", "生命法术");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board gain +2 health.", "当带有该印记的法术牌被使用时，持牌人侧牌桌上所有卡牌获得+2生命值。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Attack", "攻击咒术", Language.ChineseSimplified);
-            RegisterAbility("Spell of Attack", "攻击咒术");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board gain +1 attack.", "当带有该印记的咒术被使用时，持牌人侧牌桌上所有卡牌获得+1攻击力。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Attack", "攻击法术", Language.ChineseSimplified);
+            RegisterAbility("Spell of Attack", "攻击法术");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board gain +1 attack.", "当带有该印记的法术被使用时，持牌人侧牌桌上所有卡牌获得+1攻击力。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Frost Spell", "寒霜咒", Language.ChineseSimplified);
             RegisterAbility("Frost Spell", "寒霜咒");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards belonging to the opponent will have their attack set to 0, but given +2 health.", "当使用带有该印记的咒术牌时，对手所有卡牌的攻击力将归零，但生命值+2。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards belonging to the opponent will have their attack set to 0, but given +2 health.", "当使用带有该印记的法术牌时，对手所有卡牌的攻击力将归零，但生命值+2。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spell of Wind", "强风咒", Language.ChineseSimplified);
             RegisterAbility("Spell of Wind", "强风咒");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When a spell bearing this sigil is played, all cards on your side of the board will become airborne.", "当使用带有该印记的法术时，持牌人侧牌桌上的所有卡牌将获得空袭能力。", Language.ChineseSimplified);
@@ -2184,9 +2184,9 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gooey Book", "黏糊的书", Language.ChineseSimplified);
             RegisterCard("Gooey Book", "黏糊的书", "[c:g2]A Brief Hist-[c:] [c:g3]Wait[c:] [c:g1]a[c:] [c:g3]minute..[c:] [c:g1]Some[c:] [c:g3]vandal[c:] [c:g1]ruined[c:] [c:g3]this[c:] [c:g1]one![c:]", "[c:g2]《简史-[c:] [c:g3]等等……[c:][c:g1]有[c:g3]人[c:][c:g1]毁了[c:g3]这本[c:][c:g1]书！[c:]");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]A Brief Hist-[c:] [c:g3]Wait[c:] [c:g1]a[c:] [c:g3]minute..[c:] [c:g1]Some[c:] [c:g3]vandal[c:] [c:g1]ruined[c:] [c:g3]this[c:] [c:g1]one![c:]", "[c:g2]《简史-[c:][c:g3]等等……[c:][c:g1]竟[c:][c:g3]有人[c:][c:g1]毁了[c:][c:g3]这本[c:][c:g1]书！[c:]", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bogbound Spells", "沼泽咒术", Language.ChineseSimplified);
-            RegisterCard("Bogbound Spells", "沼泽咒术", "[c:g2]Bogbound Spells[c:]\n[c:g3]Eurgh,[c:] [c:g1]it's[c:] [c:g3]in[c:] [c:g1]way[c:] [c:g3]worse[c:] [c:g1]condition[c:] [c:g3]than[c:] [c:g1]I[c:] [c:g3]remember.[c:]", "[c:g2]《沼泽咒术》[c:]\n[c:g3]呃[c:][c:g1]它的[c:g3]状况[c:][c:g1]比[c:g3]我[c:][c:g1]记忆[c:g3]中的[c:][c:g1]更糟[c:]");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]Bogbound Spells[c:]\n[c:g3]Eurgh,[c:] [c:g1]it's[c:] [c:g3]in[c:] [c:g1]way[c:] [c:g3]worse[c:] [c:g1]condition[c:] [c:g3]than[c:] [c:g1]I[c:] [c:g3]remember.[c:]", "[c:g2]《沼泽咒术》[c:]\n[c:g3]呃[c:][c:g1]它的[c:g3]状况[c:][c:g1]比[c:][c:g3]我[c:][c:g1]记忆[c:][c:g3]中的[c:][c:g1]更糟[c:]", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bogbound Spells", "泥沼法术", Language.ChineseSimplified);
+            RegisterCard("Bogbound Spells", "泥沼法术", "[c:g2]Bogbound Spells[c:]\n[c:g3]Eurgh,[c:] [c:g1]it's[c:] [c:g3]in[c:] [c:g1]way[c:] [c:g3]worse[c:] [c:g1]condition[c:] [c:g3]than[c:] [c:g1]I[c:] [c:g3]remember.[c:]", "[c:g2]《泥沼法术》[c:]\n[c:g3]呃[c:][c:g1]它的[c:g3]状况[c:][c:g1]比[c:g3]我[c:][c:g1]记忆[c:g3]中的[c:][c:g1]更糟[c:]");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]Bogbound Spells[c:]\n[c:g3]Eurgh,[c:] [c:g1]it's[c:] [c:g3]in[c:] [c:g1]way[c:] [c:g3]worse[c:] [c:g1]condition[c:] [c:g3]than[c:] [c:g1]I[c:] [c:g3]remember.[c:]", "[c:g2]《泥沼法术》[c:]\n[c:g3]呃[c:][c:g1]它的[c:g3]状况[c:][c:g1]比[c:][c:g3]我[c:][c:g1]记忆[c:][c:g3]中的[c:][c:g1]更糟[c:]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Taming Familiars", "驯服使魔", Language.ChineseSimplified);
             RegisterCard("Taming Familiars", "驯服使魔", "[c:g2]Guide to Taming Familiars[c:]\n[c:g3]Borrowed[c:] [c:g1]this[c:] [c:g3]one[c:] [c:g1]from[c:] [c:g3]a[c:] [c:g1]friend[c:] [c:g3]in[c:] [c:g1]the[c:] [c:g3]wood.[c:]", "[c:g2]《驯服使魔指南》[c:]\n[c:g3]从[c:][c:g1]森林里[c:][c:g3]的[c:][c:g1]朋友[c:][c:g3]那里[c:][c:g1]借[c:][c:g3]的[c:]");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:g2]Guide to Taming Familiars[c:]\n[c:g3]Borrowed[c:] [c:g1]this[c:] [c:g3]one[c:] [c:g1]from[c:] [c:g3]a[c:] [c:g1]friend[c:] [c:g3]in[c:] [c:g1]the[c:] [c:g3]wood.[c:]", "[c:g2]《驯服使魔指南》[c:]\n[c:g3]从[c:][c:g1]森林里[c:][c:g3]的[c:][c:g1]朋友[c:][c:g3]那里[c:][c:g1]借[c:][c:g3]的[c:]", Language.ChineseSimplified);
@@ -3502,6 +3502,7 @@ namespace SimplifiedChineseLanguagePack
             RegisterEncounter("Kaycee's P03 Encounter Expansion #3", "凯茜的P03遭遇战扩展#3", "[count] additional encounters that feature cards from the third official P03 expansion pack.", "[count]个额外遭遇战，包含来自第三个官方P03扩展包的卡牌。");  // P03KCM EXP3
             RegisterEncounter("Aga's Magnificus Expansion", "Aga的蔓尼菲科模组扩展", "An unofficial expansion to the Magnificus Mod featuring [count] unique and colourful mages", "蔓尼菲科模组的非官方扩展，拥有[count]位独特而丰富多彩的法师");  // AgasMagnificusExpansion
             RegisterEncounter("Smughtro's MagMod Expansion", "Smughtro的蔓尼菲科模组扩展", "Adds 19 common cards, 7 rare cards, 7 spells, and 6 token cards to Magnificus Mod.", "为Magnificus模组新增19张普通卡、7张稀有卡、7个法术及6张代币卡。");  // MagModExpansion
+            RegisterEncounter("Revenant Mod Card Pack", "复生亡灵模组卡包", "This card pack consists of mainly cards that return to the player in a variety of ways.", "这套卡牌主要由一些能以各种方式返回玩家手中的卡牌组成。");  // RevenantMod
             //for (int count = 0; count <= 100; count++)
             //{
             //    RegisterEncounter("WhistleWind Lobotomy Mod", "WhistleWind的脑叶公司模组", "A set of " + count.ToString() + " cards based on the abnormalities from Lobotomy Corporation and Library of Ruina.", "一套基于《脑叶公司》与《废墟图书馆》异想体的" + count.ToString() + "张新卡牌。");
@@ -3652,9 +3653,9 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Eye of Darkness", "黑暗之眼", Language.ChineseSimplified);
             MagnificusMod.RegisterCard("The Eye of Darkness", "黑暗之眼", "This precious pearl was once the devil's eye.", "这颗宝贵的珍珠曾经是魔鬼的眼睛。");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This precious pearl was once the devil's eye.", "这颗宝贵的珍珠曾经是魔鬼的眼睛。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Forest Spell", "森林咒术", Language.ChineseSimplified);
-            MagnificusMod.RegisterCard("Forest Spell", "森林咒术", "The forest spell obtained from Leshy can provide the most primitive defense.", "从莱西那里获得的森林咒术，可以提供最原始的防御。");
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The forest spell obtained from Leshy can provide the most primitive defense.", "从莱西那里获得的森林咒术，可以提供最原始的防御。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Forest Spell", "森林法术", Language.ChineseSimplified);
+            MagnificusMod.RegisterCard("Forest Spell", "森林法术", "The forest spell obtained from Leshy can provide the most primitive defense.", "从莱西那里获得的森林法术，可以提供最原始的防御。");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The forest spell obtained from Leshy can provide the most primitive defense.", "从莱西那里获得的森林法术，可以提供最原始的防御。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "MoxShield", "玛珂魔盾", Language.ChineseSimplified);
             MagnificusMod.RegisterCard("MoxShield", "玛珂魔盾", "A magic shield inlaid with gemstones always provides a sense of security with its presence.", "镶嵌宝石的魔法盾牌总是给人一种安全感。");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A magic shield inlaid with gemstones always provides a sense of security with its presence.", "镶嵌宝石的魔法盾牌总是给人一种安全感。", Language.ChineseSimplified);
@@ -7234,7 +7235,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I hope this meager reward is sufficient for your kindness.", "希望这份微薄的回报能配得上你的善心", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Interesting. The [c:G]brain[c:] is still intact.", "有意思。[c:G]核心[c:]还完好无损。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Perhaps you can make use of that.", "也许你能派上用场。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Do ye...Do ye got any [c:G]GOLD[c:] on ye?", "你……你身上带[c:G]金子[c:]了吗？", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Do ye...Do ye got any [c:G]GOLD[c:] on ye??", "你……你身上带[c:G]金子[c:]了吗？？", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I sure ye do, I can smell it!", "我敢打赌你有，我都闻到味儿了！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I can make some pretty lookin' bots out o' that there gold.", "我能用那些金子给你造几个漂亮的小机器人。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Talk to me again, I'll fix it right up for ye.", "再跟我聊一次，立马给你整好。", Language.ChineseSimplified);
@@ -9544,7 +9545,8 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I-I can take it...", "我……我撑得住……", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I can't let them down...", "我绝不能让大家失望……", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I’m nervous, but...", "我很紧张，但是……", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I won't let you down...!", "我绝不会让你失望的！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I won't let you down...!", "我绝不会让你失望的……！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I won't let you down!", "我绝不会让你失望的！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I hope nothing bad happens.", "但愿不会出什么岔子。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Alright, here I come!", "好，我来啦！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Everything will work out...", "一切都会好起来的……", Language.ChineseSimplified);
@@ -11572,7 +11574,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Feels good to be young again!", "再回年少，快意畅快！", Language.ChineseSimplified);
             GrimoraMod.RegisterCard("Stillborn Raven", "夭折鸦灵");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Reanimated", "回魂者", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BRINGING THE SCYTHE OF DEATH, THE REVENANT... WAIT, WHAT?", "执掌死亡镰刀而来的，正是复生亡灵……等等，什么情况？", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "BRINGING THE SCYTHE OF DEATH, THE REVENANT... WAIT, WHAT?", "手持死亡镰刀的复生亡灵，只为……等等，这是什么？", Language.ChineseSimplified);
             GrimoraMod.RegisterCard("Reanimated", "回魂者");
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "RevenantEldritch", "复生异灵", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The source of Calamity, relentless and unerring.", "灾祸之源，冷酷无情，精准无匹。", Language.ChineseSimplified);
@@ -11618,6 +11620,10 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The pain reaches the ancient great serpent of death.", "痛苦传到了古老的死亡巨蛇耳中。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sacrifices must be made.", "你必须做出牺牲。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh... There are no dead cards yet.", "哦……目前还没有死亡卡。", Language.ChineseSimplified);
+
+            // Pack
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Revenant Mod Card Pack", "复生亡灵模组卡包", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This card pack consists of mainly cards that return to the player in a variety of ways.", "这套卡牌主要由一些能以各种方式返回玩家手中的卡牌组成。", Language.ChineseSimplified);
         }
     }
     public class SquirrelBombMod
