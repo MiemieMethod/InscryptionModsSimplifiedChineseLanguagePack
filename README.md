@@ -58,7 +58,9 @@ Current Supportted Mods:
     - [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
     - [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
     - [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) >= 0.0.19
-    - [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod//) >= 1.1.1
+    - [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
+    - [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) >= 1.2.1
+    - [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
 - More Adding...
 
 Please contact me if you find problems.
@@ -142,7 +144,9 @@ Acknowledgement:
     - 小花模组 [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
     - 传说之下模组 [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
     - 复生亡灵模组 [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) >= 0.0.19
-    - 松鼠炸弹模组 [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod//) >= 1.1.1
+    - 松鼠炸弹模组 [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
+    - Pine冥刻 [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) >= 1.2.1
+    - 星际争霸卡包 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
 - 正在加入更多……
 
 如果有任何问题请联系我修复。

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.3
+
+Add supports for Pinescription-1.2.1, StarCraftCardpack-1.0.2.
+
 ## 1.6.2
 
 Add supports for RevenantMod-0.0.19, SquirrelBombMod-1.1.1.
