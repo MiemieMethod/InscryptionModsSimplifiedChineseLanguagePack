@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.5
+
+Update texts.
+
 ## 1.6.4
 
 Add supports for LegendsFromTheDarkness-1.6.1, GarethMod-2.0.0, LifeCostAPI-4.0.1.
