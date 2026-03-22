@@ -16,6 +16,7 @@ Current Supportted Mods:
     - [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
     - [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
     - [New Spell Card Toolkit](https://thunderstore.io/c/inscryption/p/WhistleWind/New_Spell_Card_Toolkit/) >= 1.2.5
+    - [Life Cost API](https://thunderstore.io/c/inscryption/p/Void_Slime/Life_Cost_API/) >= 4.0.1
 - Sigilarium Mods:
     - [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
     - [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
@@ -61,6 +62,8 @@ Current Supportted Mods:
     - [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
     - [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) >= 1.2.1
     - [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
+    - [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) >= 1.6.1
+    - [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
 - More Adding...
 
 Please contact me if you find problems.
@@ -102,6 +105,7 @@ Acknowledgement:
     - 自定义副牌组 [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) >= 2.3.1
     - 卡包管理器API [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
     - 新法术卡工具箱 [New Spell Card Toolkit](https://thunderstore.io/c/inscryption/p/WhistleWind/New_Spell_Card_Toolkit/) >= 1.2.5
+    - 生命计数API [Life Cost API](https://thunderstore.io/c/inscryption/p/Void_Slime/Life_Cost_API/) >= 4.0.1
 - 印记模组：
     - Nevernamed的自定义印记 [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
     - 印记大全 [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
@@ -147,6 +151,8 @@ Acknowledgement:
     - 松鼠炸弹模组 [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
     - Pine冥刻 [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) >= 1.2.1
     - 星际争霸卡包 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
+    - 来自黑暗的传说 [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) >= 1.6.1
+    - Gareth模组 [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
 - 正在加入更多……
 
 如果有任何问题请联系我修复。

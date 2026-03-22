@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.4
+
+Add supports for LegendsFromTheDarkness-1.6.1, GarethMod-2.0.0, LifeCostAPI-4.0.1.
+
 ## 1.6.3
 
 Add supports for Pinescription-1.2.1, StarCraftCardpack-1.0.2.
