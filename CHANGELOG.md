@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.7
+
+Fix a fatal error.
+
 ## 1.6.6
 
 Update texts.

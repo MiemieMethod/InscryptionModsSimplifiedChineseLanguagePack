@@ -25,7 +25,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.6.6";
+        private const string Version = "1.6.7";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -3563,7 +3563,6 @@ namespace SimplifiedChineseLanguagePack
             RegisterEncounter("Aga's Magnificus Expansion", "Aga的蔓尼菲科模组扩展", "An unofficial expansion to the Magnificus Mod featuring [count] unique and colourful mages", "蔓尼菲科模组的非官方扩展，拥有[count]位独特而丰富多彩的法师");  // AgasMagnificusExpansion
             RegisterEncounter("Smughtro's MagMod Expansion", "Smughtro的蔓尼菲科模组扩展", "Adds 19 common cards, 7 rare cards, 7 spells, and 6 token cards to Magnificus Mod.", "为Magnificus模组新增19张普通卡、7张稀有卡、7个法术及6张代币卡。");  // MagModExpansion
             RegisterEncounter("Revenant Mod Card Pack", "复生亡灵模组卡包", "This card pack consists of mainly cards that return to the player in a variety of ways.", "这套卡牌主要由一些能以各种方式返回玩家手中的卡牌组成。");  // RevenantMod
-            RegisterEncounter("Card Pack: StarCraft", "星际争霸卡包", "Characters from StarCraft One.", "《星际争霸Ⅰ》登场角色");  // StarCraftCardpack
             //for (int count = 0; count <= 100; count++)
             //{
             //    RegisterEncounter("WhistleWind Lobotomy Mod", "WhistleWind的脑叶公司模组", "A set of " + count.ToString() + " cards based on the abnormalities from Lobotomy Corporation and Libraryof Ruina.", "一套基于《脑叶公司》与《废墟图书馆》异想体的" + count.ToString() + "张新卡牌。");
