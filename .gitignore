@@ -8,3 +8,5 @@ packages/*
 !lib/Sirenix.Serialization.dll
 *.sln.DotSettings.user
 *.csproj.user
+
+.knowledge/

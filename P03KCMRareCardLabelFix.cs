@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using DiskCardGame;
 using HarmonyLib;
 using Infiniscryption.P03KayceeRun;
@@ -15,11 +15,11 @@ using TMPro;
 using Unity.Audio;
 using UnityEngine;
 
-namespace SimplifiedChineseLanguagePack
+namespace ClassicChineseLanguagePack
 {
 
     [BepInDependency(InscryptionAPIPlugin.ModGUID)]
-    [BepInDependency(SimplifiedChineseLanguagePackPlugin.GUID)]
+    [BepInDependency(ClassicChineseLanguagePackPlugin.GUID)]
     [BepInDependency(P03Plugin.PluginGuid)]
     [BepInPlugin(GUID, Name, Version)]
     public class P03KCMRareCardLabelFixPlugin : BaseUnityPlugin
@@ -32,18 +32,18 @@ namespace SimplifiedChineseLanguagePack
         private void Awake()
         {
             Logger.LogInfo($"Loaded {Name}!");
-            if (SimplifiedChineseLanguagePackPlugin.FontBundle == null)
+            if (ClassicChineseLanguagePackPlugin.FontBundle == null)
             {
-                string bundlePath = Path.Combine(Paths.PluginPath, "MiemieMethod-Simplified_Chinese_Language_Pack_for_Mods", "chinese_font");
+                string bundlePath = Path.Combine(Paths.PluginPath, "MiemieMethod-Classic_Chinese_Language_Pack_for_Mods", "chinese_font");
                 var bundle = AssetBundle.LoadFromFile(bundlePath);
                 if (bundle == null)
                 {
                     Debug.LogError("字体AssetBundle加载失败！");
                     return;
                 }
-                SimplifiedChineseLanguagePackPlugin.FontBundle = bundle;
+                ClassicChineseLanguagePackPlugin.FontBundle = bundle;
             }
-            TMP_FontAsset NotoSerif = SimplifiedChineseLanguagePackPlugin.FontBundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notoserif_sc sdf.asset");
+            TMP_FontAsset NotoSerif = ClassicChineseLanguagePackPlugin.FontBundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notoserif_sc sdf.asset");
             var prop = typeof(DiscCardColorAppearance).GetProperty("WhiteTextTexture", BindingFlags.Static | BindingFlags.NonPublic);
             if (prop != null)
             {

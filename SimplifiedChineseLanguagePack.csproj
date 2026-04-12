@@ -6,9 +6,9 @@
     <Nullable>disable</Nullable>
     <IsPackable>false</IsPackable>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>SimplifiedChineseLanguagePack</AssemblyName>
-    <VersionPrefix>1.6.7</VersionPrefix>
-    <RootNamespace>SimplifiedChineseLanguagePack</RootNamespace>
+    <AssemblyName>ClassicChineseLanguagePack</AssemblyName>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <RootNamespace>ClassicChineseLanguagePack</RootNamespace>
     <LangVersion>10</LangVersion>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
     <Configurations>Debug;Release;HotReload;Thunderstore</Configurations>
