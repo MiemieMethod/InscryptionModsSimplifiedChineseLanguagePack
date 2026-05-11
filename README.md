@@ -1,5 +1,7 @@
 # 文言补缀
 
+（请勿将本文言汉化包与[简体中文汉化包](https://thunderstore.io/c/inscryption/p/MiemieMethod/Simplified_Chinese_Language_Pack_for_Mods/)一同使用！）
+
 夫此缀者，乃为《冥勒》及诸补缀制文言言语之补，兼正字形阙失之弊。
 
 今唯原本《冥勒》得补。诸补缀之言亦皆将至。
