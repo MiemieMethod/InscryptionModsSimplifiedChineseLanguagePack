@@ -1,3 +1,6 @@
+# 既定术语表
+
+```csv
 英吉利语,现代白话,先秦文言,先秦文言略言（同全言则用“-”）
 Inscryption,《邪恶冥刻》,《冥锲》,《锲》
 inscryption,冥刻,冥锲,锲
@@ -904,3 +907,4 @@ Start // Finish,开始 // 结束,始 // 终,-
 Rookie Mistake,新手失误,生手之失,-
 Bad Moon,邪恶之月,万恶之月,-
 Skull Storm,头骨风暴,头骨风暴,-
+```
