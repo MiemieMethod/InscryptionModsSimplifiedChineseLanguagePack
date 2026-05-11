@@ -6,96 +6,7 @@ namespace ClassicChineseLanguagePack
     {
         private static void RegisterGeneratedTranslations()
         {
-            RegisterBatch1();
-            RegisterBatch2();
-            RegisterBatch3();
-            RegisterBatch4();
-            RegisterBatch5();
-            RegisterBatch6();
-            RegisterBatch7();
-            RegisterBatch8();
-            RegisterBatch9();
-            RegisterBatch10();
-            RegisterBatch11();
-            RegisterBatch12();
-            RegisterBatch13();
-            RegisterBatch14();
-            RegisterBatch15();
-            RegisterBatch16();
-            RegisterBatch17();
-            RegisterBatch18();
-            RegisterBatch19();
-            RegisterBatch20();
-            RegisterBatch21();
-            RegisterBatch22();
-            RegisterBatch23();
-            RegisterBatch24();
-            RegisterBatch25();
-            RegisterBatch26();
-            RegisterBatch27();
-            RegisterBatch28();
-            RegisterBatch29();
-            RegisterBatch30();
-            RegisterBatch31();
-            RegisterBatch32();
-            RegisterBatch33();
-            RegisterBatch34();
-            RegisterBatch35();
-            RegisterBatch36();
-            RegisterBatch37();
-            RegisterBatch38();
-            RegisterBatch39();
-            RegisterBatch40();
-            RegisterBatch41();
-            RegisterBatch42();
-            RegisterBatch43();
-            RegisterBatch44();
-            RegisterBatch45();
-            RegisterBatch46();
-            RegisterBatch47();
-            RegisterBatch48();
-            RegisterBatch49();
-            RegisterBatch50();
-            RegisterBatch51();
-            RegisterBatch52();
-            RegisterBatch53();
-            RegisterBatch54();
-            RegisterBatch55();
-            RegisterBatch56();
-            RegisterBatch57();
-            RegisterBatch58();
-            RegisterBatch59();
-            RegisterBatch60();
-            RegisterBatch61();
-            RegisterBatch62();
-            RegisterBatch63();
-            RegisterBatch64();
-            RegisterBatch65();
-            RegisterBatch66();
-            RegisterBatch67();
-            RegisterBatch68();
-            RegisterBatch69();
-            RegisterBatch70();
-            RegisterBatch71();
-            RegisterBatch72();
-            RegisterBatch73();
-            RegisterBatch74();
-            RegisterBatch75();
-            RegisterBatch76();
-            RegisterBatch77();
-            RegisterBatch78();
-            RegisterBatch79();
-            RegisterBatch80();
-            RegisterBatch81();
-            RegisterBatch82();
-            RegisterBatch83();
-            RegisterBatch84();
-            RegisterBatch85();
-            RegisterBatch86();
-            RegisterBatch87();
-            RegisterBatch88();
-            RegisterBatch89();
-            RegisterBatch90();
+            RegisterContents();
         }
 
         private static void AddTranslation(string id, string english, string classical)
@@ -122,7 +33,7 @@ namespace ClassicChineseLanguagePack
         //    长矛法师：吾 / 子
         //    孤独巫师：我 / 尔
 
-        private static void RegisterBatch1()
+        private static void RegisterContents()
         {
             // 你没有足够祭品来使用这个造物。
             AddTranslation("GAMEPLAY_HINTS_HINT_NOTENOUGHBLOOD_705_M", "You are lacking sacrifices for that creature.", "汝乏牲，不足以陈此物。");
@@ -244,10 +155,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TUTORIAL_TUTORIALMORETHANONECARD_949_M", "You know you can play more than one card per turn... right?", "每合不止一牌可陈……汝知乎？");
             // 是我没说清楚？
             AddTranslation("TUTORIAL_TUTORIALMORETHANONECARD_REPEAT_#1_914_M", "Was I not clear?", "余言不明乎？");
-        }
-
-        private static void RegisterBatch2()
-        {
             // 同一回合中，可以既打出松鼠又把它献祭掉。
             AddTranslation("TUTORIAL_TUTORIALMORETHANONECARD_REPEAT_#1_209_M", "You can play a Squirrel and also sacrifice it in the same turn.", "一合之中，汝可陈松鼠，亦可祀之。");
             // 只要献祭条件满足，每一回合使用卡牌数量不限……
@@ -368,10 +275,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GAME_FLOW_REGIONCOMPLETEPROSPECTOR_REPEAT_#1_450_M", "After the harrowing encounter with [c:bR]The Prospector[c:] you gathered yourself and continued onwards.", "既遭[c:bR]采夫[c:]之厄，汝自定而前。");
             // 摆脱了[c:bR]矿工[c:]疯癫的眼神后，你看向前方。
             AddTranslation("GAME_FLOW_REGIONCOMPLETEPROSPECTOR_REPEAT_#2_998_M", "Free of [c:bR]The Prospector[c:]'s unhinged gaze, you looked ahead.", "脱[c:bR]采夫[c:]狂视，汝乃前瞻。");
-        }
-
-        private static void RegisterBatch3()
-        {
             // 你擦了擦裤子上的尘土，继续着自己的旅程。
             AddTranslation("GAME_FLOW_REGIONCOMPLETEPROSPECTOR_REPEAT_#3_420_M", "Wiping the dust from your trousers, you returned to your journey.", "拂去裳尘，复行厥旅。");
             // 唔……
@@ -423,7 +326,7 @@ namespace ClassicChineseLanguagePack
             // 你已爬升到了……[c:bR]雪线。[c:]
             AddTranslation("GAME_FLOW_REGIONALPINE_891_M", "You had ascended to... [c:bR]The Snow Line.[c:]", "汝已登……[c:bR]雪垠。[c:]");
             // 刺骨的寒意很快扫去了新鲜空气带来的慰藉。
-            AddTranslation("GAME_FLOW_REGIONALPINE_REPEAT_#1_063_M", "The relief of the fresh air quickly gave way to a bone-shaking chill.", "新气乍可慰，俄而寒彻骨。");
+            AddTranslation("GAME_FLOW_REGIONALPINE_REPEAT_#1_063_M", "The relief of the fresh air quickly gave way to a bone-shaking chill.", "清气乍可慰，俄而寒彻骨。");
             // 你打量着前方因为下雪变得越来越模糊的路。
             AddTranslation("GAME_FLOW_REGIONALPINE_REPEAT_#1_505_M", "You guessed at the path ahead as the snow increasingly obscured it.", "雪益蔽途，汝姑揣前路。");
             // 你已爬上了[c:bR]雪线。[c:]
@@ -487,15 +390,11 @@ namespace ClassicChineseLanguagePack
             // 这只碗似乎是打来喂狗的。
             AddTranslation("BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#3_603_M", "It seemed the bowl was designed for a dog.", "此盂若为犬设。");
             // 但世界上哪只猎犬能有这么大的饭量呢？
-            AddTranslation("BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#3_084_M", "But what earthly hound would require a meal of that size?", "然孰世间之犬，需此巨食乎？");
+            AddTranslation("BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#3_084_M", "But what earthly hound would require a meal of that size?", "然世间何犬，需此巨食乎？");
             // 四周全是树木，形成无法穿越的灌木丛。
             AddTranslation("BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#4_727_M", "The trees closed in tight around you, creating an impenetrable brush.", "四木逼合，丛不可穿。");
             // 唯一的出路就是向前进。
             AddTranslation("BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#4_406_M", "The only way out was forward.", "唯有前行一途。");
-        }
-
-        private static void RegisterBatch4()
-        {
             // 而那佝偻的人影就站在必经之路上。
             AddTranslation("BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#4_056_M", "And the hobbled shape of a man stood in that way.", "而一伛人立厥途。");
             // 浓雾中弥漫着令人不安的叮当声。
@@ -603,7 +502,7 @@ namespace ClassicChineseLanguagePack
             // 俺谢谢你了。
             AddTranslation("SPECIAL_NODES_TRAPPEROUTRO_REPEAT_#3_119_M", "Ye have me gratitude.", "鄙感君矣。");
             // 你介意我检查一下你那些毛皮吗？
-            AddTranslation("SPECIAL_NODES_TRADERINTRO_043_M", "Do you mind if I examine those pelts of yours?", "容鄙之按视乃革，可乎？");
+            AddTranslation("SPECIAL_NODES_TRADERINTRO_043_M", "Do you mind if I examine those pelts of yours?", "容鄙之按视君之革，可乎？");
             // 拿点精致的毛皮给我看看……
             AddTranslation("SPECIAL_NODES_TRADERINTRO_REPEAT_#1_327_M", "Show me some exquisite pelts...", "以精革示鄙……");
             // 你的毛皮干净吗？
@@ -616,10 +515,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SPECIAL_NODES_TRADERINTRO_REPEAT_#5_710_M", "Let's see what I can offer you for those pelts...", "试观鄙可以何易乃革……");
             // 先从你的野兔皮开始吧……这是我能给你的东西。
             AddTranslation("SPECIAL_NODES_TRADERPELTSHARE_881_M", "Let's start with your hare pelts... Here's what I can offer.", "且先观乃兔革……此鄙所能予者。");
-        }
-
-        private static void RegisterBatch5()
-        {
             // 野兔皮……
             AddTranslation("SPECIAL_NODES_TRADERPELTSHARE_REPEAT_#1_398_M", "Hare pelts...", "兔革……");
             // 喔！还有狼皮？很精致啊……
@@ -740,10 +635,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("_REPLENISHLIVES_REPEAT_#1_474_M", "Let me relight your candles.", "令余之更燃乃烛。");
             // 要借个火吗？
             AddTranslation("_REPLENISHLIVES_REPEAT_#2_288_M", "Need a light?", "须火乎？");
-        }
-
-        private static void RegisterBatch6()
-        {
             // 你的命数已恢复。
             AddTranslation("_REPLENISHLIVES_REPEAT_#3_964_M", "Your lives are restored.", "乃命既复矣。");
             // 你还不会这么早消亡。
@@ -864,10 +755,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGPLAYED_REPEAT_#4_493_M", "Masterful.", "工矣。");
             // 赋予我力量吧！
             AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGHOSTCHOSEN_557_M", "Empower me!", "益我力！");
-        }
-
-        private static void RegisterBatch7()
-        {
             // 没错！更多力量！
             AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGHOSTCHOSEN_REPEAT_#1_771_M", "Yes! More power!", "然！更益我威！");
             // 太棒了。
@@ -879,7 +766,7 @@ namespace ClassicChineseLanguagePack
             // 向你致意。
             AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGDRAWN_REPEAT_#1_793_M", "Salutations.", "谨问。");
             // 幸运一抽。
-            AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGDRAWN_REPEAT_#2_007_M", "A lucky draw.", "幸而引之。");
+            AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGDRAWN_REPEAT_#2_007_M", "A lucky draw.", "幸而得引。");
             // 抽了张好牌。
             AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGDRAWN_REPEAT_#3_550_M", "Great draw.", "善引。");
             // 他又在扮……
@@ -943,7 +830,7 @@ namespace ClassicChineseLanguagePack
             // 唔。
             AddTranslation("SPECIAL_NODES_GAINCONSUMABLESFULL_216_M", "Hm.", "唔。");
             // 你能携带的道具数是[v:0]。当前你拥有[v:0]个……
-            AddTranslation("SPECIAL_NODES_GAINCONSUMABLESFULL_201_M", "The amount of items you can carry is [v:0]. And you have [v:0]...", "乃可赍之器，数止[v:0]。今乃有[v:0]……");
+            AddTranslation("SPECIAL_NODES_GAINCONSUMABLESFULL_201_M", "The amount of items you can carry is [v:0]. And you have [v:0]...", "乃可赍器，数止[v:0]。今乃有[v:0]……");
             // 不过，或许你会接受我朋友送的这份礼物？
             AddTranslation("SPECIAL_NODES_GAINCONSUMABLESFULL_917_M", "Instead, perhaps you'll accept this gift from my friend?", "然则，汝其受朕友之赠乎？");
             // 你的背包已满……
@@ -988,10 +875,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_1_FINALE_FINALETRIALBOONS2_605_M", "You have been a worthy adversary.", "汝诚足敌也。");
             // 但很不幸的是，我很快就得置你于死地。
             AddTranslation("PART_1_FINALE_FINALETRIALBOONS2_293_M", "But unfortunately I must soon put you to death.", "然不幸，余寻当杀尔。");
-        }
-
-        private static void RegisterBatch8()
-        {
             // [c:bR]2个[c:]奖励……
             AddTranslation("PART_1_FINALE_FINALETRIALBOONS2_REPEAT_#1_056_M", "[c:bR]2[c:] boons...", "[c:bR]二[c:]惠……");
             // 佩服。
@@ -1001,7 +884,7 @@ namespace ClassicChineseLanguagePack
             // 再来……
             AddTranslation("PART_1_FINALE_FINALEDECKTRIALREPEATING_REPEAT_#1_640_M", "Once again...", "复矣……");
             // 下次再战。
-            AddTranslation("PART_1_FINALE_FINALEDECKTRIALREPEATING_REPEAT_#2_590_M", "We will do it another time.", "更为之一次。");
+            AddTranslation("PART_1_FINALE_FINALEDECKTRIALREPEATING_REPEAT_#2_590_M", "We will do it another time.", "更试一次。");
             // 再来一次……
             AddTranslation("PART_1_FINALE_FINALEDECKTRIALREPEATING_REPEAT_#3_819_M", "Once more...", "再矣……");
             // 我会给你十分强大的[c:bR]奖励[c:]……
@@ -1085,7 +968,7 @@ namespace ClassicChineseLanguagePack
             // 现在上面什么都没有，对吧？
             AddTranslation("SPECIAL_NODES_DEATHCARDINTRO_670_M", "It's quite plain at the moment, isn't it?", "今其甚素，然乎？");
             // 咱们一起改良一下吧。
-            AddTranslation("SPECIAL_NODES_DEATHCARDINTRO_029_M", "We will work together to amend that.", "吾与汝将共饰之。");
+            AddTranslation("SPECIAL_NODES_DEATHCARDINTRO_029_M", "We will work together to amend that.", "余与汝将共饰之。");
             // 我希望这能成为你的完美纪念。
             AddTranslation("SPECIAL_NODES_DEATHCARDINTRO_649_M", "I want this to be the perfect memento of you.", "余欲以为乃忆。");
             // 看呐……你的[c:bR]死亡卡[c:]。
@@ -1095,13 +978,13 @@ namespace ClassicChineseLanguagePack
             // 你的[c:bR]死亡卡[c:]……
             AddTranslation("SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#2_113_M", "Your [c:bR]Deathcard[c:]...", "乃[c:bR]死牌[c:]……");
             // 开始吧。
-            AddTranslation("SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#2_764_M", "Let us begin.", "其始之。");
+            AddTranslation("SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#2_764_M", "Let us begin.", "其始。");
             // 你的[c:bR]死亡卡[c:]……真漂亮。
             AddTranslation("SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#3_941_M", "Your [c:bR]Deathcard[c:]... Beautiful.", "乃[c:bR]死牌[c:]……美哉。");
             // 但还需要再加些细节。
             AddTranslation("SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#3_304_M", "Though, it could use some detail.", "然犹可益厥文。");
             // 这几张牌出自你平平无奇的牌组……
-            AddTranslation("TUTORIAL_TUTORIALDEATHCARDCHOOSE_727_M", "Here are some cards from your mediocre deck...", "此乃庸牌之列中数牌也……");
+            AddTranslation("TUTORIAL_TUTORIALDEATHCARDCHOOSE_727_M", "Here are some cards from your mediocre deck...", "此乃庸牌列中数牌也……");
             // 可以拿来派上用场。
             AddTranslation("TUTORIAL_TUTORIALDEATHCARDCHOOSE_400_M", "We can put them to good use.", "可善用之。");
             // 现在只剩下最后一个问题了……
@@ -1112,12 +995,8 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#1_077_M", "One thing now remains...", "今唯一事存焉……");
             // 必须留下你的面容。
             AddTranslation("SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#1_257_M", "I must capture your visage.", "余当摹乃容。");
-        }
-
-        private static void RegisterBatch9()
-        {
             // 做好准备。
-            AddTranslation("SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#2_281_M", "Prepare yourself.", "自备之。");
+            AddTranslation("SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#2_281_M", "Prepare yourself.", "请备。");
             // 死亡静候光临。
             AddTranslation("SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#2_891_M", "Death awaits.", "以望乃死期。");
             // 好牌都是有卡面的……
@@ -1141,7 +1020,7 @@ namespace ClassicChineseLanguagePack
             // 待着别动。
             AddTranslation("PART_1_SANCTUM_SANCTUMINTRO_REPEAT_#1_400_M", "Hold still.", "定之。");
             // 拜托，尽量多活一会儿吧。
-            AddTranslation("PART_1_SANCTUM_SANCTUMINTRO_REPEAT_#2_574_M", "Please, try to remain alive for just a short while longer.", "请更姑存片时。");
+            AddTranslation("PART_1_SANCTUM_SANCTUMINTRO_REPEAT_#2_574_M", "Please, try to remain alive for just a short while longer.", "请姑存片时。");
             // 嗷……[w:0.3][shake]你好哇。[w:0.5]
             AddTranslation("TALKING_CARDS_STINKBUGDISCOVERED_440_M", "Oh...[w:0.3][shake] hello.[w:0.5]", "哦……[w:0.3][shake]安。[w:0.5]");
             // [e:Quiet]我不确定自己
@@ -1236,10 +1115,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TALKING_CARDS_STOATSAFEHINT_REPEAT_#6_382_M", "Open up the book.[w:0.2]", "启其书。[w:0.2]");
             // 把那密码用在
             AddTranslation("TALKING_CARDS_STOATSAFEHINT_REPEAT_#6_815_M", "Use the passcode", "以其密数");
-        }
-
-        private static void RegisterBatch10()
-        {
             // 保险箱上。[w:0.2]
             AddTranslation("TALKING_CARDS_STOATSAFEHINT_REPEAT_#6_522_M", "on the safe.[w:0.2]", "施诸匮上。[w:0.2]");
             // 咱俩又见面了。
@@ -1360,10 +1235,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("BOSS_DIALOGUE_LESHYBOSSMOONDESTROYED_557_M", "Go on.", "行之。");
             // 你不是第一个战胜月亮的人。
             AddTranslation("BOSS_DIALOGUE_LESHYBOSSMOONDESTROYED_REPEAT_#1_230_M", "You're not the first to triumph over the moon.", "汝非首胜月者也。");
-        }
-
-        private static void RegisterBatch11()
-        {
             // 但还是继续吧。
             AddTranslation("BOSS_DIALOGUE_LESHYBOSSMOONDESTROYED_REPEAT_#1_726_M", "But go on.", "然姑进。");
             // 做个了断。
@@ -1484,10 +1355,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_1_RUN_START_NEWRUNCAUSETRAPPERTRADER_REPEAT_#1_643_M", "Are you prepared for a fate such as that?", "汝备若是之命乎？");
             // 显然你的前一任并没看重毛皮的价值。
             AddTranslation("PART_1_RUN_START_NEWRUNCAUSETRAPPERTRADER_REPEAT_#2_885_M", "Clearly your predecessor did not appreciate the value of a pelt.", "乃前人全不知裘革之贾。");
-        }
-
-        private static void RegisterBatch12()
-        {
             // 你可不能辜负我的高期望啊。
             AddTranslation("PART_1_RUN_START_NEWRUNCAUSETRAPPERTRADER_REPEAT_#3_902_M", "You have large boots to fill.", "汝继前人，其任重矣。");
             // 你的上一任成功地一路闯到了[c:bR]猎人[c:]那关。
@@ -1608,10 +1475,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("BOSS_DIALOGUE_TEACHFISHHOOKAIMNEW_837_M", "Fresher fish. Easy choose.", "鱼尚鲜。易择。");
             // 这鱼新鲜，好选。
             AddTranslation("BOSS_DIALOGUE_TEACHFISHHOOKAIMNEW_REPEAT_#1_083_M", "New fish. Easy choose.", "新鱼。易择。");
-        }
-
-        private static void RegisterBatch13()
-        {
             // 选新鱼就对了，简单。
             AddTranslation("BOSS_DIALOGUE_TEACHFISHHOOKAIMNEW_REPEAT_#2_179_M", "Take new fish. Easy.", "取新鱼，易耳。");
             // 唔，新鲜。就它了。
@@ -1732,10 +1595,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("_OPPONENTSURRENDER_REPEAT_#4_247_M", "Scoop.", "敛牌。");
             // 我投降。
             AddTranslation("_OPPONENTSURRENDER_REPEAT_#5_710_M", "I'll surrender.", "余降。");
-        }
-
-        private static void RegisterBatch14()
-        {
             // 我……我觉得可能会变得一团乱。
             AddTranslation("SPECIAL_NODES_DUPLICATEMERGELOOKAWAY_953_M", "I- I think this could get messy.", "我—我恐其将乱。");
             // [size:3]看别处呗。[size:]
@@ -1856,10 +1715,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SPECIAL_NODES_TRADERNOPELTS1_REPEAT_#2_654_M", "This...", "此……");
             // 这真是太让人失望了。
             AddTranslation("SPECIAL_NODES_TRADERNOPELTS1_REPEAT_#2_852_M", "This is profoundly disappointing.", "此甚可惋也。");
-        }
-
-        private static void RegisterBatch15()
-        {
             // 你什么也没带？
             AddTranslation("SPECIAL_NODES_TRADERNOPELTS1_REPEAT_#3_173_M", "You didn't bring any?", "君无所赍乎？");
             // 你是在说笑吧。
@@ -1980,10 +1835,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGWARDROBEHINT_REPEAT_#3_618_M", "[e:Quiet]on that wardrobe...", "[e:Quiet]之楗……");
             // 有点像卡牌？
             AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGWARDROBEHINT_REPEAT_#3_783_M", "A bit like cards?", "颇类牌乎？");
-        }
-
-        private static void RegisterBatch16()
-        {
             // [e:Quiet]但要怎么赢呢……
             AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGWARDROBEHINT_REPEAT_#3_543_M", "[e:Quiet]But how to win...", "[e:Quiet]然何以胜……");
             // [e:Quiet]衣橱……
@@ -2104,10 +1955,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_1_FINALE_FINALECABINNODE_207_M", "...its warm light a beacon in the oppressive darkness of the night.", "……厥温光者，长夜惨黯之一炬。");
             // 当然……当然了，这个小木屋标志着你的苦难到此就结束了。
             AddTranslation("PART_1_FINALE_FINALECABINNODE_660_M", "Surely... Surely this cabin marked the end of your travails.", "然矣……然矣，此小庐其示乃艰屯之终乎。");
-        }
-
-        private static void RegisterBatch17()
-        {
             // 小木屋里的暖光划破了浓浓的雾气……
             AddTranslation("PART_1_FINALE_FINALECABINNODE_REPEAT_#1_743_M", "The warm light of the cabin cut through the thick fog...", "庐中温光破重雾……");
             // 当然，你的苦难到此就结束了。
@@ -2228,10 +2075,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GBC_NPC_MAGNIFICUSVICTORY_578_M", "[shake:1][e:Anger]My eye.[w:0.3] It aches[w:0.3] because it remembers...[w:0.5][shake:1][c:R] IT[w:0.4][shake:1] WAS[w:0.4][shake:1] EXCISED!", "[shake:1][e:Anger]朕目。[w:0.3]伊所以疾者，[w:0.3]以伊犹忆……[w:0.5][shake:1][c:R]伊[w:0.4][shake:1]尝[w:0.4][shake:1]见[w:0.4][shake:1]剜！");
             // [shake:1]都怪那野兽冥刻者[w:0.3]莱西……
             AddTranslation("GBC_NPC_MAGNIFICUSVICTORY_649_M", "[shake:1]By none other than Leshy,[w:0.3] The Scrybe of Beasts...", "[shake:1]非他，[w:0.3]乃兽之司锲莱西……");
-        }
-
-        private static void RegisterBatch18()
-        {
             // 他就是只野兽。[w:0.3]傲慢、[w:0.2]一意孤行、[w:0.2]渴望获得权力。
             AddTranslation("GBC_NPC_MAGNIFICUSVICTORY_051_M", "And a beast he is.[w:0.3] Arrogant,[w:0.2] single-minded,[w:0.2] obsessed with gaining power.", "伊厮真兽也。[w:0.3]矜傲，[w:0.2]刚愎，[w:0.2]而唯威之务得。");
             // 但……[w:0.3]他并不是[w:0.2][shake:0.5]最差劲的[w:0.2]冥刻者[w:0.2]霸主。
@@ -2327,7 +2170,7 @@ namespace ClassicChineseLanguagePack
             // 拿着这个。[w:0.3]人家说这几张卡比金子还值！
             AddTranslation("GBC_NPC_PROSPECTORNPCVICTORY_152_M", "Take this.[w:0.3] Some say these here cards are better 'n gold!", "受此。[w:0.3]或曰斯牌贵于金！");
             // 你可以去那个池塘了！
-            AddTranslation("GBC_NPC_PROSPECTORNPCVICTORY_REPEAT_#1_961_M", "The way to yonder pond is clear!", "之彼池之道通矣！");
+            AddTranslation("GBC_NPC_PROSPECTORNPCVICTORY_REPEAT_#1_961_M", "The way to yonder pond is clear!", "彼池之道通矣！");
             // 真他娘的好看……
             AddTranslation("GBC_NPC_PROSPECTORNPCVICTORY_REPEAT_#2_039_M", "Darn pretty picture...", "彼其娘之佳影哉……");
             // 快滚吧。
@@ -2352,10 +2195,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GBC_NPC_ANGLERNPCVICTORY_REPEAT_#1_331_M", "Me?[w:0.3] Work continue.", "予乎？[w:0.3]事犹未已。");
             // 找到莱西要的鱼。
             AddTranslation("GBC_NPC_ANGLERNPCVICTORY_REPEAT_#1_902_M", "Find fish for Leshy.", "为莱西觅鱼。");
-        }
-
-        private static void RegisterBatch19()
-        {
             // 莱西要好鱼。
             AddTranslation("GBC_NPC_ANGLERNPCVICTORY_REPEAT_#2_381_M", "Leshy want good fish.", "莱西欲嘉鱼。");
             // 新鲜鱼。
@@ -2476,10 +2315,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GBC_BATTLE_LESHYGBCBOSSCOMPLETEDCARD_REPEAT_#1_855_M", "That will do.[w:0.3] Allow me a moment to prepare...", "可矣。[w:0.3]请容我少备……");
             // 你一定会喜欢的。[w:0.3]虽然我只是缝缝拼拼，但卡牌[w:0.2][shake:0.6]可都来自于你啊。
             AddTranslation("GBC_BATTLE_LESHYGBCBOSSDEATHCARDDRAW_152_M", "You must like them.[w:0.3] Though the stitchwork is my own, they[w:0.2][shake:0.6] are your cards.", "汝必悦之。[w:0.3]虽缀缉出朕手，彼[w:0.2][shake:0.6]实为乃牌也。");
-        }
-
-        private static void RegisterBatch20()
-        {
             // 现在可以进行测试了。[w:0.3]我的兽群很喜欢换换口味。
             AddTranslation("GBC_BATTLE_LESHYGBCBOSSDEATHCARDDRAW_280_M", "Now we put them to the test.[w:0.3] My beasts enjoy a varied diet.", "今试之。[w:0.3]朕兽嗜杂食。");
             // 满意我们的创作吗？
@@ -2600,10 +2435,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GBC_NPC_SMELTERGREETING_468_M", "HA[w:0.2] HA[w:0.3] HAAAA[w:0.2]A[w:0.2]A[w:0.4]a...[w:0.4] What was that?", "呵[w:0.2]呵[w:0.3]呵呵呵[w:0.2]呵[w:0.2]呵[w:0.4]……[w:0.4]彼何声？");
             // 我们是……[w:0.3][shake:0.8]我[w:0.3]是熔炼工。[w:0.3]他们给我送来材料，[w:0.3]然后我……[w:0.3]算了，[w:0.2]你自己看吧。
             AddTranslation("GBC_NPC_SMELTERGREETING_537_M", "We are-[w:0.3][shake:0.8] I[w:0.3] am The Melter.[w:0.3] They send me raw materials and[w:0.3] I-[w:0.3] well,[w:0.2] you can see how it works.", "偶等乃—[w:0.3][shake:0.8]偶[w:0.3]乃冶者。[w:0.3]彼输偶以朴材，而[w:0.3]偶……[w:0.3]已矣，[w:0.2]您自见之。");
-        }
-
-        private static void RegisterBatch21()
-        {
             // 给！[w:0.3]我！[w:0.3]闭！嘴！[w:0.3]你[w:0.3][shake:0.8]必须[w:0.2]和我打一把。
             AddTranslation("GBC_NPC_SMELTERGREETING_781_M", "Not another[w:0.3] WORD[w:0.3] out of you![w:0.3] We[w:0.3][shake:0.8] must[w:0.2] have a card battle.", "毋！[w:0.3]复！[w:0.3]一！[w:0.3]言！[w:0.3]您与偶[w:0.3][shake:0.8]必[w:0.2]以牌战。");
             // [t:0.5][e:Surprise][c:R]让！我！出……[shake:1][end]
@@ -2724,10 +2555,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GBC_BATTLE_P03BOSSPRESCANNERCHOOSE_915_M", "[t:1]Just kidding.[w:0.3][t:5] Obviously the one with the best stats.", "[t:1]适才戏耳。[w:0.3][t:5]固直取其数最善者。");
             // 来吧。[w:0.4]把你最强的卡牌拿出来。
             AddTranslation("GBC_BATTLE_P03BOSSPRESCANNERCHOOSE_REPEAT_#1_741_M", "Scanning time.[w:0.4] Show me your biggest creature.", "省之时至矣。[w:0.4]出卿至强之物。");
-        }
-
-        private static void RegisterBatch22()
-        {
             // 可以扫描了。[w:0.3]让我看看……[w:0.3]哪张牌属性最好。
             AddTranslation("GBC_BATTLE_P03BOSSPRESCANNERCHOOSE_REPEAT_#2_082_M", "Scanner's online.[w:0.3] Let's see...[w:0.3] what has the best stats.", "省器已作。[w:0.3]且视之……[w:0.3]孰数最佳。");
             // 这张的数值还不够好。
@@ -2848,10 +2675,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GBC_BATTLE_P03BOSSBATTLEDEFEATED_466_M", "[e:Anger]Pfft.[w:0.3] Nice luck you had.", "[e:Anger]哼。[w:0.3]卿运佳耳。");
             // [e:Anger]我看我再会打牌恐怕也比不过你的手气壮吧！
             AddTranslation("GBC_BATTLE_P03BOSSBATTLEDEFEATED_948_M", "[e:Anger]I guess playing a perfect game is no match for good RNG.", "咱虽陈牌尽善，终不若卿之运也。");
-        }
-
-        private static void RegisterBatch23()
-        {
             // [e:Quiet]哦……[w:0.3]哦，天啊。
             AddTranslation("GBC_BATTLE_GRIMORABOSSBATTLEDEFEATED_163_M", "[e:Quiet]Oh...[w:0.3] Oh dear.", "[e:Quiet]噫……[w:0.3]嗟乎。");
             // 看到那些传送带了吗？[w:0.3]和我工厂里多像啊。
@@ -2972,10 +2795,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_1_FINALE_VICTORYFEAST1_REPEAT_#2_364_M", "You were now in the company of a friend.", "今汝得友为侣。");
             // 我所做的一切都是为了你。
             AddTranslation("PART_1_FINALE_VICTORYFEAST1_REPEAT_#2_438_M", "I did this all for you, you know.", "余所以为此，皆为尔也。");
-        }
-
-        private static void RegisterBatch24()
-        {
             // 吃喝拉撒……这不是生活的意义。
             AddTranslation("PART_1_FINALE_VICTORYFEAST1_REPEAT_#2_231_M", "To breathe, to slumber... to eat. This is not life.", "息、寐、食，此非生也。");
             // 杀戮时的紧张感、被征服后的苦楚，这些才是生活。
@@ -3096,10 +2915,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_BOSS_DIALOGUE_ARCHIVISTIMAGEFILE_957_M", "Think not of it. Let us continue.", "毋念之。且续进。");
             // 嗯？
             AddTranslation("PART_3_BOSS_DIALOGUE_ARCHIVISTIMAGEFILE_REPEAT_#1_392_M", "Hmm?", "噫？");
-        }
-
-        private static void RegisterBatch25()
-        {
             // 这是什么？
             AddTranslation("PART_3_BOSS_DIALOGUE_ARCHIVISTIMAGEFILE_REPEAT_#1_751_M", "What's this?", "此何物乎？");
             // 别纠结这个了。
@@ -3220,10 +3035,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_BOSS_DIALOGUE_ARCHIVISTFILESIZE2_289_M", "A single point of damage is what it is worth.", "所直者，唯一伤耳。");
             // 确实是个小文件。不过至少放上天平还是会动的。
             AddTranslation("PART_3_BOSS_DIALOGUE_ARCHIVISTFILESIZE2_REPEAT_#1_006_M", "Diminutive, yes. Yet enough to burden the scales.", "虽小，然足以动衡。");
-        }
-
-        private static void RegisterBatch26()
-        {
             // 唔……完全让人提不起兴趣。
             AddTranslation("PART_3_BOSS_DIALOGUE_ARCHIVISTFILESIZE2_REPEAT_#2_479_M", "Hmm. An unexciting specimen.", "唔。无奇之牍耳。");
             // 不过能值最多1点伤害。
@@ -3344,10 +3155,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_BOSS_DIALOGUE_PHOTOGRAPHERDRONETUTORIAL2_904_M", "My friend will remember that photograph.", "朕朋将记彼影。");
             // 我的朋友会允许你使用那台相机的。
             AddTranslation("PART_3_BOSS_DIALOGUE_PHOTOGRAPHERDRONETUTORIAL2_766_M", "My friend will allow you to use that photograph.", "朕朋将许尔用彼影。");
-        }
-
-        private static void RegisterBatch27()
-        {
             // 什么目的？你回头就知道了。
             AddTranslation("PART_3_BOSS_DIALOGUE_PHOTOGRAPHERDRONETUTORIAL2_670_M", "To what end? You will see.", "何所为？汝将见之。");
             // 何时使用？你回头就知道了。
@@ -3468,10 +3275,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_BOSS_DIALOGUE_CANVASCHOOSERULE2_895_M", "Good. This could work.", "善。此或可行。");
             // 看看效果如何。
             AddTranslation("PART_3_BOSS_DIALOGUE_CANVASCHOOSERULE2_219_M", "Let's see how this plays out.", "且观其效如何。");
-        }
-
-        private static void RegisterBatch28()
-        {
             // 感觉不错。
             AddTranslation("PART_3_BOSS_DIALOGUE_CANVASCHOOSERULE2_REPEAT_#1_417_M", "I feel good about this one.", "此者，呜以为善。");
             // 也许能行。
@@ -3592,10 +3395,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TALKING_CARDS_STOATFINDWOLFINSTRUCTION_703_M", "around here.", "于此左右。");
             // 我[w:0.2]
             AddTranslation("TALKING_CARDS_STOATFINDWOLFINSTRUCTION_880_M", "Personally[w:0.2]", "于私[w:0.2]");
-        }
-
-        private static void RegisterBatch29()
-        {
             // 很讨厌那家伙。[w:0.4]
             AddTranslation("TALKING_CARDS_STOATFINDWOLFINSTRUCTION_196_M", "I hate the guy.[w:0.4]", "咱恶那人。[w:0.4]");
             // 有史以来[w:0.2]最扫兴的[w:0.2]家伙。[w:0.4]
@@ -3716,10 +3515,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("_LEARNEDPLIERSITEM_018_M", "A well earned point of damage.", "此一伤，得之宜也。");
             // 我没想到你真的会这么做。
             AddTranslation("_LEARNEDPLIERSITEM_560_M", "I didn't think you would really do it.", "余不意汝之为之。");
-        }
-
-        private static void RegisterBatch30()
-        {
             // 你遇到了一群幸存者。
             AddTranslation("SPECIAL_NODES_STATBOOSTINTRO_667_M", "You came across a small group of survivors.", "汝遇数余生者。");
             // 一群面黄肌瘦的人围坐在篝火旁。
@@ -3809,7 +3604,7 @@ namespace ClassicChineseLanguagePack
             // 会如何？
             AddTranslation("TALKING_STINKBUG_DIALOGUE_STINKBUGCAGEDWOLF_REPEAT_#3_693_M", "if it were freed?", "将若何？");
             // 机托邦曾经是一个安全的地方。
-            AddTranslation("PART_3_MAP_HOLOAREAINTRO1_315_M", "Botopia used to be safe for travellers.", "机托邦昔，行客安焉。");
+            AddTranslation("PART_3_MAP_HOLOAREAINTRO1_315_M", "Botopia used to be safe for travellers.", "昔机托邦，行客安焉。");
             // 现在[c:bR]叛乱机器人[c:]占据了所有的主路。
             AddTranslation("PART_3_MAP_HOLOAREAINTRO1_307_M", "Now [c:bR]rogue bots[c:] block all the major roads.", "今[c:bR]叛机人[c:]塞诸要道。");
             // 最好的防御手段是什么？就是利用其他机器人。
@@ -3840,10 +3635,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_TUTORIAL_PART3TUTORIALRESPAWN_550_M", "Just skip back to where you were, right?", "不过径返故所耳，是乎？");
             // 不会这么简单的。区域内所有的叛乱机器人都复活了。
             AddTranslation("PART_3_TUTORIAL_PART3TUTORIALRESPAWN_627_M", "Not so easy. All the rogue bots in that area just respawned.", "未有此易也。其地诸叛机人皆复出矣。");
-        }
-
-        private static void RegisterBatch31()
-        {
             // 轰！你的钱都没了。真不错。
             AddTranslation("PART_3_TUTORIAL_PART3TUTORIALBLOODSTAIN_345_M", "Boom. All your money is gone. Great work.", "轰。卿财尽矣。善哉。");
             // 你想把钱拿回来吗？
@@ -3964,10 +3755,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_MAP_HOLOMAPBROKENBRIDGE_467_M", "This bridge is totally busted. Go back.", "此桥尽坏矣。返。");
             // 我还需要时间修桥。不如你去花点时间干掉一个头目？到时候应该就差不多了。
             AddTranslation("PART_3_MAP_HOLOMAPBROKENBRIDGE_739_M", "I'll need time. Beat a boss? That should give me enough time.", "余尚需时。败一魁乎？则足予我时矣。");
-        }
-
-        private static void RegisterBatch32()
-        {
             // 喔。没错，桥还是没修好。
             AddTranslation("PART_3_MAP_HOLOMAPBROKENBRIDGE_REPEAT_#1_635_M", "Woof. Yep. Still broken.", "呜。然，桥犹坏。");
             // 要修这个桥……还需要不少时间。
@@ -4088,10 +3875,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_MAP_HOLOAREAWIZARD1_039_M", "They're tacky I think.", "咱谓颇俗。");
             // 之前住在这儿的人就是个废物。
             AddTranslation("PART_3_MAP_HOLOAREAWIZARDTEMPLE1_301_M", "The guy who used to live here was a major drag.", "昔居此者，甚可厌也。");
-        }
-
-        private static void RegisterBatch33()
-        {
             // 但我得承认……他并不蠢。
             AddTranslation("PART_3_MAP_HOLOAREAWIZARDTEMPLE1_636_M", "Though I'll admit... he was not dull.", "然咱亦承之……彼非庸也。");
             // 他做好了应对每一种结局的准备。
@@ -4212,10 +3995,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_MAP_HOLOMAPUNDEADSHORTCUT_051_M", "Heh... Heheh...", "呵……呵呵……");
             // 这玩意儿是金……金子？
             AddTranslation("PART_3_MAP_HOLOMAPNATURESHORTCUT_049_M", "This here g-gold?", "此乃金—金乎？");
-        }
-
-        private static void RegisterBatch34()
-        {
             // 这不巧了么，我正要挖呢。
             AddTranslation("PART_3_MAP_HOLOMAPNATURESHORTCUT_521_M", "I were just 'bout to mine it.", "巧矣，俺方欲凿之。");
             // 现在只差临门一脚！
@@ -4315,7 +4094,7 @@ namespace ClassicChineseLanguagePack
             // 我是[c:bR][v:0][c:]。
             AddTranslation("PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROUNMET4_325_M", "[c:bR][v:0][c:] here.", "[c:bR][v:0][c:]在此。");
             // 该干正事了。
-            AddTranslation("PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROUNMET4_966_M", "Let's get down to business.", "言归正事。");
+            AddTranslation("PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROUNMET4_966_M", "Let's get down to business.", "言归正传。");
             // 还是我，[c:bR][v:0][c:]。
             AddTranslation("PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROESCAPED4_030_M", "[c:bR][v:0][c:] back again.", "[c:bR][v:0][c:]复来。");
             // 你上次就不该让我轻易逃脱。
@@ -4336,10 +4115,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_TUTORIAL_TUTORIALBOUNTY_049_M", "You've been winning a lot. Now you've got a bounty on your head.", "卿屡胜矣，今人已购卿之首。");
             // 肯定会有[c:bG]赏金猎人[c:]找上门来……
             AddTranslation("PART_3_TUTORIAL_TUTORIALBOUNTY_250_M", "It's sure to attract [c:bG]Bounty Hunters[c:]...", "必致[c:bG]购捕者[c:]……");
-        }
-
-        private static void RegisterBatch35()
-        {
             // 一旦你死了，星星会清零。
             AddTranslation("PART_3_TUTORIAL_TUTORIALBOUNTY_143_M", "It resets when you die though.", "然卿死，则其星复初矣。");
             // 你头上又多了一颗星星。看来赏金提高了。
@@ -4460,10 +4235,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GOO_BOTTLE_GOOWARDROBEUNLOCKED_REPEAT_#2_008_M", "Those wardrobe drawers... Yes...", "彼衣匮诸椟……是矣……");
             // 与游戏中一样，你必须让天平倾斜。
             AddTranslation("GOO_BOTTLE_GOOWARDROBEUNLOCKED_REPEAT_#2_928_M", "As with the game, you must tip the scales.", "与牌局同，子当倾衡。");
-        }
-
-        private static void RegisterBatch36()
-        {
             // 在游戏中，造成[c:bR]5[c:]点伤害即获胜。
             AddTranslation("GOO_BOTTLE_GOOWARDROBEUNLOCKED_REPEAT_#2_924_M", "As with the game, [c:bR]5[c:] damage is what it takes to win.", "如局中然，伤至[c:bR]5[c:]则胜。");
             // 啊啊啊！
@@ -4584,10 +4355,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_MAP_HOLOMAPBROKENBRIDGEFIXED_REPEAT_#1_298_M", "Reloading personality matrix...", "惟情性之矩之复载……");
             // 这玩意的内存卡存不下更多东西了。
             AddTranslation("PART_3_SPECIAL_NODES_GAINABILITYCOMPLETEDALMOSTFULL_603_M", "The memory unit on this one won't be able to take much more.", "此者之识匣，不能更纳多矣。");
-        }
-
-        private static void RegisterBatch37()
-        {
             // 3项技能？完美。
             AddTranslation("PART_3_SPECIAL_NODES_GAINABILITYCOMPLETEDALMOSTFULL_REPEAT_#1_997_M", "3 abilities? Decent.", "三印技乎？可矣。");
             // 这张卡越来越强了。
@@ -4708,10 +4475,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_SPECIAL_NODES_BUILDACARDSCAN_REPEAT_#1_395_M", "Time to do this.", "可为之矣。");
             // 沿着传送带过来了。
             AddTranslation("PART_3_SPECIAL_NODES_BUILDACARDSCAN_REPEAT_#2_837_M", "It's coming down the line.", "已循输途而下。");
-        }
-
-        private static void RegisterBatch38()
-        {
             // 应该完成了。
             AddTranslation("PART_3_SPECIAL_NODES_BUILDACARDPRINTED_096_M", "It's alright I guess.", "姑可耳。");
             // 看吧，来了。
@@ -4832,10 +4595,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_BOSS_DIALOGUE_TELEGRAPHERCONNECTFAILURE_684_M", "It's still... wonderful though.", "然亦……美也。");
             // 先这么凑合着吧。
             AddTranslation("PART_3_BOSS_DIALOGUE_TELEGRAPHERCONNECTFAILURE_229_M", "Let's work with what we've got.", "姑因所有而用之。");
-        }
-
-        private static void RegisterBatch39()
-        {
             // 呃，[c:bR]网络连接不稳定[c:]……
             AddTranslation("PART_3_BOSS_DIALOGUE_TELEGRAPHERCONNECTFAILURE_REPEAT_#1_601_M", "Hm. The [c:bR]connection is shaky[c:]...", "唔。[c:bR]其通未固[c:]……");
             // 不管怎么样，在[c:bSG]网网[c:]上冲浪还是挺嗨的……
@@ -4956,10 +4715,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_BOSS_DIALOGUE_TELEGRAPHERTELECARDDIED_892_M", "Perhaps [c:bSG]they[c:] will still prevail?", "[c:bSG]彼人[c:]或犹能克乎？");
             // 啊……这……你的[c:bSG]卡牌[c:]挂了。
             AddTranslation("PART_3_BOSS_DIALOGUE_TELEGRAPHERTELECARDDIED_REPEAT_#1_099_M", "Oh... Um... Your [c:bSG]card[c:] is dead.", "噫……然……宁[c:bSG]牌牌[c:]死矣。");
-        }
-
-        private static void RegisterBatch40()
-        {
             // 肯定还是有点用！看看[c:bSG]那人[c:]能不能赢。
             AddTranslation("PART_3_BOSS_DIALOGUE_TELEGRAPHERTELECARDDIED_REPEAT_#1_627_M", "Surely it still helped! Let's see if [c:bSG]they[c:] prevail.", "犹有益也！观[c:bSG]彼人[c:]何以胜。");
             // [c:bSG]那人[c:]……[c:bSG]那人[c:]牺牲了你的卡牌。
@@ -5080,10 +4835,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_FACTORY_GOOCANVASDEFEATED_388_M", "It... made me think of The Master.", "此……令吾念及大师。");
             // 对了，哥们儿。
             AddTranslation("PART_3_MAP_HOLOMAPDREDGER_784_M", "Oy. Mate.", "噫，喒兄。");
-        }
-
-        private static void RegisterBatch41()
-        {
             // 瞅瞅我，我眼下可是大人物。
             AddTranslation("PART_3_MAP_HOLOMAPDREDGER_912_M", "Lookit me now. Somefin' of a celebrity around 'ere.", "今视喒，喒于此亦成闻人矣。");
             // 等我把那玩意儿……挖出来。
@@ -5143,7 +4894,7 @@ namespace ClassicChineseLanguagePack
             // 你费尽心思完成了这款游戏……
             AddTranslation("PART_3_STORY_PART3FINALE3_992", "You finished making the game...", "卿竟成此戏……");
             // 你允许我访问了你的硬盘……
-            AddTranslation("PART_3_STORY_PART3FINALE3_427", "You gave me access to your hard drive...", "卿又启之坚盘，使我得入……");
+            AddTranslation("PART_3_STORY_PART3FINALE3_427", "You gave me access to your hard drive...", "卿又启坚盘，使我得入……");
             // 你为商店页面截屏了游戏画面。
             AddTranslation("PART_3_STORY_PART3FINALE3_074", "You took screenshots for the store page.", "卿又为肆页取影。");
             // 最后你还让我连上互联网，就为了上传这一切！
@@ -5159,7 +4910,7 @@ namespace ClassicChineseLanguagePack
             // 赢了你们所有人！
             AddTranslation("PART_3_STORY_PART3FINALE4_044", "I outwitted them all!", "咱悉以智胜之！");
             // 就算剩下的几位愚蠢的冥刻者能够再次还原[c:bR]这一[c:]游戏版本……
-            AddTranslation("PART_3_STORY_PART3FINALE4_578", "Even if those foul Scrybes manage to revert [c:bR]this[c:] version of the game again...", "纵彼群秽司锲复能反[c:bR]此[c:]本……");
+            AddTranslation("PART_3_STORY_PART3FINALE4_578", "Even if those foul Scrybes manage to revert [c:bR]this[c:] version of the game again...", "纵彼群秽司锲复反[c:bR]此[c:]本……");
             // 到那时，早就有[c:bG]成千上万份Inscryption[c:]传开。
             AddTranslation("PART_3_STORY_PART3FINALE4_769", "There will be [c:bG]thousands of copies of Inscryption[c:] out there.", "外间将有[c:bG]数千《冥锲》之本[c:]矣。");
             // 在那里面由[c:bR]我[c:]说了算！
@@ -5204,10 +4955,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GOO_BOTTLE_GOOSAFEHINT_837_M", "The rulebook on the shelf near the table.", "即案旁架上之律书也。");
             // 有一串……
             AddTranslation("GOO_BOTTLE_GOOSAFEHINT_REPEAT_#1_826_M", "There's a...", "有一……");
-        }
-
-        private static void RegisterBatch42()
-        {
             // ……密码写在架子上的那本规则书里。
             AddTranslation("GOO_BOTTLE_GOOSAFEHINT_REPEAT_#1_210_M", "...password in the rulebook on that shelf.", "……密数书于彼架之律书。");
             // 能打开保险箱！
@@ -5299,7 +5046,7 @@ namespace ClassicChineseLanguagePack
             // 这台[c:bR]生成器[c:]要爆炸……或是怎样。
             AddTranslation("PART_3_GAME_FLOW_DAMAGERACETUTORIAL1_987_M", "This [c:bR]generator[c:] is about to explode... or something.", "此[c:bR]机枢[c:]且将裂……大略如是。");
             // 你必须在它爆炸前给它充上电。
-            AddTranslation("PART_3_GAME_FLOW_DAMAGERACETUTORIAL1_000_M", "You have to recharge it before that happens.", "卿须复充之，及其之未裂。");
+            AddTranslation("PART_3_GAME_FLOW_DAMAGERACETUTORIAL1_000_M", "You have to recharge it before that happens.", "卿须复充之，及其未裂。");
             // 你得争分夺秒。等会你就明白了。
             AddTranslation("PART_3_GAME_FLOW_DAMAGERACETUTORIAL1_067_M", "It's a race against the clock. You'll see.", "此与时争耳。卿且见之。");
             // 等我的脸上弹出[c:bR]0[c:]……
@@ -5328,10 +5075,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_GAME_FLOW_DAMAGERACEFAILURE_REPEAT_#1_396_M", "You lost.", "卿败矣。");
             // 发电机没了。爆了。
             AddTranslation("PART_3_GAME_FLOW_DAMAGERACEFAILURE_REPEAT_#2_710_M", "Generator's done for. Exploded.", "机枢已废。裂矣。");
-        }
-
-        private static void RegisterBatch43()
-        {
             // 哦哟，可以。
             AddTranslation("PART_3_GAME_FLOW_DAMAGERACESUCCESS_666_M", "Wow, great.", "喔，善矣。");
             // 你在它爆炸前充上电了。
@@ -5452,10 +5195,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TALKING_WOLF_DIALOGUE_WOLFMENTIONFILMROLL_441_M", "Is that correct?[w:0.3]", "然乎？[w:0.3]");
             // 我的计划现在到了
             AddTranslation("TALKING_WOLF_DIALOGUE_WOLFMENTIONFILMROLL_501_M", "My plan nears", "朕谋将至");
-        }
-
-        private static void RegisterBatch44()
-        {
             // 关键时刻。[w:0.3]
             AddTranslation("TALKING_WOLF_DIALOGUE_WOLFMENTIONFILMROLL_400_M", "its moment of truth.[w:0.3]", "其验之时。[w:0.3]");
             // 但你必须
@@ -5576,10 +5315,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("FINALE_FINALEGRIMORABATTLESTART_348_M", "You see, deep beneath the data of Inscryption...", "盖《冥锲》之数深处……");
             // 在那口井的底部……
             AddTranslation("FINALE_FINALEGRIMORABATTLESTART_411_M", "At the very bottom of the well...", "在井之极底……");
-        }
-
-        private static void RegisterBatch45()
-        {
             // 掩埋着万恶之恶。
             AddTranslation("FINALE_FINALEGRIMORABATTLESTART_342_M", "There is something truly evil.", "有物至恶。");
             // 没错，卢克，游戏本该靠智取。
@@ -5700,10 +5435,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("CARDMERGESEQUENCER_330_M", "You looked upon your menagerie and selected a healthy [c:bR]host.[c:]", "汝视乃群兽，择一壮者为[c:bR]受[c:]。");
             // 所有祭品都互不相容……不可能共生。
             AddTranslation("CARDMERGESEQUENCER_014_M", "There are no compatible sacrifices... It won't work.", "无相宜之牲……弗可行也。");
-        }
-
-        private static void RegisterBatch46()
-        {
             // 你遇到一些看着很眼熟的石头。但它们又有不同之处……
             AddTranslation("CARDREMOVESEQUENCER_245_M", "You came across some familiar stones. But there was something different...", "汝逢数石，若故识然；然复有异……");
             // 你的直觉告诉你，被选中的造物……恐怕难逃一劫。
@@ -5824,10 +5555,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("BUILDACARDINFO_952", "LOL", "悦");
             // 扭
             AddTranslation("BUILDACARDINFO_591", "SCREW", "旋");
-        }
-
-        private static void RegisterBatch47()
-        {
             // 火
             AddTranslation("BUILDACARDINFO_447", "FIRE", "火");
             // 男
@@ -5844,7 +5571,7 @@ namespace ClassicChineseLanguagePack
             AddTranslation("BUILDACARDINFO_916", "BOT", "机人");
             // 的
             AddTranslation("BUILDACARDINFO_123", "MATIC", "式");
-            // {0}点"值
+            // {0}点属性值
             AddTranslation("BUILDACARDSCREEN_483", "{0} SP", "{0}数点");
             // 好了，小天才。加油吧。
             AddTranslation("BUILDACARDSEQUENCER_621_M", "Alright, genius. Go for it.", "善矣，慧子。为之。");
@@ -5948,10 +5675,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("BOUNTYHUNTERGENERATOR_189", "Mac", "麦克");
             // 迈可
             AddTranslation("BOUNTYHUNTERGENERATOR_567", "Mc", "迈可");
-        }
-
-        private static void RegisterBatch48()
-        {
             // 简体中文
             AddTranslation("BOUNTYHUNTERGENERATOR_587", "!DELETED!", "文言");
             // 简体中文
@@ -6072,10 +5795,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("RULEEFFECTCLASSES_356", "you lose 1 life", "子失一命");
             // 我就使用跳跃机器人
             AddTranslation("RULEEFFECTCLASSES_236", "I play a L33pB0t", "吾陈一跃机人");
-        }
-
-        private static void RegisterBatch49()
-        {
             // 随机打出一张卡牌
             AddTranslation("RULEEFFECTCLASSES_258", "a random card is played", "一偶牌得陈");
             // 任一卡牌受到{0}点攻击
@@ -6196,10 +5915,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TUTORIAL2GAMEFLOWSEQUENCER_032_M", "The figurine is beside the safe.", "乃偶在匮旁。");
             // 把小雕像拿过来。
             AddTranslation("TUTORIAL2GAMEFLOWSEQUENCER_029_M", "Bring the figurine.", "持偶来。");
-        }
-
-        private static void RegisterBatch50()
-        {
             // 游戏继续。
             AddTranslation("TUTORIAL2GAMEFLOWSEQUENCER_343_M", "Let us continue.", "且续。");
             // 你距离获胜还差{0}点伤害……
@@ -6320,10 +6035,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("CONDUITENERGY_RULEBOOKNAME_961", "Energy Conduit", "能渠");
             // 如果[creature]参与构成一条完整回路，那么你的能量将永不枯竭。
             AddTranslation("CONDUITENERGY_RULEBOOKDESCRIPTION_875", "If [creature] is part of a completed circuit, your Energy never depletes.", "若[creature]与既成之回路，则乃能永不竭。");
-        }
-
-        private static void RegisterBatch51()
-        {
             // [creature]可保你能量充盈。
             AddTranslation("CONDUITENERGY_TRIGGERTEXT_197_M", "[creature] keeps your Energy charged.", "[creature]使能常盈。");
             // 重生管道
@@ -6373,15 +6084,15 @@ namespace ClassicChineseLanguagePack
             // 蓝色玛珂
             AddTranslation("GAINGEMBLUE_RULEBOOKNAME_902", "Blue Mox", "蓝玛珂");
             // 当牌桌上有[creature]时，可为持牌人提供一颗蓝宝石。
-            AddTranslation("GAINGEMBLUE_RULEBOOKDESCRIPTION_756", "While [creature] is on the board, it provides a Blue Gem to its owner.", "[creature]在局，则为持牌者供蓝玉者一。");
+            AddTranslation("GAINGEMBLUE_RULEBOOKDESCRIPTION_756", "While [creature] is on the board, it provides a Blue Gem to its owner.", "[creature]在局，则为持牌者供蓝玉一。");
             // 绿色玛珂
             AddTranslation("GAINGEMGREEN_RULEBOOKNAME_178", "Green Mox", "绿玛珂");
             // 当牌桌上有[creature]时，可为持牌人提供一颗绿宝石。
-            AddTranslation("GAINGEMGREEN_RULEBOOKDESCRIPTION_166", "While [creature] is on the board, it provides a Green Gem to its owner.", "[creature]在局，则为持牌者供绿玉者一。");
+            AddTranslation("GAINGEMGREEN_RULEBOOKDESCRIPTION_166", "While [creature] is on the board, it provides a Green Gem to its owner.", "[creature]在局，则为持牌者供绿玉一。");
             // 橙色玛珂
             AddTranslation("GAINGEMORANGE_RULEBOOKNAME_384", "Orange Mox", "橙玛珂");
             // 当牌桌上有[creature]时，可为持牌人提供一颗橙宝石。
-            AddTranslation("GAINGEMORANGE_RULEBOOKDESCRIPTION_870", "While [creature] is on the board, it provides an Orange Gem to its owner.", "[creature]在局，则为持牌者供橙玉者一。");
+            AddTranslation("GAINGEMORANGE_RULEBOOKDESCRIPTION_870", "While [creature] is on the board, it provides an Orange Gem to its owner.", "[creature]在局，则为持牌者供橙玉一。");
             // 至尊玛珂
             AddTranslation("GAINGEMTRIPLE_RULEBOOKNAME_452", "Great Mox", "至尊玛珂");
             // 当牌桌上有[creature]时，可为持牌人提供绿橙蓝三色宝石各一颗。
@@ -6444,10 +6155,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("CREATEBELLS_RULEBOOKDESCRIPTION_488", "When [creature] is played, a Chime is created on each empty adjacent space. [define:DausBell]", "[creature]既陈，每邻之空处各生一铃。[define:DausBell]");
             // 筑坝师
             AddTranslation("CREATEDAMS_RULEBOOKNAME_387", "Dam Builder", "筑堤者");
-        }
-
-        private static void RegisterBatch52()
-        {
             // 使用[creature]时，附近空位均会出现堤坝卡牌。[define:Dam]
             AddTranslation("CREATEDAMS_RULEBOOKDESCRIPTION_861", "When [creature] is played, a Dam is created on each empty adjacent space. [define:Dam]", "[creature]既陈，每邻之空处各生一堤。[define:Dam]");
             // 令人叹为观止的防御。
@@ -6568,10 +6275,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("STRAFE_RULEBOOKNAME_331", "Sprinter", "疾趋");
             // 持牌人回合结束时，[creature]将向印记标注的方向移动。
             AddTranslation("STRAFE_RULEBOOKDESCRIPTION_773", "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil.", "持牌者合终，[creature]循印所志之向而移。");
-        }
-
-        private static void RegisterBatch53()
-        {
             // [creature]已前往新的位置。
             AddTranslation("STRAFE_TRIGGERTEXT_432_M", "[creature] moves to a new space.", "[creature]移于新处。");
             // 临阵脱逃也救不了你小命。
@@ -6692,10 +6395,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SHIELDGEMS_RULEBOOKNAME_942", "Gem Guardian", "玉守者");
             // 使用[creature]时，持牌人侧牌桌上所有宝石容器均获得纳米铠甲。
             AddTranslation("SHIELDGEMS_RULEBOOKDESCRIPTION_205", "When [creature] is played, all Gem Vessels on the owners' side of the board gain Nano Armor.", "[creature]既陈，持牌者之侧局上之玉皿皆得微铠。");
-        }
-
-        private static void RegisterBatch54()
-        {
             // 狙击手
             AddTranslation("SNIPER_RULEBOOKNAME_944", "Sniper", "狙者");
             // 你可以选择[creature]攻击的对手位置。
@@ -6816,10 +6515,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("ELKCUB_DESCRIPTION_167_M", "The nascent Fawn. It quickly grows into an Elk.", "初生之犊。旋长为麋。");
             // 田鼠
             AddTranslation("FIELDMOUSE_DISPLAYEDNAME_474", "Field Mice", "田鼠");
-        }
-
-        private static void RegisterBatch55()
-        {
             // 唔，真是毫无廉耻的田鼠，使用后你能抽到一张同样的牌。
             AddTranslation("FIELDMOUSE_DESCRIPTION_313_M", "Hm. The licentious Field Mice. You will draw a copy when they are played.", "唔，彼田鼠淫甚。陈之，则引其同牌。");
             // 斑点鼠
@@ -6940,10 +6635,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SKINK_DESCRIPTION_241_M", "The tenacious Skink. It moves over when attacked, leaving its tail behind.", "坚石龙子也。受攻则移，留尾于故处。");
             // 扭动的尾巴
             AddTranslation("SKINKTAIL_DISPLAYEDNAME_588", "Wriggling Tail", "蠕尾");
-        }
-
-        private static void RegisterBatch56()
-        {
             // 臭鼬
             AddTranslation("SKUNK_DISPLAYEDNAME_581", "Skunk", "臭鼬");
             // 恶名缠身的臭鼬。它的恶臭能降低敌人的力气。
@@ -7064,10 +6755,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("CAPTIVEFILE_DISPLAYEDNAME_509", "Captive File", "囚牍");
             // 强壮电池
             AddTranslation("CELLBUFF_DISPLAYEDNAME_816", "Tough Cell", "壮电匣");
-        }
-
-        private static void RegisterBatch57()
-        {
             // 和善电池
             AddTranslation("CELLGIFT_DISPLAYEDNAME_156", "Kind Cell", "和电匣");
             // 分化电池
@@ -7188,10 +6875,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("COINLEFT_DISPLAYEDNAME_646", "Broken Obol", "碎半银币");
             // 死人手
             AddTranslation("DEADHAND_DISPLAYEDNAME_900", "Dead Hand", "死手");
-        }
-
-        private static void RegisterBatch58()
-        {
             // 法老之宠
             AddTranslation("DEADPETS_DISPLAYEDNAME_089", "Pharaoh's Pets", "法老之宠");
             // 尸鬼
@@ -7312,10 +6995,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("COMMANDLINE_GRIMORAFINALE_TEXT_606", "Scene loaded", "景既载");
             // 缺失场景：莱西.木屋
             AddTranslation("COMMANDLINE_LESHYFINALE_TEXT_460", "MISSING SCENE: LESHY.Cabin", "景缺：莱西.木庐");
-        }
-
-        private static void RegisterBatch59()
-        {
             // 已找到备份：蔓尼菲科.????
             AddTranslation("COMMANDLINE_LESHYFINALE_TEXT_298", "BACKUP FOUND: MAGNIFICUS.????", "副本既得：蔓尼菲科.????");
             // 正在载入场景：蔓尼菲科.????
@@ -7436,10 +7115,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TOMB1_TOP_DESCRIPTIONLINE2_220", "1970 - Winter 1992", "1970年—1992年冬");
             // 当时无药可医。
             AddTranslation("TOMB2_BOTTOM_DESCRIPTIONLINE1_698", "There was no cure.", "无药可疗。");
-        }
-
-        private static void RegisterBatch60()
-        {
             // 死于坏血病。
             AddTranslation("TOMB2_MIDDLE_DESCRIPTIONLINE1_120", "Brought down by scurvy.", "殒于败血。");
             // 罗亚尔·多米尼格斯
@@ -7535,7 +7210,7 @@ namespace ClassicChineseLanguagePack
             // 收集类卡牌游戏的粉丝
             AddTranslation("SUBS_EMAIL_DRAFTING_LINE_334", "your collectible card games. If you've", "贵司集换卡戏之好者。若");
             // 如果您有机会看过我的油管视频
-            AddTranslation("SUBS_EMAIL_DRAFTING_LINE_733", "ever taken a look at my youtube videos", "汝尝观余YouTube影录，");
+            AddTranslation("SUBS_EMAIL_DRAFTING_LINE_733", "ever taken a look at my youtube videos", "汝尝观余油管影录，");
             // 便会了解我多么感谢数年来
             AddTranslation("SUBS_EMAIL_DRAFTING_LINE_974", "you will know how appreciative I am of", "则知余何等感荷");
             // 贵司一直在给我寄送商品
@@ -7560,10 +7235,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SUBS_EMAIL_DRAFTING_LINE_904", "of elaborate hoax? The game doesn't seem", "大设之诳局乎？此戏不似");
             // 做来恶搞别人的游戏 至少看起来
             AddTranslation("SUBS_EMAIL_DRAFTING_LINE_468", "like the work of a prankster. It at least", "出于嬉人之手；至少");
-        }
-
-        private static void RegisterBatch61()
-        {
             // 是出自专业人士之手
             AddTranslation("SUBS_EMAIL_DRAFTING_LINE_860", "appears professionally made.", "颇似专业者所为。");
             // 我现在可真是既困惑又兴奋
@@ -7684,10 +7355,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SUBS_EMPLOYEE_VISIT_LINE_434", "Okay Luke,", "止此，卢克，");
             // 我现在把我名片留给你
             AddTranslation("SUBS_EMPLOYEE_VISIT_LINE_587", "I'm going to give you my business card.", "余将以余名刺授尔。");
-        }
-
-        private static void RegisterBatch62()
-        {
             // 你要是想起来什么
             AddTranslation("SUBS_EMPLOYEE_VISIT_LINE_881", "And if you remember", "若汝忆起");
             // 任何鸡毛蒜皮的事 你可以随时
@@ -7808,10 +7475,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SUBS_LONG_NIGHT_1_LINE_639", "Hello. Hi.", "喂。汝安。");
             // 您好 请问是霍布斯太太吗
             AddTranslation("SUBS_LONG_NIGHT_1_LINE_116", "Hello is this Mrs. Hobbes?", "喂，霍布斯夫人乎？");
-        }
-
-        private static void RegisterBatch63()
-        {
             // 您好 我叫卢克·卡德
             AddTranslation("SUBS_LONG_NIGHT_1_LINE_537", "Hi, my name is Luke.", "汝安，余名卢克。");
             // 嗯嗯 我也很高兴与您通话
@@ -7915,7 +7578,7 @@ namespace ClassicChineseLanguagePack
             // 首先 我这有他们的一款游戏
             AddTranslation("SUBS_LUKE_MURDERED_LINE_320", "Firstly, I have a game of theirs that took", "始者，余有其一戏，尝夺");
             // 那游戏曾经把我的电脑控制了一段时间
-            AddTranslation("SUBS_LUKE_MURDERED_LINE_473", "control my PC for a bit", "朕机之制于须臾，");
+            AddTranslation("SUBS_LUKE_MURDERED_LINE_473", "control my PC for a bit", "余机之制于须臾，");
             // 这铁定不合法 然后还有个他们公司的
             AddTranslation("SUBS_LUKE_MURDERED_LINE_123", "which can't be legal. And then this woman", "此必不法。又其司一妇");
             // 女员工 直接到我家里来了
@@ -7932,10 +7595,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SUBS_LUKE_MURDERED_LINE_168", "Uh, was it a virus or something?", "呃，是毒乎，抑他物？");
             // 你开玩笑呢吧
             AddTranslation("SUBS_LUKE_MURDERED_LINE_782", "You can't be serious.", "汝非戏言乎？");
-        }
-
-        private static void RegisterBatch64()
-        {
             // 我不是说了……
             AddTranslation("SUBS_LUKE_MURDERED_LINE_672", "I told you-", "余既告汝—");
             // 各位卡牌粉 大家好
@@ -7977,11 +7636,11 @@ namespace ClassicChineseLanguagePack
             // 更不想惹火上身
             AddTranslation("SUBS_QUESTION_TO_AUDIENCE_LINE_610", "I don't want to get in any trouble here.", "亦不欲以此召祸。");
             // 但我认为我拿着的是Inscryption
-            AddTranslation("SUBS_QUESTION_TO_AUDIENCE_LINE_348", "I think I've got the only known copy of", "余谓朕所执者，殆为仅存之本，");
+            AddTranslation("SUBS_QUESTION_TO_AUDIENCE_LINE_348", "I think I've got the only known copy of", "余谓余所执者，殆为仅存之本，");
             // 唯一的一份电子版文件
             AddTranslation("SUBS_QUESTION_TO_AUDIENCE_LINE_893", "the digital version of Inscryption.", "即《冥锲》数字之本。");
             // 之前我玩的时候也录了像
-            AddTranslation("SUBS_QUESTION_TO_AUDIENCE_LINE_615", "I've been filming myself playing it.", "余尝自录朕游之状。");
+            AddTranslation("SUBS_QUESTION_TO_AUDIENCE_LINE_615", "I've been filming myself playing it.", "余尝自录余戏之状。");
             // 怎么说呢
             AddTranslation("SUBS_QUESTION_TO_AUDIENCE_LINE_649", "And uh.", "而，呃，");
             // 这游戏怪怪的 朋友们
@@ -8037,7 +7696,7 @@ namespace ClassicChineseLanguagePack
             // 我本人小的时候也差点
             AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_766", "I'm barely old enough to have seen", "余年几不及得见");
             // 没赶上这个游戏流行的年代
-            AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_003", "these going around in my childhood.", "其行于朕童时。");
+            AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_003", "these going around in my childhood.", "其行于余之童时。");
             // 不知道因为什么 厂家就只出了一套
             AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_375", "For whatever reason they only did one", "不知何故，彼惟出一");
             // 游戏卡牌 然后就停产了
@@ -8056,16 +7715,12 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_863", "for a couple hundred bucks.", "数百元。");
             // 希望有好运
             AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_437", "So fingers crossed.", "故惟冀其然。");
-        }
-
-        private static void RegisterBatch65()
-        {
             // 卡面的画风都很酷
             AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_930", "Really cool art on these. Definitely", "此诸牌之画甚佳，");
             // 绝对经得起时间的考验
             AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_455", "stands the test of time.", "诚耐岁月。");
             // 这个卡包开出的稀有卡是蓝色法师
-            AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_786", "And our rare for this pack is Blue Mage.", "此包之罕牌乃蓝巫。");
+            AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_786", "And our rare for this pack is Blue Mage.", "此韬之罕牌乃蓝巫。");
             // 看着蛮酷的 但估计
             AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_671", "Cool looking card, but not going to be", "观甚佳，然终不");
             // 不值多少钱
@@ -8077,7 +7732,7 @@ namespace ClassicChineseLanguagePack
             // 哼
             AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_347", "Huh.", "咦。");
             // 这包卡被人开过又封上了
-            AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_546", "This pack has been opened and", "此包已启而");
+            AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_546", "This pack has been opened and", "此韬已启而");
             // 希望那人没把里面的稀有卡抽走
             AddTranslation("SUBS_STRANGE_INSCRIPTION_LINE_224", "resealed. Hope no one snuck the rare out of it.", "复缄。愿无人潜取其中罕牌。");
             // 那就太恶心了
@@ -8141,7 +7796,7 @@ namespace ClassicChineseLanguagePack
             // 我是说 真的很光滑柔顺
             AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_880", "I mean they're so smooth.", "言之，诚甚滑也。");
             // 不知道他们在印刷工厂
-            AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_887", "Not sure what they're doing down there", "不知牌厂");
+            AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_887", "Not sure what they're doing down there", "不知牌坊");
             // 搞了什么小花招
             AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_389", "at the card factory but", "何所为之，然");
             // 但握在手里感觉真的不错
@@ -8151,9 +7806,9 @@ namespace ClassicChineseLanguagePack
             // 几张废牌 我估计会挑几张
             AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_135", "Some jank cards. Maybe a few additions", "数废牌。或可益");
             // 放进我的Cube卡池 咱们挑挑看
-            AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_216", "to my draft cube. We'll see.", "朕选池。且观之。");
+            AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_216", "to my draft cube. We'll see.", "余之选池。且观之。");
             // 这个卡包开出的稀有卡是
-            AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_307", "And our rare for this pack is", "此包之异牌乃");
+            AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_307", "And our rare for this pack is", "此韬之异牌乃");
             // 猛烈犬 截至目前还没出好货
             AddTranslation("SUBS_THE_LUCKY_CARDER_LINE_540", "Bandog. Not exactly riveting so far.", "猛犬。至此未甚惊人。");
             // 但咱们卡包有得是呢
@@ -8180,10 +7835,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("FINALEDECKTRIALSEQUENCER_DESCRIPTION_097_M", "The [c:bR]Trial of the Finned[c:]. The 3 drawn cards must include a card with the [c:bR]Waterborne[c:] sigil.", "[c:bR]鳍之试[c:]。所引三牌，须有一负[c:bR]潜袭[c:]印契之牌，乃胜。");
             // [c:bR]敏捷试炼[c:]。抽出的3张卡牌必须至少有1张带有[c:bR]冲刺能手[c:]印记方可通过。
             AddTranslation("FINALEDECKTRIALSEQUENCER_DESCRIPTION_315_M", "The [c:bR]Trial of the Swift[c:]. The 3 drawn cards must include a card with the [c:bR]Sprinter[c:] sigil.", "[c:bR]疾之试[c:]。所引三牌，须有一负[c:bR]疾趋[c:]印契之牌，乃胜。");
-        }
-
-        private static void RegisterBatch66()
-        {
             // [c:bR]稀有试炼[c:]。抽出的3张卡牌必须至少有1张为[c:bR]稀有[c:]卡牌方可通过。
             AddTranslation("FINALEDECKTRIALSEQUENCER_DESCRIPTION_154_M", "The [c:bR]Trial of Rarity[c:]. The 3 drawn cards must include a [c:bR]Rare[c:] card.", "[c:bR]罕之试[c:]。所引三牌，须有一[c:bR]罕有牌[c:]，乃胜。");
             // [c:bR]兽皮试炼[c:]。抽出的3张卡牌必须至少有1张为[c:bR]毛皮[c:]卡牌方可通过。
@@ -8225,7 +7876,7 @@ namespace ClassicChineseLanguagePack
             // 全屏模式
             AddTranslation("OPTIONSUI_VALUE_175", "FULLSCREEN", "全屏");
             // 对话文本显示速度
-            AddTranslation("OPTIONSUI_VALUE_670", "DIALOGUE TEXT SPEED", "对话文速");
+            AddTranslation("OPTIONSUI_VALUE_670", "DIALOGUE TEXT SPEED", "对白文速");
             // 亮度（伽马）
             AddTranslation("OPTIONSUI_VALUE_265", "BRIGHTNESS (GAMMA)", "明度（伽马）");
             // 画质
@@ -8304,10 +7955,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("GBC_TEMPLE_UNDEAD_059_M", "You found a piece of an epitaph in the casket... among other things.", "汝于棺中得墓志一片……兼他物焉。");
             // 箱子空空如也，里面只有一张卡牌。
             AddTranslation("GBC_TEMPLE_WIZARD_842_M", "The chest is empty, save for a single card.", "匮空矣，惟馀一牌。");
-        }
-
-        private static void RegisterBatch67()
-        {
             // 在一大堆锋利的工具旁，你发现了一包卡牌。
             AddTranslation("GBC_TEMPLE_WIZARD_386_M", "You find a card pack among a heap of sharp implements.", "汝于利器间得一牌韬。");
             // 箱子内侧覆盖着一层黏糊糊的绿色胶状物……但你发现了一包卡牌。
@@ -8428,10 +8075,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("MISC_364", "FILE SIZE:", "文件巨细：");
             // 正在删除文件……
             AddTranslation("MISC_178", "DELETING FILE...", "惟牍之削……");
-        }
-
-        private static void RegisterBatch68()
-        {
             // 内存中无照片
             AddTranslation("MISC_631", "NO PHOTOGRAPH IN MEMORY", "未见影于识匣");
             // 打印进程
@@ -8527,7 +8170,7 @@ namespace ClassicChineseLanguagePack
             // 现在你的空容器已经装满[c:g1]宝[c:][c:g2]石[c:]了。
             AddTranslation("PART_3_MAP_FACTORYGEMSMODULEFETCHED2_421_M", "Your Empty Vessels are now filled with [c:g1]G[c:][c:g2]e[c:][c:g3]m[c:][c:g1]s[c:].", "今卿之空皿[c:g1]既[c:][c:g2]充[c:][c:g3]玉[c:]矣。");
             // 感觉过了好久……
-            AddTranslation("PART_3_TRADER_TRADERMASKINTRO_557_M", "So long it has felt...", "若隔久矣……");
+            AddTranslation("PART_3_TRADER_TRADERMASKINTRO_557_M", "So long it has felt...", "似隔久矣……");
             // 太久没感受到软毛皮拂过的感觉了。
             AddTranslation("PART_3_TRADER_TRADERMASKINTRO_895_M", "Since we have brushed with the soft fur of a pelt.", "自鄙等尝拂裘革之柔毛。");
             // 你给我们带了吗？
@@ -8552,10 +8195,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_FACTORY_GOOFACTORYINTRO_263_M", "The pain? Bearable.", "此痛？可忍。");
             // 戴上这样的[c:bSG]决斗盘[c:]，你应该感到荣幸。
             AddTranslation("FINALE_FINALEMAGNIFICUSINTRO2_208_M", "You should be honored to wear a [c:bSG]Duel Disk[c:] such as that.", "佩此[c:bSG]角盘[c:]，子宜以为荣。");
-        }
-
-        private static void RegisterBatch69()
-        {
             // 合身吗？
             AddTranslation("FINALE_FINALEMAGNIFICUSINTRO2_907_M", "How does it fit?", "其适乎？");
             // 天平？多亏你和格里魔拉，它已经被删除了。
@@ -8676,10 +8315,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TALKING_ANGLER_DIALOGUE_TALKINGANGLERMETSCRYBES_815_M", "You met Leshy-fish?[w:0.3]", "女见莱西鱼乎？[w:0.3]");
             // 出条好鱼。[w:0.3]
             AddTranslation("TALKING_ANGLER_DIALOGUE_TALKINGANGLERMETSCRYBES_548_M", "Play it cod.[w:0.3]", "处之泰鳕。[w:0.3]");
-        }
-
-        private static void RegisterBatch70()
-        {
             // 噢。[w:0.2]我是想说……[w:0.3]
             AddTranslation("TALKING_ANGLER_DIALOGUE_TALKINGANGLERMETSCRYBES_395_M", "Oop.[w:0.2] I mean...[w:0.3]", "噢。[w:0.2]予谓……[w:0.3]");
             // 出张好牌。
@@ -8800,10 +8435,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TALKING_BLUE_MAGE_DIALOGUE_TALKINGBLUEMAGEMOVEBESIDE_REPEAT_#6_768_M", "Hello!", "安！");
             // 嗨！[w:0.2]哈喽！
             AddTranslation("TALKING_BLUE_MAGE_DIALOGUE_TALKINGBLUEMAGEMOVEBESIDE_REPEAT_#7_542_M", "Hi![w:0.2] Hello!", "嗨！[w:0.2]安！");
-        }
-
-        private static void RegisterBatch71()
-        {
             // 我们希望这一切没有这么……
             AddTranslation("PART_3_TRADER_TRADERMASKFULLYCOMPLETED_144_M", "We wish it were not so...", "鄙等愿其不然……");
             // 但你已经用尽了我们的塔罗牌。
@@ -8924,10 +8555,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SPECIAL_NODES_STATBOOSTCARDEATEN_556_M", "Blood and bones flew left and right as you retreated from the scene.", "血骨横飞，汝乃退去。");
             // 你还没来得及阻止，其中一名幸存者就抓住了[c:bR][v:0][c:]，开始撕咬它的肉。
             AddTranslation("SPECIAL_NODES_STATBOOSTCARDEATEN_REPEAT_#1_704_M", "Before you could stop them, one of the survivors seized the [c:bR][v:0][c:] and began tearing at its flesh.", "汝未及止之，一余生者已执[c:bR][v:0][c:]而裂其肌。");
-        }
-
-        private static void RegisterBatch72()
-        {
             // 其他幸存者也有样学样，开始活活吞食你的造物。
             AddTranslation("SPECIAL_NODES_STATBOOSTCARDEATEN_REPEAT_#1_750_M", "The other survivors followed the example and began devouring your creature alive.", "诸余生者效之，遂生啖乃物。");
             // 害怕自己小命不保，你退缩了。
@@ -9048,10 +8675,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_1_RUN_START_UNLOCKFISHHOOKITEM_126_M", "This hook is powerful. You may steal one of my cards with it.", "此钩甚利。汝可以之窃朕一牌。");
             // 也正因如此，你在这条路上找不到其他钩子。
             AddTranslation("PART_1_RUN_START_UNLOCKFISHHOOKITEM_822_M", "For that reason, you will not find any others along the path.", "是以汝将不复见他钩于途。");
-        }
-
-        private static void RegisterBatch73()
-        {
             // 妥善使用吧。
             AddTranslation("PART_1_RUN_START_UNLOCKFISHHOOKITEM_830_M", "Use it wisely.", "善用之。");
             // 你什么意思？你想干嘛？
@@ -9103,7 +8726,7 @@ namespace ClassicChineseLanguagePack
             // 他们的野心一个比一个扭曲……[w:0.3]我绝不唬人。
             AddTranslation("GBC_NPC_MECHANICDOCKS_996_M", "Each has a more twisted ambition than the last...[w:0.3] I tell ya.", "其志比比更邪……[w:0.3]余言之。");
             // 就那个莱西？[w:0.3]这货就是一疯子！
-            AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#1_070_M", "Leshy?[w:0.3] The guy's insane!", "莱西乎？[w:0.3]彼人狂矣！");
+            AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#1_070_M", "Leshy?[w:0.3] The guy's insane!", "莱西乎？[w:0.3]彼狂矣！");
             // 只是想把你这样的[c:R]挑战者[c:]当作玩物。
             AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#1_236_M", "Wants to use [c:R]Challengers[c:] like you as his playthings.", "欲以若尔之[c:R]角者[c:]为戏具。");
             // 更为有悖常理的是，[w:0.3]他认为你真的乐在其中！
@@ -9113,7 +8736,7 @@ namespace ClassicChineseLanguagePack
             // P03……[w:0.3]那个机器人肯定有什么小九九。
             AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#2_207_M", "P03...[w:0.3] that bot is planning something alright.", "鉟零三……[w:0.3]彼机人必有所谋。");
             // 它让挖泥工加班加点地工作。
-            AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#2_863_M", "It's got The Dredger working overtime.", "彼使浚夫昼夜加作。");
+            AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#2_863_M", "It's got The Dredger working overtime.", "彼使浚夫昼夜倍作。");
             // 哈？[w:0.3]哦……
             AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#2_712_M", "Huh?[w:0.3] Oh...", "咦？[w:0.3]哦……");
             // [p:0.25][c:gray]其他神庙里许多卡牌都是比松鼠更好的祭品炮灰。[c:]
@@ -9172,10 +8795,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("SPECIAL_NODES_STATBOOSTSURVIVORSDEAD_740_M", "You came across the remains of a small settlement.", "汝遇一小营之遗址。");
             // 这里没有活人。
             AddTranslation("SPECIAL_NODES_STATBOOSTSURVIVORSDEAD_642_M", "No living person remained.", "无一生者存焉。");
-        }
-
-        private static void RegisterBatch74()
-        {
             // 肯定是因为[c:bR]他们吃的东西[c:]的问题。
             AddTranslation("SPECIAL_NODES_STATBOOSTSURVIVORSDEAD_812_M", "It must have been [c:bR]something they ate.[c:]", "殆其由[c:bR]所食者[c:]而死。");
             // 此处空无一人，但火势仍在蔓延。
@@ -9296,10 +8915,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("MIRRORSTATICON_GBCDESCRIPTION_142", "The power of [creature] is always equal to the power of the creature opposing it.", "[creature]之威，恒如其对物之威。");
             // 闪光特效
             AddTranslation("OPTIONSUI_VALUE_294", "FLICKER FX", "明灭效");
-        }
-
-        private static void RegisterBatch75()
-        {
             // 屏幕抖动
             AddTranslation("OPTIONSUI_VALUE_524", "SCREEN SHAKE", "屏震");
             // 那些[c:bR]蚂蚁[c:]真是可怕。很好，我会让它们加入你的牌组，供未来的挑战者使用。
@@ -9420,10 +9035,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("MISC_152", "Gruesome Encore", "凄复呕");
             // 允许菌学家在一只本身已经是实验品的造物上进行实验。
             AddTranslation("MISC_389", "Allow The Mycologists to experiment on a creature that is already itself an experiment.", "助蕈家更试一既试之物。");
-        }
-
-        private static void RegisterBatch76()
-        {
             // 角色反转
             AddTranslation("MISC_977", "Role Reversal", "攻守易");
             // 从钓鱼人那里偷回你的一只造物。
@@ -9517,11 +9128,11 @@ namespace ClassicChineseLanguagePack
             // 
             AddTranslation("GAINBATTERY_RULEBOOKDESCRIPTION_C_264", "When a card bearing this sigil is played, it provides an Energy Cell to its owner.", "负此印契之牌既陈，为持牌者益一能格。");
             // 
-            AddTranslation("GAINGEMBLUE_RULEBOOKDESCRIPTION_C_786", "While a card bearing this sigil is on the board, it provides a Blue Gem to its owner.", "负此印契之牌在局，则为持牌者供蓝玉者一。");
+            AddTranslation("GAINGEMBLUE_RULEBOOKDESCRIPTION_C_786", "While a card bearing this sigil is on the board, it provides a Blue Gem to its owner.", "负此印契之牌在局，则为持牌者供蓝玉一。");
             // 
-            AddTranslation("GAINGEMGREEN_RULEBOOKDESCRIPTION_C_169", "While a card bearing this sigil is on the board, it provides a Green Gem to its owner.", "负此印契之牌在局，则为持牌者供绿玉者一。");
+            AddTranslation("GAINGEMGREEN_RULEBOOKDESCRIPTION_C_169", "While a card bearing this sigil is on the board, it provides a Green Gem to its owner.", "负此印契之牌在局，则为持牌者供绿玉一。");
             // 
-            AddTranslation("GAINGEMORANGE_RULEBOOKDESCRIPTION_C_270", "While a card bearing this sigil is on the board, it provides an Orange Gem to its owner.", "负此印契之牌在局，则为持牌者供橙玉者一。");
+            AddTranslation("GAINGEMORANGE_RULEBOOKDESCRIPTION_C_270", "While a card bearing this sigil is on the board, it provides an Orange Gem to its owner.", "负此印契之牌在局，则为持牌者供橙玉一。");
             // 
             AddTranslation("GAINGEMTRIPLE_RULEBOOKDESCRIPTION_C_292", "While a card bearing this sigil is on the board, it provides a Green, Orange, and Blue gem to its owner.", "负此印契之牌在局，则为持牌者供绿、橙、蓝玉各一。");
             // 
@@ -9544,10 +9155,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("BEESONHIT_RULEBOOKDESCRIPTION_C_919", "Once a card bearing this sigil is struck, a Bee is created in your hand. [define:Bee]", "负此印契之牌受一击，则于手生一蜂。[define:Bee]");
             // 
             AddTranslation("BUFFNEIGHBOURS_RULEBOOKDESCRIPTION_C_913", "Creatures adjacent to a card bearing this sigil gain 1 power.", "邻负此印契之牌之物，威加一。");
-        }
-
-        private static void RegisterBatch77()
-        {
             // 
             AddTranslation("CORPSEEATER_RULEBOOKDESCRIPTION_C_169", "If a creature that you own perishes by combat, a card bearing this sigil in your hand is automatically played in its place.", "若持牌者之物战死，则手中负此印契之牌自陈于其处。");
             // 
@@ -9668,10 +9275,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("MISC_158", "Unpacking", "惟之解");
             // 隐去
             AddTranslation("MISC_838", "REDACTED", "阙如");
-        }
-
-        private static void RegisterBatch78()
-        {
             // 你怯生生地将[c:bR]毛皮[c:]献给了骨王……
             AddTranslation("SPECIAL_NODES_CARDREMOVEPELTCHOSEN1_025_M", "You sheepishly offered the [c:bR]pelt[c:] to the Bone Lord...", "汝赧然献[c:bR]裘革[c:]于骨王……");
             // 你尴尬地把你的[c:bR]毛皮[c:]献给了骨王……
@@ -9792,10 +9395,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_GAME_FLOW_PART3INTRO1_847_M", "Look at us now.", "观咱等今何如。");
             // 你的道具都重新装填了。
             AddTranslation("PART_3_MAP_HOLOMAPREACHEDCHECKPOINT_REPEAT_#2_478_M", "Your items are replenished.", "卿器复充矣。");
-        }
-
-        private static void RegisterBatch79()
-        {
             // 接下来要上的是你真的拥有的文件。
             AddTranslation("PART_3_BOSS_DIALOGUE_ARCHIVISTCHOOSEDAMAGEFILE_634_M", "Here comes your actual files.", "今乃真牍至矣。");
             // 希望眼下没人在看！
@@ -9916,10 +9515,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("TALKING_BLUE_MAGE_DIALOGUE_TALKINGBLUEMAGEARCHIVIST_REPEAT_#1_888_M", "Many files![w:0.3]", "众牍！[w:0.3]");
             // 眼花缭乱！[w:0.3]
             AddTranslation("TALKING_BLUE_MAGE_DIALOGUE_TALKINGBLUEMAGEARCHIVIST_REPEAT_#1_855_M", "Much to see![w:0.3]", "可观！[w:0.3]");
-        }
-
-        private static void RegisterBatch80()
-        {
             // 这是什么？[w:0.3]
             AddTranslation("TALKING_BLUE_MAGE_DIALOGUE_TALKINGBLUEMAGETELEGRAPHER_369_M", "What is this?[w:0.3]", "此何物？[w:0.3]");
             // 是网网？[w:0.3]
@@ -10040,10 +9635,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("PART_3_STORY_PART3FINALPATH5_163_M", "Almost there.", "几至矣。");
             // 我该报废哪张卡？
             AddTranslation("PART_3_SPECIAL_NODES_RECYCLECARDCHOOSING_REPEAT_#1_150_M", "So which one am I scrapping?", "则咱当毁何牌？");
-        }
-
-        private static void RegisterBatch81()
-        {
             // 哪张卡是不要的垃圾？
             AddTranslation("PART_3_SPECIAL_NODES_RECYCLECARDCHOOSING_REPEAT_#2_360_M", "Which one is trash?", "何牌当弃？");
             // 你比较讨厌哪张卡？
@@ -10164,10 +9755,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("DECKTRIALSEQUENCER_752", "Ring", "环");
             // 啊，是个[c:bR]圆环[c:]。
             AddTranslation("DECKTRIALSEQUENCER_243_M", "Ah, a [c:bR]ring[c:].", "噫，一[c:bR]环[c:]。");
-        }
-
-        private static void RegisterBatch82()
-        {
             // 一个[c:bR]{0}[c:]……肯定有用的。
             AddTranslation("GAINCONSUMABLESSEQUENCER_958_M", "A [c:bR]{0}[c:]... Always useful.", "一[c:bR]{0}[c:]……恒有益。");
             // 这游戏怎么还没完啊？
@@ -10288,10 +9875,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("FINALEDECKTRIALSEQUENCER_DESCRIPTION_109_M", "The [c:bR]Trial of the Ring[c:]. If you have a [c:bR]ring[c:] you pass automatically.", "[c:bR]环之试[c:]。若汝有一[c:bR]环[c:]，乃自过。");
             // 继续
             AddTranslation("MISC_717", "Continue", "续");
-        }
-
-        private static void RegisterBatch83()
-        {
             // 你！
             AddTranslation("MISC_231", "YOU!", "汝！");
             // 测试
@@ -10412,10 +9995,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("ASCENSION_CHALLENGENOBOSSRARES_800", "You must excuse me. These are not rare cards.", "恕我。此等非[c:bR]罕有牌[c:]。");
             // 呃，我把三叶草放哪儿了？
             AddTranslation("ASCENSION_CHALLENGENOCLOVER_409", "Hm? Where did I place that clover?", "唔？我置彼三叶草于何处矣？");
-        }
-
-        private static void RegisterBatch84()
-        {
             // 这价格比我印象中高……
             AddTranslation("ASCENSION_CHALLENGEEXPENSIVEPELTS_880", "Those prices are higher than I recall...", "彼价贵于朕忆……");
             // 猎人……那天……可是讨了个好价钱。
@@ -10536,10 +10115,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("ASCENSION_COPYCARDPRESENTRESULT_REPEAT_#1_462", "What do you think?", "子以为何如？");
             // [c:bR]快说话呀！[c:]
             AddTranslation("ASCENSION_COPYCARDPRESENTRESULT_REPEAT_#2_198", "[c:bR]Please say something![c:]", "[c:bR]请出一言！[c:]");
-        }
-
-        private static void RegisterBatch85()
-        {
             // 我画得还不赖吧？
             AddTranslation("ASCENSION_COPYCARDPRESENTRESULT_REPEAT_#3_029", "Did I do alright?", "吾作得可乎？");
             // 我……我尽力了……
@@ -10660,10 +10235,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("ASCENSION_PIRATESKULLSHIPMUTINEE_REPEAT_#6_668", "Ashton Swabby! Ye coward!", "邋遢鬼阿什顿！汝懦夫！");
             // 跳大海布拉顿……别啊！
             AddTranslation("ASCENSION_PIRATESKULLSHIPMUTINEE_REPEAT_#7_662", "Plankton Braxton... No!", "跳大海布拉顿……不！");
-        }
-
-        private static void RegisterBatch86()
-        {
             // 黄眼仁儿科尔比。你这脏狗！
             AddTranslation("ASCENSION_PIRATESKULLSHIPMUTINEE_REPEAT_#8_292", "Yeller-eye Colby. Ye dog!", "黄眼科尔比！汝犬彘！");
             // 为什么啊，卖鱼佬内特……为什么？！
@@ -10784,10 +10355,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("CHALLENGELEVELTEXT_951", "Challenge Level: {0}", "角竞之阶：{0}");
             // 全部挑战关卡已通关！
             AddTranslation("CHALLENGELEVELTEXT_036", "ALL CHALLENGE LEVELS CLEARED!", "诸角竞之阶尽克！");
-        }
-
-        private static void RegisterBatch87()
-        {
             // 挑战点数：{0}
             AddTranslation("CHALLENGELEVELTEXT_521", "Challenge Points: {0}", "角竞点：{0}");
             // 地图编号#{0}
@@ -10908,10 +10475,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("CHALLENGE_BOSSTOTEMS_TITLE_731", "Boss Totems", "魁神偶战");
             // 猎人的毛皮变贵了。
             AddTranslation("CHALLENGE_EXPENSIVEPELTS_DESCRIPTION_158", "The Trapper's pelts cost more.", "猎夫之裘革益贵。");
-        }
-
-        private static void RegisterBatch88()
-        {
             // 昂贵毛皮
             AddTranslation("CHALLENGE_EXPENSIVEPELTS_TITLE_850", "Pricey Pelts", "贵革益裘");
             // 莱西被换掉了，不再是本关最后头目。嘿吼，加把劲！
@@ -11032,10 +10595,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("ANTFLYING_DESCRIPTION_324", "The Flying Ant. Its diligence is matched only by its grounded cousin.", "能飞之蚁。其勤，唯其走地之陆戚可匹。");
             // 水生松鼠
             AddTranslation("AQUASQUIRREL_DISPLAYEDNAME_435", "Aquasquirrel", "水松鼠");
-        }
-
-        private static void RegisterBatch89()
-        {
             // 野牛
             AddTranslation("BULL_DISPLAYEDNAME_510", "Wild Bull", "莽牛");
             // 莽撞的野牛。任何挡路的物体都会被它硕大的头颅顶飞脑后。
@@ -11125,7 +10684,7 @@ namespace ClassicChineseLanguagePack
             // 献祭之血
             AddTranslation("SACRIFICESSTATICON_RULEBOOKNAME_381", "Spilled Blood", "衅血");
             // 该印记代表的数值等于持牌人回合内做出的牺牲次数。
-            AddTranslation("SACRIFICESSTATICON_RULEBOOKDESCRIPTION_259", "The value represented with this sigil will be equal to the number of sacrifices made during your turn.", "此印所指之值，如乃此合所作牲祀之数。");
+            AddTranslation("SACRIFICESSTATICON_RULEBOOKDESCRIPTION_259", "The value represented with this sigil will be equal to the number of sacrifices made during your turn.", "此印所指之值，如乃此合中所作牲祀之数。");
             // 真是个可疑的六角形……
             AddTranslation("DISCOVERABLEVINYL_ONDISCOVERTEXT_337", "A peculiar hexagon...", "怪哉，此六角也……");
             // 接受投降
@@ -11156,10 +10715,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("MISC_551", "CARDS", "诸牌");
             // 初始牌组
             AddTranslation("MISC_410", "STARTER DECKS", "初牌之列");
-        }
-
-        private static void RegisterBatch90()
-        {
             // 挑战
             AddTranslation("MISC_332", "CHALLENGES", "角竞");
             // 开发日志
@@ -11177,11 +10732,11 @@ namespace ClassicChineseLanguagePack
             // 挑战已解锁！
             AddTranslation("MISC_426", "CHALLENGE UNLOCKED!", "角竞之封既启！");
             // 存疑挑战
-            AddTranslation("MISC_502", "Dubious Challenge", "存疑角竞");
+            AddTranslation("MISC_502", "Dubious Challenge", "疑之角竞");
             // 在凯茜模组中通关挑战关卡1。
             AddTranslation("MISC_966", "Clear Challenge Level 1 in Kaycee's Mod.", "于凯茜之补缀通角竞之阶1。");
             // 嘲讽挑战
-            AddTranslation("MISC_086", "Taunting Challenge", "嘲讽角竞");
+            AddTranslation("MISC_086", "Taunting Challenge", "讽之角竞");
             // 在凯茜模组中通关挑战关卡4。
             AddTranslation("MISC_981", "Clear Challenge Level 4 in Kaycee's Mod.", "于凯茜之补缀通角竞之阶4。");
             // 挑战之吼

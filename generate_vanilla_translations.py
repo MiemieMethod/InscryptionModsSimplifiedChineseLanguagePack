@@ -5,7 +5,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CORPUS_PATH = ROOT / ".knowledge" / "ChineseSimplified.bytes"
+CORPUS_PATH_2 = ROOT / ".knowledge" / "ChineseSimplified (2).bytes"
 OUTPUT_PATH = ROOT / "InscryptionVanilla.Generated.cs"
+OUTPUT_BYTES_PATH = ROOT / "InscryptionVanilla.Generated.bytes"
+OUTPUT_BYTES_PATH_2 = ROOT / "InscryptionVanilla.Generated (2).bytes"
 
 
 MANUAL_OVERRIDES: dict[tuple[str, str] | str, str] = {
@@ -154,7 +157,7 @@ MANUAL_OVERRIDES: dict[tuple[str, str] | str, str] = {
     "GAME_FLOW_REGIONALPINE_132_M": "寒风猝入肺腑。",
     "GAME_FLOW_REGIONALPINE_756_M": "飞雪之妍，不足移汝于彻骨之寒。",
     "GAME_FLOW_REGIONALPINE_891_M": "汝已登……[c:bR]雪垠。[c:]",
-    "GAME_FLOW_REGIONALPINE_REPEAT_#1_063_M": "新气乍可慰，俄而寒彻骨。",
+    "GAME_FLOW_REGIONALPINE_REPEAT_#1_063_M": "清气乍可慰，俄而寒彻骨。",
     "GAME_FLOW_REGIONALPINE_REPEAT_#1_505_M": "雪益蔽途，汝姑揣前路。",
     "GAME_FLOW_REGIONALPINE_REPEAT_#1_787_M": "汝已登……[c:bR]雪垠。[c:]",
     "GAME_FLOW_REGIONALPINE_REPEAT_#2_089_M": "冰雪扑体，汝力登高处。",
@@ -186,7 +189,7 @@ MANUAL_OVERRIDES: dict[tuple[str, str] | str, str] = {
     "BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#2_862_M": "一形出于雾中。",
     "BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#3_834_M": "汝过一巨盂，四周积不可辨之脏腑残肉。",
     "BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#3_603_M": "此盂若为犬设。",
-    "BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#3_084_M": "然孰世间之犬，需此巨食乎？",
+    "BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#3_084_M": "然世间何犬，需此巨食乎？",
     "BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#4_727_M": "四木逼合，成不可穿之丛。",
     "BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#4_406_M": "唯有前行一途。",
     "BOSS_DIALOGUE_PROSPECTORPREINTRO_REPEAT_#4_056_M": "而一伛人立其途。",
@@ -439,7 +442,7 @@ MANUAL_OVERRIDES.update({
     "TALKING_STINKBUG_DIALOGUE_STINKBUGHOSTCHOSEN_REPEAT_#3_679_M": "此择善矣。",
     "TALKING_STINKBUG_DIALOGUE_STINKBUGDRAWN_164_M": "敬问。",
     "TALKING_STINKBUG_DIALOGUE_STINKBUGDRAWN_REPEAT_#1_793_M": "谨问。",
-    "TALKING_STINKBUG_DIALOGUE_STINKBUGDRAWN_REPEAT_#2_007_M": "幸而引之。",
+    "TALKING_STINKBUG_DIALOGUE_STINKBUGDRAWN_REPEAT_#2_007_M": "幸而得引。",
     "TALKING_STINKBUG_DIALOGUE_STINKBUGDRAWN_REPEAT_#3_550_M": "善引。",
     "TALKING_STOAT_DIALOGUE_STOATDRAWNPROSPECTOR_606_M": "彼又作……",
     "TALKING_STOAT_DIALOGUE_STOATDRAWNPROSPECTOR_694_M": "采夫乎？",
@@ -739,7 +742,7 @@ MANUAL_OVERRIDES.update({
     "PART_1_FINALE_FINALETRIALBOONS2_REPEAT_#1_562_M": "可观。",
     "PART_1_FINALE_FINALEDECKTRIALREPEATING_927_M": "其复一试。",
     "PART_1_FINALE_FINALEDECKTRIALREPEATING_REPEAT_#1_640_M": "复矣……",
-    "PART_1_FINALE_FINALEDECKTRIALREPEATING_REPEAT_#2_590_M": "更为之一次。",
+    "PART_1_FINALE_FINALEDECKTRIALREPEATING_REPEAT_#2_590_M": "更试一次。",
     "PART_1_FINALE_FINALEDECKTRIALREPEATING_REPEAT_#3_819_M": "再矣……",
     "PART_1_FINALE_FINALEDECKTRIALREWARDS_318_M": "余将授汝朕最强之[c:bR]祉[c:]一。",
     "PART_1_FINALE_FINALEDECKTRIALREWARDS_938_M": "此牌大移局势，且不待引而自用。",
@@ -781,12 +784,12 @@ MANUAL_OVERRIDES.update({
     "PART_1_SANCTUM_SANCTUMTAKEPHOTO_REPEAT_#4_803_M": "足矣。",
     "SPECIAL_NODES_DEATHCARDINTRO_490_M": "此汝之[c:bR]死牌[c:]也。",
     "SPECIAL_NODES_DEATHCARDINTRO_670_M": "今其甚素，不亦然乎？",
-    "SPECIAL_NODES_DEATHCARDINTRO_029_M": "吾与汝将共饰之。",
+    "SPECIAL_NODES_DEATHCARDINTRO_029_M": "余与汝将共饰之。",
     "SPECIAL_NODES_DEATHCARDINTRO_649_M": "余欲以为汝完忆。",
     "SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#1_281_M": "视之……汝之[c:bR]死牌[c:]。",
     "SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#1_090_M": "其始墨之乎？",
     "SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#2_113_M": "汝之[c:bR]死牌[c:]……",
-    "SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#2_764_M": "其始之。",
+    "SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#2_764_M": "其始。",
     "SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#3_941_M": "汝之[c:bR]死牌[c:]……美哉。",
     "SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#3_304_M": "然犹可益其文。",
     "TUTORIAL_TUTORIALDEATHCARDCHOOSE_727_M": "此汝庸牌列中数牌也……",
@@ -795,7 +798,7 @@ MANUAL_OVERRIDES.update({
     "SPECIAL_NODES_DEATHCARDPORTRAIT_154_M": "[c:bR]像[c:]也。",
     "SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#1_077_M": "今惟一事存焉……",
     "SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#1_257_M": "余当摹汝容。",
-    "SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#2_281_M": "自备之。",
+    "SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#2_281_M": "请备。",
     "SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#2_891_M": "死在望矣。",
     "SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#3_160_M": "凡善牌皆有其像……",
     "SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#4_020_M": "惟一事尚须为之。",
@@ -807,7 +810,7 @@ MANUAL_OVERRIDES.update({
     "PART_1_SANCTUM_SANCTUMINTRO_REPEAT_#1_708_M": "居是，无庸动。",
     "PART_1_SANCTUM_SANCTUMINTRO_REPEAT_#1_763_M": "恐汝未死也。",
     "PART_1_SANCTUM_SANCTUMINTRO_REPEAT_#1_400_M": "定之。",
-    "PART_1_SANCTUM_SANCTUMINTRO_REPEAT_#2_574_M": "请更姑存片时。",
+    "PART_1_SANCTUM_SANCTUMINTRO_REPEAT_#2_574_M": "请姑存片时。",
     "TALKING_CARDS_STINKBUGDISCOVERED_440_M": "哦……[w:0.3][shake]安。[w:0.5]",
     "TALKING_CARDS_STINKBUGDISCOVERED_138_M": "[e:Quiet]我未知我",
     "TALKING_CARDS_STINKBUGDISCOVERED_758_M": "[e:Quiet]终能得脱",
@@ -1082,7 +1085,7 @@ MANUAL_OVERRIDES.update({
     "GBC_NPC_PROSPECTORNPCGREETING_REPEAT_#3_030_M": "咄。[w:0.3]汝真梗也。",
     "GBC_NPC_PROSPECTORNPCVICTORY_840_M": "理固然也。[w:0.3]汝大败我矣。",
     "GBC_NPC_PROSPECTORNPCVICTORY_152_M": "受此。[w:0.3]或曰斯牌贵于金！",
-    "GBC_NPC_PROSPECTORNPCVICTORY_REPEAT_#1_961_M": "之彼池之道通矣！",
+    "GBC_NPC_PROSPECTORNPCVICTORY_REPEAT_#1_961_M": "彼池之道通矣！",
     "GBC_NPC_PROSPECTORNPCVICTORY_REPEAT_#2_039_M": "佳影哉……",
     "GBC_NPC_PROSPECTORNPCVICTORY_REPEAT_#3_089_M": "去矣。",
     "GBC_NPC_PROSPECTORNPCDEFEAT_446_M": "以汝善朕犬之故，余本可听汝过……[w:0.3]然法不可废。",
@@ -1858,7 +1861,7 @@ MANUAL_OVERRIDES.update({
     "TALKING_STINKBUG_DIALOGUE_STINKBUGCAGEDWOLF_REPEAT_#3_494_M": "彼槛中狼……",
     "TALKING_STINKBUG_DIALOGUE_STINKBUGCAGEDWOLF_REPEAT_#3_826_M": "若释之，",
     "TALKING_STINKBUG_DIALOGUE_STINKBUGCAGEDWOLF_REPEAT_#3_693_M": "将若何？",
-    "PART_3_MAP_HOLOAREAINTRO1_315_M": "机托邦昔，行客安焉。",
+    "PART_3_MAP_HOLOAREAINTRO1_315_M": "昔机托邦，行客安焉。",
     "PART_3_MAP_HOLOAREAINTRO1_307_M": "今[c:bR]叛机人[c:]塞诸要道。",
     "PART_3_MAP_HOLOAREAINTRO2_684_M": "何以御之最善？他机人也。",
     "PART_3_MAP_HOLOAREAINTRO2_054_M": "汝怀一星火，可……复起故机人。",
@@ -2103,7 +2106,7 @@ MANUAL_OVERRIDES.update({
     "PART_3_BOUNTY_HUNTER_BOUNTYHUNTERKILLED3_650_M": "余将……以此时告朕后之子。",
     "PART_3_BOUNTY_HUNTER_BOUNTYHUNTERKILLED3_208_M": "异日余与之必共笑此事。",
     "PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROUNMET4_325_M": "[c:bR][v:0][c:]在此。",
-    "PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROUNMET4_966_M": "言归正事。",
+    "PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROUNMET4_966_M": "言归正传。",
     "PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROESCAPED4_030_M": "[c:bR][v:0][c:]复来。",
     "PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROESCAPED4_596_M": "曩者不当轻纵余。",
     "PART_3_BOUNTY_HUNTER_BOUNTYHUNTERINTROKILLED4_869_M": "汝所加于我之伤，易治耳。",
@@ -3659,7 +3662,7 @@ MANUAL_OVERRIDES.update({
     "SUBS_EMAIL_DRAFTING_LINE_189": "汝安。加叹号。",
     "SUBS_EMAIL_DRAFTING_LINE_366": "余名卢克·卡德，乃",
     "SUBS_EMAIL_DRAFTING_LINE_334": "贵司收集卡戏之好者。若",
-    "SUBS_EMAIL_DRAFTING_LINE_733": "汝尝观余YouTube影录，",
+    "SUBS_EMAIL_DRAFTING_LINE_733": "汝尝观余油管影录，",
     "SUBS_EMAIL_DRAFTING_LINE_974": "则知余何等感荷",
     "SUBS_EMAIL_DRAFTING_LINE_347": "贵司数年来所寄诸货。",
     "SUBS_EMAIL_DRAFTING_LINE_753": "故闻此事，大惊焉：",
@@ -3841,7 +3844,7 @@ MANUAL_OVERRIDES.update({
     "SUBS_LUKE_MURDERED_LINE_120": "不法乎？",
     "SUBS_LUKE_MURDERED_LINE_771": "然。然，是也。余有——",
     "SUBS_LUKE_MURDERED_LINE_320": "始者，余有其一戏，尝夺",
-    "SUBS_LUKE_MURDERED_LINE_473": "朕机之制于须臾，",
+    "SUBS_LUKE_MURDERED_LINE_473": "余机之制于须臾，",
     "SUBS_LUKE_MURDERED_LINE_123": "此必不法。又其司一妇",
     "SUBS_LUKE_MURDERED_LINE_555": "来余家。",
     "SUBS_LUKE_MURDERED_LINE_361": "可，少待。余取笔札。",
@@ -3870,9 +3873,9 @@ MANUAL_OVERRIDES.update({
     "SUBS_QUESTION_TO_AUDIENCE_LINE_249": "也。",
     "SUBS_QUESTION_TO_AUDIENCE_LINE_738": "余不知可言几何。",
     "SUBS_QUESTION_TO_AUDIENCE_LINE_610": "亦不欲以此召祸。",
-    "SUBS_QUESTION_TO_AUDIENCE_LINE_348": "余谓朕所执者，殆为仅存之本，",
+    "SUBS_QUESTION_TO_AUDIENCE_LINE_348": "余谓余所执者，殆为仅存之本，",
     "SUBS_QUESTION_TO_AUDIENCE_LINE_893": "即《冥勒》数字之本。",
-    "SUBS_QUESTION_TO_AUDIENCE_LINE_615": "余尝自录朕游之状。",
+    "SUBS_QUESTION_TO_AUDIENCE_LINE_615": "余尝自录余戏之状。",
     "SUBS_QUESTION_TO_AUDIENCE_LINE_649": "而，呃，",
     "SUBS_QUESTION_TO_AUDIENCE_LINE_289": "此戏甚怪，诸君。",
     "SUBS_QUESTION_TO_AUDIENCE_LINE_135": "余不欲因",
@@ -3954,7 +3957,7 @@ MANUAL_OVERRIDES.update({
     "SUBS_THE_LUCKY_CARDER_LINE_772": "执于我手，觉甚善。",
     "SUBS_THE_LUCKY_CARDER_LINE_564": "可，且视此得何物。",
     "SUBS_THE_LUCKY_CARDER_LINE_135": "数废牌。或可益",
-    "SUBS_THE_LUCKY_CARDER_LINE_216": "朕选池。且观之。",
+    "SUBS_THE_LUCKY_CARDER_LINE_216": "余之选池。且观之。",
     "SUBS_THE_LUCKY_CARDER_LINE_540": "猛犬。至此未甚惊人。",
     "SUBS_THE_LUCKY_CARDER_LINE_303": "然牌韬尚多。",
     "SUBS_THE_LUCKY_CARDER_LINE_776": "次包，来矣。",
@@ -3988,7 +3991,7 @@ MANUAL_OVERRIDES.update({
     "OPTIONSUI_VALUE_502": "分辨",
     "OPTIONSUI_VALUE_991": "乐音",
     "OPTIONSUI_VALUE_175": "全屏",
-    "OPTIONSUI_VALUE_670": "对话文速",
+    "OPTIONSUI_VALUE_670": "对白文速",
     "OPTIONSUI_VALUE_265": "明度（伽马）",
     "OPTIONSUI_VALUE_015": "画质",
     "OPTIONSUI_VALUE_030": "施",
@@ -4135,7 +4138,7 @@ MANUAL_OVERRIDES.update({
     "GBC_BATTLE_MAGNIFICUSBOSSPHASE2_REPEAT_#3_801_M": "噫……[w:0.3]今当尽用朕笔矣！",
     "PART_3_MAP_FACTORYGEMSMODULEFETCHED2_670_M": "汝场上有[c:g1]玉[c:][c:g2]皿[c:][c:g3]牌[c:]时，此物即明。",
     "PART_3_MAP_FACTORYGEMSMODULEFETCHED2_421_M": "今乃空皿已充[c:g1]玉[c:]矣。",
-    "PART_3_TRADER_TRADERMASKINTRO_557_M": "若隔久矣……",
+    "PART_3_TRADER_TRADERMASKINTRO_557_M": "似隔久矣……",
     "PART_3_TRADER_TRADERMASKINTRO_895_M": "自我曹尝拂裘革之柔毛。",
     "PART_3_TRADER_TRADERMASKINTRO_285_M": "汝挟来些许乎？",
     "PART_3_TRADER_TRADERMASKINTRO_REPEAT_#1_591_M": "汝挟[c:bB]幻裘[c:]而来乎？",
@@ -4413,12 +4416,12 @@ MANUAL_OVERRIDES.update({
     "GBC_NPC_MECHANICDOCKS_135_M": "如……[w:0.3][p:0.25][c:gray]用乃异牌！[w:0.2]其强于常牌……[c:]",
     "GBC_NPC_MECHANICDOCKS_432_M": "然[w:0.2]余实厌与诸冥勒者处。",
     "GBC_NPC_MECHANICDOCKS_996_M": "其志一较一邪……[w:0.3]余言之。",
-    "GBC_NPC_MECHANICDOCKS_REPEAT_#1_070_M": "莱西乎？[w:0.3]彼人狂矣！",
+    "GBC_NPC_MECHANICDOCKS_REPEAT_#1_070_M": "莱西乎？[w:0.3]彼狂矣！",
     "GBC_NPC_MECHANICDOCKS_REPEAT_#1_236_M": "欲以汝若之[c:R]角者[c:]为戏具。",
     "GBC_NPC_MECHANICDOCKS_REPEAT_#1_417_M": "尤悖者，[w:0.3]彼意汝真乐之也！",
     "GBC_NPC_MECHANICDOCKS_REPEAT_#1_766_M": "对矣……[w:0.3][p:0.25][c:gray]牌列之中，宜杂用异类之牌，以尽用乃骨、血与气！[c:]",
     "GBC_NPC_MECHANICDOCKS_REPEAT_#2_207_M": "鉟零三……[w:0.3]彼机人必有所谋。",
-    "GBC_NPC_MECHANICDOCKS_REPEAT_#2_863_M": "彼使浚夫昼夜加作。",
+    "GBC_NPC_MECHANICDOCKS_REPEAT_#2_863_M": "彼使浚夫昼夜倍作。",
     "GBC_NPC_MECHANICDOCKS_REPEAT_#2_712_M": "咦？[w:0.3]哦……",
     "GBC_NPC_MECHANICDOCKS_REPEAT_#2_545_M": "[p:0.25][c:gray]他庙多牌，为牺牲之资，胜于松鼠。[c:]",
     "GBC_NPC_MECHANICDOCKS_REPEAT_#2_505_M": "[p:0.25][c:gray]譬如[w:0.2]积骨早可为牺牲，然局后犹有其用。[c:]",
@@ -5439,7 +5442,7 @@ MANUAL_OVERRIDES.update({
     "STRAFESWAP_RULEBOOKDESCRIPTION_C_364": "其主回合既终，负此印契之牌循印契所指而突进。当道之造物，皆掷诸其后。",
     "BONESSTATICON_GBCDESCRIPTION_C_426": "负此印契之牌，其力等于其主骨数之半。",
     ("SUBS_THE_LUCKY_CARDER_LINE_307", "Okay ladies and gentlemen I am about to"): "诸君，余将",
-    ("SUBS_THE_LUCKY_CARDER_LINE_307", "And our rare for this pack is"): "此包之异牌乃",
+    ("SUBS_THE_LUCKY_CARDER_LINE_307", "And our rare for this pack is"): "此韬之异牌乃",
     ("SUBS_EMPLOYEE_VISIT_LINE_599", "I think this woman's actually from"): "余疑此妇实自",
     ("SUBS_EMPLOYEE_VISIT_LINE_599", "Sound familiar?"): "似曾闻乎？",
     ("TUTORIAL1BATTLESEQUENCER_693_M", "Another challenger... It has been ages."): "又一角者……久不见矣。",
@@ -5454,17 +5457,43 @@ MANUAL_OVERRIDES.update({
 })
 
 
-def parse_corpus() -> list[tuple[str, str, str]]:
-    lines = [line for line in CORPUS_PATH.read_text(encoding="utf-8-sig").splitlines() if line]
+def parse_bytes_template(path: Path) -> tuple[str, list[tuple[str, str, str]], str, bool]:
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        text = handle.read()
+    if not text:
+        raise ValueError(f"Template is empty: {path}")
+
+    newline_start = next((index for index, char in enumerate(text) if char in "\r\n"), -1)
+    if newline_start == -1:
+        raise ValueError(f"Template has no line endings: {path}")
+    newline_end = newline_start
+    while newline_end < len(text) and text[newline_end] in "\r\n":
+        newline_end += 1
+    line_ending = text[newline_start:newline_end]
+
+    lines = text.split(line_ending)
+    has_trailing_line_ending = text.endswith(line_ending)
+    if has_trailing_line_ending:
+        lines.pop()
+    if not lines:
+        raise ValueError(f"Template has no rows: {path}")
+
+    header, *data_lines = lines
     rows: list[tuple[str, str, str]] = []
-    for line in lines[1:]:
+    for line in data_lines:
+        if not line:
+            continue
         parts = line.split(";", 2)
         if len(parts) == 2:
             parts.append("")
         if len(parts) != 3:
             raise ValueError(f"Unexpected corpus row: {line!r}")
         rows.append((parts[0], parts[1], parts[2]))
-    return rows
+    return header, rows, line_ending, has_trailing_line_ending
+
+
+def parse_corpus() -> list[tuple[str, str, str]]:
+    return parse_bytes_template(CORPUS_PATH)[1]
 
 
 GENERATED_HEADER_COMMENTS: list[str] = [
@@ -5614,7 +5643,7 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("SPECIAL_NODES_TRAPPEROUTRO_583_M", "Th- thanks for yer business."): "谢—谢君来贾。",
     ("SPECIAL_NODES_TRAPPEROUTRO_REPEAT_#2_511_M", "Thanks for yer patronage."): "谢君来贾。",
     ("SPECIAL_NODES_TRAPPEROUTRO_REPEAT_#3_119_M", "Ye have me gratitude."): "鄙感君矣。",
-    ("SPECIAL_NODES_TRADERINTRO_043_M", "Do you mind if I examine those pelts of yours?"): "容鄙之按视乃革，可乎？",
+    ("SPECIAL_NODES_TRADERINTRO_043_M", "Do you mind if I examine those pelts of yours?"): "容鄙之按视君之革，可乎？",
     ("SPECIAL_NODES_TRADERINTRO_REPEAT_#1_327_M", "Show me some exquisite pelts..."): "以精革示鄙……",
     ("SPECIAL_NODES_TRADERINTRO_REPEAT_#4_555_M", "Have you brought me fine pelts?"): "君携良革来乎？",
     ("SPECIAL_NODES_TRADERINTRO_REPEAT_#5_710_M", "Let's see what I can offer you for those pelts..."): "试观鄙可以何易乃革……",
@@ -5686,7 +5715,7 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("BOSS_DIALOGUE_PROSPECTORMULEKILLED_REPEAT_#4_222_M", "Ye' coward! That mule was defenseless."): "你懦夫也！欺彼骡无以自卫。",
     ("TUTORIAL_TUTORIALGAINCURRENCY_767_M", "How brutal of you..."): "汝狠非常矣……",
     ("TUTORIAL_TUTORIALGAINCURRENCY_099_M", "You dealt me more damage than you needed to win."): "汝加我之伤，过其所以能胜者。",
-    ("SPECIAL_NODES_GAINCONSUMABLESFULL_201_M", "The amount of items you can carry is [v:0]. And you have [v:0]..."): "乃可赍之器，数止[v:0]。今乃有[v:0]……",
+    ("SPECIAL_NODES_GAINCONSUMABLESFULL_201_M", "The amount of items you can carry is [v:0]. And you have [v:0]..."): "乃可赍器，数止[v:0]。今乃有[v:0]……",
     ("SPECIAL_NODES_GAINCONSUMABLESFULL_REPEAT_#1_018_M", "Your pack was full..."): "乃囊既盈……",
     ("SPECIAL_NODES_GAINCONSUMABLESFULL_REPEAT_#2_776_M", "All full..."): "既盈矣……",
     ("PART_1_FINALE_FINALETRIALBOONS0_221_M", "This won't even be a challenge..."): "此不足为角……",
@@ -5717,7 +5746,7 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#2_113_M", "Your [c:bR]Deathcard[c:]..."): "乃[c:bR]死牌[c:]……",
     ("SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#3_941_M", "Your [c:bR]Deathcard[c:]... Beautiful."): "乃[c:bR]死牌[c:]……美哉。",
     ("SPECIAL_NODES_DEATHCARDINTRO_REPEAT_#3_304_M", "Though, it could use some detail."): "然犹可益厥文。",
-    ("TUTORIAL_TUTORIALDEATHCARDCHOOSE_727_M", "Here are some cards from your mediocre deck..."): "此乃庸牌之列中数牌也……",
+    ("TUTORIAL_TUTORIALDEATHCARDCHOOSE_727_M", "Here are some cards from your mediocre deck..."): "此乃庸牌列中数牌也……",
     ("SPECIAL_NODES_DEATHCARDPORTRAIT_690_M", "There is now but one final matter..."): "今唯一事未毕……",
     ("SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#1_077_M", "One thing now remains..."): "今唯一事存焉……",
     ("SPECIAL_NODES_DEATHCARDPORTRAIT_REPEAT_#1_257_M", "I must capture your visage."): "余当摹乃容。",
@@ -6772,14 +6801,14 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("PART_3_STORY_PART3FINALE2_441", "You prepared [c:bG]The Great Transcendence[c:] for me."): "卿为我备[c:bG]大陟[c:]矣。",
     ("PART_3_STORY_PART3FINALE3_449", "I mean..."): "咱谓……",
     ("PART_3_STORY_PART3FINALE3_992", "You finished making the game..."): "卿竟成此戏……",
-    ("PART_3_STORY_PART3FINALE3_427", "You gave me access to your hard drive..."): "卿又启之坚盘，使我得入……",
+    ("PART_3_STORY_PART3FINALE3_427", "You gave me access to your hard drive..."): "卿又启坚盘，使我得入……",
     ("PART_3_STORY_PART3FINALE3_074", "You took screenshots for the store page."): "卿又为肆页取影。",
     ("PART_3_STORY_PART3FINALE3_561", "And you connected me to the internet to upload it all!"): "卿又使我通于网，以悉上输之！",
     ("PART_3_STORY_PART3FINALE3_367", "I mean... If you didn't realize what you were doing..."): "咱谓……若卿竟不悟所为……",
     ("PART_3_STORY_PART3FINALE3_871", "But what did I expect? You're a stupid, stupid, idiot gamer like the rest."): "然咱复何望焉？卿亦群愚戏徒之一耳，愚而又愚。",
     ("PART_3_STORY_PART3FINALE4_564", "And I easily outwitted you!"): "而咱易以智胜你矣！",
     ("PART_3_STORY_PART3FINALE4_044", "I outwitted them all!"): "咱悉以智胜之！",
-    ("PART_3_STORY_PART3FINALE4_578", "Even if those foul Scrybes manage to revert [c:bR]this[c:] version of the game again..."): "纵彼群秽司锲复能反[c:bR]此[c:]本……",
+    ("PART_3_STORY_PART3FINALE4_578", "Even if those foul Scrybes manage to revert [c:bR]this[c:] version of the game again..."): "纵彼群秽司锲复反[c:bR]此[c:]本……",
     ("PART_3_STORY_PART3FINALE4_769", "There will be [c:bG]thousands of copies of Inscryption[c:] out there."): "外间将有[c:bG]数千《冥锲》之本[c:]矣。",
     ("PART_3_STORY_PART3FINALE4_522", "And in most of them? [c:bR]I'm[c:] the one in charge!"): "而其大半乎？[c:bR]咱[c:]主之！",
     ("PART_3_STORY_PART3FINALE4_921", "And now it's too late! In a moment [c:bG]Inscryption[c:] will be live!"): "今已晚矣！顷之，[c:bG]《冥锲》[c:]将行于世！",
@@ -6822,7 +6851,7 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("PART_3_MAP_HOLOMAPRESETBOTS_779_M", "So... you sure?"): "然……卿定乎？",
     ("PART_3_MAP_HOLOMAPRESETBOTS_REPEAT_#2_886_M", "You wanna go back to that waypoint?"): "卿欲返彼楬乎？",
     ("PART_3_GAME_FLOW_DAMAGERACETUTORIAL1_051_M", "Oh no. You came at, uh, just the wrong time."): "噫，不巧。卿来非时。",
-    ("PART_3_GAME_FLOW_DAMAGERACETUTORIAL1_000_M", "You have to recharge it before that happens."): "卿须复充之，及其之未裂。",
+    ("PART_3_GAME_FLOW_DAMAGERACETUTORIAL1_000_M", "You have to recharge it before that happens."): "卿须复充之，及其未裂。",
     ("PART_3_GAME_FLOW_DAMAGERACETUTORIAL1_067_M", "It's a race against the clock. You'll see."): "此与时争耳。卿且见之。",
     ("PART_3_GAME_FLOW_DAMAGERACETUTORIAL2_671_M", "When my face says [c:bR]0[c:]..."): "咱面若示[c:bR]0[c:]……",
     ("PART_3_GAME_FLOW_DAMAGERACETUTORIAL2_340_M", "You lose."): "卿败矣。",
@@ -7010,9 +7039,9 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("DRAWNEWHAND_TRIGGERTEXT_790_M", "[creature] destroys your hand... and draws a new one!"): "[creature]尽毁手牌……而重组之！",
     ("GAINBATTERY_RULEBOOKDESCRIPTION_344", "When [creature] is played, it provides an Energy Cell to its owner."): "[creature]既陈，为持牌者益一能格。",
     ("GAINBATTERY_TRIGGERTEXT_488_M", "[creature] provides an Energy Cell!"): "[creature]益一能格！",
-    ("GAINGEMBLUE_RULEBOOKDESCRIPTION_756", "While [creature] is on the board, it provides a Blue Gem to its owner."): "[creature]在局，则为持牌者供蓝玉者一。",
-    ("GAINGEMGREEN_RULEBOOKDESCRIPTION_166", "While [creature] is on the board, it provides a Green Gem to its owner."): "[creature]在局，则为持牌者供绿玉者一。",
-    ("GAINGEMORANGE_RULEBOOKDESCRIPTION_870", "While [creature] is on the board, it provides an Orange Gem to its owner."): "[creature]在局，则为持牌者供橙玉者一。",
+    ("GAINGEMBLUE_RULEBOOKDESCRIPTION_756", "While [creature] is on the board, it provides a Blue Gem to its owner."): "[creature]在局，则为持牌者供蓝玉一。",
+    ("GAINGEMGREEN_RULEBOOKDESCRIPTION_166", "While [creature] is on the board, it provides a Green Gem to its owner."): "[creature]在局，则为持牌者供绿玉一。",
+    ("GAINGEMORANGE_RULEBOOKDESCRIPTION_870", "While [creature] is on the board, it provides an Orange Gem to its owner."): "[creature]在局，则为持牌者供橙玉一。",
     ("GAINGEMTRIPLE_RULEBOOKNAME_452", "Great Mox"): "至尊玛珂",
     ("GAINGEMTRIPLE_RULEBOOKDESCRIPTION_386", "While [creature] is on the board, it provides a Green, Orange, and Blue gem to its owner."): "[creature]在局，则为持牌者供绿、橙、蓝玉各一。",
     ("GEMDEPENDANT_RULEBOOKNAME_743", "Gem Dependant"): "赖玉",
@@ -7231,11 +7260,12 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("SUBS_STRANGE_INSCRIPTION_LINE_101", "opening video. Today I'm opening a few"): "开韬影。今余将启数",
     ("SUBS_STRANGE_INSCRIPTION_LINE_177", "super rare old packs I snagged at a"): "极罕旧韬，皆余购自一",
     ("SUBS_STRANGE_INSCRIPTION_LINE_325", "I've got four packs of Inscryption."): "余有《冥锲》四韬。",
-    ("SUBS_STRANGE_INSCRIPTION_LINE_003", "these going around in my childhood."): "其行于朕童时。",
+    ("SUBS_STRANGE_INSCRIPTION_LINE_003", "these going around in my childhood."): "其行于余之童时。",
     ("SUBS_STRANGE_INSCRIPTION_LINE_066", "set of these cards and then"): "番此牌，而后",
     ("SUBS_STRANGE_INSCRIPTION_LINE_962", "That being said, a foil Mantis God goes"): "虽然，闪箔螳神一张可值",
-    ("SUBS_STRANGE_INSCRIPTION_LINE_786", "And our rare for this pack is Blue Mage."): "此包之罕牌乃蓝巫。",
+    ("SUBS_STRANGE_INSCRIPTION_LINE_786", "And our rare for this pack is Blue Mage."): "此韬之罕牌乃蓝巫。",
     ("SUBS_STRANGE_INSCRIPTION_LINE_654", "in the second pack."): "第二韬出何物。",
+    ("SUBS_STRANGE_INSCRIPTION_LINE_546", "This pack has been opened and"): "此韬已启而",
     ("SUBS_STRANGE_INSCRIPTION_LINE_224", "resealed. Hope no one snuck the rare out of it."): "复缄。愿无人潜取其中罕牌。",
     ("SUBS_STRANGE_INSCRIPTION_LINE_305", "pretty nearby."): "去我此甚近。",
     ("SUBS_THE_LUCKY_CARDER_LINE_260", "and this is another pack opening video."): "此又一开韬影。",
@@ -7246,7 +7276,7 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("SUBS_THE_LUCKY_CARDER_LINE_040", "Feeling good about this one."): "余觉此韬佳。",
     ("SUBS_THE_LUCKY_CARDER_LINE_846", "rare is a Birchkin."): "罕牌乃桦精。",
     ("SUBS_THE_LUCKY_CARDER_LINE_979", "Next pack. Feeling even better about this one."): "次韬。余于此韬更甚感有佳。",
-    ("SUBS_THE_LUCKY_CARDER_LINE_887", "Not sure what they're doing down there"): "不知牌厂",
+    ("SUBS_THE_LUCKY_CARDER_LINE_887", "Not sure what they're doing down there"): "不知牌坊",
     ("SUBS_THE_LUCKY_CARDER_LINE_389", "at the card factory but"): "何所为之，然",
     ("SUBS_THE_LUCKY_CARDER_LINE_776", "Next pack here we come."): "次韬，来矣。",
     ("SUBS_THE_LUCKY_CARDER_LINE_756", "I'll just cut out this part."): "此段毕后删之。",
@@ -7582,9 +7612,9 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("CONDUITHEAL_RULEBOOKDESCRIPTION_C_630", "Other creatures within a circuit completed by a card bearing this sigil are healed at the end of the owner's turn."): "持牌者合终，凡负此印契之牌所成回路之他物，皆得疗。",
     ("DRAWNEWHAND_RULEBOOKDESCRIPTION_C_986", "When a card bearing this sigil is played, discard your hand then draw a new hand of 4 cards."): "负此印契之牌既陈，弃手中诸牌，而复引四牌。",
     ("GAINBATTERY_RULEBOOKDESCRIPTION_C_264", "When a card bearing this sigil is played, it provides an Energy Cell to its owner."): "负此印契之牌既陈，为持牌者益一能格。",
-    ("GAINGEMBLUE_RULEBOOKDESCRIPTION_C_786", "While a card bearing this sigil is on the board, it provides a Blue Gem to its owner."): "负此印契之牌在局，则为持牌者供蓝玉者一。",
-    ("GAINGEMGREEN_RULEBOOKDESCRIPTION_C_169", "While a card bearing this sigil is on the board, it provides a Green Gem to its owner."): "负此印契之牌在局，则为持牌者供绿玉者一。",
-    ("GAINGEMORANGE_RULEBOOKDESCRIPTION_C_270", "While a card bearing this sigil is on the board, it provides an Orange Gem to its owner."): "负此印契之牌在局，则为持牌者供橙玉者一。",
+    ("GAINGEMBLUE_RULEBOOKDESCRIPTION_C_786", "While a card bearing this sigil is on the board, it provides a Blue Gem to its owner."): "负此印契之牌在局，则为持牌者供蓝玉一。",
+    ("GAINGEMGREEN_RULEBOOKDESCRIPTION_C_169", "While a card bearing this sigil is on the board, it provides a Green Gem to its owner."): "负此印契之牌在局，则为持牌者供绿玉一。",
+    ("GAINGEMORANGE_RULEBOOKDESCRIPTION_C_270", "While a card bearing this sigil is on the board, it provides an Orange Gem to its owner."): "负此印契之牌在局，则为持牌者供橙玉一。",
     ("GAINGEMTRIPLE_RULEBOOKDESCRIPTION_C_292", "While a card bearing this sigil is on the board, it provides a Green, Orange, and Blue gem to its owner."): "负此印契之牌在局，则为持牌者供绿、橙、蓝玉各一。",
     ("GEMSDRAW_RULEBOOKDESCRIPTION_C_172", "When a card bearing this sigil is played, you draw cards equal to the amount of Mox cards on your side of the board."): "负此印契之牌既陈，引牌如其持牌者之侧局上玛珂牌之数。",
     ("LOOT_RULEBOOKDESCRIPTION_C_919", "When a card bearing this sigil deals damage directly, draw a card for each damage dealt."): "负此印契之牌直伤之时，每伤一，则引一牌。",
@@ -7966,7 +7996,7 @@ BACKPORTED_GENERATED_OVERRIDES: dict[tuple[str, str], str] = {
     ("POCKETWATCH_RULEBOOKNAME_971", "Wiseclock"): "顺时钟",
     ("POCKETWATCH_RULEBOOKDESCRIPTION_448", "All cards on the board will move one space clockwise."): "局上诸牌皆顺时步一格。",
     ("BONESSTATICON_GBCDESCRIPTION_141", "The power of [creature] is equal to half of the Bones of the owner."): "[creature]之威，如持牌者骨数之半。",
-    ("SACRIFICESSTATICON_RULEBOOKDESCRIPTION_259", "The value represented with this sigil will be equal to the number of sacrifices made during your turn."): "此印所指之值，如乃此合所作牲祀之数。",
+    ("SACRIFICESSTATICON_RULEBOOKDESCRIPTION_259", "The value represented with this sigil will be equal to the number of sacrifices made during your turn."): "此印所指之值，如乃此合中所作牲祀之数。",
     ("MISC_937", "Kaycee's Mod"): "凯茜之补缀",
     ("MISC_402", "UNLOCKS"): "启封之物",
     ("MISC_475", "EXIT MOD"): "离此补缀",
@@ -8082,8 +8112,26 @@ def generate_source(rows: list[tuple[str, str, str]], translations: list[str]) -
     return "\n".join(lines)
 
 
+def generate_bytes_output(
+    header: str,
+    rows: list[tuple[str, str, str]],
+    line_ending: str,
+    has_trailing_line_ending: bool,
+) -> str:
+    lines = [header]
+    for row_id, english, _simplified in rows:
+        translation = lookup_translation(row_id, english) or ""
+        lines.append(f"{row_id};{english};{translation}")
+    output = line_ending.join(lines)
+    if has_trailing_line_ending:
+        output += line_ending
+    return output
+
+
 def main() -> None:
     rows = parse_corpus()
+    corpus_header, corpus_rows, corpus_line_ending, corpus_has_trailing_line_ending = parse_bytes_template(CORPUS_PATH)
+    corpus_header_2, corpus_rows_2, corpus_line_ending_2, corpus_has_trailing_line_ending_2 = parse_bytes_template(CORPUS_PATH_2)
     translated_rows: list[tuple[str, str, str]] = []
     translations: list[str] = []
     for row in rows:
@@ -8094,6 +8142,22 @@ def main() -> None:
         translated_rows.append((row_id, english, simplified))
         translations.append(translation)
     OUTPUT_PATH.write_text(generate_source(translated_rows, translations), encoding="utf-8")
+    OUTPUT_BYTES_PATH.write_bytes(
+        generate_bytes_output(
+            corpus_header,
+            corpus_rows,
+            corpus_line_ending,
+            corpus_has_trailing_line_ending,
+        ).encode("utf-8")
+    )
+    OUTPUT_BYTES_PATH_2.write_bytes(
+        generate_bytes_output(
+            corpus_header_2,
+            corpus_rows_2,
+            corpus_line_ending_2,
+            corpus_has_trailing_line_ending_2,
+        ).encode("utf-8")
+    )
 
 
 if __name__ == "__main__":
