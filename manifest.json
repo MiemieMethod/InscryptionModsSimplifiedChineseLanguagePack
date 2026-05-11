@@ -1,8 +1,8 @@
 {
 	"name": "Classic_Chinese_Language_Pack_for_Mods",
-	"version_number": "1.6.7",
+	"version_number": "1.0.0",
 	"website_url": "https://github.com/MiemieMethod/InscryptionModsSimplifiedChineseLanguagePack",
-	"description": "A Classic Chinese Language Pack Patching for Inscryption and its mods, with characters display fix. 为《冥勒》及厥诸补制文言之补缀，并正字形阙失之弊。",
+	"description": "A Classic Chinese Language Pack Patching for Inscryption and its mods, with characters display fix. 为《冥锲》及厥诸补制文言之补缀，并正字形阙失之弊。",
 	"dependencies": [
 		"API_dev-API-2.23.2"
 	]
