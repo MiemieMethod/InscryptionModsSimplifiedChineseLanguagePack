@@ -30,7 +30,7 @@
 - 植御尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) ≥ 零之七之零
 - 格里魔拉补拓 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) ≥ 一之零之五
 - 格里魔拉博戏拓 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) ≥ 一之零之一
-- 鉟零三拓包其三 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) ≥ 一之零之零
+- 鉟零三拓韬其三 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) ≥ 一之零之零
 - 毕提之试 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) ≥ 五之三之零
 - 唯革 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) ≥ 一之零之零
 - 亡牌之试 [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) ≥ 一之零之一

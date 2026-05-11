@@ -9,4 +9,4 @@ packages/*
 *.sln.DotSettings.user
 *.csproj.user
 
-.knowledge/
+.knowledge/zi/

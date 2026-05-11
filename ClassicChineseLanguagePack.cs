@@ -172,11 +172,12 @@ namespace ClassicChineseLanguagePack
         }
     }
 
-    public class InscryptionVanilla
+    public static partial class InscryptionVanilla
     {
         public static void RegisterTranslations()
         {
             Debug.Log("Registering Translations for Inscryption");
+            RegisterGeneratedTranslations();
         }
     }
 }
