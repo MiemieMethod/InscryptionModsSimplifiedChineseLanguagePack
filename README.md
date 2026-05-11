@@ -64,6 +64,9 @@ Current Supportted Mods:
     - [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
     - [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) >= 1.6.1
     - [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
+    - [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
+    - [The Beast Boss Battle](https://thunderstore.io/c/inscryption/p/Team_Isaacryption/The_Beast_Boss_Battle/) >= 1.0.2
+    - [FiveNightsAtInscryption](https://thunderstore.io/c/inscryption/p/Cevin2006/FiveNightsAtInscryption/) >= 0.1.0
 - More Adding...
 
 Please contact me if you find problems.
@@ -153,6 +156,9 @@ Acknowledgement:
     - 星际争霸卡包 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
     - 来自黑暗的传说 [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) >= 1.6.1
     - Gareth模组 [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
+    - Eri的卡牌扩展 [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
+    - 野兽头目战 [The Beast Boss Battle](https://thunderstore.io/c/inscryption/p/Team_Isaacryption/The_Beast_Boss_Battle/) >= 1.0.2
+    - 邪恶冥刻的的五夜后宫 [FiveNightsAtInscryption](https://thunderstore.io/c/inscryption/p/Cevin2006/FiveNightsAtInscryption/) >= 0.1.0
 - 正在加入更多……
 
 如果有任何问题请联系我修复。

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.8
+
+Add supports for Eri_Card_Expansion-2.0.2, TheBeastBossBattle-1.0.2, FiveNightsAtInscryption-0.1.0.
+
 ## 1.6.7
 
 Fix a fatal error.
