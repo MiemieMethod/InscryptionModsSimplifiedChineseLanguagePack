@@ -2,9 +2,9 @@
 
 （请勿将本文言汉化包与[简体中文汉化包](https://thunderstore.io/c/inscryption/p/MiemieMethod/Simplified_Chinese_Language_Pack_for_Mods/)一同使用！）
 
-夫此缀者，乃为《冥勒》及诸补缀制文言言语之补，兼正字形阙失之弊。
+夫此缀者，乃为《冥锲》及诸补缀制文言言语之补，兼正字形阙失之弊。
 
-今唯原本《冥勒》得补。诸补缀之言亦皆将至。
+今唯原本《冥锲》得补。诸补缀之言亦皆将至。
 
 <!--
 
@@ -67,7 +67,7 @@
 - 地下传说补 [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) ≥ 一之二之二
 - 亡魂复生补 [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) ≥ 零之零之十九
 - 松鼠爆弹补 [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) ≥ 一之一之一
-- 松冥勒 [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) ≥ 一之二之一
+- 松冥锲 [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) ≥ 一之二之一
 - 星海牌韬 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) ≥ 一之零之二
 - 暗渊传说 [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) ≥ 一之六之一
 - 加雷思补 [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) ≥ 二之零之零
