@@ -7278,6 +7278,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Interesting. The [c:G]brain[c:] is still intact.", "有意思。[c:G]核心[c:]还完好无损。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Perhaps you can make use of that.", "也许你能派上用场。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Do ye...Do ye got any [c:G]GOLD[c:] on ye??", "你……你身上带[c:G]金子[c:]了吗？？", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Do ye...Do ye got any [c:G]GOLD[c:] on ye?", "你……你身上带[c:G]金子[c:]了吗？", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I sure ye do, I can smell it!", "我敢打赌你有，我都闻到味儿了！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I can make some pretty lookin' bots out o' that there gold.", "我能用那些金子给你造几个漂亮的小机器人。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Talk to me again, I'll fix it right up for ye.", "再跟我聊一次，立马给你整好。", Language.ChineseSimplified);
