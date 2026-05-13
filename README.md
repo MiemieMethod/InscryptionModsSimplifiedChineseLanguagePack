@@ -13,64 +13,67 @@
 ## 叙事之补
 - 格里魔拉补 [Grimora Mod](https://thunderstore.io/c/inscryption/p/Arackulele/GrimoraMod/) ≥ 七之六之四
 - 蔓尼菲科补 [Magnificus Mod](https://thunderstore.io/c/inscryption/p/Silenceman/Magnificus_Mod/) ≥ 三之六之二
-- 凯西补内之鉟零三 [P03 In Kaycees Mod](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_In_Kaycees_Mod/) ≥ 五之零之四十二
+- 凯西补内之鉟〇三 [P03 In Kaycees Mod](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_In_Kaycees_Mod/) ≥ 五之〇之四十二
 
 ## 辅弼之补
 - [API](https://thunderstore.io/c/inscryption/p/API_dev/API/) ≥ 二之二十三之二
-- 功成录 [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) ≥ 一之零之零
-- 自定副牌 [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) ≥ 二之三之一
+- 功成录 [Achievements](https://thunderstore.io/c/inscryption/p/Infiniscryption/Achievements/) ≥ 一之〇之〇
+- 自定副牌列 [CustomSideDeck](https://thunderstore.io/c/inscryption/p/TVFLabs/CustomSideDeck/) ≥ 二之三之一
 - 牌韬管器API [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) ≥ 一之二之二
-- 新咒术具匣 [New Spell Card Toolkit](https://thunderstore.io/c/inscryption/p/WhistleWind/New_Spell_Card_Toolkit/) ≥ 一之二之五
-- 计命API [Life Cost API](https://thunderstore.io/c/inscryption/p/Void_Slime/Life_Cost_API/) ≥ 四之零之一
+- 新咒具匣 [New Spell Card Toolkit](https://thunderstore.io/c/inscryption/p/WhistleWind/New_Spell_Card_Toolkit/) ≥ 一之二之五
+- 计命API [Life Cost API](https://thunderstore.io/c/inscryption/p/Void_Slime/Life_Cost_API/) ≥ 四之〇之一
 
 ## 印契之补
-- 无名氏之自定印契 [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) ≥ 一之十六之零
-- 印契大全 [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) ≥ 三之零之六
+- 无名氏之自定印契 [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) ≥ 一之十六之〇
+- 印契大全 [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) ≥ 三之〇之六
 - 毕提之印 [BittysSigils](https://thunderstore.io/c/inscryption/p/bitty45/BittysSigils/) ≥ 二之一之二
 - 风笛异印 [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) ≥ 一之一之二
-- 鉟零三自定印契 [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) ≥ 一之一之十六
-- 万量印契 [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) ≥ 二之七之零
+- 鉟〇三自定印契 [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) ≥ 一之一之十六
+- 万量印契 [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) ≥ 二之七之〇
 
 ## 戏法之补
 - 风笛脑叶补 [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) ≥ 二之一之一
-- 植御尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) ≥ 零之七之零
-- 格里魔拉补拓 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) ≥ 一之零之五
-- 格里魔拉博戏拓 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) ≥ 一之零之一
-- 鉟零三拓韬其三 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) ≥ 一之零之零
-- 毕提之试 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) ≥ 五之三之零
-- 唯革 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) ≥ 一之零之零
-- 亡牌之试 [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) ≥ 一之零之一
-- 永寂 [PermaDeath](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/PermaDeath/) ≥ 一之零之四
-- KCM之椎 [KCMHammer](https://thunderstore.io/c/inscryption/p/TVFLabs/KCMHammer/) ≥ 一之零之一
-- 良图腾 [BetterTotems](https://thunderstore.io/c/inscryption/p/TVFLabs/BetterTotems/) ≥ 一之零之零
-- 目与匕 [Eye And Dagger](https://thunderstore.io/c/inscryption/p/Void_Slime/Eye_And_Dagger/) ≥ 一之二之零
-- 减副牌 [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) ≥ 一之零之二
+- 植御尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) ≥ 〇之七之〇
+- 格里魔拉补拓 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) ≥ 一之〇之五
+- 格里魔拉博戏拓 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) ≥ 一之〇之一
+- 鉟〇三拓韬其三 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) ≥ 一之〇之〇
+- 毕提之角竞 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) ≥ 五之三之〇
+- 唯革 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) ≥ 一之〇之〇
+- 亡牌角竞 [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) ≥ 一之〇之一
+- 永寂 [PermaDeath](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/PermaDeath/) ≥ 一之〇之四
+- KCM之椎 [KCMHammer](https://thunderstore.io/c/inscryption/p/TVFLabs/KCMHammer/) ≥ 一之〇之一
+- 良图腾 [BetterTotems](https://thunderstore.io/c/inscryption/p/TVFLabs/BetterTotems/) ≥ 一之〇之〇
+- 目与匕 [Eye And Dagger](https://thunderstore.io/c/inscryption/p/Void_Slime/Eye_And_Dagger/) ≥ 一之二之〇
+- 减副牌 [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) ≥ 一之〇之二
 - 诅 [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) ≥ 一之一之四
-- 无尽其二章 [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) ≥ 一之三之零
-- TVF之首 [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) ≥ 二之零之零
-- 泽夫之日 [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) ≥ 一之零之零
+- 无尽其二章 [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) ≥ 一之三之〇
+- TVF之首 [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) ≥ 二之〇之〇
+- 泽夫之阳 [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) ≥ 一之〇之〇
 - 原版更易 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) ≥ 一之四之九
-- 凯茜亡殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) ≥ 一之三之七
+- 凯茜死庙 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) ≥ 一之三之七
 - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) ≥ 一之四之五
 - DLC璀璨童谣 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) ≥ 一之一之五
-- 玄术拓 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) ≥ 零之二之零
-- 微调：九首蛇 [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) ≥ 一之零之零
-- 增器 [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) ≥ 零之三之零
-- 龙兽补 [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) ≥ 一之五之零
-- 兽族革 [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) ≥ 三之零之零
-- 微调：空水袭 [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) ≥ 一之一之零
+- 玄术拓 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) ≥ 〇之二之〇
+- 微调：九首蛇 [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) ≥ 一之〇之〇
+- 增器 [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) ≥ 〇之三之〇
+- 龙兽补 [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) ≥ 一之五之〇
+- 兽属革 [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) ≥ 三之〇之〇
+- 微调：空水袭 [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) ≥ 一之一之〇
 - 披萨塔牌 [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) ≥ 一之一之一
 - 戏内制牌枢 [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) ≥ 二之五之二
-- 阿加之蔓尼菲科拓 [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) ≥ 二之零之零
+- 阿加之蔓尼菲科拓 [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) ≥ 二之〇之〇
 - 蔓尼菲科补拓 [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) ≥ 二之二之二
-- 小花补 [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) ≥ 零之零之二
+- 小花补 [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) ≥ 〇之〇之二
 - 地下传说补 [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) ≥ 一之二之二
-- 亡魂复生补 [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) ≥ 零之零之十九
+- 亡魂复生补 [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) ≥ 〇之〇之十九
 - 松鼠爆弹补 [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) ≥ 一之一之一
 - 松冥锲 [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) ≥ 一之二之一
-- 星海牌韬 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) ≥ 一之零之二
+- 星海牌韬 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) ≥ 一之〇之二
 - 暗渊传说 [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) ≥ 一之六之一
-- 加雷思补 [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) ≥ 二之零之零
+- 加雷思补 [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) ≥ 二之〇之〇
+- 艾利牌拓 [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 二之〇之二
+- 兽魁战 [The Beast Boss Battle](https://thunderstore.io/c/inscryption/p/Team_Isaacryption/The_Beast_Boss_Battle/) >= 一之〇之二
+- 《冥锲》之五宿 [FiveNightsAtInscryption](https://thunderstore.io/c/inscryption/p/Cevin2006/FiveNightsAtInscryption/) >= 〇之一之〇
 
 ## 续增未已……
 

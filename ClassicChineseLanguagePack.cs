@@ -177,7 +177,7 @@ namespace ClassicChineseLanguagePack
         public static void RegisterTranslations()
         {
             Debug.Log("Registering Translations for Inscryption");
-            RegisterGeneratedTranslations();
+            RegisterVanillaTranslations();
         }
     }
 }

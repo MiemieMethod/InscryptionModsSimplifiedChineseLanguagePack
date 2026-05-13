@@ -4,7 +4,7 @@ namespace ClassicChineseLanguagePack
 {
     public static partial class InscryptionVanilla
     {
-        private static void RegisterGeneratedTranslations()
+        private static void RegisterVanillaTranslations()
         {
             RegisterContents();
         }
@@ -598,19 +598,19 @@ namespace ClassicChineseLanguagePack
             // 那人苦笑着摇了摇头。
             AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPREINTRO_REPEAT_#3_499_M", "The man grimaced and shook his head.", "其人蹙额摇首。");
             // 抱歉，但今天是[c:bR]你[c:]要提供毛皮嘞。
-            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERINTRO_123_M", "Sorry. But today [c:bR]you[c:] will supply the pelts.", "歉矣。然今日当出革者，乃[c:bR]君[c:]也。");
+            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERINTRO_123_M", "Sorry. But today [c:bR]you[c:] will supply the pelts.", "歉矣。然今当出革者，乃[c:bR]君[c:]也。");
             // 恐怕俺今天必须剥掉[c:bR]你[c:]的皮嘞。
-            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERINTRO_REPEAT_#1_168_M", "I'm afraid I must be skinning [c:bR]you[c:] today.", "恐鄙今日必剥[c:bR]君[c:]之皮也。");
+            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERINTRO_REPEAT_#1_168_M", "I'm afraid I must be skinning [c:bR]you[c:] today.", "恐鄙今之必剥[c:bR]君[c:]之皮也。");
             // [c:bR]你不该来这儿的。[c:]
             AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERINTRO_REPEAT_#2_479_M", "[c:bR]Ye shouldn't have come 'ere.[c:]", "[c:bR]君不当来此。[c:]");
             // 你的皮剥下来应该挺精致的。
-            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERINTRO_REPEAT_#3_773_M", "An exquisite pelt, ye shall make.", "君皮当成精革。");
+            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERINTRO_REPEAT_#3_773_M", "An exquisite pelt, ye shall make.", "君皮今当成精革。");
             // 来交易吧。
-            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPHASE2_753_M", "Let's trade.", "易之。");
+            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPHASE2_753_M", "Let's trade.", "今，易之合。");
             // 上等的毛皮……但循环必须继续。
             AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPREPHASE2_652_M", "Exquisite pelts... But the cycle must continue.", "上革……然其轮轮不可止。");
             // 啊，我的回合就结束了。
-            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPREPHASE2_REPEAT_#1_981_M", "Ah, it is the end of my turn.", "啊，鄙合尽矣。");
+            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPREPHASE2_REPEAT_#1_981_M", "Ah, it is the end of my turn.", "啊，鄙之合尽矣。");
             // 剥皮刀转啊转……
             AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPREPHASE2_REPEAT_#2_024_M", "The skinning knife turns...", "剥刀旋旋矣……");
             // 强大的卡牌……我只接受用最好的毛皮来交换。
@@ -624,7 +624,7 @@ namespace ClassicChineseLanguagePack
             // 真是健壮的造物啊……好好选啊。
             AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPRETRADE_REPEAT_#2_010_M", "Such powerful creatures... Choose wisely.", "此诸物强甚……慎择之。");
             // 如果是我，就不会这样选。
-            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPOSTTRADE_315_M", "I would have chosen differently.", "若鄙，则不然择。");
+            AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPOSTTRADE_315_M", "I would have chosen differently.", "若为鄙，则不然择。");
             // 唔……很好。
             AddTranslation("BOSS_DIALOGUE_TRAPPERTRADERPOSTTRADE_REPEAT_#1_857_M", "Hmmm... Very well.", "唔……可。");
             // 奇怪的选择。
@@ -2046,7 +2046,7 @@ namespace ClassicChineseLanguagePack
             // [e:Quiet]我知道你是想取代蔓尼菲科，[w:0.3]但[w:0.3]我只跟你说哦……
             AddTranslation("GBC_NPC_GRIMORAVICTORY_043_M", "[e:Quiet]I see that it is your ambition to replace Magnificus but,[w:0.3] well,[w:0.3] between you and I...", "[e:Quiet]奴知乃志在易蔓尼菲科，[w:0.3]然[w:0.3]奴与尔间耳……");
             // [e:Quiet]我知道你是想取代P03，[w:0.3]但[w:0.3]我只跟你说哦……
-            AddTranslation("GBC_NPC_GRIMORAVICTORY_962_M", "[e:Quiet]Your ambition is to replace P03 but,[w:0.3] well,[w:0.3] between you and I...", "[e:Quiet]奴知乃志在易鉟零三，[w:0.3]然[w:0.3]奴与尔间耳……");
+            AddTranslation("GBC_NPC_GRIMORAVICTORY_962_M", "[e:Quiet]Your ambition is to replace P03 but,[w:0.3] well,[w:0.3] between you and I...", "[e:Quiet]奴知乃志在易鉟〇三，[w:0.3]然[w:0.3]奴与尔间耳……");
             // [e:Quiet]总有机会[w:0.2]让你改变想法的。
             AddTranslation("GBC_NPC_GRIMORAVICTORY_376_M", "[e:Quiet]There will come an opportunity[w:0.2] to change your mind.", "[e:Quiet]后将有机[w:0.2]使汝之改志。");
             // [e:Quiet]我求你放过我吧。
@@ -2266,7 +2266,7 @@ namespace ClassicChineseLanguagePack
             // 你现在站在你最强大的对手面前：[w:0.3][shake:0.8][c:R]莱西，[w:0.3]野兽冥刻者[c:]。
             AddTranslation("GBC_NPC_LESHYGBCINTRO_147_M", "You found yourself standing before your ultimate match:[w:0.3][shake:0.8][c:R] Leshy,[w:0.3] Scrybe of Beasts[c:].", "今汝立于至敌之前：[w:0.3][shake:0.8][c:R]莱西，[w:0.3]兽之司锲[c:]。");
             // 你想要取代P03？[w:0.3]很好。[w:0.3]但是[w:0.2]你得先打败我，[w:0.3]才能有这个机会。
-            AddTranslation("GBC_NPC_LESHYGBCINTRO_156_M", "Your ambition is to replace P03?[w:0.3] Good.[w:0.3] Though[w:0.2] if you do not defeat me,[w:0.3] you will not get that chance.", "汝志在代鉟零三乎？[w:0.3]善。[w:0.3]然[w:0.2]不胜我，[w:0.3]则无由焉。");
+            AddTranslation("GBC_NPC_LESHYGBCINTRO_156_M", "Your ambition is to replace P03?[w:0.3] Good.[w:0.3] Though[w:0.2] if you do not defeat me,[w:0.3] you will not get that chance.", "汝志在代鉟〇三乎？[w:0.3]善。[w:0.3]然[w:0.2]不胜我，[w:0.3]则无由焉。");
             // 你就只想打败我？[w:0.3]愚蠢。[w:0.3]就算[w:0.2]你撞了大运，[w:0.2]这次打败了我……
             AddTranslation("GBC_NPC_LESHYGBCINTRO_226_M", "Your ambition is to defeat me?[w:0.3] Foolish.[w:0.3] Even if,[w:0.2] by some odd luck,[w:0.2] you defeat me now...", "汝志但在胜我乎？[w:0.3]愚矣。[w:0.3]纵[w:0.2]偶以幸，[w:0.2]今胜我……");
             // 你[shake:1]还是[w:0.3]需要再击败我一次……[w:0.3]也就是在[c:R]最终对决[c:]中。
@@ -2362,7 +2362,7 @@ namespace ClassicChineseLanguagePack
             // 其他冥刻者也是这么轻易就打败你了吗？
             AddTranslation("GBC_NPC_LESHYGBCDEFEATED_REPEAT_#2_660_M", "Do you roll over this easily for the other Scrybes?", "汝于他之司锲，亦若是易于败乎？");
             // 想挑战P03，你需要变得更强才行。
-            AddTranslation("GBC_NPC_LESHYGBCDEFEATED_REPEAT_#2_028_M", "Perhaps you would fare better against P03.", "若与鉟零三角，或尚可也。");
+            AddTranslation("GBC_NPC_LESHYGBCDEFEATED_REPEAT_#2_028_M", "Perhaps you would fare better against P03.", "若与鉟〇三角，或尚可也。");
             // 等你有了更强的牌组再来找我。
             AddTranslation("GBC_NPC_LESHYGBCDEFEATED_REPEAT_#2_054_M", "Return to me with a more powerful deck.", "以更强之牌列复来见我。");
             // [c:F]你输了，[w:0.3]你已被我，[w:0.2][c:R]野兽冥刻者[c:F]所击败。
@@ -2392,19 +2392,19 @@ namespace ClassicChineseLanguagePack
             // [t:0.5]真的[w:0.3]很忙吗？
             AddTranslation("GBC_NPC_INSPECTORGREETING_986_M", "[t:0.5]I'm[w:0.3] very busy here.", "[t:0.5]忙于此乎。");
             // [t:0.5]你说什么？[w:0.4]P03对于我的产出不满意？[w:0.5]可[w:0.3]我不过是个检查员罢了。
-            AddTranslation("GBC_NPC_INSPECTORGREETING_233_M", "[t:0.5]What?[w:0.4] P03 isn't happy with my output?[w:0.5] But[w:0.3] I am merely the inspector.", "[t:0.5]何？[w:0.4]鉟零三不悦我所出者？[w:0.5]然[w:0.3]我但一察者耳。");
+            AddTranslation("GBC_NPC_INSPECTORGREETING_233_M", "[t:0.5]What?[w:0.4] P03 isn't happy with my output?[w:0.5] But[w:0.3] I am merely the inspector.", "[t:0.5]何？[w:0.4]鉟〇三不悦我所出者？[w:0.5]然[w:0.3]我但一察者耳。");
             // [t:0.5]如果要质量更好的机器人，我得……
             AddTranslation("GBC_NPC_INSPECTORGREETING_744_M", "[t:0.5]To put better bots on the line I would need to...", "[t:0.5]欲使更善之机人下输途，我则须……");
             // [t:0.5]不过你又是哪位？[w:0.3]给P03跑腿传话的吗？
-            AddTranslation("GBC_NPC_INSPECTORGREETING_802_M", "[t:0.5]Just who are you?[w:0.3] To be carrying orders from P03?", "[t:0.5]然你何人也？[w:0.3]乃得衔鉟零三之命而来？");
+            AddTranslation("GBC_NPC_INSPECTORGREETING_802_M", "[t:0.5]Just who are you?[w:0.3] To be carrying orders from P03?", "[t:0.5]然你何人也？[w:0.3]乃得衔鉟〇三之命而来？");
             // [t:0.5]只有那些看起来会打牌的人才能得到P03的青睐。
-            AddTranslation("GBC_NPC_INSPECTORGREETING_597_M", "[t:0.5]P03 would only trust someone with some semblance of card game skill.", "[t:0.5]鉟零三所信，唯稍知牌术者耳。");
+            AddTranslation("GBC_NPC_INSPECTORGREETING_597_M", "[t:0.5]P03 would only trust someone with some semblance of card game skill.", "[t:0.5]鉟〇三所信，唯稍知牌术者耳。");
             // [t:0.5]我是很忙，[w:0.3]但是[w:0.4]我也得确认一下你有没有资格替P03给我传话。
             AddTranslation("GBC_NPC_INSPECTORGREETING_383_M", "[t:0.5]I am very busy.[w:0.3] But[w:0.4] I must know if you are qualified to give me orders.", "[t:0.5]我方甚忙。[w:0.3]然[w:0.4]我须知你有无命我之资。");
             // [t:0.5]很难说你是不是真的够格。
             AddTranslation("GBC_NPC_INSPECTORGREETING_REPEAT_#1_663_M", "[t:0.5]Your qualifications appear dubious.", "[t:0.5]你之资似可疑。");
             // [t:0.5]但让我违背P03直接命令……
-            AddTranslation("GBC_NPC_INSPECTORGREETING_REPEAT_#1_283_M", "[t:0.5]But to disobey an order straight from P03's mic...", "[t:0.5]然逆鉟零三亲命……");
+            AddTranslation("GBC_NPC_INSPECTORGREETING_REPEAT_#1_283_M", "[t:0.5]But to disobey an order straight from P03's mic...", "[t:0.5]然逆鉟〇三亲命……");
             // [t:0.5]好吧。[w:0.3]又绕回来了。
             AddTranslation("GBC_NPC_INSPECTORGREETING_REPEAT_#1_660_M", "[t:0.5]Very well.[w:0.3] Here we go again.", "[t:0.5]诺。[w:0.3]复如此耳。");
             // [t:0.5]我必须确认一下你是不是[w:0.2]真的[w:0.2]够格。
@@ -2412,7 +2412,7 @@ namespace ClassicChineseLanguagePack
             // [t:0.5]你老来分我心，真是越来越麻烦了……
             AddTranslation("GBC_NPC_INSPECTORGREETING_REPEAT_#3_328_M", "[t:0.5]This distraction is becoming troublesome...", "[t:0.5]此扰渐为患矣……");
             // [t:0.5]我早该想到的。[w:0.3]P03怎么可能让你传令呢。
-            AddTranslation("GBC_NPC_INSPECTORDEFEAT_805_M", "[t:0.5]P03 would never trust you with direct orders.[w:0.3] I should have known.", "[t:0.5]鉟零三决不以亲命托你。[w:0.3]我宜早知之。");
+            AddTranslation("GBC_NPC_INSPECTORDEFEAT_805_M", "[t:0.5]P03 would never trust you with direct orders.[w:0.3] I should have known.", "[t:0.5]鉟〇三决不以亲命托你。[w:0.3]我宜早知之。");
             // [t:0.5]真是浪费时间。
             AddTranslation("GBC_NPC_INSPECTORDEFEAT_152_M", "[t:0.5]You have wasted my time.", "[t:0.5]你徒费我时。");
             // [t:0.5]你又[w:0.3]在打扰我的工作。
@@ -2420,15 +2420,15 @@ namespace ClassicChineseLanguagePack
             // [t:0.5]很多机器人我还没检查就过去了。
             AddTranslation("GBC_NPC_INSPECTORDEFEAT_REPEAT_#1_139_M", "[t:0.5]Many bots have now passed uninspected.", "[t:0.5]今多机人过而未察。");
             // [t:0.5]恐怕现在P03[w:0.3]真的[w:0.3]有得抱怨了。
-            AddTranslation("GBC_NPC_INSPECTORDEFEAT_REPEAT_#1_312_M", "[t:0.5]I fear P03 will[w:0.3] actually[w:0.3] have something to complain about now.", "[t:0.5]恐今鉟零三[w:0.3]诚[w:0.3]有辞矣。");
+            AddTranslation("GBC_NPC_INSPECTORDEFEAT_REPEAT_#1_312_M", "[t:0.5]I fear P03 will[w:0.3] actually[w:0.3] have something to complain about now.", "[t:0.5]恐今鉟〇三[w:0.3]诚[w:0.3]有辞矣。");
             // [t:0.5]行吧。[w:0.3]你最好真的是给P03带话的。
-            AddTranslation("GBC_NPC_INSPECTORVICTORY_039_M", "[t:0.5]Oh dear.[w:0.3] Your message from P03 must indeed be genuine.", "[t:0.5]噫。[w:0.3]你所衔鉟零三之言，乃真矣。");
+            AddTranslation("GBC_NPC_INSPECTORVICTORY_039_M", "[t:0.5]Oh dear.[w:0.3] Your message from P03 must indeed be genuine.", "[t:0.5]噫。[w:0.3]你所衔鉟〇三之言，乃真矣。");
             // [t:0.5]我说过了，[w:0.3]我只是个检查员。[w:0.3]既不是工程师，[w:0.3]也不搞设计。
             AddTranslation("GBC_NPC_INSPECTORVICTORY_006_M", "[t:0.5]As I mentioned,[w:0.3] I am a mere inspector.[w:0.3] Not an engineer,[w:0.3] not a designer.", "[t:0.5]如我所言，[w:0.3]我但一察者耳。[w:0.3]非工师，[w:0.3]非设者。");
             // [t:0.5]我没法送全新的机器人下去。[w:0.3]但是……[w:0.3]我可以把自己送下去。
             AddTranslation("GBC_NPC_INSPECTORVICTORY_220_M", "[t:0.5]I cannot send new bots down the line.[w:0.3] But I...[w:0.3] I can send myself.", "[t:0.5]我不能遣新机人下输途。[w:0.3]然我……[w:0.3]我可自投输途。");
             // [t:0.5]能为P03全心全意地效力是我的荣幸。[w:0.3]很高兴见到你，[w:0.3]陌生人。
-            AddTranslation("GBC_NPC_INSPECTORVICTORY_002_M", "[t:0.5]I am proud to have served P03 faithfully.[w:0.3] Well met,[w:0.3] stranger.", "[t:0.5]得忠事鉟零三，我甚荣之。[w:0.3]幸会，[w:0.3]客子。");
+            AddTranslation("GBC_NPC_INSPECTORVICTORY_002_M", "[t:0.5]I am proud to have served P03 faithfully.[w:0.3] Well met,[w:0.3] stranger.", "[t:0.5]得忠事鉟〇三，我甚荣之。[w:0.3]幸会，[w:0.3]客子。");
             // [t:0.5][e:Surprise][c:R]让！我！出！去！[shake:1][end]
             AddTranslation("GBC_NPC_SMELTERGREETING_659_M", "[t:0.5][e:Surprise][c:R]LET ME OUT[shake:1][end]", "[t:0.5][e:Surprise][c:R]纵！吾！出！[shake:1][end]");
             // 哈[w:0.2]哈[w:0.3]哈哈哈[w:0.2]哈[w:0.2]哈[w:0.4]呃……[w:0.4]那是什么？
@@ -2464,7 +2464,7 @@ namespace ClassicChineseLanguagePack
             // 打得不错。[w:0.3]现在，[w:0.2]来说说，[w:0.3]你想说什么来着？ 
             AddTranslation("GBC_NPC_SMELTERVICTORY_934_M", "Excellent battle.[w:0.3] Now,[w:0.2] with that aside,[w:0.3] what did you come to tell me? ", "此战善矣。[w:0.3]今，[w:0.2]姑置偶工，[w:0.3]您来告偶何事？");
             // P03希望能有更好的机器人……[w:0.3]这很难。[w:0.3]你也看到了，[w:0.3]我会熔炼金属，[w:0.3]但不会编程。
-            AddTranslation("GBC_NPC_SMELTERVICTORY_619_M", "P03 wishes for better bots for his scanner...[w:0.3] That is difficult.[w:0.3] You see...[w:0.3] I melt the metal.[w:0.3] But I cannot reprogram the stamping machine.", "鉟零三欲为其之省器得益善之机人……[w:0.3]此难矣。[w:0.3]您亦见之……[w:0.3]偶能销金。[w:0.3]然不能更易印机之数。");
+            AddTranslation("GBC_NPC_SMELTERVICTORY_619_M", "P03 wishes for better bots for his scanner...[w:0.3] That is difficult.[w:0.3] You see...[w:0.3] I melt the metal.[w:0.3] But I cannot reprogram the stamping machine.", "鉟〇三欲为其之省器得益善之机人……[w:0.3]此难矣。[w:0.3]您亦见之……[w:0.3]偶能销金。[w:0.3]然不能更易印机之数。");
             // [t:0.5][e:Surprise][c:R]不！[shake:1][end]
             AddTranslation("GBC_NPC_SMELTERVICTORY_859_M", "[t:0.5][e:Surprise][c:R]NO[shake:1][end]", "[t:0.5][e:Surprise][c:R]弗要！[shake:1][end]");
             // ……[w:0.3]有一个方法，可以送[w:0.3][shake:0.8]新的[w:0.3]机器人下去。
@@ -2472,7 +2472,7 @@ namespace ClassicChineseLanguagePack
             // [t:0.5][e:Surprise][c:R]不不不不！[shake:1][end]
             AddTranslation("GBC_NPC_SMELTERVICTORY_992_M", "[t:0.5][e:Surprise][c:R]NO NO NO NO[shake:1][end]", "[t:0.5][e:Surprise][c:R]弗！弗！弗！弗！[shake:1][end]");
             // [t:0.5]哈哈哈哈！[t:1][w:0.5][shake:1]是的！[w:0.3]为了P03！
-            AddTranslation("GBC_NPC_SMELTERVICTORY_379_M", "[t:0.5]HAHAHAHA![t:1][w:0.5][shake:1] YES![w:0.3] FOR P03!", "[t:0.5]哈哈哈哈！[t:1][w:0.5][shake:1]然！[w:0.3]以奉鉟零三！");
+            AddTranslation("GBC_NPC_SMELTERVICTORY_379_M", "[t:0.5]HAHAHAHA![t:1][w:0.5][shake:1] YES![w:0.3] FOR P03!", "[t:0.5]哈哈哈哈！[t:1][w:0.5][shake:1]然！[w:0.3]以奉鉟〇三！");
             // 听着，[w:0.3]哥们儿，[w:0.3]我知道你是来干嘛的。
             AddTranslation("GBC_NPC_DREDGERGREETING_650_M", "Oy,[w:0.3] mate.[w:0.3] I know what yer 'ere for.", "噫，[w:0.3]喒兄。[w:0.3]喒知亲何为而来。");
             // 你想让我撂白旗是吧？[w:0.3]
@@ -2484,7 +2484,7 @@ namespace ClassicChineseLanguagePack
             // 咱俩倒是能斗一场，[w:0.3]是吧。[w:0.3]你赢了没准还能给你点好玩意儿。
             AddTranslation("GBC_NPC_DREDGERGREETING_785_M", "We can duel.[w:0.3] Aye.[w:0.3] Maybe even give ye somefin' if ye win.", "喒可与亲斗。[w:0.3]如此。[w:0.3]亲若胜，或以一物与亲。");
             // 但我可不能服软认怂。[w:0.3]P03绝对懂的。
-            AddTranslation("GBC_NPC_DREDGERGREETING_706_M", "But I can't be takin' a dive.[w:0.3] P03 will unnerstan'.", "然喒不可自投。[w:0.3]鉟零三必谅之。");
+            AddTranslation("GBC_NPC_DREDGERGREETING_706_M", "But I can't be takin' a dive.[w:0.3] P03 will unnerstan'.", "然喒不可自投。[w:0.3]鉟〇三必谅之。");
             // 嘿，[w:0.3]想再打一次吗？
             AddTranslation("GBC_NPC_DREDGERGREETING_REPEAT_#1_168_M", "Oy,[w:0.3] ye wan't a rematch?", "噫，[w:0.3]亲欲复角乎？");
             // 知道了。
@@ -2548,7 +2548,7 @@ namespace ClassicChineseLanguagePack
             // [c:R][shake:1]嘿！[w:1][c:][w:0.3]那个难道是[w:0.3]……？
             AddTranslation("GBC_NPC_DREDGERVICTORY2_982_M", "[c:R][shake:1]OY![w:1][c:][w:0.3] is that[w:0.3]...?", "[c:R][shake:1]噫！[w:1][c:][w:0.3]彼乃[w:0.3]……？");
             // [c:F][t:1]P03绝对会重赏我的。
-            AddTranslation("GBC_NPC_DREDGERVICTORY2_192_M", "[c:F][t:1]P03's gonna reward me BIG for this 'un.", "[c:F][t:1]鉟零三必以此厚赏喒。");
+            AddTranslation("GBC_NPC_DREDGERVICTORY2_192_M", "[c:F][t:1]P03's gonna reward me BIG for this 'un.", "[c:F][t:1]鉟〇三必以此厚赏喒。");
             // 啊，[w:0.4]扫描仪连上了。[w:0.4]扫描哪张牌好呢……
             AddTranslation("GBC_BATTLE_P03BOSSPRESCANNERCHOOSE_746_M", "Oh.[w:0.4] Scanner's online.[w:0.4] Which card to scan...", "噫。[w:0.4]省器已作。[w:0.4]当省何牌……");
             // [t:1]开个玩笑。[w:0.3][t:5]当然是扫描属性最好的那张了。
@@ -3836,7 +3836,7 @@ namespace ClassicChineseLanguagePack
             // 做你想做的吧，[w:0.3]卑鄙的电脑。
             AddTranslation("GBC_FINALE_PART2FINALEGRIMORACHOSEN2_113_M", "Do what you will,[w:0.3] vile computer.", "任汝所为，[w:0.3]恶机。");
             // 当然。[w:0.3]P03。
-            AddTranslation("GBC_FINALE_PART2FINALELESHYCHOSEN2_052_M", "Of course.[w:0.3] P03.", "固然。[w:0.3]鉟零三。");
+            AddTranslation("GBC_FINALE_PART2FINALELESHYCHOSEN2_052_M", "Of course.[w:0.3] P03.", "固然。[w:0.3]鉟〇三。");
             // 这个合成怪胎根本不懂什么是艺术。也不懂……[w:0.2]不懂……[w:0.2]什么是美！
             AddTranslation("GBC_FINALE_PART2FINALELESHYCHOSEN2_890_M", "This synthetic freak knows nothing of artistry. Of-[w:0.2] of-[w:0.2] aesthetics!", "此合成怪，殊不知艺。亦不……[w:0.2]不……[w:0.2]知雅！");
             // 怪物……[w:0.2]你还是当白鼬比较好……
@@ -4820,7 +4820,7 @@ namespace ClassicChineseLanguagePack
             // 还真是个怪人。
             AddTranslation("PART_3_FACTORY_GOOTELEGRAPHERDEFEATED_980_M", "Such a strange character.", "其人异哉。");
             // 她保有纯粹的好奇心……只可惜P03把她藏得这么深。
-            AddTranslation("PART_3_FACTORY_GOOTELEGRAPHERDEFEATED_975_M", "Her curiosity is so pure... it's a shame that P03 buries her deep.", "其好问之心甚粹……而鉟零三深藏之，可惜也。");
+            AddTranslation("PART_3_FACTORY_GOOTELEGRAPHERDEFEATED_975_M", "Her curiosity is so pure... it's a shame that P03 buries her deep.", "其好问之心甚粹……而鉟〇三深藏之，可惜也。");
             // 但现在我们已经连上网网。
             AddTranslation("PART_3_FACTORY_GOOTELEGRAPHERDEFEATED_591_M", "But now we are connected to The Web.", "然今吾等已通于网矣。");
             // 你应该清楚自己刚刚干了什么吧。
@@ -4844,7 +4844,7 @@ namespace ClassicChineseLanguagePack
             // 听着有点怪哈。
             AddTranslation("PART_3_MAP_HOLOMAPDREDGER_REPEAT_#1_799_M", "Somefin' a little strange fer sure.", "诚稍怪矣。");
             // P03就是让我说话，没错。
-            AddTranslation("PART_3_MAP_HOLOMAPDREDGER_REPEAT_#1_771_M", "P03 let me talk, aye.", "鉟零三使喒得言耳。");
+            AddTranslation("PART_3_MAP_HOLOMAPDREDGER_REPEAT_#1_771_M", "P03 let me talk, aye.", "鉟〇三使喒得言耳。");
             // 但不当个头目吗？连巨型机器人都不行？
             AddTranslation("PART_3_MAP_HOLOMAPDREDGER_REPEAT_#1_740_M", "But not a boss? Not one of 'em Uberbots?", "然不使喒为魁乎？亦不使喒列于魁机人中乎？");
             // 就连莱西都为他兄弟这么做了！
@@ -5352,7 +5352,7 @@ namespace ClassicChineseLanguagePack
             // 多便宜……
             AddTranslation("SPECIAL_NODES_TRAPPERINTROREDUCEDCOST_REPEAT_#4_655_M", "And cheap...", "且贱……");
             // 没错。[w:0.3]我是P03。[w:0.3]懂？
-            AddTranslation("GBC_TUTORIAL_RESOURCETUTORIALENERGY1_288_M", "Yep.[w:0.3] I'm P03.[w:0.3] OK?", "然。[w:0.3]咱乃鉟零三。[w:0.3]可乎？");
+            AddTranslation("GBC_TUTORIAL_RESOURCETUTORIALENERGY1_288_M", "Yep.[w:0.3] I'm P03.[w:0.3] OK?", "然。[w:0.3]咱乃鉟〇三。[w:0.3]可乎？");
             // 你选了我的初始牌组。[w:0.3]那你必须学会如何使用[c:dB]能量[c:]……
             AddTranslation("GBC_TUTORIAL_RESOURCETUTORIALENERGY1_593_M", "You picked my starter deck.[w:0.3] That means you have to learn to use [c:dB]Energy[c:]...", "卿择咱牌之初列。[w:0.3]则须学用[c:dB]能[c:]……");
             // 真的要我和你解释这个吗？
@@ -5406,7 +5406,7 @@ namespace ClassicChineseLanguagePack
             // 我的虫生没有白白浪费。
             AddTranslation("GBC_TUTORIAL_RESOURCETUTORIALBONES_419_M", "My time as an insect was not a total waste.", "奴之为虫，未尽徒然。");
             // 纸上写着：[c:gray]亲爱的格里魔拉，我认为P03的阴谋可能远不止夺权篡位这么简单。
-            AddTranslation("GBC_WORLD_WIZARDTEMPLENOTEDESK_589_M", "The note reads: [c:gray]Dearest Grimora, I believe P03's plot may go far past the extent of a common power grab.", "札曰：[c:gray]格里魔拉吾友，吾谓鉟零三之谋，殆不止寻常夺权而已。");
+            AddTranslation("GBC_WORLD_WIZARDTEMPLENOTEDESK_589_M", "The note reads: [c:gray]Dearest Grimora, I believe P03's plot may go far past the extent of a common power grab.", "札曰：[c:gray]格里魔拉吾友，吾谓鉟〇三之谋，殆不止寻常夺权而已。");
             // [c:gray]事实上，这一“终极冥刻”将酿成大祸，后果不堪设想。
             AddTranslation("GBC_WORLD_WIZARDTEMPLENOTEDESK_860_M", "[c:gray]Indeed, this \"Great Transcendence\" will have catastrophic and unpredictable results.", "[c:gray]诚然，此“大陟”将致大祸，其变莫测。");
             // 纸上文字缺失，结尾戛然而止：[c:gray]我恳请你考虑……[c:]
@@ -6884,7 +6884,7 @@ namespace ClassicChineseLanguagePack
             // 行师走人
             AddTranslation("FAMILY_DISPLAYEDNAME_654", "The Walkers", "行尸");
             // 弗兰肯和斯坦
-            AddTranslation("FRANKNSTEIN_DISPLAYEDNAME_414", "Frank & Stein", "弗兰克与斯坦");
+            AddTranslation("FRANKNSTEIN_DISPLAYEDNAME_414", "Frank & Stein", "弗兰克及斯坦");
             // 幽灵船
             AddTranslation("GHOSTSHIP_DISPLAYEDNAME_368", "Ghost Ship", "鬼舟");
             // 掘墓人
@@ -7016,11 +7016,11 @@ namespace ClassicChineseLanguagePack
             // 错误：100010001110100100010010001
             AddTranslation("COMMANDLINE_PART2FINALE_TEXT_938", "ERROR: 100010001110100100010010001", "误：100010001110100100010010001");
             // 已找到备份：P03.工厂
-            AddTranslation("COMMANDLINE_PART2FINALE_TEXT_006", "BACKUP FOUND: P03.Factory", "副本既得：鉟零三.工肆");
+            AddTranslation("COMMANDLINE_PART2FINALE_TEXT_006", "BACKUP FOUND: P03.Factory", "副本既得：鉟〇三.工肆");
             // 正在载入场景：P03.工厂
-            AddTranslation("COMMANDLINE_PART2FINALE_TEXT_554", "Loading scene: P03.Factory", "惟景之载：鉟零三.工肆");
+            AddTranslation("COMMANDLINE_PART2FINALE_TEXT_554", "Loading scene: P03.Factory", "惟景之载：鉟〇三.工肆");
             // 缺少场景：P03.工厂
-            AddTranslation("COMMANDLINE_PART3FINALE_TEXT_076", "MISSING SCENE: P03.FACTORY", "景缺：鉟零三.工肆");
+            AddTranslation("COMMANDLINE_PART3FINALE_TEXT_076", "MISSING SCENE: P03.FACTORY", "景缺：鉟〇三.工肆");
             // 已找到备份：格里魔拉.地窖
             AddTranslation("COMMANDLINE_PART3FINALE_TEXT_015", "BACKUP FOUND: GRIMORA.Crypt", "副本既得：格里魔拉.冢椁");
             // 正在载入场景：格里魔拉.地窖
@@ -7902,7 +7902,7 @@ namespace ClassicChineseLanguagePack
             // [c:R]莱西[c:]使用[c:R]野生动物照相机[c:]捕捉野兽的样貌……
             AddTranslation("GBC_INTRO_217", "[c:R]Leshy[c:] used his [c:R]wildlife camera[c:] to capture beasts...", "[c:R]莱西[c:]以厥[c:R]野物影器[c:]，取群兽之影……");
             // [c:R]P03[c:]使用[c:R]粒子扫描仪[c:]拷贝机器人的中央处理器……
-            AddTranslation("GBC_INTRO_083", "[c:R]P03[c:] used a [c:R]particle scanner[c:] to copy the CPU's of robots...", "[c:R]鉟零三[c:]以[c:R]微省器[c:]摹机人之中枢……");
+            AddTranslation("GBC_INTRO_083", "[c:R]P03[c:] used a [c:R]particle scanner[c:] to copy the CPU's of robots...", "[c:R]鉟〇三[c:]以[c:R]微省器[c:]摹机人之中枢……");
             // [c:R]蔓尼菲科[c:]则使用[c:R]画笔[c:]绘制他的魔法学徒。
             AddTranslation("GBC_INTRO_206", "And [c:R]Magnificus[c:] used his [c:R]brush[c:] to paint his wizard pupils.", "而[c:R]蔓尼菲科[c:]以厥[c:R]画笔[c:]绘厥巫徒。");
             // 卡牌一经创造，[c:R]冥刻者们[c:]便强化了自身的力量。
@@ -7918,13 +7918,13 @@ namespace ClassicChineseLanguagePack
             // 你的目标是取代蔓尼菲科并成为魔法冥刻者？
             AddTranslation("GBC_STARTING_ISLAND_278_M", "Your ambition is to replace Magnificus and become The Scrybe of Magicks?", "汝志在代蔓尼菲科而为术之司锲乎？");
             // 你的目标是取代P03并成为科技冥刻者？
-            AddTranslation("GBC_STARTING_ISLAND_729_M", "Your ambition is to replace P03 and become The Scrybe of Technology?", "汝志在代鉟零三而为机之司锲乎？");
+            AddTranslation("GBC_STARTING_ISLAND_729_M", "Your ambition is to replace P03 and become The Scrybe of Technology?", "汝志在代鉟〇三而为机之司锲乎？");
             // 选择一套起始手牌来记录你的目标。
             AddTranslation("GBC_STARTING_ISLAND_739_M", "Choose a starting deck to mark your ambition.", "择一初牌列，以表乃志。");
             // 时候到了，挑战者。选出你要取而代之的冥刻者吧。
             AddTranslation("GBC_STARTING_ISLAND_530_M", "It is time, Challenger. Choose the Scrybe that you will replace.", "时至矣，角者。择汝所将代之司锲。");
             // 取代P03并成为科技冥刻者？
-            AddTranslation("GBC_STARTING_ISLAND_720_M", "Replace P03 and become The Scrybe of Technology?", "代鉟零三而为机之司锲乎？");
+            AddTranslation("GBC_STARTING_ISLAND_720_M", "Replace P03 and become The Scrybe of Technology?", "代鉟〇三而为机之司锲乎？");
             // 取代莱西并成为野兽冥刻者？
             AddTranslation("GBC_STARTING_ISLAND_725_M", "Replace Leshy and become The Scrybe of Beasts?", "代莱西而为兽之司锲乎？");
             // 取代蔓尼菲科并成为魔法冥刻者？
@@ -8242,7 +8242,7 @@ namespace ClassicChineseLanguagePack
             // 是啊……或许吧……
             AddTranslation("PART_3_STORY_DREDGINGROOMENCOUNTER5_156", "Yes... Perhaps...", "然……或可……");
             // 或许先等[c:bB]P03[c:]认为自己赢了吧。
-            AddTranslation("PART_3_STORY_DREDGINGROOMENCOUNTER5_211", "Perhaps when [c:bB]P03[c:] believes it has won.", "或待[c:bB]鉟零三[c:]自以为胜时。");
+            AddTranslation("PART_3_STORY_DREDGINGROOMENCOUNTER5_211", "Perhaps when [c:bB]P03[c:] believes it has won.", "或待[c:bB]鉟〇三[c:]自以为胜时。");
             // 那个机器人肯定会得意忘形…… 
             AddTranslation("PART_3_STORY_DREDGINGROOMENCOUNTER5_505", "So jubilant will be that android... ", "彼机人将喜而忘形……");
             // 它将忽略监控摄像头的存在！
@@ -8262,7 +8262,7 @@ namespace ClassicChineseLanguagePack
             // 去吧，[c:bR]挑战者。[c:]陪那台腐朽的机器玩一玩。
             AddTranslation("PART_3_STORY_DREDGINGROOMENCOUNTER7_022_M", "Go now, [c:bR]Challenger.[c:] Indulge that decrepit machine.", "往矣，[c:bR]角者。[c:]姑顺彼朽机。");
             // 让[c:bB]P03[c:]高兴点，然后我就可以消灭它了。
-            AddTranslation("PART_3_STORY_DREDGINGROOMENCOUNTER7_103_M", "Make [c:bB]P03[c:] feel joy so that I may snuff it out.", "使[c:bB]鉟零三[c:]喜，以俟余灭之。");
+            AddTranslation("PART_3_STORY_DREDGINGROOMENCOUNTER7_103_M", "Make [c:bB]P03[c:] feel joy so that I may snuff it out.", "使[c:bB]鉟〇三[c:]喜，以俟余灭之。");
             // 而你，[c:bR]挑战者[c:]，就是个绝佳的干扰。
             AddTranslation("PART_3_STORY_DREDGINGROOMENCOUNTER4P2_375_M", "And you, [c:bR]Challenger[c:] will provide the perfect distraction.", "而汝，[c:bR]角者[c:]，将为绝妙之蔽。");
             // 我看见你下了电梯。
@@ -8734,7 +8734,7 @@ namespace ClassicChineseLanguagePack
             // 对了……[w:0.3][p:0.25][c:gray]你得尽可能在牌组中组合搭配不同类型的卡牌，充分利用骨头、献祭血量和能量！[c:]
             AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#1_766_M", "Oh yeah... [w:0.3][p:0.25][c:gray]Try to use a mix of different types of cards in your deck to fully utilize your Bones, Blood and Energy![c:]", "然矣……[w:0.3][p:0.25][c:gray]牌列之中，宜杂用异类之牌，以尽用乃骨、血与能！[c:]");
             // P03……[w:0.3]那个机器人肯定有什么小九九。
-            AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#2_207_M", "P03...[w:0.3] that bot is planning something alright.", "鉟零三……[w:0.3]彼机人必有所谋。");
+            AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#2_207_M", "P03...[w:0.3] that bot is planning something alright.", "鉟〇三……[w:0.3]彼机人必有所谋。");
             // 它让挖泥工加班加点地工作。
             AddTranslation("GBC_NPC_MECHANICDOCKS_REPEAT_#2_863_M", "It's got The Dredger working overtime.", "彼使浚夫昼夜倍作。");
             // 哈？[w:0.3]哦……
@@ -8968,7 +8968,7 @@ namespace ClassicChineseLanguagePack
             // 卢克·卡德
             AddTranslation("MISC_289", "Luke Carder", "卢克·卡德");
             // P03
-            AddTranslation("MISC_132", "P03", "鉟零三");
+            AddTranslation("MISC_132", "P03", "鉟〇三");
             // 内存/DCIM
             AddTranslation("MISC_558", "Internal Memory / DCIM", "内存/DCIM");
             // 鲜血画家
@@ -9042,7 +9042,7 @@ namespace ClassicChineseLanguagePack
             // 力量平衡
             AddTranslation("MISC_753", "Balance of Power", "力衡");
             // 允许P03获得Inscryption的控制权。
-            AddTranslation("MISC_360", "Allow P03 to gain control of Inscryption.", "听鉟零三得制《冥锲》。");
+            AddTranslation("MISC_360", "Allow P03 to gain control of Inscryption.", "听鉟〇三得制《冥锲》。");
             // 分类归档
             AddTranslation("MISC_133", "Rank and File", "编次");
             // 打败档案保管员。
@@ -9062,7 +9062,7 @@ namespace ClassicChineseLanguagePack
             // 谋杀
             AddTranslation("MISC_446", "Murder", "戕陨");
             // 目睹P03之死。
-            AddTranslation("MISC_236", "Witness the death of P03.", "睹鉟零三之死。");
+            AddTranslation("MISC_236", "Witness the death of P03.", "睹鉟〇三之死。");
             // 绚烂终曲
             AddTranslation("MISC_247", "Dramatic Finale", "剧终");
             // 完成Inscryption的收关任务。
@@ -9082,7 +9082,7 @@ namespace ClassicChineseLanguagePack
             // 被遗忘的传说
             AddTranslation("MISC_783", "Forgotten Lore", "遗闻");
             // 从P03工厂的毛皮商那里获得所有5张卡牌。
-            AddTranslation("MISC_713", "Receive all 5 cards from The Trader in P03's factory.", "尽受鉟零三工厂贾妇之五牌。");
+            AddTranslation("MISC_713", "Receive all 5 cards from The Trader in P03's factory.", "尽受鉟〇三工厂贾妇之五牌。");
             // 残酷报赏
             AddTranslation("MISC_797", "Grim Bounty", "惨赏");
             // 摧毁一张3级赏金猎人卡牌。
@@ -10168,9 +10168,9 @@ namespace ClassicChineseLanguagePack
             // 但我觉得可以。
             AddTranslation("ASCENSION_PIRATESKULLINTRO1_481", "But I'll allow it.", "然余许之。");
             // 又是你？
-            AddTranslation("ASCENSION_PIRATESKULLINTRO1_REPEAT_#1_307", "You again?", "又汝乎？");
+            AddTranslation("ASCENSION_PIRATESKULLINTRO1_REPEAT_#1_307", "You again?", "复汝乎？");
             // 明白了。继续。
-            AddTranslation("ASCENSION_PIRATESKULLINTRO1_REPEAT_#2_283", "I see. Carry on.", "了矣。续行。");
+            AddTranslation("ASCENSION_PIRATESKULLINTRO1_REPEAT_#2_283", "I see. Carry on.", "了矣。且续行。");
             // 咋了？
             AddTranslation("ASCENSION_PIRATESKULLINTRO2_554", "Y-yar?", "呀—呀？");
             // 我了个大柠檬啊……
@@ -10250,7 +10250,7 @@ namespace ClassicChineseLanguagePack
             // 啊哈！你的卡牌都用光了！
             AddTranslation("ASCENSION_PART1CARDSEXHAUSTEDSHIP_758", "Yar! Ye be out of cards!", "呀哈！汝牌尽矣！");
             // 伙计们，全速前进！
-            AddTranslation("ASCENSION_PART1CARDSEXHAUSTEDSHIP_279", "Full speed ahead lads!", "全速前驱，诸子！");
+            AddTranslation("ASCENSION_PART1CARDSEXHAUSTEDSHIP_279", "Full speed ahead lads!", "全速前驱，诸小子！");
             // 呀哈哈！
             AddTranslation("ASCENSION_PIRATESKULLAIMCANNONS_422", "Yar har har!", "呀哈哈！");
             // 给我瞄准……
@@ -10258,7 +10258,7 @@ namespace ClassicChineseLanguagePack
             // 准备好吃炮弹吧！
             AddTranslation("ASCENSION_PIRATESKULLAIMCANNONS_REPEAT_#1_411", "Prepare to meet me cannonballs!", "备受某之炮丸！");
             // 小的们，扶稳瞄好！
-            AddTranslation("ASCENSION_PIRATESKULLAIMCANNONS_REPEAT_#2_220", "Hold steady lads!", "持稳，诸子！");
+            AddTranslation("ASCENSION_PIRATESKULLAIMCANNONS_REPEAT_#2_220", "Hold steady lads!", "持稳，诸小子！");
             // 准备开火！
             AddTranslation("ASCENSION_PIRATESKULLAIMCANNONS_REPEAT_#2_130", "Prepare to fire!", "备发炮！");
             // 我的炮弹像柠檬一样有料。
@@ -10570,7 +10570,7 @@ namespace ClassicChineseLanguagePack
             // 最终我入手了一张流汗巨龙闪卡，但第一场对战却输给了一个举止猥琐的油管播主。那家伙直接在店里用个摇摇晃晃的破三脚架架了台摄像机，大摇大摆地录像！谁允许的啊？！
             AddTranslation("ENTRY8_BODYTEXT2_451", "I ended up ripping a foil Sweaty Dragon but lost the first match to this weird dude who wanted to record it for his YouTube channel. Like he actually brought a camcorder on a shaky looking tripod to the shop! How is that allowed?!", "终得烁龙闪箔一枚，然首战即败于一怪客，彼欲录我对战，以充其油管之影。此人竟携影录之机，支于颤危之脚架，公然入肆！此安得见容哉？！");
             // 今天我搞明白P03究竟发生什么了……是莱西把科技冥刻者直接变成了一张白鼬卡牌。当我在保险箱下面的架子上找到这张牌，并听到这牌说自己是P03还让我帮他时，我当场爆笑出声。我直接把牌给莱西了，他反而没觉得有这么可乐。估计其他冥刻者也是同样的下场吧……虽然我还没见过其他人就是了。
-            AddTranslation("ENTRY9_BODYTEXT1_320", "Today I found out what happened to P03... Leshy turned The Scrybe of Technology into a Stoat card. I found the card on the shelf below the safe and laughed right out loud when it told me it was P03 and needed help. I handed it over to Leshy who was less amused. I guess this is the fate that the other Scrybes met... though I haven't seen them yet.", "今日乃知鉟零三之所终。莱西化此机之司锲为白鼬之牌。余得此牌于匮之下架，彼自陈为鉟零三而求援，余不觉放声大笑。遂以牌奉还莱西，莱西意颇不怿。度其馀司锲亦同此命也……然尚未之见耳。");
+            AddTranslation("ENTRY9_BODYTEXT1_320", "Today I found out what happened to P03... Leshy turned The Scrybe of Technology into a Stoat card. I found the card on the shelf below the safe and laughed right out loud when it told me it was P03 and needed help. I handed it over to Leshy who was less amused. I guess this is the fate that the other Scrybes met... though I haven't seen them yet.", "今日乃知鉟〇三之所终。莱西化此机之司锲为白鼬之牌。余得此牌于匮之下架，彼自陈为鉟〇三而求援，余不觉放声大笑。遂以牌奉还莱西，莱西意颇不怿。度其馀司锲亦同此命也……然尚未之见耳。");
             // 爬行类大放送
             AddTranslation("FREEREPTILES_TITLE_890", "Free Reptiles", "鳞属无直");
             // 蛋
@@ -10616,7 +10616,7 @@ namespace ClassicChineseLanguagePack
             // 骇人的神角畜！它不断增强的力量就算对战终止也不会弱化。
             AddTranslation("HODAG_DESCRIPTION_748", "The hellacious Hodag! Its ever-rising power does not fall after a battle.", "可怖之霍达格！其日增之力，战终亦不坠。");
             // 九头蛇
-            AddTranslation("HYDRA_DISPLAYEDNAME_069", "Hydra", "九头蛇");
+            AddTranslation("HYDRA_DISPLAYEDNAME_069", "Hydra", "九首蛇");
             // 奇怪的蛋
             AddTranslation("HYDRAEGG_DISPLAYEDNAME_435", "Curious Egg", "奇卵");
             // 土卫二十二

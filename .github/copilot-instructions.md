@@ -6,6 +6,12 @@
 
 `.knowledge/ChineseSimplified.bytes`乃《冥勒》之现代白话之全原文，贮英、中之对照。汝当徐徐阅之，逐行译之。汝当计划以分立，毋单口吞象，译若干，复再译以若干，以此至毕。
 
+补：今`.knowledge/ChineseSimplified.bytes`《冥勒》原本诸项既译。今当译诸补缀之文本。
+
+诸补缀之文本存于`SimplifiedChineseLanguagePack.cs`，其简体中文之译也，汝应以同格式译之以文言，然后置之于`ClassicChineseLanguagePack.cs`。
+
+余既人工修正并移动原本翻译至`InscryptionVanilla.cs`，毋再生成原本翻译。但依旧应采取类似的`py`生成格式以方便多子智能体译补缀之文本。汝应遍读余既修`InscryptionVanilla.cs`之全文，以当前文法译新文本。
+
 ## 字典
 
 `.knowledge/zi`存诸字之典以`.json`。`/yi/kv/dict/《康熙字典》`、`/yi/kv/dict/漢語多功能字庫`、`/yi/kv/origin`、`/yi/kv/swjz`、`/yi/nodes`之处为诸字义也。
