@@ -5,8 +5,10 @@ scrybe,冥刻者,司锲,-
 mod,模组,补缀,补
 achievement,成就,功,-
 achievements,成就,功成录,-
-sacrifice,献祭,牲祀,祀
-sacrifice,祭品,牺牲,牲
+ability / abilities,能力,印技,技
+appendix,附录,附编,-
+sacrifice (verb),献祭,牲祀,祀
+sacrifice (offering),祭品,牺牲,牲
 sigil,印记,印契,印
 pelt,毛皮,裘革,革
 boon,奖励,惠,-
@@ -20,7 +22,7 @@ mox,玛珂,玛珂,-
 gem,宝石,玉,-
 misplay,昏招,昏著,-
 beast,野兽,兽,-
-robot,机器人,,
+robot,机器人,机人,-
 blood,血量,衅血,血
 health,生命,命,-
 foil,箔片/闪卡,箔,-
@@ -29,8 +31,9 @@ energy,能量,能,-
 power,力量,威,-
 P03,鉟零三,鉟零三,-
 tribe,族群,属,-
-item,道具,,
+item,道具,器,-
 scales,天平,衡,-
+slot effect / slot effects,卡槽效果/卡位效果,位效,-
 play,打出,陈牌,陈
 woodcarver,木雕师,刻木妪,妪
 draw,抽牌,引牌,引
@@ -53,6 +56,7 @@ rare card,稀有卡牌,罕有牌,-
 map,地图,图,-
 Wetlands,湿地,湿泽,泽
 Snow Line,雪线,雪垠,垠
+subsection,小节/分节,节,-
 robot,机器人,机人,-
 bot,机器人,机人,-
 file,文件,牍,-
@@ -60,10 +64,13 @@ generator,生成器,机枢,枢
 conduit,管道,渠,-
 mist,雾/寒雾,雾,-
 hound,猎犬/狗,犬,-
+soul / souls,灵魂,魂,-
 angler,钓鱼人,渔父,渔
 hare,野兔,兔,-
 wolf,狼,狼,-
 Golden Pelt,金羊皮,金革,金
+coffin,棺木/棺材,棺,-
+funeral,殡仪/葬礼,殡,-
 trial,试炼,试,-
 candle,蜡烛,烛,-
 boon,奖励,惠,-
@@ -208,7 +215,7 @@ reactivate,重新启动/再次激活,复起,-
 respawn,重新出现/复活刷新,复出,-
 dead end,死路/尽头,穷途,-
 OP,强势/超模/过强,至强,-
-ability / abilities,能力/异能,印契,-
+ability / abilities,能力,印技,技
 The Master,大师,大师,-
 robobucks,机器人币/机币,机币,-
 Side Deck,副卡组/副牌组,副牌列,-
@@ -252,7 +259,7 @@ hero,英雄/豪杰,雄,-
 player / players,玩家,戏徒,-
 OLD_FISH,旧_鱼,旧_鱼,-
 puppet,傀儡,傀,-
-Goo,黏液,胶,-
+Goo,黏液,黏胶,-
 celebrate,庆祝/庆贺,贺,-
 starter deck,初始牌组,初牌列,-
 Max Energy,能量上限,能极,-
@@ -267,7 +274,7 @@ Airborne,空袭,翔袭,-
 Pelt card,毛皮卡牌,裘革牌,-
 Ring Worm,环形虫,环虫,-
 Inhabited,载灵,载灵,-
-ability / abilities,能力,能,-
+ability / abilities,能力,印技,技
 SP,状态点数/属性值,数点,-
 RoboBucks / robobucks,机器币,机币,-
 Activate,点击激活,启,-
@@ -465,6 +472,7 @@ Good Fish,好鱼,良鱼,-
 More Fish,更多的鱼,多鱼,-
 Fishbot,机器鱼,鱼机人,-
 Mummy Lord,木乃伊之王,木乃伊王,-
+Hydra,九头蛇,九首蛇,-
 Alarm Bot,闹铃机器人,警铃机人,-
 Amoebot,阿米巴机器人,阿米巴机人,-
 Buff Conduit,增益管道,益渠,-
@@ -569,7 +577,7 @@ Stim Mage,强化法师,激巫,-
 scene,场景,景,-
 subroutine,子程序,子程,-
 file,文件,牍,-
-corrupted,损坏/腐坏,败,-
+corrupted (data/file),损坏/腐坏,败,-
 chunk,数据块/块,块,-
 unexpected data,意外数据,异档,-
 asset,资产/资源,资材,-
@@ -690,6 +698,713 @@ Brightness,亮度,明度,-
 Apply,应用,施,-
 reboot,重启,复启,-
 Sound Effects Volume,音效音量,效音,-
+Blank Mox,空白玛珂,虚玛珂,-
+Undecided Mox,无形玛珂,未定玛珂,-
+Bone Marrow,骨髓,骨髓,-
+Stimulation,刺激,激威,-
+Stimulation (Health),刺激（生命）,激命,-
+Dead Draw,死亡掠夺,死引,-
+Gooey,黏液,胶,-
+Life Steal,生命窃取,夺生,-
+Knockback Hit,驱时之触,却击,-
+Impaled,长矛召唤,贯矛,-
+Resurrection,复活苏生,苏生,-
+Rerolls,骰子力量,重掷,-
+Gem Shield,宝石护盾,玉盾,-
+Plating Work,镀层工艺,镀工,-
+Gem Absorber,宝石吸收者,吸玉者,-
+Familiar,使魔,使魔,-
+Fading,消逝,消逝,-
+Morph,不定变体,化形,-
+Multiplication,矩阵乘法,倍生,-
+Mox Cycle,玛珂循环,玛珂轮转,-
+Mox Strafe,玛珂掉落,遗以玛珂,-
+Purist,纯粹主义,粹者,-
+Brewery,酿造坊,酿坊,-
+Ignite,引火,引焰,-
+Projection,星空投影,星影,-
+Spell Book,法术大全,咒书,-
+Scholar,法术学者,儒,-
+Midas' Touch,黄金之触,金触,-
+Made of Gold,黄金之躯,金身,-
+Summon Runes,引爆召唤,召符,-
+Spell of Health,生命法术,命咒,-
+Spell of Attack,攻击法术,威咒,-
+Frost Spell,寒霜咒,霜咒,-
+Spell of Wind,强风咒,风咒,-
+Ruckus,时针顺碎语,乱移,-
+Spell of Water,净水咒,水咒,-
+Spell of Flame,火焰咒,焰咒,-
+Set Ablaze,点燃,燎,-
+One Time Spell,一次性法术,一度术,-
+Vase of Greed,贪欲之壶,贪壶,-
+Gnomification,侏儒化,侏化,-
+Cursed,诅咒,诅,-
+Inspiration,灵感,灵悟,-
+Calculus,微积,筹算,-
+Rage,狂怒,怒,-
+Fireball,火球术,火丸,-
+Cold to the Touch,冰封之触,寒触,-
+Frozen,冰封,冰封,-
+Strong Pull,强力牵引,强引,-
+Displacement,置换反应,置换,-
+Gem Reckoning,宝石清算,玉算,-
+Mox Power,玛珂力量,玛珂威,-
+Mox Health,玛珂生命,玛珂命,-
+Candle Proximity,烛火临近,近烛,-
+Murder Power,杀戮之力,戮威,-
+Spell Power,法术力量,术威,-
+Counterbattery Power,反击力量,反击威,-
+Master Magnus,至尊大师,至尊大师,-
+Head of Emerald,绿宝石之首,绿玉首,-
+Head of Ruby,红宝石之首,红玉首,-
+Head of Sapphire,蓝宝石之首,蓝玉首,-
+Heads of Void,虚空之首,虚首,-
+Moon Shards,月之碎片,月屑,-
+Goobert,沽伯特,黏伯特,-
+Goo,黏液,黏胶,-
+Scarecrow,稻草人,蒭人,-
+Scarecrow Twins,双子稻草人,双蒭人,-
+Stim Sage,强化贤者,激贤,-
+Enchanted Spear,附魔长矛,祝矛,-
+Portrait Mage,肖像法师,像巫,-
+Revitilization,复苏术,复苏术,-
+Carnage,屠戮,屠戮,-
+Blizzard,暴风雪,暴雪,-
+Cyclone,强风咒,旋飙咒,-
+Flood,洪流,洪,-
+Engulf,吞噬,燔,-
+Ethereal Gems,虚空宝石,灵玉,-
+Cursed Skull,诅咒头骨,咒颅,-
+Potion,魔药,药,-
+Gnome,侏儒,侏,-
+Scuba Gnome,潜水侏儒,潜侏,-
+Sacrifical Grounds,献祭之地,祀地,-
+Enchanted Grounds,附魔之地,附地,-
+replica brush,仿制画笔,摹笔,-
+Weaker Bleach,弱漂白剂,弱漂液,-
+Stronger Opponent,更强对手,强敌,-
+Tiny Spellbook,微型法术书,小咒书,-
+Armored Shell,坚甲之壳,坚甲,-
+Magickal Paint,魔法涂料,术丹,-
+Fleeting Life,转瞬生命,浮命,-
+Intrusive Presence,侵扰之影,侵影,-
+Master Bosses,大师头目,大师诸魁,-
+Gem Dependant Starters,宝石依赖的开局,依玉初牌,-
+Awakened,觉醒的,觉,-
+Bone Pile,一堆骨头,堆骨,-
+Pharmacist,药剂师,药师,-
+Skeleader,亡灵领袖,骨魁,-
+Threaded Skeleton,欺诈者,悬丝骨,-
+Undead Elk,不死麋鹿,尸麋,-
+Undead Moose,不死驼鹿,尸驼鹿,-
+Undead Predator,劫掠亡灵,亡猎者,-
+Undead RedHart,不死红鹿,尸红鹿,-
+Undead Snapper,鳄龟残骸,鳄龟骸,-
+Ferry Crow,渡灵骨鸦,渡灵鸦,-
+Headless Man,无头人,无首人,-
+Devouring Soul,噬魂亡灵,噬魂,-
+Amalgam Pup,缝合兽幼崽,缝兽仔,-
+Dud Egg,废物蛋,废卵,-
+Annoying Dog,神烦狗,烦犬,-
+Arctic Fox,北极狐,北狐,-
+Bone Dog,寻骨小狗,寻骨狗,-
+The Loky,狼王洛基,洛基狼王,-
+Pastoral Dog,中华田园犬,田园犬,-
+Spotted Hyena,斑鬣狗,斑鬣犬,-
+Puma,美洲狮,山狮,-
+Puma Cub,美洲狮幼崽,山狮仔,-
+Axolotl Tail,美西螈尾巴,螈尾,-
+Carp,鲤鱼,鲤,-
+Coral Polyp,珊瑚虫,珊虫,-
+Globefish,河豚,河鲀,-
+Shark Egg,鲨鱼蛋,鲨卵,-
+Squidge,鱿鱼,乌贼,-
+Potato Elk,土豆鹿,薯麋,-
+Potato Elk Cub,土豆小鹿,薯麋仔,-
+Locust swarms,蝗虫群,蝗群,-
+Soldier Ant,军蚁,兵蚁,-
+Acorn,橡果,橡实,-
+Grizzly Cub,灰熊幼崽,灰熊仔,-
+Stunted Grizzly,弱熊,瘠熊,-
+Uri,小毛球,乌里,-
+Uryli,野人,乌里利,-
+Chipmunk,花栗鼠,栗鼠,-
+Pushing Mouse,推推鼠,推鼠,-
+Rat Cub,鼠崽,鼠仔,-
+Buff Frog,变异牛蛙,异蛙,-
+God Frog,变异牛蛙神,蛙神,-
+Rattler egg,响尾蛇蛋,响尾卵,-
+Thorny Devil Tail,刺蜥的尾巴,刺蜥尾,-
+Free Rattler egg,免费响尾蛇蛋,无费响尾卵,-
+Amalgam Egg,缝合蛋,缝卵,-
+Walking Stone,走石,行石,-
+Cutting Wings,剪翼者,翦翼,-
+Swarm,鸣蝉之夏,蝉聚,-
+Terrain Creator,地形创建者,造地,-
+Chinese Loong,中国龙,华龙,-
+God long,降世神龙,神龙,-
+Burning Egg,不死鸟蛋,凤卵,-
+Ling Bird,翎羽,翎鸟,-
+Super Chiking,超级鸡,成神鸡,-
+God Chiking,神之鸡,神鸡,-
+Broken Hawk,破碎鹰,残鹰,-
+Broken Raven,破碎渡鸦,残渡鸦,-
+Broken Grizzly,破碎灰熊,残灰熊,-
+Broken Grizzly Cub,破碎灰熊幼崽,残灰熊仔,-
+Broken Hunter,破碎猎人,残猎者,-
+Broken Stoat,破碎白鼬,残白鼬,-
+Broken Wolf,破碎狼,残狼,-
+Broken Wolf Cub,破碎狼崽,残狼仔,-
+Broken Elk,破碎麋鹿,残麋,-
+Broken Adder,破碎蝰蛇,残蝰,-
+Hell Barghest,地狱犬魔,狱犬魔,-
+Furry Man,毛茸茸的人,毛人,-
+Naughty dog,捣蛋狗,顽犬,-
+Rabid Dog,疯狗,狂犬,-
+Zuo Dog,大佐狗,佐犬,-
+Jun Zuo Dog,俊佐狗,俊佐犬,-
+Awakened Yin Tiger,觉醒的寅虎,觉寅虎,-
+Doom Trepang,毁灭海参,灭海参,-
+Paper Boat,纸船,纸舟,-
+The Jackalop with unlimited appreciation is a destroyer of ecology.,无限增殖的鹿角兔乃生态的破坏者。,无穷孳生之角兔，生态之贼也。,-
+Rockivores,源石虫,食石虫,-
+Gluttonous Stoat,暴食白鼬,饕白鼬,-
+Man with Big Life,小人物大生活,小身大命,-
+Mini Moon,微型月亮,微月,-
+God Moon,神之月,神月,-
+Lunar debris,月之碎片,月屑,-
+Picky Bear,挑剔熊,择食熊,-
+Strengthen Eagle,强化猎鹰,壮鹰,-
+Bomb Mechanical Dog,炸弹机械犬,爆机犬,-
+Bomb Mechanical Dog 2.0,炸弹机械犬2.0,爆机犬二,-
+Smoke Knight,雾隐暗骑,烟骑,-
+Awakened Smoke Knight,觉醒的雾隐暗骑,觉烟骑,-
+Pirate Crab,海盗蟹,盗蟹,-
+Echo of MaoDie,耄耋残像,耄耋余响,-
+Killer Beehive,杀手蜂巢,杀蜂巢,-
+Fallen Hugag,倒下的胡加格,仆胡加格,-
+World Turtle,世界龟,负世龟,-
+Cerberus,地狱三头犬,三头狱犬,-
+Goose and Duck,鹅与鸭,鹅鸭,-
+Hellcat,地狱猫,狱猫,-
+Cactus cat,仙人掌猫,仙掌猫,-
+Elder Goose and Elder Duck,长老鹅与长老鸭,长老鹅鸭,-
+Bamboo Hat Panda,斗笠熊猫,笠熊猫,-
+Feathered Serpent,白羽蟒,羽蛇,-
+VeggieMew,菜喵喵,菜喵,-
+VeggieDull,菜呆呆,菜呆,-
+Cowardly Aquasquirrel,胆小水松鼠,怯水松鼠,-
+Frail Squirrel,脆弱松鼠,脆松鼠,-
+Injured Goat,病患山羊,伤羊,-
+Nightmare Aquasquirrel,梦魇水松鼠,魇水松鼠,-
+Amoeba Squirrel,阿米巴松鼠,阿米巴松鼠,-
+Annoying Aquasquirrel,恼人水松鼠,烦水松鼠,-
+Bloody Stone,献祭之石,血石,-
+Explosion Aquasquirrel,自爆水松鼠,爆水松鼠,-
+Explosion Squirrel,自爆松鼠,爆松鼠,-
+Killer Bee,杀手蜂,杀蜂,-
+Quality Squirrel,优质松鼠,良松鼠,-
+Reach Squirrel,高跳松鼠,跃松鼠,-
+Sacrificable Boulder,可祭磐石,可祀磐,-
+Tail Squirrel,长尾松鼠,尾松鼠,-
+Hawk,鹰,鹰,-
+Squirrel Ball,松鼠球,松鼠球,-
+Ruby Squirrel,红宝石松鼠,红玉松鼠,-
+Emerald Squirrel,绿宝石松鼠,绿玉松鼠,-
+Sapphire Squirrel,蓝宝石松鼠,蓝玉松鼠,-
+Inscryption: Beastly Card Expansion Pack,邪恶冥刻：野兽卡牌扩展包,《冥勒》：兽牌扩包,-
+Inscryption: Techno Card Expansion Pack,邪恶冥刻：科技卡牌扩展包,《冥勒》：机牌扩包,-
+Inscryption: Undead Card Expansion Pack,邪恶冥刻：死亡卡牌扩展包,《冥勒》：亡牌扩包,-
+Inscryption: Magickal Card Expansion Pack,邪恶冥刻：魔法卡牌扩展包,《冥勒》：术牌扩包,-
+Miscellaneous Community Cards,社区杂项卡牌,社区杂牌,-
+Inscryption: Beastly Encounters,邪恶冥刻：野兽遭遇战,《冥勒》：兽遇战,-
+Unsorted Regions and Encounters,未分类区域与遭遇战,未分区域与遇战,-
+Eri Card Expansion,艾瑞卡牌扩展包,艾瑞牌扩包,-
+Ara's Card Expansion,阿拉的卡牌扩展包,阿拉牌扩包,-
+Hallownest Expansion,圣巢扩展包,圣巢扩包,-
+Bitty's Regions,比蒂的区域扩展包,比蒂区域扩包,-
+Eri's Card Pack Encounters,艾瑞的卡包遭遇战,艾瑞牌包遇战,-
+Kaycee's P03 Expansion Pack #1,凯茜的P03扩展包#1,凯茜P03扩包其一,-
+Kaycee's P03 Expansion Pack #2,凯茜的P03扩展包#2,凯茜P03扩包其二,-
+Kaycee's P03 Encounter Expansion #1,凯茜的P03遭遇战扩展#1,凯茜P03遇战扩包其一,-
+Kaycee's P03 Encounter Expansion #2,凯茜的P03遭遇战扩展#2,凯茜P03遇战扩包其二,-
+Kaycee's P03 Expansion Pack #3,凯茜的P03扩展包#3,凯茜P03扩包其三,-
+Kaycee's P03 Encounter Expansion #3,凯茜的P03遭遇战扩展#3,凯茜P03遇战扩包其三,-
+Aga's Magnificus Expansion,Aga的蔓尼菲科模组扩展,Aga蔓尼菲科扩包,-
+Smughtro's MagMod Expansion,Smughtro的蔓尼菲科模组扩展,Smughtro蔓尼菲科扩包,-
+Revenant Mod Card Pack,复生亡灵模组卡包,复生亡灵牌包,-
+Trader,毛皮商,革商,-
+Trapper,猎人,猎夫,-
+Sawyer,索耶,锯者,-
+Training Dummy,训练假人,习偶,-
+Lonely Wizard,孤独巫师,孤巫,-
+Prospector,矿工,矿夫,-
+Circuit Maker,电路绘制,成路,-
+Claw,利爪,爪,-
+Clawed,利喙尖爪,生爪,-
+Clawing Hand,利爪之手,爪手,-
+Collateral Damage,连带伤害,旁伤,-
+Collector,收藏家,敛者,-
+Commander,指挥官,将令,-
+Double Strike When Powered,充能双击,得能双击,-
+Gift When Powered,充能奖励,得能赐,-
+Morsel When Powered,充能一口之量,得能一脔,-
+Omnipotent When Powered,充能全向打击,得能遍击,-
+Powered Quills,充能双重刺甲,得能利棘,-
+Print When Powered,充能玛珂绘制,得能印玉,-
+Repulsive When Powered,充能厌恶情绪,得能可憎,-
+Scavenge When Powered,充能拾荒,得能拾荒,-
+Splash Damage When Powered,充能溅射,得能溅伤,-
+Stimulate When Powered,充能刺激,得能激哉,-
+Billowing Bond,空袭契约,翔契,-
+Elder Conduit,宝石骷髅管道,玉骨渠,-
+Emerald Conduit,绿宝石管道,绿玉渠,-
+Friendship Bond,友谊契约,友契,-
+Grave Conduit,掘骨管道,骨渠,-
+Gun Conduit,哨兵管道,铳渠,-
+Hot Conduit,灼热管道,灼渠,-
+Loot Conduit,劫掠管道,掠渠,-
+Malfunctioning Conduit,故障管道,故渠,-
+Meaningless Bond,空无契约,虚契,-
+Nano Conduit,纳米管道,甲渠,-
+Ruby Conduit,红宝石管道,红玉渠,-
+Sapphire Conduit,蓝宝石管道,蓝玉渠,-
+Stim Conduit,刺激管道,激渠,-
+Tender Bond,温柔契约,柔契,-
+Thorny Conduit,尖刺管道,棘渠,-
+Confusion,颠三倒四,乱,-
+Copier,影印设备,摹印,-
+Coward,贪生怕死,怯,-
+Crooked Strike Left,偏左打击,偏左击,-
+Crooked Strike Right,偏右打击,偏右击,-
+Crossbones,十字骨,十字骨,-
+Crunchy,酥脆,脆,-
+Cute,可爱,可人,-
+Data Breach,数据泄露,泄机,-
+Deadringer,死铃使者,死铃,-
+Death Snatch,死亡掠夺,死掠,-
+Decked Out,全副武装,具装,-
+Defiler,污染者,污者,-
+Desperate,孤注一掷,穷搏,-
+Deus Hoof,鹿神敬拜,鹿神,-
+Dexter Strike,右前打击,右前击,-
+Diagonal Strike,对角打击,斜击,-
+Disembowel,开膛破肚,剖腹,-
+Distraction,魂不守舍,诱替,-
+Diver,潜行者,潜者,-
+Divisibility Strike,可除性打击,奇偶击,-
+Docile,温顺,驯,-
+Doomed,命定者,定死,-
+Double Tap,协同攻击,并击,-
+Downdraft,下沉气流,下风,-
+Draw,绘牌之手,引,-
+Dripping,流连,滴行,-
+Drop,得手投弃,引即陈,-
+Duppelgang,双重奏,双影,-
+Eager,渴望,亟,-
+Easy Pickings,轻而易举,易取,-
+Emancipation,脱胎换骨,脱化,-
+Emerald Core,绿宝石核芯,绿玉核,-
+Emerald Heart,绿宝石之心,绿玉心,-
+Enchanting,附魔,赋印,-
+Endangered,濒危,垂危,-
+Enemy Lines,敌军战线,敌阵,-
+Energy Dependent,能量依赖,恃能,-
+Enraged,愤怒,愤,-
+Entangle,盘根错节,缠,-
+Erratic,飘忽不定,无恒,-
+Esprit De Corps,团队精神,同心,-
+Even Strike,偶数打击,偶列击,-
+Exceptional Sacrifice,传说祭品,奇祭,-
+Bloodstarved Beast,嗜血狂兽,嗜血兽,-
+Exploding Corpse,尸爆,尸爆,-
+Expulsion,呕物驱逐,吐逐,-
+Exsanguination,放血,渫血,-
+Eye For Battle,战斗之眼,战目,-
+Face To Face,面面相觑,相对,-
+Fan Tailed,妖扇之尾,扇尾,-
+Fatal Flank,致命侧翼,致翼,-
+Fearsome,凶神恶煞,可畏,-
+File Explorer,文件管理,探卷,-
+Filter Feeder,滤食之物,滤食,-
+Firebomb,火焰引爆器,火爆,-
+Fire In The Hole,小心炮弹,穴中火,-
+Fire Resistant,防火,耐火,-
+Flank Blast,侧牌引爆器,侧爆,-
+Flea Ridden,跳蚤满身,多蚤,-
+Flighty,轻浮,轻扬,-
+Fossil Record,化石记录,化石录,-
+Frail,脆弱,脆,-
+Frail Sacrifice,脆弱献祭,脆祀,-
+Freefall,自由落体,坠,-
+Friend Finder,找呀找朋友,求友,-
+Fringe Strike,边路打击,边击,-
+Frog Friend,众蛙之友,蛙友,-
+Emerald Dependant,绿宝石依赖,恃绿玉,-
+Ruby Dependant,红宝石依赖,恃红玉,-
+Sapphire Dependant,蓝宝石依赖,恃蓝玉,-
+Gem Shedder,玛珂掉落,遗玉,-
+Gem Skeptic,宝石质疑者,疑玉,-
+Giant,巨人,巨,-
+Gift Bearer,礼品商,怀礼,-
+Glitterheart,辉耀之心,辉心,-
+Globetrotter,四海为家,周行,-
+Gold Digger,掘金者,掘金,-
+Gold Rush,淘金热,金潮,-
+Gooey,黏液,黏,-
+Graveyard Shift,墓地轮班,冢更,-
+Gravity,万有引力,引,-
+Green Inspiration,绿色灵感,绿感,-
+Gut Spewer,呕脏者,吐脏者,-
+Harbinger,先驱者,先驱,-
+Harts Within,内心之鹿,内鹿,-
+Haunter,阴魂不散,留魂,-
+Healshield,治疗护盾,疗甲,-
+Herald,使节,报者,-
+High Powered,高功率,高能,-
+Home Run,全垒打,本垒击,-
+Hook Line And Sinker,全套诱饵,钩线饵全,-
+Hypermorphic,超形态,超形,-
+Ignition,点燃,燃,-
+Immaculate Form,无瑕形态,无瑕形,-
+Immaterial,缥缈之物,无质,-
+Immortal Coil,不朽之环,不死环,-
+Incontinent,失禁,遗泄,-
+Dog Gone,猎犬者,犬克,-
+Fowl Play,戏鸟者,鸟克,-
+Insectivore,食虫者,食虫,-
+Snakebite,捕蛇者,噬蛇,-
+Orange Inspiration,橙色灵感,红感,-
+Organ Thief,器官盗贼,盗脏,-
+Osteoklepty,窃骨术,窃骨,-
+Other Side,彼岸,彼岸,-
+Painful Presence,痛苦占场,苦临,-
+Paralytic,麻痹,痹,-
+Parthenogenesis,单性生殖,单生,-
+Perfect Form,完美形态,完形,-
+Phantasmic,移形换影,幻行,-
+Piercing,穿刺,穿,-
+Pinnacle Strike,巅峰打击,极击,-
+Point Nemo,涨潮者,海极,-
+Potent,强力献祭,强祀,-
+Preemptive Strike,预先攻击,先击,-
+Propagation,传播者,孳,-
+Prophecy,预言家,预言,-
+Pure Heart,纯净之心,纯心,-
+Pushover,软柿子,易殪,-
+Put Sentry Here,步哨工程师,置哨于此,-
+Quad Strike,四重攻击,四击,-
+Quickdraw,快攻,速陈,-
+Ranger,突击员,游击,-
+Ravenous,贪婪之噬,饕,-
+Recharge,蓄势,复能,-
+Recycle,回收利用,回用,-
+Reflective,镜面反击,映威,-
+Regenerator,万象更新,自新,-
+Rememberance,纪念之花,追念,-
+Remote Controlled,遥控,遥御,-
+Reroute,重新定向,易路,-
+Resilient,百折不挠,韧,-
+Retreat,退却,遁,-
+Return Strike,复仇攻击,反击,-
+Revolve,时针顺之魂,周旋,-
+Ripper,开膛手,剖者,-
+Rock Eater,磐石吞噬者,食磐,-
+Ruby Core,红宝石核芯,红玉核,-
+Running Strike,奔袭打击,奔击,-
+Rupture,割裂之触,裂触,-
+Sanguine,血祭力量,血威,-
+Paralysis,瘫痪,瘫,-
+Parasite,寄生虫,寄,-
+Pathetic Sacrifice,可悲之血,鄙祭,-
+Picky,挑肥拣瘦,择,-
+Pierce,隔山打牛,贯,-
+Poisonous,剧毒腐蚀,毒,-
+Possessor,灵魂附身,附,-
+Powerful Possessor,强力附身,强附,-
+Predator,掠食者,掠,-
+Prideful,骄傲,骄,-
+Protector,保护者,佑,-
+Puppets gift,木偶之礼,傀礼,-
+Superior Sacrifice,史诗祭品,上祭,-
+Ram,好战之羊,触,-
+Random Strafe,无形的移动,偶移,-
+Recoil,后坐力,反震,-
+Regen 1,再生,复一,-
+Regen 2,双重再生,复二,-
+Regen 3,三重再生,复三,-
+Regen,神愈再生,尽复,-
+Repellant,拒人千里,斥,-
+Resistant,抗性提升,耐,-
+Resourceful,资源丰富,余用,-
+Retaliate,反戈一击,报击,-
+Right scratch,右侧爪迹,右爪,-
+Rushing march,急行军,疾行,-
+Schooling,水袭指导,同潜,-
+Shapeshifter,损伤易形,易形,-
+Short,短小精悍,短,-
+Sickness,疾病肆虐,疾,-
+Bone lord 6,骨神,骨王六,-
+Sluggish,缓慢,缓,-
+Song of sleep,安眠曲,眠歌,-
+Spawner,创造性冲刺,生行,-
+Stampede,席卷狂潮,驰攻,-
+Sticky,如胶似漆,胶,-
+Velocity,风驰电掣,迅,-
+Strong Wind,强风吹拂,烈风,-
+Submerged Ambush,水下伏击,潜伏,-
+Swallower,吞噬者,吞,-
+Sympathetic,同情,恤,-
+Take-Off (Bones),骨驱空袭,骨翔,-
+Take-Off (Energy),电驱空袭,能翔,-
+Terrified,惊慌失措,骇遁,-
+Thick Shell,厚重甲壳,厚甲,-
+Bone prince 3,骨后,骨侯三,-
+Bone hoarder 3,三重骨礼,藏骨三,-
+Tooth Bargain,牙齿交易,齿约,-
+Toothpuller,拔牙器,抽齿,-
+Tooth Shard,牙齿碎片,齿屑,-
+Toxin,混合毒素,毒,-
+Toxin (Deadly),致命毒素,死毒,-
+Toxin (Sickening),残废毒素,疾毒,-
+Toxin (Strength),力量毒素,削威毒,-
+Toxin (Vigor),生命毒素,削命毒,-
+Trample,践踏,蹂,-
+Transform Chicken (Enemy Only),易形鸡（仅敌人）,化鸡（敌惟）,-
+Transform Chicken (Loose Cannon),易形鸡（全场）,化鸡（全场）,-
+Transform Chicken (Opposing),易形鸡（对位）,化鸡（对位）,-
+Transient,昙花一现,旋返,-
+Tribal Ally,族群盟友,同属友,-
+Tribal Tutor,族群囤积,同属引,-
+Tribe Attack,族群攻击,属攻,-
+Tribe Health,族群生命,属命,-
+Turbulent Waters,混沌水域,湍波,-
+Bone prince 2,骨臣,骨侯二,-
+Bone hoarder 2,双重骨礼,藏骨二,-
+Underdog,扶弱锄强,居下,-
+Vicious,凶相毕露,狠,-
+Warper,穿场者,越界,-
+Wild hunger,狂野饥饿,饕行,-
+Withering,凋零,枯,-
+Zapper,瘫痪之触,痹触,-
+Explosive Squirrel Reproduction,松鼠泛滥,蕃鼠,-
+Hauler,运输者,牵,-
+Heart Swap,心灵交换,易心,-
+Mutual Hire,相互雇佣,相雇,-
+Charged Barrage,充能弹幕,充霰,-
+Health Roll,生命骰子,命骰,-
+Sigil Roll,印记骰子,印骰,-
+Wildlife Camera,野兽相机,野影器,-
+Dusty Quill,尘埃羽毛笔,尘笔,-
+Bleached Brush,漂白之笔,素笔,-
+Strong Soul,剽悍之魂,强魂,-
+Weak Soul,孱弱之魂,弱魂,-
+Nonexistent Soul,缥缈之魂,无魂,-
+Pyrophobia,恐火症,惧火,-
+Pyrophobia (Attack),恐火症（力量）,惧火（威）,-
+Pyrophobia (Health),恐火症（生命）,惧火（命）,-
+Repulsion,排斥,斥,-
+Mysterious Mushrooms,神秘蘑菇,异蕈,-
+Counter Attack,反伤刺甲,反刺,-
+Mirror Counter,镜面刺甲,镜刺,-
+Board Shifter,全场移相,移局,-
+Board Shifter (Owner),友军移相,移友局,-
+Board Shifter (Opposing),敌军移相,移敌局,-
+Deathbell,丧钟,丧钟,-
+Clockwise,顺时针,顺时,-
+Stubborn,顽固不化,固,-
+Fleeting,稍纵即逝,暂,-
+Soul Link,灵魂链接,同魂,-
+Hollow Draw,空洞抽取,虚引,-
+Hollow Barrage,空洞弹幕,虚霰,-
+Gem Phobic,宝石恐惧,惧玉,-
+Foolhardy,鲁莽,妄,-
+Jumper,跳跃者,跃,-
+Super Sprinter,冲刺狂人,疾趋,-
+Eggist,蛋之艺术,生卵,-
+Fir Caller,唤林者,召杉,-
+Flipper,浮光掠影,易数,-
+Fleeting Draw,消逝之手,暂引,-
+Outcast,流浪者,还列,-
+Hollow Repeater,空洞中继,虚继,-
+Replenish,买一送一,续引,-
+Target Swap,目标交换器,易数指,-
+Sacrificial Growth,祭祀生长,祀长,-
+Ruby Transformer,红宝石易形,红玉化,-
+Gemify,宝石增益,玉益,-
+Corpse,尸体,尸,-
+Chrysomallos,克律索马罗斯,克律索马罗斯,-
+Golden Ram,金羊,金羊,-
+caravan,队伍/车队,行旅,-
+first mate,大副,大副,-
+supplies,补给/物资,资用,-
+Environmental Effects,环境效果,环境之效,-
+mud,淤泥,泥,-
+hailstorm,冰雹风暴,雹暴,-
+cliffside,悬崖边缘/陡崖,绝崖,-
+fungal mass,真菌团块,蕈团,-
+dynamite,炸药,炸药,-
+Blood Moon,血月,血月,-
+blizzard,暴风雪,暴雪,-
+avalanche,雪崩,雪崩,-
+obelisk,方尖碑,方尖碑,-
+flood,洪水,洪水,-
+breeze,微风,微风,-
+Flash Growth,急速生长,急长,-
+Ourobot,机械衔尾蛇,机衔尾蛇,-
+scrapyard,废料场/坟场,机冢,-
+Undead Parrot,不死鹦鹉,不死鹦鹉,-
+Ascender's Bane,攀登者的祸根,陟者殃,-
+Champions,优胜冠军,冠军,-
+Famine,饥荒,饥,-
+Runaway Side Deck,失控副牌,奔副牌,-
+The Golden Fleece,金色羊皮,金革,-
+Harder Bosses,更强的头目,强魁,-
+True Pirate,真正的海盗,真海盗,-
+Extra Lives,额外生命,余命,-
+Botched Experiments,拙劣实验,拙试,-
+Old Fecundity,无尽丰产,旧蕃息,-
+Mulligan,重新尝试,更引,-
+Reverse Scales,反向天平不平,反倾衡,-
+Shocked Starters,惊魂未定的开局,初牌瘫,-
+Sprintmaggedon,奔腾灾难,疾行灾,-
+Traveling Ouroboros,旅行衔尾蛇,行衔尾蛇,-
+Unfair Hand,不公之手,偏手,-
+Explosive Noise,爆炸噪音,爆响,-
+Aquatic Starters,水袭的开局,初牌潜,-
+Unspirited Starters,失魂的开局,初牌弱魂,-
+Weak Starters,虚弱的开局,初牌弱,-
+Bright Red Champion,鲜红冠军,绛冠军,-
+Cyan Champion,青色冠军,青冠军,-
+Fragile,虚弱,脆,-
+Green Champion,绿色冠军,绿冠军,-
+Light Blue Champion,淡蓝冠军,淡蓝冠军,-
+Light Green Champion,浅绿冠军,浅绿冠军,-
+Magenta Champion,品红冠军,品红冠军,-
+Muddy,污泥浊浪,泥,-
+Sacrificial Slab,献祭石板,祀石,-
+Orange Champion,橙色冠军,橙冠军,-
+Seaworthy,适航状态,耐潜,-
+Red Champion,红色冠军,赤冠军,-
+Avalancher,雪崩,崩,-
+White Champion,白色冠军,白冠军,-
+Yellow Champion,黄色冠军,黄冠军,-
+Minicello,迷你柠檬琴号,小琴舟,-
+Attack Up,攻击强化,益攻,-
+Attack Down,攻击削弱,损攻,-
+Cataclysm,灭世灾变,大坏,-
+Direct Damage,直接伤害,直伤,-
+Direct Heal,直接治疗,直疗,-
+Draw Twice,双倍抽牌,再引,-
+Gain Control,夺取控制,夺御,-
+Give Sigils,赋予印记,予印,-
+Give Stats,赋予属性,予数,-
+Give Stats and Sigils,赋予属性与印记,予数与印,-
+Spell (Global),法术（全局）,术（周）,-
+Spell (Global, Instant),法术（全局，瞬发）,术（周，立发）,-
+Spell (Targeted),法术（定向）,术（指）,-
+Command (Global),命令（全局）,令（周）,-
+Command (Global, Instant),命令（全局，瞬发）,令（周，立发）,-
+Command (Targeted),命令（定向）,令（指）,-
+Urch1n Cell,机械海胆电池,机海胆匣,-
+Junk,废料堆,废堆,-
+S4LM0N,机械鲑鱼,机鲑,-
+Seed,种子,种,-
+Trajectile Quills,狙击刺甲,射棘,-
+Trampler,撼地者,蹂者,-
+Transformer,易形者,易形者,-
+Transmogrification,变形术,化形术,-
+Trapjaw,陷阱颚,阱颌,-
+Trifling Sacrifice,精良祭品,二血祭,-
+Trio,禁忌三重奏,三身,-
+Triple Strike,三重攻击,三击,-
+Trophy Hunter,战利品猎手,猎魁,-
+Tuck And Roll,缩滚乐,伏滚,-
+Tug,生拉硬拽,曳,-
+Twin Bond,双生契约,双契,-
+Twister,星轮变换,旋变,-
+Unbalanced Leadership,失衡领袖,偏帅,-
+Under Pressure,压力之下,压裂,-
+Unfocused Strike,胡乱打击,妄击,-
+Unhammerable,不可锤击,不可锤,-
+Unlucky,命途多舛,薄命,-
+Unspeakable,不可言喻,不可言,-
+Unstable Gems,不稳定宝石,危玉,-
+Valuable,吉光片羽,值金,-
+Vampiric,吸血鬼,饮血,-
+Venator,易形猎手,猎变,-
+Vessel Shedder,容器掉落,遗皿,-
+Visceral,感官异能,余血化骨,-
+Viva La Revolution,革命万岁,变革万岁,-
+Waterbird,水鸟,水禽,-
+Wavering Strike,摇摆打击,摆击,-
+Weaver,织网者,织者,-
+Weird Latch,无形传花,怪传花,-
+Wild Shape,狂野易形,野形,-
+Wimpy,怯战,怯弱,-
+Wing Clipper,碎翼者,翦翼者,-
+Wingrider,骑翼者,乘翼者,-
+Woodsie Lord,法树领主,术松主,-
+Wriggle,蠕形螨动,蠕动,-
+Writhe,垂死挣扎,挣命,-
+Sharpen,磨砺,砺,-
+Spellsword,咒术之剑,术剑,-
+Trained Flier,飞行能手,习翔,-
+Trained Swimmer,游泳能手,习潜,-
+Upgrade Subroutine,升级子程序,升程,-
+Aculeate Grip,蛰刺握,螫攫,-
+Allure,媚骨天生,媚引,-
+Annihilation,湮灭,殄灭,-
+Ant Guardian,蚂蚁守护者,护蚁,-
+Antimagic,反魔法,反术,-
+Armortify,装甲化,被甲,-
+Artistic License,艺术许可,艺纵,-
+Backup,数据备份,后继,-
+Bandage Weaver,绷带编织者,纫帛者,-
+Bastion,堡垒,垒,-
+Batch Delete,批量删除,并删,-
+Bejeweled,宝石迷阵,连玉,-
+Bewilder,扑朔迷离,惑,-
+Bifurcated When Gempowered,橙色兵分,得玉歧击,-
+Bisection,二分法,二裂,-
+Bleach,漂白剂,漂液,-
+Bloated,肥美多汁,丰血,-
+Blood Artist,血液艺术家,血绘者,-
+Blood Dependent,血液依赖,恃血,-
+Blood From Stone,石中取血,石出血,-
+Blood Gusher,鲜血喷涌,涌血,-
+Blood Guzzler,鲜血吞噬者,饮血者,-
+Blood Magic,血魔法,血术,-
+Bloodrunner,血行者,血行,-
+Blue Inspiration,蓝色灵感,蓝悟,-
+Bombjuration,爆弹咒,爆召,-
+Bombs Away,炸弹空投,投爆,-
+Bone Dependent,骨头依赖,恃骨,-
+Bone Duke,骨公爵,骨公,-
+Bonelust,骨欲,嗜骨,-
+Bone Spurs,骨刺,骨刺,-
+Burning,燃烧,焚,-
+Buzz Off,蜉蝣冲击,遗蜉,-
+Call To Arms,号召行动,号战,-
+Card Shedder,牌堆剥离者,遗牌,-
+Caustic,物腐毒生,腐毒,-
+Center Strike,中心打击,中击,-
+Chaos Strike,混沌打击,乱击,-
+Cheater,欺诈者,诈者,-
+Set Ablaze,点燃,燎,-
+One Time Spell,一次性法术,一度术,-
+Cursed,诅咒,诅,-
+Cold to the Touch,冰封之触,寒触,-
+Frozen,冰封,冰封,-
+Strong Pull,强力牵引,强引,-
+Displacement,置换反应,置换,-
+Gem Reckoning,宝石清算,玉算,-
+Mox Power,玛珂力量,玛珂威,-
+Mox Health,玛珂生命,玛珂命,-
+Candle Proximity,烛火临近,近烛,-
+Murder Power,杀戮之力,戮威,-
+Spell Power,法术力量,术威,-
 CPU,中央处理器,中枢,-
 wildlife camera,野生动物照相机,野物影器,-
 particle scanner,粒子扫描仪,粒省器,-
@@ -762,6 +1477,12 @@ plaything,玩物,戏具,-
 mushroom,蘑菇,蕈,-
 settlement,定居点,邑,-
 Goo Mage,黏液法师,胶巫,-
+Pike Mage,长矛法师,矛巫,-
+Free Legs,自由之足,释足,-
+Unsealed Body,解封之躯,启躯,-
+Released Arms,解放之臂,释臂,-
+Unleashed Tyrant,解缚的暴君,纵暴君,-
+Ethereal Sigils,虚空印记,虚印契,-
 Bonehorn,骨质号角,骨号,-
 Clinger,粘人精,附趋,-
 Great Kraken,巨型克拉肯,巨克拉肯,-
@@ -812,7 +1533,8 @@ continue,继续,续,-
 cipher,密码,密辞,-
 Credits,制作团队,列名,-
 Creator,创作者,制者,-
-Goobert,黏液,胶,-
+Goobert,沽伯特,黏伯特,-
+Boneless,无骨者,无骨者,-
 Fonts,字体,字形,-
 Special Thanks,特别鸣谢,特谢,-
 Localization Team,本地化团队,方译之众,-
@@ -855,7 +1577,7 @@ run,一局游戏/一轮流程,局,-
 level requirements,级别要求/等级需求,阶限,-
 Challenge Point,挑战点数,挑战点,-
 Challenge Level,挑战关卡,挑战之阶,-
-Chime,铃铛/钟,钟,-
+Chime,铃铛,铃,-
 Misplay,昏招/失误,失着,-
 Brood Parasite,滋生寄生虫,孳鸠,-
 Double Strike,双重攻击,复击,-
@@ -904,3 +1626,618 @@ Start // Finish,开始 // 结束,始 // 终,-
 Rookie Mistake,新手失误,生手之失,-
 Bad Moon,邪恶之月,万恶之月,-
 Skull Storm,头骨风暴,头骨风暴,-
+Damage Dice,伤害骰子,骰威,-
+Damage Scaling,伤害缩放,败余,-
+Director Of The Board,操盘手,局督,-
+Drawn Out,抽离之力,引积,-
+Fabled,稀有传奇,罕传,-
+Firepower,火焰之力,火威,-
+Follow The Leader,跟随领导,随长,-
+Greenhorn,绿芽,绿角,-
+Half Charged,半充能,半充,-
+Hand On Heart,手按心,按心,-
+Health Damage,生命伤害,命威,-
+Herding Beast,放牧兽,群蹄,-
+Lithophile,亲石者,亲石,-
+Magicke Power,魔法力量,术威,-
+One Half Squirrels,半只松鼠,半鼠,-
+Pack Hunter,犬之猎,群犬,-
+Pack Power,道具力量,器威,-
+Pack Power Plus,双重道具力量,重器威,-
+Sanguine Bond,狂热血祭,血契,-
+Sin Eater,罪食者,食罪,-
+Strength In Numbers,众志成城,众威,-
+Trinket Vitality,道具生命力,器命,-
+World Wide Web,万维网,天网,-
+Abstain,忍住,止,-
+Dupeglitch,丰产囤积狂,孳囤,-
+Sinister Strike,左前打击,左斜击,-
+Bully,横行霸道,凌,-
+Legion,集团,军,-
+Bloodborn,血魔,血裔,-
+Divination,占星师,卜,-
+Exhume,寻墓者,发冢,-
+Eternal,天使坠落,恒,-
+Goated,山羊召唤,召羊,-
+Healer,治疗师,医,-
+Acid Puddle,酸液滩,酸沼,-
+Abundance,五谷丰登,丰,-
+Acidic Trail,酸性痕迹,酸迹,-
+Activated Latch Brittle,脆骨激转,启脆,-
+Activated Latch Explode On Death,炸弹激转,启殉爆,-
+Activated Latch Nano Shield,坚盾激转,启坚盾,-
+Activated Latch Reach,高跳激转,启高跃,-
+Agile,敏捷,捷,-
+All seeing,全知之眼,全见,-
+Alternating Scratch,交替爪迹,交爪,-
+Ambush,伏击,伏,-
+Antler Bearer,鹿角商,荷角,-
+Shielded,屏蔽,蔽,-
+Asleep,休眠,寐,-
+Noble Sacrifice,卓越祭品,贵祭,-
+Blight,枯萎之血,凋血,-
+Random Strike,随机打击,漫击,-
+Blinding Strike,致盲打击,盲击,-
+Blood Growth,血液生长,长血,-
+Blood shifter,嗜血易形,血移,-
+Bodyguard,保镖,卫,-
+Bombardier,投弹虫,投爆者,-
+Bond,情同手足,契,-
+Bone Shard,骨头碎片,骨屑,-
+Box,盒中之物,匣,-
+Broken,破碎,残,-
+Choreography,舞蹈编排,舞度,-
+Coin Finder,硬币寻找者,索箔,-
+Consumer,消费者,啖,-
+Cowardly,懦夫,怯,-
+Deadly Waters,死亡水域,死水,-
+Deathburst,死亡爆发,死爆,-
+Desperation,绝望之力,穷急,-
+Disease Absorbtion,疫病汲取,吸疠,-
+Dive (Bones),骨驱水袭,骨潜,-
+Dive (Energy),电驱水袭,能潜,-
+Multi-Strike,多重打击,连击,-
+Double scratch,双重爪迹,双爪,-
+Draw Blood,血绘者,引血,-
+Draw Bone,骨绘者,引骨,-
+Draw Card,冰绘者,引化,-
+Draw Jackalope,鹿角兔子洞,引鹿角兔,-
+Draw Strafe,冲刺绘者,引移,-
+Draw Cost,花费绘者,引同直,-
+Draw Energy,能量绘者,引能,-
+Draw Mox,魔绘者,引玛珂,-
+Support call,支援呼叫,援呼,-
+Drunk,醉酒,醉,-
+Dwarf,矮人,矮,-
+Dying,奄奄一息,将死,-
+To The Slaughter,前往屠杀,赴屠,-
+Electric,电力制导,电裂,-
+Enforcer,执法者,纠,-
+Enrage,超频领袖,狂帅,-
+Entomophage,噬虫菌体,啖虫,-
+Fearful,胆战心惊,惧,-
+Charge,充能感应,骨冲,-
+Firestarter,星火燎原,然火,-
+Lure,饵钓潜袭,诱,-
+Bone lord 5,骨魔,骨王五,-
+Frightened,惊恐,惊,-
+Frightful,令人生畏,骇,-
+Grazing,放牧,啮草,-
+Gripper,夹持器,攫,-
+Haste,匆忙,亟,-
+Hasteful,急于求成,先击,-
+Herd,芸芸众生,滋群,-
+Hermit,隐士,隐,-
+High Tide,涨潮之时,潮涨,-
+Homing,宾至如归,趋的,-
+Hoodini,变幻莫测,幻换,-
+Host,巢穴,巢,-
+Exhaustion,积劳成疾,惫,-
+Hyped,激动,奋,-
+Imbuing,注灵,赋灵,-
+Inaccurate,未知之触,失准,-
+Old Timer,岁月年华,老成,-
+Injured,受伤,伤,-
+Instant,转瞬即逝,立尽,-
+Launcher,启示之作,发物,-
+Lead (Bones),骨骼领导,骨导,-
+Lead (Energy),能量领导,能导,-
+Leech,嗜血之蛭,蛭,-
+Left scratch,左侧爪迹,左爪,-
+Life Gambler,生命赌徒,赌命,-
+Linguist,语言学家,舌师,-
+Low Tide,退潮之时,潮退,-
+Lullaby,摇篮曲,眠谣,-
+Maneuver,调遣,调行,-
+Medic,医疗兵,医,-
+Medical Aid,医疗救助,救疗,-
+Midas,点石成金,点金,-
+Mount,固定装置,载,-
+Power from Movement,运动的力量,动益,-
+Nurse,护士,护医,-
+Nutritious,营养丰富,饶养,-
+Bone hoarder 1,骨礼,藏骨一,-
+Opportunist,机会主义者,乘隙,-
+Dog Gone,猎犬者,犬克,-
+Fowl Play,戏鸟者,鸟克,-
+Insectivore,食虫者,食虫,-
+Snakebite,捕蛇者,噬蛇,-
+Orange Inspiration,橙色灵感,红感,-
+Organ Thief,器官盗贼,盗脏,-
+Osteoklepty,窃骨术,窃骨,-
+Other Side,彼岸,彼岸,-
+Painful Presence,痛苦占场,苦临,-
+Paralytic,麻痹,痹,-
+Parthenogenesis,单性生殖,单生,-
+Perfect Form,完美形态,完形,-
+Phantasmic,移形换影,幻行,-
+Piercing,穿刺,穿,-
+Pinnacle Strike,巅峰打击,极击,-
+Point Nemo,涨潮者,海极,-
+Potent,强力献祭,强祀,-
+Preemptive Strike,预先攻击,先发,-
+Propagation,传播者,孳,-
+Prophecy,预言家,预言,-
+Pure Heart,纯净之心,纯心,-
+Pushover,软柿子,易殪,-
+Put Sentry Here,步哨工程师,置哨于此,-
+Quad Strike,四重攻击,四击,-
+Quickdraw,快攻,速陈,-
+Ranger,突击员,游击,-
+Ravenous,贪婪之噬,饕,-
+Recharge,蓄势,复能,-
+Recycle,回收利用,回用,-
+Reflective,镜面反击,映威,-
+Regenerator,万象更新,自新,-
+Rememberance,纪念之花,追念,-
+Remote Controlled,遥控,遥御,-
+Reroute,重新定向,易路,-
+Resilient,百折不挠,韧,-
+Retreat,退却,遁,-
+Return Strike,复仇攻击,反击,-
+Revolve,时针顺之魂,周旋,-
+Ripper,开膛手,剖者,-
+Rock Eater,磐石吞噬者,食磐,-
+Ruby Core,红宝石核芯,红玉核,-
+Running Strike,奔袭打击,奔击,-
+Rupture,割裂之触,裂触,-
+Sanguine,血祭力量,血威,-
+Shield Absorption,坚盾吸收,吸盾,-
+Rapid Recycle,极速回收,疾回用,-
+Supercharge,超载充能,亢充,-
+Copy and Paste,复制粘贴,摹移,-
+Cannon Fire,炮火轰击,炮击,-
+Recharge Reserves,充能储备,储充,-
+Holo Weaver,全息编织者,幻织,-
+Future Sight,未来视界,先见,-
+Fossil Fuel,化石燃料,石脂,-
+Dispenser,售货机,予器,-
+Overcharge,电能过载,过充,-
+Enrage,超频领袖,怒充,-
+Drive,驱动,驱,-
+D-Pad,十字键,十键,-
+D-Pad Left,十字键左进,左键,-
+D-Pad Right,十字键右进,右键,-
+Submerge,下潜,潜,-
+Tow Hook,拖拽钩,牵钩,-
+Button Pusher,按键狂魔,叩键者,-
+Parasitic Control,寄生控制,寄御,-
+Energy Power,能量力量,能威,-
+Holo Trap,全息陷阱,幻阱,-
+Brittle Lord,脆骨王,脆主,-
+Buck Wild,狂野冲撞,狂突,-
+Burning Slot,燃烧卡槽,燔位,-
+Burnt Out,过燃,焚尽,-
+Catch Fire,引燃,然火,-
+Transforms When Unpowered,失能退化,失能易形,-
+Waterborne When Unpowered,失能水袭,失能潜袭,-
+Short Circuit,充能短路,短路,-
+Transforms When Powered,充能进化,得能易形,-
+Explodonate When Powered,充能樱桃炸,得能殉爆,-
+Mental Gemnastics When Powered,充能金属风宝,得能玉智,-
+Trap When Powered,充能陷阱,得能阱,-
+Unkillable When Powered,充能不死,得能不死,-
+Splice Conduit,接合管道,接渠,-
+Stinky Conduit,臭臭管道,恶臭渠,-
+Airborne Conduit,空袭管道,翔袭渠,-
+Gas Conduit,燃气管道,燃渠,-
+Bedazzling Conduit,璀璨管道,炫渠,-
+Static Electricity,静电传导,静电,-
+Gas Generator,燃气发电机,燃机,-
+Conduit Protector,管道守护者,护渠者,-
+Dead Byte,死亡字节,死节,-
+Double Sprinter,双重冲刺,再驰,-
+Brittle Summoner,脆骨召唤师,召脆,-
+Iterate,迭代,迭出,-
+Tinkerer,机械师,机工,-
+Phasers Ready,相位炮就绪,相炮备,-
+Combat Research,作战研习,战研,-
+Electric,电力制导,旁电,-
+Green Mox Buff,绿色玛珂增益,绿玛珂益,-
+Emerald Blessing,绿宝石祝福,绿玉福,-
+Emerald Shard,绿宝石碎片,绿玉屑,-
+Armor Giver,坚盾予者,予铠者,-
+Energy Siphon,能量虹吸,吸能,-
+Explodonate,樱桃炸,殉爆,-
+Fire Strike,火焰打击,火击,-
+Fire Strike When Fueled,燃料火击,得油火击,-
+Flame Stoker,煽风点火,鼓焰,-
+Fling,抛掷,掷,-
+Upgrade,强制升级,强升,-
+Blood Donation,献血装置,输血,-
+Stone Giver,磐石之赠,予磐,-
+Dust Giver,风尘之赠,予尘,-
+Coal Roller,煤炭滚轮,煤轮,-
+Gem Ignition,宝石点火器,玉燃,-
+Fuel Strike,燃料打击,油击,-
+Fuel,燃料,油,-
+Fuel Shield,燃料护盾,油盾,-
+Fuel Siphon,燃料虹吸,吸油,-
+Full of Blood,血液满溢,盈血,-
+Full of Oil,燃油满溢,盈油,-
+Fully Loaded,满载,满载,-
+Defend,防御,御,-
+Blue Mox Gift,蓝色玛珂之赠,蓝玛珂之赠,-
+Blue Mox Looter,蓝色玛珂劫掠,蓝玛珂掠,-
+Purist With Blue,纯蓝主义,蓝纯,-
+Annoying Without Green,无绿生厌,无绿则可厌,-
+Green Mox Gift,绿色玛珂之赠,绿玛珂之赠,-
+Brittle Without Orange,无橙即碎,无橙则脆,-
+Orange Mox Airborne,橙色玛珂空袭,橙玛珂翔袭,-
+Orange Mox Printer,橙色玛珂打印机,橙玛珂印机,-
+Gem Strike,宝石打击,玉击,-
+Emerald Power,绿宝石力量,绿玉威,-
+Hopper,跑赢,跃,-
+Kraken Transformer,克拉肯易形,克拉肯易形,-
+Annoying Latch,恼人传花,可厌遗契,-
+Death Latch,死亡传花,死遗契,-
+First Latch,首印传花,首印遗契,-
+Airborne Latch,空袭传花,翔袭遗契,-
+Conduit Latch,管道传花,虚渠遗契,-
+Rampage Latch,冲撞传花,横冲遗契,-
+Stinky Latch,臭臭传花,恶臭遗契,-
+Swapper Latch,交换传花,易数遗契,-
+Lootbox,战利品箱,掠匣,-
+Synchronized Fate,生死与共,同命,-
+Magic Dust,魔法粉尘,灵尘,-
+Blue Mox Slot,蓝色玛珂卡槽,蓝玛珂位,-
+Orange Mox Slot,橙色玛珂卡槽,橙玛珂位,-
+Green Mox Slot,绿色玛珂卡槽,绿玛珂位,-
+Great Mox Slot,至尊玛珂卡槽,至尊玛珂位,-
+Miner,探矿者,矿夫,-
+Rubber Stamp,橡皮图章,印模,-
+Launch Missile,导弹发射器,发弹,-
+Launch Self,自我发射器,自发,-
+Flammable,易燃,易燔,-
+Arsonist,纵火狂,纵火,-
+Refueler,加油站,补油者,-
+Second Chance,死灰复燃,再起,-
+Bonus Energy Conduit,额外能量管道,余能渠,-
+Skeleclocked,外骨骼超频,骨机化,-
+Overheat,过热,亢热,-
+Power Drain,能量流失,耗能,-
+Nerf This!,来Nerf这招！,削此！,-
+Apotheosis,无形神物,登神,-
+Alarm Clock,闹钟机器人,报时机,-
+Ruby Blessing,红宝石祝福,红玉福,-
+Orange Mox Warrior,橙色玛珂战士,橙玛珂武者,-
+Burst,轰然炸裂,爆,-
+Gem Consumer,宝石吞噬者,噬玉者,-
+Emergence Latch,奔涌传花,涌遗契,-
+Macabre Growth,惊悚蜕变,凶长,-
+Shatter,分崩离析,碎,-
+Guts Sacrifice,内脏祭品,腑祀,-
+Blue Mox Charger,蓝色玛珂充能器,蓝玛珂充者,-
+Sapphire Blessing,蓝宝石祝福,蓝玉福,-
+Scrap Dumper,废料倾卸机,倾废者,-
+Scrap Salvage,废物利用,废取,-
+Bulldoze,推土机,推辟,-
+Shred,零敲碎打,裂牌,-
+Side Deck Power,副牌组力量,副列威,-
+Slimed Slot,黏液卡槽,涎位,-
+Phase Through,相位穿梭,穿相,-
+Solar Heart,太阳之心,日心,-
+Solar Powered,太阳能供电,日能,-
+Overwhelming Entrance,强势入场,压入,-
+Summon Familiar,使魔召唤,召使魔,-
+Zip of Death,死亡时速,疾毙,-
+Target Required,目标锁定,有敌乃击,-
+Controlled,操控,见御,-
+Slimeball,黏液球,涎丸,-
+Slime Vandal,史莱姆破坏者,涎贼,-
+Full of Guts,内脏炸弹,满腑,-
+Seed Sprinter,种子掉落,遗种驰,-
+Vessel Heart,容器之心,皿心,-
+Urchin Spawn Conduit,海胆生成管道,海胆生渠,-
+Double Death,双重死亡,再死,-
+Head Shot,爆头射击,枭首,-
+Mine Cryptocurrency,加密货币矿机,采密币,-
+Stamp Paperwork,盖章文件,印牍,-
+Big Strike,强力打击,并击,-
+Multiverse Bomb Latch,多元宇宙炸弹传花,诸界爆弹遗契,-
+Multiverse Brittle Latch,多元宇宙脆骨传花,诸界脆骨遗契,-
+Multiverse Detonator,多元宇宙引爆器,诸界引爆,-
+Multiverse Full of Oil,多元宇宙燃油满溢,诸界盈油,-
+Multiverse Fully Loaded,多重宇宙满载,诸界满载,-
+Multiverse Guardian,多元宇宙守护者,诸界守者,-
+Multiverse Burrower,多元宇宙钻地龙,诸界潜龙,-
+Multiverse Null Conduit,多元宇宙空无管道,诸界虚渠,-
+Multiverse Mighty Leap,多元宇宙高跳,诸界高跃,-
+Multiverse Sentry,多元宇宙哨兵,诸界哨兵,-
+Multiverse Shield Latch,多元宇宙坚盾传花,诸界微铠遗契,-
+Multiverse Sprinter,多元宇宙冲刺能手,诸界驰者,-
+Multiverse Strike,多重宇宙打击,诸界击,-
+Multiverse Great Mox,多元宇宙至尊玛珂,诸界至尊玛珂,-
+Multiverse Hoarder,多元宇宙囤积狂,诸界藏者,-
+Hurt-n-Heal Conduit,伤害治疗管道,伤疗渠,-
+Basic Token,基础代币,凡符,-
+Improved Token,强化代币,良符,-
+Rare Token,稀有代币,稀符,-
+Blockchain,区块链,链块,-
+GollyCoin,乖乖币,乖币,-
+Virus Scanner,病毒扫描器,毒检器,-
+Blood Vessel,血能容器,血皿,-
+Spring Vessel,弹簧容器,簧皿,-
+Conduit Vessel,管道容器,渠皿,-
+Dredging Vessel,挖泥容器,浚皿,-
+Turbo Vessel,涡轮容器,迅皿,-
+Turbo Sapphire Vessel,涡轮蓝宝石容器,迅蓝玉皿,-
+Turbo Ruby Vessel,涡轮红宝石容器,迅红玉皿,-
+Turbo Emerald Vessel,涡轮绿宝石容器,迅绿玉皿,-
+Turbo Blood Vessel,涡轮血能容器,迅血皿,-
+Turbo Spring Vessel,涡轮弹簧容器,迅簧皿,-
+Turbo Conduit Vessel,涡轮管道容器,迅渠皿,-
+Turbo Dredging Vessel,涡轮挖泥容器,迅浚皿,-
+Firewall,防火墙,火墙,-
+Replicating Firewall,复制体防火墙,孳火墙,-
+Hunter Brain,赏金猎人脑,捕脑,-
+Activated Hunter,激活的赏金猎人,启捕者,-
+Ghoulware,鬼灵软件,鬼件,-
+Generator,发电机,电枢,-
+Power Sink,能量塔,蓄能塔,-
+Failed Experiment,失败实验体,败验体,-
+Experiment #1,实验体1号,验体一,-
+Skeleton Master,骷髅大师,枯骨主,-
+Conveyor Latcher,传带传递者,传带遗契者,-
+Sky Latcher,天空传递者,天遗契者,-
+SearchBot,搜索机器人,索机,-
+AmmoBot,弹药机器人,弹机,-
+Necronomaton,死灵机甲,死灵机偶,-
+Zombie Process,僵尸进程,尸程,-
+Skel-E-Cell,骷髅电池,骨电匣,-
+Airspace Conduit,空域管道,翔域渠,-
+Foul Conduit,污秽管道,秽渠,-
+Copypasta,复制粘贴,摹贴,-
+FrankenCell,弗兰肯电池,缝电匣,-
+Swapper Latcher,交换传递者,易数遗契者,-
+Zip Bomb,压缩炸弹,疾爆,-
+Ruby Sentinel,红宝石哨兵,红玉哨,-
+Emerald Sentinel,绿宝石哨兵,绿玉哨,-
+Sapphire Sentinel,蓝宝石哨兵,蓝玉哨,-
+Revignite,审燃员,复焰者,-
+Street Sweeper,街道清扫者,扫街者,-
+Shield Smuggler,护盾走私者,私盾者,-
+Pity Seeker,怜悯搜寻者,乞怜者,-
+Urch1n Conduit,机械海胆管道,海胆渠,-
+Sui-Cell,自毁电池,殉电匣,-
+Flamecharmer,火焰驯服者,驯焰者,-
+Artillery Droid,火炮机器人,炮机人,-
+Ultra Bot,究极机器人,极机,-
+Energy Vampire,能量吸血鬼,吸能魅,-
+Orange Juicer,橙汁榨取机,榨橙者,-
+Encapsulator,封装机,封机,-
+Sir Blast,爆破爵士,爆爵,-
+Lockjaw Cell,锁颚电池,锁颌匣,-
+Replica Bleene,蓝绿橙复制体,蓝绿之副,-
+Replica Orlu,橙蓝绿复制体,橙蓝之副,-
+Replica Goranj,绿橙蓝复制体,绿橙之副,-
+Gem Auger,宝石钻机,钻玉者,-
+Sparkplug Cell,火花塞电池,火塞匣,-
+Bomb Latcher,炸弹传递者,爆弹遗契者,-
+Shield Latcher,坚盾传递者,坚盾遗契者,-
+Skel-E-Latcher,骷髅传递者,枯骨遗契者,-
+Painbot,痛苦机器人,苦机,-
+Dogbot,机器狗,机犬,-
+Data Cube,数据魔方,数匣,-
+Laser Rifle,激光步枪,光铳,-
+Amplification Coil,增幅线圈,益幅环,-
+Stickers,贴纸,贴签,-
+Missiles,导弹,飞弹,-
+Missing Remote,遥控器丢了,失遥器,-
+Turbo Vessels,涡轮容器,迅皿,-
+Broken Bridges,断桥,断桥,-
+Pricey Upgrades,昂贵升级,贵升,-
+Eccentric Painter,古怪画师,诡画者,-
+Energy Hammer,能量锤,能槌,-
+Costly Respawn,昂贵复活,贵复生,-
+Leaping Side Deck,跳跃副牌组,跃副牌列,-
+Wanted Fugitive,通缉逃犯,购逃者,-
+Strange Encounters,奇异遭遇,异遭,-
+Scarlet Skull,猩红头骨,绯髑,-
+Book of the Dead,亡灵之书,亡书,-
+Battle Frenzy,战斗狂热,战狂,-
+Calling for Backup,呼叫支援,召援,-
+Accelerated Fuse,加速引信,促燧,-
+Aimless Assault,无的放矢,妄击,-
+Rebuild From Scrap,废料重组,自废更构,-
+Absolution,绝对压制,尽压,-
+The Perfect Crime,完美犯罪,至完之罪,-
+Energy Expended,消耗能量,费能,-
+Hammer Blows Dealt,锤击次数,槌击,-
+Abominations Created,创造怪胎,怪成,-
+Quests Completed,完成任务,竟事,-
+Bounty Hunters Killed,击杀赏金猎人,毙购捕者,-
+Special Hammer Mod,特殊锤子模组,异槌模组,-
+Incredible Drafting Mod,绝赞选牌模组,妙择模组,-
+mod,模组,补缀,-
+modder,模组作者,补缀者,-
+draft token,选牌代币,择牌符,-
+drafting mod,选牌模组,择牌补缀,-
+hammer mod,锤子模组,槌补缀,-
+Gollycoin,乖乖币,乖币,-
+non-functional trinket,非功能性藏品,无用之器,-
+contraband,违禁品,违品,-
+research assistant,研究助手,研助,-
+radio tower,信号塔,讯塔,-
+data burst,数据脉冲,机脉,-
+power collection device,能量收集装置,聚能器,-
+broken-down bots,报废机器人,废机,-
+Global Conveyor Consortium,全球传送带联盟,寰输带盟,-
+Bot Battle Conveyor Belts,机器人战斗传送带,机战输带,-
+combat trials,战斗测试,斗试,-
+warp node,传送节点,迁节点,-
+monitors,监视器,监镜,-
+Woodcutter,樵夫,樵者,-2
+Return to Nihil,回归虚无,归虚,-2
+Rightful Heir,法定继承者,正嗣,-2
+Roots,缠根,根缠,-2
+Scrambler,扰频器,乱数者,-2
+Made of Slime,史莱姆之身,胶躯,-2
+Sporogenic,孢子囊,散孢,-2
+Thick Skin,茂密皮毛,厚皮,-2
+Volatile,易爆,躁爆,-2
+Pebble,卵石,卵石,-2
+Flagellated,鞭笞,鞭创,-2
+Spores,孢子,孢,-2
+Worms,裸虫,裸虫,-2
+LatchParent,传花母本,遗契母本,-2
+Adoration,虔敬,钦慕,-2
+Bless,赐福,祐,-2
+Blind Rage,盲怒,瞽怒,-2
+Apostle,使徒,使徒,-2
+Big Eyes,巨眼,巨目,-2
+Dazzling,光耀,耀,-2
+Long Arms,长臂,长臂,-2
+Time Machine,时间机器,时机,-2
+True Saviour,终焉救世主,真救主,-2
+Unjust Scale,谬判天平,枉衡,-2
+Quick Draw,快攻,先发,-2
+Marksman,精准裁决,中的,-2
+Big Bird,大鸟,大鸟,-2
+Judgement Bird,审判鸟,谳鸟,-2
+Punishing Bird,惩戒鸟,罚鸟,-2
+Queen Bee,蜂后,蜂后,-2
+manager,主管,主事,-2
+Single Recall,单次召回,单召,-2
+Total Recall,全部召回,皆召,-2
+Reshuffle Decks,牌组重塑,复乱牌列,-2
+Pink,粉红,绯,-2
+Sap,汲取,汲,-2
+Smile,微笑,笑,-2
+Magical Girls,魔法少女,诸术少女,-2
+Mimicry,拟态,拟态,-2
+Sound of a Star,星之声,星声,-2
+Three Birds,三只鸟,三鸟,-2
+Today's Expression,今日表达,今容,-2
+Enchanted,附魔,附魔,-2
+Sin,罪,罪,-2
+Yellow Brick Road,黄砖之路,黄砖路,-2
+Through the Twilight,暮光穿行,穿暮,-2
+Abnormal Bosses,异想体头目,异魁,-2
+Abnormal Encounters,异变遭遇,异遇,-2
+Miracle Worker,创迹者,奇迹者,-2
+Single Recall Bottle,瓶中单次召回,瓶中单召,-2
+Total Recall Bottle,瓶中全部召回,瓶中皆召,-2
+Experiment,实验体,试体,-2
+sun,阳光,日芒,-2
+Night time,夜幕降临,夜至,-2
+SunBoost,阳光激励,增晖,-2
+SunKill,阳光杀戮,杀取晖,-2
+SunMaker,阳光生产,生晖,-2
+Peashooter,豌豆射手,豌豆射手,-2
+Homing Thistle,导向蓟,逐的蓟,-2
+Sunflower,向日葵,日葵,-2
+Twin Sunflower,双子向日葵,双生日葵,-2
+Wallnut,坚果墙,坚果垣,-2
+The original seeds,原始种子,原种,-2
+The midnight crew,午夜员工,夜半众,-2
+The Zen Garden,禅境花园,禅园,-2
+Armor breaker,装甲破坏者,破甲,-2
+DoomBringer,末日使者,赍末,-2
+Fade Away,逐渐消失,渐灭,-2
+Hard Headed,头脑冷静,坚首,-2
+Hypnotist,魅惑师,惑心,-2
+Zombie Caller,僵尸号召,召尸,-2
+Card Pack,卡包,牌韬,-2
+Hot Meat,热辣鲜肉,燠肉,-2
+Mycologist Saw,菌学家之锯,蕈家锯,-2
+Teeth Jar,牙齿罐子,齿罂,-2
+Meat Cake,血肉蛋糕,肉糕,-2
+Trap,陷阱,阱,-2
+Dino-Mod Card Pack,恐龙模组卡包,恐龙牌韬,-2
+Unknown Hatchling,未知孵化,未知雏,-2
+Crumbling,摇摇欲坠,崩朽,-2
+Roar of Terror,恐吓咆哮,恐吼,-2
+Experimental Vial,实验药瓶,试罂,-2
+Borrowed Time,借来的时间,假时,-2
+Coins Within,内心之币,藏箔,-2
+Treasure Tracker,寻宝者,寻宝,-2
+Aga's Magnificus Expansion,Aga的蔓尼菲科模组扩展,Aga氏蔓尼菲科扩篇,-2
+Acid Aura,尖酸气质,酸晕,-2
+Awakening,羽化登仙,启化,-2
+Backfire Strike,反噬打击,反噬击,-2
+Blood Guzzler,鲜血吞噬者,嗜血,-2
+Deluge,洪流,洪漫,-2
+Sentry,哨兵,戍者,-2
+Healing Aura,治愈光环,疗晕,-2
+Heart Stealer,偷心者,夺心者,-2
+Psystrike,精神破坏,神击,-2
+Serpent Master,训蛇大师,御蛇,-2
+Shadow Strike,幻影冲击,影击,-2
+Tidal Lock,潮汐锁定,潮缚,-2
+Wizard's Heart,巫师之心,巫心,-2
+Smughtro's MagMod Expansion,Smughtro的蔓尼菲科模组扩展,Smughtro氏蔓尼菲科扩篇,-2
+Death Assist,死亡援助,死援,-2
+Emmental Elemental,芝士元素,酪元,-2
+First Strike,首次打击,先击,-2
+Unknown Hatching,未知孵化,未知孚,-2
+Mana Mess,魔力混沌,法乱,-2
+Flowey,小花,小花,-2
+Omega Flowey,终极小花,极小花,-2
+Bad Omen,不祥之兆,凶征,-2
+Rancor,怨煞,怨煞,-2
+SoothingMeadows,宁谧芳原,宁原,-2
+PartingStroke,临终之笔,诀笔,-2
+Harbinger,先驱者,先驱,-2
+Possessed Limbs,异肢,祟肢,-2
+Soulgate,魂域之门,魂域门,-2
+Revenant Mod Card Pack,复生亡灵模组卡包,复生亡灵补缀牌韬,-2
+Pass-through,畅通无阻,洞彻,-2
+Spam Call,骚扰电话,扰讯,-2
+A Call for Help,求救电话,呼援,-2
+Run Forth,奋勇突进,前赴,-2
+Again,再一次,复一,-2
+Runes,卢恩符文,卢恩文,-2
+Archived,归档锁定,归档,-2
+Foundation,核心基底,基,-2
+Final Boss v2,双阶段进阶头目战,终魁二段,-2
+Funeral,葬礼,殡,-2
+Helper,助人者,助者,-2
+Card Pack:Rooflings,顶檐人物卡包,顶檐人物牌韬,-2
+Card Pack: StarCraft,星际争霸卡包,星际争霸牌韬,-2
+Legends From The Darkness,来自黑暗的传说,闇中诸传,-2
+Science Vessel,科学船,科学舟,-2
+SCV,太空工程车,工车,-2
+Shuttle,穿梭机,梭机,-2
+The Hunter,狩猎者,猎者,-2
+The Hunter's Bible,狩猎宝典,猎者经,-2
+Jiangshi,中国僵尸,僵尸,-2
+superstar,超级巨星,巨星,-2
+phase,回合/阶段,段,-2
+Apex Predator,顶级掠食者,魁猎,-2
+Legends From The Darkness: Encounters,来自黑暗的传说：遭遇战,闇中诸传：遭遇,-2
+Gareth's Mod,加雷斯的模组,Gareth氏补缀,-2
+Allies,盟友,盟友,-2
+Essence Steal,精髓窃取,夺精,-2
+Hungry,饥饿,饕,-2
+Max Energy Gamble,最大能量豪赌,极能豪赌,-2
+Royal Jelly,蜂皇浆,王浆,-2
+Myconid,真菌人,菌人,-2
+Bone Totem,骸骨图腾,骨偶,-2
+Repentance,忏悔,悔,-2
+Hell Strike,地狱打击,狱击,-2
+Remnant,残响,馀响,-2
+Restart,重新开始,复始,-2
+Powerleech,噬能水蛭,噬能蛭,-2
+Hand Unit,手持终端,手元机,-2
+Five Nights at Inscryption,邪恶冥刻：玩具熊的五夜后宫,《冥锲》五夜,-2

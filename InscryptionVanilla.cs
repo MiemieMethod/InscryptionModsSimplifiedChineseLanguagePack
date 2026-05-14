@@ -7858,11 +7858,11 @@ namespace ClassicChineseLanguagePack
             // 请将印记旋转至垂直角度
             AddTranslation("ROTATECAPTCHA_PUZZLE_M_TEXT_004", "ROTATE THE SIGIL UNTIL IT IS UPRIGHT", "旋此印契，至其正立");
             // 你抽到了你的能量机器人。你的能量现已充满。
-            AddTranslation("EMOTIONSCAPTCHA_PUZZLE_QUESTIONTEXT_029", "YOU DRAW YOUR ENERGY BOT. YOU HAVE FULL ENERGY.", "汝引得能机人。今能已盈。");
+            AddTranslation("EMOTIONSCAPTCHA_PUZZLE_QUESTIONTEXT_029", "YOU DRAW YOUR ENERGY BOT. YOU HAVE FULL ENERGY.", "汝引得能机人。今乃能已盈。");
             // 你即将死于昆虫机器人之手。你抽到了跳跃机器人。
-            AddTranslation("EMOTIONSCAPTCHA_PUZZLE_QUESTIONTEXT_638", "YOU ARE ABOUT TO DIE FROM AN INSECTODRONE. YOU DRAW A L33PB0T.", "汝将死于虫飞械。乃引得一跃机人。");
+            AddTranslation("EMOTIONSCAPTCHA_PUZZLE_QUESTIONTEXT_638", "YOU ARE ABOUT TO DIE FROM AN INSECTODRONE. YOU DRAW A L33PB0T.", "汝将死于虫飞械。汝引得一跃机人。");
             // 你已成功完成了终极冥刻。
-            AddTranslation("EMOTIONSCAPTCHA_PUZZLE_QUESTIONTEXT_182", "YOU SUCCESSFULLY PERFORM THE GREAT TRANSCENDENCE.", "汝遂成大陟。");
+            AddTranslation("EMOTIONSCAPTCHA_PUZZLE_QUESTIONTEXT_182", "YOU SUCCESSFULLY PERFORM THE GREAT TRANSCENDENCE.", "汝既成大陟。");
             // 英文
             AddTranslation("OPTIONSUI_VALUE_539", "ENGLISH", "英吉利言");
             // 主音量
@@ -10360,7 +10360,7 @@ namespace ClassicChineseLanguagePack
             // 地图编号#{0}
             AddTranslation("RUNINFOUIBAR_505", "MAP #{0}", "图#{0}");
             // 两侧都被挡上了。这下没地方摆铃铛了。
-            AddTranslation("CREATEBELLS_114", "Blocked on both sides. No Chimes this time.", "两侧皆塞，此番不生钟。");
+            AddTranslation("CREATEBELLS_114", "Blocked on both sides. No Chimes this time.", "两侧皆塞，此番不生铃。");
             // 两侧都被挡上了。这下你的河狸没地方筑坝了。
             AddTranslation("CREATEDAMS_106", "Blocked on both sides. No Dams for your Beaver.", "两侧皆塞，乃河狸不得筑坝。");
             // 配置印记属性：丰产之巢
