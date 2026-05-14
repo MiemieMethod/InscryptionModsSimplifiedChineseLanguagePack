@@ -853,7 +853,6 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Blood Guzzler", "嗜血");
             // 无骨者
             AddTranslation("Boneless", "无骨者");
-            RegisterCard("Boneless", "无骨者");
             // 窃骨者
             AddTranslation("Bone Thief", "窃骨者");
             // 赏金猎手
@@ -912,6 +911,7 @@ namespace ClassicChineseLanguagePack
             AddTranslation("APPENDIX XII, SUBSECTION I - ABILITIES {0}", "附编十二，第一节——诸印技{0}");
             // 附录,12，第二节 - 可变属性{0}
             AddTranslation("APPENDIX XII, SUBSECTION II - VARIABLE STATS {0}", "附编十二，第二节——变数{0}");
+            // Card
             RegisterCard("Skeleton", "枯骨");
             // 提线木偶反成操偶师，却仍被悬垂的丝线永恒诅咒。
             AddTranslation("The puppet becomes the puppeteer, yet still forever cursed by their dangling restraints.", "傀反为操傀者，然犹永为悬丝所诅。");
@@ -1099,6 +1099,7 @@ namespace ClassicChineseLanguagePack
             RegisterCard("Boneclaw", "骨爪");
             // 无骨者
             AddTranslation("Boneless", "无骨者");
+            RegisterCard("Boneless", "无骨者");
             // 这副骷髅似乎抛弃了这具无生命的躯壳，去追寻更伟大的事业。
             AddTranslation("It's Skeleton seems to have left this lifeless husk in order to achieve greater things.", "其骨似已舍此槁壳，以图大事。");
             // 次级木乃伊
@@ -2719,7 +2720,6 @@ namespace ClassicChineseLanguagePack
             // 至尊玛珂
             AddTranslation("Magnus Mox", "至尊玛珂");
             RegisterAbility("Magnus Mox", "至尊玛珂");
-            RegisterCard("Magnus Mox", "至尊玛珂", "is the return of bin laden", "本·拉登复至。");
             // 当牌桌上有[creature]时，可为持牌人提供橙、蓝、绿三色玛珂各一颗。
             AddTranslation("While a card bearing this sigil is on the board, it provides an orange gem, a blue gem and a green gem to its owner.", "负此印契之牌在局，则为持牌者供橙玉、蓝玉、绿玉各一。");
             // 复活苏生
@@ -2755,7 +2755,6 @@ namespace ClassicChineseLanguagePack
             // 宝石吸收者
             AddTranslation("Gem Absorber", "吸玉者");
             RegisterAbility("Gem Absorber", "吸玉者");
-            RegisterCard("Gem Absorber", "吸玉者", "It seeks out to consume all mana within Mox to grow stronger.", "伊求尽吞玛珂中之灵，以益己威。");
             // 当[creature]使用时，持牌人侧牌桌上的所有宝石将被摧毁。每吸收一个宝石，获得1点力量和2点生命。
             AddTranslation("When a card bearing this sigil is played, all gems on your side of the board will perish. For each gem absorbed, gain 1 power and 2 health.", "负此印契之牌既陈，则持牌者之侧局上诸玉尽死。每吸一玉，威加一，命加二。");
             // 下潜
@@ -2886,13 +2885,11 @@ namespace ClassicChineseLanguagePack
             // 贪欲之壶
             AddTranslation("Vase of Greed", "贪壶");
             RegisterAbility("Vase of Greed", "贪壶");
-            RegisterCard("Vase of Greed", "贪壶", "The vase of greed.. Look at its smug face..", "贪壶也……视其矜容……");
             // 当带有该印记的法术牌被使用时，弃掉当前手牌并抽取4张新牌。
             AddTranslation("When a spell bearing this sigil is played, discard your current hand and draw 4 new cards.", "负此技之术既陈，弃今手，而更引四牌。");
             // 侏儒化
             AddTranslation("Gnomification", "侏化");
             RegisterAbility("Gnomification", "侏化");
-            RegisterCard("Gnomification", "侏化", "Conjure a plain old garden gnome on the board..", "召一凡园侏于局。");
             // 选择一个空位召唤侏儒卡牌。
             AddTranslation("Select a slot to summon a Gnome card in.", "择一空位，召一侏牌。");
             // 诅咒
@@ -2903,25 +2900,21 @@ namespace ClassicChineseLanguagePack
             // 灵感
             AddTranslation("Inspiration", "灵悟");
             RegisterAbility("Inspiration", "灵悟");
-            RegisterCard("Inspiration", "灵悟", "A culmination of the great Master Orlu's essence.", "橙蓝大师精粹之会也。");
             // 选择一张卡牌使其获得空袭与劫掠者效果，持续1回合。
             AddTranslation("Select a card to give Airborne + Looter for 1 turn.", "择一牌，使一合得翔袭、掠者。");
             // 微积
             AddTranslation("Calculus", "筹算");
             RegisterAbility("Calculus", "筹算");
-            RegisterCard("Calculus", "筹算", "The spirit of the brave Master Bleene.", "勇者蓝绿大师之魂也。");
             // 选择一张卡牌交换其属性。
             AddTranslation("Select a card to swap stats.", "择一牌，易其数。");
             // 狂怒
             AddTranslation("Rage", "怒");
             RegisterAbility("Rage", "怒");
-            RegisterCard("Rage", "怒", "The embodiement of the tenacious Master Goranj.", "绿橙大师坚忍之形也。");
             // 选择一张卡牌消灭。该卡牌的对手本体将受到等同于被消灭卡牌生命值的伤害。
             AddTranslation("Select a card to kill. The opponent of the card will recieve damage equal to the amount of health the card had.", "择一牌杀之；其敌主受伤，如其故命。");
             // 火球术
             AddTranslation("Fireball", "火丸");
             RegisterAbility("Fireball", "火丸");
-            RegisterCard("Fireball", "火丸", "Conjure up a fireball, and shoot it towards your enemy.", "召火丸而射敌。");
             // 选择一张卡牌使其受到2点伤害。
             AddTranslation("Select a card to take 2 damage.", "择一牌，使受二伤。");
             // 冰封之触
@@ -3038,6 +3031,7 @@ namespace ClassicChineseLanguagePack
             AddTranslation("A construct powered by Mox.As it perishes it leaves behind parts of itself.", "玛珂资之构体。死则遗其身材。");
             // 至尊玛珂
             AddTranslation("Magnus Mox", "至尊玛珂");
+            RegisterCard("Magnus Mox", "至尊玛珂", "is the return of bin laden", "本·拉登复至。");
             // 是本·拉登的回归。
             AddTranslation("is the return of bin laden", "本·拉登复至。");
             // 熟悉的狼
@@ -3296,6 +3290,7 @@ namespace ClassicChineseLanguagePack
             AddTranslation("It is unstable, but such is the price for unending power.", "伊危，然无穷之威，其直如此。");
             // 宝石吞噬者
             AddTranslation("Gem Absorber", "吸玉者");
+            RegisterCard("Gem Absorber", "吸玉者", "It seeks out to consume all mana within Mox to grow stronger.", "伊求尽吞玛珂中之灵，以益己威。");
             // 它会吞噬玛珂中的所有魔力以增强自身。
             AddTranslation("It seeks out to consume all mana within Mox to grow stronger.", "伊求尽吞玛珂中之灵，以益己威。");
             // 骷髅法师
@@ -3643,10 +3638,12 @@ namespace ClassicChineseLanguagePack
             AddTranslation("A frail spirit of a late magnus mox.. Only sustains for a turn.", "已逝至尊玛珂之脆魂，仅存一合。");
             // 贪欲之壶
             AddTranslation("Vase of Greed", "贪壶");
+            RegisterCard("Vase of Greed", "贪壶", "The vase of greed.. Look at its smug face..", "贪壶也……视其矜容……");
             // 贪欲之壶……瞧瞧它那副得意的嘴脸……
             AddTranslation("The vase of greed.. Look at its smug face..", "贪壶也……视其矜容……");
             // 侏儒化
             AddTranslation("Gnomification", "侏化");
+            RegisterCard("Gnomification", "侏化", "Conjure a plain old garden gnome on the board..", "召一凡园侏于局。");
             // 在牌桌上召唤一个普通的老旧花园地精侏儒。
             AddTranslation("Conjure a plain old garden gnome on the board..", "召一凡园侏于局。");
             // 诅咒头骨
@@ -3656,18 +3653,22 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Hmm, a cursed skull. Handle it with care.", "唔，咒颅也。持之慎。");
             // 灵感
             AddTranslation("Inspiration", "灵悟");
+            RegisterCard("Inspiration", "灵悟", "A culmination of the great Master Orlu's essence.", "橙蓝大师精粹之会也。");
             // 凝聚了橙蓝绿大师精髓的结晶。
             AddTranslation("A culmination of the great Master Orlu's essence.", "橙蓝大师精粹之会也。");
             // 怒火
             AddTranslation("Rage", "怒");
+            RegisterCard("Rage", "怒", "The embodiement of the tenacious Master Goranj.", "绿橙大师坚忍之形也。");
             // 顽强不屈的绿橙蓝大师的具现化。
             AddTranslation("The embodiement of the tenacious Master Goranj.", "绿橙大师坚忍之形也。");
             // 微积
             AddTranslation("Calculus", "筹算");
+            RegisterCard("Calculus", "筹算", "The spirit of the brave Master Bleene.", "勇者蓝绿大师之魂也。");
             // 勇者蓝绿橙大师的精魂。
             AddTranslation("The spirit of the brave Master Bleene.", "勇者蓝绿大师之魂也。");
             // 火球术
             AddTranslation("Fireball", "火丸");
+            RegisterCard("Fireball", "火丸", "Conjure up a fireball, and shoot it towards your enemy.", "召火丸而射敌。");
             // 召唤火球并射向敌人。
             AddTranslation("Conjure up a fireball, and shoot it towards your enemy.", "召火丸而射敌。");
             // 魔药
@@ -5841,24 +5842,29 @@ namespace ClassicChineseLanguagePack
             // 该扩展新增了[summary]，包含来自艾瑞卡牌扩展包的卡牌
             AddTranslation("This expansion adds [summary] featuring cards from Eri's Card Expansion.", "此扩包益[summary]，皆用艾瑞牌扩包之牌。");
             RegisterEncounter("Eri's Card Pack Encounters", "艾瑞牌包遇战", "This expansion adds [summary] featuring cards from Eri's Card Expansion.", "此扩包益[summary]，皆用艾瑞牌扩包之牌。");
-            RegisterEncounter("Original Undead Card", "原版亡族牌", "The cards for the Undead Tribe are in the original game.(ACT2)", "原戏第二幕之亡族牌包。");
-            RegisterEncounter("NonOriginal Undead Card", "补缀亡族牌包", "The expansion cards for the Undead Tribe are not in the original game.", "亡族增牌，非原戏所有。");
-            RegisterEncounter("Wilderness Legend", "荒野传奇", "Add some simple cards based on the original imprint.", "本旧印，益以数简牌。");
-            RegisterEncounter("DLC_Fairy_Tale", "荒野传奇DLC：绮童话", "Added some cards based on myths, legends, and fictional elements.", "益数牌，本乎神话、传说与虚构诸物。");
+            RegisterEncounter("Original Undead Card", "原版亡族牌", "The cards for the Undead Tribe are in the original game.(ACT2)", "原戏第二幕之亡族牌包。");  // UndeadTempleINKCM
+            RegisterEncounter("NonOriginal Undead Card", "补缀亡族牌包", "The expansion cards for the Undead Tribe are not in the original game.", "亡族增牌，非原戏所有。");  // UndeadTempleINKCM
+            RegisterEncounter("Wilderness Legend", "荒野传奇", "Add some simple cards based on the original imprint.", "本旧印，益以数简牌。");  // WildernessLegend
+            RegisterEncounter("DLC_Fairy_Tale", "荒野传奇DLC：绮童话", "Added some cards based on myths, legends, and fictional elements.", "益数牌，本乎神话、传说与虚构诸物。");  // WildernessLegend
             RegisterEncounter("P03KCM", "P03KCM", "", "");
-            RegisterEncounter("Kaycee's P03 Expansion Pack #1", "凯茜之 P03 扩展包一", "The first expansion pack from the developers of 'P03 in Kaycees Mod' adds [count] new cards across all four regions of Botopia.", "“凯茜模组中之 P03”诸作者之首扩展包，于机邦四境增新牌[count]张。");
-            RegisterEncounter("Kaycee's P03 Expansion Pack #2", "凯茜之 P03 扩展包二", "The second official expansion pack, with [count] firey new cards that command an explosive reaction!", "官次扩展包，含炽然新牌[count]张，能致爆应。");
-            RegisterEncounter("Inscryption: Rogue Bots of Botopia", "冥勒：机邦失机", "Botopia has become overrun with rogue bots! These [count] encounters have been rebalanced for Kaycee's Mod.", "机邦已为失机所乱！此[count]遭已为凯茜模组重平之。");
-            RegisterEncounter("Kaycee's P03 Encounter Expansion #1", "凯茜之 P03 遭扩展一", "[count] additional encounters that feature cards from the first official P03 expansion pack.", "增遭[count]，皆含首官 P03 扩展包之牌。");
-            RegisterEncounter("Kaycee's P03 Encounter Expansion #2", "凯茜之 P03 遭扩展二", "[count] additional encounters that feature cards from the second official P03 expansion pack.", "增遭[count]，皆含次官 P03 扩展包之牌。");
-            RegisterEncounter("Kaycee's P03 Expansion Pack #3", "凯茜之 P03 扩充包三", "They said it would never happen, but it's here! The third official expansion pack breaks all of the rules, with [count] new cards that bring bones, blood, and gems to Botopia!", "人谓终无此事，而今有之！第三官扩充包尽坏诸律，以 [count] 新牌致骨、血与玉于机邦！");
-            RegisterEncounter("Kaycee's P03 Encounter Expansion #3", "凯茜之 P03 遭遇扩充三", "[count] additional encounters that feature cards from the third official P03 expansion pack.", "[count] 别遭，皆用 P03 第三官扩充包之牌。");
-            RegisterEncounter("Aga's Magnificus Expansion", "Aga氏蔓尼菲科扩篇", "An unofficial expansion to the Magnificus Mod featuring [count] unique and colourful mages", "蔓尼菲科补缀之外扩，载[count]异而绚之术士。");
-            RegisterEncounter("Smughtro's MagMod Expansion", "Smughtro氏蔓尼菲科扩篇", "Adds 19 common cards, 7 rare cards, 7 spells, and 6 token cards to Magnificus Mod.", "于 Magnificus 补缀，益常牌十九、罕牌七、术七、符牌六。");
-            RegisterEncounter("Revenant Mod Card Pack", "复生亡灵补缀牌韬", "This card pack consists of mainly cards that return to the player in a variety of ways.", "此牌韬多由能以诸途反归戏徒手中之牌成。");
-            RegisterEncounter("Card Pack: StarCraft", "星际争霸牌韬", "Characters from StarCraft One.", "《星际争霸》初篇诸角。");
-            RegisterEncounter("Legends From The Darkness: Encounters", "闇中诸传：遭遇", "an Ever-expanding content pack for LFTD, meant to add battle encounters to the game.", "为 LFTD 所作之续拓牌韬也，以增遭遇于此戏。");
-            RegisterEncounter("Gareth's Mod", "Gareth氏补缀", "A part 1 booster pack created by Gareth48 and illustrated by Plutraser. Adds [count] cards and 7 sigils designed to fit right into vanilla Inscryption.", "Gareth48作之、Plutraser绘之第一章补牌韬。增[count]牌与七印契，其制可径入原本《冥锲》。");
+            RegisterEncounter("Kaycee's P03 Expansion Pack #1", "凯茜之 P03 扩展包一", "The first expansion pack from the developers of 'P03 in Kaycees Mod' adds [count] new cards across all four regions of Botopia.", "“凯茜模组中之 P03”诸作者之首扩展包，于机邦四境增新牌[count]张。");  // P03KCM
+            RegisterEncounter("Kaycee's P03 Expansion Pack #2", "凯茜之 P03 扩展包二", "The second official expansion pack, with [count] firey new cards that command an explosive reaction!", "官次扩展包，含炽然新牌[count]张，能致爆应。");  // P03KCM
+            RegisterEncounter("Inscryption: Rogue Bots of Botopia", "冥勒：机邦失机", "Botopia has become overrun with rogue bots! These [count] encounters have been rebalanced for Kaycee's Mod.", "机邦已为失机所乱！此[count]遭已为凯茜模组重平之。");  // P03KCM
+            RegisterEncounter("Kaycee's P03 Encounter Expansion #1", "凯茜之 P03 遭扩展一", "[count] additional encounters that feature cards from the first official P03 expansion pack.", "增遭[count]，皆含首官 P03 扩展包之牌。");  // P03KCM
+            RegisterEncounter("Kaycee's P03 Encounter Expansion #2", "凯茜之 P03 遭扩展二", "[count] additional encounters that feature cards from the second official P03 expansion pack.", "增遭[count]，皆含次官 P03 扩展包之牌。");  // P03KCM
+            RegisterEncounter("Kaycee's P03 Expansion Pack #3", "凯茜之 P03 扩充包三", "They said it would never happen, but it's here! The third official expansion pack breaks all of the rules, with [count] new cards that bring bones, blood, and gems to Botopia!", "人谓终无此事，而今有之！第三官扩充包尽坏诸律，以 [count] 新牌致骨、血与玉于机邦！");  // P03KCM EXP3
+            RegisterEncounter("Kaycee's P03 Encounter Expansion #3", "凯茜之 P03 遭遇扩充三", "[count] additional encounters that feature cards from the third official P03 expansion pack.", "[count] 别遭，皆用 P03 第三官扩充包之牌。");  // P03KCM EXP3
+            RegisterEncounter("Aga's Magnificus Expansion", "Aga氏蔓尼菲科扩篇", "An unofficial expansion to the Magnificus Mod featuring [count] unique and colourful mages", "蔓尼菲科补缀之外扩，载[count]异而绚之术士。");  // AgasMagnificusExpansion
+            RegisterEncounter("Smughtro's MagMod Expansion", "Smughtro氏蔓尼菲科扩篇", "Adds 19 common cards, 7 rare cards, 7 spells, and 6 token cards to Magnificus Mod.", "于 Magnificus 补缀，益常牌十九、罕牌七、术七、符牌六。");  // MagModExpansion
+            RegisterEncounter("Revenant Mod Card Pack", "复生亡灵补缀牌韬", "This card pack consists of mainly cards that return to the player in a variety of ways.", "此牌韬多由能以诸途反归戏徒手中之牌成。");  // RevenantMod
+            //for (int count = 0; count <= 100; count++)
+            //{
+            //    RegisterEncounter("WhistleWind Lobotomy Mod", "WhistleWind的脑叶公司模组", "A set of " + count.ToString() + " cards based on the abnormalities from Lobotomy Corporation and Libraryof Ruina.", "一套基于《脑叶公司》与《废墟图书馆》异想体的" + count.ToString() + "张新卡牌。");
+            //} // WhistleWind_Lobotomy_Mod
+            //RegisterEncounter("WhistleWind Lobotomy Mod", "WhistleWind的脑叶公司模组", "A set of [summary] exclusively featuring abnormalities and related phenomena.", "一套共计[summary]的专属聚焦想体及相关现象的专题纪要。"); // WhistleWind_Lobotomy_Mod
+            RegisterEncounter("Card Pack: StarCraft", "星际争霸牌韬", "Characters from StarCraft One.", "《星际争霸》初篇诸角。");  // StarCraftCardpack
+            RegisterEncounter("Legends From The Darkness: Encounters", "闇中诸传：遭遇", "an Ever-expanding content pack for LFTD, meant to add battle encounters to the game.", "为 LFTD 所作之续拓牌韬也，以增遭遇于此戏。");  // LegendsFromTheDarkness
+            RegisterEncounter("Gareth's Mod", "Gareth氏补缀", "A part 1 booster pack created by Gareth48 and illustrated by Plutraser. Adds [count] cards and 7 sigils designed to fit right into vanilla Inscryption.", "Gareth48作之、Plutraser绘之第一章补牌韬。增[count]牌与七印契，其制可径入原本《冥锲》。");  // GarethMod
             // todo
             // 包含：{0}以及更多的{1}张卡牌。
             AddTranslation("Cards in this pack: {0} and {1} other{2}.", "此包有{0}及余{1}牌{2}。");
@@ -19424,11 +19430,11 @@ namespace ClassicChineseLanguagePack
             // 前瞻法师
             AddTranslation("Foresight Mage", "先见术士");
             MagnificusMod.RegisterCard("Foresight Mage", "先见术士", "As he gazes upon your future, attacks that may come his way he forever predicts", "其视汝后日，则凡或临己之攻，皆先知之。");
-            MagnificusMod.RegisterCard("Foresight Mage", "先见术士", "Gazing into the future, he may see any body who dares make an approach", "瞻后日，则凡敢近者，或皆为其所见。");
             // 当他凝视着你的未来，他永远预言着可能会到来的攻击。
             AddTranslation("As he gazes upon your future, attacks that may come his way he forever predicts", "其视汝后日，则凡或临己之攻，皆先知之。");
             // 前瞻法师
             AddTranslation("Foresight Mage", "先见术士");
+            MagnificusMod.RegisterCard("Foresight Mage", "先见术士", "Gazing into the future, he may see any body who dares make an approach", "瞻后日，则凡敢近者，或皆为其所见。");
             // 展望未来，他可能会看到任何敢于接近的人。
             AddTranslation("Gazing into the future, he may see any body who dares make an approach", "瞻后日，则凡敢近者，或皆为其所见。");
             // 冰川
