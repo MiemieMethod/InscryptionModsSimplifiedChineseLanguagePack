@@ -458,6 +458,34 @@ namespace ClassicChineseLanguagePack
 
     public class APIMod
     {
+        private static void RegisterDynamicTranslations()
+        {
+            Dictionary<string, string> peltTypes = new Dictionary<string, string>
+            {
+                { "pelthare", "兔" },
+                { "peltwolf", "狼" },
+                { "peltgolden", "金羊" },
+            };
+            foreach (PeltManager.PeltData peltData in PeltManager.AllPeltsAvailableAtTrader())
+            {
+                string text = peltData.peltTierName ?? PeltManager.GetTierNameFromData(peltData);
+                if (!peltTypes.ContainsKey(text))
+                {
+                    Debug.LogWarning($"未得裘级{text}之文言，已略");
+                    continue;
+                }
+
+                if (text.Contains("pelt"))
+                {
+                    AddTranslation(text + "pelts...", peltTypes[text] + "裘……");
+                }
+                else
+                {
+                    AddTranslation(text + "...", peltTypes[text] + "……");
+                }
+            }
+        }
+
         public static void RegisterTranslations()
         {
             // Vanilla Fix
@@ -537,6 +565,8 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Do you still not get it? It costs [v:1] energy and you don't have enough.", "犹未喻乎？此直[v:1]能，而能不足。");
             // 能量不足，无法使用[v:0]。
             AddTranslation("That [v:0] costs more energy than you have.", "[v:0]所须之能，多于既有。");
+
+            RegisterDynamicTranslations();
         }
 
     }
@@ -565,6 +595,53 @@ namespace ClassicChineseLanguagePack
 
     public class GrimoraMod
     {
+        public static Dictionary<string, string> Cards = new();
+
+        public static void RegisterCard(string en, string zh)
+        {
+            Cards[en] = zh;
+        }
+
+        private static void RegisterDynamicTranslations()
+        {
+            foreach (var value in Cards.Values)
+            {
+                string redName = "[c:R]" + value + "[c:]";
+                AddTranslation("TORN FROM ITS ETERNAL RESPITE WITH A RELUCTANT GROAN, THE " + redName + " SHAMBLES BACK TO ITS RIGHTFUL PLACE AMONG YOUR HORDE.", "伴不愿之呻，" + redName + "自永息中见曳，蹒跚返汝亡军之列。");
+                AddTranslation("THE BITTER CHILL MIGHT HURT, BUT IT WON'T SLOW DOWN " + value + "!", "冽寒或伤身，然不能缓" + value + "！");
+                string boldRedName = "[c:bR]" + value + "[c:]";
+                AddTranslation("YOU EVER SO CAREFULLY PULL THE " + boldRedName + " AWAY FROM THE ELECTRICITY AND LEAVE.", "汝甚慎，曳" + boldRedName + "离电而去。");
+                AddTranslation("OH DEAR! LOOKS LIKE YOU HAVE HOOKED SOMETHING OUT OF " + value + "!", "噫！似自" + value + "中钩出一物矣！");
+                AddTranslation("The Bonelord has been generous.\n[c:bR]" + value + "[c:] bone cost has decreased!", "骨王厚赐。\n[c:bR]" + value + "[c:]骨直减矣！");
+                AddTranslation("The Bonelord has been generous.\n[c:bR]" + value + "[c:] base health has increased!", "骨王厚赐。\n[c:bR]" + value + "[c:]本命益矣！");
+                AddTranslation("Oh dear, it looks like [c:bR]" + value + "[c:] bone cost has decreased!", "噫，似[c:bR]" + value + "[c:]骨直减矣！");
+                AddTranslation("The Bonelord has been generous.\n[c:bR]" + value + "[c:] bone cost has decreased greatly!", "骨王厚赐。\n[c:bR]" + value + "[c:]骨直大减矣！");
+                AddTranslation("The Bonelord has been very generous.\n[c:bR]" + value + "[c:] base health has increased greatly!", "骨王甚厚赐。\n[c:bR]" + value + "[c:]本命大益矣！");
+                AddTranslation("The Bonelord has been very generous.\n[c:bR]" + value + "[c:] base attack has increased!", "骨王甚厚赐。\n[c:bR]" + value + "[c:]本威益矣！");
+            }
+            foreach (var kvp in Cards)
+            {
+                string redKey = "[c:R]" + kvp.Key + "[c:]";
+                string redValue = "[c:R]" + kvp.Value + "[c:]";
+                AddTranslation("Oh dear, you've made " + redKey + " quite angry.", "噫，汝怒" + redValue + "甚矣。");
+
+                string blueKey = "[c:B]" + kvp.Key + "[c:]";
+                string blueValue = "[c:B]" + kvp.Value + "[c:]";
+                AddTranslation(blueKey + " MIGHT HAVE SOME DIFFICULTY SUBMERGING IF IT'S FROZEN SOLID!", blueValue + "若坚冰，则恐难潜矣！");
+                AddTranslation(blueKey + " CAN'T POSSESS ANYTHING IF IT CAN'T MOVE!", blueValue + "若不得动，则何能凭物！");
+                AddTranslation(blueKey + " WILL HAVE A HARD TIME HOOKING ANYTHING IF IT'S FROZEN SOLID!", blueValue + "若坚冰，则甩钩甚难矣！");
+                AddTranslation(blueKey + " FINALLY! TO GET RID OF THAT FOUL SMELL!", blueValue + "终矣！可去彼恶臭矣！");
+
+                string boldRedKey = "[c:bR]" + kvp.Key + "[c:]";
+                string boldRedValue = "[c:bR]" + kvp.Value + "[c:]";
+                AddTranslation("YARRRR, I WILL ENJOY THE KABOOM OF " + boldRedKey, "呀！吾将乐观" + boldRedValue + "之轰裂！");
+
+                string greenKey = "[c:lGr]" + kvp.Key + "[c:]";
+                string greenValue = "[c:lGr]" + kvp.Value + "[c:]";
+                AddTranslation("Oh... it will be rather difficult to haunt " + greenKey + " with their abilities at max capacity.", "噫……" + greenValue + "之能已盈，欲祟之甚难矣。");
+            }
+        }
+
         public static void RegisterTranslations()
         {
             // SetText
@@ -776,6 +853,7 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Blood Guzzler", "嗜血");
             // 无骨者
             AddTranslation("Boneless", "无骨者");
+            RegisterCard("Boneless", "无骨者");
             // 窃骨者
             AddTranslation("Bone Thief", "窃骨者");
             // 赏金猎手
@@ -834,508 +912,650 @@ namespace ClassicChineseLanguagePack
             AddTranslation("APPENDIX XII, SUBSECTION I - ABILITIES {0}", "附编十二，第一节——诸印技{0}");
             // 附录,12，第二节 - 可变属性{0}
             AddTranslation("APPENDIX XII, SUBSECTION II - VARIABLE STATS {0}", "附编十二，第二节——变数{0}");
+            RegisterCard("Skeleton", "枯骨");
             // 提线木偶反成操偶师，却仍被悬垂的丝线永恒诅咒。
             AddTranslation("The puppet becomes the puppeteer, yet still forever cursed by their dangling restraints.", "傀反为操傀者，然犹永为悬丝所诅。");
             // 操偶师
             AddTranslation("Animator", "操傀者");
+            RegisterCard("Animator", "操傀者");
             // 无形无相却徘徊不去的造物。着实令人毛骨悚然。
             AddTranslation("A formless Creature, that yet lingers. Truly a horrific sight.", "无形之物，犹徘徊未去。诚可骇也。");
             // 幽灵鬼影
             AddTranslation("Apparition", "幽影");
+            RegisterCard("Apparition", "幽影");
             // 只有蠢材才需要这种帮助。
             AddTranslation("Only a fool would need such assistance.", "唯愚者须此助耳。");
             // 刻墓之烬
             AddTranslation("Graven Ashes", "刻冢烬");
+            RegisterCard("Graven Ashes", "刻冢烬");
             // 它那恶臭的吐息不足为惧，真正要当心的是它留下的被动过手脚的棺材！
             AddTranslation("It's foul breath doesn't concern me, it's the Tampered Coffins it leaves behind!", "其秽息不足为忧，所当忧者，乃其所遗之坏棺！");
             // 墓穴食尸鬼
             AddTranslation("Bal-Bal", "食尸冢鬼");
+            RegisterCard("Bal-Bal", "食尸冢鬼");
             // 尖啸惊魂。它们会穿透防线直击猎物。
             AddTranslation("THE SCREAMING TERROR. THEY GO STRAIGHT THROUGH TO ATTACK THEIR PREY.", "尖啸之怖。彼辈径穿而攫其禽。");
             // 女妖
             AddTranslation("Banshee", "女妖");
+            RegisterCard("Banshee", "女妖");
             // 酒保
             AddTranslation("The Bartender", "酒人");
+            RegisterCard("The Bartender", "酒人");
             // 终日为那些活该承受他剧毒怒火之人调制致命鸡尾酒。对此毫无悔意。
             AddTranslation("spent his days serving harmful cocktails for those deserving of his poisonous wrath. Doesn't regret it at all.", "终日调毒醴，以饷当受其毒怒者，了无悔意。");
             // 巨骨
             AddTranslation("Big Bones", "巨骨");
+            RegisterCard("Big Bones", "巨骨");
             // 壮骨
             AddTranslation("Burly Bones", "壮骨");
+            RegisterCard("Burly Bones", "壮骨");
             // 蛮骨
             AddTranslation("Beefy Bones", "蛮骨");
+            RegisterCard("Beefy Bones", "蛮骨");
             // 钙先生
             AddTranslation("Cal C. Um", "钙公");
+            RegisterCard("Cal C. Um", "钙公");
             // 硕骨
             AddTranslation("Sizeable Bones", "硕骨");
+            RegisterCard("Sizeable Bones", "硕骨");
             // 庞骨
             AddTranslation("Considerable Bones", "庞骨");
+            RegisterCard("Considerable Bones", "庞骨");
             // 劲骨
             AddTranslation("Vigorous Bones", "劲骨");
+            RegisterCard("Vigorous Bones", "劲骨");
             // 重骨
             AddTranslation("Hefty Bones", "重骨");
+            RegisterCard("Hefty Bones", "重骨");
             // 这副魁梧的骨架富含钙质。
             AddTranslation("A RATHER BURLY SKELETON, IT IS VERY RICH IN CALCIUM.", "此枯骨颇魁，钙亦甚饶。");
             // 这麻袋里塞满了残肢断臂。说不定能翻出些有用的东西。
             AddTranslation("This sack is full of body parts. Maybe you'll find something useful in there.", "此囊满贮肢体，或可得可用之物。");
             // 血渍麻袋
             AddTranslation("Bloody Sack", "血渍囊");
+            RegisterCard("Bloody Sack", "血渍囊");
             // 骸骨集群
             AddTranslation("Bone Collective", "聚骨");
+            RegisterCard("Bone Collective", "聚骨");
             // 万千碎骨聚成人形，转瞬又轰然溃散为噼啪作响的骨群。
             AddTranslation("THOUSANDS OF TINY BONES COALESCE INTO A HUMANOID FORM ONLY TO DISPERSE IN A CLATTERING SWARM THE NEXT MOMENT.", "万微骨聚成人形，旋复散为戛然之群。");
             // 生前曾是条忠心耿耿的猎犬。直到某天，主人溘然长逝。
             AddTranslation("USED TO BE A VERY LOYAL DOG BACK IN THE DAY. WELL, ONE DAY HIS OWNER DIED.", "昔为忠犬。然一日，其主死矣。");
             // 寻骨猎犬
             AddTranslation("Bonehound", "寻骨犬");
+            RegisterCard("Bonehound", "寻骨犬");
             // 你终究还是来了，但你无法终结我开启的一切，事态已无可挽回。
             AddTranslation("SO YOU HAVE MADE IT HERE, YOU CANNOT END WHAT I HAVE STARTED, IT HAS GONE TOO FAR.", "汝竟至此。余所肇者，汝不能终，事已不可反矣。");
             // 骨王
             AddTranslation("The Bonelord", "骨王");
+            RegisterCard("The Bonelord", "骨王");
             // 骨王蜕下旧角，它们自成生命，终将反噬其主。
             AddTranslation("THE BONELORD SHEDS ITS OLD HORNS, THEY TAKE ON A LIFE OF THEIR OWN, TO ONE DAY USURP THEIR MASTER.", "骨王蜕其旧角，角离而自生，终将篡其主。");
             // 骨王的号角
             AddTranslation("Bonelord's Horn", "骨王之号");
+            RegisterCard("Bonelord's Horn", "骨王之号");
             // 没什么特别的。拿去吧。
             AddTranslation("NOT PARTICULARLY INSPIRING. YOU CAN HAVE IT.", "无甚可奇。汝取之。");
             // 骨堆
             AddTranslation("Bone Heap", "积骨");
+            RegisterCard("Bone Heap", "积骨");
             // 若我受困于此，你也休想逃脱。这场游戏永无终局。
             AddTranslation("IF I AM TRAPPED, SO WILL YOU. YOU CANNOT END THIS.", "余若受锢，汝亦然。此不可终。");
             // 骨王子
             AddTranslation("Bone Prince", "骨王子");
+            RegisterCard("Bone Prince", "骨王子");
             // 她以人类的呼吸为食，说不定此刻就站在你身后。
             AddTranslation("SHE FEEDS ON PEOPLES BREATH, MAYBE ONE IS STANDING RIGHT BEHIND YOU RIGHT NOW.", "彼食人息，今或已有一立于汝后。");
             // 阴灵女巫
             AddTranslation("Boo Hag", "鬼妪");
+            RegisterCard("Boo Hag", "鬼妪");
             // 她以力量与魅力统御众生，追随者们将如影随形。
             AddTranslation("SHE COMMANDS OTHERS WITH STRENGTH AND GLAMOUR. THEY WILL FOLLOW HER EVERYWHERE.", "彼以威与艳御众，众靡不从。");
             // 骷髅夫人
             AddTranslation("Calavera Catrina", "髑髅夫人");
+            RegisterCard("Calavera Catrina", "髑髅夫人");
             // 骷髅成群谓之墓穴。眼前这支队伍规模可观。
             AddTranslation("A GROUP OF SKELETONS IS CALLED A CATACOMB. THIS IS A RATHER LARGE GATHERING.", "枯骨成群，谓之冢众；此其大者也。");
             // 墓穴军团
             AddTranslation("Catacomb", "冢众");
+            RegisterCard("Catacomb", "冢众");
             // 百夫长
             AddTranslation("Centurion", "百夫长");
+            RegisterCard("Centurion", "百夫长");
             // 身披重甲的战士。所属军团最后的幸存者，无兵可率。
             AddTranslation("A heavily armoured warrior. Last of his century, leader to none.", "重甲之士。百人之队，所余惟此，已无众可率。");
             // 混魂碎骨
             AddTranslation("Compound Fracture", "裂骨");
+            RegisterCard("Compound Fracture", "裂骨");
             // 被自家屋顶压碎。化作一滩黏液苟活。
             AddTranslation("CRUSHED BY THE ROOF OF HIS OWN HOUSE. LIVING ON AS A PILE OF GOO.", "为自屋所压碎，化为一滩胶而苟生。");
             // 以蛋形态示人的怨灵。直视它的存在会遭受伤害。
             AddTranslation("A SPIRIT THAT TAKES THE FORM OF AN EGG. ITS PRESENCE HARMS THOSE THAT GAZE UPON IT.", "魂托形于卵，视之者受伤。");
             // 魔蛋
             AddTranslation("Dalgyal", "魔卵");
+            RegisterCard("Dalgyal", "魔卵");
             // 这群被可怕诅咒永远束缚的舞者，正跳着迈向毁灭的舞步。
             AddTranslation("FOREVER BOUND TOGETHER BY A TERRIBLE CURSE, THIS GROUP DANCES ONWARD INTO DOOM.", "众为恶诅永缚，相与舞而趋灭。");
             // 亡灵舞者
             AddTranslation("Danse Macabre", "死舞");
+            RegisterCard("Danse Macabre", "死舞");
             // 死人眼
             AddTranslation("Deadeye", "死目");
+            RegisterCard("Deadeye", "死目");
             // 传说此眼曾属于某位远古神明。它凝视着你的军队，挑选最中意的战士为其战场助力。
             AddTranslation("SOME SAY THIS EYE ONCE BELONGED TO AN ANCIENT GOD. IT GAZES UPON YOUR ARMY, PICKING ITS FAVORITE TO AID IT ON THE BATTLEFIELD.", "或云此目尝属上古之神。其视汝军，而择所爱者助之于战。");
             // 传说这只手曾属于远古神明。凡其所触之物皆会腐朽。正如万物的终结，亦意味着新的开端。
             AddTranslation("SOME SAY THIS HAND ONCE BELONGED TO AN ANCIENT GOD. ANYTHING IT TOUCHES ROTS. AS WITH ANYTHING THAT ENDS, IT IS ALSO A NEW BEGINNING.", "或云此手尝属上古之神。凡其所触皆朽；终者，亦新始也。");
             // 死人手
             AddTranslation("Dead Hand", "死手");
+            RegisterCard("Dead Hand", "死手");
             // 命数已尽本该令人却步，至少活人会这么劝你。
             AddTranslation("A DOOMED FATE SHOULD DISCOURAGE ONE FROM GOING ON, AT LEAST THATS WHAT A STILL LIVING MAN WOULD TELL YOU.", "命既当亡，本宜止步；尚生之人，必如是告汝。");
             // 行尸走肉
             AddTranslation("Dead Man Walking", "行尸走肉");
+            RegisterCard("Dead Man Walking", "行尸走肉");
             // 在法老信徒中声名显赫。它们早在久远前就被赐予了永生。
             AddTranslation("FAMED AMONG THE FOLLOWERS OF THE PHARAOH. THEY WERE BLESSED WITH ETERNAL LIFE LONG AGO.", "显名于法老之徒，久已受永生之祐。");
             // 法老之宠
             AddTranslation("Pharaoh's Pets", "法老之宠");
+            RegisterCard("Pharaoh's Pets", "法老之宠");
             // 丧钟为谁而鸣？为那枯竭的水龙头与冰冷的浴水。
             AddTranslation("FOR WHOM THE BELL TOLLS? FOR WHOM THE TAP DRIPS DRY AND THE BATHWATER RUNS COLD.", "钟为谁鸣？为泉口既涸，浴汤既寒者。");
             // 鸣钟亡灵
             AddTranslation("Death Knell", "丧钟");
+            RegisterCard("Death Knell", "丧钟");
             // 铃铛
             AddTranslation("Chime", "铃");
+            RegisterCard("Chime", "铃");
             // 这个孤独的人偶从灰暗的海域与寂静的岸边归来……它空洞地凝视着。
             AddTranslation("This lonesome doll was returned from seas of slate and silent shores... it stares lifelessly.", "此孤偶自黯海寂岸而返……无生而视。");
             // 人偶
             AddTranslation("Doll", "偶人");
+            RegisterCard("Doll", "偶人");
             // 藏身盔甲或寒冰又有何区别。这具骸骨终将腐朽。
             AddTranslation("HIDING IN A SUIT OF ARMOR, OR ICE, WHAT DOES IT MATTER. THIS SKELETON WON'T LAST FOREVER.", "匿于甲，抑匿于冰，奚异焉？此枯骨终必朽。");
             // 尸鬼
             AddTranslation("Draugr", "尸鬼");
+            RegisterCard("Draugr", "尸鬼");
             // 多么可悲的景象，无人知晓那井底究竟藏着什么。
             AddTranslation("WHAT A SAD SIGHT, NO ONE SHALL KNOW WHAT LIES AT THE BOTTOM OF THAT WELL.", "悲哉此状，莫知彼井底所藏。");
             // 淹死鬼
             AddTranslation("Drowned Soul", "溺魂");
+            RegisterCard("Drowned Soul", "溺魂");
             // 无人知晓附鬼究竟为何物，有人说最好永远别知道。
             AddTranslation("NO ONE KNOWS WHAT EXACTLY THE DYBBUK IS, SOME SAY IT IS BETTER LEFT UNKNOWN.", "附鬼果何物，莫之知也；或曰毋知之为善。");
             // 附鬼
             AddTranslation("Dybbuk", "附鬼");
+            RegisterCard("Dybbuk", "附鬼");
             // 灵质
             AddTranslation("Ectoplasm", "灵质");
+            RegisterCard("Ectoplasm", "灵质");
             // 游魂之精魄，潜藏于每个角落与阴影。一旦发现其一，余者自会接踵显现。
             AddTranslation("THE ESSENCE OF A SPIRIT, HIDDEN IN EVERY CORNER AND EVERY SHADOW. ONCE YOU SEE ONE, YOU WILL FIND THE REST SOON ENOUGH.", "魂之精也，匿于众隅群阴。既见其一，余者旋见。");
             // 一个活生生的失败品，它所知晓的一切只给它带来了死亡，或者说至少是类似死亡的东西。
             AddTranslation("A LIVING FAILURE, ITS KNOWLEDGE ONLY BROUGHT IT DEATH, OR AT LEAST AN APPROXIMATION OF IT.", "生而为败，其所知徒致其死，抑近死耳。");
             // 骨爪
             AddTranslation("Boneclaw", "骨爪");
+            RegisterCard("Boneclaw", "骨爪");
             // 无骨者
             AddTranslation("Boneless", "无骨者");
             // 这副骷髅似乎抛弃了这具无生命的躯壳，去追寻更伟大的事业。
             AddTranslation("It's Skeleton seems to have left this lifeless husk in order to achieve greater things.", "其骨似已舍此槁壳，以图大事。");
             // 次级木乃伊
             AddTranslation("Lesser Mummy", "次木乃伊");
+            RegisterCard("Lesser Mummy", "次木乃伊");
             // 法老忠实的仆从，随葬以在死后永世效忠。
             AddTranslation("A loyal servant to the Pharao, buried with him to serve eternally in death.", "法老之忠臣也，与之同葬，死而永事之。");
             // 英灵
             AddTranslation("Eidolon", "英灵");
+            RegisterCard("Eidolon", "英灵");
             // 远古附魔的傀儡，誓死守护太阳纪元。
             AddTranslation("A GOLEM ENCHANTED LONG AGO, BOUND TO PROTECT THE AGE OF SUN.", "古所祝之偶，缚以守日世。");
             // 相当顽劣的精魂，它散播火焰以制造混乱。
             AddTranslation("QUITE A MISCHIEVOUS SPIRIT, IT SPREADS ITS FLAMES TO CAUSE DISMAY.", "顽劣之精魂，散焰以乱众。");
             // 烬魂
             AddTranslation("Ember Spirit", "烬魂");
+            RegisterCard("Ember Spirit", "烬魂");
             // 家族渴望安息，却被迫在永恒之战中反复应召。
             AddTranslation("THE FAMILY WISHES TO REST IN PEACE, ONLY TO BE SUMMONED AGAIN AND AGAIN IN AN ETERNAL BATTLE.", "其家愿安，而数见召于无穷之战。");
             // 行师走人
             AddTranslation("The Walkers", "行尸");
+            RegisterCard("The Walkers", "行尸");
             // 据说它们散发的恶臭如此浓烈刺鼻，就连亡灵都能闻到！
             AddTranslation("It is said their odor is so strong and repugnant, even the undead can feel it!", "其臭浓恶，虽亡者亦觉之！");
             // 溃烂行尸
             AddTranslation("Festering Wretch", "腐尸");
+            RegisterCard("Festering Wretch", "腐尸");
             // 火焰
             AddTranslation("Flames", "焰");
+            RegisterCard("Flames", "焰");
             // 烈焰颅骨
             AddTranslation("Flameskull", "焰颅");
+            RegisterCard("Flameskull", "焰颅");
             // 永远飞行，永远愤怒，永远在过程中烦扰附近的盟友。
             AddTranslation("Always flying, always angry, always annoying nearby allies in the process.", "恒翔，恒怒，而恒扰邻友。");
             // 一个浑身湿透的水手，背负着悲惨的过往。具体细节我已记不清了。
             AddTranslation("A waterlogged sailor who carries his tragic past beside him. I don't remember the details.", "湿透之舟人，负其惨往而行。其详余忘之矣。");
             // 遗忘者
             AddTranslation("Forgotten Man", "遗人");
+            RegisterCard("Forgotten Man", "遗人");
             // 至交好友，手足兄弟，并肩战士。
             AddTranslation("BEST FRIENDS, BROTHERS, AND FIGHTERS.", "至友、昆弟、战士也。");
             // 弗兰肯和斯坦
             AddTranslation("Frank & Stein", "弗兰克与斯坦");
+            RegisterCard("Frank & Stein", "弗兰克与斯坦");
             // 弗兰肯斯坦
             AddTranslation("FrankenStein", "弗兰肯斯坦");
+            RegisterCard("FrankenStein", "弗兰肯斯坦");
             // 阴森可怖的守护灵。它在黑暗中疾驰而过，身后残留着不散的灵体。
             AddTranslation("A ghastly guardian spirit. It's presence lingers behind as it sprints through the dark.", "阴惨之守灵，驰于冥中，而遗影不散。");
             // 陪伴者
             AddTranslation("Fylgja", "伴灵");
+            RegisterCard("Fylgja", "伴灵");
             // 警戒之影
             AddTranslation("Warding Presence", "卫影");
+            RegisterCard("Warding Presence", "卫影");
             // 这些骸骨因何而生，战争、饥荒还是其他灾祸？此刻或许微不足道，但我恐惧它将孕育之物……
             AddTranslation("WHAT CREATED THESE BONES, WAR, FAMINE OR ANOTHER TRAGEDY? It may be insignificant now, but I fear what it might become...", "此骨何由而生？战乎，饥乎，抑他祸乎？今或微末，然余惧其后之所成……");
             // 万人冢
             AddTranslation("Mass Grave", "众冢");
+            RegisterCard("Mass Grave", "众冢");
             // 暴食
             AddTranslation("Rising Hunger", "长饥");
+            RegisterCard("Rising Hunger", "长饥");
             // 饿者骷髅
             AddTranslation("Gashadokuro", "馁骨");
+            RegisterCard("Gashadokuro", "馁骨");
             // 海盗们将这艘船视为归宿，即便死后亦然。一颗被斩杀的巨人颅骨成了他们的船首像。
             AddTranslation("THE PIRATES CALL THIS SHIP THEIR HOME, EVEN IN DEATH. A SLAIN GIANTS SKULL SERVES AS THEIR FIGUREHEAD.", "海上之盗以此舟为家，虽死亦然。其首像，乃一见戮巨人之颅。");
             // 幽灵船
             AddTranslation("Ghost Ship", "鬼舟");
+            RegisterCard("Ghost Ship", "鬼舟");
             // 巨人
             AddTranslation("Giant", "巨");
+            RegisterCard("Giant", "巨");
             // 传说中的巨人族早已灭绝，此乃明证。实乃奇观。
             AddTranslation("THE FAMED RACE OF GIANTS IS SAID TO HAVE DIED OUT LONG AGO, THIS IS PROOF. TRULY A SIGHT TO BEHOLD.", "所谓巨人之族，云久已灭矣；此其征也。诚奇观也。");
             // 受困于尘世，他们徘徊不去只为有朝一日能得安葬。
             AddTranslation("BOUND TO EARTH, THEY CLING ON SO THEY MAY ONE DAY GET PROPER BURIAL.", "系于尘世，流连不去，冀终得葬耳。");
             // 感恩亡魂
             AddTranslation("Grateful Dead", "感德亡魂");
+            RegisterCard("Grateful Dead", "感德亡魂");
             // 卑微的墓吟者，在最黑暗的岁月里，音乐始终是他唯一的慰藉。如今，即便世界终结，他仍吟唱着那首歌谣。
             AddTranslation("THE LOWLY GRAVEBARD, MUSIC ALWAYS BROUGHT HIM COMFORT IN THE WORST OF TIMES. NOW, EVEN AT THE END OF THE WORLD HE SHARES HIS SONG.", "卑贱之墓吟者，穷时唯乐足慰之。今虽世终，犹歌以与众。");
             // 墓吟者
             AddTranslation("Gravebard", "墓吟者");
+            RegisterCard("Gravebard", "墓吟者");
             // 他穷尽一生雕琢这些造物，这张卡承载着他灵魂的一部分。
             AddTranslation("HE HAS SPENT HIS LIFE CARVING THESE CREATURES, THIS CARD CONTAINS A PART OF HIS SOUL.", "彼尽生平以刻此诸物，此牌载其魂之一分。");
             // 刻墓人
             AddTranslation("Grave Carver", "刻冢者");
+            RegisterCard("Grave Carver", "刻冢者");
             // 他独自挖掘着骨头，希望能找到宝藏，就像他祖母当年那样。
             AddTranslation("HE SPENDS HIS TIME ALONE DIGGING FOR BONES IN HOPES OF FINDING A TREASURE. JUST LIKE HIS GRANDMA BEFORE HIM.", "独自掘骨，冀得宝焉，如其祖母昔然。");
             // 掘墓人
             AddTranslation("Gravedigger", "掘冢者");
+            RegisterCard("Gravedigger", "掘冢者");
             // 一个饱受摧残的灵魂。其菌丝深入土壤，引导着铁锹的挖掘。
             AddTranslation("A POOR, BRUTALIZED SOUL. THEIR MYCELIA PROBES FAR INTO THE SOIL, GUIDING THEIR SPADE.", "哀魂也，饱遭摧折。其菌丝深探于土，以导其铲。");
             // 掘孢人
             AddTranslation("Sporedigger", "掘蕈者");
+            RegisterCard("Sporedigger", "掘蕈者");
             // 忠实的守护之灵。即使被驱散，也会赐予保护祝福。
             AddTranslation("A devoted guardian spirit. Even when dispelled, it grants a protective blessing.", "笃守之灵。虽散，犹赐祐护。");
             // 哈尔蒂亚
             AddTranslation("Haltia", "哈尔蒂亚");
+            RegisterCard("Haltia", "哈尔蒂亚");
             // 我建议你别盯着看——你不会喜欢回望你的东西。
             AddTranslation("I advise against staring into it, you won't like what stares back.", "余劝汝毋久视之——反视汝者，必非汝所喜。");
             // 闹鬼魔镜
             AddTranslation("Haunted Mirror", "祟镜");
+            RegisterCard("Haunted Mirror", "祟镜");
             // 人称其为天启骑士。她的烈焰之刃能同时斩断生者与亡魂。
             AddTranslation("THEY CALL HER THE RIDER OF THE APOCALYPSE. HER FLAMING BLADE CUTS THROUGH THE LIVING AND DEAD ALIKE.", "人谓之末劫骑者。其炎刃兼斩生死。");
             // 无头骑士
             AddTranslation("Headless Horseman", "无首骑者");
+            RegisterCard("Headless Horseman", "无首骑者");
             // 亲爱的，可别靠太近。一旦被地狱最深处伸出的魔爪攫住，就再也无法挣脱了。
             AddTranslation("I WOULDN'T GET TOO CLOSE DEAR. YOU CAN'T BREAK THE HOLD FROM THE DEEPEST PITS OF HELL, ONCE IT LATCHES ON.", "毋近之太甚。一为狱底之爪所攫，则不可脱。");
             // 地狱魔爪
             AddTranslation("Hellhand", "狱爪");
+            RegisterCard("Hellhand", "狱爪");
             // 地狱犬
             AddTranslation("Hell Hound", "狱犬");
+            RegisterCard("Hell Hound", "狱犬");
             // 一条疯犬。它杀死了我的一个食尸鬼。
             AddTranslation("A RABID DOG. IT KILLED ONE OF MY GHOULS.", "狂犬也。尝杀朕一冢鬼。");
             // 关于传说中的九头蛇，流传着这样的传说：它是吞噬万物的凶兽，也是所有航海者的梦魇。
             AddTranslation("LEGENDS HAVE BEEN TOLD ABOUT THE LEGENDARY HYDRA, THE BEAST THAT SWALLOWS ALL AND THE BANE OF ALL THAT SAIL THE SEAS.", "九首蛇之传，传之久矣。其吞万物，而为航海者之害。");
             // 九头蛇
             AddTranslation("Hydra", "九首蛇");
+            RegisterCard("Hydra", "九首蛇");
             // 生前被贪食吞噬，死后仍受贪欲诅咒。奇怪的是会激发对骨头的贪婪。
             AddTranslation("Overtaken by it's gluttony in life, doomed to it's gluttony in death. Oddly inspires a greed for bones.", "生为饕所役，死亦为饕所锢。怪哉，又能发人贪骨之心。");
             // 食人鬼
             AddTranslation("Jikininki", "食人鬼");
+            RegisterCard("Jikininki", "食人鬼");
             // 雪崩
             AddTranslation("Avalanche", "雪崩");
+            RegisterCard("Avalanche", "雪崩");
             // 冰川
             AddTranslation("Glacier", "冰川");
+            RegisterCard("Glacier", "冰川");
             // 我很好奇究竟是何物被冰封了如此之久。
             AddTranslation("I WONDER WHAT HAS BEEN FROZEN AWAY FOR SO LONG.", "余怪何物久见冰封。");
             // 冰霜巨人
             AddTranslation("Frost Giant", "霜巨人");
+            RegisterCard("Frost Giant", "霜巨人");
             // 冰块
             AddTranslation("Ice Cube", "冰块");
+            RegisterCard("Ice Cube", "冰块");
             // 一具将头颅浸在冰河中死去的尸体。复生后仍执意保留凝结的寒冰。
             AddTranslation("A CORPSE WHO DIED WITH HIS HEAD IN A GLACIAL STREAM. AFTER HIS REANIMATION, HE COULDN'T BEAR TO PART WITH THE ICE THAT HAD FORMED.", "一尸死时，首没冰溪。既复起，犹不忍去所结之冰。");
             // 在溺死自己的孩子后投水自尽，如今仍在拖人下水。
             AddTranslation("After drowning her children and then herself, she continues to drown others.", "既溺其子，复溺其身，今犹溺人。");
             // 哭泣女妖
             AddTranslation("La Llorona", "泣女妖");
+            RegisterCard("La Llorona", "泣女妖");
             // 魔娜娜迦
             AddTranslation("Manananggal", "魔娜娜迦");
+            RegisterCard("Manananggal", "魔娜娜迦");
             // 残暴无法满足魔娜娜迦。当你目睹她腰斩分躯之时，你也将成为这场猎杀的牺牲品。
             AddTranslation("NO BRUTALITY SATIATES THE MANANANGGAL. WHEN YOU SEE HER SEVER FROM HER TORSO, YOU TOO WILL BE A VICTIM OF THE HUNT.", "残暴不足餍魔娜娜迦。一见其躯自腰而离，汝亦为其猎矣。");
             // 魔洛伊，又称毛鬼。它会吸取附近阵亡者的灵魂。
             AddTranslation("Moroi, also known as the hairy ghost. It leeches the souls from those struck down near it.", "魔洛伊，一名毛鬼。凡近其而毙者，魂皆为之所吮。");
             // 魔洛伊
             AddTranslation("Moroi", "魔洛伊");
+            RegisterCard("Moroi", "魔洛伊");
             // 昔日荣光早已消逝，却仍支撑他蹒跚前行。
             AddTranslation("HIS AGE OF GLORY IS LONG GONE, YET IT IS WHAT KEEPS HIM GOING.", "昔荣已逝，然犹恃之而行。");
             // 木乃伊之王
             AddTranslation("Mummy Lord", "木乃伊王");
+            RegisterCard("Mummy Lord", "木乃伊王");
             // 一切延续死后生命的尝试皆属徒劳，但死灵法师仍在坚持。他必须如此。
             AddTranslation("ALL EFFORTS TO PRESERVE LIFE AFTER DEATH HAVE BEEN FUTILE, YET THE NECROMANCER GOES ON. HE HAS TO.", "凡续死后之生者，悉徒劳矣；然死灵巫犹行之。其不得不然。");
             // 死灵法师
             AddTranslation("Necromancer", "死灵巫");
+            RegisterCard("Necromancer", "死灵巫");
             // 一个喜欢把别人拖入水底坟墓的麻烦湖灵。
             AddTranslation("A troublesome lake spirit that enjoys dragging others down to a watery grave.", "为人患之湖灵，好曳人入水冢。");
             // 水妖
             AddTranslation("Nixie", "水妖");
+            RegisterCard("Nixie", "水妖");
             // 苍白病态贵族的蹒跚尸骸。它一边剥落腐肉，一边散播污秽。
             AddTranslation("The shambling corpse of a pale, sickly noble. it spreads it's filth as it sheds it's flesh.", "苍白病贵之蹒跚尸也。其脱肉之际，亦散其秽。");
             // 诺斯费拉图
             AddTranslation("Nosferat", "诺斯费拉图");
+            RegisterCard("Nosferat", "诺斯费拉图");
             // 古银币
             AddTranslation("Ancient Obol", "古奥波勒");
+            RegisterCard("Ancient Obol", "古奥波勒");
             // 真相终将揭晓。这枚欧宝银币比时间本身更古老，时机成熟时自会显现真容。
             AddTranslation("IT WILL ALL MAKE SENSE SOON. THE OBOL IS OLDER THAN TIME ITSELF, AND THUS IT WILL REVEAL ITSELF IN DUE TIME.", "其义旋当自明。奥波勒古于时，故其形终将自著。");
             // 独臂强盗
             AddTranslation("One Armed Bandit", "独臂盗");
+            RegisterCard("One Armed Bandit", "独臂盗");
             // 十步试炼夺走了他一条胳膊，最终要了他的命。
             AddTranslation("Took the ten paces, that ordeal cost him an arm, and his life.", "十步之试，既夺其臂，亦夺其生。");
             // 常言道善终即善。常言时间如衔尾之蛇，无始无终，唯有轮回。
             AddTranslation("IT IS SAID ALL IS WELL THAT ENDS. IT IS SAID TIME IS LIKE AN OUROBOROS, IT DOES NOT END, IT ONLY REPEATS ITSELF.", "或云终善则皆善。又云时若衔骨蛇，无终也，惟自反耳。");
             // 衔骨蛇
             AddTranslation("Ourobones", "衔骨蛇");
+            RegisterCard("Ourobones", "衔骨蛇");
             // 疫医
             AddTranslation("Plague Doctor", "疫医");
+            RegisterCard("Plague Doctor", "疫医");
             // 他诊断出亡灵们罹患恶疾。唯一的解药就是死亡。
             AddTranslation("HE HAS DETERMINED THE UNDEAD ARE SICK WITH A TERRIBLE ILLNESS. THE ONLY CURE IS DEATH.", "彼断亡者罹剧疾。其唯一之疗，惟死。");
             // 邪恶的捣蛋鬼，恶灵非常享受自己的死亡。
             AddTranslation("AN EVIL TRICKSTER, THE POLTERGEIST HAS ENJOYED THEIR DEATH VERY MUCH.", "恶戏之灵，甚乐其死。");
             // 恶灵
             AddTranslation("Poltergeist", "恶灵");
+            RegisterCard("Poltergeist", "恶灵");
             // 一套被邪灵附体的古老盔甲。她的铁拳会将更多造物拖入战场。
             AddTranslation("A suit of ancient armour in which an occult spirit has taken up residence. Her iron fist drags more creatures to the fight.", "古甲一具，邪魂处其中。其铁拳曳更多物以赴战。");
             // 附魔铠甲
             AddTranslation("Possessed Armour", "附魂甲");
+            RegisterCard("Possessed Armour", "附魂甲");
             // 一场失败的实验，妄图创造死亡之舞却徒劳无功。它们无法协同运作。
             AddTranslation("AN EXPERIMENT GONE WRONG, IN A FUTILE ATTEMPT TO CREATE A DANSE MACCABRE. THEY DO NOT FUNCTION TOGETHER.", "实验之败也，徒欲成死舞，而终不相用。");
             // 实验体
             AddTranslation("Project", "试物");
+            RegisterCard("Project", "试物");
             // 你不该看到这个
             AddTranslation("You shouldnt be seeing this right now", "今不当见此。");
             // 无形造物
             AddTranslation("Random Cards", "无形牌");
+            RegisterCard("Random Cards", "无形牌");
             // 手持死亡镰刀的复生亡灵，只为复仇而生。
             AddTranslation("BRINGING THE SCYTHE OF DEATH, THE REVENANT SEEKS ONLY REVENGE.", "执死镰而来，逆生魂所求惟雠。");
             // 复生亡灵
             AddTranslation("Revenant", "逆生魂");
+            RegisterCard("Revenant", "逆生魂");
             // 开膛手
             AddTranslation("Ripper", "剖者");
+            RegisterCard("Ripper", "剖者");
             // 开膛手信奉暴力解决一切。它会用纯粹的蛮力粉碎所有阻碍，正面击溃任何难题。
             AddTranslation("THE RIPPER SOLVES EVERYTHING THROUGH SHEER STRENGTH. IT WILL PUNCH ANY ISSUE STRAIGHT IN THE FACE AND SOLVE IT, TOO.", "彼恃纯威以断万事。凡事之当面者，辄拳而破之。");
             // 真是个奇迹，这家伙居然还没散架！不过要是想逃跑的话，那条胳膊可能会掉下来。
             AddTranslation("It's a wonder this one has stayed together! Though it may lose that arm if it tries to flee.", "异哉，其尚未散！然若欲遁，则其臂或坠。");
             // 腐尸
             AddTranslation("Rotten", "腐尸");
+            RegisterCard("Rotten", "腐尸");
             // 抽搐的手臂
             AddTranslation("Twitching Arm", "搐臂");
+            RegisterCard("Twitching Arm", "搐臂");
             // 诡秘的储物柜
             AddTranslation("The elusive Locker.", "诡柜也。");
             // 戴维·琼斯的储物柜
             AddTranslation("Davy Jones Locker", "戴维·琼斯之柜");
+            RegisterCard("Davy Jones Locker", "戴维·琼斯之柜");
             // 黄胡子
             AddTranslation("Yellowbeard", "黄须");
+            RegisterCard("Yellowbeard", "黄须");
             // 蓝胡子
             AddTranslation("Bluebeard", "蓝须");
+            RegisterCard("Bluebeard", "蓝须");
             // 他的船歌只能鼓舞骷髅兵的士气，毕竟其他人都欣赏不来。
             AddTranslation("His songs raise the morale of only Skeletons, as no one else seems to like it.", "其歌惟振枯骨之气，馀众皆不好之。");
             // 尖叫颅骨的远亲，如今已成为全球海盗的象征
             AddTranslation("A DISTANT RELATIVE OF THE SCREAMING SKULL, HE IS NOW THE SYMBOL OF PIRACY ALL AROUND THE WORLD", "啸颅之远裔，今为四海之盗表。");
             // 十字骨
             AddTranslation("Crossbones", "十字骨");
+            RegisterCard("Crossbones", "十字骨");
             // 戴维·琼斯
             AddTranslation("Davy Jones", "戴维·琼斯");
+            RegisterCard("Davy Jones", "戴维·琼斯");
             // 这位才是船员们公认的船长，备受尊敬却行踪诡秘。黄胡子那家伙捞的油水总比他多。
             AddTranslation("The true captain of the crew, respected by all yet still elusive. YELLOWBEARD ALWAYS GETS MORE BOOTY THAN HE DOES.", "真舟长也，众所敬而迹犹诡；黄须所得，常多于彼。");
             // 抱着满满一桶火药可能不是个好主意。我不确定他是否注意到了。
             AddTranslation("MAYBE IT WASN'T THE BEST IDEA TO HOLD A BARREL FULL OF GUNPOWDER. I'M NOT SURE WETHER HE NOTICED.", "抱满桶火药，未必善谋；余不知彼觉之否。");
             // 自爆海盗
             AddTranslation("Exploding Pirate", "爆裂海盗");
+            RegisterCard("Exploding Pirate", "爆裂海盗");
             // 他为了那个大钩子背叛了船长，现在他肯定能让任何人变成叛徒！
             AddTranslation("He betrayed his captain for that large hook, now he is sure to make anyone a double-crosser!", "彼为大钩叛其舟长，今必使人尽为贰臣。");
             // 大副斯纳格
             AddTranslation("First Mate Snag", "大副斯纳格");
+            RegisterCard("First Mate Snag", "大副斯纳格");
             // 鹦鹉通常是绝佳的海滨伙伴，但这只刚吞了块毒饼干。
             AddTranslation("Parrots usually make great sea-side companions, this one just ate a poisoned cracker.", "鹦鹉恒为海滨良伴，此一甫啖毒饼。");
             // 波利
             AddTranslation("Polly", "波利");
+            RegisterCard("Polly", "波利");
             // 敏锐的眼窝使他能攻击任意位置，火枪也功不可没。妙极！
             AddTranslation("A keen eye socket allows him to attack anywhere, his musket helps too. marvelous indeed!", "目窟甚利，故能击诸处；火铳亦助之，妙哉。");
             // 私掠船长
             AddTranslation("Privateer", "私掠者");
+            RegisterCard("Privateer", "私掠者");
             // 豪侠
             AddTranslation("Swashbuckler", "豪侠");
+            RegisterCard("Swashbuckler", "豪侠");
             // 自古老埃及陵墓现世，专为供奉往昔之主而铸。
             AddTranslation("EMERGING FROM AN OLD EGYPTIAN TOMB, MADE TO HOUSE THE LORDS OF OLD.", "自古埃及之陵中出，昔所以藏旧主者也。");
             // 石棺
             AddTranslation("Sarcophagus", "石椁");
+            RegisterCard("Sarcophagus", "石椁");
             // 尖叫颅骨
             AddTranslation("Screaming Skull", "啸颅");
+            RegisterCard("Screaming Skull", "啸颅");
             // 唯有痛苦与折磨，这具骸骨头颅感受不到其他任何事物。真可悲。
             AddTranslation("ONLY PAIN AND SUFFERING, NOTHING ELSE IS FELT BY THIS SKELETAL HEAD. WHAT A PITY.", "此枯颅所觉，惟痛与苦耳。可哀也。");
             // 技艺精湛的猎手。当你听到它那令人毛骨悚然的口哨声时，千万别相信自己的耳朵。
             AddTranslation("A SKILLED HUNTER. DON'T TRUST YOUR EARS WHEN YOU HEAR ITS HAUNTING WHISTLE.", "善猎者也。闻其祟哨，毋信乃耳。");
             // 希尔邦
             AddTranslation("Silbon", "希尔邦");
+            RegisterCard("Silbon", "希尔邦");
             // 它们习得了远古的死亡咒术。然而这股力量过于强大，难以驾驭。
             AddTranslation("THEY HAVE LEARNED THE ANCIENT SPELL OF DEATH. YET IT IS TOO MUCH POWER TO BE WIELDED.", "彼习上古死咒，然其力太甚，不可御也。");
             // 骷髅法师
             AddTranslation("Skelemagus", "枯骨巫");
+            RegisterCard("Skelemagus", "枯骨巫");
             // [c:bR]苏醒吧我的军团，苏——醒——！[c:]
             AddTranslation("[c:bR]RISE MY ARMY, RIIIIIISE[c:]", "[c:bR]起，吾军，起——！[c:]");
             // 骷髅军团
             AddTranslation("Skeleton Army", "枯骨军");
+            RegisterCard("Skeleton Army", "枯骨军");
             // 西部最快的出枪手之一，但还不够快。
             AddTranslation("One of the faster draws in the west, but not fast enough.", "西土捷手之一，然犹未及。");
             // 枪手之魂
             AddTranslation("Slinger's Soul", "铳手之魂");
+            RegisterCard("Slinger's Soul", "铳手之魂");
             // 它们凭空出现，随心所欲地转移人类。
             AddTranslation("THEY SHOW UP OUT OF NOWHERE AND RELOCATE PEOPLE AS THEY PLEASE.", "忽然而至，恣徙人。");
             // 幽魂军团
             AddTranslation("Sluagh", "幽魂众");
+            RegisterCard("Sluagh", "幽魂众");
             // 不给糖就捣蛋！
             AddTranslation("Trick or treat!", "予糖，不然见祟！");
             // 糖果桶
             AddTranslation("Candy Bucket", "糖桶");
+            RegisterCard("Candy Bucket", "糖桶");
             // 万圣节快乐！
             AddTranslation("HAPPY HALLOWEEN!", "万圣夕乐哉！");
             // 糖果怪兽
             AddTranslation("Candy Monster", "糖兽");
+            RegisterCard("Candy Monster", "糖兽");
             // 幽灵兔
             AddTranslation("Spectrabbit", "幽兔");
+            RegisterCard("Spectrabbit", "幽兔");
             // 大幽灵发出笛声般的哀鸣，既是死亡的预兆，也是毁灭的凶兆。
             AddTranslation("THE SPECTRE EMITS A FLUTE LIKE CALL, AN OMEN OF BOTH DEATH AND DESCTRUCTION", "此魅发哨如笛，为死与毁之兆。");
             // 大幽灵
             AddTranslation("Spectre", "幽魅");
+            RegisterCard("Spectre", "幽魅");
             // 死亡何其残酷。饥饿更甚。为何而战，饥饿的孩子。
             AddTranslation("DEATH IS A CRUEL FATE. STARVATION AN EVEN CRUELER ONE. WHY DO YOU FIGHT, OH HUNGRY CHILD.", "死酷矣，饥尤酷焉。饥子乎，汝何战哉？");
             // 饿殍
             AddTranslation("Starved Man", "饿殍");
+            RegisterCard("Starved Man", "饿殍");
             // 他在书房中耗费数年光阴，不知疲倦地试图改写命运。然而命运终究是位残酷的情人。
             AddTranslation("HE HAS SPENT YEARS IN HIS STUDY, IN A TIRELESS ATTEMPT TO CHANGE HIS FATE. YET FATE IS A CRUEL MISTRESS.", "彼居书斋积年，不倦以图易命；然命诚酷妇也。");
             // 召唤师
             AddTranslation("Summoner", "召者");
+            RegisterCard("Summoner", "召者");
             // 捣毁之棺
             AddTranslation("Tampered Coffin", "坏棺");
+            RegisterCard("Tampered Coffin", "坏棺");
             // 枯树
             AddTranslation("Dead Tree", "枯木");
+            RegisterCard("Dead Tree", "枯木");
             // 低廉的代价只配得上它贫弱的身板。
             AddTranslation("Its low cost is justified only by its low stats.", "其直之下，特称其数之下耳。");
             // 惊扰之墓
             AddTranslation("Disturbed Grave", "扰墓");
+            RegisterCard("Disturbed Grave", "扰墓");
             // 一座简陋的坟墓。长眠于此者，吾亦不识。
             AddTranslation("A LOWLY GRAVE. WHOEVER IS LAID TO REST HERE, I DO NOT KNOW.", "鄙墓一耳。安此者谁，余不识也。");
             // 犬舍
             AddTranslation("Kennel", "犬舍");
+            RegisterCard("Kennel", "犬舍");
             // 方尖碑
             AddTranslation("Obelisk", "方尖碑");
+            RegisterCard("Obelisk", "方尖碑");
             // 沉船残骸
             AddTranslation("Shipwreck", "沉舟");
+            RegisterCard("Shipwreck", "沉舟");
             // 浮木
             AddTranslation("Flotsam", "浮木");
+            RegisterCard("Flotsam", "浮木");
             // 水瓮
             AddTranslation("Water Urn", "水瓮");
+            RegisterCard("Water Urn", "水瓮");
             // 巫毒人偶
             AddTranslation("Voodoo Doll", "巫蛊偶");
+            RegisterCard("Voodoo Doll", "巫蛊偶");
             // 空空如也……又是空空如也……再没有宝藏可寻了。
             AddTranslation("NOTHING... NOTHING AGAIN... NO TREASURE IS LEFT ANYMORE.", "无……无矣……复无宝可求矣。");
             // 盗墓贼
             AddTranslation("Tomb Robber", "盗冢者");
+            RegisterCard("Tomb Robber", "盗冢者");
             // 厄菲阿尔忒斯
             AddTranslation("Ephialtes", "厄菲阿尔忒斯");
+            RegisterCard("Ephialtes", "厄菲阿尔忒斯");
             // 奥提斯
             AddTranslation("Otis", "奥提斯");
+            RegisterCard("Otis", "奥提斯");
             // 殡葬师
             AddTranslation("Undertaker", "殡者");
+            RegisterCard("Undertaker", "殡者");
             // 这个迷失的灵魂已无人需要其服务，只能漫无目的地埋葬亡者。
             AddTranslation("His service no longer needed, this lost soul buries without purpose..", "其役既无人需，此迷魂徒葬而无所为。");
             // 行走之棺
             AddTranslation("Walking Coffin", "行棺");
+            RegisterCard("Walking Coffin", "行棺");
             // 奔走之棺
             AddTranslation("Running Coffin", "奔棺");
+            RegisterCard("Running Coffin", "奔棺");
             // 占位符
             AddTranslation("Placeholder", "虚位");
+            RegisterCard("Placeholder", "虚位");
             // 传说中的吸血鬼。现实中，等人都死光了哪还有血可吸。
             AddTranslation("THE VAMPIRE IS A CREATURE OF LEGENDS. IN REALITY, LITTLE BLOOD TO DRINK AFTER EVERYONE HAS DIED.", "饮血鬼者，传闻之物也。今人尽死，少有血可饮矣。");
             // 吸血伯爵
             AddTranslation("Vampire", "饮血鬼");
+            RegisterCard("Vampire", "饮血鬼");
             // 羊皮纸
             AddTranslation("Vellum", "韦牍");
+            RegisterCard("Vellum", "韦牍");
             // 永不满足，贪得无厌。此怨灵永世不得安息。
             AddTranslation("TO NEVER BE SATISFIED, TO ALWAYS WANT MORE. THIS SPIRIT SHALL NEVER FIND ITS PEACE.", "永不知足，常求有余。此祟灵终不得宁。");
             // 复仇之魂
             AddTranslation("Vengeful Spirit", "雠魂");
+            RegisterCard("Vengeful Spirit", "雠魂");
             // 这具阴冷的幽魂会用冰雾笼罩胆敢进犯之敌。
             AddTranslation("THIS GELID SPECTER ENVELOPS WOULD-BE ATTACKERS IN AN ICY MIST.", "此凛幽之魂，以冰雾被将攻者。");
             // 寒霜幽魂
             AddTranslation("Warthr", "寒魄");
+            RegisterCard("Warthr", "寒魄");
             // 被狂狼之魂腐化。它的怒火无人能挡。
             AddTranslation("Corrupted by the spirit of a rabid wolf. It's fury cannot be stopped.", "为狂狼之魂所败，其怒不可遏。");
             // 威楚格
             AddTranslation("Wechuge", "威楚格");
+            RegisterCard("Wechuge", "威楚格");
             // 可怖的亡灵生物，会突然现身吞噬新鲜尸体。它们只给受害者留下骨头。
             AddTranslation("Hideous beings that will jump out to consume freshly killed corpses. They only spare the bones of the victim.", "此丑恶之物，跃然而出，以食新死之尸；所遗者，惟其骨耳。");
             // 尸妖
             AddTranslation("Wight", "尸妖");
+            RegisterCard("Wight", "尸妖");
             // 它们以光之躯散发温暖，将绝望的灵魂引向灯塔，驱散恐惧。
             AddTranslation("THEY WARM WITH THEIR BODIES OF LIGHT, DRAWING HOPELESS SOULS INTO THEIR BEACON, DISPELLING THEIR FRIGHT.", "其以光躯为燠，引绝望之魂就其炬，而散其惧。");
             // 鬼火
             AddTranslation("Will 'O' The Wisp", "鬼火");
+            RegisterCard("Will 'O' The Wisp", "鬼火");
             // 一具堕落巨人的脊柱，正试图寻找新宿主。遗憾的是，大多数造物体型都太小了。
             AddTranslation("A FALLEN GIANTS SPINE THAT IS TRYING TO FIND A NEW HOST. REGRETTABLY, MOST CREATURES ARE QUITE SMALL.", "一堕巨人之脊，方求新主。可惋众物多褊小，不足以居之。");
             // 扭曲者
             AddTranslation("Writher", "蠕脊者");
+            RegisterCard("Writher", "蠕脊者");
             // 尖刺脊椎骨
             AddTranslation("Spiny Vertebrae", "棘脊骨");
+            RegisterCard("Spiny Vertebrae", "棘脊骨");
             // 最基础的亡灵生物，浑身散发着腐烂的恶臭。总是成群结队行动，寻求庇护与指引。
             AddTranslation("THE SIMPLEST OF UNDEAD, CHARACTERIZED BY ITS ROTTEN SMELL. IT ALWAYS TRAVELS WITH OTHERS, SEEKING PROTECTION AND GUIDANCE.", "亡灵至浅者也，以腐臭著。恒与群曹偕行，以求庇与导。");
             // 丧尸
             AddTranslation("Zombie", "僵尸");
+            RegisterCard("Zombie", "僵尸");
 
             // Achievement
             // 格里魔拉模组成就
@@ -2275,12 +2495,119 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Your dearest Scrybe", "乃至爱之冥刻者");
             // [数据删除]
             AddTranslation("[Redacted]", "[删去]");
+
+            RegisterDynamicTranslations();
         }
 
     }
 
     public class MagnificusMod
     {
+        public static Dictionary<string, string> Cards = new();
+        public static Dictionary<string, List<KeyValuePair<string, string>>> CardsDescription = new();
+        public static Dictionary<string, string> Abilities = new();
+
+        public static void RegisterCard(string en, string zh, string desen, string deszh)
+        {
+            if (!Cards.ContainsKey(en))
+            {
+                Cards.Add(en, zh);
+            }
+            if (!CardsDescription.ContainsKey(en))
+            {
+                CardsDescription[en] = new List<KeyValuePair<string, string>>();
+            }
+            CardsDescription[en].Add(new KeyValuePair<string, string>(desen, deszh));
+        }
+
+        public static void RegisterAbility(string en, string zh)
+        {
+            Abilities[en] = zh;
+        }
+
+        private static void RegisterBaseGameAbilities()
+        {
+            foreach (Ability ability in Enum.GetValues(typeof(Ability)))
+            {
+                var info = AbilitiesUtil.GetInfo(ability);
+                if (info == null || info.rulebookName == null || Abilities.ContainsKey(info.rulebookName))
+                {
+                    continue;
+                }
+                RegisterAbility(info.rulebookName, Localization.Translate(info.rulebookName));
+            }
+        }
+
+        private static void RegisterDynamicTranslations()
+        {
+            foreach (var kvp in Cards)
+            {
+                AddTranslation("~" + kvp.Key + "~", "~" + kvp.Value + "~");
+                AddTranslation("The pact takes its effect on your " + kvp.Key + "..", "契施于汝之" + kvp.Value + "矣……");
+            }
+            foreach (var value in Cards.Values)
+            {
+                AddTranslation("Your" + value + " sits on the enchanted grounds...\nYou could either leave it there, to enchant it..", "汝之" + value + "处附术之地……\n汝可留之，使受附术……");
+                AddTranslation("Your " + value + " has been burdened with Glass Cannon!", "汝之" + value + "荷玻璃炮之咎！");
+                AddTranslation("Your " + value + " has been burdened with Tank!", "汝之" + value + "荷重甲之咎！");
+                AddTranslation("Your " + value + " has been blessed!", "汝之" + value + "受福矣！");
+                AddTranslation("Your " + value + " has been burdened!", "汝之" + value + "荷咎矣！");
+                AddTranslation("Your " + value + " is now free.. But more unstable..", "汝之" + value + "今免其直……然更不定矣……");
+                foreach (var kvp in Abilities)
+                {
+                    AddTranslation("Your" + value + " has been blessed with " + kvp.Key + "!", "汝之" + value + "受" + kvp.Value + "之福！");
+                    AddTranslation("Your" + value + " has been burdened with " + kvp.Key + "!", "汝之" + value + "荷" + kvp.Value + "之咎！");
+                }
+                AddTranslation("Your " + value + " wields no mana.", "汝之" + value + "无术力。");
+                AddTranslation("The " + value + " has no mana.", value + "无术力。");
+            }
+            foreach (var kvp in Cards)
+            {
+                foreach (var kvp2 in Abilities)
+                {
+                    AddTranslation("Your " + kvp.Key + " is now free of its " + kvp2.Key + "...", "汝之" + kvp.Value + "今脱" + kvp2.Value + "矣……");
+                }
+            }
+            foreach (var kvp in Cards)
+            {
+                var key = kvp.Key;
+                var value = kvp.Value;
+                foreach (var kv in CardsDescription[key])
+                {
+                    var descKey = kv.Key;
+                    var descValue = kv.Value;
+                    AddTranslation("You glance at a " + key + ". " + descKey, "汝瞥见一" + value + "。" + descValue);
+                    AddTranslation("A " + key + " appears from within the portrait. " + descKey, value + "自肖像中见。" + descValue);
+                    AddTranslation("You gaze at a " + key + ". " + descKey, "汝凝视一" + value + "。" + descValue);
+                    AddTranslation("You glance at an " + key + ". " + descKey, "汝瞥见一" + value + "。" + descValue);
+                    AddTranslation("An " + key + " appears from within the portrait. " + descKey, value + "自肖像中见。" + descValue);
+                    AddTranslation("You gaze at an " + key + ". " + descKey, "汝凝视一" + value + "。" + descValue);
+                }
+            }
+            Dictionary<GemType, string> gemTypesEn = new Dictionary<GemType, string>
+            {
+                { GemType.Orange, "橙色" },
+                { GemType.Blue, "蓝色" },
+                { GemType.Green, "绿色" },
+            };
+            Dictionary<GemType, string> gemTypes = new Dictionary<GemType, string>
+            {
+                { GemType.Orange, "橙" },
+                { GemType.Blue, "蓝" },
+                { GemType.Green, "绿" },
+            };
+            foreach (var gemType in gemTypes.Keys)
+            {
+                AddTranslation("You don't have two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypesEn[gemType] + "</color> gems to play that.", "汝无二" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>玉以陈彼。");
+                foreach (var value in Cards.Values)
+                {
+                    AddTranslation("You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypesEn[gemType] + "</color> gems to play your " + value + ".", "欲陈汝之" + value + "，须二" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>玉。");
+                    AddTranslation("You don't have enough " + HintsHandler.GetColorCodeForGem(gemType) + gemTypesEn[gemType] + "</color> gems on the board to play that " + value + ".", "局中" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>玉不足，不得陈彼" + value + "。");
+                }
+                AddTranslation("You need two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypesEn[gemType] + "</color> gems on the board.", "局中须有二" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "</color>玉。");
+            }
+        }
+
         public static void RegisterTranslations()
         {
             // 新的蔓尼菲科冒险
@@ -2316,304 +2643,397 @@ namespace ClassicChineseLanguagePack
             // Ability
             // 空白玛珂
             AddTranslation("Blank Mox", "虚玛珂");
+            RegisterAbility("Blank Mox", "虚玛珂");
             // 抽到[creature]时，它会实体化为随机一种玛珂水晶。 / 当该印记存在于其他卡牌上时，该卡牌会生成随机一种玛珂水晶。
             AddTranslation("When a card bearing this sigil is drawn, it will materialize into a random Mox Crystal. \n When on another card, the card will generate a random Mox Crystal.", "负此印契之牌既引，则化为一偶玛珂晶。\n若此印在他牌，则彼牌生一偶玛珂晶。");
             // 无形玛珂
             AddTranslation("Undecided Mox", "未定玛珂");
+            RegisterAbility("Undecided Mox", "未定玛珂");
             // 当[creature]打出时，选择一种玛珂类型供其提供。
             AddTranslation("When a card bearing this sigil is played, select a mox type for this card to provide.", "负此印契之牌既陈，择一玛珂之类以供之。");
             // 红宝石之心
             AddTranslation("Ruby Heart", "红玉心");
+            RegisterAbility("Ruby Heart", "红玉心");
             // [creature]阵亡时，会在原地生成一张红宝石玛珂。
             AddTranslation("When a card bearing this sigil perishes, it creates a Ruby Mox in its place.", "负此印契之牌死，则其处生一红玉玛珂。");
             // 蓝宝石之心
             AddTranslation("Sapphire Heart", "青心");
+            RegisterAbility("Sapphire Heart", "青心");
             // [creature]阵亡时，会在原地生成一个蓝宝石玛珂。
             AddTranslation("When a card bearing this sigil perishes, it creates a Sapphire Mox in its place.", "负此印契之牌死，则其处生一蓝玉玛珂。");
             // 骨髓
             AddTranslation("Bone Marrow", "骨髓");
+            RegisterAbility("Bone Marrow", "骨髓");
             // 当你的非宝石卡牌阵亡时，[creature]获得1点力量，最高可叠加至5点。
             AddTranslation("When one of your non-gem cards perishes, a card bearing this sigil gains 1 power, maxing out at 5.", "汝一非玉牌死，则负此印契之牌威加一，至五而止。");
             // 刺激
             AddTranslation("Stimulation", "激威");
+            RegisterAbility("Stimulation", "激威");
             // 每回合结束时，[creature]增加1点力量，最高不超过4点。
             AddTranslation("At the end of every turn, a card bearing this sigil gains 1 power, maxing out at 4.", "每合终，负此印契之牌威加一，至四而止。");
             // 刺激（生命）
             AddTranslation("Stimulation (Health)", "激命");
+            RegisterAbility("Stimulation (Health)", "激命");
             // 每回合结束时，[creature]获得2点生命值，上限为10点。
             AddTranslation("At the end of every turn, a card bearing this sigil gains 2 health, maxes out at 10.", "每合终，负此印契之牌命加二，至十而止。");
             // 死亡掠夺
             AddTranslation("Dead Draw", "死引");
+            RegisterAbility("Dead Draw", "死引");
             // 当非宝石卡牌阵亡时，从牌组中抽取一张卡牌。
             AddTranslation("When a non-gem card dies, draw a card from your deck.", "非玉牌一死，则自牌列引一牌。");
             // 绿宝石之心
             AddTranslation("Emerald Heart", "绿玉心");
+            RegisterAbility("Emerald Heart", "绿玉心");
             // [creature]阵亡时，会在原地生成一张绿宝石玛珂。
             AddTranslation("When a card bearing this sigil perishes, it creates an Emerald Mox in its place.", "负此印契之牌死，则其处生一绿玉玛珂。");
             // 黏液
             AddTranslation("Gooey", "黏");
+            RegisterAbility("Gooey", "黏");
             // [creature]受到攻击时，攻击者失去1点力量。
             AddTranslation("When a card bearing this sigil is struck, the striker loses 1 attack.", "负此印契之牌受击，则攻者失一威。");
             // 头脑风宝
             AddTranslation("Mental Gemnastics", "玉智");
+            RegisterAbility("Mental Gemnastics", "玉智");
             // 当使用[creature]时，根据牌桌上宝石数量从牌组抽取相应数量的卡牌。
             AddTranslation("When a card bearing this sigil is played, draw cards from your deck based on how many Gems are on the board.", "负此印契之牌既陈，则视局上诸玉之数而引牌。");
             // 劫掠者
             AddTranslation("Loot", "掠者");
+            RegisterAbility("Loot", "掠者");
             // 当[creature]造成直接伤害时，根据造成的伤害数值从牌组抽取相应数量的牌。
             AddTranslation("When a card bearing this sigil deals direct damage, draw cards from your deck based on how much damage was dealt.", "负此印契之牌直伤之时，每伤一，则引一牌。");
             // 生命窃取
             AddTranslation("Life Steal", "夺生");
+            RegisterAbility("Life Steal", "夺生");
             // 当[creature]造成直接伤害时，伤害值将转化为持牌人的生命恢复。
             AddTranslation("When a card bearing this sigil deals direct damage, the amount dealt will be healed to the owner of this card.", "负此印契之牌直伤之时，所伤若干，则持牌者疗若干。");
             // 驱时之触
             AddTranslation("Knockback Hit", "却击");
+            RegisterAbility("Knockback Hit", "却击");
             // [creature]击中对手卡牌时，会将对手卡牌朝印记所示方向击退。
             AddTranslation("When a card bearing this sigil hits an opposing card, the opposing card will be kicked in the direction inscrybed in the sigil.", "负此印契之牌击对牌，则彼牌循印所志而却。");
             // 长矛召唤
             AddTranslation("Impaled", "贯矛");
+            RegisterAbility("Impaled", "贯矛");
             // [creature]阵亡时，会在其位置生成一柄长矛。长矛具有：0点力量，3点生命，尖刺铠甲。
             AddTranslation("When a card bearing this sigil perishes, it creates a Spear in its placed. A spear is defined as Sharp, 0 power, 3 health.", "负此印契之牌死，则其处生一矛。矛者：0威、3命、利棘。");
             // 至尊玛珂
             AddTranslation("Magnus Mox", "至尊玛珂");
+            RegisterAbility("Magnus Mox", "至尊玛珂");
+            RegisterCard("Magnus Mox", "至尊玛珂", "is the return of bin laden", "本·拉登复至。");
             // 当牌桌上有[creature]时，可为持牌人提供橙、蓝、绿三色玛珂各一颗。
             AddTranslation("While a card bearing this sigil is on the board, it provides an orange gem, a blue gem and a green gem to its owner.", "负此印契之牌在局，则为持牌者供橙玉、蓝玉、绿玉各一。");
             // 复活苏生
             AddTranslation("Resurrection", "苏生");
+            RegisterAbility("Resurrection", "苏生");
             // 当非宝石卡阵亡时，这张死亡的卡牌会复活，但此卡失去3点生命值。
             AddTranslation("When a non-gem card perishes, the dead card will be brought back to life, but this card loses 3 health.", "非玉牌一死，则复生之；然此牌失三命。");
             // 骰子力量
             AddTranslation("Rerolls", "重掷");
+            RegisterAbility("Rerolls", "重掷");
             // 每回合结束时，[creature]基础力量会变成0至3的随机数。
             AddTranslation("At the end of every turn, a card bearing this sigils' base power will be increased by a random value between 0 and 3.", "每合终，负此印契之牌之本威偶加零至三。");
             // 铁兽夹
             AddTranslation("Steel Trap", "铁阱");
+            RegisterAbility("Steel Trap", "铁阱");
             // [creature]阵亡时，对面的卡牌也会同时阵亡。
             AddTranslation("When a card bearing this sigil perishes, the opposing card also perishes.", "负此印契之牌死，则其对牌亦死。");
             // 宝石护盾
             AddTranslation("Gem Shield", "玉盾");
+            RegisterAbility("Gem Shield", "玉盾");
             // 使用[creature]时，牌桌上所有宝石均获得护盾。
             AddTranslation("When a card bearing this sigil is played, all gems on the board gain a shield.", "负此印契之牌既陈，局上诸玉皆得坚盾。");
             // 镀层工艺
             AddTranslation("Plating Work", "镀工");
+            RegisterAbility("Plating Work", "镀工");
             // 当[creature]在场时，持牌人侧牌桌上所有宝石获得尖刺铠甲印记和2点生命值。
             AddTranslation("While a card bearing this sigil is on the board, all gems on your side of the board gain the Sharp Quills sigil, and 2 health.", "负此印契之牌在局，则持牌者之侧局上诸玉皆得利棘印契，并二命。");
             // 操偶师
             AddTranslation("Animator", "操傀者");
+            RegisterAbility("Animator", "操傀者");
             // 当[creature]在场时，所有力量为0的非玛珂卡牌获得2点力量。
             AddTranslation("While a card bearing this sigil is on the board, all non-mox cards with 0 power gain 2 power", "负此印契之牌在局，则凡非玛珂而威为零之牌，皆得二威。");
             // 宝石吸收者
             AddTranslation("Gem Absorber", "吸玉者");
+            RegisterAbility("Gem Absorber", "吸玉者");
+            RegisterCard("Gem Absorber", "吸玉者", "It seeks out to consume all mana within Mox to grow stronger.", "伊求尽吞玛珂中之灵，以益己威。");
             // 当[creature]使用时，持牌人侧牌桌上的所有宝石将被摧毁。每吸收一个宝石，获得1点力量和2点生命。
             AddTranslation("When a card bearing this sigil is played, all gems on your side of the board will perish. For each gem absorbed, gain 1 power and 2 health.", "负此印契之牌既陈，则持牌者之侧局上诸玉尽死。每吸一玉，威加一，命加二。");
             // 下潜
             AddTranslation("Submerge", "潜");
+            RegisterAbility("Submerge", "潜");
             // 回合结束时，[creature]会潜入水下。重新上浮时，该卡牌会变为随机触手卡牌。
             AddTranslation("At the end of the turn, a card bearing this sigil will submerge. Upon resubmerging, this card will become a random Tentacle Card.", "合终，负此印契之牌将潜；及复出时，化为一偶触手牌。");
             // 使魔
             AddTranslation("Familiar", "使魔");
+            RegisterAbility("Familiar", "使魔");
             // 若牌桌上没有非宝石卡牌，[creature]将会阵亡。
             AddTranslation("A card bearing this sigil will perish if there are no non-gem cards on the board.", "若局上无非玉牌，则负此印契之牌死。");
             // 消逝
             AddTranslation("Fading", "消逝");
+            RegisterAbility("Fading", "消逝");
             // [creature]会在回合结束时消亡。
             AddTranslation("A card bearing this sigil will perish at the end of the turn.", "负此印契之牌合终而死。");
             // 不定变体
             AddTranslation("Morph", "化形");
+            RegisterAbility("Morph", "化形");
             // 当[creature]被使用时，会复制对面位置的卡牌。若对面无卡牌，则该卡牌会阵亡。
             AddTranslation("When a card bearing this sigil is played, it will mimic the card opposing it. If there is no card opposing it, this card will perish.", "负此印契之牌既陈，则效其对牌；若无对牌，则死。");
             // 矩阵乘法
             AddTranslation("Multiplication", "倍生");
+            RegisterAbility("Multiplication", "倍生");
             // 使用[creature]时，抽一张同名卡牌，但其宝石需求会发生变化。
             AddTranslation("When a card bearing this sigil is played, draw another of this card, but with a different gem cost.", "负此印契之牌既陈，复引一同牌，惟其玉直异焉。");
             // 玛珂循环
             AddTranslation("Mox Cycle", "玛珂轮转");
+            RegisterAbility("Mox Cycle", "玛珂轮转");
             // 每回合结束时，牌桌上所有玛珂牌会循环转换为其他宝石类型。
             AddTranslation("At the end of every turn, all the mox on the board will cycle into different gems.", "每合终，局上诸玛珂皆轮易为他玉。");
             // 玛珂掉落
             AddTranslation("Mox Strafe", "遗以玛珂");
+            RegisterAbility("Mox Strafe", "遗以玛珂");
             // 回合结束时，此卡牌会按照印记标记的方向突进，并在原地留下一颗随机玛珂。
             AddTranslation("At the end of the turn, this card will move to the direction inscrybed on the sigil, and leave behind a mox.", "合终，此牌循印所志之向而移，并遗一玛珂于故处。");
             // 纯粹主义
             AddTranslation("Purist", "粹者");
+            RegisterAbility("Purist", "粹者");
             // 任何直接与该卡牌对位的卡牌将失去所有印记。
             AddTranslation("Any card directly opposing this one will have all it's sigils removed.", "凡与此牌直对者，尽去其印契。");
             // 酿造坊
             AddTranslation("Brewery", "酿坊");
+            RegisterAbility("Brewery", "酿坊");
             // 每回合结束时，自动从副牌组抽取一张玛珂牌。
             AddTranslation("At the end of every turn, you automatically draw a mox card from your side deck.", "每合终，自副牌列引一玛珂牌。");
             // 引火
             AddTranslation("Ignite", "引焰");
+            RegisterAbility("Ignite", "引焰");
             // 当[creature]被使用时，所有对侧空位将被火焰填满。火焰具有：0点力量，1点生命值，惹人生厌。
             AddTranslation("When a card bearing this sigil is played, every empty opposing slot will be filled with flames. A flame is defined as a 0/1, Annoying.", "负此印契之牌既陈，则诸对位之空处皆满以焰。焰者：0威、1命、可厌。");
             // 星空投影
             AddTranslation("Projection", "星影");
+            RegisterAbility("Projection", "星影");
             // [creature]受击时会移动，并留下自身的星体投影。
             AddTranslation("When a card bearing this sigil is stuck, it will move and leave behind an astral projection of itself.", "负此印契之牌受击，则移，而遗其星影。");
             // 法术大全
             AddTranslation("Spell Book", "咒书");
+            RegisterAbility("Spell Book", "咒书");
             // [creature]打出时，随机抽取一张法术牌。
             AddTranslation("When a card bearing this sigil is played, draw a random spell card.", "负此印契之牌既陈，偶引一咒牌。");
             // 法术学者
             AddTranslation("Scholar", "儒");
+            RegisterAbility("Scholar", "儒");
             // [creature]打出时，随机抽取一本蓝绿橙大师的书。
             AddTranslation("When a card bearing this sigil is played, draw a random one of Bleene's Books.", "负此印契之牌既陈，偶引蓝绿大师之一书。");
             // 黄金之触
             AddTranslation("Midas' Touch", "金触");
+            RegisterAbility("Midas' Touch", "金触");
             // [creature]攻击其他卡牌时，被攻击的卡牌将失去所有力量并转化为黄金。
             AddTranslation("When a card bearing this sigil attacks another card, the attacked card will lose all of it's attack and turn to gold.", "负此印契之牌攻他牌，则受攻者尽失其威，而化金。");
             // 黄金之躯
             AddTranslation("Made of Gold", "金身");
+            RegisterAbility("Made of Gold", "金身");
             // [creature]阵亡时，击杀者将获得2颗水晶。
             AddTranslation("When a card bearing this sigil perishes, the killer will gain 2 crystals.", "负此印契之牌死，则杀者得二水晶。");
             // 引爆召唤
             AddTranslation("Summon Runes", "召符");
+            RegisterAbility("Summon Runes", "召符");
             // 当[creature]被使用时，会在其相邻位置召唤两个魔法炸弹符文。符文具有：0点力量、1点生命，引爆器。
             AddTranslation("When a card bearing this sigil is played, it will summon two runes beside it. A rune is defined as 0 power, 1 health, Detonator.", "负此印契之牌既陈，则两旁各生一符。符者：0威、1命、引爆。");
             // 生命法术
             AddTranslation("Spell of Health", "命咒");
+            RegisterAbility("Spell of Health", "命咒");
             // 当带有该印记的法术牌被使用时，持牌人侧牌桌上所有卡牌获得+2生命值。
             AddTranslation("When a spell bearing this sigil is played, all cards on your side of the board gain +2 health.", "负此印契之咒既陈，汝侧诸牌命加二。");
             // 攻击法术
             AddTranslation("Spell of Attack", "威咒");
+            RegisterAbility("Spell of Attack", "威咒");
             // 当带有该印记的法术被使用时，持牌人侧牌桌上所有卡牌获得+1攻击力。
             AddTranslation("When a spell bearing this sigil is played, all cards on your side of the board gain +1 attack.", "负此印契之咒既陈，汝侧诸牌威加一。");
             // 寒霜咒
             AddTranslation("Frost Spell", "霜咒");
+            RegisterAbility("Frost Spell", "霜咒");
             // 当使用带有该印记的法术牌时，对手所有卡牌的攻击力将归零，但生命值+2。
             AddTranslation("When a spell bearing this sigil is played, all cards belonging to the opponent will have their attack set to 0, but given +2 health.", "负此印契之咒既陈，敌方诸牌威归零，而命加二。");
             // 强风咒
             AddTranslation("Spell of Wind", "风咒");
+            RegisterAbility("Spell of Wind", "风咒");
             // 当使用带有该印记的法术时，持牌人侧牌桌上的所有卡牌将获得空袭能力。
             AddTranslation("When a spell bearing this sigil is played, all cards on your side of the board will become airborne.", "负此印契之咒既陈，汝侧诸牌皆得翔袭。");
             // 时针顺碎语
             AddTranslation("Ruckus", "乱移");
+            RegisterAbility("Ruckus", "乱移");
             // 当[creature]被使用时，牌桌上所有卡牌均会按顺时针方向移动。
             AddTranslation("When a card bearing this sigil is played, all cards on the board will move clockwise.", "负此印契之牌既陈，局上诸牌皆顺时步一格。");
             // 净水咒
             AddTranslation("Spell of Water", "水咒");
+            RegisterAbility("Spell of Water", "水咒");
             // 当带有该印记的咒语牌被使用时，牌桌上所有卡牌的印记将被清除。
             AddTranslation("When a spell bearing this sigil is played, every card on the board will have their sigils erased.", "负此印契之咒既陈，局上诸牌之印契尽除。");
             // 火焰咒
             AddTranslation("Spell of Flame", "焰咒");
+            RegisterAbility("Spell of Flame", "焰咒");
             // 选择牌桌一侧，该侧所有卡牌生命值减少2点（但不会阵亡）且攻击力增加1点。
             AddTranslation("Select a side of the board, every card on that side will lose 2 health (without perishing) and have their attack increased by 1.", "择局一侧，其侧诸牌命减二而不死，威加一。");
             // 点燃
             AddTranslation("Set Ablaze", "燎");
+            RegisterAbility("Set Ablaze", "燎");
             // 对方所有卡牌将失去2点生命值（但不会阵亡）且攻击力增加1点。
             AddTranslation("Every card on the opposite side will lose 2 health (without perishing) and have their attack increased by 1.", "敌侧诸牌皆损二命，不死，而威加一。");
             // 一次性法术
             AddTranslation("One Time Spell", "一度术");
+            RegisterAbility("One Time Spell", "一度术");
             // 当回合结束时，带有该印记的法术会阵亡并从你的牌组移除。
             AddTranslation("When the turn ends, a spell bearing this sigil will perish and be removed from your deck.", "合终，负此技之术死，而削于乃牌列。");
             // 贪欲之壶
             AddTranslation("Vase of Greed", "贪壶");
+            RegisterAbility("Vase of Greed", "贪壶");
+            RegisterCard("Vase of Greed", "贪壶", "The vase of greed.. Look at its smug face..", "贪壶也……视其矜容……");
             // 当带有该印记的法术牌被使用时，弃掉当前手牌并抽取4张新牌。
             AddTranslation("When a spell bearing this sigil is played, discard your current hand and draw 4 new cards.", "负此技之术既陈，弃今手，而更引四牌。");
             // 侏儒化
             AddTranslation("Gnomification", "侏化");
+            RegisterAbility("Gnomification", "侏化");
+            RegisterCard("Gnomification", "侏化", "Conjure a plain old garden gnome on the board..", "召一凡园侏于局。");
             // 选择一个空位召唤侏儒卡牌。
             AddTranslation("Select a slot to summon a Gnome card in.", "择一空位，召一侏牌。");
             // 诅咒
             AddTranslation("Cursed", "诅");
+            RegisterAbility("Cursed", "诅");
             // 带有该印记的法术牌打出时会立即阵亡。
             AddTranslation("When a spell bearing this sigil is played, it will immediately perish.", "负此技之术既陈，即死。");
             // 灵感
             AddTranslation("Inspiration", "灵悟");
+            RegisterAbility("Inspiration", "灵悟");
+            RegisterCard("Inspiration", "灵悟", "A culmination of the great Master Orlu's essence.", "橙蓝大师精粹之会也。");
             // 选择一张卡牌使其获得空袭与劫掠者效果，持续1回合。
             AddTranslation("Select a card to give Airborne + Looter for 1 turn.", "择一牌，使一合得翔袭、掠者。");
             // 微积
             AddTranslation("Calculus", "筹算");
+            RegisterAbility("Calculus", "筹算");
+            RegisterCard("Calculus", "筹算", "The spirit of the brave Master Bleene.", "勇者蓝绿大师之魂也。");
             // 选择一张卡牌交换其属性。
             AddTranslation("Select a card to swap stats.", "择一牌，易其数。");
             // 狂怒
             AddTranslation("Rage", "怒");
+            RegisterAbility("Rage", "怒");
+            RegisterCard("Rage", "怒", "The embodiement of the tenacious Master Goranj.", "绿橙大师坚忍之形也。");
             // 选择一张卡牌消灭。该卡牌的对手本体将受到等同于被消灭卡牌生命值的伤害。
             AddTranslation("Select a card to kill. The opponent of the card will recieve damage equal to the amount of health the card had.", "择一牌杀之；其敌主受伤，如其故命。");
             // 火球术
             AddTranslation("Fireball", "火丸");
+            RegisterAbility("Fireball", "火丸");
+            RegisterCard("Fireball", "火丸", "Conjure up a fireball, and shoot it towards your enemy.", "召火丸而射敌。");
             // 选择一张卡牌使其受到2点伤害。
             AddTranslation("Select a card to take 2 damage.", "择一牌，使受二伤。");
             // 冰封之触
             AddTranslation("Cold to the Touch", "寒触");
+            RegisterAbility("Cold to the Touch", "寒触");
             // [creature]攻击其他卡牌时，被攻击卡牌会失去1点力量。
             AddTranslation("When a card bearing this sigils attack another card, that card will lose 1 attack.", "负此技之牌攻他牌，则彼威损一。");
             // 冰封
             AddTranslation("Frozen", "冰封");
+            RegisterAbility("Frozen", "冰封");
             // 每回合结束时，该卡牌会失去冰封生命值。当冰封生命值耗尽或该卡牌受到攻击时，将解除冰封状态。
             AddTranslation("At the end of each turn, this card will lose its frozen health. When all frozen health is depleted, or this card is struck, it will defrost.", "每合终，此牌损其冰命。冰命尽，抑受击，则解冰。");
             // 强力牵引
             AddTranslation("Strong Pull", "强引");
+            RegisterAbility("Strong Pull", "强引");
             // 所有敌方卡牌都会优先攻击此卡而非其他目标。
             AddTranslation("Every opposing card will be inclined to hit this card instead of any other.", "敌诸牌皆先击此牌，不及他。");
             // 置换反应
             AddTranslation("Displacement", "置换");
+            RegisterAbility("Displacement", "置换");
             // 抽到[creature]时，会随机将一张同名卡牌加入你的牌组。
             AddTranslation("When a card bearing this sigil is drawn, another of this card will be added randomly into your deck", "引负此技之牌时，偶益一同牌于乃牌列。");
             // 宝石清算
             AddTranslation("Gem Reckoning", "玉算");
+            RegisterAbility("Gem Reckoning", "玉算");
             // 每回合结束时，若持牌人未打出任何宝石，则弃置你手牌最左侧的卡牌。
             AddTranslation("At the end of each turn, if the owner of this card does not control any gems, the leftmost card in your hand is discarded.", "每合终，若此牌之主无玉，则弃汝手最左之一牌。");
             // 玛珂力量
             AddTranslation("Mox Power", "玛珂威");
+            RegisterAbility("Mox Power", "玛珂威");
             // 该印记代表的数值等于持牌人侧牌桌上存在的玛珂牌数量。
             AddTranslation("The value represented with this sigil will be equal to the number of Mox Cards that the owner has on their side of the table.", "此技所指之值，如持牌者之侧局上玛珂牌之数。");
             // 玛珂生命
             AddTranslation("Mox Health", "玛珂命");
+            RegisterAbility("Mox Health", "玛珂命");
             // 该印记代表的数值等于持牌人侧牌桌上存在的玛珂牌数量。
             AddTranslation("The value represented with this sigil will be equal to the number of Mox Cards that the owner has on their side of the table.", "此技所指之值，如持牌者之侧局上玛珂牌之数。");
             // 烛火临近
             AddTranslation("Candle Proximity", "近烛");
+            RegisterAbility("Candle Proximity", "近烛");
             // 该印记代表的数值等于此卡牌与桌上蜡烛之间的距离。
             AddTranslation("The value represented with this sigil will be equal to how close this card is to the Candle on the table.", "此技所指之值，如此牌至局上烛之距。");
             // 杀戮之力
             AddTranslation("Murder Power", "戮威");
+            RegisterAbility("Murder Power", "戮威");
             // 该印记代表的数值等于对手牌桌上所有造物的力量总和。
             AddTranslation("The value represented with this sigil will be equal the total amount of power on the opponents board.", "此技所指之值，如敌局诸物威之和。");
             // 该印记代表的数值等于你牌桌上所有造物力量总和的一半。
             AddTranslation("The value represented with this sigil will be equal to half the total amount of power on your board.", "此技所指之值，如汝局诸物威和之半。");
             // 法术力量
             AddTranslation("Spell Power", "术威");
+            RegisterAbility("Spell Power", "术威");
             // 该印记代表的数值等于当前地牢中已施放的法术总数。
             AddTranslation("The value represented with this sigil will be equal to total amount of spells played during this current dungeon.", "此技所指之值，如此窟所施诸术之数。");
             // 该印记代表的数值等于战斗期间已施放的法术总数。
             AddTranslation("The value represented with this sigil will be equal to total amount of spells played during the battle.", "此技所指之值，如此战所施诸术之数。");
             // 反击力量
             AddTranslation("Counterbattery Power", "反击威");
+            RegisterAbility("Counterbattery Power", "反击威");
             // 该印记代表的数值等于本场战斗你受到的总伤害值除以二。
             AddTranslation("The value represented with this sigil will be equal to the amount of damage taken by you this battle, divided by two.", "此技所指之值，如此战汝所受伤之半。");
+            RegisterBaseGameAbilities();
 
             // Card
             // 玛珂
             AddTranslation("Mox", "玛珂");
+            RegisterCard("Mox", "玛珂", "its a me moxio", "吾乃玛珂奥");
+            RegisterCard("Ruby Mox", "红玉玛珂", "its a me moxio", "吾乃玛珂奥");
+            RegisterCard("Emerald Mox", "绿玉玛珂", "its a me moxio", "吾乃玛珂奥");
+            RegisterCard("Sapphire Mox", "蓝玉玛珂", "its a me moxio", "吾乃玛珂奥");
             // 是我，玛珂奥
             AddTranslation("its a me moxio", "吾乃玛珂奥");
             // 长矛
             AddTranslation("Spear", "矛");
+            RegisterCard("Spear", "矛", "ayo", "噫");
             // 哎呦
             AddTranslation("ayo", "噫");
+            RegisterCard("Mage Pupil", "巫徒", "Though weak, it can always be useful in the right situation.", "虽羸，得其时则有用。");
             // 虽显羸弱，但在合适的时机总能派上用场。
             AddTranslation("Though weak, it can always be useful in the right situation.", "虽羸，得其时则有用。");
+            RegisterCard("Junior Sage", "少贤", "Although simple, it can prove itself to be useful.", "虽简，亦足用。");
             // 虽显粗浅，却也能派上用场。
             AddTranslation("Although simple, it can prove itself to be useful.", "虽简，亦足用。");
+            RegisterCard("Muscle Mage", "肉巫", "An abomination of muscles, developed from drinking too many potions of the alchemist..", "饮炼者之药过多，乃成筋肉怪物……");
             // 由过量饮用炼金药剂催生出的畸形肌肉造物……
             AddTranslation("An abomination of muscles, developed from drinking too many potions of the alchemist..", "饮炼者之药过多，乃成筋肉怪物……");
+            RegisterCard("Green Mage", "绿巫", "It draws its power from the mana of the mox on the board.", "伊汲局上玛珂之灵以为威。");
             // 它从牌桌上玛珂的法力中汲取力量。
             AddTranslation("It draws its power from the mana of the mox on the board.", "伊汲局上玛珂之灵以为威。");
+            RegisterCard("Blue Mage", "蓝巫", "Never doubt its utility.", "毋疑其用。");
             // 永远不要质疑它的实用性。
             AddTranslation("Never doubt its utility.", "毋疑其用。");
+            RegisterCard("Blue Sporemage", "蓝孢巫", "", "");
+            RegisterCard("Force Mage", "力巫", "A mage, proficient in a martial stance which allows it block nearly anything..", "巫习武势，几无物不可御……");
             // 精通武学架势的法师，几乎能格挡一切攻击。
             AddTranslation("A mage, proficient in a martial stance which allows it block nearly anything..", "巫习武势，几无物不可御……");
+            RegisterCard("Gem Fiend", "玉魔", "A wretched, unstable creature of gems. It can tear through anything.", "可悯危玉之物，所遇皆裂。");
             // 可悲而不稳定的宝石造物。它能撕碎任何东西。
             AddTranslation("A wretched, unstable creature of gems. It can tear through anything.", "可悯危玉之物，所遇皆裂。");
+            RegisterCard("Hover Mage", "飞巫", "Using its spells it soars high to hit directly", "以咒高翔，遂直击敌主。");
             // 借助法术腾空而起，由此直击敌首。
             AddTranslation("Using its spells it soars high to hit directly", "以咒高翔，遂直击敌主。");
+            RegisterCard("Mage Knight", "巫骑", "An intimidating and towering defense, however requiring gems to stay stable.", "巍然可畏之御，然赖玉乃定。");
             // 令人望而生畏的巍峨防御，但需消耗玛珂来维持稳定。
             AddTranslation("An intimidating and towering defense, however requiring gems to stay stable.", "巍然可畏之御，然赖玉乃定。");
+            RegisterCard("Orange Mage", "橙巫", "Using its spells, it boosts the damage of all gems.", "以其术，益诸玉之伤。");
             // 运用他的法术，能强化所有宝石的攻击力。
             AddTranslation("Using its spells, it boosts the damage of all gems.", "以其术，益诸玉之伤。");
+            RegisterCard("Practice Wizard", "习巫", "A lifeless practice target.. standing tall enough to block any attacks.", "无生之习靶……高立，可御诸击。");
             // 无生命的练习靶标……巍然矗立，足以格挡一切攻击。
             AddTranslation("A lifeless practice target.. standing tall enough to block any attacks.", "无生之习靶……高立，可御诸击。");
+            RegisterCard("Ruby Golem", "红玉偶", "A construct powered by Mox.As it perishes it leaves behind parts of itself.", "玛珂资之构体。死则遗其身材。");
             // 由玛珂供能的构装体。阵亡时会留下部分残骸。
             AddTranslation("A construct powered by Mox.As it perishes it leaves behind parts of itself.", "玛珂资之构体。死则遗其身材。");
             // 至尊玛珂
@@ -2622,52 +3042,72 @@ namespace ClassicChineseLanguagePack
             AddTranslation("is the return of bin laden", "本·拉登复至。");
             // 熟悉的狼
             AddTranslation("Wolf Familiar", "狼使魔");
+            RegisterCard("Wolf Familiar", "狼使魔", "It rips into its enemies with little to no remorse.", "撕厥敌，略无悔。");
             // 这头使魔撕咬敌人时几乎毫无悔意。
             AddTranslation("It rips into its enemies with little to no remorse.", "撕厥敌，略无悔。");
             // 交易用方尖碑
             AddTranslation("Trading Obelisk", "易方尖碑");
+            RegisterCard("Trading Obelisk", "易方尖碑", "draft token aka pelt no way jose", "择牌符，一名“裘革？休矣，何塞”。");
             // 选牌代币，也叫“毛皮那必不可能”。
             AddTranslation("draft token aka pelt no way jose", "择牌符，一名“裘革？休矣，何塞”。");
             // 水晶蠕虫
             AddTranslation("Crystal Worm", "晶虫");
+            RegisterCard("Crystal Worm", "晶虫", "Its body is made out of pure mana.. Gleaming and transforming into other gems.", "其躯粹灵所成，煌煌而化他玉。");
             // 它的身躯由纯粹魔力构成……闪耀着光芒并能转化为其他宝石。
             AddTranslation("Its body is made out of pure mana.. Gleaming and transforming into other gems.", "其躯粹灵所成，煌煌而化他玉。");
             // 宝石幼虫
             AddTranslation("Mox Larva", "玛珂幼虫");
+            RegisterCard("Mox Larva", "玛珂幼虫", "", "");
             // 宝石魔兽
             AddTranslation("Mox Beast", "玛珂兽");
+            RegisterCard("Mox Beast", "玛珂兽", "", "");
+            RegisterCard("Snowy Fir", "雪杉", "", "");
+            RegisterCard("Grand Fir", "大杉", "", "");
+            RegisterCard("Stump", "树杌", "", "");
+            RegisterCard("Boulder", "磐", "", "");
             // 拱门
             AddTranslation("Arch", "拱门");
+            RegisterCard("Arch", "拱门", "", "");
             // 石柱
             AddTranslation("Pillar", "石柱");
+            RegisterCard("Pillar", "石柱", "", "");
             // 残破石柱
             AddTranslation("Ruined Pillar", "颓柱");
+            RegisterCard("Ruined Pillar", "颓柱", "", "");
             // 残破拱门
             AddTranslation("Ruined Arch", "颓拱");
+            RegisterCard("Ruined Arch", "颓拱", "", "");
             // 科技法师
             AddTranslation("Techno Mage", "机巫");
+            RegisterCard("Techno Mage", "机巫", "sponsored by me", "吾所资也");
             // 由我赞助
             AddTranslation("sponsored by me", "吾所资也");
             // 亡灵法师
             AddTranslation("Necro Mage", "死灵巫");
+            RegisterCard("Necro Mage", "死灵巫", "sponsored by me again", "吾复资之");
             // 再次由我赞助
             AddTranslation("sponsored by me again", "吾复资之");
             // 衔宝蛇
             AddTranslation("Ouroberyl", "衔玉蛇");
+            RegisterCard("Ouroberyl", "衔玉蛇", "It gleams and takes different forms.. How majestic..", "煌煌而万形……壮哉……");
             // 它闪烁着光芒，形态万千……何等威严……
             AddTranslation("It gleams and takes different forms.. How majestic..", "煌煌而万形……壮哉……");
             // 法术大使
             AddTranslation("Spellcaster", "施咒者");
+            RegisterCard("Spellcaster", "施咒者", "It reads out spells from its book and casts them directly to your hand.", "伊自书诵咒，直致子手。");
             // 它会从书中诵读咒语，并直接施放到你的手牌中。
             AddTranslation("It reads out spells from its book and casts them directly to your hand.", "伊自书诵咒，直致子手。");
             // 混沌法师
             AddTranslation("Chaos Magician", "混沌术士");
+            RegisterCard("Chaos Magician", "混沌术士", "A scholar proficient in Chaos Theory, channeling a scramble unto the entire board.", "学混沌之术者，使全局纷乱。");
             // 精通混沌理论的学者，能将全场搅得天翻地覆。
             AddTranslation("A scholar proficient in Chaos Theory, channeling a scramble unto the entire board.", "学混沌之术者，使全局纷乱。");
             // 魔法咒印
             AddTranslation("Magic Spell", "术咒");
+            RegisterCard("Magic Spell", "术咒", "", "");
             // 宝石引爆者
             AddTranslation("Gem Detonator", "玉引爆者");
+            RegisterCard("Gem Detonator", "玉引爆者", "It went berserk after hearing mysterious whispers in a crypt.", "伊于冢中闻玄语，遂狂。");
             // 它在墓穴中听到神秘低语后陷入了狂暴。
             AddTranslation("It went berserk after hearing mysterious whispers in a crypt.", "伊于冢中闻玄语，遂狂。");
             // 他
@@ -2676,144 +3116,182 @@ namespace ClassicChineseLanguagePack
             AddTranslation("its he.", "伊也。");
             // 人造人
             AddTranslation("Homunculus", "人造人");
+            RegisterCard("Homunculus", "人造人", "A strange, to say the least creature.", "姑谓之异物。");
             // 至少可以说，这是个奇怪的造物。
             AddTranslation("A strange, to say the least creature.", "姑谓之异物。");
             // 幻形兽
             AddTranslation("Mimagius", "幻形兽");
+            RegisterCard("Mimagius", "幻形兽", "It distorts itself into the form of the opposing card.", "伊自揉曲，为对牌之形。");
             // 它会扭曲变形为对面卡牌的模样。
             AddTranslation("It distorts itself into the form of the opposing card.", "伊自揉曲，为对牌之形。");
             // 偏转器
             AddTranslation("Deflector", "偏御器");
+            RegisterCard("Deflector", "偏御器", "You would not want to end up on the wrong side of it..", "子不欲居其逆侧……");
             // 你不会想站错边的……
             AddTranslation("You would not want to end up on the wrong side of it..", "子不欲居其逆侧……");
             // 占星师
             AddTranslation("Auspex", "卜星者");
+            RegisterCard("Auspex", "卜星者", "It harnesses the power of the stars for you..", "伊为子御星辰之威……");
             // 它能为你汲取星辰之力……
             AddTranslation("It harnesses the power of the stars for you..", "伊为子御星辰之威……");
             // 星界巫师
             AddTranslation("Astral Sorcerer", "星方士");
+            RegisterCard("Astral Sorcerer", "星方士", "A sorcerer proficient in summoning astral projections to protect itself when in danger.", "方士也，危则善召星影以自卫。");
             // 擅长在危急时刻召唤星界投影保护自身的巫师。
             AddTranslation("A sorcerer proficient in summoning astral projections to protect itself when in danger.", "方士也，危则善召星影以自卫。");
             // 星体投影
             AddTranslation("Astral Projection", "星影");
+            RegisterCard("Astral Projection", "星影", "real", "真");
             // 真实
             AddTranslation("real", "真");
             // 道具商
             AddTranslation("Trinket Bearer", "负器者");
+            RegisterCard("Trinket Bearer", "负器者", "A mischevious little goblin creature. It carries around valueables in its backpack.", "狡小鬼物。厥背囊常怀珍玩。");
             // 鬼鬼祟祟的小妖精。它总在背包里藏着些值钱玩意儿。
             AddTranslation("A mischevious little goblin creature. It carries around valueables in its backpack.", "狡小鬼物。厥背囊常怀珍玩。");
             // 背包
             AddTranslation("Backpack", "背囊");
+            RegisterCard("Backpack", "背囊", "", "");
             // 刺激机器人
             AddTranslation("Stimbot", "激机人");
+            RegisterCard("Stimbot", "激机人", "Powered by stimulation, and steam..", "以激与蒸汽为力……");
             // 由刺激与蒸汽驱动……
             AddTranslation("Powered by stimulation, and steam..", "以激与蒸汽为力……");
             // 变形法师
             AddTranslation("Magimorph", "化形巫");
+            RegisterCard("Magimorph", "化形巫", "Its disgusting gooey body warps and distorts into distant forms. It's wonderous if you look at it right.", "其可憎胶躯，揉曲成远方诸形。善观之，亦奇矣。");
             // 它那令人作呕的黏稠身躯扭曲变形为各种形态。若以正确方式观察，反而显得奇妙非凡。
             AddTranslation("Its disgusting gooey body warps and distorts into distant forms. It's wonderous if you look at it right.", "其可憎胶躯，揉曲成远方诸形。善观之，亦奇矣。");
             // 表演者
             AddTranslation("Performer", "献戏者");
+            RegisterCard("Performer", "献戏者", "Watch it create a rabbit out of its wand..", "观伊自杖中作一兔……");
             // 看它从魔杖中变出一只兔子。
             AddTranslation("Watch it create a rabbit out of its wand..", "观伊自杖中作一兔……");
             // 高级贤者
             AddTranslation("Senior Sage", "长贤");
+            RegisterCard("Senior Sage", "长贤", "A Junior Sage that has mastered the art of Magicks.", "少贤既通众术者也。");
             // 说白了就是精通了魔法技艺的初级贤者。
             AddTranslation("A Junior Sage that has mastered the art of Magicks.", "少贤既通众术者也。");
             // 蓝宝石机甲
             AddTranslation("Sapphire Mech", "蓝玉机");
+            RegisterCard("Sapphire Mech", "蓝玉机", "A mage-like automaton piloted by a sapphire mox.. Admirable.", "蓝玉玛珂所御之类巫自动机……可嘉。");
             // 由蓝宝石玛珂驱动的类法师自动机……令人赞叹。
             AddTranslation("A mage-like automaton piloted by a sapphire mox.. Admirable.", "蓝玉玛珂所御之类巫自动机……可嘉。");
             // 红宝石泰坦
             AddTranslation("Ruby Titan", "红玉巨神");
+            RegisterCard("Ruby Titan", "红玉巨神", "A perfected construct of a ruby golem, a monstrous machine of destruction.", "红玉偶之尽善构体，毁灭之巨机也。");
             // 红宝石魔像的完美造物，一台恐怖的毁灭机器。
             AddTranslation("A perfected construct of a ruby golem, a monstrous machine of destruction.", "红玉偶之尽善构体，毁灭之巨机也。");
             // 蓝绿橙的学徒
             AddTranslation("Bleene's Scholar", "蓝绿之儒");
+            RegisterCard("Bleene's Scholar", "蓝绿之儒", "A scholar in training, currently studying the works of Master Bleene.", "肄业之儒，方习蓝绿大师之书。");
             // 受训中的学者，正在研习蓝绿橙大师的著作。
             AddTranslation("A scholar in training, currently studying the works of Master Bleene.", "肄业之儒，方习蓝绿大师之书。");
             // 绿橙蓝的战士
             AddTranslation("Goranj's Warrior", "绿橙武者");
+            RegisterCard("Goranj's Warrior", "绿橙武者", "A foe mentored by Master Goranj, proficient at dual striking.", "绿橙大师所教之敌，善再击。");
             // 由绿橙蓝大师指导的敌人，擅长双重攻击。
             AddTranslation("A foe mentored by Master Goranj, proficient at dual striking.", "绿橙大师所教之敌，善再击。");
             // 苹果酒法师
             AddTranslation("Cider Mage", "苹果酒巫");
+            RegisterCard("Cider Mage", "苹果酒巫", "This mage has a secret formula of cider that nullifies the opponents spells..", "此巫有苹果酒秘方，能废敌咒……");
             // 该法师掌握着能无效化敌方法术的苹果酒秘方。
             AddTranslation("This mage has a secret formula of cider that nullifies the opponents spells..", "此巫有苹果酒秘方，能废敌咒……");
             // 酿造贤者
             AddTranslation("Brewer Sage", "酿贤");
+            RegisterCard("Brewer Sage", "酿贤", "A sage, sitting still and perfecting his art of brewing..", "贤者安坐，精其酿术……");
             // 一位静坐冥想的贤者，正精进其酿造技艺。
             AddTranslation("A sage, sitting still and perfecting his art of brewing..", "贤者安坐，精其酿术……");
             // 碳酸法师
             AddTranslation("Soda Mage", "碳饮巫");
+            RegisterCard("Soda Mage", "碳饮巫", "This pathetic mage melted away from drinking too much carbonated liquid..", "此可悯之巫，饮碳浆过多而融……");
             // 这个可悲的法师因饮用过多碳酸饮料而融化了。
             AddTranslation("This pathetic mage melted away from drinking too much carbonated liquid..", "此可悯之巫，饮碳浆过多而融……");
             // 锻宝匠
             AddTranslation("Whitesmith", "锻玉匠");
+            RegisterCard("Whitesmith", "锻玉匠", "Their life's work was dedicated to reinforcing gems.", "彼等毕生专事固玉。");
             // 他们毕生致力于强化玛珂。
             AddTranslation("Their life's work was dedicated to reinforcing gems.", "彼等毕生专事固玉。");
             // 傀儡师
             AddTranslation("Puppeteer", "傀师");
+            RegisterCard("Puppeteer", "傀师", "Its mastery of control magicks lets even Practice Wizards contribute.", "伊善御术，虽习祝亦可效力。");
             // 它精通的操控魔法能让陪练巫师也派上用场。
             AddTranslation("Its mastery of control magicks lets even Practice Wizards contribute.", "伊善御术，虽习祝亦可效力。");
             // 杂耍者
             AddTranslation("Juggler", "弄丸者");
+            RegisterCard("Juggler", "弄丸者", "It juggles around your mox cards, as if they were juggling balls..", "伊弄子玛珂牌，若弄丸然……");
             // 它会像杂耍球般摆弄你的玛珂牌。
             AddTranslation("It juggles around your mox cards, as if they were juggling balls..", "伊弄子玛珂牌，若弄丸然……");
             // 小丑
             AddTranslation("Joker", "俳优");
+            RegisterCard("Joker", "俳优", "Dedicated to the art of fun.. though most only find it annoying.", "专于嬉乐之术……然众多厌之。");
             // 执着于搞笑的艺术……尽管多数人只觉得它烦人。
             AddTranslation("Dedicated to the art of fun.. though most only find it annoying.", "专于嬉乐之术……然众多厌之。");
             // 女武神
             AddTranslation("Valkyrie", "女武神");
+            RegisterCard("Valkyrie", "女武神", "A student that has trained under Master Orlu. It has become an expert in airborne magicks.", "橙蓝大师之弟子，既通翔袭之术。");
             // 师从橙蓝绿大师的学徒。已精通空战魔法。
             AddTranslation("A student that has trained under Master Orlu. It has become an expert in airborne magicks.", "橙蓝大师之弟子，既通翔袭之术。");
             // 女武神盗贼
             AddTranslation("Valkyrie Thief", "女武神盗");
+            RegisterCard("Valkyrie Thief", "女武神盗", "liar liar chicken friar.", "诳哉诳哉，炙鸡祝哉。");
             // 骗子骗子鸡毛掸子。
             AddTranslation("liar liar chicken friar.", "诳哉诳哉，炙鸡祝哉。");
             // 绿宝石狂徒
             AddTranslation("Emerald Maniac", "绿玉狂徒");
+            RegisterCard("Emerald Maniac", "绿玉狂徒", "A crazed maniac.. Drawing out health from the mox..", "狂徒也……自玛珂汲命……");
             // 疯狂的暴徒……能从玛珂中汲取生命能量……
             AddTranslation("A crazed maniac.. Drawing out health from the mox..", "狂徒也……自玛珂汲命……");
             // 红宝石恶魔
             AddTranslation("Ruby Daemon", "红玉魅");
+            RegisterCard("Ruby Daemon", "红玉魅", "If not properly sustained, it will destroy your hand to fuel itself..", "若资给不继，伊将毁子手牌以自养……");
             // 若未能持续供给，它将摧毁你的手牌以维持自身……
             AddTranslation("If not properly sustained, it will destroy your hand to fuel itself..", "若资给不继，伊将毁子手牌以自养……");
             // 宝石之友
             AddTranslation("Gem Friend", "玉友");
+            RegisterCard("Gem Friend", "玉友", "fren", "友");
             // 友
             AddTranslation("fren", "友");
             // 德鲁伊
             AddTranslation("Druid", "德鲁伊");
+            RegisterCard("Druid", "德鲁伊", "Just look at what you've done..", "观子所为……");
             // 看看你都干了些什么……
             AddTranslation("Just look at what you've done..", "观子所为……");
             // 链锁之腿
             AddTranslation("Chained Legs", "链足");
+            RegisterCard("Chained Legs", "链足", "", "");
             // 封印之躯
             AddTranslation("Sealed Body", "封躯");
+            RegisterCard("Sealed Body", "封躯", "", "");
             // 束缚之臂
             AddTranslation("Bound Arms", "缚臂");
+            RegisterCard("Bound Arms", "缚臂", "", "");
             // 囚禁的暴君
             AddTranslation("Imprisoned Tyrant", "囚暴君");
+            RegisterCard("Imprisoned Tyrant", "囚暴君", "", "");
             // 矩阵法师
             AddTranslation("Multiplication mage", "倍生巫");
+            RegisterCard("Multiplication mage", "倍生巫", "This cycle can go on forever..", "此轮转可无穷……");
             // 此循环可永续不止……
             AddTranslation("This cycle can go on forever..", "此轮转可无穷……");
             // 隐形法师
             AddTranslation("Invisible mage", "隐巫");
+            RegisterCard("Invisible mage", "隐巫", "It drank the wrong potion and ended up invisible. How clumsy.", "伊误饮药，遂隐。拙哉。");
             // 它喝错了药水，结果隐形了。真笨拙。
             AddTranslation("It drank the wrong potion and ended up invisible. How clumsy.", "伊误饮药，遂隐。拙哉。");
             // 水晶贤者
             AddTranslation("Crystal Sage", "晶贤");
+            RegisterCard("Crystal Sage", "晶贤", "A young scholar, profoundly studying mana crystals.", "少儒深研灵晶。");
             // 一位潜心研究法力水晶的年轻学者。
             AddTranslation("A young scholar, profoundly studying mana crystals.", "少儒深研灵晶。");
             // 宝石守护者
             AddTranslation("Gem Guardian", "玉守者");
+            RegisterCard("Gem Guardian", "玉守者", "The inverse of the Gem Detonator, this one seeks to protect all mox.", "与玉引爆者相反，此物志在护诸玛珂。");
             // 与宝石引爆器效果相反，此卡旨在保护所有玛珂。
             AddTranslation("The inverse of the Gem Detonator, this one seeks to protect all mox.", "与玉引爆者相反，此物志在护诸玛珂。");
             // 宝石收割者
             AddTranslation("Gembound Ripper", "缚玉割者");
+            RegisterCard("Gembound Ripper", "缚玉割者", "It is unstable, but such is the price for unending power.", "伊危，然无穷之威，其直如此。");
             // 它并不稳定，但这就是无尽力量所要付出的代价。
             AddTranslation("It is unstable, but such is the price for unending power.", "伊危，然无穷之威，其直如此。");
             // 宝石吞噬者
@@ -2822,268 +3300,345 @@ namespace ClassicChineseLanguagePack
             AddTranslation("It seeks out to consume all mana within Mox to grow stronger.", "伊求尽吞玛珂中之灵，以益己威。");
             // 骷髅法师
             AddTranslation("Skelemagus", "枯骨巫");
+            RegisterCard("Skelemagus", "枯骨巫", "Great power for a few, fleeting moments..", "须臾大威……");
             // 转瞬即逝的强大力量……
             AddTranslation("Great power for a few, fleeting moments..", "须臾大威……");
             // 骸骨贤者
             AddTranslation("Skelesage", "枯骨贤");
+            RegisterCard("Skelesage", "枯骨贤", "One of my own Junior Sages, lost and revived.", "吾少贤之一，既亡而复苏。");
             // 我曾失去又复生的初级贤者之一。
             AddTranslation("One of my own Junior Sages, lost and revived.", "吾少贤之一，既亡而复苏。");
             // 烦躁学者
             AddTranslation("Erratic Scholar", "无恒儒");
+            RegisterCard("Erratic Scholar", "无恒儒", "A panicked scholar.. Always running from its problems..", "惊惶之儒……常遁其所忧……");
             // 惊慌失措的学者……永远在逃避自己的问题……
             AddTranslation("A panicked scholar.. Always running from its problems..", "惊惶之儒……常遁其所忧……");
             // 玛珂法师
             AddTranslation("Mox Mage", "玛珂巫");
+            RegisterCard("Mox Mage", "玛珂巫", "A Mox disguised as a mage.. It's not going to fool anyone.", "玛珂伪为巫……无能欺人。");
             // 伪装成法师的玛珂……这骗不了任何人。
             AddTranslation("A Mox disguised as a mage.. It's not going to fool anyone.", "玛珂伪为巫……无能欺人。");
             // 点金术士
             AddTranslation("Aurumtact", "点金术士");
+            RegisterCard("Aurumtact", "点金术士", "An elder scholar, cursed for his greed, entombing anything he touches in pure gold.", "耆儒以贪受诅，所触皆以纯金瘗之。");
             // 一位因贪婪而被诅咒的年迈学者，能将触碰之物尽数化为纯金。
             AddTranslation("An elder scholar, cursed for his greed, entombing anything he touches in pure gold.", "耆儒以贪受诅，所触皆以纯金瘗之。");
             // 连环玛珂
             AddTranslation("Chained Mox", "连环玛珂");
+            RegisterCard("Chained Mox", "连环玛珂", "A collection of 3 moxen, tangled together, combining their mana energy.", "三玛珂相缠，合其灵。");
             // 三颗玛珂纠缠而成的集合体，能融合它们的魔力能量。
             AddTranslation("A collection of 3 moxen, tangled together, combining their mana energy.", "三玛珂相缠，合其灵。");
             // 王马王可
             AddTranslation("Maux", "王马王可");
+            RegisterCard("Maux", "王马王可", "In all my years, I have NEVER seen an imitation cruder than this.", "吾平生未见摹物有拙于此者。");
             // 老夫平生从未见过如此拙劣的仿品。
             AddTranslation("In all my years, I have NEVER seen an imitation cruder than this.", "吾平生未见摹物有拙于此者。");
+            RegisterCard("Stim Mage", "激巫", "It strives to grow stronger, disregarding its own wellbeing..", "伊不恤厥身，锐意益威……");
             // 它不顾自身安危，执意追求力量……
             AddTranslation("It strives to grow stronger, disregarding its own wellbeing..", "伊不恤厥身，锐意益威……");
+            RegisterCard("Gourmage", "饕巫", "A gluttonous mage who devours the corpses of your fallen to grow stroner.. Disgusting.", "饕巫也，啖子阵亡者之尸以益威……可憎。");
             // 暴食成性的法师，靠吞食阵亡者的尸体来增强力量……真恶心。
             AddTranslation("A gluttonous mage who devours the corpses of your fallen to grow stroner.. Disgusting.", "饕巫也，啖子阵亡者之尸以益威……可憎。");
             // 呆瓜法师
             AddTranslation("Dunce", "愚巫");
+            RegisterCard("Dunce", "愚巫", "This one can never seem to hit its target..", "此物似终不能中的……");
             // 这家伙似乎永远打不中目标……
             AddTranslation("This one can never seem to hit its target..", "此物似终不能中的……");
             // 巨蟒
             AddTranslation("Grootslang", "巨蟒");
+            RegisterCard("Grootslang", "巨蟒", "The mere graze of its fangs is enough to kill any creature. No matter the size.", "獠牙微拂，物无大小皆死。");
             // 凶名昭著的巨蟒。只需被它的獠牙轻轻擦过，任何造物都难逃一死——无论体型大小。
             AddTranslation("The mere graze of its fangs is enough to kill any creature. No matter the size.", "獠牙微拂，物无大小皆死。");
             // 书虫
             AddTranslation("Bookworm", "书蠹");
+            RegisterCard("Bookworm", "书蠹", "A rare kind of insect that absorbs knowledge out of books.", "稀虫也，自书汲知。");
             // 一种能从书本中汲取知识的稀有昆虫。
             AddTranslation("A rare kind of insect that absorbs knowledge out of books.", "稀虫也，自书汲知。");
             // 炼金术士
             AddTranslation("Alchemist", "炼者");
+            RegisterCard("Alchemist", "炼者", "A supporting one. It brews potions to empower your cards.", "辅佐之物。伊酿药，以益子诸牌。");
             // 辅助型单位。它能调配药剂来强化你的卡牌。
             AddTranslation("A supporting one. It brews potions to empower your cards.", "辅佐之物。伊酿药，以益子诸牌。");
             // 鸣钟法师
             AddTranslation("Chime Mage", "鸣铃巫");
+            RegisterCard("Chime Mage", "鸣铃巫", "Its chime can prove to be quite annoying..", "伊铃声诚可厌……");
             // 它的铃声确实烦人得很……
             AddTranslation("Its chime can prove to be quite annoying..", "伊铃声诚可厌……");
             // 复生者
             AddTranslation("Revivor", "苏生者");
+            RegisterCard("Revivor", "苏生者", "It brings a mage back from the dead, at the cost of its own health.", "伊损厥命，而使一巫自死复生。");
             // 它能以自身生命为代价，让一名法师从死亡中复活。
             AddTranslation("It brings a mage back from the dead, at the cost of its own health.", "伊损厥命，而使一巫自死复生。");
             // 符文法师
             AddTranslation("Rune Mage", "符巫");
+            RegisterCard("Rune Mage", "符巫", "It conjures explosive runes alongside it when summoned. Not a good idea, I must say.", "召时旁作爆符。吾谓此非善策。");
             // 召唤时会同时生成爆炸符文。说真的，这可不是个好主意。
             AddTranslation("It conjures explosive runes alongside it when summoned. Not a good idea, I must say.", "召时旁作爆符。吾谓此非善策。");
+            RegisterCard("--~~--~~--", "--~~--~~--", "So it arrives.", "伊至矣。");
             // 它来了。
             AddTranslation("So it arrives.", "伊至矣。");
+            RegisterCard("~-~-~-~-~-~", "~-~-~-~-~-~", "I foresaw its arrival.", "吾先见其至。");
             // 我早已预见它的到来。
             AddTranslation("I foresaw its arrival.", "吾先见其至。");
+            RegisterCard("~~--~~--~~", "~~--~~--~~", "At last, it is here.", "终至矣。");
             // 终于，它来了。
             AddTranslation("At last, it is here.", "终至矣。");
             // 狙击贤者
             AddTranslation("Sniper Sage", "狙贤");
+            RegisterCard("Sniper Sage", "狙贤", "A mage whose training allows it to cast spells from afar.", "巫既习，能自远施咒。");
             // 经过训练的法师，可从远处施放法术。
             AddTranslation("A mage whose training allows it to cast spells from afar.", "巫既习，能自远施咒。");
             // 符文
             AddTranslation("Rune", "符");
+            RegisterCard("Rune", "符", "This is the last call, for alcohol.", "末召也，为酒。");
             // 这是最后的召唤，为了烈酒。
             AddTranslation("This is the last call, for alcohol.", "末召也，为酒。");
             // 魔焰
             AddTranslation("Flame", "焰");
+            RegisterCard("Flame", "焰", "This is the last call, for alcohol.", "末召也，为酒。");
             // 这是最后的召唤，为了烈酒。
             AddTranslation("This is the last call, for alcohol.", "末召也，为酒。");
             // 兔子
             AddTranslation("Rabbit", "兔");
+            RegisterCard("Rabbit", "兔", "This is the last call, for alcohol.", "末召也，为酒。");
             // 这是最后的召唤，为了烈酒。
             AddTranslation("This is the last call, for alcohol.", "末召也，为酒。");
             // 这是最后的召唤，为了豪饮。
             AddTranslation("This is the last call, for booze.", "末召也，为醪。");
             // 这是最后的召唤，为了麦啤。
             AddTranslation("This is the last call, for ale.", "末召也，为醴。");
+            RegisterCard("Master Goranj", "绿橙蓝师", "The towering Master Goranj. Not only a caster of fearsome Magicks, but possessed of a sturdy poise as well.", "巍然绿橙大师。不独施可畏之术，亦有坚姿。");
             // 巍然耸立的绿橙蓝大师。不仅是可怖魔法的施法者，更拥有坚不可摧的体魄。
             AddTranslation("The towering Master Goranj. Not only a caster of fearsome Magicks, but possessed of a sturdy poise as well.", "巍然绿橙大师。不独施可畏之术，亦有坚姿。");
+            RegisterCard("Master Bleene", "蓝绿橙师", "The selfless Master Bleene. It shall help you in times of dire need… At the cost of its own ability to defend itself. Admirable.", "无私之蓝绿大师。危急时，伊将助子……以失自卫之技为直。可嘉。");
             // 无私的蓝绿橙大师。它会在危难时刻伸出援手……代价是丧失自卫能力。可敬。
             AddTranslation("The selfless Master Bleene. It shall help you in times of dire need… At the cost of its own ability to defend itself. Admirable.", "无私之蓝绿大师。危急时，伊将助子……以失自卫之技为直。可嘉。");
+            RegisterCard("Master Orlu", "橙蓝绿师", "The great Master Orlu, soaring on pale wings, it attacks from above and draws in cards from below..", "伟哉橙蓝大师，苍翼翔空，自上击之，自下引牌……");
             // 伟大的橙蓝绿大师，展苍翼翱翔天际，既可凌空突袭又能从下方汲取卡牌……
             AddTranslation("The great Master Orlu, soaring on pale wings, it attacks from above and draws in cards from below..", "伟哉橙蓝大师，苍翼翔空，自上击之，自下引牌……");
+            RegisterCard("Master Magnus", "至尊大师", "my name is.. Shake-Zula! The Mic rula! The Old Schoola! You want a trip? I'll bring it to ya...", "吾名……摇乳祖拉！执麦之王！古派之宗！子欲远游？吾将致之于尔……");
             // 吾名…奶昔祖拉！麦霸凯撒！旧派峰阿！谁敢不服？我立刻门口到你家……
             AddTranslation("my name is.. Shake-Zula! The Mic rula! The Old Schoola! You want a trip? I'll bring it to ya...", "吾名……摇乳祖拉！执麦之王！古派之宗！子欲远游？吾将致之于尔……");
             // 至尊大师
             AddTranslation("Master Magnus", "至尊大师");
+            RegisterCard("Master Magnus", "至尊大师", "Frylock yeah Im on top rock you like a cop, meatwad you're up next with your knock knock!", "薯锁曰：吾居其上，震汝若吏；肉团继至，叩门叩门！");
             // 薯条侠在场我最强，像条警犬把你抓，肉团子下一个，快来段敲门梗逗大家！
             AddTranslation("Frylock yeah Im on top rock you like a cop, meatwad you're up next with your knock knock!", "薯锁曰：吾居其上，震汝若吏；肉团继至，叩门叩门！");
+            RegisterCard("Master Magnus", "至尊大师", "Meatwad get the money, see. Meatwad get the honeys, G. ", "肉团得其金，知之乎。肉团得群姝，客。");
             // 肉团子有钱赚，懂不懂？肉团子妹子转，兄弟。
             AddTranslation("Meatwad get the money, see. Meatwad get the honeys, G. ", "肉团得其金，知之乎。肉团得群姝，客。");
             // 凤凰
             AddTranslation("Phoenix", "凤凰");
+            RegisterCard("Phoenix", "凤凰", "Majestic avian, rumoured to have been an accomplice to Master Orlu...", "威仪之禽，传曾佐橙蓝大师……");
             // 威严的飞禽，据传曾是橙蓝绿大师的同谋……
             AddTranslation("Majestic avian, rumoured to have been an accomplice to Master Orlu...", "威仪之禽，传曾佐橙蓝大师……");
             // 寻宝猎犬
             AddTranslation("Bleenehound", "蓝绿犬");
+            RegisterCard("Bleenehound", "蓝绿犬", "Loyalist canine, rumoured to have been Master Bleene's loyal companion.", "忠犬也，传为蓝绿大师忠侣。");
             // 忠诚犬类，据传曾是蓝绿橙大师的忠实伙伴。
             AddTranslation("Loyalist canine, rumoured to have been Master Bleene's loyal companion.", "忠犬也，传为蓝绿大师忠侣。");
             // 炼金术入门
             AddTranslation("Alchemy 101", "炼金初编");
+            RegisterCard("Alchemy 101", "炼金初编", "[c:g2]Alchemy 101[c:]\n[c:g3]I[c:] [c:g1]never[c:] [c:g3]was[c:] [c:g1]that[c:] [c:g3]great[c:] [c:g1]at[c:] [c:g3]alchemy..[c:]", "[c:g2]《炼金初编》[c:]\n[c:g3]吾[c:] [c:g1]于[c:] [c:g3]炼金[c:] [c:g1]之道[c:] [c:g3]素[c:] [c:g1]未[c:] [c:g3]善……[c:]");
             // [c:g2]《炼金术入门》[c:] / [c:g3]我[c:][c:g1]在[c:][c:g3]炼金术[c:][c:g1]方面[c:][c:g3]一直[c:][c:g1]不[c:][c:g3]太擅长……[c:]
             AddTranslation("[c:g2]Alchemy 101[c:]\n[c:g3]I[c:] [c:g1]never[c:] [c:g3]was[c:] [c:g1]that[c:] [c:g3]great[c:] [c:g1]at[c:] [c:g3]alchemy..[c:]", "[c:g2]《炼金初编》[c:]\n[c:g3]吾[c:] [c:g1]于[c:] [c:g3]炼金[c:] [c:g1]之道[c:] [c:g3]素[c:] [c:g1]未[c:] [c:g3]善……[c:]");
             // 攻击指南
             AddTranslation("Guide to Attack", "击法略");
+            RegisterCard("Guide to Attack", "击法略", "[c:g2]Guide to Attack[c:]\n[c:g3]One[c:] [c:g1]of[c:] [c:g3]the[c:] [c:g1]first[c:] [c:g3]books[c:] [c:g1]I[c:] [c:g3]ever[c:] [c:g1]read.[c:]", "[c:g2]《击法略》[c:]\n[c:g3]此[c:] [c:g1]吾[c:] [c:g3]始读[c:] [c:g1]之[c:] [c:g3]书[c:] [c:g1]之一[c:]");
             // [c:g2]《攻击指南》[c:] / [c:g3]这是[c:][c:g1]我[c:][c:g3]读过的[c:][c:g1]第一本[c:][c:g3]书[c:]
             AddTranslation("[c:g2]Guide to Attack[c:]\n[c:g3]One[c:] [c:g1]of[c:] [c:g3]the[c:] [c:g1]first[c:] [c:g3]books[c:] [c:g1]I[c:] [c:g3]ever[c:] [c:g1]read.[c:]", "[c:g2]《击法略》[c:]\n[c:g3]此[c:] [c:g1]吾[c:] [c:g3]始读[c:] [c:g1]之[c:] [c:g3]书[c:] [c:g1]之一[c:]");
             // 突袭艺术
             AddTranslation("Art of Surprise", "奇袭术");
+            RegisterCard("Art of Surprise", "奇袭术", "[c:g2]The art of Surprise[c:]\n[c:g3]Looks[c:] [c:g1]like[c:] [c:g3]a[c:] [c:g1]frustrated[c:] [c:g3]mage[c:] [c:g1]stabbed[c:] [c:g3]it.[c:]", "[c:g2]《奇袭术》[c:]\n[c:g3]似[c:] [c:g1]有[c:] [c:g3]怫郁[c:] [c:g1]之[c:] [c:g3]巫[c:] [c:g1]刺[c:] [c:g3]之。[c:]");
             // [c:g2]《突袭艺术》[c:] / [c:g3]看起来[c:][c:g1]像是[c:][c:g3]某个[c:][c:g1]沮丧的[c:][c:g3]法师[c:][c:g1]捅了[c:][c:g3]它[c:]
             AddTranslation("[c:g2]The art of Surprise[c:]\n[c:g3]Looks[c:] [c:g1]like[c:] [c:g3]a[c:] [c:g1]frustrated[c:] [c:g3]mage[c:] [c:g1]stabbed[c:] [c:g3]it.[c:]", "[c:g2]《奇袭术》[c:]\n[c:g3]似[c:] [c:g1]有[c:] [c:g3]怫郁[c:] [c:g1]之[c:] [c:g3]巫[c:] [c:g1]刺[c:] [c:g3]之。[c:]");
             // 禁忌秘典
             AddTranslation(" Forbidden Secrets", "禁秘典");
+            RegisterCard(" Forbidden Secrets", "禁秘典", "[c:g2]The Tome of Forbidden Secrets[c:]\n[c:g3]Quite[c:] [c:g1]tough[c:] [c:g3]to[c:] [c:g1]open.[c:]", "[c:g2]《禁秘典》[c:]\n[c:g3]启[c:] [c:g1]之[c:] [c:g3]甚[c:] [c:g1]难。[c:]");
             // [c:g2]《禁忌秘典》[c:] / [c:g3]相当[c:][c:g1]难[c:][c:g3]打开[c:]
             AddTranslation("[c:g2]The Tome of Forbidden Secrets[c:]\n[c:g3]Quite[c:] [c:g1]tough[c:] [c:g3]to[c:] [c:g1]open.[c:]", "[c:g2]《禁秘典》[c:]\n[c:g3]启[c:] [c:g1]之[c:] [c:g3]甚[c:] [c:g1]难。[c:]");
             // 生死秘术
             AddTranslation("Secrets of Life and Death", "生死秘术");
+            RegisterCard("Secrets of Life and Death", "生死秘术", "[c:g2]The Secrets of Life and Death[c:]\n[c:g3]A[c:] [c:g1]forbidden[c:] [c:g3]book,[c:] [c:g1]I[c:] [c:g3]had[c:] [c:g1]to[c:] [c:g3]read[c:] [c:g1]it[c:] [c:g3]in[c:] [c:g1]secret![c:]", "[c:g2]《生死秘术》[c:]\n[c:g3]禁[c:] [c:g1]书也，[c:] [c:g3]吾[c:] [c:g1]须[c:] [c:g3]私[c:] [c:g1]读之！[c:]");
             // [c:g2]《生死秘术》[c:] / [c:g3]一本[c:][c:g1]禁书，[c:][c:g3]我[c:][c:g1]只能[c:][c:g3]偷偷[c:][c:g1]阅读[c:]
             AddTranslation("[c:g2]The Secrets of Life and Death[c:]\n[c:g3]A[c:] [c:g1]forbidden[c:] [c:g3]book,[c:] [c:g1]I[c:] [c:g3]had[c:] [c:g1]to[c:] [c:g3]read[c:] [c:g1]it[c:] [c:g3]in[c:] [c:g1]secret![c:]", "[c:g2]《生死秘术》[c:]\n[c:g3]禁[c:] [c:g1]书也，[c:] [c:g3]吾[c:] [c:g1]须[c:] [c:g3]私[c:] [c:g1]读之！[c:]");
             // 战争之书
             AddTranslation("Book of War", "战书");
+            RegisterCard("Book of War", "战书", "[c:g2]Book of War[c:]\n[c:g3]A[c:] [c:g1]painful,[c:] [c:g3]yet[c:] [c:g1]informative[c:] [c:g3]read.[c:]", "[c:g2]《战书》[c:]\n[c:g3]读[c:] [c:g1]之苦，[c:] [c:g3]然[c:] [c:g1]益[c:] [c:g3]人[c:] [c:g1]多。[c:]");
             // [c:g2]《战争之书》[c:] / [c:g3]读得[c:][c:g1]痛苦，[c:][c:g3]但[c:][c:g1]很有[c:][c:g3]收获[c:]
             AddTranslation("[c:g2]Book of War[c:]\n[c:g3]A[c:] [c:g1]painful,[c:] [c:g3]yet[c:] [c:g1]informative[c:] [c:g3]read.[c:]", "[c:g2]《战书》[c:]\n[c:g3]读[c:] [c:g1]之苦，[c:] [c:g3]然[c:] [c:g1]益[c:] [c:g3]人[c:] [c:g1]多。[c:]");
             // 镀金法典
             AddTranslation("Gilded Codex", "镀金法典");
+            RegisterCard("Gilded Codex", "镀金法典", "[c:g2]Gold-Encrusted Codex[c:]\n[c:g3]Possibly[c:] [c:g1]the[c:] [c:g3]most[c:] [c:g1]valueable[c:] [c:g3]book[c:] [c:g1]I[c:] [c:g3]own.[c:]", "[c:g2]《镀金法典》[c:]\n[c:g3]或[c:] [c:g1]吾[c:] [c:g3]所藏[c:] [c:g1]最贵[c:] [c:g3]之书[c:] [c:g1]也。[c:]");
             // [c:g2]《镀金法典》[c:] / [c:g3]可能[c:][c:g1]是[c:][c:g3]我[c:][c:g1]最珍贵[c:][c:g3]的书[c:][c:g1]了[c:]
             AddTranslation("[c:g2]Gold-Encrusted Codex[c:]\n[c:g3]Possibly[c:] [c:g1]the[c:] [c:g3]most[c:] [c:g1]valueable[c:] [c:g3]book[c:] [c:g1]I[c:] [c:g3]own.[c:]", "[c:g2]《镀金法典》[c:]\n[c:g3]或[c:] [c:g1]吾[c:] [c:g3]所藏[c:] [c:g1]最贵[c:] [c:g3]之书[c:] [c:g1]也。[c:]");
             // 符文导论
             AddTranslation("Introduction to Runes", "符文初编");
+            RegisterCard("Introduction to Runes", "符文初编", "[c:g2]Introduction to Runes[c:]\n[c:g3]'Twas[c:] [c:g1]an[c:] [c:g3]absolute[c:] [c:g1]nightmare[c:] [c:g3]learning[c:] [c:g1]all[c:] [c:g3]those[c:] [c:g1]runes.[c:]", "[c:g2]《符文初编》[c:]\n[c:g3]习[c:] [c:g1]诸[c:] [c:g3]符[c:] [c:g1]诚[c:] [c:g3]魇[c:] [c:g1]也[c:] [c:g3]矣[c:] [c:g1]。[c:]");
             // [c:g2]《符文导论》[c:] / [c:g3]学习[c:][c:g1]所有[c:][c:g3]这些[c:][c:g1]符文[c:][c:g3]简直是[c:][c:g1]噩梦[c:]
             AddTranslation("[c:g2]Introduction to Runes[c:]\n[c:g3]'Twas[c:] [c:g1]an[c:] [c:g3]absolute[c:] [c:g1]nightmare[c:] [c:g3]learning[c:] [c:g1]all[c:] [c:g3]those[c:] [c:g1]runes.[c:]", "[c:g2]《符文初编》[c:]\n[c:g3]习[c:] [c:g1]诸[c:] [c:g3]符[c:] [c:g1]诚[c:] [c:g3]魇[c:] [c:g1]也[c:] [c:g3]矣[c:] [c:g1]。[c:]");
             // 黏糊的书
             AddTranslation("Gooey Book", "胶书");
+            RegisterCard("Gooey Book", "胶书", "[c:g2]A Brief Hist-[c:] [c:g3]Wait[c:] [c:g1]a[c:] [c:g3]minute..[c:] [c:g1]Some[c:] [c:g3]vandal[c:] [c:g1]ruined[c:] [c:g3]this[c:] [c:g1]one![c:]", "[c:g2]《简史—[c:] [c:g3]且[c:] [c:g1]少待……[c:] [c:g3]有[c:] [c:g1]暴客[c:] [c:g3]毁[c:] [c:g1]此[c:] [c:g3]书[c:] [c:g1]矣！[c:]");
             // [c:g2]《简史-[c:][c:g3]等等……[c:][c:g1]竟[c:][c:g3]有人[c:][c:g1]毁了[c:][c:g3]这本[c:][c:g1]书！[c:]
             AddTranslation("[c:g2]A Brief Hist-[c:] [c:g3]Wait[c:] [c:g1]a[c:] [c:g3]minute..[c:] [c:g1]Some[c:] [c:g3]vandal[c:] [c:g1]ruined[c:] [c:g3]this[c:] [c:g1]one![c:]", "[c:g2]《简史—[c:] [c:g3]且[c:] [c:g1]少待……[c:] [c:g3]有[c:] [c:g1]暴客[c:] [c:g3]毁[c:] [c:g1]此[c:] [c:g3]书[c:] [c:g1]矣！[c:]");
             // 泥沼法术
             AddTranslation("Bogbound Spells", "泥沼咒");
+            RegisterCard("Bogbound Spells", "泥沼咒", "[c:g2]Bogbound Spells[c:]\n[c:g3]Eurgh,[c:] [c:g1]it's[c:] [c:g3]in[c:] [c:g1]way[c:] [c:g3]worse[c:] [c:g1]condition[c:] [c:g3]than[c:] [c:g1]I[c:] [c:g3]remember.[c:]", "[c:g2]《泥沼咒》[c:]\n[c:g3]呃，[c:] [c:g1]其状[c:] [c:g3]远[c:] [c:g1]恶于[c:] [c:g3]吾[c:] [c:g1]所[c:] [c:g3]记[c:] [c:g1]矣。[c:]");
             // [c:g2]《泥沼法术》[c:] / [c:g3]呃[c:][c:g1]它的[c:g3]状况[c:][c:g1]比[c:][c:g3]我[c:][c:g1]记忆[c:][c:g3]中的[c:][c:g1]更糟[c:]
             AddTranslation("[c:g2]Bogbound Spells[c:]\n[c:g3]Eurgh,[c:] [c:g1]it's[c:] [c:g3]in[c:] [c:g1]way[c:] [c:g3]worse[c:] [c:g1]condition[c:] [c:g3]than[c:] [c:g1]I[c:] [c:g3]remember.[c:]", "[c:g2]《泥沼咒》[c:]\n[c:g3]呃，[c:] [c:g1]其状[c:] [c:g3]远[c:] [c:g1]恶于[c:] [c:g3]吾[c:] [c:g1]所[c:] [c:g3]记[c:] [c:g1]矣。[c:]");
             // 驯服使魔
             AddTranslation("Taming Familiars", "驯使魔略");
+            RegisterCard("Taming Familiars", "驯使魔略", "[c:g2]Guide to Taming Familiars[c:]\n[c:g3]Borrowed[c:] [c:g1]this[c:] [c:g3]one[c:] [c:g1]from[c:] [c:g3]a[c:] [c:g1]friend[c:] [c:g3]in[c:] [c:g1]the[c:] [c:g3]wood.[c:]", "[c:g2]《驯使魔略》[c:]\n[c:g3]此[c:] [c:g1]书[c:] [c:g3]借[c:] [c:g1]自[c:] [c:g3]林中[c:] [c:g1]一[c:] [c:g3]友[c:] [c:g1]。[c:]");
             // [c:g2]《驯服使魔指南》[c:] / [c:g3]从[c:][c:g1]森林里[c:][c:g3]的[c:][c:g1]朋友[c:][c:g3]那里[c:][c:g1]借[c:][c:g3]的[c:]
             AddTranslation("[c:g2]Guide to Taming Familiars[c:]\n[c:g3]Borrowed[c:] [c:g1]this[c:] [c:g3]one[c:] [c:g1]from[c:] [c:g3]a[c:] [c:g1]friend[c:] [c:g3]in[c:] [c:g1]the[c:] [c:g3]wood.[c:]", "[c:g2]《驯使魔略》[c:]\n[c:g3]此[c:] [c:g1]书[c:] [c:g3]借[c:] [c:g1]自[c:] [c:g3]林中[c:] [c:g1]一[c:] [c:g3]友[c:] [c:g1]。[c:]");
             // 亡灵大军
             AddTranslation("Raising the Horde", "兴亡众");
+            RegisterCard("Raising the Horde", "兴亡众", "[c:g2]Raising the Horde[c:]\n[c:g3]I[c:] [c:g1]had[c:] [c:g3]to[c:] [c:g1]sneak[c:] [c:g3]into[c:] [c:g1]a[c:] [c:g3]crypt[c:] [c:g1]to[c:] [c:g3]get[c:] [c:g1]this[c:] [c:g3]one![c:]", "[c:g2]《兴亡众》[c:]\n[c:g3]吾[c:] [c:g1]须[c:] [c:g3]潜入[c:] [c:g1]墓穴[c:] [c:g3]乃[c:] [c:g1]得[c:] [c:g3]此书！[c:]");
             // [c:g2]《亡灵大军》[c:] / [c:g3]我[c:][c:g1]不得不[c:][c:g3]倒了[c:][c:g1]一座[c:][c:g3]斗[c:][c:g1]才[c:][c:g3]得到[c:][c:g1]它[c:]
             AddTranslation("[c:g2]Raising the Horde[c:]\n[c:g3]I[c:] [c:g1]had[c:] [c:g3]to[c:] [c:g1]sneak[c:] [c:g3]into[c:] [c:g1]a[c:] [c:g3]crypt[c:] [c:g1]to[c:] [c:g3]get[c:] [c:g1]this[c:] [c:g3]one![c:]", "[c:g2]《兴亡众》[c:]\n[c:g3]吾[c:] [c:g1]须[c:] [c:g3]潜入[c:] [c:g1]墓穴[c:] [c:g3]乃[c:] [c:g1]得[c:] [c:g3]此书！[c:]");
             // 附身之术
             AddTranslation("Art of Possesion", "附身术");
+            RegisterCard("Art of Possesion", "附身术", "[c:g2]The Art of Possesion[c:]\n[c:g3]Animating[c:] [c:g1]other[c:] [c:g3]mages[c:] [c:g1]was[c:] [c:g3]considered[c:] [c:g1]taboo[c:] [c:g3]back[c:] [c:g1]when[c:] [c:g3]I[c:] [c:g1]was[c:] [c:g3]around.[c:]", "[c:g2]《附身术》[c:]\n[c:g3]役[c:] [c:g1]他[c:] [c:g3]巫[c:] [c:g1]者[c:] [c:g3]禁[c:] [c:g1]也，[c:] [c:g3]在[c:] [c:g1]吾[c:] [c:g3]时。[c:]");
             // [c:g2]《附身之术》[c:] / [c:g3]在我[c:][c:g1]那个[c:][c:g3]年代，[c:][c:g1]操纵[c:][c:g3]其他[c:][c:g1]法师[c:][c:g3]是[c:][c:g1]禁忌[c:]
             AddTranslation("[c:g2]The Art of Possesion[c:]\n[c:g3]Animating[c:] [c:g1]other[c:] [c:g3]mages[c:] [c:g1]was[c:] [c:g3]considered[c:] [c:g1]taboo[c:] [c:g3]back[c:] [c:g1]when[c:] [c:g3]I[c:] [c:g1]was[c:] [c:g3]around.[c:]", "[c:g2]《附身术》[c:]\n[c:g3]役[c:] [c:g1]他[c:] [c:g3]巫[c:] [c:g1]者[c:] [c:g3]禁[c:] [c:g1]也，[c:] [c:g3]在[c:] [c:g1]吾[c:] [c:g3]时。[c:]");
             // 月亮
             AddTranslation("The Moon", "月");
+            RegisterCard("The Moon", "月", "OH THE MOON O HTHEMOON OH THE MOON O H THE MOON.", "月乎月乎，月乎月乎，月乎月乎。");
             // 月亮啊月亮月亮啊月亮月亮啊月亮。
             AddTranslation("OH THE MOON O HTHEMOON OH THE MOON O H THE MOON.", "月乎月乎，月乎月乎，月乎月乎。");
             // 地球
             AddTranslation("The Earth", "地");
+            RegisterCard("The Earth", "地", "The urth.", "元土。");
             // 原初之土。
             AddTranslation("The urth.", "元土。");
+            RegisterCard("Master Magnus", "至尊大师", "Cause we are the aqua teens, make the homies say ho and the girlies wanna scream", "吾曹乃水少，使友曹呼噫，群姝思号。");
             // 因为我们就是水行少年，让哥们儿们哇塞，让妹子们尖叫。
             AddTranslation("Cause we are the aqua teens, make the homies say ho and the girlies wanna scream", "吾曹乃水少，使友曹呼噫，群姝思号。");
             // 绿宝石之首
             AddTranslation("Head of Emerald", "绿玉首");
+            RegisterCard("Head of Emerald", "绿玉首", "trogdor", "特罗格多");
             // 特罗格多
             AddTranslation("trogdor", "特罗格多");
             // 红宝石之首
             AddTranslation("Head of Ruby", "红玉首");
+            RegisterCard("Head of Ruby", "红玉首", "haha goarnj", "哈哈戈安吉");
             // 哈哈戈安吉
             AddTranslation("haha goarnj", "哈哈戈安吉");
             // 蓝宝石之首
             AddTranslation("Head of Sapphire", "蓝玉首");
+            RegisterCard("Head of Sapphire", "蓝玉首", "mind gaames", "心戏");
             // 心灵卜弈
             AddTranslation("mind gaames", "心戏");
             // 虚空之首
             AddTranslation("Heads of Void", "虚首");
+            RegisterCard("Heads of Void", "虚首", "evil", "邪");
             // 邪祟
             AddTranslation("evil", "邪");
             // 月之碎片
             AddTranslation("Moon Shards", "月屑");
+            RegisterCard("Moon Shards", "月屑", "OH THE MOON O HTHEMOON OH THE MOON O H THE MOON.", "月乎月乎，月乎月乎，月乎月乎。");
             // 月啊月啊月啊月啊月啊月啊。
             AddTranslation("OH THE MOON O HTHEMOON OH THE MOON O H THE MOON.", "月乎月乎，月乎月乎，月乎月乎。");
             // 金星
             AddTranslation("Venus", "太白");
+            RegisterCard("Venus", "太白", "Its a me venus!", "吾乃太白！");
             // 是我，金星！
             AddTranslation("Its a me venus!", "吾乃太白！");
             // 火星
             AddTranslation("Mars", "荧惑");
+            RegisterCard("Mars", "荧惑", "Its a me mars!", "吾乃荧惑！");
             // 是我，火星！
             AddTranslation("Its a me mars!", "吾乃荧惑！");
             // 水星
             AddTranslation("Mercury", "辰星");
+            RegisterCard("Mercury", "辰星", "Its a me mercury!", "吾乃辰星！");
             // 是我，水星！
             AddTranslation("Its a me mercury!", "吾乃辰星！");
             // 海王星
             AddTranslation("Neptune", "海王星");
+            RegisterCard("Neptune", "海王星", "Its a me neptune!", "吾乃海王星！");
             // 是我，海王星！
             AddTranslation("Its a me neptune!", "吾乃海王星！");
             // 木星
             AddTranslation("Jupiter", "岁星");
+            RegisterCard("Jupiter", "岁星", "Its a me jupiter!", "吾乃岁星！");
             // 是我，木星！
             AddTranslation("Its a me jupiter!", "吾乃岁星！");
             // 土星
             AddTranslation("Saturn", "镇星");
+            RegisterCard("Saturn", "镇星", "Its a me saturn!", "吾乃镇星！");
             // 是我，土星！
             AddTranslation("Its a me saturn!", "吾乃镇星！");
             // 魔法克拉肯
             AddTranslation("The Horven", "术克拉肯");
+            RegisterCard("The Horven", "术克拉肯", "A terrible creature of the sea.. Posessing 3 strange and powerful appendages.", "海中可畏之物……具三诡而强之肢。");
             // 深海中的恐怖存在……生有三条诡异而强壮的触须。
             AddTranslation("A terrible creature of the sea.. Posessing 3 strange and powerful appendages.", "海中可畏之物……具三诡而强之肢。");
+            RegisterCard("Bleene's Mox", "蓝绿橙之玛珂", "", "");
+            RegisterCard("Goranj's Mox", "绿橙蓝之玛珂", "", "");
+            RegisterCard("Orlu's Mox", "橙蓝绿之玛珂", "", "");
             // 沽伯特
             AddTranslation("Goobert", "黏伯特");
+            RegisterCard("Goobert", "黏伯特", "A replica of my goo mage.. Its loyalty is only matched by its suffering.", "吾胶巫之摹器……其忠唯其苦足匹。");
             // 我的黏液法师的复制品……他的忠诚与痛苦同样深重。
             AddTranslation("A replica of my goo mage.. Its loyalty is only matched by its suffering.", "吾胶巫之摹器……其忠唯其苦足匹。");
             // 黏液
             AddTranslation("Goo", "黏胶");
+            RegisterCard("Goo", "黏胶", "", "");
             // 稻草人
             AddTranslation("Scarecrow", "蒭人");
+            RegisterCard("Scarecrow", "蒭人", "", "");
             // 双子稻草人
             AddTranslation("Scarecrow Twins", "双蒭人");
+            RegisterCard("Scarecrow Twins", "双蒭人", "", "");
             // 强化贤者
             AddTranslation("Stim Sage", "激贤");
+            RegisterCard("Stim Sage", "激贤", "", "");
             // 附魔长矛
             AddTranslation("Enchanted Spear", "祝矛");
+            RegisterCard("Enchanted Spear", "祝矛", "", "");
             // 肖像法师
             AddTranslation("Portrait Mage", "像巫");
+            RegisterCard("Portrait Mage", "像巫", "Your own creation.. How did it get here?", "子自造之物……胡至于此？");
             // 你自己的造物……它怎么到这儿来了？
             AddTranslation("Your own creation.. How did it get here?", "子自造之物……胡至于此？");
             // 复苏术
             AddTranslation("Revitilization", "复苏术");
+            RegisterCard("Revitilization", "复苏术", "This spell casts several healing auras to all of your cards.", "此术以数疗晕加于汝诸牌。");
             // 该法术会为你的所有卡牌施加多道治疗光环。
             AddTranslation("This spell casts several healing auras to all of your cards.", "此术以数疗晕加于汝诸牌。");
             // 屠戮
             AddTranslation("Carnage", "屠戮");
+            RegisterCard("Carnage", "屠戮", "This spell channels raw hellcow energy unto your cards.. Boosting their attack.", "此术引狱牛之力，灌于汝诸牌，而益其威。");
             // 该法术将地狱蛮牛之力灌注至你的卡牌中，提升其攻击力。
             AddTranslation("This spell channels raw hellcow energy unto your cards.. Boosting their attack.", "此术引狱牛之力，灌于汝诸牌，而益其威。");
             // 暴风雪
             AddTranslation("Blizzard", "暴雪");
+            RegisterCard("Blizzard", "暴雪", "Freeze over your opponents side with a mighty blizzard..", "以大雪冱敌之半局。");
             // 用强大的暴雪冻结对手的战场。
             AddTranslation("Freeze over your opponents side with a mighty blizzard..", "以大雪冱敌之半局。");
             // 强风咒
             AddTranslation("Cyclone", "旋飙咒");
+            RegisterCard("Cyclone", "旋飙咒", "This spell shall summon a whirlwind that boosts your cards into the air.", "此术召旋飙，使汝诸牌翔。");
             // 此法术将召唤旋风使你的卡牌获得飞行能力。
             AddTranslation("This spell shall summon a whirlwind that boosts your cards into the air.", "此术召旋飙，使汝诸牌翔。");
             // 洪流
             AddTranslation("Flood", "洪");
+            RegisterCard("Flood", "洪", "When used, it will summon a tsunami that wipes away the sigils of every card on the board.", "用之，则召海啸，尽涤局中诸牌之印。");
             // 使用时将召唤海啸，清除牌桌上所有卡牌的印记。
             AddTranslation("When used, it will summon a tsunami that wipes away the sigils of every card on the board.", "用之，则召海啸，尽涤局中诸牌之印。");
             // 吞噬
             AddTranslation("Engulf", "燔");
+            RegisterCard("Engulf", "燔", "Select a side of the board to be set ablaze.", "择局之一偏而燔之。");
             // 选择牌桌一侧将其点燃。
             AddTranslation("Select a side of the board to be set ablaze.", "择局之一偏而燔之。");
+            RegisterCard("Engulf", "燔", "Erm.,, erxcsqueeze me sauce?.", "呃……酱挤可乎？");
             // 呃……酱挤如何？
             AddTranslation("Erm.,, erxcsqueeze me sauce?.", "呃……酱挤可乎？");
             // 虚空宝石
             AddTranslation("Ethereal Gems", "灵玉");
+            RegisterCard("Ethereal Gems", "灵玉", "A frail spirit of a late magnus mox.. Only sustains for a turn.", "已逝至尊玛珂之脆魂，仅存一合。");
             // 已逝至尊玛珂的脆弱精魄..仅能存续一回合。
             AddTranslation("A frail spirit of a late magnus mox.. Only sustains for a turn.", "已逝至尊玛珂之脆魂，仅存一合。");
             // 贪欲之壶
@@ -3096,6 +3651,7 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Conjure a plain old garden gnome on the board..", "召一凡园侏于局。");
             // 诅咒头骨
             AddTranslation("Cursed Skull", "咒颅");
+            RegisterCard("Cursed Skull", "咒颅", "Hmm, a cursed skull. Handle it with care.", "唔，咒颅也。持之慎。");
             // 唔，一个被诅咒的头骨。务必小心处理。
             AddTranslation("Hmm, a cursed skull. Handle it with care.", "唔，咒颅也。持之慎。");
             // 灵感
@@ -3116,16 +3672,23 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Conjure up a fireball, and shoot it towards your enemy.", "召火丸而射敌。");
             // 魔药
             AddTranslation("Potion", "药");
+            RegisterCard("Potion", "药", "Conjure up a fireball, and shoot it towards your enemy.", "召火丸而射敌。");
             // 召唤一枚火球，射向你的敌人。
             AddTranslation("Conjure up a fireball, and shoot it towards your enemy.", "召火丸而射敌。");
             // 侏儒
             AddTranslation("Gnome", "侏");
+            RegisterCard("Gnome", "侏", "joem", "乔姆");
             // 乔姆
             AddTranslation("joem", "乔姆");
             // 潜水侏儒
             AddTranslation("Scuba Gnome", "潜侏");
+            RegisterCard("Scuba Gnome", "潜侏", "Huber", "胡伯");
             // 胡伯
             AddTranslation("Huber", "胡伯");
+            RegisterCard("Free Legs", "释足", "", "");
+            RegisterCard("Unsealed Body", "启躯", "", "");
+            RegisterCard("Released Arms", "释臂", "", "");
+            RegisterCard("Unleashed Tyrant", "纵暴君", "", "");
             // 蓝宝石卡包
             AddTranslation("Cardpack sapphire", "蓝玉牌韬");
             // 红宝石卡包
@@ -4033,6 +4596,8 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Magnificus Challenge Level: {0}", "蔓尼菲科角竞阶：{0}");
             // 蔓尼菲科挑战点数：{0}
             AddTranslation("Magnificus Challenge Points: {0}", "蔓尼菲科角竞点：{0}");
+
+            RegisterDynamicTranslations();
         }
 
     }
@@ -5166,6 +5731,32 @@ namespace ClassicChineseLanguagePack
 
     public class PackManagementMod
     {
+        public static Dictionary<string, string> EncountersTitle = new();
+        public static Dictionary<string, KeyValuePair<string, string>> EncountersDescription = new();
+
+        public static void RegisterEncounter(string en, string zh, string endes, string zhdes)
+        {
+            EncountersTitle[en] = zh;
+            EncountersDescription[en] = new KeyValuePair<string, string>(endes, zhdes);
+        }
+
+        private static void RegisterDynamicTranslations()
+        {
+            foreach (var kvp in EncountersTitle)
+            {
+                AddTranslation("Card Pack: " + kvp.Value, "牌韬：" + kvp.Value);
+                AddTranslation("Encounters Pack: " + kvp.Value, "遇战韬：" + kvp.Value);
+                for (int count = 0; count <= 100; count++)
+                {
+                    AddTranslation("Contains " + count.ToString() + " encounters from " + kvp.Value + ".", "含" + count.ToString() + "遇战，出自" + kvp.Value + "。");
+                }
+            }
+            for (int count = 0; count <= 100; count++)
+            {
+                AddTranslation("Contains " + count.ToString() + " encounters.", "含" + count.ToString() + "遇战。");
+            }
+        }
+
         public static void RegisterTranslations()
         {
             // SetText
@@ -5181,64 +5772,98 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Inscryption: Beastly Card Expansion Pack", "《冥勒》：兽牌扩包");
             // 莱西小屋中的原始卡牌系列。包含狼、螳螂以及偶尔出现的蟑螂。
             AddTranslation("The original set of cards featured in Leshy's cabin. Featuring wolves, mantises, and the occasional cockroach.", "莱西之庐旧牌之列也，有狼、螳螂，间亦有蜚蠊。");
+            RegisterEncounter("Inscryption: Beastly Card Expansion Pack", "《冥勒》：兽牌扩包", "The original set of cards featured in Leshy's cabin. Featuring wolves, mantises, and the occasional cockroach.", "莱西之庐旧牌之列也，有狼、螳螂，间亦有蜚蠊。");
             // 邪恶冥刻：科技卡牌扩展包
             AddTranslation("Inscryption: Techno Card Expansion Pack", "《冥勒》：机牌扩包");
             // 采用能量机制的原始机器人卡牌系列。
             AddTranslation("The original set of robotic cards, exclusively using the energy mechanic.", "机牌旧列也，专用能量之法。");
+            RegisterEncounter("Inscryption: Techno Card Expansion Pack", "《冥勒》：机牌扩包", "The original set of robotic cards, exclusively using the energy mechanic.", "机牌旧列也，专用能量之法。");
             // 邪恶冥刻：死亡卡牌扩展包
             AddTranslation("Inscryption: Undead Card Expansion Pack", "《冥勒》：亡牌扩包");
             // 格里魔拉模组
             AddTranslation("GrimoraMod", "格里魔拉模组");
             // 这些卡牌由亡者之骨驱动，从坟墓归来为你而战。
             AddTranslation("Powered by the bones of the dead, these cards have come back from the grave to fight for you.", "藉亡者之骨而动，自冢中归来，为汝战。");
+            RegisterEncounter("Inscryption: Undead Card Expansion Pack", "《冥勒》：亡牌扩包", "Powered by the bones of the dead, these cards have come back from the grave to fight for you.", "藉亡者之骨而动，自冢中归来，为汝战。");
+            RegisterEncounter("GrimoraMod", "格里魔拉模组", "", "");
             // 邪恶冥刻：魔法卡牌扩展包
             AddTranslation("Inscryption: Magickal Card Expansion Pack", "《冥勒》：术牌扩包");
             // 驾驭玛珂之力召唤学徒，在最荣耀的决斗中作战。
             AddTranslation("Harness the might of the moxen to summon forth apprentices and fight in the most honorable of duels.", "驭诸玛珂之威，召学徒而出，于至荣之决斗中战。");
             // 驾驭玛珂之力召唤学徒，在最荣耀的决斗中作战。（蔓尼菲科模组卡牌）
             AddTranslation("Harness the might of the moxen to summon forth apprentices and fight in the most honorable of duels. (Magnificus Mod Cards)", "驭诸玛珂之威，召学徒而出，于至荣之决斗中战。（蔓尼菲科模组牌）");
+            RegisterEncounter("Inscryption: Magickal Card Expansion Pack", "《冥勒》：术牌扩包", "Harness the might of the moxen to summon forth apprentices and fight in the most honorable of duels.", "驭诸玛珂之威，召学徒而出，于至荣之决斗中战。");
             // 社区杂项卡牌
             AddTranslation("Miscellaneous Community Cards", "社区杂牌");
             // 由模组添加但未妥善分类的非常规杂乱卡牌。
             AddTranslation("The unusual, unsorted, and unruly cards that have been added by mods but not properly sorted into packs.", "诸模组所益异牌，未妥分入诸包者。");
+            RegisterEncounter("Miscellaneous Community Cards", "社区杂牌", "The unusual, unsorted, and unruly cards that have been added by mods but not properly sorted into packs.", "诸模组所益异牌，未妥分入诸包者。");
             // 邪恶冥刻：野兽遭遇战
             AddTranslation("Inscryption: Beastly Encounters", "《冥勒》：兽遇战");
             // 莱西精心策划的包含[summary]的原始系列，旨在提供理想游戏体验。
             AddTranslation("The original set of [summary] that Leshy has carefully curated for the ideal gaming experience.", "莱西所精治之旧[summary]也，以供佳局。");
+            RegisterEncounter("Inscryption: Beastly Encounters", "《冥勒》：兽遇战", "The original set of [summary] that Leshy has carefully curated for the ideal gaming experience.", "莱西所精治之旧[summary]也，以供佳局。");
             // 未分类区域与遭遇战
             AddTranslation("Unsorted Regions and Encounters", "未分区域与遇战");
             // 这里的[summary]由模组添加但未妥善归类至卡包
             AddTranslation("These [summary] have been added by mods but not properly sorted into packs.", "此[summary]皆模组所益，而未妥归诸包。");
+            RegisterEncounter("Unsorted Regions and Encounters", "未分区域与遇战", "These [summary] have been added by mods but not properly sorted into packs.", "此[summary]皆模组所益，而未妥归诸包。");
             // 艾瑞卡牌扩展包
             AddTranslation("Eri Card Expansion", "艾瑞牌扩包");
             // todo
             // 从[randomcard]到[randomcard]，此卡包内含[count]种野生动物，它们与《邪恶冥刻》的蛮荒世界完美契合。
             AddTranslation("From the [randomcard] to the [randomcard], this pack contains [count] wild animals that feel right at home in the wild world of Inscryption.", "自[randomcard]至[randomcard]，此包凡有[count]种野兽，宜于《冥勒》荒野之世。");
+            RegisterEncounter("Eri Card Expansion", "艾瑞牌扩包", "From the [randomcard] to the [randomcard], this pack contains [count] wild animals that feel right at home in the wild world of Inscryption.", "自[randomcard]至[randomcard]，此包凡有[count]种野兽，宜于《冥勒》荒野之世。");
             // 阿拉的卡牌扩展包
             AddTranslation("Ara's Card Expansion", "阿拉牌扩包");
             // todo
             // 该扩展包包含[count]张卡牌，为《邪恶冥刻》核心玩法带来独特变化。[randomcard]与[randomcard]等卡牌将为你的下次冒险增添别样趣味。
             AddTranslation("This expansion contains [count] cards that offer a unique twist on Inscryption's core gameplay. Cards like [randomcard] and [randomcard] will give a little additional spice to your next run.", "此扩包有[count]牌，于《冥勒》本戏之法别出机杼。[randomcard]与[randomcard]诸牌，足为尔下回之行增一味。");
+            RegisterEncounter("Ara's Card Expansion", "阿拉牌扩包", "This expansion contains [count] cards that offer a unique twist on Inscryption's core gameplay. Cards like [randomcard] and [randomcard] will give a little additional spice to your next run.", "此扩包有[count]牌，于《冥勒》本戏之法别出机杼。[randomcard]与[randomcard]诸牌，足为尔下回之行增一味。");
             // 圣巢扩展包
             AddTranslation("Hallownest Expansion", "圣巢扩包");
             // todo
             // 大型扩展包，内含[count]种来自《空洞骑士》的造物。从宁静的十字路，下至深渊之底。
             AddTranslation("A large expansion containing [count] creatures from Hollow Knight. Up from peaceful Crossroads, down into the Abyss.", "大扩包也，含《空洞骑士》诸物[count]种。上自宁静十字路，下至深渊之底。");
+            RegisterEncounter("Hallownest Expansion", "圣巢扩包", "A large expansion containing [count] creatures from Hollow Knight. Up from peaceful Crossroads, down into the Abyss.", "大扩包也，含《空洞骑士》诸物[count]种。上自宁静十字路，下至深渊之底。");
             // 比蒂的区域扩展包
             AddTranslation("Bitty's Regions", "比蒂区域扩包");
             // 比蒂的区域扩展包新增了[summary]。
             AddTranslation("Bitty's Regions adds [summary].", "比蒂区域扩包，益[summary]。");
+            RegisterEncounter("Bitty's Regions", "比蒂区域扩包", "Bitty's Regions adds [summary].", "比蒂区域扩包，益[summary]。");
             // 虚空区域扩展包
             AddTranslation("Void Region Expansion", "虚空区域扩包");
             // 来自虚空的区域扩展包新增了[summary]。
             AddTranslation("This region expansion from Void adds [summary].", "此虚空区域扩包，益[summary]。");
+            RegisterEncounter("Void Region Expansion", "虚空区域扩包", "This region expansion from Void adds [summary].", "此虚空区域扩包，益[summary]。");
             // 艾瑞的卡包遭遇战
             AddTranslation("Eri's Card Pack Encounters", "艾瑞牌包遇战");
             // 该扩展新增了[summary]，包含来自艾瑞卡牌扩展包的卡牌
             AddTranslation("This expansion adds [summary] featuring cards from Eri's Card Expansion.", "此扩包益[summary]，皆用艾瑞牌扩包之牌。");
+            RegisterEncounter("Eri's Card Pack Encounters", "艾瑞牌包遇战", "This expansion adds [summary] featuring cards from Eri's Card Expansion.", "此扩包益[summary]，皆用艾瑞牌扩包之牌。");
+            RegisterEncounter("Original Undead Card", "原版亡族牌", "The cards for the Undead Tribe are in the original game.(ACT2)", "原戏第二幕之亡族牌包。");
+            RegisterEncounter("NonOriginal Undead Card", "补缀亡族牌包", "The expansion cards for the Undead Tribe are not in the original game.", "亡族增牌，非原戏所有。");
+            RegisterEncounter("Wilderness Legend", "荒野传奇", "Add some simple cards based on the original imprint.", "本旧印，益以数简牌。");
+            RegisterEncounter("DLC_Fairy_Tale", "荒野传奇DLC：绮童话", "Added some cards based on myths, legends, and fictional elements.", "益数牌，本乎神话、传说与虚构诸物。");
+            RegisterEncounter("P03KCM", "P03KCM", "", "");
+            RegisterEncounter("Kaycee's P03 Expansion Pack #1", "凯茜之 P03 扩展包一", "The first expansion pack from the developers of 'P03 in Kaycees Mod' adds [count] new cards across all four regions of Botopia.", "“凯茜模组中之 P03”诸作者之首扩展包，于机邦四境增新牌[count]张。");
+            RegisterEncounter("Kaycee's P03 Expansion Pack #2", "凯茜之 P03 扩展包二", "The second official expansion pack, with [count] firey new cards that command an explosive reaction!", "官次扩展包，含炽然新牌[count]张，能致爆应。");
+            RegisterEncounter("Inscryption: Rogue Bots of Botopia", "冥勒：机邦失机", "Botopia has become overrun with rogue bots! These [count] encounters have been rebalanced for Kaycee's Mod.", "机邦已为失机所乱！此[count]遭已为凯茜模组重平之。");
+            RegisterEncounter("Kaycee's P03 Encounter Expansion #1", "凯茜之 P03 遭扩展一", "[count] additional encounters that feature cards from the first official P03 expansion pack.", "增遭[count]，皆含首官 P03 扩展包之牌。");
+            RegisterEncounter("Kaycee's P03 Encounter Expansion #2", "凯茜之 P03 遭扩展二", "[count] additional encounters that feature cards from the second official P03 expansion pack.", "增遭[count]，皆含次官 P03 扩展包之牌。");
+            RegisterEncounter("Kaycee's P03 Expansion Pack #3", "凯茜之 P03 扩充包三", "They said it would never happen, but it's here! The third official expansion pack breaks all of the rules, with [count] new cards that bring bones, blood, and gems to Botopia!", "人谓终无此事，而今有之！第三官扩充包尽坏诸律，以 [count] 新牌致骨、血与玉于机邦！");
+            RegisterEncounter("Kaycee's P03 Encounter Expansion #3", "凯茜之 P03 遭遇扩充三", "[count] additional encounters that feature cards from the third official P03 expansion pack.", "[count] 别遭，皆用 P03 第三官扩充包之牌。");
+            RegisterEncounter("Aga's Magnificus Expansion", "Aga氏蔓尼菲科扩篇", "An unofficial expansion to the Magnificus Mod featuring [count] unique and colourful mages", "蔓尼菲科补缀之外扩，载[count]异而绚之术士。");
+            RegisterEncounter("Smughtro's MagMod Expansion", "Smughtro氏蔓尼菲科扩篇", "Adds 19 common cards, 7 rare cards, 7 spells, and 6 token cards to Magnificus Mod.", "于 Magnificus 补缀，益常牌十九、罕牌七、术七、符牌六。");
+            RegisterEncounter("Revenant Mod Card Pack", "复生亡灵补缀牌韬", "This card pack consists of mainly cards that return to the player in a variety of ways.", "此牌韬多由能以诸途反归戏徒手中之牌成。");
+            RegisterEncounter("Card Pack: StarCraft", "星际争霸牌韬", "Characters from StarCraft One.", "《星际争霸》初篇诸角。");
+            RegisterEncounter("Legends From The Darkness: Encounters", "闇中诸传：遭遇", "an Ever-expanding content pack for LFTD, meant to add battle encounters to the game.", "为 LFTD 所作之续拓牌韬也，以增遭遇于此戏。");
+            RegisterEncounter("Gareth's Mod", "Gareth氏补缀", "A part 1 booster pack created by Gareth48 and illustrated by Plutraser. Adds [count] cards and 7 sigils designed to fit right into vanilla Inscryption.", "Gareth48作之、Plutraser绘之第一章补牌韬。增[count]牌与七印契，其制可径入原本《冥锲》。");
             // todo
             // 包含：{0}以及更多的{1}张卡牌。
             AddTranslation("Cards in this pack: {0} and {1} other{2}.", "此包有{0}及余{1}牌{2}。");
+
+            RegisterDynamicTranslations();
         }
 
     }
@@ -5250,143 +5875,179 @@ namespace ClassicChineseLanguagePack
             // Card
             // 愤怒魔女
             AddTranslation("Angry Witch", "怒魔女");
+            MagnificusMod.RegisterCard("Angry Witch", "怒魔女", "The witch in charge of anger will ignite flames in the opposite battlefield.", "掌怒之魔女，将于敌局点燃烈焰。");
             // 掌控愤怒之力的魔女，将在对方战场上点燃火焰。
             AddTranslation("The witch in charge of anger will ignite flames in the opposite battlefield.", "掌怒之魔女，将于敌局点燃烈焰。");
             // 傲慢魔女
             AddTranslation("Arrogant Witch", "傲魔女");
+            MagnificusMod.RegisterCard("Arrogant Witch", "傲魔女", "The witch who mastered the power of arrogance appeared with the demon.", "掌傲慢之魔女，常与使魔偕出。");
             // 掌控傲慢之力的魔女，总是伴随着使魔一起出现。
             AddTranslation("The witch who mastered the power of arrogance appeared with the demon.", "掌傲慢之魔女，常与使魔偕出。");
             // 咖啡法师
             AddTranslation("Coffee Mage", "咖啡术士");
+            MagnificusMod.RegisterCard("Coffee Mage", "咖啡术士", "Mages who love coffee use gems to regulate their breath.", "嗜咖啡之术士，以玉调息。");
             // 喜欢咖啡的法师用宝石来调息。
             AddTranslation("Mages who love coffee use gems to regulate their breath.", "嗜咖啡之术士，以玉调息。");
             // 有趣的魔法鸡
             AddTranslation("Funny MagiChiking", "趣魔法鸡");
+            MagnificusMod.RegisterCard("Funny MagiChiking", "趣魔法鸡", "A smelly Rooster who has learned magic.", "一习魔法之臭雄鸡。");
             // 一只学会了魔法的臭公鸡。
             AddTranslation("A smelly Rooster who has learned magic.", "一习魔法之臭雄鸡。");
             // 暴食魔女
             AddTranslation("Gluttonous Witch", "饕餮魔女");
+            MagnificusMod.RegisterCard("Gluttonous Witch", "饕餮魔女", "The witch in charge of gluttony committed a terrible sin.", "掌饕餮之魔女，所犯之罪，令人胆寒。");
             // 掌管暴食的魔女犯下了可怕的罪孽，总是令人生畏。
             AddTranslation("The witch in charge of gluttony committed a terrible sin.", "掌饕餮之魔女，所犯之罪，令人胆寒。");
             // 贪婪魔女
             AddTranslation("Greedy Witch", "贪婪魔女");
+            MagnificusMod.RegisterCard("Greedy Witch", "贪婪魔女", "The witch who controls the power of greed, unfortunately, can only bring value to us after death.", "掌贪婪之魔女，惜乎唯死后方能裨益余等。");
             // 掌管贪婪之力的魔女，可惜只有死后才能带来更多价值。
             AddTranslation("The witch who controls the power of greed, unfortunately, can only bring value to us after death.", "掌贪婪之魔女，惜乎唯死后方能裨益余等。");
             // 强欲魔女
             AddTranslation("Inquisitive Witch", "强欲魔女");
+            MagnificusMod.RegisterCard("Inquisitive Witch", "强欲魔女", "Nothing is more powerful than her curiosity.", "天下莫强于其欲知之心。");
             // 没有什么比她的好奇心更强大的了。
             AddTranslation("Nothing is more powerful than her curiosity.", "天下莫强于其欲知之心。");
             // 嫉妒魔女
             AddTranslation("Jealous Witch", "嫉妒魔女");
+            MagnificusMod.RegisterCard("Jealous Witch", "嫉妒魔女", "The witch in charge of jealousy has powerful magic and power.", "掌嫉妒之魔女，具强大之魔法与威。");
             // 掌管嫉妒的魔女拥有强大的魔法和力量。
             AddTranslation("The witch in charge of jealousy has powerful magic and power.", "掌嫉妒之魔女，具强大之魔法与威。");
             // 怠惰魔女
             AddTranslation("Lazy Witch", "怠惰魔女");
+            MagnificusMod.RegisterCard("Lazy Witch", "怠惰魔女", "The witch in charge of the power of laziness is really a lazy guy.", "掌怠惰之魔女，诚乃懒惰之徒。");
             // 掌控怠惰之力的魔女，真是个懒惰的家伙。
             AddTranslation("The witch in charge of the power of laziness is really a lazy guy.", "掌怠惰之魔女，诚乃懒惰之徒。");
             // 色欲魔女
             AddTranslation("Lust Witch", "色欲魔女");
+            MagnificusMod.RegisterCard("Lust Witch", "色欲魔女", "The witch in charge of lust, don't look into her eyes.", "掌色欲之魔女，勿凝其目。");
             // 掌控色欲之力的魔女，不要看她的眼睛。
             AddTranslation("The witch in charge of lust, don't look into her eyes.", "掌色欲之魔女，勿凝其目。");
             // 九色鹿
             AddTranslation("Nine Color Deer", "九色鹿");
+            MagnificusMod.RegisterCard("Nine Color Deer", "九色鹿", "The colorful nine color deer has precious value.", "缤纷九色鹿，其价至珍。");
             // 缤纷多彩的九色鹿具有宝贵的价值。
             AddTranslation("The colorful nine color deer has precious value.", "缤纷九色鹿，其价至珍。");
             // 魔法臭鸡丁
             AddTranslation("Stinky MagiChiking", "魔法臭鸡丁");
+            MagnificusMod.RegisterCard("Stinky MagiChiking", "魔法臭鸡丁", "Hatched by magic eggs.", "由魔蛋所孵。");
             // 由魔蛋孕育而生。
             AddTranslation("Hatched by magic eggs.", "由魔蛋所孵。");
             // 炸弹狂人
             AddTranslation("Bomb Maniac", "炸弹狂人");
+            MagnificusMod.RegisterCard("Bomb Maniac", "炸弹狂人", "Even if it detonates itself, it never surrenders to others.", "虽自引爆，亦不降于人。");
             // 即使它引爆了自己，它也永远不会向他人屈服。
             AddTranslation("Even if it detonates itself, it never surrenders to others.", "虽自引爆，亦不降于人。");
             // 兔子伯爵
             AddTranslation("Earl Bunny", "兔子伯爵");
+            MagnificusMod.RegisterCard("Earl Bunny", "兔子伯爵", "The versatile Earl Bunny, not everyone can comprehend this art.", "多才多艺之兔子伯爵，非人人皆能明此艺。");
             // 多才多艺的兔子伯爵，并不是每个人都能理解这门艺术。
             AddTranslation("The versatile Earl Bunny, not everyone can comprehend this art.", "多才多艺之兔子伯爵，非人人皆能明此艺。");
             // 中国龙
             AddTranslation("Chinese Loong", "华龙");
+            MagnificusMod.RegisterCard("Chinese Loong", "华龙", "Diving into the abyss will bring peace to the four seas, flying will protect all things and bring peace, and the dragon's journey of thousands of miles is a sign of good fortune.", "潜渊则四海安澜，飞天则万象康宁，龙行万里，皆祥瑞之兆。");
             // 潜渊则镇四海安澜，飞天则护万象康宁，龙行万里皆为祥瑞之兆。
             AddTranslation("Diving into the abyss will bring peace to the four seas, flying will protect all things and bring peace, and the dragon's journey of thousands of miles is a sign of good fortune.", "潜渊则四海安澜，飞天则万象康宁，龙行万里，皆祥瑞之兆。");
             // 奶酪巫师
             AddTranslation("Cheese Wizard", "酪巫");
+            MagnificusMod.RegisterCard("Cheese Wizard", "酪巫", "A humorous wizard who is proficient in cooking, his cheese has magical power.", "幽默之巫，精于烹饪，厥奶酪具魔力。");
             // 一个幽默的巫师，精通烹饪，他的奶酪有神奇的魔力。
             AddTranslation("A humorous wizard who is proficient in cooking, his cheese has magical power.", "幽默之巫，精于烹饪，厥奶酪具魔力。");
             // 冰霜魔像
             AddTranslation("Frost Golem", "冰霜魔像");
+            MagnificusMod.RegisterCard("Frost Golem", "冰霜魔像", "Once on the field, there is a strong sense of oppression.", "一入局，压迫之感随之而来。");
             // 一旦上场，就会有强烈的压迫感。
             AddTranslation("Once on the field, there is a strong sense of oppression.", "一入局，压迫之感随之而来。");
             // 棒球法师
             AddTranslation("Baseball Mage", "球术士");
+            MagnificusMod.RegisterCard("Baseball Mage", "球术士", "His soul is bound under sportswear and can never be liberated.", "厥魂为运动服所缚，永难解脱。");
             // 他的灵魂被运动服束缚着，永远无法解脱。
             AddTranslation("His soul is bound under sportswear and can never be liberated.", "厥魂为运动服所缚，永难解脱。");
             // 突袭法师
             AddTranslation("Raid Mage", "突袭术士");
+            MagnificusMod.RegisterCard("Raid Mage", "突袭术士", "You will understand how terrifying it is for a robber to master magic.", "盗者得魔，汝当知其可怖。");
             // 你会明白强盗掌握魔法是多么可怕。
             AddTranslation("You will understand how terrifying it is for a robber to master magic.", "盗者得魔，汝当知其可怖。");
             // 翡翠魔龟
             AddTranslation("Jade Turtle", "翡翠魔龟");
+            MagnificusMod.RegisterCard("Jade Turtle", "翡翠魔龟", "A turtle draped in emeralds from head to toe—I can't help but marvel that such a painting even exists.", "通身翡翠之龟——余不禁叹此画竟有焉。");
             // 一只从头到脚都裹着绿宝石的乌龟——我不禁惊叹于竟然有这样一幅画作。
             AddTranslation("A turtle draped in emeralds from head to toe—I can't help but marvel that such a painting even exists.", "通身翡翠之龟——余不禁叹此画竟有焉。");
             // 魔法奶酪
             AddTranslation("Magic Cheese", "魔法奶酪");
+            MagnificusMod.RegisterCard("Magic Cheese", "魔法奶酪", "", "");
             // 猩红布谷鸟
             AddTranslation("Scarlet Cuckoo", "猩红布谷鸟");
+            MagnificusMod.RegisterCard("Scarlet Cuckoo", "猩红布谷鸟", "The success or failure of the angry magic bird often depends on its face.", "愤怒之魔布谷鸟，汝之成败往往系于厥颜色。");
             // 愤怒的魔法布谷鸟，你的成败往往取决于它的脸色。
             AddTranslation("The success or failure of the angry magic bird often depends on its face.", "愤怒之魔布谷鸟，汝之成败往往系于厥颜色。");
             // 长矛学徒
             AddTranslation("Spear Apprentice", "长矛学徒");
+            MagnificusMod.RegisterCard("Spear Apprentice", "长矛学徒", "Apprentices of Spear Mages, wise people will leave behind their backs to prepare.", "长矛术士之徒，智者当留后手以备。");
             // 作为长矛法师的学徒，聪明人会留后手准备。
             AddTranslation("Apprentices of Spear Mages, wise people will leave behind their backs to prepare.", "长矛术士之徒，智者当留后手以备。");
             // 黑暗之眼
             AddTranslation("The Eye of Darkness", "黑暗之眼");
+            MagnificusMod.RegisterCard("The Eye of Darkness", "黑暗之眼", "This precious pearl was once the devil's eye.", "此珍珠曾为魔鬼之目。");
             // 这颗宝贵的珍珠曾经是魔鬼的眼睛。
             AddTranslation("This precious pearl was once the devil's eye.", "此珍珠曾为魔鬼之目。");
             // 森林法术
             AddTranslation("Forest Spell", "森林法术");
+            MagnificusMod.RegisterCard("Forest Spell", "森林法术", "The forest spell obtained from Leshy can provide the most primitive defense.", "得自莱西之森林法术，可供最本源之御。");
             // 从莱西那里获得的森林法术，可以提供最原始的防御。
             AddTranslation("The forest spell obtained from Leshy can provide the most primitive defense.", "得自莱西之森林法术，可供最本源之御。");
             // 玛珂魔盾
             AddTranslation("MoxShield", "玛珂魔盾");
+            MagnificusMod.RegisterCard("MoxShield", "玛珂魔盾", "A magic shield inlaid with gemstones always provides a sense of security with its presence.", "镶玉之魔盾，常使人安心。");
             // 镶嵌宝石的魔法盾牌总是给人一种安全感。
             AddTranslation("A magic shield inlaid with gemstones always provides a sense of security with its presence.", "镶玉之魔盾，常使人安心。");
             // 星云风暴
             AddTranslation("Nebula Storm", "星云风暴");
+            MagnificusMod.RegisterCard("Nebula Storm", "星云风暴", "This cruel storm can directly take away an enemy.", "此残酷之风暴，可直取敌方一物。");
             // 这场残酷的风暴可以直接带走敌人。
             AddTranslation("This cruel storm can directly take away an enemy.", "此残酷之风暴，可直取敌方一物。");
             // 灵魂契约
             AddTranslation("Soul Contract", "灵魂契约");
+            MagnificusMod.RegisterCard("Soul Contract", "灵魂契约", "Perhaps you need more card assistance, and a soul contract is a great choice.", "或汝须更多牌之助，灵魂契约乃善择。");
             // 也许你需要更多的卡牌帮助，灵魂契约是一个不错的选择。
             AddTranslation("Perhaps you need more card assistance, and a soul contract is a great choice.", "或汝须更多牌之助，灵魂契约乃善择。");
             // 恸哭之墙
             AddTranslation("Wailing Wall", "恸哭之墙");
+            MagnificusMod.RegisterCard("Wailing Wall", "恸哭之墙", "Such perseverance even moves the thorny walls to weep.", "此毅力甚至令荆棘之墙哭泣。");
             // 这种毅力甚至让荆棘之墙哭泣。
             AddTranslation("Such perseverance even moves the thorny walls to weep.", "此毅力甚至令荆棘之墙哭泣。");
             // Ability
             // 咖啡时间
             AddTranslation("Coffee Time", "咖啡时辰");
+            MagnificusMod.RegisterAbility("Coffee Time", "咖啡时辰");
             // 当[creature]受到第一次伤害时，它获得2点力量。
             AddTranslation("When [creature] receives the first damage, it gains 2 strength.", "[creature]初受创时，得威+2。");
             // 傲慢之死
             AddTranslation("Death of Arrogance", "傲慢之死");
+            MagnificusMod.RegisterAbility("Death of Arrogance", "傲慢之死");
             // 当[creature]阵亡时，与之相邻卡牌获得2点力量。
             AddTranslation("When [creature] perishes, adjacent cards gain 2 power.", "[creature]殒命时，相邻诸牌得威+2。");
             // 贪婪之死
             AddTranslation("Death of Greed", "贪婪之死");
+            MagnificusMod.RegisterAbility("Death of Greed", "贪婪之死");
             // 当[creature]阵亡时，与之相邻卡牌获得3点生命。
             AddTranslation("When [creature] perishes, adjacent cards gain 3 health.", "[creature]殒命时，相邻诸牌得命+3。");
             // 上帝造物
             AddTranslation("God Made", "上帝造物");
+            MagnificusMod.RegisterAbility("God Made", "上帝造物");
             // 当[creature]被放置到场上时，将在每个相邻的空位上生成一个人造人。人造人具有：1点力量，1点生命，使魔。
             AddTranslation("When [creature] is played, a Homunculus is created on each empty adjacent space. The Homunculus has : 1 power, 1 health, Familiar.", "[creature]陈时，每相邻之空位各生一人造人。人造人具：威1，命1，使魔。");
+            MagnificusMod.RegisterAbility("Fir Caller", "召杉");
             // 当[creature]消亡时，持牌人一侧的空位将被大冷杉填满。大冷杉具有：0点力量，3点生命，高跳。
             AddTranslation("When [creature] perishes, the empty slot on the cardholder's side is filled with Great Firs. Great Fir has: 0 Power, 3 Health, Mighty Leap.", "[creature]殒命时，持牌人一侧之空位皆填以大冷杉。大冷杉具：威0，命3，高跳。");
             // 回味无穷
             AddTranslation("Lingering Taste", "回味无穷");
+            MagnificusMod.RegisterAbility("Lingering Taste", "回味无穷");
             // 当[creature]死亡时，相邻的卡牌获得1点生命值。
             AddTranslation("When [creature] perishes, adjacent cards gain 1 health.", "[creature]殒命时，相邻诸牌得命+1。");
             // 奶酪热爱
             AddTranslation("Love of Cheese", "嗜酪");
+            MagnificusMod.RegisterAbility("Love of Cheese", "嗜酪");
             // 当放置[creature]时，抽取一张魔法奶酪卡牌，魔法奶酪具有：0点力量，2点生命，回味无穷。
             AddTranslation("When [creature] is played, draw a cheese card, cheese has: 0 power, 2 health,Lingering Taste.", "[creature]陈时，引一魔法奶酪牌。魔法奶酪具：威0，命2，回味无穷。");
             // Other
@@ -5394,6 +6055,7 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Magic Expansion", "魔法拓编");
             // 增加了来自奇幻世界的更多魔法卡牌！将在以后添加更多内容！
             AddTranslation("Here comes the card of the fantasy world! More content will be added in the future!", "奇幻世界之牌已至！日后将续增更多内容！");
+
         }
 
     }
@@ -5401,6 +6063,26 @@ namespace ClassicChineseLanguagePack
 
     public class NevernamedsSigilariumMod
     {
+        private static void RegisterDynamicTranslations()
+        {
+            Dictionary<GemType, string> gemTypesEn = new Dictionary<GemType, string>
+            {
+                { GemType.Orange, "橙色" },
+                { GemType.Blue, "蓝色" },
+                { GemType.Green, "绿色" },
+            };
+            Dictionary<GemType, string> gemTypes = new Dictionary<GemType, string>
+            {
+                { GemType.Orange, "橙" },
+                { GemType.Blue, "蓝" },
+                { GemType.Green, "绿" },
+            };
+            foreach (var gemType in gemTypes.Keys)
+            {
+                AddTranslation("You do not have the two " + HintsHandler.GetColorCodeForGem(gemType) + gemTypesEn[gemType] + "[c:] Gems needed to play that. Gain Gems by playing Mox cards.", "汝无二" + HintsHandler.GetColorCodeForGem(gemType) + gemTypes[gemType] + "[c:]玉，不得陈彼。陈玛珂牌以得玉。");
+            }
+        }
+
         public static void RegisterTranslations()
         {
             // Consumable
@@ -7978,6 +8660,8 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Goated", "召羊");
             // 治疗师
             AddTranslation("Healer", "疗者");
+
+            RegisterDynamicTranslations();
         }
 
     }
@@ -9992,22 +10676,31 @@ namespace ClassicChineseLanguagePack
             // Card
             // 机械海胆电池
             AddTranslation("Urch1n Cell", "机海胆匣");
+            P03InKayceesModMod.RegisterCard("Urch1n Cell", "机海胆匣");
             // 充能！
             AddTranslation("Charge!", "充能！");
+            P03InKayceesModMod.RegisterCard("Charge!", "充能！");
             // 升级！
             AddTranslation("Upgrade!", "升级！");
+            P03InKayceesModMod.RegisterCard("Upgrade!", "升级！");
             // 电击！
             AddTranslation("Zap!", "电击！");
+            P03InKayceesModMod.RegisterCard("Zap!", "电击！");
             // 轰爆！
             AddTranslation("Blast!", "轰爆！");
+            P03InKayceesModMod.RegisterCard("Blast!", "轰爆！");
             // 防御！
             AddTranslation("Defend!", "防御！");
+            P03InKayceesModMod.RegisterCard("Defend!", "防御！");
             // 废料堆
             AddTranslation("Junk", "废堆");
+            P03InKayceesModMod.RegisterCard("Junk", "废堆");
             // 机械鲑鱼
             AddTranslation("S4LM0N", "机鲑");
+            P03InKayceesModMod.RegisterCard("S4LM0N", "机鲑");
             // 种子
             AddTranslation("Seed", "种");
+            P03InKayceesModMod.RegisterCard("Seed", "种");
 
             // Ability
             // 附录12，第一节 - 额外机制{0}
@@ -10662,12 +11355,44 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Empty spaces within a circuit completed by [creature] spawn Urchin Cells at the end of the owner's turn.", "在[creature]所成回路中之虚位，持牌者合终皆生海胆匣。");
             // 消耗2点能量，使[creature]力量设为1至6之间的随机数值。
             AddTranslation("Pay 2 Energy to set the power of [creature] randomly between 1 and 6.", "费二能，使[creature]之威偶定于一至六。");
+
         }
 
     }
 
     public class P03InKayceesModMod
     {
+        public static Dictionary<string, string> Consumables = new();
+        public static Dictionary<string, string> Mods = new();
+        public static Dictionary<string, string> Cards = new();
+
+        public static void RegisterConsumable(string en, string zh)
+        {
+            Consumables[en] = zh;
+        }
+
+        public static void RegisterMod(string en, string zh)
+        {
+            Mods[en] = zh;
+        }
+
+        public static void RegisterCard(string en, string zh)
+        {
+            Cards[en] = zh;
+        }
+
+        private static void RegisterDynamicTranslations()
+        {
+            foreach (var m in Mods)
+            {
+                AddTranslation("我准备下一个模组就启用“[c:bR]" + m.Key + "[c:]”……", "朕下补缀将用“[c:bR]" + m.Value + "[c:]”……");
+            }
+            foreach (var c in Consumables)
+            {
+                AddTranslation("我这儿有个[c:bR]" + c.Key + "[c:]要给你，但你的背包已经塞满了。等腾出空位再来找我吧！", "我有一[c:bR]" + c.Value + "[c:]与汝，然乃囊已满。俟有隙而复来！");
+            }
+        }
+
         public static void RegisterTranslations()
         {
             // Ability: Base
@@ -10757,362 +11482,539 @@ namespace ClassicChineseLanguagePack
             // Card: Base
             // 四枪手
             AddTranslation("Mega Gunner", "四铳手");
+            RegisterCard("Mega Gunner", "四铳手");
             // 三枪手
             AddTranslation("Triple Gunner", "三铳手");
+            RegisterCard("Triple Gunner", "三铳手");
             // 伤害治疗管道
             AddTranslation("Hurt-n-Heal Conduit", "伤疗渠");
+            RegisterCard("Hurt-n-Heal Conduit", "伤疗渠");
             // 黄金矿工
             AddTranslation("50er", "金矿夫");
+            RegisterCard("50er", "金矿夫");
             // 废料堆
             AddTranslation("Scrap Pile", "废堆");
+            RegisterCard("Scrap Pile", "废堆");
             // 阿尔法.DOC
             AddTranslation("ALPHA.DOC", "甲.DOC");
+            RegisterCard("ALPHA.DOC", "甲.DOC");
             // 贝塔.DOC
             AddTranslation("BETA.DOC", "乙.DOC");
+            RegisterCard("BETA.DOC", "乙.DOC");
             // 伽马.DOC
             AddTranslation("GAMMA.DOC", "丙.DOC");
+            RegisterCard("GAMMA.DOC", "丙.DOC");
             // 基础代币
             AddTranslation("Basic Token", "凡符");
+            RegisterCard("Basic Token", "凡符");
             // 强化代币
             AddTranslation("Improved Token", "良符");
+            RegisterCard("Improved Token", "良符");
             // 稀有代币
             AddTranslation("Rare Token", "稀符");
+            RegisterCard("Rare Token", "稀符");
             // 区块链
             AddTranslation("Blockchain", "链块");
+            RegisterCard("Blockchain", "链块");
             // 乖乖币
             AddTranslation("GollyCoin", "乖币");
+            RegisterCard("GollyCoin", "乖币");
             // 蠢蛋猿
             AddTranslation("Stupid-Ass Ape", "愚猿");
+            RegisterCard("Stupid-Ass Ape", "愚猿");
             // 可替代猿
             AddTranslation("Fungible Ape", "可代猿");
+            RegisterCard("Fungible Ape", "可代猿");
             // 深度网瘾猿
             AddTranslation("Terminally Online Ape", "网癖猿");
+            RegisterCard("Terminally Online Ape", "网癖猿");
             // AI生成猿
             AddTranslation("AI Generated Ape", "机生猿");
+            RegisterCard("AI Generated Ape", "机生猿");
             // 正能量猿
             AddTranslation("Wholesome Ape", "纯善猿");
+            RegisterCard("Wholesome Ape", "纯善猿");
             // 投资猿
             AddTranslation("Investment Ape", "投财猿");
+            RegisterCard("Investment Ape", "投财猿");
             // 求知欲强猿
             AddTranslation("Inquisitive Ape", "好问猿");
+            RegisterCard("Inquisitive Ape", "好问猿");
             // 濒危猿
             AddTranslation("Endangered Ape", "危猿");
+            RegisterCard("Endangered Ape", "危猿");
             // 无聊透顶猿
             AddTranslation("Bored Ape", "倦猿");
+            RegisterCard("Bored Ape", "倦猿");
             // 暴躁猿
             AddTranslation("Annoyed Ape", "忿猿");
+            RegisterCard("Annoyed Ape", "忿猿");
             // 性感猿
             AddTranslation("Sexy Ape", "艳猿");
+            RegisterCard("Sexy Ape", "艳猿");
             // 科技感猿
             AddTranslation("Tech Ape", "机猿");
+            RegisterCard("Tech Ape", "机猿");
             // 兄弟情猿
             AddTranslation("Broseph Ape", "昆弟猿");
+            RegisterCard("Broseph Ape", "昆弟猿");
             // 野蛮生长猿
             AddTranslation("Overgrown Ape", "蔓猿");
+            RegisterCard("Overgrown Ape", "蔓猿");
             // 花里胡哨猿
             AddTranslation("Fancy Ape", "华猿");
+            RegisterCard("Fancy Ape", "华猿");
             // 昂贵猿
             AddTranslation("Expensive Ape", "贵猿");
+            RegisterCard("Expensive Ape", "贵猿");
             // 丑闻缠身猿
             AddTranslation("Scandalous Ape", "丑闻猿");
+            RegisterCard("Scandalous Ape", "丑闻猿");
             // 中产猿
             AddTranslation("Medium Ape", "中赀猿");
+            RegisterCard("Medium Ape", "中赀猿");
             // 私人订制猿
             AddTranslation("Personal Ape", "私猿");
+            RegisterCard("Personal Ape", "私猿");
             // 不可替代猿
             AddTranslation("Non-Fungible Ape", "不可代猿");
+            RegisterCard("Non-Fungible Ape", "不可代猿");
             // 精修版猿
             AddTranslation("Trimmed Ape", "修猿");
+            RegisterCard("Trimmed Ape", "修猿");
             // 乖乖猿
             AddTranslation("Golly Ape", "乖猿");
+            RegisterCard("Golly Ape", "乖猿");
             // 诡计多端猿
             AddTranslation("Devious Ape", "诈猿");
+            RegisterCard("Devious Ape", "诈猿");
             // 葡萄味猿
             AddTranslation("Grape Ape", "葡猿");
+            RegisterCard("Grape Ape", "葡猿");
             // 危险.DAT
             AddTranslation("UNSAFE.DAT", "危.DAT");
+            RegisterCard("UNSAFE.DAT", "危.DAT");
             // 漏洞
             AddTranslation("Bug", "蠹");
+            RegisterCard("Bug", "蠹");
             // 病毒扫描器
             AddTranslation("Virus Scanner", "毒检器");
+            RegisterCard("Virus Scanner", "毒检器");
             // 跑赢跑赢曲线
             AddTranslation("Curve Hopper Hopper", "曲跃跃");
+            RegisterCard("Curve Hopper Hopper", "曲跃跃");
             // 训练假人
             AddTranslation("Training Dummy", "习偶");
+            RegisterCard("Training Dummy", "习偶");
             // 血能容器
             AddTranslation("Blood Vessel", "血皿");
+            RegisterCard("Blood Vessel", "血皿");
             // 弹簧容器
             AddTranslation("Spring Vessel", "簧皿");
+            RegisterCard("Spring Vessel", "簧皿");
             // 管道容器
             AddTranslation("Conduit Vessel", "渠皿");
+            RegisterCard("Conduit Vessel", "渠皿");
             // 挖泥容器
             AddTranslation("Dredging Vessel", "浚皿");
+            RegisterCard("Dredging Vessel", "浚皿");
             // 涡轮容器
             AddTranslation("Turbo Vessel", "迅皿");
+            RegisterCard("Turbo Vessel", "迅皿");
             // 涡轮蓝宝石容器
             AddTranslation("Turbo Sapphire Vessel", "迅蓝玉皿");
+            RegisterCard("Turbo Sapphire Vessel", "迅蓝玉皿");
             // 涡轮红宝石容器
             AddTranslation("Turbo Ruby Vessel", "迅红玉皿");
+            RegisterCard("Turbo Ruby Vessel", "迅红玉皿");
             // 涡轮绿宝石容器
             AddTranslation("Turbo Emerald Vessel", "迅绿玉皿");
+            RegisterCard("Turbo Emerald Vessel", "迅绿玉皿");
             // 涡轮血能容器
             AddTranslation("Turbo Blood Vessel", "迅血皿");
+            RegisterCard("Turbo Blood Vessel", "迅血皿");
             // 涡轮弹簧容器
             AddTranslation("Turbo Spring Vessel", "迅簧皿");
+            RegisterCard("Turbo Spring Vessel", "迅簧皿");
             // 涡轮管道容器
             AddTranslation("Turbo Conduit Vessel", "迅渠皿");
+            RegisterCard("Turbo Conduit Vessel", "迅渠皿");
             // 涡轮挖泥容器
             AddTranslation("Turbo Dredging Vessel", "迅浚皿");
+            RegisterCard("Turbo Dredging Vessel", "迅浚皿");
             // 跳跃机器人
             AddTranslation("L33pb0t", "跃机");
+            RegisterCard("L33pb0t", "跃机");
             // 涡轮跳跃机器人
             AddTranslation("Turbo L33pb0t", "迅跃机");
+            RegisterCard("Turbo L33pb0t", "迅跃机");
             // 树
             AddTranslation("Tree", "树");
+            RegisterCard("Tree", "树");
             // 鼹鼠人
             AddTranslation("Mole Man", "鼹人");
+            RegisterCard("Mole Man", "鼹人");
             // 蔓尼画笔.exe
             AddTranslation("MAGBRUSH.EXE", "蔓笔.EXE");
+            RegisterCard("MAGBRUSH.EXE", "蔓笔.EXE");
             // 格里羽笔.exe
             AddTranslation("GRIMQUIL.EXE", "冢笔.EXE");
+            RegisterCard("GRIMQUIL.EXE", "冢笔.EXE");
             // 防火墙
             AddTranslation("Firewall", "火墙");
+            RegisterCard("Firewall", "火墙");
             // 复制体防火墙
             AddTranslation("Replicating Firewall", "孳火墙");
+            RegisterCard("Replicating Firewall", "孳火墙");
             // 赏金猎人脑
             AddTranslation("Hunter Brain", "捕脑");
+            RegisterCard("Hunter Brain", "捕脑");
             // 激活的赏金猎人
             AddTranslation("Activated Hunter", "启捕者");
+            RegisterCard("Activated Hunter", "启捕者");
             // 海盗湾.torrent
             AddTranslation("yarr.torrent", "盗湾.torrent");
+            RegisterCard("yarr.torrent", "盗湾.torrent");
             // 机械鳄龟
             AddTranslation("R!V3R 5N4PP3R", "机鳄龟");
+            RegisterCard("R!V3R 5N4PP3R", "机鳄龟");
             // 机械鼹鼠
             AddTranslation("M013", "机鼹");
+            RegisterCard("M013", "机鼹");
             // 机械兔
             AddTranslation("R488!7", "机兔");
+            RegisterCard("R488!7", "机兔");
             // 机械螳螂
             AddTranslation("M4N7!5", "机螳");
+            RegisterCard("M4N7!5", "机螳");
             // 机械头狼
             AddTranslation("41PH4", "机头狼");
+            RegisterCard("41PH4", "机头狼");
             // 机械负鼠
             AddTranslation("Robopossum", "机负鼠");
+            RegisterCard("Robopossum", "机负鼠");
             // 时钟:爷爷
             AddTranslation("Grandpa:Clock", "祖钟");
+            RegisterCard("Grandpa:Clock", "祖钟");
             // 鬼灵软件
             AddTranslation("Ghoulware", "鬼件");
+            RegisterCard("Ghoulware", "鬼件");
             // 宝石方尖碑
             AddTranslation("Mox Obelisk", "玛珂方尖碑");
+            RegisterCard("Mox Obelisk", "玛珂方尖碑");
             // 管道塔
             AddTranslation("Conduit Tower", "渠塔");
+            RegisterCard("Conduit Tower", "渠塔");
             // 信号塔
             AddTranslation("Radio Tower", "讯塔");
+            RegisterCard("Radio Tower", "讯塔");
             // 发电机
             AddTranslation("Generator", "电枢");
+            RegisterCard("Generator", "电枢");
             // 能量塔
             AddTranslation("Power Sink", "蓄能塔");
+            RegisterCard("Power Sink", "蓄能塔");
             // 失败实验体
             AddTranslation("Failed Experiment", "败验体");
+            RegisterCard("Failed Experiment", "败验体");
             // 治疗管道
             AddTranslation("Heal Conduit", "疗渠");
+            RegisterCard("Heal Conduit", "疗渠");
             // 实验体1号
             AddTranslation("Experiment #1", "验体一");
+            RegisterCard("Experiment #1", "验体一");
             // 骷髅大师
             AddTranslation("Skeleton Master", "枯骨主");
+            RegisterCard("Skeleton Master", "枯骨主");
             // 机械燃油弹
             AddTranslation("M0l0t0v", "机燃壶");
+            RegisterCard("M0l0t0v", "机燃壶");
             // Card: ExpansionPack1
             // 钢铁战狼
             AddTranslation("B30WULF", "钢狼");
+            RegisterCard("B30WULF", "钢狼");
             // 铁脊蟒
             AddTranslation("PYTH0N", "铁蟒");
+            RegisterCard("PYTH0N", "铁蟒");
             // 拟态螳螂
             AddTranslation("Asmanteus", "拟螳");
+            RegisterCard("Asmanteus", "拟螳");
             // 种子机器人
             AddTranslation("SeedBot", "种机");
+            RegisterCard("SeedBot", "种机");
             // 传带传递者
             AddTranslation("Conveyor Latcher", "传带遗契者");
+            RegisterCard("Conveyor Latcher", "传带遗契者");
             // 天空传递者
             AddTranslation("Sky Latcher", "天遗契者");
+            RegisterCard("Sky Latcher", "天遗契者");
             // 机械蠕虫
             AddTranslation("W0rm", "机蠕");
+            RegisterCard("W0rm", "机蠕");
             // 鱼骨
             AddTranslation("Fishbones", "鱼骨");
+            RegisterCard("Fishbones", "鱼骨");
             // 锦鲤
             AddTranslation("Koi", "锦鲤");
+            RegisterCard("Koi", "锦鲤");
             // 鲑鱼
             AddTranslation("Salmon", "鲑");
+            RegisterCard("Salmon", "鲑");
             // 机械兽群大师
             AddTranslation("B3A5T GR4ND M4ST3R", "机兽大宗");
+            RegisterCard("B3A5T GR4ND M4ST3R", "机兽大宗");
             // 机械野兽大师
             AddTranslation("B3A5T M4ST3R", "机兽师");
+            RegisterCard("B3A5T M4ST3R", "机兽师");
             // 机械公牛
             AddTranslation("T4URU5", "机牛");
+            RegisterCard("T4URU5", "机牛");
             // 搜索机器人
             AddTranslation("SearchBot", "索机");
+            RegisterCard("SearchBot", "索机");
             // 弹药机器人
             AddTranslation("AmmoBot", "弹机");
+            RegisterCard("AmmoBot", "弹机");
             // 油罐杰瑞
             AddTranslation("Oil Jerry", "油杰里");
+            RegisterCard("Oil Jerry", "油杰里");
             // 死灵机甲
             AddTranslation("Necronomaton", "死灵机偶");
+            RegisterCard("Necronomaton", "死灵机偶");
             // 僵尸进程
             AddTranslation("Zombie Process", "尸程");
+            RegisterCard("Zombie Process", "尸程");
             // 天使机器人
             AddTranslation("AngelBot", "天使机");
+            RegisterCard("AngelBot", "天使机");
             // 管道守卫
             AddTranslation("Conduit Protector", "护渠者");
+            RegisterCard("Conduit Protector", "护渠者");
             // 骷髅电池
             AddTranslation("Skel-E-Cell", "骨电匣");
+            RegisterCard("Skel-E-Cell", "骨电匣");
             // 空域管道
             AddTranslation("Airspace Conduit", "翔域渠");
+            RegisterCard("Airspace Conduit", "翔域渠");
             // 污秽管道
             AddTranslation("Foul Conduit", "秽渠");
+            RegisterCard("Foul Conduit", "秽渠");
             // 侦察机
             AddTranslation("Spyplane", "谍机");
+            RegisterCard("Spyplane", "谍机");
             // 执行器
             AddTranslation("Executor", "执者");
+            RegisterCard("Executor", "执者");
             // 复制粘贴
             AddTranslation("Copypasta", "摹贴");
+            RegisterCard("Copypasta", "摹贴");
             // 弗兰肯电池
             AddTranslation("FrankenCell", "缝电匣");
+            RegisterCard("FrankenCell", "缝电匣");
             // 时钟:先生
             AddTranslation("Mr:Clock", "先生钟");
+            RegisterCard("Mr:Clock", "先生钟");
             // 机械小鸭
             AddTranslation("Roboducky", "机鸭");
+            RegisterCard("Roboducky", "机鸭");
             // 红宝石泰坦
             AddTranslation("Ruby Titan", "红玉巨神");
+            RegisterCard("Ruby Titan", "红玉巨神");
             // 蓝宝石泰坦
             AddTranslation("Sapphire Titan", "蓝玉巨神");
+            RegisterCard("Sapphire Titan", "蓝玉巨神");
             // 绿宝石泰坦
             AddTranslation("Emerald Titan", "绿玉巨神");
+            RegisterCard("Emerald Titan", "绿玉巨神");
             // Card: ExpansionPack2
             // 交换传递者
             AddTranslation("Swapper Latcher", "易数遗契者");
+            RegisterCard("Swapper Latcher", "易数遗契者");
             // 箱型机器人
             AddTranslation("Box Bot", "箱机");
+            RegisterCard("Box Bot", "箱机");
             // 废料机器人
             AddTranslation("Scrap Bot", "废机");
+            RegisterCard("Scrap Bot", "废机");
             // 压缩炸弹
             AddTranslation("Zip Bomb", "疾爆");
+            RegisterCard("Zip Bomb", "疾爆");
             // 机械公羊
             AddTranslation("R4M", "机公羊");
+            RegisterCard("R4M", "机公羊");
             // 电子机器人
             AddTranslation("Elektron", "电机");
+            RegisterCard("Elektron", "电机");
             // 推土机
             AddTranslation("Billdozer", "推辟者");
+            RegisterCard("Billdozer", "推辟者");
             // 图书管理员
             AddTranslation("Librarian", "守牍者");
+            RegisterCard("Librarian", "守牍者");
             // 红宝石哨兵
             AddTranslation("Ruby Sentinel", "红玉哨");
+            RegisterCard("Ruby Sentinel", "红玉哨");
             // 绿宝石哨兵
             AddTranslation("Emerald Sentinel", "绿玉哨");
+            RegisterCard("Emerald Sentinel", "绿玉哨");
             // 蓝宝石哨兵
             AddTranslation("Sapphire Sentinel", "蓝玉哨");
+            RegisterCard("Sapphire Sentinel", "蓝玉哨");
             // 打火机器人
             AddTranslation("Ignitron", "然机");
+            RegisterCard("Ignitron", "然机");
             // 辉光机器人
             AddTranslation("GlowBot", "辉机");
+            RegisterCard("GlowBot", "辉机");
             // 燃气管道
             AddTranslation("Gas Conduit", "燃渠");
+            RegisterCard("Gas Conduit", "燃渠");
             // 审燃员
             AddTranslation("Revignite", "复焰者");
+            RegisterCard("Revignite", "复焰者");
             // 街道清扫者
             AddTranslation("Street Sweeper", "扫街者");
+            RegisterCard("Street Sweeper", "扫街者");
             // 护盾走私者
             AddTranslation("Shield Smuggler", "私盾者");
+            RegisterCard("Shield Smuggler", "私盾者");
             // 怜悯搜寻者
             AddTranslation("Pity Seeker", "乞怜者");
+            RegisterCard("Pity Seeker", "乞怜者");
             // 机械海胆管道
             AddTranslation("Urch1n Conduit", "海胆渠");
+            RegisterCard("Urch1n Conduit", "海胆渠");
             // 机械犀牛
             AddTranslation("Rh1n0", "机犀");
+            RegisterCard("Rh1n0", "机犀");
             // 机械巨象
             AddTranslation("3leph4nt", "机象");
+            RegisterCard("3leph4nt", "机象");
             // 小吉米
             AddTranslation("Jimmy Jr.", "小吉米");
+            RegisterCard("Jimmy Jr.", "小吉米");
             // 管理员机器人
             AddTranslation("OP Bot", "长机");
+            RegisterCard("OP Bot", "长机");
             // 哭泣者
             AddTranslation("Weeper", "泣者");
+            RegisterCard("Weeper", "泣者");
             // 自毁电池
             AddTranslation("Sui-Cell", "殉电匣");
+            RegisterCard("Sui-Cell", "殉电匣");
             // 璀璨管道
             AddTranslation("Bedazzling Conduit", "炫渠");
+            RegisterCard("Bedazzling Conduit", "炫渠");
             // 机械地鼠
             AddTranslation("G0ph3r", "机地鼠");
+            RegisterCard("G0ph3r", "机地鼠");
             // 机械贵宾犬
             AddTranslation("P00dl3", "机贵宾");
+            RegisterCard("P00dl3", "机贵宾");
             // 火焰驯服者
             AddTranslation("Flamecharmer", "驯焰者");
+            RegisterCard("Flamecharmer", "驯焰者");
             // 火炮机器人
             AddTranslation("Artillery Droid", "炮机人");
+            RegisterCard("Artillery Droid", "炮机人");
             // 究极机器人
             AddTranslation("Ultra Bot", "极机");
+            RegisterCard("Ultra Bot", "极机");
             // 地狱火突击兵
             AddTranslation("Hellfire Commando", "狱火兵");
+            RegisterCard("Hellfire Commando", "狱火兵");
             // 能量吸血鬼
             AddTranslation("Energy Vampire", "吸能魅");
+            RegisterCard("Energy Vampire", "吸能魅");
             // 橙汁榨取机
             AddTranslation("Orange Juicer", "榨橙者");
+            RegisterCard("Orange Juicer", "榨橙者");
             // 赞博特博士
             AddTranslation("Dr Zambot", "赞博特博士");
+            RegisterCard("Dr Zambot", "赞博特博士");
             // 碎碎
             AddTranslation("Chippy", "碎子");
+            RegisterCard("Chippy", "碎子");
             // 跳跃机器人尼奥
             AddTranslation("L33pB0t Neo", "新跃机");
+            RegisterCard("L33pB0t Neo", "新跃机");
             // 封装机
             AddTranslation("Encapsulator", "封机");
+            RegisterCard("Encapsulator", "封机");
             // 爆破爵士
             AddTranslation("Sir Blast", "爆爵");
+            RegisterCard("Sir Blast", "爆爵");
             // 机械绦虫
             AddTranslation("Tapeworm", "机绦");
+            RegisterCard("Tapeworm", "机绦");
             // 锁颚电池
             AddTranslation("Lockjaw Cell", "锁颌匣");
+            RegisterCard("Lockjaw Cell", "锁颌匣");
             // 蓝绿橙复制体
             AddTranslation("Replica Bleene", "蓝绿之副");
+            RegisterCard("Replica Bleene", "蓝绿之副");
             // 橙蓝绿复制体
             AddTranslation("Replica Orlu", "橙蓝之副");
+            RegisterCard("Replica Orlu", "橙蓝之副");
             // 绿橙蓝复制体
             AddTranslation("Replica Goranj", "绿橙之副");
+            RegisterCard("Replica Goranj", "绿橙之副");
             // 宝石钻机
             AddTranslation("Gem Auger", "钻玉者");
+            RegisterCard("Gem Auger", "钻玉者");
             // 火花塞电池
             AddTranslation("Sparkplug Cell", "火塞匣");
+            RegisterCard("Sparkplug Cell", "火塞匣");
             // 接合管道
             AddTranslation("Splice Conduit", "接渠");
+            RegisterCard("Splice Conduit", "接渠");
             // Card: Multiverse
             // 黄金矿工
             AddTranslation("49er", "金矿夫");
+            RegisterCard("49er", "金矿夫");
             // 哨兵无人机
             AddTranslation("Sentry Drone", "戍飞械");
+            RegisterCard("Sentry Drone", "戍飞械");
             // 螺栓铁狗
             AddTranslation("Bolthound", "寻栓犬");
+            RegisterCard("Bolthound", "寻栓犬");
             // 自爆机器人
             AddTranslation("Explode Bot", "爆机人");
+            RegisterCard("Explode Bot", "爆机人");
             // 空无管道
             AddTranslation("Null Conduit", "虚渠");
+            RegisterCard("Null Conduit", "虚渠");
             // 多枪手
             AddTranslation("Multi Gunner", "多铳手");
+            RegisterCard("Multi Gunner", "多铳手");
             // 玛珂模块
             AddTranslation("Mox Module", "玛珂枢");
+            RegisterCard("Mox Module", "玛珂枢");
             // 炸弹传递者
             AddTranslation("Bomb Latcher", "爆弹遗契者");
+            RegisterCard("Bomb Latcher", "爆弹遗契者");
             // 坚盾传递者
             AddTranslation("Shield Latcher", "坚盾遗契者");
+            RegisterCard("Shield Latcher", "坚盾遗契者");
             // 骷髅传递者
             AddTranslation("Skel-E-Latcher", "枯骨遗契者");
+            RegisterCard("Skel-E-Latcher", "枯骨遗契者");
             // 跳跃机器人
             AddTranslation("L33pBot", "跃机");
+            RegisterCard("L33pBot", "跃机");
             // 哑卡牌
             AddTranslation("DummyCard", "哑牌");
+            RegisterCard("DummyCard", "哑牌");
             // Card: Talking
             // 痛苦机器人
             AddTranslation("Painbot", "苦机");
+            RegisterCard("Painbot", "苦机");
             // 熔炼员
             AddTranslation("Melter", "冶者");
+            RegisterCard("Melter", "冶者");
             // 机器狗
             AddTranslation("Dogbot", "机犬");
+            RegisterCard("Dogbot", "机犬");
 
             // Consumable
             // 求你了！快帮我逃出这里！
@@ -11127,26 +12029,32 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Good riddance to that little freak.", "此小怪终去矣。");
             // 沽伯特
             AddTranslation("Goobert", "黏伯特");
+            RegisterConsumable("Goobert", "黏伯特");
             // 求你了！快帮我逃出这里！
             AddTranslation("Please! You've got to help me get out of here!", "请矣！速助我脱此！");
             // 数据魔方
             AddTranslation("Data Cube", "数匣");
+            RegisterConsumable("Data Cube", "数匣");
             // 可以放在天平上造成些伤害，如果你就好这口的话。
             AddTranslation("Can be placed on the scales for some damage, if you're into that sort of thing.", "若汝好此，可置于衡，以致些微之伤。");
             // 激光步枪
             AddTranslation("Laser Rifle", "光铳");
+            RegisterConsumable("Laser Rifle", "光铳");
             // 本场战斗中为你的卡牌附加狙击印记。这可是把枪——你还想要啥？
             AddTranslation("This will give one of your cards the Sniper sigil for the rest of the battle. It's a gun - what else do you want?", "此战中，使汝一牌得狙印。铳也，更欲何乎？");
             // 增幅线圈
             AddTranslation("Amplification Coil", "益幅环");
+            RegisterConsumable("Amplification Coil", "益幅环");
             // 提升2点能量上限。这玩意儿应该能派上点用场。
             AddTranslation("Increases your max energy by 2. I suppose you can find some use for this.", "益能极二。庶几有用。");
             // UFO
             AddTranslation("UFO", "幽浮");
+            RegisterConsumable("UFO", "幽浮");
             // 可劫持任意一张卡牌。勉强能用吧
             AddTranslation("Abducts a card of your choice. It gets the job done I suppose", "可掠汝所择之一牌。庶几能用。");
             // 时针顺
             AddTranslation("Wiseclock", "顺时钟");
+            RegisterConsumable("Wiseclock", "顺时钟");
             // 能让牌桌顺时针旋转之类的。我从莱西那儿顺来的。你觉得他会发现吗？
             AddTranslation("It rotates the board clockwise or something. I stole it from Leshy. Do you think he'll notice?", "能使局顺时而转。余窃之于莱西。汝谓彼其觉乎？");
 
@@ -11391,12 +12299,16 @@ namespace ClassicChineseLanguagePack
             // Mod
             // 特殊锤子模组
             AddTranslation("Special Hammer Mod", "异槌模组");
+            RegisterMod("Special Hammer Mod", "异槌模组");
             // 绝赞选牌模组
             AddTranslation("Incredible Drafting Mod", "妙择模组");
+            RegisterMod("Incredible Drafting Mod", "妙择模组");
             // 社区API
             AddTranslation("The Community API", "众人 API");
+            RegisterMod("The Community API", "众人 API");
             // 超级无敌Unity编辑器
             AddTranslation("Super-Duper Unity Editor", "大一统辑器");
+            RegisterMod("Super-Duper Unity Editor", "大一统辑器");
 
             // Pack
             // 凯茜的P03扩展包#1
@@ -13281,12 +14193,38 @@ namespace ClassicChineseLanguagePack
             AddTranslation("P03 In Kaycee's Mod Discord", "凯茜补缀中之 P03 Discord");
             // Beetles、Rocket、Rosie、Theo和Izzy
             AddTranslation("Beetles, Rocket, Rosie, Theo, and Izzy", "Beetles、Rocket、Rosie、Theo 与 Izzy");
+
+            RegisterDynamicTranslations();
         }
 
     }
 
     public class P03ExpansionPack3Mod
     {
+        private static void RegisterDynamicTranslations()
+        {
+            foreach (var value in P03InKayceesModMod.Cards)
+            {
+                string name;
+                string nameLoc;
+                if (value.Key != null && value.Key.ToLowerInvariant().Contains("skel-e"))
+                {
+                    name = "Skel-E-" + value.Key.Replace(" ", "-");
+                    nameLoc = value.Value + "枯骨";
+                }
+                else
+                {
+                    name = "Skele " + value.Key;
+                    nameLoc = value.Value + "外骨骼";
+                }
+                AddTranslation(name, nameLoc);
+                for (int score = 0; score <= 100; score++)
+                {
+                    AddTranslation(value.Key + " " + score.ToString() + ".0", value.Value + " " + score.ToString() + ".0");
+                }
+            }
+        }
+
         public static void RegisterTranslations()
         {
             // Ability
@@ -13312,118 +14250,175 @@ namespace ClassicChineseLanguagePack
             // Card
             // 解包器
             AddTranslation("Unpacker", "解包者");
+            P03InKayceesModMod.RegisterCard("Unpacker", "解包者");
             // 枪械机器人
             AddTranslation("Gunbot", "枪机");
+            P03InKayceesModMod.RegisterCard("Gunbot", "枪机");
             // 机械克拉肯
             AddTranslation("KR4K3N", "机海妖");
+            P03InKayceesModMod.RegisterCard("KR4K3N", "机海妖");
             // 脑电池
             AddTranslation("Brain Cell", "脑胞");
+            P03InKayceesModMod.RegisterCard("Brain Cell", "脑胞");
             // 肌肉机器人
             AddTranslation("Muscle Droid", "肌机");
+            P03InKayceesModMod.RegisterCard("Muscle Droid", "肌机");
             // 丹.尼.
             AddTranslation("D.A.N.N.Y.", "丹尼");
+            P03InKayceesModMod.RegisterCard("D.A.N.N.Y.", "丹尼");
             // 丁烷铸造机
             AddTranslation("Butane Caster", "丁铸者");
+            P03InKayceesModMod.RegisterCard("Butane Caster", "丁铸者");
             // 自动动机
             AddTranslation("Automatomaton", "自机");
+            P03InKayceesModMod.RegisterCard("Automatomaton", "自机");
             // 自动动动机
             AddTranslation("Automatomatomaton", "再自机");
+            P03InKayceesModMod.RegisterCard("Automatomatomaton", "再自机");
             // 降级自动动机
             AddTranslation("Demoted Automatomaton", "降自机");
+            P03InKayceesModMod.RegisterCard("Demoted Automatomaton", "降自机");
             // 机器人收割者
             AddTranslation("Robipper", "机剥者");
+            P03InKayceesModMod.RegisterCard("Robipper", "机剥者");
             // 游戏小子
             AddTranslation("GameKid", "戏机");
+            P03InKayceesModMod.RegisterCard("GameKid", "戏机");
             // 绿色能源机器人
             AddTranslation("Green Energy Bot", "绿能机");
+            P03InKayceesModMod.RegisterCard("Green Energy Bot", "绿能机");
             // 燃油弹发射器
             AddTranslation("Molotov Launcher", "燃瓶机");
+            P03InKayceesModMod.RegisterCard("Molotov Launcher", "燃瓶机");
             // 拖车机器人
             AddTranslation("Tow Truck", "拖车");
+            P03InKayceesModMod.RegisterCard("Tow Truck", "拖车");
             // 氮气罐车
             AddTranslation("Nitrous Tanker", "气罐车");
+            P03InKayceesModMod.RegisterCard("Nitrous Tanker", "气罐车");
             // 骨粉研磨机
             AddTranslation("Bone Mill", "骨磨");
+            P03InKayceesModMod.RegisterCard("Bone Mill", "骨磨");
             // 机械混蛋
             AddTranslation("B4D A55", "坏胚");
+            P03InKayceesModMod.RegisterCard("B4D A55", "坏胚");
             // 黏液发射器
             AddTranslation("Mucus Launcher", "涎机");
+            P03InKayceesModMod.RegisterCard("Mucus Launcher", "涎机");
             // 黏液将军
             AddTranslation("General Gunk", "黏将");
+            P03InKayceesModMod.RegisterCard("General Gunk", "黏将");
             // 扭蛋炸弹
             AddTranslation("Gachabomb", "扭爆");
+            P03InKayceesModMod.RegisterCard("Gachabomb", "扭爆");
             // 潜水员
             AddTranslation("Submariner", "潜者");
+            P03InKayceesModMod.RegisterCard("Submariner", "潜者");
             // 腐化传递者
             AddTranslation("Rot Latcher", "腐遗契者");
+            P03InKayceesModMod.RegisterCard("Rot Latcher", "腐遗契者");
             // 时间传递者
             AddTranslation("Time Latcher", "时遗契者");
+            P03InKayceesModMod.RegisterCard("Time Latcher", "时遗契者");
             // 投石机
             AddTranslation("Catapult", "抛车");
+            P03InKayceesModMod.RegisterCard("Catapult", "抛车");
             // 喵式投石机
             AddTranslation("Cat-A-Pult", "猫抛车");
+            P03InKayceesModMod.RegisterCard("Cat-A-Pult", "猫抛车");
             // 合成体
             AddTranslation("Synthesioid", "合成体");
+            P03InKayceesModMod.RegisterCard("Synthesioid", "合成体");
             // 远程引爆器
             AddTranslation("Remote Detonator", "远爆器");
+            P03InKayceesModMod.RegisterCard("Remote Detonator", "远爆器");
             // 拾荒者
             AddTranslation("Scavenger", "拾骨者");
+            P03InKayceesModMod.RegisterCard("Scavenger", "拾骨者");
             // 尸体劫掠者
             AddTranslation("Corpse Looter", "尸掠者");
+            P03InKayceesModMod.RegisterCard("Corpse Looter", "尸掠者");
             // 劫掠射手
             AddTranslation("Looter Shooter", "掠射者");
+            P03InKayceesModMod.RegisterCard("Looter Shooter", "掠射者");
             // 超级劫掠射手
             AddTranslation("Super Looter Shooter", "大掠射者");
+            P03InKayceesModMod.RegisterCard("Super Looter Shooter", "大掠射者");
             // 皮肤机器人
             AddTranslation("Skin Droid", "皮机");
+            P03InKayceesModMod.RegisterCard("Skin Droid", "皮机");
             // 奔涌传递者
             AddTranslation("Emergence Latcher", "涌现遗契者");
+            P03InKayceesModMod.RegisterCard("Emergence Latcher", "涌现遗契者");
             // 小屋齿轮
             AddTranslation("Cottagecog", "屋齿");
+            P03InKayceesModMod.RegisterCard("Cottagecog", "屋齿");
             // 咖啡师机器人
             AddTranslation("Baristabot", "啡侍机");
+            P03InKayceesModMod.RegisterCard("Baristabot", "啡侍机");
             // 神秘机器
             AddTranslation("Mystery Machine", "秘机");
+            P03InKayceesModMod.RegisterCard("Mystery Machine", "秘机");
             // 贴纸之王
             AddTranslation("Sticker King", "贴签王");
+            P03InKayceesModMod.RegisterCard("Sticker King", "贴签王");
             // 鼻涕桶
             AddTranslation("Booger Barrel", "涕桶");
+            P03InKayceesModMod.RegisterCard("Booger Barrel", "涕桶");
             // 巧匠
             AddTranslation("Artificer", "巧工");
+            P03InKayceesModMod.RegisterCard("Artificer", "巧工");
             // 齿轮变速器
             AddTranslation("Gear Shifter", "齿移者");
+            P03InKayceesModMod.RegisterCard("Gear Shifter", "齿移者");
             // 缩小机器人
             AddTranslation("Shrinker", "缩机");
+            P03InKayceesModMod.RegisterCard("Shrinker", "缩机");
             // 时光机
             AddTranslation("Time Machine", "时机");
+            P03InKayceesModMod.RegisterCard("Time Machine", "时机");
             // 开放术士
             AddTranslation("Open Sorcerer", "开术士");
+            P03InKayceesModMod.RegisterCard("Open Sorcerer", "开术士");
             // 熔炉
             AddTranslation("Kiln", "炉");
+            P03InKayceesModMod.RegisterCard("Kiln", "炉");
             // 护盾投射器
             AddTranslation("Shield Projector", "盾射机");
+            P03InKayceesModMod.RegisterCard("Shield Projector", "盾射机");
             // 挖泥工容器
             AddTranslation("Dredger Vessel", "挖泥皿");
+            P03InKayceesModMod.RegisterCard("Dredger Vessel", "挖泥皿");
             // 燃料管理员
             AddTranslation("Fuel Attendant", "司燃者");
+            P03InKayceesModMod.RegisterCard("Fuel Attendant", "司燃者");
             // 飞车党
             AddTranslation("Hot Rod", "烈车");
+            P03InKayceesModMod.RegisterCard("Hot Rod", "烈车");
             // 碎骨者
             AddTranslation("Bone Cracker", "碎骨者");
+            P03InKayceesModMod.RegisterCard("Bone Cracker", "碎骨者");
             // 蜂群意识
             AddTranslation("Hivemind", "蜂心");
+            P03InKayceesModMod.RegisterCard("Hivemind", "蜂心");
             // 破铜烂铁
             AddTranslation("Ramshackle", "残架");
+            P03InKayceesModMod.RegisterCard("Ramshackle", "残架");
             // 引擎机器人
             AddTranslation("N-GINN", "引擎机");
+            P03InKayceesModMod.RegisterCard("N-GINN", "引擎机");
             // 迭代器
             AddTranslation("Iterator", "迭者");
+            P03InKayceesModMod.RegisterCard("Iterator", "迭者");
             // 燃气发电机
             AddTranslation("Gas Generator", "燃气机");
+            P03InKayceesModMod.RegisterCard("Gas Generator", "燃气机");
             // 加密战机
             AddTranslation("Crypton", "密机");
+            P03InKayceesModMod.RegisterCard("Crypton", "密机");
             // UFO
             AddTranslation("UFO", "幽浮");
+            P03InKayceesModMod.RegisterCard("UFO", "幽浮");
 
             // DialogueEvent
             // 咕噜咕噜咕噜
@@ -13490,6 +14485,8 @@ namespace ClassicChineseLanguagePack
             AddTranslation("CONGRATULATIONS!!!", "贺矣！！！");
             // 灾难！！！
             AddTranslation("DISASTER!!!", "灾矣！！！");
+
+            RegisterDynamicTranslations();
         }
 
     }
@@ -13815,6 +14812,97 @@ namespace ClassicChineseLanguagePack
 
     public class EndlessAct2Mod
     {
+        private static void RegisterDynamicTranslations()
+        {
+            Dictionary<string, string> bountyName = new Dictionary<string, string>
+            {
+                {"Barry", "巴里"},
+                {"Bolt", "伯特"},
+                {"Gear", "吉尔"},
+                {"Zap", "扎普"},
+                {"Rust", "鲁斯特"},
+                {"Clain", "克莱恩"},
+                {"Clank", "克莱肯"},
+                {"Tank", "丹克"},
+                {"Gun", "刚"},
+                {"Shoot", "修特"},
+                {"Maksim", "马克西姆"},
+                {"Wilkin", "威尔金"},
+                {"Kaycee", "凯茜"},
+                {"Hobbes", "霍布斯"},
+                {"Grind", "格兰德"},
+                {"Blast", "布拉斯特"},
+                {"Crash", "科拉希"},
+                {"Moon", "穆恩"},
+                {"Zip", "锡普"},
+                {"Jerry", "杰瑞"},
+                {"Plasma", "普拉斯玛"},
+                {"Jimmy", "吉米"},
+                {"Silence", "赛伦斯"},
+                {"Never", "内弗"},
+                {"Hunt", "亨"},
+                {"Hunter", "亨特"},
+                {"Doom", "杜姆"},
+                {"Const", "康斯特"},
+                {"Boom", "布姆"},
+                {"West", "韦斯特"}
+            };
+            Dictionary<string, string> bountySuffix = new Dictionary<string, string>
+            {
+                {"son", "森"},
+                {"stein", "斯坦"},
+                {"dottir", "多蒂尔"},
+                {"vic", "维克"},
+                {"berg", "伯格"},
+                {"sky", "斯凯"},
+                {"ski", "斯基"},
+                {"sin", "辛"},
+                {"sim", "西姆"},
+                {"fellow", "费洛"},
+                {"ed", "埃德"},
+                {" II", "二世"},
+                {" III", "三世"}
+            };
+            Dictionary<string, string> bountyPrefix = new Dictionary<string, string>
+            {
+                {"Mac", "麦克"},
+                {"Mc", "迈可"},
+                {"Von ", "冯·"},
+                {"Van ", "范·"},
+                {"Sir ", "爵士"},
+                {"Madame ", "夫人"}
+            };
+            foreach (var n in bountyName)
+            {
+                foreach (var s in bountySuffix)
+                {
+                    var name = n.Key + s.Key;
+                    var namechinese = n.Value + s.Value;
+                    RegisterBountyNameTranslations(name, namechinese);
+                    foreach (var p in bountyPrefix)
+                    {
+                        name = p.Key + name;
+                        namechinese = p.Value + namechinese;
+                        RegisterBountyNameTranslations(name, namechinese);
+                    }
+                }
+            }
+        }
+
+        private static void RegisterBountyNameTranslations(string name, string namechinese)
+        {
+            AddTranslation(name, namechinese);
+            AddTranslation("But this ain't the last of " + name + "!", "然此非" + namechinese + "之终也！");
+            AddTranslation(name + ". Seeking revenge..", namechinese + "。来复仇也……");
+            AddTranslation("The one who destroyed " + name + "... You won't get away with it again.", "毁" + namechinese + "者……此番不得复脱。");
+            AddTranslation("Didn't expect to see " + name + " again, did ya?", "未意复见" + namechinese + "乎？");
+            AddTranslation("Unfortunately, " + name + " is back.", "不幸，" + namechinese + "复返。");
+            AddTranslation("They call me.. " + name + ".. You can't defeat ME!", "众谓我" + namechinese + "……汝不能胜我！");
+            AddTranslation("Let's see you stop " + name + ".", "且观汝何以止" + namechinese + "。");
+            AddTranslation("Just remember that " + name + " can not be defeated.", "谨记，" + namechinese + "不可胜。");
+            AddTranslation(name + " will be your executioner for the evening.", namechinese + "今夕将为汝行刑者。");
+        }
+
         public static void RegisterTranslations()
         {
             // 选择要使用的牌组。 / 这将覆盖你当前的牌组！
@@ -14055,6 +15143,8 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Magick", "术");
             // 死亡
             AddTranslation("Dead", "死");
+
+            RegisterDynamicTranslations();
         }
 
     }
@@ -17994,6 +19084,27 @@ namespace ClassicChineseLanguagePack
 
     public class InGameCardCreatorMod
     {
+        private static void RegisterDynamicTranslations()
+        {
+            Dictionary<GemType, string> gemTypesEn = new Dictionary<GemType, string>
+            {
+                { GemType.Orange, "orange" },
+                { GemType.Blue, "blue" },
+                { GemType.Green, "green" },
+            };
+            Dictionary<GemType, string> gemTypes = new Dictionary<GemType, string>
+            {
+                { GemType.Orange, "橙" },
+                { GemType.Blue, "蓝" },
+                { GemType.Green, "绿" },
+            };
+            foreach (var gemType in gemTypes.Keys)
+            {
+                AddTranslation(gemTypesEn[gemType] + " gem", gemTypes[gemType] + "玉");
+                AddTranslation("A cost of a [c:bR]" + gemTypesEn[gemType] + " gem[c:].", "[c:bR]" + gemTypes[gemType] + "玉[c:]之直。");
+            }
+        }
+
         public static void RegisterTranslations()
         {
             // 您已进入[c:bR]卡牌创建[c:]模式。
@@ -18212,6 +19323,8 @@ namespace ClassicChineseLanguagePack
             AddTranslation("reptile tribe", "鳞族");
             // 昆虫类族群
             AddTranslation("insect tribe", "虫族");
+
+            RegisterDynamicTranslations();
         }
 
     }
@@ -18231,68 +19344,87 @@ namespace ClassicChineseLanguagePack
             // Card
             // 飞升法师
             AddTranslation("Ascension Mage", "升举术士");
+            MagnificusMod.RegisterCard("Ascension Mage", "升举术士", "Utilising the power of time they grant knowledge and experience from far beyond", "假时之力，以授远逾寻常之知与历。");
             // 他们利用时间的力量，传授远远超出他们的知识和经验。
             AddTranslation("Utilising the power of time they grant knowledge and experience from far beyond", "假时之力，以授远逾寻常之知与历。");
             // 灰烬法师
             AddTranslation("Ash Mage", "灰术士");
+            MagnificusMod.RegisterCard("Ash Mage", "灰术士", "Ashes he sheds from his own body, scorching any and all who oppose him", "其自体落灰，凡逆己者皆灼之。");
             // 他从自己身上剥落灰烬，灼烧所有反对他的人。
             AddTranslation("Ashes he sheds from his own body, scorching any and all who oppose him", "其自体落灰，凡逆己者皆灼之。");
             // 破碎的蛋
             AddTranslation("Broken Egg", "残卵");
+            MagnificusMod.RegisterCard("Broken Egg", "残卵", "Only the greatest of trainers might find this treasure", "惟至善之训者，乃或得此宝。");
             // 只有最伟大的训练师才能找到这个宝藏。
             AddTranslation("Only the greatest of trainers might find this treasure", "惟至善之训者，乃或得此宝。");
             // 天选之子
             AddTranslation("Chosen One", "天简之子");
+            MagnificusMod.RegisterCard("Chosen One", "天简之子", "My selected favourite. He still clings to his elders though...", "我所简而最爱者也。虽然，犹恋其长上……");
             // 我选择的最爱的存在。尽管如此，他仍然依恋他的长辈...
             AddTranslation("My selected favourite. He still clings to his elders though...", "我所简而最爱者也。虽然，犹恋其长上……");
             // 清洁法师
             AddTranslation("Cleanliness Mage", "洁术士");
+            MagnificusMod.RegisterCard("Cleanliness Mage", "洁术士", "The proudest of all my pupils. None come close to his bath superpowers", "我诸徒中最可矜者也。其浴之异能，无有近之。");
             // 我所有学生中最自豪的。没有人能比得上他的洗澡超能力。
             AddTranslation("The proudest of all my pupils. None come close to his bath superpowers", "我诸徒中最可矜者也。其浴之异能，无有近之。");
             // 牧师
             AddTranslation("Cleric", "司祭");
+            MagnificusMod.RegisterCard("Cleric", "司祭", "With the virtue of his divine Magicks, he bears the pain of all and rids them of their wounds", "以其神术之德，负众痛而蠲其创。");
             // 凭借他的神圣魔法，他承受了所有人的痛苦，并消除了他们的伤痕。
             AddTranslation("With the virtue of his divine Magicks, he bears the pain of all and rids them of their wounds", "以其神术之德，负众痛而蠲其创。");
             // 时钟法师
             AddTranslation("Clock Mage", "钟术士");
+            MagnificusMod.RegisterCard("Clock Mage", "钟术士", "A wizard with a mastery over time itself. When he nears his demise, he reverts to the past, and comes back to life", "一精于时之巫也。将死，则返于既往而更生。");
             // 一个精通时间的巫师。当他接近死亡时，他会回到过去，重获新生。
             AddTranslation("A wizard with a mastery over time itself. When he nears his demise, he reverts to the past, and comes back to life", "一精于时之巫也。将死，则返于既往而更生。");
             // 造物收藏家
             AddTranslation("Creature Collector", "藏物者");
+            MagnificusMod.RegisterCard("Creature Collector", "藏物者", "He had searched far and wide for his little companion, you see", "子视之，彼尝周求其小侣。");
             // 你看，他四处寻找他的小伙伴。
             AddTranslation("He had searched far and wide for his little companion, you see", "子视之，彼尝周求其小侣。");
             // 分裂法师
             AddTranslation("Division Mage", "分术士");
+            MagnificusMod.RegisterCard("Division Mage", "分术士", "So the card says at least... I assumed those freaks were long dealth with", "牌虽如是云……我意彼诸怪胎久已处置矣。");
             // 至少卡牌上这么说...我以为那些怪胎已经交往很久了。
             AddTranslation("So the card says at least... I assumed those freaks were long dealth with", "牌虽如是云……我意彼诸怪胎久已处置矣。");
             // 蛋
             AddTranslation("Egg", "卵");
+            MagnificusMod.RegisterCard("Egg", "卵", "Only the greatest of trainers might find this treasure", "惟至善之训者，乃或得此宝。");
             // 只有最伟大的训练师才能找到这个宝藏。
             AddTranslation("Only the greatest of trainers might find this treasure", "惟至善之训者，乃或得此宝。");
             // 德鲁伊
             AddTranslation("Druid", "德鲁伊");
+            MagnificusMod.RegisterCard("Druid", "德鲁伊", "Nature's primal devotee, feeding on sapped mana to cure his allies", "自然之初徒也，食所汲之法力，以疗其侣。");
             // 大自然的原始奉献者，以消耗的法力为食来治愈他的盟友。
             AddTranslation("Nature's primal devotee, feeding on sapped mana to cure his allies", "自然之初徒也，食所汲之法力，以疗其侣。");
             // 附魔师
             AddTranslation("Enchanter", "附咒者");
+            MagnificusMod.RegisterCard("Enchanter", "附咒者", "He spews cosmic magicks upon his demise, enchanting everything nearby", "将死，则喷宇宙之术，使近者尽受其咒。");
             // 他临死时喷出宇宙魔法，让附近的一切都附上魔力。
             AddTranslation("He spews cosmic magicks upon his demise, enchanting everything nearby", "将死，则喷宇宙之术，使近者尽受其咒。");
             // 全能法师
             AddTranslation("EveryMage", "全术士");
+            MagnificusMod.RegisterCard("EveryMage", "全术士", "", "");
             // 法师
             AddTranslation("mage", "术士");
+            MagnificusMod.RegisterCard("mage", "术士", "", "");
             // 塑能师
             AddTranslation("Evoker", "召能者");
+            MagnificusMod.RegisterCard("Evoker", "召能者", "The ominous crettin of disgusting teachings. It's summonable snakes are of the deadliest caliber", "其学可憎，而人亦不祥。其所召之蛇，毒最烈。");
             // 令人厌恶的教义的不祥秘密。可归纳之蛇是最致命的。
             AddTranslation("The ominous crettin of disgusting teachings. It's summonable snakes are of the deadliest caliber", "其学可憎，而人亦不祥。其所召之蛇，毒最烈。");
             // 蛇之召
             AddTranslation("Serpent Summon", "召蛇");
+            MagnificusMod.RegisterCard("Serpent Summon", "召蛇", "", "");
             // 纵火狂
             AddTranslation("Firebender", "御火者");
+            MagnificusMod.RegisterCard("Firebender", "御火者", "Chipper in the heat of battle, he is always on the hunt for the next victim of his fireballs", "战酣之际，其恒索火丸之次受者。");
             // 在战斗最激烈的时候，他总是在寻找下一个火球的受害者。
             AddTranslation("Chipper in the heat of battle, he is always on the hunt for the next victim of his fireballs", "战酣之际，其恒索火丸之次受者。");
             // 前瞻法师
             AddTranslation("Foresight Mage", "先见术士");
+            MagnificusMod.RegisterCard("Foresight Mage", "先见术士", "As he gazes upon your future, attacks that may come his way he forever predicts", "其视汝后日，则凡或临己之攻，皆先知之。");
+            MagnificusMod.RegisterCard("Foresight Mage", "先见术士", "Gazing into the future, he may see any body who dares make an approach", "瞻后日，则凡敢近者，或皆为其所见。");
             // 当他凝视着你的未来，他永远预言着可能会到来的攻击。
             AddTranslation("As he gazes upon your future, attacks that may come his way he forever predicts", "其视汝后日，则凡或临己之攻，皆先知之。");
             // 前瞻法师
@@ -18301,212 +19433,266 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Gazing into the future, he may see any body who dares make an approach", "瞻后日，则凡敢近者，或皆为其所见。");
             // 冰川
             AddTranslation("Glacier", "冰川");
+            MagnificusMod.RegisterCard("Glacier", "冰川", "", "");
             // 饿者骷髅
             AddTranslation("Gashadokuro", "馁骨");
+            MagnificusMod.RegisterCard("Gashadokuro", "馁骨", "", "");
             // 宝石哨兵
             AddTranslation("Gem Sentinel", "玉哨");
+            MagnificusMod.RegisterCard("Gem Sentinel", "玉哨", "the elite warrior unit enchanted with the aura of my moxen", "受我玛珂之辉所咒之锐士。");
             // 被我的玛珂光辉迷住的精英战士部队。
             AddTranslation("the elite warrior unit enchanted with the aura of my moxen", "受我玛珂之辉所咒之锐士。");
             // 研星者
             AddTranslation("Grand Astrologer", "大占星者");
+            MagnificusMod.RegisterCard("Grand Astrologer", "大占星者", "The battlefield is forever his playground, and space is his weapon. All is bare before him.", "战场常为其戏地，空宇为其兵。一切于前，无所匿也。");
             // 战场永远是他的游乐场，太空是他的武器。一切在他面前都是光秃秃的。
             AddTranslation("The battlefield is forever his playground, and space is his weapon. All is bare before him.", "战场常为其戏地，空宇为其兵。一切于前，无所匿也。");
             // 重力法师
             AddTranslation("Gravity Mage", "重术士");
+            MagnificusMod.RegisterCard("Gravity Mage", "重术士", "A master of the forces of gravity. Any and all mox bend to his unwavering will", "重力之师也。凡玛珂皆屈其不贰之志。");
             // 重力的大师。任何人都会屈从于他坚定不移的意志。
             AddTranslation("A master of the forces of gravity. Any and all mox bend to his unwavering will", "重力之师也。凡玛珂皆屈其不贰之志。");
             // 幻术师
             AddTranslation("Illusion Mage", "幻术士");
+            MagnificusMod.RegisterCard("Illusion Mage", "幻术士", "Dawning his tricks and disguises, there is none scarier. At first glance", "其机诈与伪饰，初视之无有加怖者。");
             // 乍一看，他的诡计和伪装，没有比这更可怕的了。
             AddTranslation("Dawning his tricks and disguises, there is none scarier. At first glance", "其机诈与伪饰，初视之无有加怖者。");
             // 感染法师
             AddTranslation("Infestation Mage", "染术士");
+            MagnificusMod.RegisterCard("Infestation Mage", "染术士", "I suppose a usurping challenger such as yourself could endulge in a dosage of skinwalking", "若汝此篡位之角者，亦当堪受些许易形邪术。");
             // 我想像你这样的篡位挑战者可以忍受一定量的变身邪术。
             AddTranslation("I suppose a usurping challenger such as yourself could endulge in a dosage of skinwalking", "若汝此篡位之角者，亦当堪受些许易形邪术。");
             // 侮辱魔镜
             AddTranslation("Insulting Mirror", "辱镜");
+            MagnificusMod.RegisterCard("Insulting Mirror", "辱镜", "The Magick Menace Flies About All Spitting Taunts And Hurling Cheeky Comments, Your Anger, It Channels Into A Strength Of It's Own", "此魔患飞扬，吐侮掷讥；汝怒愈甚，则其威愈归于己。");
             // 魔法的威胁在所有谈吐中嘲讽和粗鲁的评论中飞舞；你越愤怒，它越将转化为自己的力量。
             AddTranslation("The Magick Menace Flies About All Spitting Taunts And Hurling Cheeky Comments, Your Anger, It Channels Into A Strength Of It's Own", "此魔患飞扬，吐侮掷讥；汝怒愈甚，则其威愈归于己。");
             // 铁处女
             AddTranslation("Iron Maiden", "铁闺");
+            MagnificusMod.RegisterCard("Iron Maiden", "铁闺", "My finest of paladins working the finest of hours. No soul goes through his grand wall", "我诸圣骑中最良者也。无一魂得逾其巨垣。");
             // 我最优秀的圣骑士们工作时间最长。没有人能穿过他的长城。
             AddTranslation("My finest of paladins working the finest of hours. No soul goes through his grand wall", "我诸圣骑中最良者也。无一魂得逾其巨垣。");
             // 玛珂戮魔
             AddTranslation("Kickmoxer", "斗玛珂者");
+            MagnificusMod.RegisterCard("Kickmoxer", "斗玛珂者", "He dedicated his life to the art of combat, and may adapt to whomever he faces", "其终身尽于斗艺，所向之敌，皆或随而应之。");
             // 他毕生致力于战斗艺术，并可能适应他所面对的任何人。
             AddTranslation("He dedicated his life to the art of combat, and may adapt to whomever he faces", "其终身尽于斗艺，所向之敌，皆或随而应之。");
             // 万人冢
             AddTranslation("Mass Grave", "众冢");
+            MagnificusMod.RegisterCard("Mass Grave", "众冢", "", "");
             // 阿盖兰大师
             AddTranslation("Master Agairan", "阿盖兰大师");
+            MagnificusMod.RegisterCard("Master Agairan", "阿盖兰大师", "The Crimson Chimera. The teacher of alchemy instills the deadliest of toxins", "绛奇兽也。彼炼金之师，灌以至毒。");
             // 深红奇美拉。炼金术老师灌输最致命的毒素。
             AddTranslation("The Crimson Chimera. The teacher of alchemy instills the deadliest of toxins", "绛奇兽也。彼炼金之师，灌以至毒。");
             // 双蓝大师
             AddTranslation("Master Bluetwo", "双蓝大师");
+            MagnificusMod.RegisterCard("Master Bluetwo", "双蓝大师", "The steel knight of sapphire. Even after death her psychic presence commands our foes", "蓝玉之钢骑也。身虽死，其神犹役我敌。");
             // 蓝宝石的钢铁骑士。即使死后，她的精神存在也指挥着我们的敌人。
             AddTranslation("The steel knight of sapphire. Even after death her psychic presence commands our foes", "蓝玉之钢骑也。身虽死，其神犹役我敌。");
             // 道布林大师
             AddTranslation("Master Doublin", "道布林大师");
+            MagnificusMod.RegisterCard("Master Doublin", "道布林大师", "The Bone Lord's messiah. The teacher of prayer has learned apt essence stealing.", "骨王之救者也。彼祷师已习善窃精髓。");
             // 骨王的救世主。祈祷的老师学会了如何窃取精华。
             AddTranslation("The Bone Lord's messiah. The teacher of prayer has learned apt essence stealing.", "骨王之救者也。彼祷师已习善窃精髓。");
             // 超级巫师
             AddTranslation("Megawizard", "巨巫");
+            MagnificusMod.RegisterCard("Megawizard", "巨巫", "Hulking he is in his menace, meanacing he is in his dim. Such raw power would never last an eternity", "其势硕而骇，其神昏而悍。如此朴力，终不能久。");
             // 他装腔作势，意味着他昏昏沉沉。这种原始力量永远不会持久。
             AddTranslation("Hulking he is in his menace, meanacing he is in his dim. Such raw power would never last an eternity", "其势硕而骇，其神昏而悍。如此朴力，终不能久。");
             // 气象学者
             AddTranslation("Meteorologist", "象天者");
+            MagnificusMod.RegisterCard("Meteorologist", "象天者", "They carefully observe the universe, casting storms of meteors upon whom they see fit. Maybe they're cruel? Maybe not? Only they know", "彼审观宇宙，而陨星如雨，投其所可投者。其残忍乎？其不然乎？惟彼自知。");
             // 他们仔细观察宇宙，向他们认为合适的人投掷流星风暴。也许他们很残忍？也许不是？只有他们自己知道。
             AddTranslation("They carefully observe the universe, casting storms of meteors upon whom they see fit. Maybe they're cruel? Maybe not? Only they know", "彼审观宇宙，而陨星如雨，投其所可投者。其残忍乎？其不然乎？惟彼自知。");
             // 迷你巫师
             AddTranslation("Miniwizard", "小巫");
+            MagnificusMod.RegisterCard("Miniwizard", "小巫", "A mage accursed by it's miniscule size. Worry not though, to such ends he found a solution.", "一术士为其微形所厄。然毋忧，彼已得其解。");
             // 一个被它的微小尺寸所诅咒的法师。不过不用担心，他找到了解决办法。
             AddTranslation("A mage accursed by it's miniscule size. Worry not though, to such ends he found a solution.", "一术士为其微形所厄。然毋忧，彼已得其解。");
             // 幻灵盗贼
             AddTranslation("Phantom Thief", "幻盗");
+            MagnificusMod.RegisterCard("Phantom Thief", "幻盗", "A billowing cloud of crime, darting in and out, and stealing his foes", "罪云翻涌，出入倏忽，而窃其敌。");
             // 滚滚罪孽乌云，进进出出，偷窃它之宿敌。
             AddTranslation("A billowing cloud of crime, darting in and out, and stealing his foes", "罪云翻涌，出入倏忽，而窃其敌。");
             // 序言法师
             AddTranslation("Preformence Mage", "前演术士");
+            MagnificusMod.RegisterCard("Preformence Mage", "前演术士", "Who knows to what ends his mystery rabbit has been through", "孰知其玄兔所历至于何极。");
             // 谁知道他的神秘兔子到底经历了什么。
             AddTranslation("Who knows to what ends his mystery rabbit has been through", "孰知其玄兔所历至于何极。");
             // 皇后使魔
             AddTranslation("Queen's Familiar", "后之使魔");
+            MagnificusMod.RegisterCard("Queen's Familiar", "后之使魔", "A majestic chimera of beautiful beasts. It keeps it's armies close inside", "群美兽之雄奇合体也。其腹中自藏一军。");
             // 美丽野兽的雄伟幻影。它其中关着一支军队。
             AddTranslation("A majestic chimera of beautiful beasts. It keeps it's armies close inside", "群美兽之雄奇合体也。其腹中自藏一军。");
             // 加剧的饥饿
             AddTranslation("RisingHunger", "益饥");
+            MagnificusMod.RegisterCard("RisingHunger", "益饥", "", "");
             // 蟑螂仆从
             AddTranslation("Roach Familiar", "螂使魔");
+            MagnificusMod.RegisterCard("Roach Familiar", "螂使魔", "A spiritually manufacrued cockroach. It's will allows it ressurection abilities! that ultimately fail.", "一神造之螂也。其志使之得苏生之能，然终亦败。");
             // 一只由精神制造的蟑螂。这将使它具有压迫能力！这最终失败了。
             AddTranslation("A spiritually manufacrued cockroach. It's will allows it ressurection abilities! that ultimately fail.", "一神造之螂也。其志使之得苏生之能，然终亦败。");
             // 幻影巫师
             AddTranslation("Shadow Wizard", "影巫");
+            MagnificusMod.RegisterCard("Shadow Wizard", "影巫", "A mobster of the underseen. He calls the shadows to gang on it's foes", "潜隐之暴徒也。彼呼群影，共噬其敌。");
             // 卧底暴徒。他号召阴影们联合起来对付敌人。
             AddTranslation("A mobster of the underseen. He calls the shadows to gang on it's foes", "潜隐之暴徒也。彼呼群影，共噬其敌。");
             // 忍者
             AddTranslation("Shinobi", "忍者");
+            MagnificusMod.RegisterCard("Shinobi", "忍者", "Warrior of the dark, They strike from the unawares, where nobody lays claim or sight", "闇中之武者也。彼乘人不觉而击，自无人能见能据之处。");
             // 黑暗的战士，他们在不知不觉中发起攻击，在那里没有人提出要求或视线。
             AddTranslation("Warrior of the dark, They strike from the unawares, where nobody lays claim or sight", "闇中之武者也。彼乘人不觉而击，自无人能见能据之处。");
             // 淋浴法师
             AddTranslation("Shower Mage", "浴术士");
+            MagnificusMod.RegisterCard("Shower Mage", "浴术士", "The outcast of my school and rightfully so! His levels of stentch could only be described with magic...", "我院之弃徒，诚其宜也！其臭之甚，惟可藉术言之……");
             // 我学院的弃子，这是理所当然的！他的腐败只能用魔法来形容...
             AddTranslation("The outcast of my school and rightfully so! His levels of stentch could only be described with magic...", "我院之弃徒，诚其宜也！其臭之甚，惟可藉术言之……");
             // 淤泥法师
             AddTranslation("Sludge Mage", "泥术士");
+            MagnificusMod.RegisterCard("Sludge Mage", "泥术士", "An entity of unknown origins, powered off the ill spreading plague to all", "所从莫知之一体也，假广布之疠而得力。");
             // 一个来源不明的实体，为向所有人传播的瘟疫提供能量。
             AddTranslation("An entity of unknown origins, powered off the ill spreading plague to all", "所从莫知之一体也，假广布之疠而得力。");
             // 隋圣人
             AddTranslation("Sui-Sage", "隋贤");
+            MagnificusMod.RegisterCard("Sui-Sage", "隋贤", "The leader of a pack, soon to be packed away", "一群之长也，旋将见收去。");
             // 一个群体的首领，很快就要走人了。
             AddTranslation("The leader of a pack, soon to be packed away", "一群之长也，旋将见收去。");
             // 召唤师
             AddTranslation("Summoner", "召者");
+            MagnificusMod.RegisterCard("Summoner", "召者", "A mad man of the arts of life, he creates it out of thin air. And with frightning sensibilities", "生术之狂士也。彼凭虚造物，而其情可怖。");
             // 一个生活艺术的疯子。他凭空创造了它，并带着令人恐惧的情感。
             AddTranslation("A mad man of the arts of life, he creates it out of thin air. And with frightning sensibilities", "生术之狂士也。彼凭虚造物，而其情可怖。");
             // 对称法师
             AddTranslation("Symmetrical Mage", "对称术士");
+            MagnificusMod.RegisterCard("Symmetrical Mage", "对称术士", "Everyone has two sides to them, you see. Especially once they mess with my temper", "子视之，人皆有二面。尤在犯我怒之后。");
             // 你看，每个人都有两面性。尤其是当他们惹我生气的时候。
             AddTranslation("Everyone has two sides to them, you see. Especially once they mess with my temper", "子视之，人皆有二面。尤在犯我怒之后。");
             // 传送法师
             AddTranslation("Teleportation Mage", "移术士");
+            MagnificusMod.RegisterCard("Teleportation Mage", "移术士", "A herald of endless portals, jolting around the battlefield in infinitum and negating incoming strikes", "无穷门之先驱也，周腾战地而无已，且却将至之攻。");
             // 无尽门户的先驱，在战场上无限颠簸，否定即将到来的袭击。
             AddTranslation("A herald of endless portals, jolting around the battlefield in infinitum and negating incoming strikes", "无穷门之先驱也，周腾战地而无已，且却将至之攻。");
             // 洪流法师
             AddTranslation("Torrent Mage", "洪术士");
+            MagnificusMod.RegisterCard("Torrent Mage", "洪术士", "An apprentice of the ocean utilising it to drown the lands and the terrain above", "海之徒也，假其力以没陆与其上地形。");
             // 海洋的学徒利用它淹没陆地和上面的地形。
             AddTranslation("An apprentice of the ocean utilising it to drown the lands and the terrain above", "海之徒也，假其力以没陆与其上地形。");
             // 狂野魔龙
             AddTranslation("Untamed Dragon", "野龙");
+            MagnificusMod.RegisterCard("Untamed Dragon", "野龙", "Legends whisper this beast, was once a companion to the mox master Goranj", "传言此兽，昔尝为玛珂大师 Goranj 之侣。");
             // 传说这头野兽，曾经是魔神绿橙蓝大师的伙伴。
             AddTranslation("Legends whisper this beast, was once a companion to the mox master Goranj", "传言此兽，昔尝为玛珂大师 Goranj 之侣。");
             // 邪术士
             AddTranslation("Warlock", "邪术士");
+            MagnificusMod.RegisterCard("Warlock", "邪术士", "A blackened wizard pursuiting the studies of the blood magicks. Such bleeding he turns into a horrible weapon", "一黧巫治血术之学。其流血若是，则化为可怖之兵。");
             // 一个被熏黑的巫师在研究血魔。如此流血，他变成了可怕的武器。
             AddTranslation("A blackened wizard pursuiting the studies of the blood magicks. Such bleeding he turns into a horrible weapon", "一黧巫治血术之学。其流血若是，则化为可怖之兵。");
             // 罪恶魔女
             AddTranslation("Wicked Witch", "恶魔女");
+            MagnificusMod.RegisterCard("Wicked Witch", "恶魔女", "A flying jesting witch, laughing your sorrows and posioning your armies", "一飞而戏之魔女也，笑汝忧，而毒汝军。");
             // 一个飞行的滑稽魔女，她嘲笑你的悲伤，为你的军队搔首弄姿。
             AddTranslation("A flying jesting witch, laughing your sorrows and posioning your armies", "一飞而戏之魔女也，笑汝忧，而毒汝军。");
 
             // Ability
             // 尖酸气质
             AddTranslation("Acid Aura", "酸晕");
+            MagnificusMod.RegisterAbility("Acid Aura", "酸晕");
             // [creature]每回合对敌方造物造成1点伤害。
             AddTranslation("[creature] deals 1 damage to the creature opposing it every turn", "[creature]每合伤其对位之物一。");
             // 羽化登仙
             AddTranslation("Awakening", "启化");
+            MagnificusMod.RegisterAbility("Awakening", "启化");
             // 当[creature]被放置时，其持牌人选择一个友方生物进化成更高的形态。
             AddTranslation("When [creature] is played, it's owner chooses an ally creature to evolve into a higher form.", "[creature]既陈，则其主持择一友物，使孚为高形。");
             // 反噬打击
             AddTranslation("Backfire Strike", "反噬击");
+            MagnificusMod.RegisterAbility("Backfire Strike", "反噬击");
             // [creature]会对其攻击目标的敌对生物造成伤害。
             AddTranslation("[creature] damages creatures that oppose those it attacks.", "[creature]攻彼，则并伤与彼相对之物。");
             // 鲜血吞噬者
             AddTranslation("Blood Guzzler", "嗜血");
+            MagnificusMod.RegisterAbility("Blood Guzzler", "嗜血");
             // 当[creature]造成伤害时，其每造成一点伤害，获得1点生命值。
             AddTranslation("When [creature] deals damage, it gains 1 health for each damage dealt.", "[creature]凡致一伤，则得一命。");
             // 残忍寄生
             AddTranslation("Brute Parasite", "悍寄");
+            MagnificusMod.RegisterAbility("Brute Parasite", "悍寄");
             // 当放置[creature]时，会在对面空间上创建一个蛋。
             AddTranslation("When [creature] is played, an Egg is created on the opposing space.", "[creature]既陈，则其对位生一卵。");
             // 洪流
             AddTranslation("Deluge", "洪漫");
+            MagnificusMod.RegisterAbility("Deluge", "洪漫");
             // 当放置[creature]时，具有0力量的对手生物会下潜并获得水袭印记。
             AddTranslation("When [creature] is played, opponent creatures with 0 power drown and get given the Waterborne sigil.", "[creature]既陈，则敌物凡威为零者皆沉，而受潜袭印契。");
             // 分裂
             AddTranslation("Division", "分裂");
+            MagnificusMod.RegisterAbility("Division", "分裂");
             // 攻击后，[creature]将分裂成2个相同的克隆体，每个克隆体都有其原始属性的一半。
             AddTranslation("After attacking, [creature] splits into 2 identical clones, each bearing half of it's original stats.", "攻后，[creature]分为二同体，各当其本数之半。");
             // 哨兵
             AddTranslation("Sentry", "戍者");
+            MagnificusMod.RegisterAbility("Sentry", "戍者");
             // 当一个造物移动到与[creature]相对的空间时，它们会受到1点伤害。
             AddTranslation("When a creature moves into the space opposing [creature], they are dealt 1 damage.", "有物移入[creature]对位之处，则受一伤。");
             // 啊，永远不要低估一个前瞻法师的速度。
             AddTranslation("Ah, let one never underestimate the speed of a Foresight Mage.", "噫，毋轻先见术士之速。");
             // 治愈光环
             AddTranslation("Healing Aura", "疗晕");
+            MagnificusMod.RegisterAbility("Healing Aura", "疗晕");
             // [creature]治愈附近的友方造物。治愈的值与它的力量成正比。
             AddTranslation("[creature] heals nearby allied creatures. The healing is proportionate to it's power.", "[creature]疗近旁之友物，其所疗如其威。");
             // 偷心者
             AddTranslation("Heart Stealer", "夺心者");
+            MagnificusMod.RegisterAbility("Heart Stealer", "夺心者");
             // 当[creature]杀死一个造物时，其会被添加到你的手上。
             AddTranslation("when [creature] kills a creature, it gets added to your hand.", "[creature]若杀一物，则其物归汝手。");
             // 火焰魔咒
             AddTranslation("Ignis Incant", "火咒");
+            MagnificusMod.RegisterAbility("Ignis Incant", "火咒");
             // 为[creature]支付1点血量，对选定的对手位置造成2点伤害。
             AddTranslation("Pay 1 blood for [creature] to deal 2 damage to a chosen opposing slot.", "费一血，使[creature]伤所择敌位二。");
             // 恐吓
             AddTranslation("Intimidate", "慑");
+            MagnificusMod.RegisterAbility("Intimidate", "慑");
             // 当[creature]上场时，面对其的造物会向右侧逃跑。
             AddTranslation("When [creature] is placed on the board, the creature opposing it will flee to their right.", "[creature]既陈于局，则对之之物遁于其右。");
             // 孤独
             AddTranslation("Lonesome", "孤");
+            MagnificusMod.RegisterAbility("Lonesome", "孤");
             // [creature]每有一个相邻空位便增加1点力量。
             AddTranslation("[creature] gains +1 power for each adjacent empty space.", "[creature]每邻一空位，则威益一。");
             // 魔法爆发
             AddTranslation("Magic Burst", "术爆");
+            MagnificusMod.RegisterAbility("Magic Burst", "术爆");
             // 死亡后，与[creature]相邻的造物的力量加1。
             AddTranslation("After perishing, creatures adjascent to [creature] have their powers increased by 1.", "[creature]既死，其相邻诸物威皆益一。");
             // 精神破坏
             AddTranslation("Psystrike", "神击");
+            MagnificusMod.RegisterAbility("Psystrike", "神击");
             // 在[creature]死亡后，它操纵与之相对的造物攻击其相邻的盟友。
             AddTranslation("After [creature] perishes, it manipulates the creature opposing it to strike both of it's adjascent allies.", "[creature]既死，则役其对位之物，使击其两旁之侣。");
             // 训蛇大师
             AddTranslation("Serpent Master", "御蛇");
+            MagnificusMod.RegisterAbility("Serpent Master", "御蛇");
             // 在每个回合开始时，[creature]都会在持牌人选择的一个空间产生蛇之召。蛇之召被定义为：1点力量，1点生命。
             AddTranslation("At the start of every turn, [creature] spawns a Summon Serpent on a space of it's owner's choosing. A Summon Serpent is defined as: 1 power, 1 health.", "每合始，[creature]于其主持所择之一位生一召蛇。召蛇者：一威，一命。");
             // 幻影冲击
             AddTranslation("Shadow Strike", "影击");
+            MagnificusMod.RegisterAbility("Shadow Strike", "影击");
             // [creature]也会召唤其目标附近造物的幻影来攻击它。
             AddTranslation("[creature] calls upon the shadows of creatures adjascent to it's target to strike it as well.", "[creature]亦呼其所攻近旁诸物之影，共击之。");
             // 潮汐锁定
             AddTranslation("Tidal Lock", "潮缚");
+            MagnificusMod.RegisterAbility("Tidal Lock", "潮缚");
             // 在持牌人回合之初，[creature]会将松鼠之类的小造物拉入自身卫星轨道。
             AddTranslation("At the beginning of it's owner's turn, [creature] will pull small creatures, like squirrels, into it's orbit.", "其主持合始，[creature]引松鼠之类小物入其回环。");
             // 巫师之心
             AddTranslation("Wizard's Heart", "巫心");
+            MagnificusMod.RegisterAbility("Wizard's Heart", "巫心");
             // 当[creature]死亡时，与您控制的当前宝石相对应的玛珂牌将取代其的位置。
             AddTranslation("When [creature] perishes, a Mox card corresponding to the current gems you control takes it's place.", "[creature]死，则与汝今所御诸玉相应之玛珂牌踵居其处。");
+
         }
 
     }
@@ -18519,154 +19705,192 @@ namespace ClassicChineseLanguagePack
             // Card
             // 河狸防御
             AddTranslation("Beaver's Defense", "狸防");
+            MagnificusMod.RegisterCard("Beaver's Defense", "狸防", "Curating defensive dams upon use, not bad for a dire situation.", "用之则营防坝，于危局亦不恶。");
             // 在使用时精心设计防御性水坝，这对可怕的情况来说并不坏。
             AddTranslation("Curating defensive dams upon use, not bad for a dire situation.", "用之则营防坝，于危局亦不恶。");
             // 炸弹贤者
             AddTranslation("Bomb Sage", "爆贤");
+            MagnificusMod.RegisterCard("Bomb Sage", "爆贤", "When attacked, this sage is known for blowing up.. Literally and metaphorically.", "见攻，则此贤每以爆著名，言内言外皆然。");
             // 当受到攻击时，这位贤者以爆炸而闻名。从字面上和隐喻上。
             AddTranslation("When attacked, this sage is known for blowing up.. Literally and metaphorically.", "见攻，则此贤每以爆著名，言内言外皆然。");
             // 拳击冠军
             AddTranslation("Boxing Champ", "拳魁");
+            MagnificusMod.RegisterCard("Boxing Champ", "拳魁", "Rejecting the use of wands, this champion prefers to settle things with his fists.", "此魁不用杖，而乐以拳决事。");
             // 这位冠军拒绝使用魔杖，更喜欢用拳头解决问题。
             AddTranslation("Rejecting the use of wands, this champion prefers to settle things with his fists.", "此魁不用杖，而乐以拳决事。");
             // 雷龙
             AddTranslation("Brontosaurus", "雷龙");
+            MagnificusMod.RegisterCard("Brontosaurus", "雷龙", "I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 我爱恐龙模组！！！
             AddTranslation("I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 奶酪巫师
             AddTranslation("Cheese Wizard", "酪巫");
+            MagnificusMod.RegisterCard("Cheese Wizard", "酪巫", "As trained Chef-Magi, Cheese Wizards use their intellect and Mysticality to accomplish their goals.", "酪巫既习厨术，以其智与玄，遂其所欲。");
             // 作为训练有素的大厨魔术师，奶酪奇才利用他们的智慧和神秘来实现他们的目标。
             AddTranslation("As trained Chef-Magi, Cheese Wizards use their intellect and Mysticality to accomplish their goals.", "酪巫既习厨术，以其智与玄，遂其所欲。");
             // 奶酪
             AddTranslation("Cheezling", "酪灵");
+            MagnificusMod.RegisterCard("Cheezling", "酪灵", "With cheese like this, who needs friends?", "有此酪矣，谁复需友？");
             // 有了这样的奶酪，谁还需要朋友？
             AddTranslation("With cheese like this, who needs friends?", "有此酪矣，谁复需友？");
             // 心灵感应
             AddTranslation("Telepathy", "心应");
+            MagnificusMod.RegisterCard("Telepathy", "心应", "A pupil can gather all the resources they need through sheer will alone.", "一弟子惟以意志，足聚其所需诸资。");
             // 一个学生可以通过纯粹的意志来收集他们需要的所有资源。
             AddTranslation("A pupil can gather all the resources they need through sheer will alone.", "一弟子惟以意志，足聚其所需诸资。");
             // 直接伤害
             AddTranslation("Direct Hit", "直伤");
+            MagnificusMod.RegisterCard("Direct Hit", "直伤", "Upon being casted, your opponent will instantly take three damage.", "既施，则敌即受三伤。");
             // 一旦被放置，你的对手将立即受到三点伤害。
             AddTranslation("Upon being casted, your opponent will instantly take three damage.", "既施，则敌即受三伤。");
             // 神秘的蛋
             AddTranslation("Mysterious Egg", "玄卵");
+            MagnificusMod.RegisterCard("Mysterious Egg", "玄卵", "Who knows what could hatch from this egg...", "孰知此卵将孚何物……");
             // 谁知道这个蛋会孵化出什么...
             AddTranslation("Who knows what could hatch from this egg...", "孰知此卵将孚何物……");
             // 无面者
             AddTranslation("Faceless", "无面者");
+            MagnificusMod.RegisterCard("Faceless", "无面者", "A hollow shell of a mage, desperately looking for something to call its own.", "一术士之虚壳也，切求其所可自有者。");
             // 一个法师的空壳，拼命寻找属于自己的东西。
             AddTranslation("A hollow shell of a mage, desperately looking for something to call its own.", "一术士之虚壳也，切求其所可自有者。");
             // 伪造者
             AddTranslation("Faker", "伪者");
+            MagnificusMod.RegisterCard("Faker", "伪者", "Lie. Cheat. Deny. The lengths the Faker will go to in order to escape unharmed...", "诳、欺、讳。伪者欲全身而遁，其所为无所不至……");
             // 撒谎，作弊，否认。为了毫发无损地逃脱，伪造者会不择手段...
             AddTranslation("Lie. Cheat. Deny. The lengths the Faker will go to in order to escape unharmed...", "诳、欺、讳。伪者欲全身而遁，其所为无所不至……");
             // 菲格拉塔
             AddTranslation("Figletar", "菲格拉塔");
+            MagnificusMod.RegisterCard("Figletar", "菲格拉塔", "A wiz who brought an evil king to a terrible fate, this one knows a thing or two in the ring.", "一巫尝使恶王罹惨祸，此人于拳圜亦颇知之。");
             // 一个给邪恶国王带来可怕命运的奇才，这个人在拳击场上知道一两件事。
             AddTranslation("A wiz who brought an evil king to a terrible fate, this one knows a thing or two in the ring.", "一巫尝使恶王罹惨祸，此人于拳圜亦颇知之。");
             // 星火燎原
             AddTranslation("Firestarter", "发火者");
+            MagnificusMod.RegisterCard("Firestarter", "发火者", "Careful when casting this one, pupils have reported that the dueling grounds can get a little toasty.", "施此宜慎，诸徒云斗地或颇焦热。");
             // 学生们报告说，在选角时要小心，决斗场地可能会有点烤。
             AddTranslation("Careful when casting this one, pupils have reported that the dueling grounds can get a little toasty.", "施此宜慎，诸徒云斗地或颇焦热。");
             // 冰箱法师
             AddTranslation("Fridge Mage", "寒柜术士");
+            MagnificusMod.RegisterCard("Fridge Mage", "寒柜术士", "Its cold atmosphere will chill foes, weakening their offensive power.", "其寒气凛敌，而损其攻势。");
             // 它的冰霜气氛会让敌人感到寒冷，削弱他们的进攻力量。
             AddTranslation("Its cold atmosphere will chill foes, weakening their offensive power.", "其寒气凛敌，而损其攻势。");
             // 宝石兄弟
             AddTranslation("Gembro", "玉兄");
+            MagnificusMod.RegisterCard("Gembro", "玉兄", "The ability to tank any hit once, this pupil has high gusto.", "此徒能当一击而不挠，气甚豪。");
             // 这名学生能够一次击中任何目标，他有很高的兴趣。
             AddTranslation("The ability to tank any hit once, this pupil has high gusto.", "此徒能当一击而不挠，气甚豪。");
             // 宝石蜱虫
             AddTranslation("Gem Tick", "玉蜱");
+            MagnificusMod.RegisterCard("Gem Tick", "玉蜱", "An elusive tick, which grants power to others via its mox body.", "一难捕之蜱也，假其玛珂之体以授他物之力。");
             // 一种难以捉摸的蜱虫，通过其魔力体赋予他人力量。
             AddTranslation("An elusive tick, which grants power to others via its mox body.", "一难捕之蜱也，假其玛珂之体以授他物之力。");
             // 鬼灵恐龙
             AddTranslation("Ghost Dinosaur", "鬼龙");
+            MagnificusMod.RegisterCard("Ghost Dinosaur", "鬼龙", "I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 我爱恐龙模组！！！
             AddTranslation("I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 第三只眼
             AddTranslation("Third Eye", "三目");
+            MagnificusMod.RegisterCard("Third Eye", "三目", "Harnessing the power of a third eye, the spell allows its caster to gain any card that it has.", "假三目之力，此术使施者得其所有之任一牌。");
             // 利用第三只眼睛的力量，该法术允许施法者获得任何一张牌。
             AddTranslation("Harnessing the power of a third eye, the spell allows its caster to gain any card that it has.", "假三目之力，此术使施者得其所有之任一牌。");
             // 棒球法师
             AddTranslation("Baseball Mage", "球术士");
+            MagnificusMod.RegisterCard("Baseball Mage", "球术士", "This mage's wand doubles as a baseball bat as well. It's suprisingly durable.", "此术士之杖亦兼球杖，其坚异乎所料。");
             // 这个法师的魔杖也可以兼作棒球棍。它的耐用性令人惊讶。
             AddTranslation("This mage's wand doubles as a baseball bat as well. It's suprisingly durable.", "此术士之杖亦兼球杖，其坚异乎所料。");
             // 寒冰傀儡
             AddTranslation("Ice Golem", "冰傀");
+            MagnificusMod.RegisterCard("Ice Golem", "冰傀", "Hailing from an icy mountaintop, melting never seemed to phase this brute.", "此物出自冰岭，其解虽不已，然未尝挠之。");
             // 这头野兽来自结冰的山顶，融化似乎从未停止过。
             AddTranslation("Hailing from an icy mountaintop, melting never seemed to phase this brute.", "此物出自冰岭，其解虽不已，然未尝挠之。");
             // 劫掠匪徒
             AddTranslation("Looting Bandit", "掠寇");
+            MagnificusMod.RegisterCard("Looting Bandit", "掠寇", "A distant follower of the Master Orlu's Valkyries, training to become just like them.", "Orlu 大师武神之一远从者也，方习而欲肖之。");
             // 橙蓝绿大师的武神的一个遥远的追随者，训练成为像他们一样的人。
             AddTranslation("A distant follower of the Master Orlu's Valkyries, training to become just like them.", "Orlu 大师武神之一远从者也，方习而欲肖之。");
             // 魔力法师
             AddTranslation("Mana Mage", "法力术士");
+            MagnificusMod.RegisterCard("Mana Mage", "法力术士", "Brings together the energy that emits from Mana to deliver powerful strikes.", "会聚法力所发之能，以致强击。");
             // 将魔法释放的能量聚集在一起，以提供强大的打击。
             AddTranslation("Brings together the energy that emits from Mana to deliver powerful strikes.", "会聚法力所发之能，以致强击。");
             // 苦思学徒
             AddTranslation("Pondering Pupil", "思徒");
+            MagnificusMod.RegisterCard("Pondering Pupil", "思徒", "It draws from your gem pile using the powers of its mind alone.", "惟以心力，自汝玉堆中取资。");
             // 它仅凭心灵的力量从你的宝石堆中汲取灵感。
             AddTranslation("It draws from your gem pile using the powers of its mind alone.", "惟以心力，自汝玉堆中取资。");
             // 镜子法师
             AddTranslation("Mirror Mage", "镜术士");
+            MagnificusMod.RegisterCard("Mirror Mage", "镜术士", "Mirror, mirror, on the wall, who's the best Scrybe of them all?", "镜乎镜乎，在壁之间，诸录者孰最上焉？");
             // 魔镜啊魔镜，谁的尖叫声最尽兴？
             AddTranslation("Mirror, mirror, on the wall, who's the best Scrybe of them all?", "镜乎镜乎，在壁之间，诸录者孰最上焉？");
             // 钻地法师
             AddTranslation("Whack-A-Mage", "伏地术士");
+            MagnificusMod.RegisterCard("Whack-A-Mage", "伏地术士", "Always popping up to cause mischief whenever he can.", "苟有可乘，恒骤出以作乱。");
             // 只要有可能，他总是突然出现，制造麻烦。
             AddTranslation("Always popping up to cause mischief whenever he can.", "苟有可乘，恒骤出以作乱。");
             // 独爪龙
             AddTranslation("Mononykus", "独爪龙");
+            MagnificusMod.RegisterCard("Mononykus", "独爪龙", "I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 我爱恐龙模组！！！
             AddTranslation("I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 冥王星
             AddTranslation("PLUTO", "冥王");
+            MagnificusMod.RegisterCard("PLUTO", "冥王", "Hmph. So this is where that one went.", "哼。彼所往者，乃此乎。");
             // 哼。这就是那个人去的地方。
             AddTranslation("Hmph. So this is where that one went.", "哼。彼所往者，乃此乎。");
             // 保护
             AddTranslation("Protect", "护");
+            MagnificusMod.RegisterCard("Protect", "护", "In a tough spot? This spell will give one of your cards full immunity to the next attack it recieves.", "值困局乎？此咒使汝一牌尽免其后所受之一攻。");
             // 在一个艰难的时刻？这个咒语将使你的一张牌对它受到的下一次攻击完全免疫。
             AddTranslation("In a tough spot? This spell will give one of your cards full immunity to the next attack it recieves.", "值困局乎？此咒使汝一牌尽免其后所受之一攻。");
             // 翼龙
             AddTranslation("Pterodactyl", "翼龙");
+            MagnificusMod.RegisterCard("Pterodactyl", "翼龙", "I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 我爱恐龙模组！！！
             AddTranslation("I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 疯兔贤者
             AddTranslation("Rabbid Sage", "狂兔贤");
+            MagnificusMod.RegisterCard("Rabbid Sage", "狂兔贤", "A raving magician with a field of electricity at his disposal.", "一狂术者也，有电场可役。");
             // 一个疯狂的魔术师，有一个电场供他支配。
             AddTranslation("A raving magician with a field of electricity at his disposal.", "一狂术者也，有电场可役。");
             // 玛珂骷髅
             AddTranslation("Skelemox", "玛珂枯骨");
+            MagnificusMod.RegisterCard("Skelemox", "玛珂枯骨", "A poor skeleton being controlled by a Green Mox, I almost feel bad for it.", "一可哀之枯骨，为绿玛珂所御，我几为之恻。");
             // 一只可怜的骷髅被绿色玛珂控制着，我几乎为此感到难过。
             AddTranslation("A poor skeleton being controlled by a Green Mox, I almost feel bad for it.", "一可哀之枯骨，为绿玛珂所御，我几为之恻。");
             // 粘液巫师
             AddTranslation("Slime Wiz", "涎巫");
+            MagnificusMod.RegisterCard("Slime Wiz", "涎巫", "It'll use the slime against the enemies, to drop their attack whence struck.", "彼以涎御敌，及其受击，则损敌威。");
             // 它们会以粘液御敌，遭到攻击时削弱敌人攻击力。
             AddTranslation("It'll use the slime against the enemies, to drop their attack whence struck.", "彼以涎御敌，及其受击，则损敌威。");
             // 臭美女巫
             AddTranslation("Smug Witch", "矜魔女");
+            MagnificusMod.RegisterCard("Smug Witch", "矜魔女", "The smuggest pupil in all the land. Legends say his Smug Throw is unrivaled.", "一境之最矜者也。传云其矜掷无有俦。");
             // 全岛最臭美的学生，传闻其“臭美投掷”出神入化，无人能及。
             AddTranslation("The smuggest pupil in all the land. Legends say his Smug Throw is unrivaled.", "一境之最矜者也。传云其矜掷无有俦。");
             // 召唤之矛
             AddTranslation("Summon Spear", "召矛");
+            MagnificusMod.RegisterCard("Summon Spear", "召矛", "Roots up a spear from the ground, acting as a sturdy counter.", "拔地而起一矛，以为坚拒。");
             // 从地上拔出长矛，作为坚固的反击。
             AddTranslation("Roots up a spear from the ground, acting as a sturdy counter.", "拔地而起一矛，以为坚拒。");
             // 尖刺法师
             AddTranslation("Spike Mage", "棘术士");
+            MagnificusMod.RegisterCard("Spike Mage", "棘术士", "This mage learned from the best of my Pike Mage's Scarecrows.", "此术士学于我最良棘术士之稻人。");
             // 这位法师从我最优秀的长毛法师的稻草人身上学到了东西。
             AddTranslation("This mage learned from the best of my Pike Mage's Scarecrows.", "此术士学于我最良棘术士之稻人。");
             // 霸王龙
             AddTranslation("T-Rex", "暴龙");
+            MagnificusMod.RegisterCard("T-Rex", "暴龙", "I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 我爱恐龙模组！！！
             AddTranslation("I LOVE DINO MOD!!!!!", "我爱恐龙补缀！！！");
             // 虚拟君主
             AddTranslation("Virtual King", "虚境君");
+            MagnificusMod.RegisterCard("Virtual King", "虚境君", "Self-proclaimed ruler of the virtual lands who won't abide to measly “card game rules”.", "自号虚境之主，而区区“牌戏之律”不足遵也。");
             // 自封虚拟界君主，区区“卡牌规则”，他根本不屑一顾！
             AddTranslation("Self-proclaimed ruler of the virtual lands who won't abide to measly “card game rules”.", "自号虚境之主，而区区“牌戏之律”不足遵也。");
             // 低能核心
             AddTranslation("Moron Core", "愚核");
+            MagnificusMod.RegisterCard("Moron Core", "愚核", "An odd core hailing from an abandoned factory, hates the word \"moron\".", "一异核出于废厂，最恶“愚”之一字。");
             // 一枚诞于废弃工厂的怪异核心，最是反感“蠢货”这般字眼。
             AddTranslation("An odd core hailing from an abandoned factory, hates the word \"moron\".", "一异核出于废厂，最恶“愚”之一字。");
 
@@ -18679,28 +19903,35 @@ namespace ClassicChineseLanguagePack
             // Ability
             // 死亡援助
             AddTranslation("Death Assist", "死援");
+            MagnificusMod.RegisterAbility("Death Assist", "死援");
             // [creature]消亡时，将对敌方造成3点伤害。
             AddTranslation("When a card bearing this sigil perishes, it will deal 3 damage to the opponent.", "负此印契之牌死，则伤敌主三。");
             // 芝士元素
             AddTranslation("Emmental Elemental", "酪元");
+            MagnificusMod.RegisterAbility("Emmental Elemental", "酪元");
             // 打出[creature]时，召唤1只奶酪。
             AddTranslation("When a card bearing this sigil is played, summon a Cheezling.", "负此印契之牌既陈，则召一酪灵。");
             // 首次打击
             AddTranslation("First Strike", "先击");
+            MagnificusMod.RegisterAbility("First Strike", "先击");
             // 当打出[creature]时，它将立即攻击对面的位置。如果没有对手牌，则不会造成任何伤害。
             AddTranslation("When a card bearing this sigil is played, it will instantly attack the opposing lane. If there are no opposing cards, no damage will be dealt.", "负此印契之牌既陈，即攻其对列。彼若无牌，则不致伤。");
             // 未知孵化
             AddTranslation("Unknown Hatching", "未知孚");
+            MagnificusMod.RegisterAbility("Unknown Hatching", "未知孚");
             // 持牌人的回合开始时，[creature]将孵化成一只随机恐龙。
             AddTranslation("At the start of your turn, a card bearing this sigil will hatch into a random dinosaur.", "持者合始，负此印契之牌将孚为一偶龙。");
             // 生机终焉
             AddTranslation("Healthy Death", "生尽");
+            MagnificusMod.RegisterAbility("Healthy Death", "生尽");
             // [creature]消亡时，其左右两侧的卡牌各恢复1点生命值。
             AddTranslation("When a card bearing this sigil perishes, the cards to the left and right of the sigil bearer heal 1 health.", "负此印契之牌死，则其左右诸牌各复一命。");
             // 魔力混沌
             AddTranslation("Mana Mess", "法乱");
+            MagnificusMod.RegisterAbility("Mana Mess", "法乱");
             // 打出[creature]时，抽一张随机的非稀有魔力消耗型卡牌。
             AddTranslation("When a card bearing this sigil is played, draw a random non-rare Mana costing card.", "负此印契之牌既陈，则引一偶得非法力费之罕牌。");
+
         }
 
     }
@@ -19289,210 +20520,260 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Bigfoot", "巨足");
             // 一种潜藏于森林之中的神秘造物，仅有少数人声称曾目睹过它的踪迹。
             AddTranslation("a mysterious creature lurking the forests, only few have claimed to see one.", "一潜于林中之秘物也，称尝见之者寡矣。");
+            GrimoraMod.RegisterCard("Bigfoot", "巨足");
             // 哥布林
             AddTranslation("Goblin", "哥布林");
             // 一头忠心耿耿的蛮荒凶兽，能成为你军团中得力的一员。
             AddTranslation("A loyal barbaric beast, a fine addition to your army.", "一忠而野之兽也，可为汝军良益。");
+            GrimoraMod.RegisterCard("Goblin", "哥布林");
             // 薇拉
             AddTranslation("Vila", "薇拉");
             // 一见倾心——至少，它想让你这么认为。
             AddTranslation("Love at first sight, at least that's what it wants you to think.", "一见而倾心，至少其欲使汝然思。");
+            GrimoraMod.RegisterCard("Vila", "薇拉");
             // 赤肤蛙魔
             AddTranslation("Yaramayawho", "赤肤蛙魔");
             // 它似乎永远也没法吃完自己的猎物……
             AddTranslation("This one can never seem to finish it's meals...", "此物似终不能尽其食……");
+            GrimoraMod.RegisterCard("Yaramayawho", "赤肤蛙魔");
             // 试验肢体
             AddTranslation("Test Limbs", "试肢");
             // 这些部件曾经属于某个人，而如今，属于某个…… 东西……(测试)
             AddTranslation("Those parts used to belong to someone, or now some thing...(Test)", "此诸肢尝属于一人，而今属于某……物……（试）");
+            GrimoraMod.RegisterCard("Test Limbs", "试肢");
             // 哀灵狂魂
             AddTranslation("Allip", "狂魂");
             // 疯子残存的魂灵！你永远无从知晓那张面容背后藏着怎样的故事，但它注定满是执念。
             AddTranslation("The remnants of the insane! You never know what story lies behind that face, but it's sure to be filled with fervor.", "狂者之馀魂也！彼面之后所藏何事，汝终无由知；然必满执念。");
+            GrimoraMod.RegisterCard("Allip", "狂魂");
             // 奄美兔
             AddTranslation("Amami Rabbit", "奄美兔");
             // 将幼崽藏于洞穴之中，只求护它们周全。
             AddTranslation("Hiding their young in holes, they wish for their best safety.", "匿其幼于穴，惟愿其安。");
+            GrimoraMod.RegisterCard("Amami Rabbit", "奄美兔");
             // 安卡咒物
             AddTranslation("Ankhame", "安卡咒物");
             // 一件会被你的鲜血所吸引的遗物，或许你可以挥砍它试试！
             AddTranslation("A relic that is drawn to your blood, perhaps you could give it a swing!", "一为汝血所招之遗物也，或可挥之试之！");
+            GrimoraMod.RegisterCard("Ankhame", "安卡咒物");
             // 安妮塔
             AddTranslation("Anneta", "安妮塔");
             // 墨汁不住地奔涌流淌，她的身影是否还在那里？死亡所能给予的全部承诺，不过是让你再次醒来。
             AddTranslation("That ink keeps on pouring, is she even there anymore? All that death promises is that you will wake up again.", "其墨奔流不已，彼身尚在其间乎？死之所许，惟使汝复醒耳。");
+            GrimoraMod.RegisterCard("Anneta", "安妮塔");
             // 厌食魔
             AddTranslation("Anorexia", "厌食魔");
             // 让你被自我厌恶的情绪所淹没，你永远无从知晓它下一刻会化作何种形态。
             AddTranslation("Overflowing you with self loathing, you never know what form it may take on next.", "使汝自恶溢怀，彼次将为何形，终不可知。");
+            GrimoraMod.RegisterCard("Anorexia", "厌食魔");
             // 巫妖之铃
             AddTranslation("Lych Bell", "巫妖铃");
             // 看来，他们寻得了一种使用铃铛的新法子。
             AddTranslation("It seems like they found a new way to use bells.", "观彼似得用铃之一新术。");
+            GrimoraMod.RegisterCard("Lych Bell", "巫妖铃");
             // 胀尸
             AddTranslation("TheBloated", "胀尸");
             // 狰狞的脓疮，正蓄势待发，一触即溃。
             AddTranslation("Grotesque boils, ready to burst.", "恶疮狞然，将裂矣。");
+            GrimoraMod.RegisterCard("TheBloated", "胀尸");
             // 畸脑罐头
             AddTranslation("BrainJar", "脑罂");
             // 光是想象那罐子里藏着何等非人的念头，便足以令人战栗……
             AddTranslation("One shudders to imagine what inhuman thoughts lie inside that jar...", "念彼罂中所藏何等非人之思，足令人栗……");
+            GrimoraMod.RegisterCard("BrainJar", "脑罂");
             // 爆燃尸壳
             AddTranslation("Combustor", "燃尸");
             // 天呐，曾几何时那般炙手可热的尊荣竟一落千丈，如今只剩下一具金属残骸，以及那最后一丝尚存的警戒之物……
             AddTranslation("Oh dear, what a fall from such a stimulatingly high status, now all that's left is a metal carcass, and the last of that watchful substance...", "呜呼，盛时何其炽也，今遽坠若此，仅馀金属之骸，与彼最后一点警觉之质……");
+            GrimoraMod.RegisterCard("Combustor", "燃尸");
             // 糜烂白鼬
             AddTranslation("Misplayed Stoat", "败白鼬");
             // 一只腐坏的白鼬，它那套曾被奉若圭臬的完美策略，终究让它一败涂地。
             AddTranslation("A decaying Stoat whose oh-so perfect strategies failed him tremendously.", "一腐白鼬也，其所谓完策终使之大败。");
+            GrimoraMod.RegisterCard("Misplayed Stoat", "败白鼬");
             // 畸变体
             AddTranslation("Dysmorphia", "畸变体");
             // 左侧畸变体。
             AddTranslation("Dysmorphia Left.", "左畸变体。");
             // 右侧畸变体。
             AddTranslation("Dysmorphia Right.", "右畸变体。");
+            GrimoraMod.RegisterCard("Dysmorphia", "畸变体");
             // 驱魔道人
             AddTranslation("Exorcist", "祓者");
             // 他仍以为驱逐那些受诅之物便能为自己带来裨益，可他当真知晓自己身处于何方吗？
             AddTranslation("He still thinks banishing the dammed will do him good, does he know where he is?", "彼犹谓逐去受诅者足自利，然其果知身今何所乎？");
+            GrimoraMod.RegisterCard("Exorcist", "祓者");
             // 脓骨鬼
             AddTranslation("Flembones", "脓骨鬼");
             // 等他摆弄好他的摄像头再说。
             AddTranslation("Wait until he plays with his webcam.", "姑待彼戏其影机。");
+            GrimoraMod.RegisterCard("Flembones", "脓骨鬼");
             // 斯坦和弗兰肯
             AddTranslation("Stein & Frank", "斯坦与弗兰肯");
             // 即便是地狱业火，也未能将二人分离开来。
             AddTranslation("Even hell was not hot enough to split them.", "虽狱火之炽，亦不足析之。");
+            GrimoraMod.RegisterCard("Stein & Frank", "斯坦与弗兰肯");
             // 惊雷颅骨
             AddTranslation("FulmineSkull", "雷颅");
             // 凝神细听，你仍能听见烈焰灼烧骸骨的噼啪声响……以及他们残存的低语。
             AddTranslation("If you listen closely, you can still hear the cackling of flame on bone... as well as their voice.", "凝听之，犹可闻炎炙骨之噼啪……并其馀语。");
+            GrimoraMod.RegisterCard("FulmineSkull", "雷颅");
             // 轰雷殖骨
             AddTranslation("FulurOssa", "雷殖骨");
             // 它从未真正离开过那张电椅。
             AddTranslation("It never truly left the electric chair.", "彼未尝真离电椅。");
+            GrimoraMod.RegisterCard("FulurOssa", "雷殖骨");
             // 普罗米修斯之火
             AddTranslation("PrometheusFlame", "普罗米修斯火");
             // 此物着实独一无二，乃是那造福人类的窃贼所遗留的馈赠！话说回来，要来份精致的肝脏尝尝吗？
             AddTranslation("This one is quite unique, the lingering spoils of a thief to benefit humanity! Fancy liver by chance?", "此物诚异，乃惠人之盗所遗馀赐也！汝欲尝肝乎？");
+            GrimoraMod.RegisterCard("PrometheusFlame", "普罗米修斯火");
             // 内脏
             AddTranslation("Guts", "腑");
             // 烦人的内脏。
             AddTranslation("Annoying guts.", "烦腑也。");
+            GrimoraMod.RegisterCard("Guts", "腑");
             // 先驱者
             AddTranslation("Harbinger", "先驱");
             // 一头强大的魔物，其效命的代价高昂至极。
             AddTranslation("A powerful fiend that extols a heavy price for its servitude.", "一强魔也，其役之价甚重。");
+            GrimoraMod.RegisterCard("Harbinger", "先驱");
             // 哈斯塔
             AddTranslation("Hastur", "哈斯塔");
             // 祂自群星之外而来，将自身倒影的碎片，同等赠予君王与愚人。你，会收下这片碎片吗？
             AddTranslation("He came from beyond the stars, gifting pieces of his reflection to kings and fools alike. Will you accept this piece?", "彼自群星之外来，以己影之片同赐君与愚。汝其受此片乎？");
+            GrimoraMod.RegisterCard("Hastur", "哈斯塔");
             // 寻常魔仆
             AddTranslation("Common Imp", "常魔仆");
             // 一种小小魔物，所到之处必生事端与混乱，脸上挂着狡黠的坏笑，性子顽劣至极！
             AddTranslation("A tiny creature known for causing trouble and mayhem wherever it goes, with its mischievous grin and playful nature!", "一小魔也，所往必生乱，其笑狡黠，而性顽甚。");
+            GrimoraMod.RegisterCard("Common Imp", "常魔仆");
             // 八岐残魂
             AddTranslation("Orochimitama", "八岐残魂");
             // 哦……它本不该出现在此地的……
             AddTranslation("Oh... He is not supposed to be here...", "噫……彼本不当在此……");
+            GrimoraMod.RegisterCard("Orochimitama", "八岐残魂");
             // 生之息
             AddTranslation("Inochi", "生息");
             // 一股抚慰心神的力量，治愈你的造物，亦是风暴降临前的片刻宁静。
             AddTranslation("A soothing presence to heal your creatures, a calm before the storm.", "一和抚之气也，疗汝诸物，亦风暴前之暂宁。");
+            GrimoraMod.RegisterCard("Inochi", "生息");
             // 折磨之径。
             AddTranslation("Trail of Torment.", "苦径。");
             // 异肢
             AddTranslation("Possessed Limbs", "祟肢");
             // 一旦附着于活人身上，它们便彻底归于另一个存在所有。
             AddTranslation("Once attached to a living person, they now belong to something else entirely.", "既附生人，则尽归他物矣。");
+            GrimoraMod.RegisterCard("Possessed Limbs", "祟肢");
             // 鼹鼠掘墓人
             AddTranslation("Mole Digger", "鼹掘者");
             // 坚定的鼹鼠……掘墓人？不用管这是什么……
             AddTranslation("The stalwart Mole... Digger? Whatever this is...", "坚鼹……掘者乎？姑无问此为何也……");
+            GrimoraMod.RegisterCard("Mole Digger", "鼹掘者");
             // 御魂主宰
             AddTranslation("Nekros", "御魂主宰");
             // 御魂主宰执掌战场，挑战者。死亡即是他的猎场。
             AddTranslation("Nekros possesses the board, challenger. Death is his playground.", "御魂主宰据此局矣，角者。死即其戏场。");
+            GrimoraMod.RegisterCard("Nekros", "御魂主宰");
             // 圣装御魂主宰
             AddTranslation("NekrosPrime", "圣装御魂主宰");
             // 你再也寻不到……比这更磅礴的力量……莫过于念及自身名姓……被镌刻在墓碑之上的瞬间。
             AddTranslation("You will find no greater power... than the simple thought of your own name... inscrybed upon a grave.", "汝将无复见大于此之力……惟念己名……铭于墓石之上耳。");
+            GrimoraMod.RegisterCard("NekrosPrime", "圣装御魂主宰");
             // 诺克那维
             AddTranslation("Nuckelavee", "诺克那维");
             // 它乃深海之主，你最好祈祷它的气息，不会玷污你的仆从！
             AddTranslation("The Administrator of its sea, you better hope it's breath doesn't taint your Thralls!", "彼其海之主也，汝宜祷其息不污汝役！");
+            GrimoraMod.RegisterCard("Nuckelavee", "诺克那维");
             // 秽邪巨体
             AddTranslation("OdiousMass", "秽巨体");
             // 何其丑陋。
             AddTranslation("How unsightly.", "何陋之甚。");
+            GrimoraMod.RegisterCard("OdiousMass", "秽巨体");
             // 八岐大蛇
             AddTranslation("Orochi", "八岐蛇");
             // 必须做出牺牲。
             AddTranslation("Sacrifices must be made.", "汝必须行牺牲。");
+            GrimoraMod.RegisterCard("Orochi", "八岐蛇");
             // 欧罗大师
             AddTranslation("Master Ouro", "欧罗大师");
             // 在无尽的折磨与痛苦之中，它们竟摸索出了一条途径，得以窥见这可怜残躯的内里……并将其痛苦尽数抹去。
             AddTranslation("From within the endless torment and suffering, they had somehow learned a way to see inside this poor broken thing... and take away its pain.", "处无尽之苦与痛中，彼竟得一术，以窥此可怜残体之内……而尽夺其痛。");
+            GrimoraMod.RegisterCard("Master Ouro", "欧罗大师");
             // 生死轮回无休无止，早已摧残了这些遭人遗弃的残躯。痛苦真实不虚，但死亡并不是终结！
             AddTranslation("An endless cycle of life and death has taken a toll on these discarded remains. The pain was real, but death is never final!", "生死之环无穷，已尽残此诸弃骸。其痛诚真，然死终非竟也！");
             // 杜拉尔罕
             AddTranslation("GanCeann", "杜拉尔罕");
             // 无数传说都提及杜拉尔罕，却无一则能道尽它暴怒的真正程度。
             AddTranslation("Countless legends tell of the dullahan, but all fail to convey the true extent of its pique.", "诸传多言杜拉尔罕，然莫能尽道其怒之实。");
+            GrimoraMod.RegisterCard("GanCeann", "杜拉尔罕");
             // 暗黑王子
             AddTranslation("Dark Prince", "暗王子");
             // 你体内正闪耀着毛茸茸小家伙们的力量。
             AddTranslation("The power of fluffy bois shines within you.", "绒毛诸子之力，方辉于汝中。");
+            GrimoraMod.RegisterCard("Dark Prince", "暗王子");
             // 夭折鸦灵
             AddTranslation("Stillborn Raven", "夭鸦灵");
             // 再回年少，快意畅快！
             AddTranslation("Feels good to be young again!", "复少诚快！");
+            GrimoraMod.RegisterCard("Stillborn Raven", "夭鸦灵");
             // 回魂者
             AddTranslation("Reanimated", "回魂者");
             // 手持死亡镰刀的复生亡灵，只为……等等，这是什么？
             AddTranslation("BRINGING THE SCYTHE OF DEATH, THE REVENANT... WAIT, WHAT?", "携死镰而来的复生亡灵……且，何物？");
+            GrimoraMod.RegisterCard("Reanimated", "回魂者");
             // 复生异灵
             AddTranslation("RevenantEldritch", "复生异灵");
             // 灾祸之源，冷酷无情，精准无匹。
             AddTranslation("The source of Calamity, relentless and unerring.", "灾之源也，不舍而不谬。");
+            GrimoraMod.RegisterCard("RevenantEldritch", "复生异灵");
             // 懒骨
             AddTranslation("Lazy Bones", "懒骨");
             // 一具慵懒又爱讲冷笑话的骷髅，可太喜欢他了。
             AddTranslation("A slothful skeleton with a knack for jokes. I adore him.", "一惰而善谐之骨也，吾甚爱之。");
+            GrimoraMod.RegisterCard("Lazy Bones", "懒骨");
             // 骸音机
             AddTranslation("Skelephone", "骨音器");
             // 与死者沟通之法，不过代价不菲。
             AddTranslation("A way to communicate with the dead, for a price.", "通死者之一术也，然其价不轻。");
+            GrimoraMod.RegisterCard("Skelephone", "骨音器");
             // 魂域之门
             AddTranslation("Soulgate", "魂域门");
             // 踏入魂域的机缘，何其美妙？但愿你付得起相应的代价。
             AddTranslation("A chance to enter the soul realm, how delightful? I hope you can afford the price.", "入魂域之机，何其美乎？愿汝办得其价。");
+            GrimoraMod.RegisterCard("Soulgate", "魂域门");
             // 黑桃战士
             AddTranslation("SpadeWarrior", "黑桃武者");
             // 这威名赫赫的战士定会将你送入黄泉，从里到外，无一幸免。
             AddTranslation("This fearsome warrior will put you six feet under, in every possible sense.", "此武者可畏，必使汝入冢，凡所可言之义皆然。");
+            GrimoraMod.RegisterCard("SpadeWarrior", "黑桃武者");
             // 不死民灵
             AddTranslation("UndeadCivilian", "不死民灵");
             // 困于永恒黑暗之中，这缕可怜的亡魂正苦苦寻觅出路。或许，你能为他点亮一盏明灯？
             AddTranslation("Lost in eternal darkness, this poor soul desperately seeks a way out. Perhaps you can light his way?", "陷永闇中，此可怜魂苦觅其路。汝其能为之燃一灯乎？");
+            GrimoraMod.RegisterCard("UndeadCivilian", "不死民灵");
             // 葬灵村
             AddTranslation("UndeadVillage", "葬灵村");
             // 荒弃凄凉，这座村落正盼着新住民，来填满它破败的屋舍。
             AddTranslation("Abandoned and forlorn, this village seeks new residents to fill its decrepit homes.", "既荒且凉，此村求新居者，以充其败屋。");
+            GrimoraMod.RegisterCard("UndeadVillage", "葬灵村");
             // 每一座城镇，每一方都市，总有人要负责埋葬逝者。而终有一日，他们也会被葬入黄土。
             AddTranslation("In every town, in every city, someone must work to bury the dead. In time, they too will be buried.", "凡邑与都，必有人埋死者。及其时也，彼亦将见埋。");
             // 骸骨博士
             AddTranslation("Dr.Bones", "骨博士");
+            GrimoraMod.RegisterCard("Dr.Bones", "骨博士");
             // 杀不死你的东西，只会让你变得更清醒。
             AddTranslation("Whatever doesn't kill you simply makes you, saner.", "凡不能杀汝者，徒使汝更醒耳。");
             // 温迪戈
             AddTranslation("Wendigo", "温迪戈");
             // 自荒莽野地归来，倒让我想起一位故人。
             AddTranslation("Returned from the deep wilds, reminds me of a friend.", "自荒野深处归，使我忆一故人。");
+            GrimoraMod.RegisterCard("Wendigo", "温迪戈");
             // 赢先生
             AddTranslation("Mister Win", "赢先生");
             // 一张致胜的牌。它永远立于不败之地。这便是它得名赢先生的缘由。
             AddTranslation("A card that wins. It always wins. That's why it's called Mister Win.", "一能胜之牌也。彼恒胜，故曰赢先生。");
+            GrimoraMod.RegisterCard("Mister Win", "赢先生");
             // 恐怕，并非那一张。
             AddTranslation("Not that one, I'm afraid.", "恐非此张。");
 
@@ -19523,6 +20804,7 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Revenant Mod Card Pack", "复生亡灵补缀牌韬");
             // 这套卡牌主要由一些能以各种方式返回玩家手中的卡牌组成。
             AddTranslation("This card pack consists of mainly cards that return to the player in a variety of ways.", "此牌韬多由能以诸途反归戏徒手中之牌成。");
+
         }
 
     }
@@ -19928,7 +21210,7 @@ namespace ClassicChineseLanguagePack
             AddTranslation("Judgekeko", "判官紫水鸡");
             // 神之假人
             AddTranslation("Kami Dummy", "神偶");
-            // 现在，该由我来终结你了！ / 
+            // 现在，该由我来终结你了！ /
             AddTranslation("It is time for me to end you!", "今其时矣，我将终汝！\r\n");
             // 露娜
             AddTranslation("Luna", "露娜");
