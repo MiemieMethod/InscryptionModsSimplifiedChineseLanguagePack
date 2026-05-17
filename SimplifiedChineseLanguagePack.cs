@@ -13790,7 +13790,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "the SPI-DEER, this creature was made by a bored demigod.", "蛛鹿，此造物乃是闲极无聊的半神所造。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "i... dont know where this came from.", "我……全然不知此物从何而来。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spore-galope", "孢跃鹿", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "the deeranged spore-galope, it was never the same since the visit from the mycologists.", "畸变孢跃鹿，自真菌学者到访后便彻底异变。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "the deeranged spore-galope, it was never the same since the visit from the mycologists.", "畸变孢跃鹿，自菌学家到访后便彻底异变。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tentakelpie", "触幻鹿", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "the shape-shifting tentakelpie, it shows its true form during hunts.", "变形的触幻鹿，捕猎之时便显露真身。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Throwback Deer", "溯古鹿", Language.ChineseSimplified);
