@@ -134,8 +134,8 @@ Acknowledgement:
         - 格里魔拉模组扩展 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
         - 格里魔拉模组冒险扩展 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
         - P03扩展包#3 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
-        - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >=   1.4.9
-        - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/   UndeadTempleINKCM/)  >= 1.3.7
+        - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.9
+        - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
         - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
         - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.5
         - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.2.0
@@ -144,13 +144,13 @@ Acknowledgement:
         - 微调：空水袭 [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
         - 披萨塔卡牌 [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
         - Aga的蔓尼菲科扩展 [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
-        - 蔓尼菲科模组扩展 [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_ Expansion/)  >=   2.2.2
+        - 蔓尼菲科模组扩展 [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
         - 小花模组 [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
         - 传说之下模组 [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
         - 复生亡灵模组 [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) >= 0.0.19
         - Pine冥刻 [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) >= 1.2.1
-        - 星际争霸卡包 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_  Cardpack/)  >=  1.0.2
-        - 来自黑暗的传说 [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_ LFTD/   Legends_From_The_Darkness/) >= 1.6.1
+        - 星际争霸卡包 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
+        - 来自黑暗的传说 [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) >= 1.6.1
         - Gareth模组 [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
         - Eri的卡牌扩展 [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
         - 蚂蚁生命 [HealthForAnts](https://thunderstore.io/c/inscryption/p/JulianMods/HealthForAnts/) >= 1.0.2
