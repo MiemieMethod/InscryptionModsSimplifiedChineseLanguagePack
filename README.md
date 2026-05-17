@@ -17,6 +17,9 @@ Current Supportted Mods:
     - [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
     - [New Spell Card Toolkit](https://thunderstore.io/c/inscryption/p/WhistleWind/New_Spell_Card_Toolkit/) >= 1.2.5
     - [Life Cost API](https://thunderstore.io/c/inscryption/p/Void_Slime/Life_Cost_API/) >= 4.0.1
+    - [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
+    - [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
+    - [Side Deck Selector](https://thunderstore.io/c/inscryption/p/Infiniscryption/Side_Deck_Selector/) >= 2.1.6
 - Sigilarium Mods:
     - [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
     - [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
@@ -25,48 +28,53 @@ Current Supportted Mods:
     - [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
     - [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) >= 2.7.0
 - Gameplay Mods:
-    - [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
-    - [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
-    - [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
-    - [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
-    - [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
-    - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
-    - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
-    - [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) >= 1.0.1
-    - [PermaDeath](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/PermaDeath/) >= 1.0.4
-    - [KCMHammer](https://thunderstore.io/c/inscryption/p/TVFLabs/KCMHammer/) >= 1.0.1
-    - [BetterTotems](https://thunderstore.io/c/inscryption/p/TVFLabs/BetterTotems/) >= 1.0.0
-    - [Eye And Dagger](https://thunderstore.io/c/inscryption/p/Void_Slime/Eye_And_Dagger/) >= 1.2.0
-    - [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) >= 1.0.2
-    - [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
-    - [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
-    - [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
-    - [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
-    - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.9
-    - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
-    - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
-    - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.5
-    - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.2.0
-    - [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
-    - [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
-    - [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
-    - [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
-    - [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
-    - [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
-    - [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
-    - [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
-    - [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
-    - [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
-    - [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
-    - [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) >= 0.0.19
-    - [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
-    - [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) >= 1.2.1
-    - [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
-    - [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) >= 1.6.1
-    - [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
-    - [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
-    - [The Beast Boss Battle](https://thunderstore.io/c/inscryption/p/Team_Isaacryption/The_Beast_Boss_Battle/) >= 1.0.2
-    - [FiveNightsAtInscryption](https://thunderstore.io/c/inscryption/p/Cevin2006/FiveNightsAtInscryption/) >= 0.1.0
+    - Custom Cards:
+        - [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
+        - [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
+        - [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
+        - [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
+        - [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
+        - [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.9
+        - [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
+        - [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
+        - [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.5
+        - [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.2.0
+        - [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
+        - [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
+        - [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
+        - [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
+        - [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
+        - [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
+        - [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
+        - [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
+        - [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) >= 0.0.19
+        - [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) >= 1.2.1
+        - [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
+        - [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) >= 1.6.1
+        - [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
+        - [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
+        - [HealthForAnts](https://thunderstore.io/c/inscryption/p/JulianMods/HealthForAnts/) >= 1.0.2
+        - [HallownestExpansion](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/HallownestExpansion/) >= 1.0.1
+    - Custom Challenges:
+        - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
+        - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
+        - [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) >= 1.0.1
+        - [PermaDeath](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/PermaDeath/) >= 1.0.4
+        - [KCMHammer](https://thunderstore.io/c/inscryption/p/TVFLabs/KCMHammer/) >= 1.0.1
+        - [BetterTotems](https://thunderstore.io/c/inscryption/p/TVFLabs/BetterTotems/) >= 1.0.0
+        - [Eye And Dagger](https://thunderstore.io/c/inscryption/p/Void_Slime/Eye_And_Dagger/) >= 1.2.0
+        - [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) >= 1.0.2
+        - [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
+        - [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
+        - [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
+        - [The Beast Boss Battle](https://thunderstore.io/c/inscryption/p/Team_Isaacryption/The_Beast_Boss_Battle/) >= 1.0.2
+        - [FiveNightsAtInscryption](https://thunderstore.io/c/inscryption/p/Cevin2006/FiveNightsAtInscryption/) >= 0.1.0
+    - Custom Costs:
+        - [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
+    - Custom Items:
+        - [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
+    - Additional Gameplay:
+        - [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
 - More Adding...
 
 Please contact me if you find problems.
@@ -109,6 +117,9 @@ Acknowledgement:
     - 卡包管理器API [Pack Management API](https://thunderstore.io/c/inscryption/p/Infiniscryption/Pack_Management_API/) >= 1.2.2
     - 新法术卡工具箱 [New Spell Card Toolkit](https://thunderstore.io/c/inscryption/p/WhistleWind/New_Spell_Card_Toolkit/) >= 1.2.5
     - 生命计数API [Life Cost API](https://thunderstore.io/c/inscryption/p/Void_Slime/Life_Cost_API/) >= 4.0.1
+    - 族群毛皮 [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
+    - 游戏内卡牌创建器 [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
+    - 副牌组选择器 [Side Deck Selector](https://thunderstore.io/c/inscryption/p/Infiniscryption/Side_Deck_Selector/) >= 2.1.6
 - 印记模组：
     - Nevernamed的自定义印记 [Nevernameds Sigilarium](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Sigilarium/) >= 1.16.0
     - 印记大全 [All The Sigils](https://thunderstore.io/c/inscryption/p/AllTheSigils/All_The_Sigils/) >= 3.0.6
@@ -117,48 +128,53 @@ Acknowledgement:
     - P03自定义印记 [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
     - 海量印记 [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) >= 2.7.0
 - 玩法模组：
-    - WhistleWind脑叶公司模组 [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
-    - 植物大战僵尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
-    - 格里魔拉模组扩展 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
-    - 格里魔拉模组冒险扩展 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
-    - P03扩展包#3 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
-    - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
-    - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
-    - 死亡卡挑战 [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) >= 1.0.1
-    - 永久死亡 [PermaDeath](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/PermaDeath/) >= 1.0.4
-    - KCM锤子 [KCMHammer](https://thunderstore.io/c/inscryption/p/TVFLabs/KCMHammer/) >= 1.0.1
-    - 更好的图腾 [BetterTotems](https://thunderstore.io/c/inscryption/p/TVFLabs/BetterTotems/) >= 1.0.0
-    - 眼与匕首 [Eye And Dagger](https://thunderstore.io/c/inscryption/p/Void_Slime/Eye_And_Dagger/) >= 1.2.0
-    - 更少的副牌 [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) >= 1.0.2
-    - 诅咒 [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
-    - 无尽第二章 [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
-    - TVF的头目 [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
-    - Zepht阳光 [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
-    - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.9
-    - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
-    - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
-    - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.5
-    - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.2.0
-    - 微调：九头蛇 [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
-    - 更多道具 [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
-    - 恐龙模组 [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
-    - 族群毛皮 [Tribal Pelts](https://thunderstore.io/c/inscryption/p/creator/Tribal_Pelts/) >= 3.0.0
-    - 微调：空水袭 [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
-    - 披萨塔卡牌 [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
-    - 游戏内卡牌创建器 [InGame Card Creator](https://thunderstore.io/c/inscryption/p/IngoH/InGame_Card_Creator/) >= 2.5.2
-    - Aga的蔓尼菲科扩展 [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
-    - 蔓尼菲科模组扩展 [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_Expansion/) >= 2.2.2
-    - 小花模组 [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
-    - 传说之下模组 [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
-    - 复生亡灵模组 [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) >= 0.0.19
-    - 松鼠炸弹模组 [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
-    - Pine冥刻 [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) >= 1.2.1
-    - 星际争霸卡包 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
-    - 来自黑暗的传说 [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) >= 1.6.1
-    - Gareth模组 [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
-    - Eri的卡牌扩展 [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
-    - 野兽头目战 [The Beast Boss Battle](https://thunderstore.io/c/inscryption/p/Team_Isaacryption/The_Beast_Boss_Battle/) >= 1.0.2
-    - 邪恶冥刻的的五夜后宫 [FiveNightsAtInscryption](https://thunderstore.io/c/inscryption/p/Cevin2006/FiveNightsAtInscryption/) >= 0.1.0
+    - 自定义卡牌：
+        - WhistleWind脑叶公司模组 [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
+        - 植物大战僵尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
+        - 格里魔拉模组扩展 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
+        - 格里魔拉模组冒险扩展 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
+        - P03扩展包#3 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
+        - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >=   1.4.9
+        - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/   UndeadTempleINKCM/)  >= 1.3.7
+        - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
+        - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.5
+        - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.2.0
+        - 微调：九头蛇 [SmallTweak Hydra](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Hydra/) >= 1.0.0
+        - 恐龙模组 [DinoMod](https://thunderstore.io/c/inscryption/p/Silenceman/DinoMod/) >= 1.5.0
+        - 微调：空水袭 [SmallTweak Borne](https://thunderstore.io/c/inscryption/p/creator/SmallTweak_Borne/) >= 1.1.0
+        - 披萨塔卡牌 [PizzaTowerCards](https://thunderstore.io/c/inscryption/p/PanMan/PizzaTowerCards/) >= 1.1.1
+        - Aga的蔓尼菲科扩展 [AgasMagnificusExpansion](https://thunderstore.io/c/inscryption/p/AgaBagaBoy/AgasMagnificusExpansion/) >= 2.0.0
+        - 蔓尼菲科模组扩展 [MagMod Expansion](https://thunderstore.io/c/inscryption/p/Smug/MagMod_ Expansion/)  >=   2.2.2
+        - 小花模组 [FloweysMod](https://thunderstore.io/c/inscryption/p/Cevin2006/FloweysMod/) >= 0.0.2
+        - 传说之下模组 [Undertale Mod](https://thunderstore.io/c/inscryption/p/TNTgames/Undertale_Mod/) >= 1.2.2
+        - 复生亡灵模组 [RevenantMod](https://thunderstore.io/c/inscryption/p/Orochi_Umbra/RevenantMod/) >= 0.0.19
+        - Pine冥刻 [Pinescription](https://thunderstore.io/c/inscryption/p/Pineguys/Pinescription/) >= 1.2.1
+        - 星际争霸卡包 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_  Cardpack/)  >=  1.0.2
+        - 来自黑暗的传说 [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_ LFTD/   Legends_From_The_Darkness/) >= 1.6.1
+        - Gareth模组 [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
+        - Eri的卡牌扩展 [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
+        - 蚂蚁生命 [HealthForAnts](https://thunderstore.io/c/inscryption/p/JulianMods/HealthForAnts/) >= 1.0.2
+        - 空洞骑士扩展 [HallownestExpansion](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/HallownestExpansion/) >= 1.0.1
+    - 自定义挑战：
+        - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
+        - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
+        - 死亡卡挑战 [DeathcardChallenges](https://thunderstore.io/c/inscryption/p/TVFLabs/DeathcardChallenges/) >= 1.0.1
+        - 永久死亡 [PermaDeath](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/PermaDeath/) >= 1.0.4
+        - KCM锤子 [KCMHammer](https://thunderstore.io/c/inscryption/p/TVFLabs/KCMHammer/) >= 1.0.1
+        - 更好的图腾 [BetterTotems](https://thunderstore.io/c/inscryption/p/TVFLabs/BetterTotems/) >= 1.0.0
+        - 眼与匕首 [Eye And Dagger](https://thunderstore.io/c/inscryption/p/Void_Slime/Eye_And_Dagger/) >= 1.2.0
+        - 更少的副牌 [LesserSideDeck](https://thunderstore.io/c/inscryption/p/GeckVolantMarin/LesserSideDeck/) >= 1.0.2
+        - 诅咒 [Curses](https://thunderstore.io/c/inscryption/p/Infiniscryption/Curses/) >= 1.1.4
+        - TVF的头目 [TVFsBosses](https://thunderstore.io/c/inscryption/p/TVFLabs/TVFsBosses/) >= 2.0.0
+        - 松鼠炸弹模组 [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
+        - 野兽头目战 [The Beast Boss Battle](https://thunderstore.io/c/inscryption/p/Team_Isaacryption/The_Beast_Boss_Battle/) >= 1.0.2
+        - 邪恶冥刻的的五夜后宫 [FiveNightsAtInscryption](https://thunderstore.io/c/inscryption/p/Cevin2006/FiveNightsAtInscryption/) >= 0.1.0
+    - 自定义成本：
+        - Zepht阳光 [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
+    - 自定义道具：
+        - 更多道具 [MoreItems](https://thunderstore.io/c/inscryption/p/JamesGames/MoreItems/) >= 0.3.0
+    - 增补玩法：
+        - 无尽第二章 [Endless Act2](https://thunderstore.io/c/inscryption/p/Mr_Fantastik/Endless_Act2/) >= 1.3.0
 - 正在加入更多……
 
 如果有任何问题请联系我修复。
