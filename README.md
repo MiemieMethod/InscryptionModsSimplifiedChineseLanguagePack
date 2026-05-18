@@ -55,6 +55,8 @@ Current Supportted Mods:
         - [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
         - [HealthForAnts](https://thunderstore.io/c/inscryption/p/JulianMods/HealthForAnts/) >= 1.0.2
         - [HallownestExpansion](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/HallownestExpansion/) >= 1.0.1
+        - [Talking Possum](https://thunderstore.io/c/inscryption/p/KellyBetty/Talking_Possum/) >= 1.3.0
+        - [Sire MoDeers](https://thunderstore.io/c/inscryption/p/Sire/Sire_MoDeers/) >= 2.0.3
     - Custom Challenges:
         - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
@@ -155,6 +157,8 @@ Acknowledgement:
         - Eri的卡牌扩展 [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
         - 蚂蚁生命 [HealthForAnts](https://thunderstore.io/c/inscryption/p/JulianMods/HealthForAnts/) >= 1.0.2
         - 空洞骑士扩展 [HallownestExpansion](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/HallownestExpansion/) >= 1.0.1
+        - 会说话的负鼠 [Talking Possum](https://thunderstore.io/c/inscryption/p/KellyBetty/Talking_Possum/) >= 1.3.0
+        - Sire更多的鹿 [Sire MoDeers](https://thunderstore.io/c/inscryption/p/Sire/Sire_MoDeers/) >= 2.0.3
     - 自定义挑战：
         - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0

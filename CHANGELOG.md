@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.10
+
+Add supports for TalkingPossum-1.3.0, SireMoDeers-2.0.3.
+
 ## 1.6.9
 
 Add supports for HallownestExpansion-1.0.1, HealthForAnts-1.0.2, SideDeckSelector-2.1.6.
