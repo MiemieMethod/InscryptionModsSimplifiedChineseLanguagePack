@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.11
+
+Add supports for ApellaDiseasedCardsMod-1.1.0, LethalCabin-1.2.0.
+
 ## 1.6.10
 
 Add supports for TalkingPossum-1.3.0, SireMoDeers-2.0.3.

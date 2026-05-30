@@ -25,7 +25,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.6.10";
+        private const string Version = "1.6.11";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -151,6 +151,8 @@ namespace SimplifiedChineseLanguagePack
             SideDeckSelectorMod.RegisterTranslations();
             TalkingPossumMod.RegisterTranslations();
             SireMoDeersMod.RegisterTranslations();
+            ApellaDiseasedCardsMod.RegisterTranslations();
+            LethalCabinMod.RegisterTranslations();
             stopwatch.Stop();
             Debug.Log($"RegisterTranslations 执行时间: {stopwatch.ElapsedMilliseconds} ms");
             LanguageLoaded = true;
@@ -3405,7 +3407,16 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Celestial serpent that soars through the clouds, untethered by earthly bounds.", "翱翔于云海之间的仙兽灵蛇，不受凡俗束缚", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "VeggieMew", "菜喵喵", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Whose pet is this that ran out?", "谁家的小宠物跑出来了？", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "VeggieDull", "菜呆呆", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Snapper Egg", "鳄龟蛋", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Snapping turtle eggs found in the swamp may attract little attention.", "沼泽中发现的鳄龟蛋，也许不会有人重视。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hedgehog", "刺猬", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Timid hedgehogs steal bones yet dare not attack head-on.", "胆小的刺猬，它们偷食骨头却不敢正面出击。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Echidna", "针鼹", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fearless echidnas sacrifice themselves to stab hostile creatures.", "无畏的针鼹鼠，它们舍身刺伤敌对的造物。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Strange Tadpole", "奇怪的蝌蚪", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The tadpole seems to have grown legs.", "这条蝌蚪似乎已经长出了脚。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hippo", "河马", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Strong hippos keep hunting and strengthening themselves.", "强壮的河马，它们不断捕食和强化自己。", Language.ChineseSimplified);
 
             //WLDLC-other
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cowardly Aquasquirrel", "胆小水松鼠", Language.ChineseSimplified);
@@ -4393,7 +4404,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Death Snatch", "死亡掠夺", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, draw a card from your deck.", "[creature]阵亡时，从你的牌组中抽一张牌。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Decked Out", "全副武装", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is struck, a card from a random temple's side deck is created in your hand.", "[creature]受到攻击时，会从随机神殿的副牌组中抽取一张牌加入你的手牌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is struck, a card from a random temple's side deck is created in your hand.", "[creature]受到攻击时，会从随机神庙的副牌组中抽取一张牌加入你的手牌。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Defiler", "污染者", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] perishes, its owner must draw a card from their deck and immediately discard it.", "[creature]阵亡时，其持牌人必须从牌组抽一张牌并立即弃置。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Desperate", "孤注一掷", Language.ChineseSimplified);
@@ -4749,7 +4760,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Recharge", "蓄势", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, it's owner regains 1 energy. Does not affect the current energy maximum.", "使用[creature]时，持牌人恢复1点能量。不影响当前能量上限。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Recycle", "回收利用", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "While [creature] is on the board, when any friendly creature perishes by combat a special card will be created in the owners hand. The card created depends on the temple of the friendly card which perishesd.", "当[creature]在场时，任何友方造物因战斗阵亡时，其持有者手牌中将生成一张特殊卡牌。生成的卡牌类型取决于阵亡友方卡牌所属的神殿。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "While [creature] is on the board, when any friendly creature perishes by combat a special card will be created in the owners hand. The card created depends on the temple of the friendly card which perishesd.", "当[creature]在场时，任何友方造物因战斗阵亡时，其持有者手牌中将生成一张特殊卡牌。生成的卡牌类型取决于阵亡友方卡牌所属的神庙。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Reflective", "镜面反击", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is opposed by a creature, it gains power equal to the opposing creatures power.", "当[creature]对阵造物时，其力量将提升至与对面造物相同。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Regenerator", "万象更新", Language.ChineseSimplified);
@@ -6963,6 +6974,7 @@ namespace SimplifiedChineseLanguagePack
                 SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sell Token: " + count.ToString() + " Robobucks", "卖掉代币：" + count.ToString() + "机器币", Language.ChineseSimplified);
             }
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Reset: $1", "重置：$1", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "PRINT", "打印", Language.ChineseSimplified);
 
             // Achievement
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "P03 In Kaycee's Mod", "凯茜模组中的P03模组", Language.ChineseSimplified);
@@ -13783,7 +13795,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Noelle Pog", "诺艾尔震惊", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Prickly Deer", "尖刺鹿", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "its spiny quills shoots out after death.", "殒命之际，周身尖刺尽数激射而出。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Prongkkall", "叉角戾兽", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Prongkkall", "叉角鳗羚", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A slithering predator of the deep. It somehow learned how to grow antlers.", "深海潜行掠食者，竟意外长出了鹿角。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pudu", "普度鹿", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "the miniscule pudu, a small deer, for a small choice.", "迷你普度鹿，身形娇小，抉择亦微。", Language.ChineseSimplified);
@@ -13823,6 +13835,154 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Weakened Fawn", "衰颓鹿崽", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "White Stag", "白雄鹿", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "the white stag, they say it brings good luck.", "纯白雄鹿，世人传言其能带来祥瑞。", Language.ChineseSimplified);
+
+
+
+        }
+    }
+    public class ApellaDiseasedCardsMod
+    {
+        public static void RegisterTranslations()
+        {
+            Debug.Log("Registering Translations for Apella_Diseased_Cards_Mod Mod");
+
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Pack_Of_The_Diseased", "疫病肆虐扩展包", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Creatures of the Woods have Befell a Disease. They have been reborn into a New Form.", "森林中的众造物皆染上疫病，已然蜕变为全新的形态。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "airborne dragon", "浮空飞龙", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Apex predator of the sky", "天穹顶级掠食者", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A feast for all", "众生盛宴", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "trapfrog", "陷阱蛙", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The trapper is gonna be upset", "猎人会伤心的", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "hydra dragon", "九头龙", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Three heads are better than one", "三个头胜过一个头", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "mule", "骡子", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "water dragon", "水龙", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Such an amazing creature", "这般非凡的造物", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The prospector will be upset", "矿工会伤心的", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "weasel", "伶鼬", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Maybe you can find some use for this worthless creature", "或许你能给这无用的造物寻些用处", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased adder", "瘟疫蝰蛇", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "What a horrible fate", "何等凄惨的命运", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased airborne dragon", "瘟疫浮空飞龙", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It's become an unholy nightmare", "已然沦为邪祟梦魇", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased alpha", "瘟疫头狼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Poor thing is about to rot", "这可怜家伙快要腐朽殆尽了", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased bat", "瘟疫蝙蝠", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I hate these things", "我讨厌这玩意", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased bait", "瘟疫鱼饵", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Free bones to ye", "送你一堆骸骨", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased bullfrog", "瘟疫牛蛙", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Looks like it's getting ready to pop", "看样子它快要胀裂开来了", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased coyote", "瘟疫郊狼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Such a feral beast", "这般狂野的凶兽", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased elk", "瘟疫麋鹿", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "hmm scary lookin", "嗯，模样着实吓人", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "rusty trapfrog", "锈蚀陷阱蛙", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased grizzly", "瘟疫灰熊", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The disease has taken it", "疫病已然将其吞噬", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased hydra dragon", "瘟疫九头龙", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Such a shame what happened to this creature", "这造物落得这般下场，实在可惜", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased magpie", "瘟疫喜鹊", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Even more wild lookin", "模样愈发凶悍", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased mantis", "瘟疫螳螂", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh my god, it is hideous", "天哪，这模样丑陋至极", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased mole", "瘟疫鼹鼠", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Was cute before the disease got to it", "未染疫病之时模样甚是可爱", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased moleman", "瘟疫鼹鼠人", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The disease has made this into even more of a monster", "疫病使其愈发形同怪物", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased mule", "瘟疫骡子", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "So that's what was really in there", "原来里面藏着的竟是这东西", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased ouroboros", "瘟疫衔尾蛇", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An endless cycle, even with the disease", "纵使身染疫病，依旧深陷无尽轮回", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased packrat", "瘟疫林鼠", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Still useful", "仍然有用", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased porcupine", "瘟疫豪猪", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It grew a tail...", "它长出了一条尾巴……", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased rattler", "瘟疫响尾蛇", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The disease has given this thing poison", "疫病赋予了此物剧毒", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased raven", "瘟疫渡鸦", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It looks like it has gone mad", "它看上去已然彻底发狂", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased ringworm", "瘟疫环形虫", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased skunk", "瘟疫臭鼬", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This damned disease has gotten to even the smallest of critters", "这该死的疫病连弱小生灵都未能幸免", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased smoke", "瘟疫烛烟", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "That thing scares me", "那东西吓到我了", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased urayuli", "瘟疫长毛野人", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It's gotten weaker", "它日渐衰弱", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased vulture", "瘟疫美洲鹫", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It's grown a second head", "它长出了第二个脑袋", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased water dragon", "瘟疫水龙", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "It's such a pitiful creature now", "如今这造物的模样实在可怜", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased weasel", "瘟疫伶鼬", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Not as worthless now I see", "如今看来倒也并非一无是处", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased wolf", "瘟疫狼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Even more rabid than it's kin", "比同类还要狂暴疯癫", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "diseased wolfcub", "瘟疫狼崽", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh god its eye!", "天啊，它的眼睛！", Language.ChineseSimplified);
+
+
+        }
+    }
+    public class LethalCabinMod
+    {
+        public static void RegisterTranslations()
+        {
+            Debug.Log("Registering Translations for LethalCabin Mod");
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lethal Cabin", "致命小屋", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Celestial Body: Inscryption.\n Population: Sparse.\n Conditions: Unknown.\n Fauna: [count] species.", "天体：邪恶冥刻\n族群数量：稀少\n环境状况：未知\n生物种类：[count]种", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hygrodere", "湿黏怪", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A eukaryotic organism that can multiply to millions with incredible speed.", "一种真核生物，能以惊人速度繁殖至数百万之多.", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Jester", "小丑怪", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You know as much as I do. I just call it the Jester.", "你我所知相差无几，我只唤它小丑怪罢了。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Kidnapper Fox", "掳掠狐", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A large mammal with a horizontal jaw and unique skull shape giving it a great biting strength, and a long, frog-like tongue which can reach even twice the length of its spindly body.", "一种大型哺乳动物，颌骨扁平、头骨构造特殊，咬合力极强，还长着青蛙般的长舌头，长度甚至能达到其瘦削身躯的两倍。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Landmine", "地雷", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Manticoil", "四翼鸦", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Poses little threat and has a generally passive temperament, although it's capable of transmitting deadly diseases.", "威胁性极低，性情向来温顺，却能传播致命疾病。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Masked", "假面怪", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mask Hornets", "假面胡蜂", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A mysterious creature that takes the form of an escape door in order to lure in potential prey.", "一种神秘造物，化作逃生门的模样引诱猎物上钩", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Nutcracker", "胡桃夹子", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "watches with one tireless eye, which only senses movement. It remembers the last creature it noticed, whether they are moving or not.", "仅凭一只不倦之眼紧盯四周，仅能感知动静。它会记住最后察觉到的目标，无论对方是否移动。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Old Bird", "老鸟", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "An autonomous, offensive weapon of war with a humanoid design. Equipped with a spotlight, rocket legs, an acoustic device and a missile launcher, they are truly a sight to behold.", "人形自主作战攻击性兵器，配备探照灯、喷射机械腿、声波装置与导弹发射器，模样极具威慑力。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Roaming Locusts", "游荡蝗群", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Unlike some species which are more prone to jump or fly, roaming locusts are almost never grounded and stay close together even when in smaller numbers.", "不同于部分擅长跳跃或飞行的物种，游荡蝗群几乎从不落地，即便数量稀少也依旧抱团行动。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Sentry Turret", "哨兵炮塔", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Snare Flea", "诱捕蚤", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A very large arthropod that possesses the ability to tighten itself around large prey to suffocate.", "一种巨型节肢动物，能够缠绕大型猎物使其窒息而亡。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Spore Lizard", "孢子蜥蜴", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The bulb on its tail secretes a chemical which attracts and accelerates the growth of a fungus, which it can then shake to release spores as a defense mechanism.", "它尾部的球状腺体能够分泌特殊物质，以此催生菌类快速生长，危急时便可抖动身躯散播孢子，借此抵御外敌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Thumper", "重击者", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Highly aggressive, carnivorous species of hunters, typically at the top of their food chain.", "极具攻击性的掠食性食肉物种，通常处于食物链顶端。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tulip Snake", "郁金香蜥", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Lifting heavy and large objects into the air has often been observed as a part of the tulip snake's mating display. They are capable of carrying rocks, plants and even other creatures at least twice their size in an effort to impress their potential mate.", "观测发现郁金香蜥求偶时，常会将沉重庞大的物体举至半空。它们能搬动石块、植物，甚至体型远超自身两倍的造物，以此博取异性青睐。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Vain Shroud", "虚荣蔽丛", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Baboon Hawk", "狒狒鹰", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "As lone scouts, baboon hawks are generally timid and won't attack unless provoked. In greater numbers they can become a great danger.", "狒狒鹰单独外出探查时生性怯懦，不受惊扰便不会发起攻击，一旦成群结队，便会变得极具威胁。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Barber", "剃头怪", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Also known as the Clay Surgeon, Barber is a pack-forming creature that follows a Master Barber's beat to move and attack unsuspecting prey", "又称泥陶医者，剃头怪是群居造物，会追随首领剃头怪的节奏行动，偷袭毫无防备的猎物。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bunker Spider", "地堡蜘蛛", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This enormous arachnid produces silk and lays it around its chosen nesting area, then waits for it to be tripped on.", "这种巨型蛛形造物会分泌蛛丝，在选定的巢穴周边布下蛛网，静待猎物不慎触网落入陷阱。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Butler", "管家", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Deformed like a deflated balloon, this humanoid smells of rotten meat and, if you listen close, you can hear a faint sound of flies buzzing inside...", "身形干瘪扭曲如同泄了气的气球，这人形造物浑身散发腐肉臭味，凑近细听，还能听见体内传出微弱的苍蝇嗡鸣之声……", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Circuit Bees", "电路蜂", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Also known as red bees, these social insects possess the aBEElity to create a field of electrostatic charge.", "又称红蜂，这类群居昆虫能够制造出一片静电力场。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Coil-Head", "弹簧头", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Known to combust into flames when being dissected or even deactivated, and carries dangerously high levels of radioactive particles.", "此物一经解剖或是停止运作便会自燃起火，体内还含有浓度极高的危险放射性微粒。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Company Cruiser", "公司巡航车", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Jeb", "杰布", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "We trust you'll be a great asset to the Company.", "我们相信你定会成为公司得力的一员。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Earth Leviathan", "大地利维坦", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Can burrow as far as 40 meters underground, judging by the incredible excavations it can leave behind.", "从其留下的巨大掘土痕迹来看，它最深可潜入地下四十米之处。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Eyeless Dog", "无眼猎犬", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A large mammal, hunting in very large packs. They are endurance hunters and attempt to make up for their lack of sight with their sense of hearing.", "这类大型哺乳类造物常成群结队外出狩猎，擅长持久追击，凭借敏锐听觉弥补视觉上的缺失。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Forest Keeper", "森林守护者", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Exhibits a curious behavior similar to that of a human child the age of 5 or 6. It will eat anything it find fascinating.", "其行为举止酷似五六岁孩童，但凡看上眼的东西都会往嘴里吞食。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ghost Girl", "女鬼", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Hoarding Bug", "囤积虫", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Given its name due to its territorial nature, they will seek out any object they can find and will protect these objects as a part of the nest.", "因其极强的领地习性得名，它们会搜罗一切可见物件，并将这些物品视作巢穴的一部分严加守护。", Language.ChineseSimplified);
+
 
 
         }

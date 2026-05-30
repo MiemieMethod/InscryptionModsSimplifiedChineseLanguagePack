@@ -57,6 +57,8 @@ Current Supportted Mods:
         - [HallownestExpansion](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/HallownestExpansion/) >= 1.0.1
         - [Talking Possum](https://thunderstore.io/c/inscryption/p/KellyBetty/Talking_Possum/) >= 1.3.0
         - [Sire MoDeers](https://thunderstore.io/c/inscryption/p/Sire/Sire_MoDeers/) >= 2.0.3
+        - [Apella Diseased Cards Mod](https://thunderstore.io/c/inscryption/p/ModPorts/Apella_Diseased_Cards_Mod/) >= 1.1.0
+        - [LethalCabin](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/LethalCabin/) >= 1.2.0
     - Custom Challenges:
         - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
@@ -137,7 +139,7 @@ Acknowledgement:
         - 格里魔拉模组冒险扩展 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
         - P03扩展包#3 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
         - 原版修改 [OriginalModified](https://thunderstore.io/c/inscryption/p/NONECARD/OriginalModified/) >= 1.4.9
-        - 凯茜的死亡神殿 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
+        - 凯茜的死亡神庙 [UndeadTempleINKCM](https://thunderstore.io/c/inscryption/p/NONECARD/UndeadTempleINKCM/) >= 1.3.7
         - 荒野传说 [Wilderness Legend](https://thunderstore.io/c/inscryption/p/WLD/Wilderness_Legend/) >= 1.4.5
         - DLC璀璨童话 [DLC Fairy Tale](https://thunderstore.io/c/inscryption/p/WLD/DLC_Fairy_Tale/) >= 1.1.5
         - 魔法扩展 [Magic Expansion](https://thunderstore.io/c/inscryption/p/WLD/Magic_Expansion/) >= 0.2.0
@@ -154,11 +156,13 @@ Acknowledgement:
         - 星际争霸卡包 [StarCraft Cardpack](https://thunderstore.io/c/inscryption/p/Khyloa/StarCraft_Cardpack/) >= 1.0.2
         - 来自黑暗的传说 [Legends From The Darkness](https://thunderstore.io/c/inscryption/p/Inscryption_LFTD/Legends_From_The_Darkness/) >= 1.6.1
         - Gareth模组 [GarethMod](https://thunderstore.io/c/inscryption/p/Gareth48/GarethMod/) >= 2.0.0
-        - Eri的卡牌扩展 [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
+        - Eri卡牌扩展 [Eri Card Expansion](https://thunderstore.io/c/inscryption/p/Eri/Eri_Card_Expansion/) >= 2.0.2
         - 蚂蚁生命 [HealthForAnts](https://thunderstore.io/c/inscryption/p/JulianMods/HealthForAnts/) >= 1.0.2
         - 空洞骑士扩展 [HallownestExpansion](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/HallownestExpansion/) >= 1.0.1
         - 会说话的负鼠 [Talking Possum](https://thunderstore.io/c/inscryption/p/KellyBetty/Talking_Possum/) >= 1.3.0
         - Sire更多的鹿 [Sire MoDeers](https://thunderstore.io/c/inscryption/p/Sire/Sire_MoDeers/) >= 2.0.3
+        - Apella瘟疫卡牌模组 [Apella Diseased Cards Mod](https://thunderstore.io/c/inscryption/p/ModPorts/Apella_Diseased_Cards_Mod/) >= 1.1.0
+        - 致命小屋 [LethalCabin](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/LethalCabin/) >= 1.2.0
     - 自定义挑战：
         - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
