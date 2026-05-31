@@ -25,7 +25,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.6.11";
+        private const string Version = "1.6.12";
 
         public static bool FontLoaded = false;
         public static bool LanguageLoaded = false;
@@ -37,7 +37,7 @@ namespace SimplifiedChineseLanguagePack
             Logger.LogInfo($"Loaded {Name}!");
             Localization.TryLoadLanguage(Language.ChineseSimplified);
             RegisterTranslations();
-            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), GUID);
+            new Harmony(GUID).PatchAll(typeof(Patches));
         }
         private void Start()
         {
@@ -226,7 +226,7 @@ namespace SimplifiedChineseLanguagePack
                 {
                     Translate(GUID, null, value.DisplayedNameEnglish + " " + score.ToString() + ".0", value.DisplayedNameLocalized + " " + score.ToString() + ".0", Language.ChineseSimplified);
                 }
-                string[] array = value.DisplayedNameEnglish.Split(new char[] { ' ', '-' });
+                //string[] array = value.DisplayedNameEnglish.Split(new char[] { ' ', '-' });
                 //Debug.Log(((array.Length > 1) ? (array[0].ToLowerInvariant().Contains("gem") ? array[1] : array[0]) : (value.DisplayedNameEnglish.Contains("bot") ? value.DisplayedNameEnglish.Replace("bot", "") : value.DisplayedNameEnglish)) + ", " + value.DisplayedNameEnglish + ", " + value.DisplayedNameLocalized);
             }
 
@@ -6505,7 +6505,7 @@ namespace SimplifiedChineseLanguagePack
         }
         public static void RegisterCard(string en, string zh)
         {
-            Cards.Add(en, zh);
+            Cards[en] = zh;
         }
         public static void RegisterCardPart(string en, string zh)
         {
@@ -7204,7 +7204,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Aimless Assault", "无的放矢", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Earn 15 Robobucks in a single battle", "单场战斗中获得15机器币", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rebuild From Scrap", "废料重组", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Have a card in your deck that is gemified, skeleclocked, transformable, and can complete a circuit", "牌组中拥有同时具备宝石化、外骨骼超频、可变形且能完成回路的卡牌", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Have a card in your deck that is gemified, skeleclocked, transformable, and can complete a circuit", "牌组中拥有同时具备宝石化、外骨骼超频、可易形且能完成回路的卡牌", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Buy Your Buddy", "买下伙伴", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Give a card with the maximum amount of SP to the Bot Builder", "将属性点达到上限的卡牌交给机器人制作器", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Me Smash", "暴力输出", Language.ChineseSimplified);
@@ -7520,9 +7520,9 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[c:bG]BEHOLD![c:]", "[c:bG]看好了！[c:]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THERE ARE NOW [c:bR]SEVEN LANES!![c:]", "现在有[c:bR]七条路线！！[c:]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Your tiny brain cannot comprehend gameplay of this magnitude.", "你那小脑瓜子根本理解不了这种级别的游戏玩法。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This is [c:bR]Transformation Machine 2.0[c:].", "这就是[c:bR]变形机器2.0[c:]。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This is [c:bR]Transformation Machine 2.0[c:].", "这就是[c:bR]易形机器2.0[c:]。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Gone are those foul beasts from before.", "那些肮脏的野兽已经不复存在。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Here, you will choose one of your bots to transform into another.", "在这里，你可以选择将任意一个机器人变形为另一个。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Here, you will choose one of your bots to transform into another.", "在这里，你可以选择将任意一个机器人易形为另一个。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "That really looked bigger before you used it...", "用之前看着还挺大的……", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Please! I have to get out of here!", "求你了！我必须离开这鬼地方！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I have no idea how he managed to escape the sewers.", "真不知道他是怎么从下水道逃出来的。", Language.ChineseSimplified);
@@ -7584,7 +7584,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I knew you were untrustworthy!", "我就知道你这人不靠谱！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ahoy there, fellow decksmith!", "嘿，牌友！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I, like yourself, am in pursuit of the [c:G]perfectly upgraded card[c:]!", "我和你一样，也在追寻[c:G]完美升级卡牌[c:]！", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A card that is simultaneously [c:r]overclocked[c:], [c:dlGr]transformable[c:], and [c:O]g[c:][c:B]e[c:][c:G]m[c:]ified.", "一张同时具备[c:r]超频[c:]、[c:dlGr]可变形[c:]和[c:O]宝[c:][c:B]石[c:][c:G]化[c:]特性的卡牌。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "A card that is simultaneously [c:r]overclocked[c:], [c:dlGr]transformable[c:], and [c:O]g[c:][c:B]e[c:][c:G]m[c:]ified.", "一张同时具备[c:r]超频[c:]、[c:dlGr]可易形[c:]和[c:O]宝[c:][c:B]石[c:][c:G]化[c:]特性的卡牌。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "I would very much love to see such a card.", "我真的很想见识下这样的卡牌。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ahoy there, fellow decksmith!", "哟，牌友！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Oh my - have you managed to [c:G]perfectly upgrade[c:] a card?", "天呐——你居然[c:G]完美升级[c:]了一张卡？", Language.ChineseSimplified);
@@ -7678,8 +7678,8 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "We require components from you.", "我们需要你提供些零件。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "We require [c:blGr]organic material[c:] for our new research.", "我们需要些[c:blGr]有机材料[c:]来进行新研究。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You are carrying the perfect specimen.", "你身上带着完美的样本。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Are you really going to give me to those lunatics?", "你真要把我交给那群疯子？", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "My pain is already unbearable!", "我已经痛不欲生了！", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Are you really going to give me to those lunatics?", "你真要把我交给那对疯子？", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "My pain is already unbearable!", "我都已经痛不欲生了！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If you should find some, bring it here to us.", "要是找到了就带过来给我们。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "We require an [c:G]unmodified robot brain[c:].", "我们需要一个[c:G]未经改造的机器人核心[c:]。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The brain of that [c:G]bounty hunter[c:] will suffice.", "那个[c:G]赏金猎人[c:]的核心就够用了。", Language.ChineseSimplified);
@@ -8633,19 +8633,6 @@ namespace SimplifiedChineseLanguagePack
             P03InKayceesModMod.RegisterCardPart("Practice", "陪练");
             P03InKayceesModMod.RegisterCardPart("Stim", "强化");
 
-            foreach (var value1 in P03InKayceesModMod.CardParts)
-            {
-                string name;
-                string nameLoc;
-                foreach (var value2 in P03InKayceesModMod.CardParts)
-                {
-                    name = value1.Key + "-" + value2.Key;
-                    nameLoc = value1.Value + value2.Value;
-                    SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, name, nameLoc, Language.ChineseSimplified);
-                    P03InKayceesModMod.RegisterCard(name, nameLoc);
-                }
-            }
-
             foreach (var value in P03InKayceesModMod.Cards)
             {
                 string name;
@@ -8668,7 +8655,7 @@ namespace SimplifiedChineseLanguagePack
                 {
                     SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, value.Key + " " + score.ToString() + ".0", value.Value + " " + score.ToString() + ".0", Language.ChineseSimplified);
                 }
-                string[] array = value.Key.Split(new char[] { ' ', '-' });
+                //string[] array = value.Key.Split(new char[] { ' ', '-' });
                 //Debug.Log(((array.Length > 1) ? (array[0].ToLowerInvariant().Contains("gem") ? array[1] : array[0]) : (value.Key.Contains("bot") ? value.Key.Replace("bot", "") : value.Key)) + ", " + value.Key + ", " + value.Value);
             }
 

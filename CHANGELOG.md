@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.12
+
+Update texts.
+
 ## 1.6.11
 
 Add supports for ApellaDiseasedCardsMod-1.1.0, LethalCabin-1.2.0.
