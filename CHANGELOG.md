@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.0
+
+Add supports for RemoxedBosses-1.0.1, Terrariascryption-0.0.2, BittysRegions-1.1.0.
+
 ## 1.6.12
 
 Update texts.

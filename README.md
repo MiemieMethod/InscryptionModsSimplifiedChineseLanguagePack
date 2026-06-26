@@ -31,6 +31,7 @@ Current Supportted Mods:
     - Custom Cards:
         - [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
         - [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
+        - [Terrariascryption](https://thunderstore.io/c/inscryption/p/Cevin2006/Terrariascryption/) >= 0.0.2
         - [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
         - [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
         - [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
@@ -73,6 +74,9 @@ Current Supportted Mods:
         - [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
         - [The Beast Boss Battle](https://thunderstore.io/c/inscryption/p/Team_Isaacryption/The_Beast_Boss_Battle/) >= 1.0.2
         - [FiveNightsAtInscryption](https://thunderstore.io/c/inscryption/p/Cevin2006/FiveNightsAtInscryption/) >= 0.1.0
+    - Custom Regions or Bosses:
+        - [Remoxed Bosses](https://thunderstore.io/c/inscryption/p/keks307/Remoxed_Bosses/) >= 1.0.1
+        - [BittysRegions](https://thunderstore.io/c/inscryption/p/bitty45/BittysRegions/) >= 1.1.0
     - Custom Costs:
         - [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
     - Custom Items:
@@ -135,6 +139,7 @@ Acknowledgement:
     - 自定义卡牌：
         - WhistleWind脑叶公司模组 [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
         - 植物大战僵尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
+        - 泰拉瑞亚冥刻 [Terrariascryption](https://thunderstore.io/c/inscryption/p/Cevin2006/Terrariascryption/) >= 0.0.2
         - 格里魔拉模组扩展 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
         - 格里魔拉模组冒险扩展 [Grimora Mod Gambling Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Gambling_Expansion/) >= 1.0.1
         - P03扩展包#3 [P03 Expansion Pack 3](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Expansion_Pack_3/) >= 1.0.0
@@ -177,6 +182,9 @@ Acknowledgement:
         - 松鼠炸弹模组 [Squirrel Bomb Mod](https://thunderstore.io/c/inscryption/p/SpecialAPI/Squirrel_Bomb_Mod/) >= 1.1.1
         - 野兽头目战 [The Beast Boss Battle](https://thunderstore.io/c/inscryption/p/Team_Isaacryption/The_Beast_Boss_Battle/) >= 1.0.2
         - 邪恶冥刻的的五夜后宫 [FiveNightsAtInscryption](https://thunderstore.io/c/inscryption/p/Cevin2006/FiveNightsAtInscryption/) >= 0.1.0
+    - 自定义区域或头目：
+        - 重制头目 [Remoxed Bosses](https://thunderstore.io/c/inscryption/p/keks307/Remoxed_Bosses/) >= 1.0.1
+        - Bitty的区域 [BittysRegions](https://thunderstore.io/c/inscryption/p/bitty45/BittysRegions/) >= 1.1.0
     - 自定义成本：
         - Zepht阳光 [ZephtSun](https://thunderstore.io/c/inscryption/p/Zepht/ZephtSun/) >= 1.0.0
     - 自定义道具：
