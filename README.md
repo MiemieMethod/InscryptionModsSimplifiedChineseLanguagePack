@@ -30,6 +30,7 @@ Current Supportted Mods:
 - Gameplay Mods:
     - Custom Cards:
         - [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
+        - [Lobotomy Nostalgia Mod](https://thunderstore.io/c/inscryption/p/Nostalgist/Lobotomy_Nostalgia_Mod/) >= 2.5.2
         - [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
         - [Terrariascryption](https://thunderstore.io/c/inscryption/p/Cevin2006/Terrariascryption/) >= 0.0.2
         - [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
@@ -60,6 +61,8 @@ Current Supportted Mods:
         - [Sire MoDeers](https://thunderstore.io/c/inscryption/p/Sire/Sire_MoDeers/) >= 2.0.3
         - [Apella Diseased Cards Mod](https://thunderstore.io/c/inscryption/p/ModPorts/Apella_Diseased_Cards_Mod/) >= 1.1.0
         - [LethalCabin](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/LethalCabin/) >= 1.2.0
+        - [Ants Plus](https://thunderstore.io/c/inscryption/p/ModPorts/Ants_Plus/) >= 2.0.1
+        - [Nevernameds Bestiary](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Bestiary/) >= 1.7.0
     - Custom Challenges:
         - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
@@ -138,6 +141,8 @@ Acknowledgement:
 - 玩法模组：
     - 自定义卡牌：
         - WhistleWind脑叶公司模组 [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
+        - 脑叶公司Nostalgia模组 [Lobotomy Nostalgia Mod](https://thunderstore.io/c/inscryption/p/Nostalgist/Lobotomy_Nostalgia_Mod/) >= 2.5.2
+        - [Lobotomy Nostalgia Mod](https://thunderstore.io/c/inscryption/p/Nostalgist/Lobotomy_Nostalgia_Mod/) >= 2.5.2
         - 植物大战僵尸 [Plants vs Zombies](https://thunderstore.io/c/inscryption/p/Zepht/Plants_vs_Zombies/) >= 0.7.0
         - 泰拉瑞亚冥刻 [Terrariascryption](https://thunderstore.io/c/inscryption/p/Cevin2006/Terrariascryption/) >= 0.0.2
         - 格里魔拉模组扩展 [Grimora Mod Expansion](https://thunderstore.io/c/inscryption/p/Arackulele/Grimora_Mod_Expansion/) >= 1.0.5
@@ -168,6 +173,8 @@ Acknowledgement:
         - Sire更多的鹿 [Sire MoDeers](https://thunderstore.io/c/inscryption/p/Sire/Sire_MoDeers/) >= 2.0.3
         - Apella瘟疫卡牌模组 [Apella Diseased Cards Mod](https://thunderstore.io/c/inscryption/p/ModPorts/Apella_Diseased_Cards_Mod/) >= 1.1.0
         - 致命小屋 [LethalCabin](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/LethalCabin/) >= 1.2.0
+        - 更多蚂蚁 [Ants Plus](https://thunderstore.io/c/inscryption/p/ModPorts/Ants_Plus/) >= 2.0.1
+        - Nevernamed的野兽寓言集 [Nevernameds Bestiary](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Bestiary/) >= 1.7.0
     - 自定义挑战：
         - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
