@@ -63,6 +63,7 @@ Current Supportted Mods:
         - [LethalCabin](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/LethalCabin/) >= 1.2.0
         - [Ants Plus](https://thunderstore.io/c/inscryption/p/ModPorts/Ants_Plus/) >= 2.0.1
         - [Nevernameds Bestiary](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Bestiary/) >= 1.7.0
+        - [NeedMoreWater](https://thunderstore.io/c/inscryption/p/Rivera/NeedMoreWater/) >= 1.0.12
     - Custom Challenges:
         - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
@@ -175,6 +176,7 @@ Acknowledgement:
         - 致命小屋 [LethalCabin](https://thunderstore.io/c/inscryption/p/BlindTheBoundDemon/LethalCabin/) >= 1.2.0
         - 更多蚂蚁 [Ants Plus](https://thunderstore.io/c/inscryption/p/ModPorts/Ants_Plus/) >= 2.0.1
         - Nevernamed的野兽寓言集 [Nevernameds Bestiary](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Bestiary/) >= 1.7.0
+        - 需要更多水 [NeedMoreWater](https://thunderstore.io/c/inscryption/p/Rivera/NeedMoreWater/) >= 1.0.12
     - 自定义挑战：
         - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0

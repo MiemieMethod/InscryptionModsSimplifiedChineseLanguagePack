@@ -10,3 +10,4 @@ packages/*
 *.csproj.user
 
 .knowledge/zi/
+.intermediate/

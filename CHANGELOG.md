@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.2
+
+Add supports for NeedMoreWater-1.0.12.
+
 ## 1.7.1
 
 Add supports for AntsPlus-2.0.1, LobotomyNostalgiaMod-2.5.2, NevernamedsBestiary-1.7.0.
