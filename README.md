@@ -27,6 +27,7 @@ Current Supportted Mods:
     - [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
     - [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
     - [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) >= 2.7.0
+    - [SauriaSigils](https://thunderstore.io/c/inscryption/p/Gyarouu/SauriaSigils/) >= 1.0.11
 - Gameplay Mods:
     - Custom Cards:
         - [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
@@ -64,6 +65,7 @@ Current Supportted Mods:
         - [Ants Plus](https://thunderstore.io/c/inscryption/p/ModPorts/Ants_Plus/) >= 2.0.1
         - [Nevernameds Bestiary](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Bestiary/) >= 1.7.0
         - [NeedMoreWater](https://thunderstore.io/c/inscryption/p/Rivera/NeedMoreWater/) >= 1.0.12
+        - [SauriaCards](https://thunderstore.io/c/inscryption/p/Gyarouu/SauriaCards/) >= 1.0.92
     - Custom Challenges:
         - [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0
@@ -139,6 +141,7 @@ Acknowledgement:
     - WhistleWind异常印记 [WhistleWind Abnormal Sigils](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Abnormal_Sigils/) >= 1.1.2
     - P03自定义印记 [P03 Sigilarium](https://thunderstore.io/c/inscryption/p/Infiniscryption/P03_Sigilarium/) >= 1.1.16
     - 海量印记 [Too Many Sigils](https://thunderstore.io/c/inscryption/p/Too_Many_Sigils_Team/Too_Many_Sigils/) >= 2.7.0
+    - 龙族印记 [Sauria Sigils](https://thunderstore.io/c/inscryption/p/Gyarouu/SauriaSigils/) >= 1.0.11
 - 玩法模组：
     - 自定义卡牌：
         - WhistleWind脑叶公司模组 [WhistleWind Lobotomy Mod](https://thunderstore.io/c/inscryption/p/WhistleWind/WhistleWind_Lobotomy_Mod/) >= 2.1.1
@@ -177,6 +180,7 @@ Acknowledgement:
         - 更多蚂蚁 [Ants Plus](https://thunderstore.io/c/inscryption/p/ModPorts/Ants_Plus/) >= 2.0.1
         - Nevernamed的野兽寓言集 [Nevernameds Bestiary](https://thunderstore.io/c/inscryption/p/Nevernamed/Nevernameds_Bestiary/) >= 1.7.0
         - 需要更多水 [NeedMoreWater](https://thunderstore.io/c/inscryption/p/Rivera/NeedMoreWater/) >= 1.0.12
+        - 龙族卡牌 [Sauria Cards](https://thunderstore.io/c/inscryption/p/Gyarouu/SauriaCards/) >= 1.0.92
     - 自定义挑战：
         - Bitty的挑战 [BittysChallenges](https://thunderstore.io/c/inscryption/p/bitty45/BittysChallenges/) >= 5.3.0
         - 只有毛皮 [PeltsOnly](https://thunderstore.io/c/inscryption/p/keks307/PeltsOnly/) >= 1.0.0

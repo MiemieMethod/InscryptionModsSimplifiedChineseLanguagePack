@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.3
+
+Add supports for SauriaSigils-1.0.11, SauriaCards-1.0.92.
+
 ## 1.7.2
 
 Add supports for NeedMoreWater-1.0.12.
