@@ -11,3 +11,5 @@ packages/*
 
 .knowledge/zi/
 .intermediate/
+Localization/
+tools/localization/

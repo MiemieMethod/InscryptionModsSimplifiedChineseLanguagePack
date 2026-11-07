@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.4
+
+Fix bugs, and AI-translated all languages based on the established translation conventions and selection standards for Simplified Chinese translations.
+
 ## 1.7.3
 
 Add supports for SauriaSigils-1.0.11, SauriaCards-1.0.92.

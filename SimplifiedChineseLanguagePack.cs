@@ -25,9 +25,10 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.7.3";
+        private const string Version = "1.7.4";
 
         public static bool FontLoaded = false;
+        private static float nextFontRetryTime;
         public static bool LanguageLoaded = false;
         public static Dictionary<string, Localization.Translation> Translations = new();
         public static AssetBundle FontBundle;
@@ -35,13 +36,31 @@ namespace SimplifiedChineseLanguagePack
         private void Awake()
         {
             Logger.LogInfo($"Loaded {Name}!");
-            Localization.TryLoadLanguage(Language.ChineseSimplified);
+            MultilingualTranslationRuntime.Initialize();
             RegisterTranslations();
+            MultilingualTranslationRuntime.RegisterLanguage(Language.ChineseSimplified, null, PostRegisterTranslations);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.ChineseTraditional, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.RegisterTranslations, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.PostRegisterTranslations, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Japanese, Languages.Japanese.JapaneseLanguagePack.RegisterTranslations, Languages.Japanese.JapaneseLanguagePack.PostRegisterTranslations, Languages.Japanese.JapaneseLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Korean, Languages.Korean.KoreanLanguagePack.RegisterTranslations, Languages.Korean.KoreanLanguagePack.PostRegisterTranslations, Languages.Korean.KoreanLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.BrazilianPortuguese, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.RegisterTranslations, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.PostRegisterTranslations, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Russian, Languages.Russian.RussianLanguagePack.RegisterTranslations, Languages.Russian.RussianLanguagePack.PostRegisterTranslations, Languages.Russian.RussianLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Turkish, Languages.Turkish.TurkishLanguagePack.RegisterTranslations, Languages.Turkish.TurkishLanguagePack.PostRegisterTranslations, Languages.Turkish.TurkishLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.French, Languages.French.FrenchLanguagePack.RegisterTranslations, Languages.French.FrenchLanguagePack.PostRegisterTranslations, Languages.French.FrenchLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.German, Languages.German.GermanLanguagePack.RegisterTranslations, Languages.German.GermanLanguagePack.PostRegisterTranslations, Languages.German.GermanLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Italian, Languages.Italian.ItalianLanguagePack.RegisterTranslations, Languages.Italian.ItalianLanguagePack.PostRegisterTranslations, Languages.Italian.ItalianLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Spanish, Languages.Spanish.SpanishLanguagePack.RegisterTranslations, Languages.Spanish.SpanishLanguagePack.PostRegisterTranslations, Languages.Spanish.SpanishLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.EnsureSelectedLanguage();
             new Harmony(GUID).PatchAll(typeof(Patches));
+            new Harmony(GUID + ".mod_text").PatchAll(typeof(ModLocalizationPatches));
+            new Harmony(GUID + ".multilingual_fonts").PatchAll(typeof(MultilingualFontFallbacks));
+            new Harmony(GUID + ".legacy_font_sources").PatchAll(typeof(LegacyFontLocalization));
+            new Harmony(GUID + ".ascension_menu").PatchAll(typeof(AscensionMenuLocalization));
         }
         private void Start()
         {
-            PostRegisterTranslations();
+            MultilingualTranslationRuntime.MarkReady();
+            PackManagementLocalization.Initialize();
+            AchievementLocalization.Initialize();
         }
         [HarmonyPatch]
         internal static class Patches
@@ -50,47 +69,24 @@ namespace SimplifiedChineseLanguagePack
             [HarmonyPostfix]
             private static void FontReplacementData_Initialize()
             {
-                if (!FontLoaded)
+                if (!FontLoaded && Time.realtimeSinceStartup >= nextFontRetryTime)
                 {
-                    FixSimplifiedChineseFonts();
-                    FontLoaded = true;
+                    nextFontRetryTime = Time.realtimeSinceStartup + 5f;
+                    FontLoaded = FixSimplifiedChineseFonts();
                 }
             }
         }
 
         public static void Translate(string pluginGUID, string id, string englishString, string translatedString, Language language)
         {
-            Localization.Translation translation;
-            string formattedEnglishString = Localization.FormatString(englishString);
-            if (formattedEnglishString != null && Translations.TryGetValue(formattedEnglishString, out translation)) { }
-            else
-            {
-                translation = new Localization.Translation
-                {
-                    id = id,
-                    englishString = englishString,
-                    englishStringFormatted = formattedEnglishString,
-                    values = new Dictionary<Language, string>(),
-                    femaleGenderValues = new Dictionary<Language, string>()
-                };
-                Translations[formattedEnglishString] = translation;
-                Localization.Translations.Add(translation);
-            }
-            if (translation.values.ContainsKey(language))
-            {
-                translation.values[language] = translatedString;
-            }
-            else
-            {
-                translation.values.Add(language, translatedString);
-            }
+            MultilingualTranslationRuntime.Register(pluginGUID, id, englishString, translatedString, language);
+        }
+        public static string Localize(string text)
+        {
+            return MultilingualTranslationRuntime.TranslateToLanguage(text, Language.ChineseSimplified);
         }
         private static void RegisterTranslations()
         {
-            foreach (var t in Localization.Translations)
-            {
-                Translations[t.englishStringFormatted] = t;
-            }
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
             APIMod.RegisterTranslations();
             AchievementsMod.RegisterTranslations();
@@ -166,24 +162,99 @@ namespace SimplifiedChineseLanguagePack
             Debug.Log($"RegisterTranslations 执行时间: {stopwatch.ElapsedMilliseconds} ms");
             LanguageLoaded = true;
         }
-        private static void PostRegisterTranslations()
+        private static void PostRegisterTranslations(IEnumerable<CardInfo> source = null)
         {
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
-            Debug.Log("Post Register Translations");
-            var field1 = typeof(CardManager).GetField("NewCards", BindingFlags.NonPublic | BindingFlags.Static);
-            var newCards = field1.GetValue(null) as ObservableCollection<CardInfo>;
-            var cards = CachePostRegisterCardData(newCards);
+            if (source == null) Debug.Log("Post Register Translations");
+            var cards = CachePostRegisterCardData(source ?? CardManager.AllCardsCopy);
 
             // BittysChallenges
-            Debug.Log("Post Register Translations for BittysChallenges");
+            if (source == null) Debug.Log("Post Register Translations for BittysChallenges");
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
                 Translate(GUID, null, "Weak " + value.DisplayedNameEnglish, "虚弱" + value.DisplayedNameLocalized, Language.ChineseSimplified);
             }
 
+            // Mod callers use different card-name getters at different stages.
+            Dictionary<GemType, string> stageGemTypesEn = new Dictionary<GemType, string>
+            {
+                { GemType.Orange, "橙色" },
+                { GemType.Blue, "蓝色" },
+                { GemType.Green, "绿色" },
+            };
+            Dictionary<GemType, string> stageGemTypes = new Dictionary<GemType, string>
+            {
+                { GemType.Orange, "橙色" },
+                { GemType.Blue, "蓝色" },
+                { GemType.Green, "绿色" },
+            };
+
+            foreach (var value in cards)
+            {
+                if (!value.HasDisplayedNameEnglish) continue;
+                Translate(GUID, null, "TORN FROM ITS ETERNAL RESPITE WITH A RELUCTANT GROAN, THE " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " SHAMBLES BACK TO ITS RIGHTFUL PLACE AMONG YOUR HORDE.", "伴随着不情愿的呻吟，" + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + "被从永恒安眠中拽出，蹒跚回归亡灵大军的行列。", Language.ChineseSimplified);
+                Translate(GUID, null, "THE BITTER CHILL MIGHT HURT, BUT IT WON'T SLOW DOWN " + value.DisplayedNameLocalized + "!", "刺骨严寒或许伤人，但休想拖慢" + value.DisplayedNameLocalized + "！", Language.ChineseSimplified);
+                Translate(GUID, null, "YOU EVER SO CAREFULLY PULL THE " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " AWAY FROM THE ELECTRICITY AND LEAVE.", "你小心翼翼地将" + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + "从电流中抽离，转身离去。", Language.ChineseSimplified);
+                Translate(GUID, null, "Oh dear, you've made " + ("[c:R]" + value.DisplayedNameEnglish + "[c:]") + " quite angry.", "哎呀，你把" + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + "彻底惹恼了。", Language.ChineseSimplified);
+                Translate(GUID, null, ("[c:B]" + value.DisplayedName + "[c:]") + " MIGHT HAVE SOME DIFFICULTY SUBMERGING IF IT'S FROZEN SOLID!", ("[c:B]" + value.DisplayedNameLocalized + "[c:]") + "冻成冰块了可没法潜下去！", Language.ChineseSimplified);
+                Translate(GUID, null, ("[c:B]" + value.DisplayedName + "[c:]") + " CAN'T POSSESS ANYTHING IF IT CAN'T MOVE!", ("[c:B]" + value.DisplayedNameLocalized + "[c:]") + "动都动不了还怎么附身！", Language.ChineseSimplified);
+                Translate(GUID, null, ("[c:B]" + value.DisplayedName + "[c:]") + " WILL HAVE A HARD TIME HOOKING ANYTHING IF IT'S FROZEN SOLID!", ("[c:B]" + value.DisplayedNameLocalized + "[c:]") + "冻得梆硬还怎么甩钩子！", Language.ChineseSimplified);
+                Translate(GUID, null, ("[c:B]" + value.DisplayedName + "[c:]") + " FINALLY! TO GET RID OF THAT FOUL SMELL!", ("[c:B]" + value.DisplayedNameLocalized + "[c:]") + "总算！能摆脱那股恶臭了！", Language.ChineseSimplified);
+                Translate(GUID, null, "YARRRR, I WILL ENJOY THE KABOOM OF " + ("[c:bR]" + value.DisplayedName + "[c:]"), "呀哈哈哈，我会好好享受" + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + "的爆炸艺术！", Language.ChineseSimplified);
+                Translate(GUID, null, "Oh... it will be rather difficult to haunt " + ("[c:lGr]" + value.DisplayedNameEnglish + "[c:]") + " with their abilities at max capacity.", "噢……要让" + ("[c:lGr]" + value.DisplayedNameLocalized + "[c:]") + "在能力开满的状态下被附体可不太容易。", Language.ChineseSimplified);
+                Translate(GUID, null, "OH DEAR! LOOKS LIKE YOU HAVE HOOKED SOMETHING OUT OF " + value.DisplayedNameLocalized + "!", "天呐！看来你从" + value.DisplayedNameLocalized + "里钓出了什么东西！", Language.ChineseSimplified);
+                Translate(GUID, null, "The Bonelord has been generous.\n[c:bR]" + value.DisplayedNameLocalized + "[c:] bone cost has decreased!", "骨王慷慨解囊。\n[c:bR]" + value.DisplayedNameLocalized + "[c:]的骨头消耗降低了！", Language.ChineseSimplified);
+                Translate(GUID, null, "The Bonelord has been generous.\n[c:bR]" + value.DisplayedNameLocalized + "[c:] base health has increased!", "骨王慷慨解囊。\n[c:bR]" + value.DisplayedNameLocalized + "[c:]的基础生命值提升了！", Language.ChineseSimplified);
+                Translate(GUID, null, "Oh dear, it looks like [c:bR]" + value.DisplayedNameLocalized + "[c:] bone cost has decreased!", "哎呀，看来[c:bR]" + value.DisplayedNameLocalized + "[c:]的骨头消耗降低了！", Language.ChineseSimplified);
+                Translate(GUID, null, "The Bonelord has been generous.\n[c:bR]" + value.DisplayedNameLocalized + "[c:] bone cost has decreased greatly!", "骨王慷慨解囊。\n[c:bR]" + value.DisplayedNameLocalized + "[c:]的骨头消耗大幅降低了！", Language.ChineseSimplified);
+                Translate(GUID, null, "The Bonelord has been very generous.\n[c:bR]" + value.DisplayedNameLocalized + "[c:] base health has increased greatly!", "骨王极为慷慨。\n[c:bR]" + value.DisplayedNameLocalized + "[c:]的基础生命值大幅提升了！", Language.ChineseSimplified);
+                Translate(GUID, null, "The Bonelord has been very generous.\n[c:bR]" + value.DisplayedNameLocalized + "[c:] base attack has increased!", "骨王极为慷慨。\n[c:bR]" + value.DisplayedNameLocalized + "[c:]的基础攻击力提升了！", Language.ChineseSimplified);
+                Translate(GUID, null, "The pact takes its effect on your " + value.DisplayedName + "..", "契约正在对你的" + value.DisplayedNameLocalized + "生效……", Language.ChineseSimplified);
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " sits on the enchanted grounds...\nYou could either leave it there, to enchant it..", "你的" + value.DisplayedNameLocalized + "正位于附魔之地……\n你可以选择让它留在那里接受附魔……", Language.ChineseSimplified);
+                Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened with Glass Cannon!", "你的" + value.DisplayedNameLocalized + "被施加了玻璃大炮的诅咒！", Language.ChineseSimplified);
+                Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened with Tank!", "你的" + value.DisplayedNameLocalized + "被施加了坦克的诅咒！", Language.ChineseSimplified);
+                Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been blessed!", "你的" + value.DisplayedNameLocalized + "获得了祝福！", Language.ChineseSimplified);
+                Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened!", "你的" + value.DisplayedNameLocalized + "被施加了诅咒！", Language.ChineseSimplified);
+                Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " is now free.. But more unstable..", "你的" + value.DisplayedNameLocalized + "现已成本全免……但变得更加不稳定……", Language.ChineseSimplified);
+                if (source != null)
+                foreach (var ability in AbilitiesUtil.AllData)
+                {
+                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
+                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with " + ability.rulebookName + "!", "你的" + value.DisplayedNameLocalized + "获得了" + Localize(ability.rulebookName) + "祝福！", Language.ChineseSimplified);
+                }
+                if (source != null)
+                foreach (var ability in AbilitiesUtil.AllData)
+                {
+                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
+                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with " + ability.rulebookName + "!", "你的" + value.DisplayedNameLocalized + "被施加了" + Localize(ability.rulebookName) + "诅咒！", Language.ChineseSimplified);
+                }
+                if (source != null)
+                foreach (var ability in AbilitiesUtil.AllData)
+                {
+                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
+                    Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its " + ability.rulebookName + "...", "你的" + value.DisplayedNameLocalized + "现已摆脱了" + Localize(ability.rulebookName) + "的束缚……", Language.ChineseSimplified);
+                }
+                Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " wields no mana.", "你的" + value.DisplayedNameLocalized + "未持有魔力。", Language.ChineseSimplified);
+                Translate(GUID, null, "The " + value.DisplayedNameLocalized + " has no mana.", value.DisplayedNameLocalized + "未持有魔力。", Language.ChineseSimplified);
+                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "你瞥见一张" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseSimplified);
+                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, value.DisplayedNameLocalized + "从肖像画中浮现。" + Localize(value.Description), Language.ChineseSimplified);
+                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "你凝视着一张" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseSimplified);
+                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "你瞥见一张" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseSimplified);
+                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, value.DisplayedNameLocalized + "从肖像画中浮现。" + Localize(value.Description), Language.ChineseSimplified);
+                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "你凝视着一张" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseSimplified);
+                foreach (var gemType in stageGemTypes.Keys)
+                {
+                    Translate(GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypesEn[gemType] + "</color> gems to play your " + value.DisplayedNameLocalized + ".", "需要两颗" + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypes[gemType] + "</color>玛珂才能使用你的" + value.DisplayedNameLocalized, Language.ChineseSimplified);
+                }
+                foreach (var gemType in stageGemTypes.Keys)
+                {
+                    Translate(GUID, null, "You don't have enough " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypesEn[gemType] + "</color> gems on the board to play that " + value.DisplayedNameLocalized + ".", "牌桌上的" + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypes[gemType] + "</color>玛珂数量不足，无法使用这张" + value.DisplayedNameLocalized, Language.ChineseSimplified);
+                }
+            }
+
             // NevernamedsSigilarium
-            Debug.Log("Post Register Translations for NevernamedsSigilarium");
+            if (source == null) Debug.Log("Post Register Translations for NevernamedsSigilarium");
             Dictionary<GemType, string> gemTypesEn = new Dictionary<GemType, string>
             {
                 { GemType.Orange, "橙色" },
@@ -211,7 +282,7 @@ namespace SimplifiedChineseLanguagePack
             }
 
             // P03InKCM
-            Debug.Log("Post Register Translations for P03InKCM");
+            if (source == null) Debug.Log("Post Register Translations for P03InKCM");
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
@@ -240,16 +311,18 @@ namespace SimplifiedChineseLanguagePack
             }
 
             // IGCC
-            Debug.Log("Post Register Translations for InGame_Card_Creator");
+            if (source == null) Debug.Log("Post Register Translations for InGame_Card_Creator");
+            if (source == null)
             foreach (var value in AbilitiesUtil.AllData)
             {
-                if (value.SafeIsUnityNull() || value.rulebookName != null)
+                if (value.SafeIsUnityNull()) continue;
+                if (value.rulebookName != null)
                 {
-                    Translate(GUID, null, "sigil of " + value.rulebookName, Localization.Translate(value.rulebookName) + "印记", Language.ChineseSimplified);
+                    Translate(GUID, null, "sigil of " + value.rulebookName, Localize(value.rulebookName) + "印记", Language.ChineseSimplified);
                 }
                 else
                 {
-                    Translate(GUID, null, "sigil of " + value.name, Localization.Translate(value.name) + "印记", Language.ChineseSimplified);
+                    Translate(GUID, null, "sigil of " + value.name, Localize(value.name) + "印记", Language.ChineseSimplified);
                 }
             }
             foreach (var value in cards)
@@ -265,13 +338,14 @@ namespace SimplifiedChineseLanguagePack
                 Translate(GUID, null, "An evolution to [c:bR]" + value.DisplayedNameEnglish + "[c:].", "来自[c:bR]" + value.DisplayedNameLocalized + "[c:]的进化目标。", Language.ChineseSimplified);
                 Translate(GUID, null, "[c:bR]" + value.DisplayedNameEnglish + "[c:]?", "[c:bR]" + value.DisplayedNameLocalized + "[c:]？", Language.ChineseSimplified);
             }
+            if (source == null)
             foreach (CardComplexity value in Enum.GetValues(typeof(CardComplexity)))
             {
-                Translate(GUID, null, "A complexity of [c:bR]" + value.ToString() + "[c:].", "[c:bR]" + Localization.Translate(value.ToString()) + "[c:]的复杂程度。", Language.ChineseSimplified);
+                Translate(GUID, null, "A complexity of [c:bR]" + value.ToString() + "[c:].", "[c:bR]" + Localize(value.ToString()) + "[c:]的复杂程度。", Language.ChineseSimplified);
             }
 
             // Lobotomy
-            Debug.Log("Post Register Translations for WhistleWind_Lobotomy_Mod");
+            if (source == null) Debug.Log("Post Register Translations for WhistleWind_Lobotomy_Mod");
             foreach (var value in cards)
             {
                 if (value.IsBaseGameCard ? !value.HasDisplayedName : !value.HasDisplayedNameEnglish) continue;
@@ -288,15 +362,15 @@ namespace SimplifiedChineseLanguagePack
                     foreach (Ability ability in value.Abilities)
                     {
                         text4 = text4 + ", " + AbilitiesUtil.GetInfo(ability).rulebookName;
-                        text4Loc = text4Loc + "，" + Localization.Translate(AbilitiesUtil.GetInfo(ability).rulebookName);
+                        text4Loc = text4Loc + "，" + Localize(AbilitiesUtil.GetInfo(ability).rulebookName);
                     }
                     text4 += ".";
                     text4Loc += "。";
                     text3 = string.Format("An {0} is defined as: {1} Power, {2} Health", value.DisplayedName, value.Attack, value.Health) + text4;
-                    text3Loc = string.Format("{{0}}具有：{{1}}点力量，{{2}}点生命值{{3}}。", value.DisplayedName, value.Attack, value.Health) + text4Loc;
+                    text3Loc = string.Format("{0}具有：{1}点力量，{2}点生命值", value.DisplayedNameLocalized, value.Attack, value.Health) + text4Loc;
                 }
                 string text5 = string.Concat(new string[] { text2, " ", value.DisplayedName, " is created in your hand. ", text3 });
-                string text5LocCardName = value.IsBaseGameCard ? value.DisplayedNameLocalized : value.DisplayedName;
+                string text5LocCardName = value.DisplayedNameLocalized;
                 string text5Loc = string.Concat(new string[] { text2Loc, " ", text5LocCardName, "牌。", text3Loc });
                 Translate(GUID, null, text5, text5Loc, Language.ChineseSimplified);
                 Translate(GUID, null, "While " + value.DisplayedNameLocalized + " is on the board, remove ally Terrain and Pelt cards and transform the rest into random Apostles.", "当" + value.DisplayedNameLocalized + "在场上时，移除友方地形和毛皮，并将剩余的卡牌随机转化为使徒。", Language.ChineseSimplified);
@@ -304,6 +378,7 @@ namespace SimplifiedChineseLanguagePack
                 Translate(GUID, null, "False " + value.DisplayedNameLocalized, "伪" + value.DisplayedNameLocalized, Language.ChineseSimplified);
                 Translate(GUID, null, "[c:bB]That " + value.DisplayedNameLocalized + " costs more energy than you have.[c:]", "[c:bB]能量不足，无法使用" + value.DisplayedNameLocalized + "。[c:]", Language.ChineseSimplified);
             }
+            if (source == null)
             for (int max = 1; max <= 10; max++)
             {
                 Translate(GUID, null, "[c:bB]Do you still not get it? It costs " + max.ToString() + " energy and you don't have enough.[c:]", "[c:bB]你还没懂吗？需要" + max.ToString() + "点能量。你的能量不足。[c:]", Language.ChineseSimplified);
@@ -315,7 +390,7 @@ namespace SimplifiedChineseLanguagePack
 
 
             // LifeCostAPI
-            Debug.Log("Post Register Translations for LifeCostAPI");
+            if (source == null) Debug.Log("Post Register Translations for LifeCostAPI");
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
@@ -332,33 +407,27 @@ namespace SimplifiedChineseLanguagePack
             }
 
             // Sire_MoDeers
-            Debug.Log("Post Register Translations for Sire_MoDeers");
+            if (source == null) Debug.Log("Post Register Translations for Sire_MoDeers");
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
                 Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, value.DisplayedName + "'s Protector", value.DisplayedNameLocalized + "的守护灵", Language.ChineseSimplified);
             }
 
-            Debug.Log("Post Register Translations Ended");
+            if (source == null) Debug.Log("Post Register Translations Ended");
             stopwatch.Stop();
-            Debug.Log($"PostRegisterTranslations 执行时间: {stopwatch.ElapsedMilliseconds} ms");
+            if (source == null) Debug.Log($"PostRegisterTranslations 执行时间: {stopwatch.ElapsedMilliseconds} ms");
         }
 
-        private static List<PostRegisterCardData> CachePostRegisterCardData(IEnumerable<CardInfo> newCards)
+        private static List<PostRegisterCardData> CachePostRegisterCardData(IEnumerable<CardInfo> source)
         {
             var cards = new List<PostRegisterCardData>();
-            AddPostRegisterCardData(cards, CardManager.BaseGameCards, true);
-            AddPostRegisterCardData(cards, newCards, false);
-            return cards;
-        }
-
-        private static void AddPostRegisterCardData(List<PostRegisterCardData> cards, IEnumerable<CardInfo> source, bool isBaseGameCard)
-        {
             foreach (var card in source)
             {
                 if (card.SafeIsUnityNull()) continue;
-                cards.Add(new PostRegisterCardData(card, isBaseGameCard));
+                cards.Add(new PostRegisterCardData(card, card.IsBaseGameCard()));
             }
+            return cards;
         }
 
         private sealed class PostRegisterCardData
@@ -369,16 +438,18 @@ namespace SimplifiedChineseLanguagePack
                 DisplayedNameEnglish = card.DisplayedNameEnglish;
                 DisplayedNameLocalized = card.DisplayedNameLocalized;
                 DisplayedName = card.displayedName;
+                Description = card.description;
                 Name = card.name;
                 Attack = card.Attack;
                 Health = card.Health;
-                Abilities = card.Abilities?.ToArray();
+                Abilities = card.Abilities?.ToArray() ?? Array.Empty<Ability>();
             }
 
             public bool IsBaseGameCard { get; }
             public string DisplayedNameEnglish { get; }
             public string DisplayedNameLocalized { get; }
             public string DisplayedName { get; }
+            public string Description { get; }
             public string Name { get; }
             public int Attack { get; }
             public int Health { get; }
@@ -388,7 +459,7 @@ namespace SimplifiedChineseLanguagePack
         }
         private static bool NameStartsWithVowel(string name)
         {
-            if (name.Length == 0)
+            if (string.IsNullOrEmpty(name))
             {
                 return false;
             }
@@ -396,7 +467,7 @@ namespace SimplifiedChineseLanguagePack
             return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
         }
 
-        private static void FixSimplifiedChineseFonts()
+        private static bool FixSimplifiedChineseFonts()
         {
             Debug.Log("Fixing Simplified Chinese Fonts");
             FontReplacement DAGGERSQUAREReplacement = Resources.Load<FontReplacement>("data/localization/fontreplacement/DAGGERSQUARE_to_SC-SANS");
@@ -411,28 +482,32 @@ namespace SimplifiedChineseLanguagePack
                     if (bundle == null)
                     {
                         Debug.LogError("字体AssetBundle加载失败！");
-                        return;
+                        return false;
                     }
                     FontBundle = bundle;
                 }
                 else
                 {
                     Debug.LogError("字体AssetBundle加载失败！");
-                    return;
+                    return false;
                 }
             }
             TMP_FontAsset NotoSans = FontBundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notosans_sc sdf.asset");
             TMP_FontAsset NotoSerif = FontBundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notoserif_sc sdf.asset");
-            SetPrivateTMPFont(DAGGERSQUAREReplacement, NotoSans);
-            SetPrivateTMPFont(MISC3DReplacement, NotoSerif);
+            if (DAGGERSQUAREReplacement == null || MISC3DReplacement == null || NotoSans == null || NotoSerif == null)
+            {
+                Debug.LogError("简体中文字体或字体替换资源缺失，尚未完成字体修复。");
+                return false;
+            }
+            return SetPrivateTMPFont(DAGGERSQUAREReplacement, NotoSans) & SetPrivateTMPFont(MISC3DReplacement, NotoSerif);
         }
 
-        private static void SetPrivateTMPFont(FontReplacement replacement, TMP_FontAsset fontAsset)
+        private static bool SetPrivateTMPFont(FontReplacement replacement, TMP_FontAsset fontAsset)
         {
-            if (replacement == null)
+            if (replacement == null || fontAsset == null)
             {
                 Debug.LogError("FontReplacement为空，无法设置字体！");
-                return;
+                return false;
             }
 
             var type = typeof(FontReplacement);
@@ -440,11 +515,12 @@ namespace SimplifiedChineseLanguagePack
             if (field == null)
             {
                 Debug.LogError("找不到replacementTMPFont字段，无法替换字体！");
-                return;
+                return false;
             }
 
             field.SetValue(replacement, fontAsset);
             Debug.Log($"成功替换{replacement.name}的TMP字体为{fontAsset.name}");
+            return true;
         }
     }
 
@@ -556,10 +632,10 @@ namespace SimplifiedChineseLanguagePack
             // SetText
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Start Grimora Mod", "启动格里魔拉模组", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "RESET RUN", "重置冒险", Language.ChineseSimplified);
-            //SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW LESHY RUN", "新的莱西冒险", Language.ChineseSimplified);
-            //SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE LESHY RUN", "继续莱西冒险", Language.ChineseSimplified);
-            //SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW GRIMORA RUN", "新的格里魔拉冒险", Language.ChineseSimplified);
-            //SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE GRIMORA RUN", "继续格里魔拉冒险", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW LESHY RUN", "新的莱西冒险", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE LESHY RUN", "继续莱西冒险", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW GRIMORA RUN", "新的格里魔拉冒险", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE GRIMORA RUN", "继续格里魔拉冒险", Language.ChineseSimplified);
 
             // Config
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "This option will allow you to see what cards are left in your deck.", "启用此选项可查看牌组剩余卡牌", Language.ChineseSimplified);
@@ -1130,7 +1206,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Soul Urn, spend all of your Soul and gain maximum Soul capacity for each Soul consumed.", "灵魂瓮，消耗所有灵魂，每消耗1个灵魂可提升1点灵魂上限。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Takes all of your Soul but increases your maximum by the amount taken, a certain acquaintance of mine would call this a return on investment.", "它会取走你所有的灵魂，但会按取走量提升上限。我某位老相识管这叫投资回报。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Mallet", "木槌", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Mallet, Whack a Card, it will become brittle and loose 1 Hp.", "木槌，敲打卡牌使其变得脆弱并失去1点生命值。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "The Mallet, Whack a Card, it will become brittle and loose 1 Hp.", "木槌，敲打卡牌使其获得脆骨印记并失去1点生命值。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "You'd think this is comical, but it is quite cruel. Injures a card and leaves it frail.", "看似滑稽实则残忍。伤害卡牌并使其变得脆弱。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Quill", "羽笔", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "My very own Quill, this lets you copy any card on the field to put in your hand.", "吾之专属羽笔，可复制场上任意卡牌加入手牌。", Language.ChineseSimplified);
@@ -1200,7 +1276,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "IN FRONT OF IT IS A MOUND OF EARTH, LEFT BY SOMEONE WHO'S ALREADY PASSED ON.", "坟前有一抔新土，是某位逝者留下的。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "PERHAPS A MEMBER OF YOUR UNDEAD HORDE COULD [c:bR]DIG THEM UP?[c:]", "或许该派你亡灵大军中的一员来[c:bR]掘开它？[c:]", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THIS WOULDN'T BE WITHOUT REPERCUSSIONS OF COURSE, AS DEATH IS NEVER PERMANENT.", "当然这并非没有代价，毕竟死亡从非永恒。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE CORPSE SEEMS TO BE OF ROTTING FLESH, YOUR CARD WILL BECOME [c:bR]BRITTLE[c:], BUT [c:bR]ITS BONE COST WILL BE HALVED[c:].", "这具腐尸的血肉正在溃烂，你的卡牌会变得[c:bR]脆弱[c:]，但[c:bR]骨头消耗减半[c:]。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE CORPSE SEEMS TO BE OF ROTTING FLESH, YOUR CARD WILL BECOME [c:bR]BRITTLE[c:], BUT [c:bR]ITS BONE COST WILL BE HALVED[c:].", "这具腐尸的血肉正在溃烂，你的卡牌会获得[c:bR]脆骨[c:]印记，但[c:bR]骨头消耗减半[c:]。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE CORPSE SEEMS TO BE OF A STARVED MAN, YOUR CARD WILL [c:bR]STARVE FOREVER[c:], BUT [c:bR]ITS BONE COST WILL BE REDUCED BY 2[c:].", "这具饿殍干瘪枯瘦，你的卡牌将[c:bR]永远饥渴[c:]，但[c:bR]骨头消耗减少2点[c:]。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE CORPSE SEEMS TO BE OF AN INCORPOREAL GHOST, YOUR CARD WILL [c:bR]COST 2 SOULS[c:] , BUT [c:bR]ITS BONE COST WILL BE REDUCED BY 1[c:].", "这具灵体虚无缥缈，你的卡牌需[c:bR]消耗2个灵魂[c:]，但[c:bR]骨头消耗减少1点[c:]。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "THE CORPSE SEEMS TO BE OF A CHAINED PRISONER, YOUR CARD WILL [c:bR]DEAL 1 MORE DAMAGE[c:] , BUT [c:bR]IT WILL BECOME VERY FRAIL[c:].", "这具囚尸带着镣铐，你的卡牌[c:bR]伤害+1[c:]，但[c:bR]会变得极其脆弱[c:]。", Language.ChineseSimplified);
@@ -1678,8 +1754,8 @@ namespace SimplifiedChineseLanguagePack
         {
             Debug.Log("Registering Translations for Magnificus Mod");
             // SetText
-            //SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "New Magnificus Run", "新的蔓尼菲科冒险", Language.ChineseSimplified);
-            //SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW MAGNIFICUS RUN", "新的蔓尼菲科冒险", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "New Magnificus Run", "新的蔓尼菲科冒险", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW MAGNIFICUS RUN", "新的蔓尼菲科冒险", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "View Deck", "查看牌组", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "TOWER OF MAGICKS", "魔法之塔", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "GOO DUNGEON", "黏液地牢", Language.ChineseSimplified);
@@ -1908,7 +1984,7 @@ namespace SimplifiedChineseLanguagePack
                     Debug.LogWarning($"Ability {ability} 没有有效的rulebookName，或本身已注册，已跳过。");
                     continue;
                 }
-                RegisterAbility(info.rulebookName, Localization.Translate(info.rulebookName));
+                RegisterAbility(info.rulebookName, SimplifiedChineseLanguagePackPlugin.Localize(info.rulebookName));
             }
 
             // Card
@@ -3660,9 +3736,14 @@ namespace SimplifiedChineseLanguagePack
             RegisterEncounter("Card Pack: StarCraft", "星际争霸卡包", "Characters from StarCraft One.", "《星际争霸Ⅰ》登场角色");  // StarCraftCardpack
             RegisterEncounter("Legends From The Darkness: Encounters", "来自黑暗的传说：遭遇战", "an Ever-expanding content pack for LFTD, meant to add battle encounters to the game.", "为《来自黑暗的传说》打造的持续更新内容包，旨在为游戏新增遭遇战。");  // LegendsFromTheDarkness
             RegisterEncounter("Gareth's Mod", "加雷斯的模组", "A part 1 booster pack created by Gareth48 and illustrated by Plutraser. Adds [count] cards and 7 sigils designed to fit right into vanilla Inscryption.", "由Gareth48制作、Plutraser绘制插画的第一章补充卡包。新增[count]张卡牌与7种特殊印记，设计风格完美融入原版《邪恶冥刻》的体系。");  // GarethMod
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Encounters Pack: {0}", "遭遇战卡包：{0}", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Contains {0} encounter from {1}.", "包含来自于{1}的{0}场遭遇战。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Contains {0} encounters from {1}.", "包含来自于{1}的{0}场遭遇战。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Contains {0} encounter.", "包含{0}场遭遇战。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Contains {0} encounters.", "包含{0}场遭遇战。", Language.ChineseSimplified);
             foreach (var kvp in EncountersTitle)
             {
-                SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Card Pack: " + kvp.Value, "卡包：" + kvp.Value, Language.ChineseSimplified);
+                SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Card Pack: {0}", "卡包：{0}", Language.ChineseSimplified);
                 SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Encounters Pack: " + kvp.Value, "遭遇战卡包：" + kvp.Value, Language.ChineseSimplified);
                 for (int count = 0; count <= 100; count++)
                 {
@@ -4372,7 +4453,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Burning", "燃烧", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] takes 1 damage. Also, when [creature] is struck, the striker gains this sigil.", "持牌人回合结束时，[creature]会受到1点伤害。此外，当[creature]被攻击时，攻击者会获得该印记。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Buzz Off", "蜉蝣冲击", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil and leave a mayfly in it's old place. A mayfly is defined as 1 power, 1 health, airborne, brittle.", "持牌人回合结束时，[creature]将向印记标注的方向移动，并在原地留下一只蜉蝣。蜉蝣定义为1点力量、1点生命值、具有飞行与脆弱特性。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil and leave a mayfly in it's old place. A mayfly is defined as 1 power, 1 health, airborne, brittle.", "持牌人回合结束时，[creature]将向印记标注的方向移动，并在原地留下一只蜉蝣。蜉蝣定义为1点力量、1点生命值、具有空袭与脆骨印记。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Call To Arms", "号召行动", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, the creatures to it's left and right will immediately attack.", "当使用[creature]时，其左右两侧的造物会立即发起攻击。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Card Shedder", "牌堆剥离者", Language.ChineseSimplified);
@@ -4385,7 +4466,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is drawn, this sigil is replaced by a random strike modifier sigil.", "抽到[creature]时，此印记将被随机替换为一个打击强化类印记。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Cheater", "欺诈者", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] attacks an opposing creature and it perishes, the opponent is dealt 1 damage.", "当[creature]击杀对面造物时，对手将受到1点伤害。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Circuit Maker", "电路绘制", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Circuit Maker", "回路绘制", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, a conduit card is created to its left and right.", "使用[creature]时，其左右两侧会各生成一张导线卡牌。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Claw", "利爪", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] will lose all attack power if it is not directly adjacent to a card bearing the clawed sigil.", "若[creature]未与带有利喙尖爪印记的卡牌直接相邻，将失去所有攻击力。", Language.ChineseSimplified);
@@ -5057,7 +5138,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, all opponent creatures with the Airborne sigil lose the Airborne sigil.", "当[creature]入场时，所有带有空袭印记的敌方造物将失去该印记。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "[creature] grounds all its opponents!", "[creature]让所有对手落地了！", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wingrider", "骑翼者", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If a friendly airborne creature is played while [creature] is in the owner's hand, this card will be played adjacent to it.", "当持牌人使用任意友方飞行造物时，若[creature]位于手牌中，该卡牌会自动部署至其相邻位置。", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If a friendly airborne creature is played while [creature] is in the owner's hand, this card will be played adjacent to it.", "当持牌人使用任意带有空袭印记的友方造物时，若[creature]位于手牌中，该卡牌会自动部署至其相邻位置。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Woodsie Lord", "法树领主", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, Enchanted Pines are created on every empty space. An enchanted pine is defined as 0 power, 3 health.", "使用[creature]时，所有空位将生成附魔松树。附魔松树具有：0点力量、3点生命。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Wriggle", "蠕形螨动", Language.ChineseSimplified);
@@ -5205,7 +5286,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "When [creature] is played, every card on the board is shuffled into a random space.", "当[creature]被打出时，场上所有卡牌随机打乱位置。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ambidextrous", "双手同利", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "While [creature] is on the board, you draw an additional card at the start of your turn.", "当[creature]在场时，你的回合开始时额外抽一张牌。", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Circuit Dependant", "电路依赖", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Circuit Dependant", "回路依赖", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "If [creature] is not within a completed circuit, it will perish.", "若[creature]不在完整回路之中，它将会消亡。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Rapid", "迅捷", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "At the end of the owner's turn, [creature] will move as far as possible in the direction inscribed in the sigil.", "持牌人的回合结束时，[creature]会沿着印记标注的方向尽可能移动。", Language.ChineseSimplified);
@@ -6683,6 +6764,10 @@ namespace SimplifiedChineseLanguagePack
         public static void RegisterTranslations()
         {
             Debug.Log("Registering Translations for P03InKayceesMod Mod");
+            // SetText
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "NEW P03 RUN", "新的P03冒险", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "CONTINUE P03 RUN", "继续P03冒险", Language.ChineseSimplified);
+
             // Ability: Base
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Double Death", "双重死亡", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Head Shot", "爆头射击", Language.ChineseSimplified);
@@ -8772,7 +8857,7 @@ namespace SimplifiedChineseLanguagePack
             P03InKayceesModMod.RegisterCardPart("Dead", "枯");
             P03InKayceesModMod.RegisterCardPart("Frozen", "冰封");
             P03InKayceesModMod.RegisterCardPart("Stump", "树桩");
-            P03InKayceesModMod.RegisterCardPart("Tombstone", "墓石");
+            P03InKayceesModMod.RegisterCardPart("Tombstone", "墓碑");
             P03InKayceesModMod.RegisterCardPart("Grand", "大");
             P03InKayceesModMod.RegisterCardPart("Ancient", "古");
             P03InKayceesModMod.RegisterCardPart("Snowy", "雪压");
@@ -9153,7 +9238,7 @@ namespace SimplifiedChineseLanguagePack
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "With this boon equipped, You get a different effect depending on the region:\nBeast Dungeon:+2 Starting bones each battle.\nDeath Dungeon:+1 Starting Energy each battle\nTech Dungeon:Start the game with two random mox in your hand.\nMagick Dungeon:Start the game with 2 Squirrels in your hand.", "当装备该奖励时，根据区域不同，您会获得不同的效果：\n野兽地牢：每场战斗开始时+2根起始骨头。\n死亡地牢：每场战斗开始时+1个起始能量。\n科技地牢：每场战斗开始时获得额外两张随机玛珂牌。\n魔法地牢：每场战斗开始时获得两张额外松鼠。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Ay yo yaw cant stand right here", "哎呀，你不能站在这儿。", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Fir", "大冷杉", Language.ChineseSimplified);
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tombstone", "墓石", Language.ChineseSimplified);
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Tombstone", "墓碑", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Conduit Tower", "管道塔", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Broken Bot", "损毁机器人", Language.ChineseSimplified);
             SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, "Bridge Railing", "桥梁栏杆", Language.ChineseSimplified);

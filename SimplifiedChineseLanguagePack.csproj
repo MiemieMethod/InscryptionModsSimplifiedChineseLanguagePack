@@ -5,9 +5,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <IsPackable>false</IsPackable>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>SimplifiedChineseLanguagePack</AssemblyName>
-    <VersionPrefix>1.7.3</VersionPrefix>
+    <VersionPrefix>1.7.4</VersionPrefix>
     <RootNamespace>SimplifiedChineseLanguagePack</RootNamespace>
     <LangVersion>10</LangVersion>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
@@ -15,10 +16,23 @@
     <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)' == 'Thunderstore'">
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Assets\**" />
+    <Compile Remove="tools\**" />
     <EmbeddedResource Remove="Assets\**" />
     <None Remove="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FontBundleFile Include="Assets\chinese_font;Assets\chinese_font.manifest;Assets\multilingual_fonts;Assets\multilingual_fonts.manifest" />
+    <None Include="@(FontBundleFile)" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <ThunderstorePackageFile Include="@(FontBundleFile);manifest.json;README.md;CHANGELOG.md;icon.png;LICENSE" />
   </ItemGroup>
 
   <!-- BepInEx dependencies -->
@@ -37,11 +51,25 @@
     </Reference>
     <Reference Include="InscryptionCommunityPatch">
       <HintPath>lib\InscryptionCommunityPatch.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Infiniscryption.P03KayceeRun">
       <HintPath>lib\Infiniscryption.P03KayceeRun.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
-
+  <Target Name="BuildThunderstorePackage" AfterTargets="Build" Condition="'$(Configuration)' == 'Thunderstore'">
+    <PropertyGroup>
+      <_ThunderstorePackageName>MiemieMethod-Simplified_Chinese_Language_Pack_for_Mods</_ThunderstorePackageName>
+      <_ThunderstoreOutputDirectory>$(MSBuildProjectDirectory)\bin\Thunderstore</_ThunderstoreOutputDirectory>
+      <_ThunderstorePackageDirectory>$(_ThunderstoreOutputDirectory)\$(_ThunderstorePackageName)</_ThunderstorePackageDirectory>
+      <_ThunderstoreZipPath>$(_ThunderstoreOutputDirectory)\$(_ThunderstorePackageName)-$(VersionPrefix).zip</_ThunderstoreZipPath>
+    </PropertyGroup>
+    <RemoveDir Directories="$(_ThunderstorePackageDirectory)" />
+    <MakeDir Directories="$(_ThunderstorePackageDirectory)" />
+    <Copy SourceFiles="$(TargetPath);@(ThunderstorePackageFile)" DestinationFolder="$(_ThunderstorePackageDirectory)" />
+    <ZipDirectory SourceDirectory="$(_ThunderstorePackageDirectory)" DestinationFile="$(_ThunderstoreZipPath)" Overwrite="true" />
+    <Message Importance="high" Text="Thunderstore package: $(_ThunderstoreZipPath)" />
+  </Target>
 
 </Project>

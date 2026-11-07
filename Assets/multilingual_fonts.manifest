@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 1119102100
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b23384f06433083259f41462e3d534f1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a96a5b982b2446e105e8e596b78ccd1d
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/TextMesh Pro/Fonts/VICIOUSHUNGER Expanded.asset
+- Assets/TextMesh Pro/Fonts/NotoSans_KR Expanded.asset
+- Assets/TextMesh Pro/Fonts/NotoSans_TC Expanded.asset
+- Assets/TextMesh Pro/Fonts/DAGGERSQUARE Expanded.asset
+- Assets/TextMesh Pro/Fonts/PixelLocale Expanded.asset
+- Assets/TextMesh Pro/Fonts/PixelLocale Multilingual Legacy.fontsettings
+- Assets/TextMesh Pro/Fonts/LiberationSans SDF Expanded.asset
+- Assets/TextMesh Pro/Fonts/NotoSans_JP Expanded.asset
+- Assets/TextMesh Pro/Fonts/GARBAGESCHRIFT Expanded.asset
+- Assets/TextMesh Pro/Fonts/NotoSerif_TC Expanded.asset
+- Assets/TextMesh Pro/Fonts/ShipporiMincho_JP Expanded.asset
+- Assets/TextMesh Pro/Fonts/HEAVYWEIGHT Expanded.asset
+- Assets/TextMesh Pro/Fonts/MINECRAFT Expanded.asset
+- Assets/TextMesh Pro/Fonts/Stylish_KR Expanded.asset
+Dependencies: []

@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using DiskCardGame;
 using HarmonyLib;
 using Infiniscryption.P03KayceeRun;
@@ -28,58 +28,139 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.p03_kcm_rare_card_label_fix";
         public const string Name = "P03KCMRareCardLabelFix";
-        private const string Version = "1.0.0";
+        private const string Version = "1.1.0";
 
         private static readonly HashSet<string> RegisteredMycoCardNames = new();
+        private static readonly HashSet<TMP_FontAsset> ReportedLabelFonts = new();
+        private static readonly HashSet<string> ReportedLabelErrors = new();
 
         private void Awake()
         {
             Logger.LogInfo($"Loaded {Name}!");
-            new Harmony(GUID).PatchAll(typeof(Patches));
-            if (SimplifiedChineseLanguagePackPlugin.FontBundle == null)
+            try
             {
-                string bundlePath = Path.Combine(Paths.PluginPath, "MiemieMethod-Simplified_Chinese_Language_Pack_for_Mods", "chinese_font");
-                var bundle = AssetBundle.LoadFromFile(bundlePath);
-                if (bundle == null)
-                {
-                    Debug.LogError("字体AssetBundle加载失败！");
-                    return;
-                }
-                SimplifiedChineseLanguagePackPlugin.FontBundle = bundle;
+                new Harmony(GUID).PatchAll(typeof(Patches));
+                Debug.Log("P03稀有卡名称字体修复补丁已安装，等待卡牌渲染。");
             }
-            TMP_FontAsset NotoSerif = SimplifiedChineseLanguagePackPlugin.FontBundle.LoadAsset<TMP_FontAsset>("assets/textmesh pro/fonts/notoserif_sc sdf.asset");
-            var prop = typeof(DiscCardColorAppearance).GetProperty("WhiteTextTexture", BindingFlags.Static | BindingFlags.NonPublic);
-            if (prop != null)
+            catch (Exception exception)
             {
-                prop.SetValue(null, NotoSerif.material.mainTexture);
-                Debug.Log("P03稀有卡名称中文显示修复成功！");
-            }
-            else
-            {
-                Debug.LogError("未找到WhiteTextTexture字段！");
+                Debug.LogError("P03稀有卡名称字体修复补丁安装失败：" + exception);
+                throw;
             }
         }
 
         [HarmonyPatch]
         internal static class Patches
         {
+            [HarmonyPatch(typeof(DiscCardColorAppearance), nameof(DiscCardColorAppearance.ApplyAppearance))]
+            [HarmonyPostfix]
+            private static void DiscCardColorAppearance_ApplyAppearance_Postfix(DiscCardColorAppearance __instance)
+            {
+                if (__instance.Card != null && __instance.NameTextColor.HasValue)
+                {
+                    RestoreLabelFontTexture(__instance.Card.StatsLayer as DiskRenderStatsLayer);
+                }
+            }
+
+            [HarmonyPatch(typeof(RenderStatsLayer), nameof(RenderStatsLayer.RenderCard))]
+            [HarmonyPrefix]
+            [HarmonyAfter(P03Plugin.PluginGuid)]
+            private static void RenderStatsLayer_RenderCard_Prefix(RenderStatsLayer __instance)
+            {
+                var appearance = __instance.GetComponentInParent<DiscCardColorAppearance>();
+                if (appearance != null && appearance.NameTextColor.HasValue)
+                {
+                    RestoreLabelFontTexture(__instance as DiskRenderStatsLayer);
+                }
+            }
+
             [HarmonyPatch(typeof(Infiniscryption.P03KayceeRun.Patchers.CardChoiceGenerator), "GenerateMycoCard")]
             [HarmonyPostfix]
             private static void CardChoiceGenerator_GenerateMycoCard_Postfix(CardInfo __result)
             {
-                if (__result == null || __result.mods == null)
-                {
-                    return;
-                }
+                RegisterMycoCardNames(__result);
+            }
 
-                for (int i = __result.mods.Count - 1; i >= 0; i--)
+            [HarmonyPatch(typeof(CardInfo), nameof(CardInfo.DisplayedNameLocalized), MethodType.Getter)]
+            [HarmonyPrefix]
+            private static void CardInfo_DisplayedNameLocalized_Prefix(CardInfo __instance)
+            {
+                // Saved fusion cards bypass GenerateMycoCard. Register before
+                // the native getter translates the name, including its first read.
+                if (__instance.name == "P03KCM_FAILED_EXPERIMENT")
                 {
-                    string nameReplacement = __result.mods[i].nameReplacement;
-                    if (!string.IsNullOrEmpty(nameReplacement) && TryTranslateMycoCardName(nameReplacement, out string translatedName))
-                    {
-                        RegisterMycoCardTranslations(nameReplacement, translatedName);
-                        return;
-                    }
+                    RegisterMycoCardNames(__instance);
+                }
+            }
+        }
+
+        private static void RestoreLabelFontTexture(DiskRenderStatsLayer layer)
+        {
+            if (layer == null)
+            {
+                return;
+            }
+            if (layer.labelText == null || layer.labelText.font == null)
+            {
+                ReportLabelError("未找到卡牌名称的文本组件或字体。");
+                return;
+            }
+
+            TMP_FontAsset font = layer.labelText.font;
+            // The unlocalized bitmap has black glyphs. P03's matching white
+            // atlas must remain in use until the label selects a localized font.
+            if (font == Resources.Load<TMP_FontAsset>("fonts/3d scene fonts/HEAVYWEIGHT"))
+            {
+                return;
+            }
+            Texture atlas = font.atlasTexture;
+            Material fontMaterial = layer.labelText.fontMaterial;
+            Material rendererMaterial = layer.labelText.renderer?.material;
+            if (atlas == null || fontMaterial == null || rendererMaterial == null)
+            {
+                ReportLabelError("字体 " + font.name + " 缺少字图或卡牌名称材质。");
+                return;
+            }
+
+            // P03 writes its fixed English atlas in ApplyAppearance and in its
+            // RenderCard prefix. Restore this label's own atlas after each write,
+            // before RenderCard queues the render. Keep P03's colors and shaders.
+            fontMaterial.mainTexture = atlas;
+            rendererMaterial.mainTexture = atlas;
+            if (ReportedLabelFonts.Add(font))
+            {
+                string message = Localization.CurrentLanguage == Language.ChineseSimplified
+                    ? "P03稀有卡名称中文显示修复成功！"
+                    : "P03稀有卡名称显示修复成功！";
+                Debug.Log(message + " 字体：" + font.name + "，语言：" + Localization.CurrentLanguage);
+            }
+        }
+
+        private static void ReportLabelError(string message)
+        {
+            if (ReportedLabelErrors.Add(message))
+            {
+                Debug.LogError("P03稀有卡名称显示修复失败：" + message);
+            }
+        }
+
+        private static void RegisterMycoCardNames(CardInfo card)
+        {
+            if (card == null || card.mods == null)
+            {
+                return;
+            }
+
+            for (int i = card.mods.Count - 1; i >= 0; i--)
+            {
+                string nameReplacement = card.mods[i]?.nameReplacement;
+                if (string.IsNullOrEmpty(nameReplacement)) continue;
+                if (RegisteredMycoCardNames.Contains(nameReplacement)) return;
+                if (TryTranslateMycoCardName(nameReplacement, out string translatedName))
+                {
+                    RegisterMycoCardTranslations(nameReplacement, translatedName);
+                    MultilingualTranslationRuntime.RegisterGeneratedCardName(nameReplacement);
+                    return;
                 }
             }
         }
