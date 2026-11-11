@@ -160,6 +160,7 @@ namespace SimplifiedChineseLanguagePack.Languages.BrazilianPortuguese
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
+                string localizedDescription = Localize(value.Description);
                 Translate(GUID, null, "TORN FROM ITS ETERNAL RESPITE WITH A RELUCTANT GROAN, THE " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " SHAMBLES BACK TO ITS RIGHTFUL PLACE AMONG YOUR HORDE.", "ARRANCADO DO DESCANSO ETERNO COM UM GEMIDO RELUTANTE, " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " RETORNA CAMBALEANDO AO SEU LUGAR NA SUA HORDA DE MORTOS-VIVOS.", Language.BrazilianPortuguese);
                 Translate(GUID, null, "THE BITTER CHILL MIGHT HURT, BUT IT WON'T SLOW DOWN " + value.DisplayedNameLocalized + "!", "O FRIO CORTANTE PODE FERIR, MAS NÃO VAI DETER " + value.DisplayedNameLocalized + "!", Language.BrazilianPortuguese);
                 Translate(GUID, null, "YOU EVER SO CAREFULLY PULL THE " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " AWAY FROM THE ELECTRICITY AND LEAVE.", "COM MUITO CUIDADO, VOCÊ AFASTA " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " DA ELETRICIDADE E VAI EMBORA.", Language.BrazilianPortuguese);
@@ -184,32 +185,17 @@ namespace SimplifiedChineseLanguagePack.Languages.BrazilianPortuguese
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been blessed!", "Sua carta " + value.DisplayedNameLocalized + " foi abençoada!", Language.BrazilianPortuguese);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened!", "Sua carta " + value.DisplayedNameLocalized + " foi amaldiçoada!", Language.BrazilianPortuguese);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " is now free.. But more unstable..", "Sua carta " + value.DisplayedNameLocalized + " não tem mais custo... Mas está mais instável...", Language.BrazilianPortuguese);
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with " + ability.rulebookName + "!", "Sua carta " + value.DisplayedNameLocalized + " recebeu a bênção " + Localize(ability.rulebookName) + "!", Language.BrazilianPortuguese);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with " + ability.rulebookName + "!", "Sua carta " + value.DisplayedNameLocalized + " recebeu a maldição " + Localize(ability.rulebookName) + "!", Language.BrazilianPortuguese);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its " + ability.rulebookName + "...", "Sua carta " + value.DisplayedNameLocalized + " está livre de " + Localize(ability.rulebookName) + "...", Language.BrazilianPortuguese);
-                }
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with {0}!", "Sua carta " + value.DisplayedNameLocalized + " recebeu a bênção {0}!", Language.BrazilianPortuguese);
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with {0}!", "Sua carta " + value.DisplayedNameLocalized + " recebeu a maldição {0}!", Language.BrazilianPortuguese);
+                Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its {0}...", "Sua carta " + value.DisplayedNameLocalized + " está livre de {0}...", Language.BrazilianPortuguese);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " wields no mana.", "Sua carta " + value.DisplayedNameLocalized + " não possui mana.", Language.BrazilianPortuguese);
                 Translate(GUID, null, "The " + value.DisplayedNameLocalized + " has no mana.", "A carta " + value.DisplayedNameLocalized + " não possui mana.", Language.BrazilianPortuguese);
-                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "Você lança um olhar à carta " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.BrazilianPortuguese);
-                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "A carta " + value.DisplayedNameLocalized + " surge do retrato. " + Localize(value.Description), Language.BrazilianPortuguese);
-                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "Você observa a carta " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.BrazilianPortuguese);
-                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "Você lança um olhar à carta " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.BrazilianPortuguese);
-                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "A carta " + value.DisplayedNameLocalized + " surge do retrato. " + Localize(value.Description), Language.BrazilianPortuguese);
-                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "Você observa a carta " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.BrazilianPortuguese);
+                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "Você lança um olhar à carta " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.BrazilianPortuguese);
+                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "A carta " + value.DisplayedNameLocalized + " surge do retrato. " + localizedDescription, Language.BrazilianPortuguese);
+                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "Você observa a carta " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.BrazilianPortuguese);
+                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "Você lança um olhar à carta " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.BrazilianPortuguese);
+                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "A carta " + value.DisplayedNameLocalized + " surge do retrato. " + localizedDescription, Language.BrazilianPortuguese);
+                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "Você observa a carta " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.BrazilianPortuguese);
                 foreach (var gemType in stageGemTypes.Keys)
                 {
                     Translate(GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypesEn[gemType] + "</color> gems to play your " + value.DisplayedNameLocalized + ".", "São necessárias duas joias " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypes[gemType] + "</color> para jogar " + value.DisplayedNameLocalized + ".", Language.BrazilianPortuguese);
@@ -392,7 +378,13 @@ namespace SimplifiedChineseLanguagePack.Languages.BrazilianPortuguese
             foreach (var card in source)
             {
                 if (card.SafeIsUnityNull()) continue;
-                cards.Add(new PostRegisterCardData(card, card.IsBaseGameCard()));
+                var value = new PostRegisterCardData(card, card.IsBaseGameCard());
+                if (MultilingualTranslationRuntime.IncludeCardForPostRegistration(Language.BrazilianPortuguese, value.Name,
+                    value.DisplayedName, value.DisplayedNameEnglish, value.DisplayedNameLocalized,
+                    value.Attack, value.Health, value.Abilities, value.Description))
+                {
+                    cards.Add(value);
+                }
             }
             return cards;
         }

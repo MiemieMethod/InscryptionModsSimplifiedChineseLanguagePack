@@ -160,6 +160,7 @@ namespace SimplifiedChineseLanguagePack.Languages.Japanese
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
+                string localizedDescription = Localize(value.Description);
                 Translate(GUID, null, "TORN FROM ITS ETERNAL RESPITE WITH A RELUCTANT GROAN, THE " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " SHAMBLES BACK TO ITS RIGHTFUL PLACE AMONG YOUR HORDE.", "永遠の休息から引きずり出された" + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + "は、嫌そうにうめきながら君の亡者の群れに戻ってきた。", Language.Japanese);
                 Translate(GUID, null, "THE BITTER CHILL MIGHT HURT, BUT IT WON'T SLOW DOWN " + value.DisplayedNameLocalized + "!", "厳しい寒さは痛いかもしれないが、" + value.DisplayedNameLocalized + "の足は鈍らない！", Language.Japanese);
                 Translate(GUID, null, "YOU EVER SO CAREFULLY PULL THE " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " AWAY FROM THE ELECTRICITY AND LEAVE.", "君は細心の注意を払って" + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + "を電流から引き離し、その場を去る。", Language.Japanese);
@@ -184,32 +185,17 @@ namespace SimplifiedChineseLanguagePack.Languages.Japanese
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been blessed!", "君の" + value.DisplayedNameLocalized + "が祝福された！", Language.Japanese);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened!", "君の" + value.DisplayedNameLocalized + "に呪いがかかった！", Language.Japanese);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " is now free.. But more unstable..", "君の" + value.DisplayedNameLocalized + "のコストはなくなった……だが、より不安定になった……", Language.Japanese);
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with " + ability.rulebookName + "!", "君の" + value.DisplayedNameLocalized + "は" + Localize(ability.rulebookName) + "の祝福を受けた！", Language.Japanese);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with " + ability.rulebookName + "!", "君の" + value.DisplayedNameLocalized + "は" + Localize(ability.rulebookName) + "の呪いを受けた！", Language.Japanese);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its " + ability.rulebookName + "...", "君の" + value.DisplayedNameLocalized + "は" + Localize(ability.rulebookName) + "から解放された……", Language.Japanese);
-                }
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with {0}!", "君の" + value.DisplayedNameLocalized + "は{0}の祝福を受けた！", Language.Japanese);
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with {0}!", "君の" + value.DisplayedNameLocalized + "は{0}の呪いを受けた！", Language.Japanese);
+                Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its {0}...", "君の" + value.DisplayedNameLocalized + "は{0}から解放された……", Language.Japanese);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " wields no mana.", "君の" + value.DisplayedNameLocalized + "はマナを持っていない。", Language.Japanese);
                 Translate(GUID, null, "The " + value.DisplayedNameLocalized + " has no mana.", value.DisplayedNameLocalized + "はマナを持っていない。", Language.Japanese);
-                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "君は" + value.DisplayedNameLocalized + "をちらりと見た。" + Localize(value.Description), Language.Japanese);
-                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "肖像画から" + value.DisplayedNameLocalized + "が現れた。" + Localize(value.Description), Language.Japanese);
-                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "君は" + value.DisplayedNameLocalized + "をじっと見つめた。" + Localize(value.Description), Language.Japanese);
-                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "君は" + value.DisplayedNameLocalized + "をちらりと見た。" + Localize(value.Description), Language.Japanese);
-                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "肖像画から" + value.DisplayedNameLocalized + "が現れた。" + Localize(value.Description), Language.Japanese);
-                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "君は" + value.DisplayedNameLocalized + "をじっと見つめた。" + Localize(value.Description), Language.Japanese);
+                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "君は" + value.DisplayedNameLocalized + "をちらりと見た。" + localizedDescription, Language.Japanese);
+                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "肖像画から" + value.DisplayedNameLocalized + "が現れた。" + localizedDescription, Language.Japanese);
+                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "君は" + value.DisplayedNameLocalized + "をじっと見つめた。" + localizedDescription, Language.Japanese);
+                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "君は" + value.DisplayedNameLocalized + "をちらりと見た。" + localizedDescription, Language.Japanese);
+                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "肖像画から" + value.DisplayedNameLocalized + "が現れた。" + localizedDescription, Language.Japanese);
+                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "君は" + value.DisplayedNameLocalized + "をじっと見つめた。" + localizedDescription, Language.Japanese);
                 foreach (var gemType in stageGemTypes.Keys)
                 {
                     Translate(GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypesEn[gemType] + "</color> gems to play your " + value.DisplayedNameLocalized + ".", "君の" + value.DisplayedNameLocalized + "を出すには" + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypes[gemType] + "</color>ジェムが2個必要だ。", Language.Japanese);
@@ -392,7 +378,13 @@ namespace SimplifiedChineseLanguagePack.Languages.Japanese
             foreach (var card in source)
             {
                 if (card.SafeIsUnityNull()) continue;
-                cards.Add(new PostRegisterCardData(card, card.IsBaseGameCard()));
+                var value = new PostRegisterCardData(card, card.IsBaseGameCard());
+                if (MultilingualTranslationRuntime.IncludeCardForPostRegistration(Language.Japanese, value.Name,
+                    value.DisplayedName, value.DisplayedNameEnglish, value.DisplayedNameLocalized,
+                    value.Attack, value.Health, value.Abilities, value.Description))
+                {
+                    cards.Add(value);
+                }
             }
             return cards;
         }

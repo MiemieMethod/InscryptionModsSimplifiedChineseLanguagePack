@@ -160,6 +160,7 @@ namespace SimplifiedChineseLanguagePack.Languages.Russian
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
+                string localizedDescription = Localize(value.Description);
                 Translate(GUID, null, "TORN FROM ITS ETERNAL RESPITE WITH A RELUCTANT GROAN, THE " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " SHAMBLES BACK TO ITS RIGHTFUL PLACE AMONG YOUR HORDE.", "С НЕОХОТНЫМ СТОНОМ ВЫРВАННЫЙ ИЗ ВЕЧНОГО ПОКОЯ, " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " КОВЫЛЯЕТ ОБРАТНО НА СВОЁ МЕСТО В ТВОЕЙ ОРДЕ НЕЖИТИ.", Language.Russian);
                 Translate(GUID, null, "THE BITTER CHILL MIGHT HURT, BUT IT WON'T SLOW DOWN " + value.DisplayedNameLocalized + "!", "ЛЮТЫЙ ХОЛОД МОЖЕТ РАНИТЬ, НО НЕ ЗАМЕДЛИТ " + value.DisplayedNameLocalized + "!", Language.Russian);
                 Translate(GUID, null, "YOU EVER SO CAREFULLY PULL THE " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " AWAY FROM THE ELECTRICITY AND LEAVE.", "ТЫ ОЧЕНЬ ОСТОРОЖНО ВЫВОДИШЬ " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " ИЗ-ПОД ТОКА И УХОДИШЬ.", Language.Russian);
@@ -184,32 +185,17 @@ namespace SimplifiedChineseLanguagePack.Languages.Russian
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been blessed!", "Твоя карта " + value.DisplayedNameLocalized + " получила благословение!", Language.Russian);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened!", "Твоя карта " + value.DisplayedNameLocalized + " получила проклятие!", Language.Russian);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " is now free.. But more unstable..", "Твоя карта " + value.DisplayedNameLocalized + " теперь бесплатна... Но стала менее стабильной...", Language.Russian);
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with " + ability.rulebookName + "!", "Твоя карта " + value.DisplayedNameLocalized + " получила благословение «" + Localize(ability.rulebookName) + "»!", Language.Russian);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with " + ability.rulebookName + "!", "Твоя карта " + value.DisplayedNameLocalized + " получила проклятие «" + Localize(ability.rulebookName) + "»!", Language.Russian);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its " + ability.rulebookName + "...", "Твоя карта " + value.DisplayedNameLocalized + " избавилась от «" + Localize(ability.rulebookName) + "»...", Language.Russian);
-                }
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with {0}!", "Твоя карта " + value.DisplayedNameLocalized + " получила благословение «{0}»!", Language.Russian);
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with {0}!", "Твоя карта " + value.DisplayedNameLocalized + " получила проклятие «{0}»!", Language.Russian);
+                Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its {0}...", "Твоя карта " + value.DisplayedNameLocalized + " избавилась от «{0}»...", Language.Russian);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " wields no mana.", "У твоей карты " + value.DisplayedNameLocalized + " нет маны.", Language.Russian);
                 Translate(GUID, null, "The " + value.DisplayedNameLocalized + " has no mana.", "У карты " + value.DisplayedNameLocalized + " нет маны.", Language.Russian);
-                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "Ты бросаешь взгляд на карту " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.Russian);
-                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "Из портрета появляется карта " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.Russian);
-                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "Ты пристально смотришь на карту " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.Russian);
-                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "Ты бросаешь взгляд на карту " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.Russian);
-                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "Из портрета появляется карта " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.Russian);
-                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "Ты пристально смотришь на карту " + value.DisplayedNameLocalized + ". " + Localize(value.Description), Language.Russian);
+                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "Ты бросаешь взгляд на карту " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.Russian);
+                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "Из портрета появляется карта " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.Russian);
+                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "Ты пристально смотришь на карту " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.Russian);
+                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "Ты бросаешь взгляд на карту " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.Russian);
+                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "Из портрета появляется карта " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.Russian);
+                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "Ты пристально смотришь на карту " + value.DisplayedNameLocalized + ". " + localizedDescription, Language.Russian);
                 foreach (var gemType in stageGemTypes.Keys)
                 {
                     Translate(GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypesEn[gemType] + "</color> gems to play your " + value.DisplayedNameLocalized + ".", "Для розыгрыша карты " + value.DisplayedNameLocalized + " нужны два самоцвета цвета " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypes[gemType] + "</color>.", Language.Russian);
@@ -392,7 +378,13 @@ namespace SimplifiedChineseLanguagePack.Languages.Russian
             foreach (var card in source)
             {
                 if (card.SafeIsUnityNull()) continue;
-                cards.Add(new PostRegisterCardData(card, card.IsBaseGameCard()));
+                var value = new PostRegisterCardData(card, card.IsBaseGameCard());
+                if (MultilingualTranslationRuntime.IncludeCardForPostRegistration(Language.Russian, value.Name,
+                    value.DisplayedName, value.DisplayedNameEnglish, value.DisplayedNameLocalized,
+                    value.Attack, value.Health, value.Abilities, value.Description))
+                {
+                    cards.Add(value);
+                }
             }
             return cards;
         }

@@ -160,6 +160,7 @@ namespace SimplifiedChineseLanguagePack.Languages.Korean
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
+                string localizedDescription = Localize(value.Description);
                 Translate(GUID, null, "TORN FROM ITS ETERNAL RESPITE WITH A RELUCTANT GROAN, THE " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " SHAMBLES BACK TO ITS RIGHTFUL PLACE AMONG YOUR HORDE.", "영원한 안식에서 끌려 나온 " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + "이(가) 마지못해 신음하며 네 망자 무리의 제자리로 비틀거리며 돌아온다.", Language.Korean);
                 Translate(GUID, null, "THE BITTER CHILL MIGHT HURT, BUT IT WON'T SLOW DOWN " + value.DisplayedNameLocalized + "!", "매서운 추위가 아프긴 하겠지만 " + value.DisplayedNameLocalized + "을(를) 늦추지는 못한다!", Language.Korean);
                 Translate(GUID, null, "YOU EVER SO CAREFULLY PULL THE " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " AWAY FROM THE ELECTRICITY AND LEAVE.", "너는 아주 조심스럽게 " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + "을(를) 전류에서 꺼낸 뒤 떠난다.", Language.Korean);
@@ -184,32 +185,17 @@ namespace SimplifiedChineseLanguagePack.Languages.Korean
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been blessed!", "네 " + value.DisplayedNameLocalized + "이(가) 축복받았다!", Language.Korean);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened!", "네 " + value.DisplayedNameLocalized + "에게 저주가 걸렸다!", Language.Korean);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " is now free.. But more unstable..", "네 " + value.DisplayedNameLocalized + "의 비용이 없어졌다…… 하지만 더 불안정해졌다……", Language.Korean);
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with " + ability.rulebookName + "!", "네 " + value.DisplayedNameLocalized + "이(가) " + Localize(ability.rulebookName) + "의 축복을 받았다!", Language.Korean);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with " + ability.rulebookName + "!", "네 " + value.DisplayedNameLocalized + "에게 " + Localize(ability.rulebookName) + "의 저주가 걸렸다!", Language.Korean);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its " + ability.rulebookName + "...", "네 " + value.DisplayedNameLocalized + "이(가) " + Localize(ability.rulebookName) + "에서 벗어났다……", Language.Korean);
-                }
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with {0}!", "네 " + value.DisplayedNameLocalized + "이(가) {0}의 축복을 받았다!", Language.Korean);
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with {0}!", "네 " + value.DisplayedNameLocalized + "에게 {0}의 저주가 걸렸다!", Language.Korean);
+                Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its {0}...", "네 " + value.DisplayedNameLocalized + "이(가) {0}에서 벗어났다……", Language.Korean);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " wields no mana.", "네 " + value.DisplayedNameLocalized + "에게는 마나가 없다.", Language.Korean);
                 Translate(GUID, null, "The " + value.DisplayedNameLocalized + " has no mana.", value.DisplayedNameLocalized + "에게는 마나가 없다.", Language.Korean);
-                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "너는 " + value.DisplayedNameLocalized + "을(를) 힐끗 보았다. " + Localize(value.Description), Language.Korean);
-                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "초상화에서 " + value.DisplayedNameLocalized + "이(가) 나타났다. " + Localize(value.Description), Language.Korean);
-                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "너는 " + value.DisplayedNameLocalized + "을(를) 바라보았다. " + Localize(value.Description), Language.Korean);
-                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "너는 " + value.DisplayedNameLocalized + "을(를) 힐끗 보았다. " + Localize(value.Description), Language.Korean);
-                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "초상화에서 " + value.DisplayedNameLocalized + "이(가) 나타났다. " + Localize(value.Description), Language.Korean);
-                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "너는 " + value.DisplayedNameLocalized + "을(를) 바라보았다. " + Localize(value.Description), Language.Korean);
+                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "너는 " + value.DisplayedNameLocalized + "을(를) 힐끗 보았다. " + localizedDescription, Language.Korean);
+                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "초상화에서 " + value.DisplayedNameLocalized + "이(가) 나타났다. " + localizedDescription, Language.Korean);
+                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "너는 " + value.DisplayedNameLocalized + "을(를) 바라보았다. " + localizedDescription, Language.Korean);
+                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "너는 " + value.DisplayedNameLocalized + "을(를) 힐끗 보았다. " + localizedDescription, Language.Korean);
+                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "초상화에서 " + value.DisplayedNameLocalized + "이(가) 나타났다. " + localizedDescription, Language.Korean);
+                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "너는 " + value.DisplayedNameLocalized + "을(를) 바라보았다. " + localizedDescription, Language.Korean);
                 foreach (var gemType in stageGemTypes.Keys)
                 {
                     Translate(GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypesEn[gemType] + "</color> gems to play your " + value.DisplayedNameLocalized + ".", "네 " + value.DisplayedNameLocalized + "을(를) 내려면 " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypes[gemType] + "</color> 보석 두 개가 필요하다.", Language.Korean);
@@ -392,7 +378,13 @@ namespace SimplifiedChineseLanguagePack.Languages.Korean
             foreach (var card in source)
             {
                 if (card.SafeIsUnityNull()) continue;
-                cards.Add(new PostRegisterCardData(card, card.IsBaseGameCard()));
+                var value = new PostRegisterCardData(card, card.IsBaseGameCard());
+                if (MultilingualTranslationRuntime.IncludeCardForPostRegistration(Language.Korean, value.Name,
+                    value.DisplayedName, value.DisplayedNameEnglish, value.DisplayedNameLocalized,
+                    value.Attack, value.Health, value.Abilities, value.Description))
+                {
+                    cards.Add(value);
+                }
             }
             return cards;
         }

@@ -160,6 +160,7 @@ namespace SimplifiedChineseLanguagePack.Languages.Turkish
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
+                string localizedDescription = Localize(value.Description);
                 Translate(GUID, null, "TORN FROM ITS ETERNAL RESPITE WITH A RELUCTANT GROAN, THE " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " SHAMBLES BACK TO ITS RIGHTFUL PLACE AMONG YOUR HORDE.", "İSTEMEYEN BİR İNİLTİYLE SONSUZ İSTİRAHATİNDEN KOPARILAN " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + ", ÖLÜMSÜZLER ORDUNDAKİ YERİNE SENDELEYEREK DÖNÜYOR.", Language.Turkish);
                 Translate(GUID, null, "THE BITTER CHILL MIGHT HURT, BUT IT WON'T SLOW DOWN " + value.DisplayedNameLocalized + "!", "KESKİN SOĞUK CAN YAKABİLİR AMA " + value.DisplayedNameLocalized + " KARTINI YAVAŞLATAMAZ!", Language.Turkish);
                 Translate(GUID, null, "YOU EVER SO CAREFULLY PULL THE " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " AWAY FROM THE ELECTRICITY AND LEAVE.", ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " KARTINI ELEKTRİKTEN ÇOK DİKKATLİCE UZAKLAŞTIRIP AYRILIYORSUN.", Language.Turkish);
@@ -184,32 +185,17 @@ namespace SimplifiedChineseLanguagePack.Languages.Turkish
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been blessed!", value.DisplayedNameLocalized + " kartın kutsandı!", Language.Turkish);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened!", value.DisplayedNameLocalized + " kartın lanetlendi!", Language.Turkish);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " is now free.. But more unstable..", value.DisplayedNameLocalized + " kartın artık ücretsiz... Ama daha dengesiz...", Language.Turkish);
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with " + ability.rulebookName + "!", value.DisplayedNameLocalized + " kartın " + Localize(ability.rulebookName) + " kutsamasını aldı!", Language.Turkish);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with " + ability.rulebookName + "!", value.DisplayedNameLocalized + " kartın " + Localize(ability.rulebookName) + " lanetini aldı!", Language.Turkish);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its " + ability.rulebookName + "...", value.DisplayedNameLocalized + " kartın artık " + Localize(ability.rulebookName) + " etkisinden kurtuldu...", Language.Turkish);
-                }
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with {0}!", value.DisplayedNameLocalized + " kartın {0} kutsamasını aldı!", Language.Turkish);
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with {0}!", value.DisplayedNameLocalized + " kartın {0} lanetini aldı!", Language.Turkish);
+                Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its {0}...", value.DisplayedNameLocalized + " kartın artık {0} etkisinden kurtuldu...", Language.Turkish);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " wields no mana.", value.DisplayedNameLocalized + " kartında mana yok.", Language.Turkish);
                 Translate(GUID, null, "The " + value.DisplayedNameLocalized + " has no mana.", value.DisplayedNameLocalized + " kartında mana yok.", Language.Turkish);
-                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, value.DisplayedNameLocalized + " kartına göz atıyorsun. " + Localize(value.Description), Language.Turkish);
-                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "Portreden " + value.DisplayedNameLocalized + " kartı çıkıyor. " + Localize(value.Description), Language.Turkish);
-                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, value.DisplayedNameLocalized + " kartını inceliyorsun. " + Localize(value.Description), Language.Turkish);
-                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, value.DisplayedNameLocalized + " kartına göz atıyorsun. " + Localize(value.Description), Language.Turkish);
-                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "Portreden " + value.DisplayedNameLocalized + " kartı çıkıyor. " + Localize(value.Description), Language.Turkish);
-                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, value.DisplayedNameLocalized + " kartını inceliyorsun. " + Localize(value.Description), Language.Turkish);
+                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, value.DisplayedNameLocalized + " kartına göz atıyorsun. " + localizedDescription, Language.Turkish);
+                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "Portreden " + value.DisplayedNameLocalized + " kartı çıkıyor. " + localizedDescription, Language.Turkish);
+                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, value.DisplayedNameLocalized + " kartını inceliyorsun. " + localizedDescription, Language.Turkish);
+                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, value.DisplayedNameLocalized + " kartına göz atıyorsun. " + localizedDescription, Language.Turkish);
+                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "Portreden " + value.DisplayedNameLocalized + " kartı çıkıyor. " + localizedDescription, Language.Turkish);
+                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, value.DisplayedNameLocalized + " kartını inceliyorsun. " + localizedDescription, Language.Turkish);
                 foreach (var gemType in stageGemTypes.Keys)
                 {
                     Translate(GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypesEn[gemType] + "</color> gems to play your " + value.DisplayedNameLocalized + ".", value.DisplayedNameLocalized + " kartını oynamak için iki " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypes[gemType] + "</color> cevher gerekir.", Language.Turkish);
@@ -392,7 +378,13 @@ namespace SimplifiedChineseLanguagePack.Languages.Turkish
             foreach (var card in source)
             {
                 if (card.SafeIsUnityNull()) continue;
-                cards.Add(new PostRegisterCardData(card, card.IsBaseGameCard()));
+                var value = new PostRegisterCardData(card, card.IsBaseGameCard());
+                if (MultilingualTranslationRuntime.IncludeCardForPostRegistration(Language.Turkish, value.Name,
+                    value.DisplayedName, value.DisplayedNameEnglish, value.DisplayedNameLocalized,
+                    value.Attack, value.Health, value.Abilities, value.Description))
+                {
+                    cards.Add(value);
+                }
             }
             return cards;
         }

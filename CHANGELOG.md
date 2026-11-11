@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.5
+
+Fix a critical bug.
+
 ## 1.7.4
 
 Fix bugs, and AI-translated all languages based on the established translation conventions and selection standards for Simplified Chinese translations.

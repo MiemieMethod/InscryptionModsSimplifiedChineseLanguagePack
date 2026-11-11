@@ -160,6 +160,7 @@ namespace SimplifiedChineseLanguagePack.Languages.ChineseTraditional
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
+                string localizedDescription = Localize(value.Description);
                 Translate(GUID, null, "TORN FROM ITS ETERNAL RESPITE WITH A RELUCTANT GROAN, THE " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " SHAMBLES BACK TO ITS RIGHTFUL PLACE AMONG YOUR HORDE.", ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + "被從永恆的安息中拉出，發出不情願的呻吟，蹣跚回到你的亡靈大軍中應在的位置。", Language.ChineseTraditional);
                 Translate(GUID, null, "THE BITTER CHILL MIGHT HURT, BUT IT WON'T SLOW DOWN " + value.DisplayedNameLocalized + "!", "刺骨的寒意或許會傷人，但拖不慢" + value.DisplayedNameLocalized + "！", Language.ChineseTraditional);
                 Translate(GUID, null, "YOU EVER SO CAREFULLY PULL THE " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " AWAY FROM THE ELECTRICITY AND LEAVE.", "你極為小心地把" + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + "從電流中拉出，然後離開。", Language.ChineseTraditional);
@@ -184,32 +185,17 @@ namespace SimplifiedChineseLanguagePack.Languages.ChineseTraditional
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been blessed!", "你的" + value.DisplayedNameLocalized + "得到了祝福！", Language.ChineseTraditional);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened!", "你的" + value.DisplayedNameLocalized + "受到了詛咒！", Language.ChineseTraditional);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " is now free.. But more unstable..", "你的" + value.DisplayedNameLocalized + "現在免除費用……但更不穩定了……", Language.ChineseTraditional);
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with " + ability.rulebookName + "!", "你的" + value.DisplayedNameLocalized + "得到了" + Localize(ability.rulebookName) + "的祝福！", Language.ChineseTraditional);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with " + ability.rulebookName + "!", "你的" + value.DisplayedNameLocalized + "受到了" + Localize(ability.rulebookName) + "的詛咒！", Language.ChineseTraditional);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its " + ability.rulebookName + "...", "你的" + value.DisplayedNameLocalized + "擺脫了" + Localize(ability.rulebookName) + "……", Language.ChineseTraditional);
-                }
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with {0}!", "你的" + value.DisplayedNameLocalized + "得到了{0}的祝福！", Language.ChineseTraditional);
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with {0}!", "你的" + value.DisplayedNameLocalized + "受到了{0}的詛咒！", Language.ChineseTraditional);
+                Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its {0}...", "你的" + value.DisplayedNameLocalized + "擺脫了{0}……", Language.ChineseTraditional);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " wields no mana.", "你的" + value.DisplayedNameLocalized + "沒有魔力。", Language.ChineseTraditional);
                 Translate(GUID, null, "The " + value.DisplayedNameLocalized + " has no mana.", value.DisplayedNameLocalized + "沒有魔力。", Language.ChineseTraditional);
-                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "你瞥了一眼" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseTraditional);
-                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "一隻" + value.DisplayedNameLocalized + "從肖像中出現。" + Localize(value.Description), Language.ChineseTraditional);
-                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "你凝視著" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseTraditional);
-                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "你瞥了一眼" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseTraditional);
-                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "一隻" + value.DisplayedNameLocalized + "從肖像中出現。" + Localize(value.Description), Language.ChineseTraditional);
-                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "你凝視著" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseTraditional);
+                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "你瞥了一眼" + value.DisplayedNameLocalized + "。" + localizedDescription, Language.ChineseTraditional);
+                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, "一隻" + value.DisplayedNameLocalized + "從肖像中出現。" + localizedDescription, Language.ChineseTraditional);
+                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "你凝視著" + value.DisplayedNameLocalized + "。" + localizedDescription, Language.ChineseTraditional);
+                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "你瞥了一眼" + value.DisplayedNameLocalized + "。" + localizedDescription, Language.ChineseTraditional);
+                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, "一隻" + value.DisplayedNameLocalized + "從肖像中出現。" + localizedDescription, Language.ChineseTraditional);
+                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "你凝視著" + value.DisplayedNameLocalized + "。" + localizedDescription, Language.ChineseTraditional);
                 foreach (var gemType in stageGemTypes.Keys)
                 {
                     Translate(GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypesEn[gemType] + "</color> gems to play your " + value.DisplayedNameLocalized + ".", "打出你的" + value.DisplayedNameLocalized + "需要兩顆" + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypes[gemType] + "</color>寶石。", Language.ChineseTraditional);
@@ -392,7 +378,13 @@ namespace SimplifiedChineseLanguagePack.Languages.ChineseTraditional
             foreach (var card in source)
             {
                 if (card.SafeIsUnityNull()) continue;
-                cards.Add(new PostRegisterCardData(card, card.IsBaseGameCard()));
+                var value = new PostRegisterCardData(card, card.IsBaseGameCard());
+                if (MultilingualTranslationRuntime.IncludeCardForPostRegistration(Language.ChineseTraditional, value.Name,
+                    value.DisplayedName, value.DisplayedNameEnglish, value.DisplayedNameLocalized,
+                    value.Attack, value.Health, value.Abilities, value.Description))
+                {
+                    cards.Add(value);
+                }
             }
             return cards;
         }

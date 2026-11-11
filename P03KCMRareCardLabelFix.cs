@@ -67,10 +67,13 @@ namespace SimplifiedChineseLanguagePack
             [HarmonyAfter(P03Plugin.PluginGuid)]
             private static void RenderStatsLayer_RenderCard_Prefix(RenderStatsLayer __instance)
             {
-                var appearance = __instance.GetComponentInParent<DiscCardColorAppearance>();
+                // Ordinary paper/pixel cards also render through this base method.
+                // Only P03's disk renderer can need its label atlas restored.
+                if (__instance is not DiskRenderStatsLayer layer) return;
+                var appearance = layer.GetComponentInParent<DiscCardColorAppearance>();
                 if (appearance != null && appearance.NameTextColor.HasValue)
                 {
-                    RestoreLabelFontTexture(__instance as DiskRenderStatsLayer);
+                    RestoreLabelFontTexture(layer);
                 }
             }
 

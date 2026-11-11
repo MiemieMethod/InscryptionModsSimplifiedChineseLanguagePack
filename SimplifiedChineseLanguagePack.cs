@@ -25,7 +25,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.7.4";
+        private const string Version = "1.7.5";
 
         public static bool FontLoaded = false;
         private static float nextFontRetryTime;
@@ -193,6 +193,7 @@ namespace SimplifiedChineseLanguagePack
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
+                string localizedDescription = Localize(value.Description);
                 Translate(GUID, null, "TORN FROM ITS ETERNAL RESPITE WITH A RELUCTANT GROAN, THE " + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + " SHAMBLES BACK TO ITS RIGHTFUL PLACE AMONG YOUR HORDE.", "伴随着不情愿的呻吟，" + ("[c:R]" + value.DisplayedNameLocalized + "[c:]") + "被从永恒安眠中拽出，蹒跚回归亡灵大军的行列。", Language.ChineseSimplified);
                 Translate(GUID, null, "THE BITTER CHILL MIGHT HURT, BUT IT WON'T SLOW DOWN " + value.DisplayedNameLocalized + "!", "刺骨严寒或许伤人，但休想拖慢" + value.DisplayedNameLocalized + "！", Language.ChineseSimplified);
                 Translate(GUID, null, "YOU EVER SO CAREFULLY PULL THE " + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + " AWAY FROM THE ELECTRICITY AND LEAVE.", "你小心翼翼地将" + ("[c:bR]" + value.DisplayedNameLocalized + "[c:]") + "从电流中抽离，转身离去。", Language.ChineseSimplified);
@@ -217,32 +218,17 @@ namespace SimplifiedChineseLanguagePack
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been blessed!", "你的" + value.DisplayedNameLocalized + "获得了祝福！", Language.ChineseSimplified);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " has been burdened!", "你的" + value.DisplayedNameLocalized + "被施加了诅咒！", Language.ChineseSimplified);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " is now free.. But more unstable..", "你的" + value.DisplayedNameLocalized + "现已成本全免……但变得更加不稳定……", Language.ChineseSimplified);
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with " + ability.rulebookName + "!", "你的" + value.DisplayedNameLocalized + "获得了" + Localize(ability.rulebookName) + "祝福！", Language.ChineseSimplified);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with " + ability.rulebookName + "!", "你的" + value.DisplayedNameLocalized + "被施加了" + Localize(ability.rulebookName) + "诅咒！", Language.ChineseSimplified);
-                }
-                if (source != null)
-                foreach (var ability in AbilitiesUtil.AllData)
-                {
-                    if (ability.SafeIsUnityNull() || string.IsNullOrEmpty(ability.rulebookName)) continue;
-                    Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its " + ability.rulebookName + "...", "你的" + value.DisplayedNameLocalized + "现已摆脱了" + Localize(ability.rulebookName) + "的束缚……", Language.ChineseSimplified);
-                }
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been blessed with {0}!", "你的" + value.DisplayedNameLocalized + "获得了{0}祝福！", Language.ChineseSimplified);
+                Translate(GUID, null, "Your" + value.DisplayedNameLocalized + " has been burdened with {0}!", "你的" + value.DisplayedNameLocalized + "被施加了{0}诅咒！", Language.ChineseSimplified);
+                Translate(GUID, null, "Your " + value.DisplayedName + " is now free of its {0}...", "你的" + value.DisplayedNameLocalized + "现已摆脱了{0}的束缚……", Language.ChineseSimplified);
                 Translate(GUID, null, "Your " + value.DisplayedNameLocalized + " wields no mana.", "你的" + value.DisplayedNameLocalized + "未持有魔力。", Language.ChineseSimplified);
                 Translate(GUID, null, "The " + value.DisplayedNameLocalized + " has no mana.", value.DisplayedNameLocalized + "未持有魔力。", Language.ChineseSimplified);
-                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "你瞥见一张" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseSimplified);
-                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, value.DisplayedNameLocalized + "从肖像画中浮现。" + Localize(value.Description), Language.ChineseSimplified);
-                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "你凝视着一张" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseSimplified);
-                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "你瞥见一张" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseSimplified);
-                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, value.DisplayedNameLocalized + "从肖像画中浮现。" + Localize(value.Description), Language.ChineseSimplified);
-                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "你凝视着一张" + value.DisplayedNameLocalized + "。" + Localize(value.Description), Language.ChineseSimplified);
+                Translate(GUID, null, "You glance at a " + value.DisplayedName + ". " + value.Description, "你瞥见一张" + value.DisplayedNameLocalized + "。" + localizedDescription, Language.ChineseSimplified);
+                Translate(GUID, null, "A " + value.DisplayedName + " appears from within the portrait. " + value.Description, value.DisplayedNameLocalized + "从肖像画中浮现。" + localizedDescription, Language.ChineseSimplified);
+                Translate(GUID, null, "You gaze at a " + value.DisplayedName + ". " + value.Description, "你凝视着一张" + value.DisplayedNameLocalized + "。" + localizedDescription, Language.ChineseSimplified);
+                Translate(GUID, null, "You glance at an " + value.DisplayedName + ". " + value.Description, "你瞥见一张" + value.DisplayedNameLocalized + "。" + localizedDescription, Language.ChineseSimplified);
+                Translate(GUID, null, "An " + value.DisplayedName + " appears from within the portrait. " + value.Description, value.DisplayedNameLocalized + "从肖像画中浮现。" + localizedDescription, Language.ChineseSimplified);
+                Translate(GUID, null, "You gaze at an " + value.DisplayedName + ". " + value.Description, "你凝视着一张" + value.DisplayedNameLocalized + "。" + localizedDescription, Language.ChineseSimplified);
                 foreach (var gemType in stageGemTypes.Keys)
                 {
                     Translate(GUID, null, "You'll need two " + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypesEn[gemType] + "</color> gems to play your " + value.DisplayedNameLocalized + ".", "需要两颗" + HintsHandler.GetColorCodeForGem(gemType) + stageGemTypes[gemType] + "</color>玛珂才能使用你的" + value.DisplayedNameLocalized, Language.ChineseSimplified);
@@ -425,7 +411,13 @@ namespace SimplifiedChineseLanguagePack
             foreach (var card in source)
             {
                 if (card.SafeIsUnityNull()) continue;
-                cards.Add(new PostRegisterCardData(card, card.IsBaseGameCard()));
+                var value = new PostRegisterCardData(card, card.IsBaseGameCard());
+                if (MultilingualTranslationRuntime.IncludeCardForPostRegistration(Language.ChineseSimplified, value.Name,
+                    value.DisplayedName, value.DisplayedNameEnglish, value.DisplayedNameLocalized,
+                    value.Attack, value.Health, value.Abilities, value.Description))
+                {
+                    cards.Add(value);
+                }
             }
             return cards;
         }
