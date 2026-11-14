@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.6
+
+Fix critical bugs.
+
 ## 1.7.5
 
 Fix a critical bug.

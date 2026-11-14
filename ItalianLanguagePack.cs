@@ -23,6 +23,20 @@ namespace SimplifiedChineseLanguagePack.Languages.Italian
 
     internal static class ItalianLanguagePack
     {
+        public static void ClearRegistrationData()
+        {
+            GrimoraMod.Cards.Clear();
+            MagnificusMod.Cards.Clear();
+            MagnificusMod.CardsDescription.Clear();
+            MagnificusMod.Abilities.Clear();
+            PackManagementMod.EncountersTitle.Clear();
+            PackManagementMod.EncountersDescription.Clear();
+            P03InKayceesModMod.Consumables.Clear();
+            P03InKayceesModMod.Mods.Clear();
+            P03InKayceesModMod.Cards.Clear();
+            P03InKayceesModMod.CardParts.Clear();
+        }
+
         public static void RegisterTranslations()
         {
             APIMod.RegisterTranslations();
@@ -137,10 +151,15 @@ namespace SimplifiedChineseLanguagePack.Languages.Italian
 
             // BittysChallenges
             if (source == null) Debug.Log("Post Register Translations for BittysChallenges");
+            string goldColorCode = "<color=#" + ColorUtility.ToHtmlStringRGB(GameColors.Instance.gold) + ">";
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
                 Translate(GUID, null, "Weak " + value.DisplayedNameEnglish, value.DisplayedNameLocalized + " (forma debole)", Language.Italian);
+                // ShowMessage translates again after ShowUntilInput expands dialogue codes.
+                if (!value.HasDisplayedName || value.DisplayedName == value.DisplayedNameLocalized) continue;
+                Translate(GUID, null, "Un'abbondanza di " + goldColorCode + value.DisplayedName + "</color>...", "Un'abbondanza di " + goldColorCode + value.DisplayedNameLocalized + "</color>...", Language.Italian);
+                Translate(GUID, null, "Avrai meno " + goldColorCode + value.DisplayedName + "</color> a disposizione.", "Avrai meno " + goldColorCode + value.DisplayedNameLocalized + "</color> a disposizione.", Language.Italian);
             }
 
             // Mod callers use different card-name getters at different stages.
@@ -480,7 +499,7 @@ namespace SimplifiedChineseLanguagePack.Languages.Italian
             };
             foreach (PeltManager.PeltData peltData in PeltManager.AllPeltsAvailableAtTrader())
             {
-                string text = peltData.peltTierName ?? PeltManager.GetTierNameFromData(peltData);
+                if (!PeltDialogueLocalization.TryGetTierName(peltData, out string text)) continue;
                 if (!peltTypes.ContainsKey(text))
                 {
                     Debug.LogWarning($"未找到毛皮等级{text}的中文翻译，已跳过");

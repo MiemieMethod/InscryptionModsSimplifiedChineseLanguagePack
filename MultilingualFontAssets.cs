@@ -9,12 +9,11 @@ namespace SimplifiedChineseLanguagePack
 {
     internal static class MultilingualFontAssets
     {
-        private static readonly Dictionary<string, TMP_FontAsset> Fonts = new(StringComparer.OrdinalIgnoreCase);
+        private static readonly Dictionary<string, WeakReference<TMP_FontAsset>> Fonts = new(StringComparer.OrdinalIgnoreCase);
         private static readonly HashSet<string> MissingFonts = new(StringComparer.OrdinalIgnoreCase);
         private static AssetBundle bundle;
         private static bool searched;
-        private static Font legacyFont;
-        private static bool searchedLegacy;
+        private static WeakReference<Font> legacyFont;
 
         internal static TMP_FontAsset GetForOriginal(TMP_FontAsset original)
         {
@@ -53,7 +52,8 @@ namespace SimplifiedChineseLanguagePack
             {
                 return null;
             }
-            if (Fonts.TryGetValue(originalName, out TMP_FontAsset font))
+            TMP_FontAsset font = null;
+            if (Fonts.TryGetValue(originalName, out var cached) && cached.TryGetTarget(out font) && font != null)
             {
                 return font;
             }
@@ -69,22 +69,33 @@ namespace SimplifiedChineseLanguagePack
                 return null;
             }
             font.ReadFontAssetDefinition();
-            Fonts.Add(originalName, font);
+            ReleaseStaticAtlasCopies(font);
+            Fonts[originalName] = new WeakReference<TMP_FontAsset>(font);
             return font;
+        }
+
+        internal static void ReleaseStaticAtlasCopies(TMP_FontAsset font)
+        {
+            if (font == null || font.atlasPopulationMode != AtlasPopulationMode.Static) return;
+            // A static atlas is rendered by the GPU. Retaining its CPU pixels
+            // doubles the cost of large CJK pages without adding any characters.
+            foreach (Texture2D atlas in font.atlasTextures)
+            {
+                if (atlas != null && atlas.isReadable) atlas.Apply(false, true);
+            }
         }
 
         internal static Font GetLegacy()
         {
-            if (!searchedLegacy)
+            if (legacyFont != null && legacyFont.TryGetTarget(out Font cached) && cached != null) return cached;
+            EnsureBundle();
+            if (bundle != null)
             {
-                searchedLegacy = true;
-                EnsureBundle();
-                if (bundle != null)
-                {
-                    legacyFont = bundle.LoadAsset<Font>("assets/textmesh pro/fonts/pixellocale multilingual legacy.fontsettings");
-                }
+                Font font = bundle.LoadAsset<Font>("assets/textmesh pro/fonts/pixellocale multilingual legacy.fontsettings");
+                if (font != null) legacyFont = new WeakReference<Font>(font);
+                return font;
             }
-            return legacyFont;
+            return null;
         }
 
         private static void EnsureBundle()

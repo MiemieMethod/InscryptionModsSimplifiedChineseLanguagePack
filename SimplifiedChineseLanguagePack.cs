@@ -25,30 +25,34 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.7.5";
+        private const string Version = "1.7.6";
 
         public static bool FontLoaded = false;
         private static float nextFontRetryTime;
         public static bool LanguageLoaded = false;
         public static Dictionary<string, Localization.Translation> Translations = new();
         public static AssetBundle FontBundle;
+        private static readonly Dictionary<FontReplacement, (TMP_FontAsset Original, TMP_FontAsset Replacement)> ChineseFontReplacements = new();
+        private bool fontCleanupPending;
+        private bool fontCleanupRunning;
 
         private void Awake()
         {
             Logger.LogInfo($"Loaded {Name}!");
             MultilingualTranslationRuntime.Initialize();
-            RegisterTranslations();
-            MultilingualTranslationRuntime.RegisterLanguage(Language.ChineseSimplified, null, PostRegisterTranslations);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.ChineseTraditional, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.RegisterTranslations, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.PostRegisterTranslations, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.RegisterGeneratedCardName);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.Japanese, Languages.Japanese.JapaneseLanguagePack.RegisterTranslations, Languages.Japanese.JapaneseLanguagePack.PostRegisterTranslations, Languages.Japanese.JapaneseLanguagePack.RegisterGeneratedCardName);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.Korean, Languages.Korean.KoreanLanguagePack.RegisterTranslations, Languages.Korean.KoreanLanguagePack.PostRegisterTranslations, Languages.Korean.KoreanLanguagePack.RegisterGeneratedCardName);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.BrazilianPortuguese, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.RegisterTranslations, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.PostRegisterTranslations, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.RegisterGeneratedCardName);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.Russian, Languages.Russian.RussianLanguagePack.RegisterTranslations, Languages.Russian.RussianLanguagePack.PostRegisterTranslations, Languages.Russian.RussianLanguagePack.RegisterGeneratedCardName);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.Turkish, Languages.Turkish.TurkishLanguagePack.RegisterTranslations, Languages.Turkish.TurkishLanguagePack.PostRegisterTranslations, Languages.Turkish.TurkishLanguagePack.RegisterGeneratedCardName);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.French, Languages.French.FrenchLanguagePack.RegisterTranslations, Languages.French.FrenchLanguagePack.PostRegisterTranslations, Languages.French.FrenchLanguagePack.RegisterGeneratedCardName);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.German, Languages.German.GermanLanguagePack.RegisterTranslations, Languages.German.GermanLanguagePack.PostRegisterTranslations, Languages.German.GermanLanguagePack.RegisterGeneratedCardName);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.Italian, Languages.Italian.ItalianLanguagePack.RegisterTranslations, Languages.Italian.ItalianLanguagePack.PostRegisterTranslations, Languages.Italian.ItalianLanguagePack.RegisterGeneratedCardName);
-            MultilingualTranslationRuntime.RegisterLanguage(Language.Spanish, Languages.Spanish.SpanishLanguagePack.RegisterTranslations, Languages.Spanish.SpanishLanguagePack.PostRegisterTranslations, Languages.Spanish.SpanishLanguagePack.RegisterGeneratedCardName);
+            MultilingualTranslationRuntime.LanguageChanging += OnLanguageChanging;
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+            MultilingualTranslationRuntime.RegisterLanguage(Language.ChineseSimplified, RegisterTranslations, PostRegisterTranslations, RegisterGeneratedCardName, ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.ChineseTraditional, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.RegisterTranslations, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.PostRegisterTranslations, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.RegisterGeneratedCardName, Languages.ChineseTraditional.ChineseTraditionalLanguagePack.ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Japanese, Languages.Japanese.JapaneseLanguagePack.RegisterTranslations, Languages.Japanese.JapaneseLanguagePack.PostRegisterTranslations, Languages.Japanese.JapaneseLanguagePack.RegisterGeneratedCardName, Languages.Japanese.JapaneseLanguagePack.ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Korean, Languages.Korean.KoreanLanguagePack.RegisterTranslations, Languages.Korean.KoreanLanguagePack.PostRegisterTranslations, Languages.Korean.KoreanLanguagePack.RegisterGeneratedCardName, Languages.Korean.KoreanLanguagePack.ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.BrazilianPortuguese, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.RegisterTranslations, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.PostRegisterTranslations, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.RegisterGeneratedCardName, Languages.BrazilianPortuguese.BrazilianPortugueseLanguagePack.ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Russian, Languages.Russian.RussianLanguagePack.RegisterTranslations, Languages.Russian.RussianLanguagePack.PostRegisterTranslations, Languages.Russian.RussianLanguagePack.RegisterGeneratedCardName, Languages.Russian.RussianLanguagePack.ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Turkish, Languages.Turkish.TurkishLanguagePack.RegisterTranslations, Languages.Turkish.TurkishLanguagePack.PostRegisterTranslations, Languages.Turkish.TurkishLanguagePack.RegisterGeneratedCardName, Languages.Turkish.TurkishLanguagePack.ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.French, Languages.French.FrenchLanguagePack.RegisterTranslations, Languages.French.FrenchLanguagePack.PostRegisterTranslations, Languages.French.FrenchLanguagePack.RegisterGeneratedCardName, Languages.French.FrenchLanguagePack.ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.German, Languages.German.GermanLanguagePack.RegisterTranslations, Languages.German.GermanLanguagePack.PostRegisterTranslations, Languages.German.GermanLanguagePack.RegisterGeneratedCardName, Languages.German.GermanLanguagePack.ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Italian, Languages.Italian.ItalianLanguagePack.RegisterTranslations, Languages.Italian.ItalianLanguagePack.PostRegisterTranslations, Languages.Italian.ItalianLanguagePack.RegisterGeneratedCardName, Languages.Italian.ItalianLanguagePack.ClearRegistrationData);
+            MultilingualTranslationRuntime.RegisterLanguage(Language.Spanish, Languages.Spanish.SpanishLanguagePack.RegisterTranslations, Languages.Spanish.SpanishLanguagePack.PostRegisterTranslations, Languages.Spanish.SpanishLanguagePack.RegisterGeneratedCardName, Languages.Spanish.SpanishLanguagePack.ClearRegistrationData);
             MultilingualTranslationRuntime.EnsureSelectedLanguage();
             new Harmony(GUID).PatchAll(typeof(Patches));
             new Harmony(GUID + ".mod_text").PatchAll(typeof(ModLocalizationPatches));
@@ -61,6 +65,50 @@ namespace SimplifiedChineseLanguagePack
             MultilingualTranslationRuntime.MarkReady();
             PackManagementLocalization.Initialize();
             AchievementLocalization.Initialize();
+            AscensionSetupCompatibility.Initialize();
+        }
+
+        private void OnDestroy()
+        {
+            MultilingualTranslationRuntime.LanguageChanging -= OnLanguageChanging;
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnLanguageChanging(Language language)
+        {
+            MultilingualFontFallbacks.ReleaseLanguageCaches();
+            if (language != Language.ChineseSimplified)
+            {
+                var field = AccessTools.Field(typeof(FontReplacement), "replacementTMPFont");
+                foreach (var pair in ChineseFontReplacements)
+                {
+                    if (pair.Key != null && pair.Key.TMPFont == pair.Value.Replacement) field?.SetValue(pair.Key, pair.Value.Original);
+                }
+                ChineseFontReplacements.Clear();
+                FontLoaded = false;
+                nextFontRetryTime = 0f;
+            }
+            fontCleanupPending = true;
+            if (!fontCleanupRunning) StartCoroutine(ReleaseUnusedLanguageAssets());
+        }
+
+        private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+        {
+            if (fontCleanupPending && !fontCleanupRunning) StartCoroutine(ReleaseUnusedLanguageAssets());
+        }
+
+        private System.Collections.IEnumerator ReleaseUnusedLanguageAssets()
+        {
+            fontCleanupRunning = true;
+            // Let the language menu and its old text components finish updating
+            // before Unity determines which font assets are still referenced.
+            yield return null;
+            yield return null;
+            fontCleanupPending = false;
+            GC.Collect();
+            yield return Resources.UnloadUnusedAssets();
+            fontCleanupRunning = false;
+            if (fontCleanupPending) StartCoroutine(ReleaseUnusedLanguageAssets());
         }
         [HarmonyPatch]
         internal static class Patches
@@ -69,7 +117,7 @@ namespace SimplifiedChineseLanguagePack
             [HarmonyPostfix]
             private static void FontReplacementData_Initialize()
             {
-                if (!FontLoaded && Time.realtimeSinceStartup >= nextFontRetryTime)
+                if (Localization.CurrentLanguage == Language.ChineseSimplified && !FontLoaded && Time.realtimeSinceStartup >= nextFontRetryTime)
                 {
                     nextFontRetryTime = Time.realtimeSinceStartup + 5f;
                     FontLoaded = FixSimplifiedChineseFonts();
@@ -85,6 +133,20 @@ namespace SimplifiedChineseLanguagePack
         {
             return MultilingualTranslationRuntime.TranslateToLanguage(text, Language.ChineseSimplified);
         }
+        public static void ClearRegistrationData()
+        {
+            GrimoraMod.Cards.Clear();
+            MagnificusMod.Cards.Clear();
+            MagnificusMod.CardsDescription.Clear();
+            MagnificusMod.Abilities.Clear();
+            PackManagementMod.EncountersTitle.Clear();
+            PackManagementMod.EncountersDescription.Clear();
+            P03InKayceesModMod.Consumables.Clear();
+            P03InKayceesModMod.Mods.Clear();
+            P03InKayceesModMod.Cards.Clear();
+            P03InKayceesModMod.CardParts.Clear();
+        }
+
         private static void RegisterTranslations()
         {
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
@@ -170,10 +232,15 @@ namespace SimplifiedChineseLanguagePack
 
             // BittysChallenges
             if (source == null) Debug.Log("Post Register Translations for BittysChallenges");
+            string goldColorCode = "<color=#" + ColorUtility.ToHtmlStringRGB(GameColors.Instance.gold) + ">";
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
                 Translate(GUID, null, "Weak " + value.DisplayedNameEnglish, "虚弱" + value.DisplayedNameLocalized, Language.ChineseSimplified);
+                // ShowMessage translates again after ShowUntilInput expands dialogue codes.
+                if (!value.HasDisplayedName || value.DisplayedName == value.DisplayedNameLocalized) continue;
+                Translate(GUID, null, goldColorCode + value.DisplayedName + "</color>的大爆发……", goldColorCode + value.DisplayedNameLocalized + "</color>的大爆发……", Language.ChineseSimplified);
+                Translate(GUID, null, "你能使用的" + goldColorCode + value.DisplayedName + "</color>会更少。", "你能使用的" + goldColorCode + value.DisplayedNameLocalized + "</color>会更少。", Language.ChineseSimplified);
             }
 
             // Mod callers use different card-name getters at different stages.
@@ -459,6 +526,58 @@ namespace SimplifiedChineseLanguagePack
             return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
         }
 
+        private static void RegisterGeneratedCardName(string name)
+        {
+            if (TryTranslateMycoCardName(name, out string translatedName)) RegisterMycoCardTranslations(name, translatedName);
+        }
+
+        private static bool TryTranslateMycoCardName(string name, out string translatedName)
+        {
+            translatedName = null;
+            int separator = name.IndexOf('-');
+            if (separator <= 0 || separator >= name.Length - 1)
+            {
+                return false;
+            }
+
+            string left = name.Substring(0, separator);
+            string right = name.Substring(separator + 1);
+            if (!P03InKayceesModMod.CardParts.TryGetValue(left, out string translatedLeft) ||
+                !P03InKayceesModMod.CardParts.TryGetValue(right, out string translatedRight))
+            {
+                return false;
+            }
+
+            translatedName = translatedLeft + translatedRight;
+            return true;
+        }
+
+        private static void RegisterMycoCardTranslations(string name, string translatedName)
+        {
+            TranslateCardName(name, translatedName);
+            if (name.ToLowerInvariant().Contains("skel-e"))
+            {
+                TranslateCardName("Skel-E-" + name.Replace(" ", "-"), translatedName + "骷髅");
+            }
+            else
+            {
+                TranslateCardName("Skele " + name, translatedName + "外骨骼");
+            }
+            TranslateCardName("Beta " + name, translatedName + "测试版");
+            TranslateCardName("Lesser " + name, "幼小" + translatedName);
+            TranslateCardName("Elder " + name, "长老" + translatedName);
+            for (int score = 0; score <= 100; score++)
+            {
+                string suffix = score.ToString() + ".0";
+                TranslateCardName(name + " " + suffix, translatedName + " " + suffix);
+            }
+        }
+
+        private static void TranslateCardName(string name, string translatedName)
+        {
+            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, name, translatedName, Language.ChineseSimplified);
+        }
+
         private static bool FixSimplifiedChineseFonts()
         {
             Debug.Log("Fixing Simplified Chinese Fonts");
@@ -491,6 +610,8 @@ namespace SimplifiedChineseLanguagePack
                 Debug.LogError("简体中文字体或字体替换资源缺失，尚未完成字体修复。");
                 return false;
             }
+            MultilingualFontAssets.ReleaseStaticAtlasCopies(NotoSans);
+            MultilingualFontAssets.ReleaseStaticAtlasCopies(NotoSerif);
             return SetPrivateTMPFont(DAGGERSQUAREReplacement, NotoSans) & SetPrivateTMPFont(MISC3DReplacement, NotoSerif);
         }
 
@@ -510,6 +631,8 @@ namespace SimplifiedChineseLanguagePack
                 return false;
             }
 
+            if (!ChineseFontReplacements.ContainsKey(replacement))
+                ChineseFontReplacements.Add(replacement, (replacement.TMPFont, fontAsset));
             field.SetValue(replacement, fontAsset);
             Debug.Log($"成功替换{replacement.name}的TMP字体为{fontAsset.name}");
             return true;
@@ -572,7 +695,7 @@ namespace SimplifiedChineseLanguagePack
             };
             foreach (PeltManager.PeltData peltData in PeltManager.AllPeltsAvailableAtTrader())
             {
-                string text = peltData.peltTierName ?? PeltManager.GetTierNameFromData(peltData);
+                if (!PeltDialogueLocalization.TryGetTierName(peltData, out string text)) continue;
                 if (!peltTypes.ContainsKey(text))
                 {
                     Debug.LogWarning($"未找到毛皮等级{text}的中文翻译，已跳过");

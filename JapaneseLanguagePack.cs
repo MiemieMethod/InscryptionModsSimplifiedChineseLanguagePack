@@ -23,6 +23,20 @@ namespace SimplifiedChineseLanguagePack.Languages.Japanese
 
     internal static class JapaneseLanguagePack
     {
+        public static void ClearRegistrationData()
+        {
+            GrimoraMod.Cards.Clear();
+            MagnificusMod.Cards.Clear();
+            MagnificusMod.CardsDescription.Clear();
+            MagnificusMod.Abilities.Clear();
+            PackManagementMod.EncountersTitle.Clear();
+            PackManagementMod.EncountersDescription.Clear();
+            P03InKayceesModMod.Consumables.Clear();
+            P03InKayceesModMod.Mods.Clear();
+            P03InKayceesModMod.Cards.Clear();
+            P03InKayceesModMod.CardParts.Clear();
+        }
+
         public static void RegisterTranslations()
         {
             APIMod.RegisterTranslations();
@@ -137,10 +151,15 @@ namespace SimplifiedChineseLanguagePack.Languages.Japanese
 
             // BittysChallenges
             if (source == null) Debug.Log("Post Register Translations for BittysChallenges");
+            string goldColorCode = "<color=#" + ColorUtility.ToHtmlStringRGB(GameColors.Instance.gold) + ">";
             foreach (var value in cards)
             {
                 if (!value.HasDisplayedNameEnglish) continue;
                 Translate(GUID, null, "Weak " + value.DisplayedNameEnglish, "弱った" + value.DisplayedNameLocalized, Language.Japanese);
+                // ShowMessage translates again after ShowUntilInput expands dialogue codes.
+                if (!value.HasDisplayedName || value.DisplayedName == value.DisplayedNameLocalized) continue;
+                Translate(GUID, null, "大量の" + goldColorCode + value.DisplayedName + "</color>……", "大量の" + goldColorCode + value.DisplayedNameLocalized + "</color>……", Language.Japanese);
+                Translate(GUID, null, "使える" + goldColorCode + value.DisplayedName + "</color>が少なくなる。", "使える" + goldColorCode + value.DisplayedNameLocalized + "</color>が少なくなる。", Language.Japanese);
             }
 
             // Mod callers use different card-name getters at different stages.
@@ -480,7 +499,7 @@ namespace SimplifiedChineseLanguagePack.Languages.Japanese
             };
             foreach (PeltManager.PeltData peltData in PeltManager.AllPeltsAvailableAtTrader())
             {
-                string text = peltData.peltTierName ?? PeltManager.GetTierNameFromData(peltData);
+                if (!PeltDialogueLocalization.TryGetTierName(peltData, out string text)) continue;
                 if (!peltTypes.ContainsKey(text))
                 {
                     Debug.LogWarning($"未找到毛皮等级{text}的中文翻译，已跳过");

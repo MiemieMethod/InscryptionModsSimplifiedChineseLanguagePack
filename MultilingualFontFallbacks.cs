@@ -15,7 +15,7 @@ namespace SimplifiedChineseLanguagePack
     {
         private static readonly Dictionary<Language, Dictionary<(TMP_FontAsset Source, TMP_FontAsset Primary), TMP_FontAsset>> LocalizedFonts = new();
         private static readonly Dictionary<Font, TMP_FontAsset> DynamicFonts = new();
-        private static readonly Dictionary<TMP_FontAsset, TMP_FontAsset> SourceFonts = new();
+        private static readonly ConditionalWeakTable<TMP_FontAsset, FontSource> SourceFonts = new();
         private static readonly Dictionary<TMP_FontAsset, TMP_FontAsset> PixelFallbacks = new();
         private static readonly Dictionary<TMP_FontAsset, TMP_FontAsset> WesternSansFallbacks = new();
         private static readonly Dictionary<TMP_FontAsset, TMP_FontAsset> SymbolFallbacks = new();
@@ -25,6 +25,26 @@ namespace SimplifiedChineseLanguagePack
         private static readonly ConditionalWeakTable<UIText, LegacyFontSelection> LegacyFonts = new();
         private static Font westernPixelFont;
         private static readonly Regex LegacyRichTextTags = new(@"</?(?:b|i)>|</?(?:size|color|material)(?:=[^>]+)?>", RegexOptions.IgnoreCase);
+
+        private sealed class FontSource
+        {
+            internal TMP_FontAsset Font;
+        }
+
+        internal static void ReleaseLanguageCaches()
+        {
+            // Live text components retain the fonts they still use. Weak source
+            // mappings continue to restore their original face during a switch.
+            // Once those components disappear, Unity can reclaim the old fonts.
+            LocalizedFonts.Clear();
+            DynamicFonts.Clear();
+            PixelFallbacks.Clear();
+            WesternSansFallbacks.Clear();
+            SymbolFallbacks.Clear();
+            PixelSymbolFallbacks.Clear();
+            RegionalFonts.Clear();
+            FailedFonts.Clear();
+        }
 
         private sealed class LegacyFontSelection
         {
@@ -40,9 +60,9 @@ namespace SimplifiedChineseLanguagePack
             // A component can ask to localize its already localized font when
             // the player changes languages. Resolve our clone to its original
             // source before the game's normal language selection runs.
-            if (fontToReplace != null && SourceFonts.TryGetValue(fontToReplace, out TMP_FontAsset source))
+            if (fontToReplace != null && SourceFonts.TryGetValue(fontToReplace, out FontSource source))
             {
-                fontToReplace = source;
+                fontToReplace = source.Font;
             }
         }
 
@@ -108,11 +128,18 @@ namespace SimplifiedChineseLanguagePack
             // The baked asset retains every original glyph metric and all of
             // the game's tuned face/material settings. Its enlarged atlas adds
             // the official font's available glyphs for complete Unicode blocks.
-            localized = UnityEngine.Object.Instantiate(expanded ?? primary);
+            // Keep the small official face in the wrapper. The expanded atlas
+            // is shared as a fallback instead of deep-copying its full CJK
+            // character/glyph tables for every original English font.
+            localized = UnityEngine.Object.Instantiate(primary);
             localized.name = primary.name + " " + language;
             localized.fallbackFontAssetTable = primary.fallbackFontAssetTable == null
                 ? new List<TMP_FontAsset>()
                 : new List<TMP_FontAsset>(primary.fallbackFontAssetTable);
+            if (expanded != null)
+            {
+                localized.fallbackFontAssetTable.Insert(0, expanded);
+            }
             // Marksman has no vector source in the game and lacks Turkish
             // dotted/dotless I. The game's other pixel face supplies these;
             // its regional Noto fonts do not contain those Latin glyphs.
@@ -144,7 +171,7 @@ namespace SimplifiedChineseLanguagePack
             }
             fonts.Add(key, localized);
             fonts.Add((fontToReplace, localized), localized);
-            SourceFonts.Add(localized, fontToReplace);
+            SourceFonts.Add(localized, new FontSource { Font = fontToReplace });
             __result = localized;
         }
 

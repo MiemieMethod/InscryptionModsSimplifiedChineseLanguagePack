@@ -5,6 +5,7 @@ using System.Linq;
 using DiskCardGame;
 using HarmonyLib;
 using InscryptionAPI.Localizing;
+using CardSignature = System.ValueTuple<string, string, string, string, int, int, string, System.ValueTuple<string>>;
 
 namespace SimplifiedChineseLanguagePack
 {
@@ -15,7 +16,14 @@ namespace SimplifiedChineseLanguagePack
             internal string Id;
             internal string EnglishString;
             internal string EnglishStringFormatted;
-            internal readonly Dictionary<Language, string> Values = new();
+            internal Language Language;
+            internal string Value;
+            internal Localization.Translation Row;
+            internal string PreviousValue;
+            internal bool HadPreviousValue;
+            internal bool CreatedRow;
+            internal bool Persistent;
+            internal int References;
         }
 
         private sealed class LanguageRegistration
@@ -23,13 +31,34 @@ namespace SimplifiedChineseLanguagePack
             internal Action Register;
             internal Action<IEnumerable<CardInfo>> PostRegister;
             internal Action<string> RegisterGeneratedName;
-            internal int GeneratedNameCount;
-            internal readonly HashSet<(string, string, string, string, int, int, string, string)> RegisteredCards = new();
-            internal HashSet<(string, string, string, string, int, int, string, string)> PendingCards;
+            internal Action Clear;
+            internal HashSet<CardSignature> RegisteredCards = new();
+            internal HashSet<CardSignature> PendingCards;
             internal bool StaticDone;
             internal bool PostDone;
             internal bool Running;
+            internal bool Failed;
+            internal bool FailureReported;
         }
+
+        private sealed class TransientBatch
+        {
+            internal readonly HashSet<Registration> Entries = new();
+            internal readonly HashSet<CardSignature> Cards = new();
+            internal string GeneratedName;
+            internal LinkedListNode<TransientBatch> Node;
+        }
+
+        // Only recent live modifications need extra format-before-translate
+        // rows. Prototypes retain their startup rows, as in the original pack.
+        private const int TransientBatchLimit = 256;
+        private const int TransientEvictionCount = 32;
+        private static readonly LinkedList<TransientBatch> TransientBatches = new();
+        private static readonly Dictionary<CardSignature, TransientBatch> TransientCards = new();
+        private static readonly Dictionary<string, TransientBatch> GeneratedNames = new(StringComparer.Ordinal);
+        private static TransientBatch currentBatch;
+        private static Language activeLanguage;
+        internal static event Action<Language> LanguageChanging;
 
         private static readonly Dictionary<string, Registration> RegistrationsByEnglish = new(StringComparer.Ordinal);
         private static readonly Dictionary<string, Registration> RegistrationsById = new(StringComparer.Ordinal);
@@ -38,9 +67,6 @@ namespace SimplifiedChineseLanguagePack
         private static readonly Dictionary<string, Localization.Translation> TranslationsById = new(StringComparer.Ordinal);
         private static readonly HashSet<Localization.Translation> IndexedRows = new();
         private static readonly Dictionary<Language, LanguageRegistration> Languages = new();
-        private static readonly HashSet<Language> RequiredOfficialLanguages = new() { Language.ChineseSimplified };
-        private static readonly HashSet<string> GeneratedNameSet = new(StringComparer.Ordinal);
-        private static readonly List<string> GeneratedNames = new();
         private static bool registeringCard;
         private static int indexedLookupScope;
         private static List<Localization.Translation> indexedTranslations;
@@ -61,9 +87,9 @@ namespace SimplifiedChineseLanguagePack
             }
 
             initialized = true;
+            activeLanguage = Localization.CurrentLanguage;
             LocalizationManager.OnLanguageLoaded += OnLanguageLoaded;
-            RememberOfficialLanguage(Localization.CurrentLanguage);
-            LoadOfficialLanguages();
+            LoadOfficialLanguage(activeLanguage);
             RebuildIndex();
 
             // Registered mod strings use the index; native strings retain the
@@ -74,10 +100,11 @@ namespace SimplifiedChineseLanguagePack
                 prefix: new HarmonyMethod(typeof(MultilingualTranslationRuntime), nameof(RegisteredTranslationPrefix)));
             harmony.Patch(
                 AccessTools.PropertySetter(typeof(Localization), nameof(Localization.CurrentLanguage)),
+                prefix: new HarmonyMethod(typeof(MultilingualTranslationRuntime), nameof(CurrentLanguageChangingPrefix)),
                 postfix: new HarmonyMethod(typeof(MultilingualTranslationRuntime), nameof(CurrentLanguageChangedPostfix)));
         }
 
-        internal static void RegisterLanguage(Language language, Action register, Action<IEnumerable<CardInfo>> postRegister, Action<string> registerGeneratedName = null)
+        internal static void RegisterLanguage(Language language, Action register, Action<IEnumerable<CardInfo>> postRegister, Action<string> registerGeneratedName = null, Action clear = null)
         {
             if (!Languages.ContainsKey(language))
             {
@@ -86,6 +113,7 @@ namespace SimplifiedChineseLanguagePack
                     Register = register,
                     PostRegister = postRegister,
                     RegisterGeneratedName = registerGeneratedName,
+                    Clear = clear,
                     StaticDone = register == null,
                     PostDone = postRegister == null
                 };
@@ -94,57 +122,60 @@ namespace SimplifiedChineseLanguagePack
 
         internal static void EnsureSelectedLanguage()
         {
+            SelectLanguage(Localization.CurrentLanguage);
             EnsureLanguage(Localization.CurrentLanguage);
         }
 
         internal static void MarkReady()
         {
+            // A startup dependency may become available after all plugins Awake.
+            // Retry once at this lifecycle boundary, never on every text lookup.
+            if (!ready && Languages.TryGetValue(Localization.CurrentLanguage, out var registration)) registration.Failed = false;
             ready = true;
             EnsureSelectedLanguage();
         }
 
-        internal static void RegisterGeneratedCardName(string name)
+        internal static bool RegisterGeneratedCardName(string name)
         {
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name) || registeringCard || currentBatch != null)
             {
-                return;
+                return false;
             }
-            if (GeneratedNameSet.Add(name))
+            EnsureSelectedLanguage();
+            if (!Languages.TryGetValue(activeLanguage, out var registration) ||
+                registration.Failed || !registration.StaticDone || registration.RegisterGeneratedName == null) return false;
+            if (GeneratedNames.TryGetValue(name, out var cached))
             {
-                GeneratedNames.Add(name);
+                Touch(cached);
+                return cached.Entries.Count > 0;
             }
-            foreach (LanguageRegistration registration in Languages.Values)
+            var batch = new TransientBatch { GeneratedName = name };
+            currentBatch = batch;
+            try
             {
-                if (registration.StaticDone && !registration.Running)
-                {
-                    ReplayGeneratedNames(registration);
-                }
+                registration.RegisterGeneratedName(name);
+                CommitBatch(batch);
+                return batch.Entries.Count > 0;
             }
-        }
-
-        private static void ReplayGeneratedNames(LanguageRegistration registration)
-        {
-            if (registration.RegisterGeneratedName == null)
+            catch (Exception exception)
             {
-                return;
+                SuspendRegistration(registration, activeLanguage, "合成卡名称", exception);
+                return false;
             }
-            while (registration.GeneratedNameCount < GeneratedNames.Count)
+            finally
             {
-                // The global list is append-only and already deduplicated.
-                // A new fusion name must not rescan every previous fusion.
-                registration.RegisterGeneratedName(GeneratedNames[registration.GeneratedNameCount]);
-                registration.GeneratedNameCount++;
+                currentBatch = null;
+                if (batch.Node == null) DiscardBatches(new[] { batch });
             }
         }
 
         private static void EnsureLanguage(Language language)
         {
-            if (!Languages.TryGetValue(language, out LanguageRegistration registration) || registration.Running)
+            if (!Languages.TryGetValue(language, out LanguageRegistration registration) || registration.Running || registration.Failed)
             {
                 return;
             }
-            if (registration.StaticDone && (!ready || registration.PostDone) &&
-                (registration.RegisterGeneratedName == null || registration.GeneratedNameCount == GeneratedNames.Count))
+            if (registration.StaticDone && (!ready || registration.PostDone))
             {
                 return;
             }
@@ -154,6 +185,7 @@ namespace SimplifiedChineseLanguagePack
             {
                 if (!registration.StaticDone)
                 {
+                    registration.Clear?.Invoke();
                     registration.Register();
                     registration.StaticDone = true;
                 }
@@ -162,33 +194,64 @@ namespace SimplifiedChineseLanguagePack
                     RunPostRegistration(registration, null);
                     registration.PostDone = true;
                 }
-                ReplayGeneratedNames(registration);
+                registration.FailureReported = false;
+            }
+            catch (Exception exception)
+            {
+                SuspendRegistration(registration, language, registration.StaticDone ? "卡牌翻译" : "静态翻译", exception);
             }
             finally
             {
-                // Failed actions can be retried; successful dictionaries never
-                // run twice when the player returns to a language.
                 registration.Running = false;
             }
         }
 
+        private static void SuspendRegistration(LanguageRegistration registration, Language language, string stage, Exception exception)
+        {
+            registration.Failed = true;
+            if (registration.FailureReported) return;
+            registration.FailureReported = true;
+            UnityEngine.Debug.LogError($"{language} 的{stage}注册失败，已暂停重复尝试，保留已注册译文及原版翻译。\n{exception}");
+        }
+
+        private static void CurrentLanguageChangingPrefix(Language __0)
+        {
+            SelectLanguage(__0);
+        }
+
         private static void CurrentLanguageChangedPostfix(Language __0)
         {
-            if (Languages.TryGetValue(__0, out LanguageRegistration registration) && registration.PostRegister != null)
-            {
-                registration.PostDone = false;
-                // A newly selected language can have newer external name or
-                // ability translations. Refresh its snapshots once on selection.
-                registration.RegisteredCards.Clear();
-            }
             EnsureLanguage(__0);
+        }
+
+        private static void SelectLanguage(Language language)
+        {
+            if (activeLanguage == language) return;
+            RemoveRegistrations(Registrations.ToArray());
+            if (Languages.TryGetValue(activeLanguage, out var previous))
+            {
+                previous.Clear?.Invoke();
+                previous.RegisteredCards = new();
+                previous.StaticDone = previous.Register == null;
+                previous.PostDone = previous.PostRegister == null;
+                previous.Failed = false;
+                previous.FailureReported = false;
+            }
+            TransientBatches.Clear();
+            TransientCards.Clear();
+            GeneratedNames.Clear();
+            activeLanguage = language;
+            LanguageChanging?.Invoke(language);
         }
 
         internal static void CardListChanged()
         {
-            foreach (LanguageRegistration registration in Languages.Values)
+            if (Languages.TryGetValue(activeLanguage, out var registration))
             {
                 if (registration.PostRegister != null) registration.PostDone = false;
+                // Changed card data can repair a failed dynamic batch, but a
+                // missing static dependency cannot be repaired by rendering cards.
+                if (registration.StaticDone) registration.Failed = false;
             }
             // API subscribers may sync repeatedly while building a card list.
             // Refresh once on the next lookup, after that batch has finished.
@@ -204,19 +267,38 @@ namespace SimplifiedChineseLanguagePack
                 return;
             }
             EnsureLanguage(language);
+            if (registration.Failed || !registration.StaticDone) return;
             registeringCard = true;
             indexedLookupScope++;
             try
             {
                 // Observe the card actually entering play, including later mods
                 // and external localized-name getters, rather than its startup prototype.
-                var signature = (card.name, card.displayedName, card.DisplayedNameEnglish, localizedName ?? card.DisplayedNameLocalized,
+                CardSignature signature = (card.name, card.displayedName, card.DisplayedNameEnglish, localizedName ?? card.DisplayedNameLocalized,
                     card.Attack, card.Health, string.Join(",", card.Abilities ?? new List<Ability>()), card.description);
-                if (!registration.RegisteredCards.Contains(signature))
+                if (registration.RegisteredCards.Contains(signature)) return;
+                if (TransientCards.TryGetValue(signature, out var cached))
+                {
+                    Touch(cached);
+                    return;
+                }
+                var batch = new TransientBatch();
+                currentBatch = batch;
+                try
                 {
                     RunPostRegistration(registration, new[] { card });
-                    registration.RegisteredCards.Add(signature);
+                    batch.Cards.Add(signature);
+                    CommitBatch(batch);
                 }
+                finally
+                {
+                    currentBatch = null;
+                    if (batch.Node == null) DiscardBatches(new[] { batch });
+                }
+            }
+            catch (Exception exception)
+            {
+                SuspendRegistration(registration, language, "卡牌翻译", exception);
             }
             finally
             {
@@ -234,9 +316,10 @@ namespace SimplifiedChineseLanguagePack
             try
             {
                 registration.PostRegister(source);
-                // Commit only after the whole callback succeeds. A failed
-                // registration must remain eligible for retry.
-                registration.RegisteredCards.UnionWith(registration.PendingCards);
+                // Commit only after the whole callback succeeds. Failed cards
+                // can retry when the card list or selected language changes.
+                if (currentBatch == null) registration.RegisteredCards.UnionWith(registration.PendingCards);
+                else currentBatch.Cards.UnionWith(registration.PendingCards);
             }
             finally
             {
@@ -260,15 +343,83 @@ namespace SimplifiedChineseLanguagePack
             return !registration.RegisteredCards.Contains(signature) && registration.PendingCards.Add(signature);
         }
 
+        private static void Touch(TransientBatch batch)
+        {
+            TransientBatches.Remove(batch.Node);
+            TransientBatches.AddLast(batch.Node);
+        }
+
+        private static void CommitBatch(TransientBatch batch)
+        {
+            batch.Node = TransientBatches.AddLast(batch);
+            foreach (var signature in batch.Cards) TransientCards[signature] = batch;
+            if (batch.GeneratedName != null) GeneratedNames[batch.GeneratedName] = batch;
+            if (TransientBatches.Count <= TransientBatchLimit) return;
+            // Amortize removal from the game's List across several cards. No
+            // full-table scan for every new name or every translation row.
+            var expired = new List<TransientBatch>();
+            for (int i = 0; i < TransientEvictionCount; i++)
+            {
+                expired.Add(TransientBatches.First.Value);
+                TransientBatches.RemoveFirst();
+            }
+            DiscardBatches(expired);
+        }
+
+        private static void DiscardBatches(IEnumerable<TransientBatch> batches)
+        {
+            var expired = new HashSet<Registration>();
+            foreach (var batch in batches)
+            {
+                foreach (var signature in batch.Cards)
+                    if (TransientCards.TryGetValue(signature, out var owner) && owner == batch) TransientCards.Remove(signature);
+                if (batch.GeneratedName != null) GeneratedNames.Remove(batch.GeneratedName);
+                foreach (var entry in batch.Entries)
+                {
+                    entry.References--;
+                    if (!entry.Persistent && entry.References == 0) expired.Add(entry);
+                }
+            }
+            RemoveRegistrations(expired);
+        }
+
+        private static void RemoveRegistrations(IEnumerable<Registration> entries)
+        {
+            var removed = new HashSet<Registration>(entries);
+            if (removed.Count == 0) return;
+            var rows = new HashSet<Localization.Translation>();
+            foreach (var entry in removed)
+            {
+                var row = entry.Row;
+                // Another mod may have edited the live row after us. Only
+                // undo values we still own; never restore a stale shadow copy.
+                bool sameKey = row != null && (entry.EnglishStringFormatted != null
+                    ? row.englishStringFormatted == entry.EnglishStringFormatted : row.id == entry.Id);
+                if (sameKey && row.values != null && row.values.TryGetValue(entry.Language, out var value) && value == entry.Value)
+                {
+                    if (entry.HadPreviousValue) row.values[entry.Language] = entry.PreviousValue;
+                    else row.values.Remove(entry.Language);
+                }
+                if (sameKey && entry.CreatedRow && row.values?.Count == 0 && (row.femaleGenderValues == null || row.femaleGenderValues.Count == 0)) rows.Add(row);
+            }
+            foreach (string key in RegistrationsByEnglish.Where(pair => removed.Contains(pair.Value)).Select(pair => pair.Key).ToArray()) RegistrationsByEnglish.Remove(key);
+            foreach (string key in RegistrationsById.Where(pair => removed.Contains(pair.Value)).Select(pair => pair.Key).ToArray()) RegistrationsById.Remove(key);
+            Registrations.RemoveAll(removed.Contains);
+            if (Localization.Translations.RemoveAll(rows.Contains) > 0) RebuildIndex();
+        }
+
         internal static void Register(string pluginGUID, string id, string englishString, string translatedString, Language language)
         {
-            if (string.IsNullOrEmpty(englishString) && string.IsNullOrEmpty(id))
+            if (language != Localization.CurrentLanguage || language == Language.English ||
+                (string.IsNullOrEmpty(englishString) && string.IsNullOrEmpty(id)))
             {
                 return;
             }
 
             Initialize();
-            if (RememberOfficialLanguage(language)) LoadOfficialLanguages();
+            // Complete the native column before our overrides; its CSV loader
+            // uses Dictionary.Add. Do not preload other languages here.
+            LoadOfficialLanguage(language);
             EnsureCurrentIndex();
             string formatted = string.IsNullOrEmpty(englishString) ? null : Localization.FormatString(englishString);
             Registration registration = FindRegistration(formatted, id);
@@ -278,7 +429,8 @@ namespace SimplifiedChineseLanguagePack
                 {
                     Id = id,
                     EnglishString = englishString,
-                    EnglishStringFormatted = formatted
+                    EnglishStringFormatted = formatted,
+                    Language = language
                 };
                 Registrations.Add(registration);
             }
@@ -296,8 +448,10 @@ namespace SimplifiedChineseLanguagePack
                 }
             }
 
-            registration.Values[language] = translatedString;
+            if (currentBatch == null) registration.Persistent = true;
+            else if (currentBatch.Entries.Add(registration)) registration.References++;
             Localization.Translation translation = GetOrCreateTranslation(registration);
+            registration.Value = translatedString;
             translation.values[language] = translatedString;
         }
 
@@ -308,21 +462,15 @@ namespace SimplifiedChineseLanguagePack
                 return !string.IsNullOrEmpty(id) ? Localization.TranslateWithID(id) : Localization.Translate(text);
             }
             Initialize();
-            if (RememberOfficialLanguage(language)) LoadOfficialLanguages();
+            LoadOfficialLanguage(language);
             // Explicit-language setup must use the same game method and patches,
             // including gender, empty values and ID fallback, without changing options.
             return (string)NativeTranslate.Invoke(null, new object[] { language, string.IsNullOrEmpty(id) ? text : null, id });
         }
 
-        private static bool RememberOfficialLanguage(Language language)
+        private static void LoadOfficialLanguage(Language language)
         {
-            return language >= Language.French && language <= Language.ChineseTraditional &&
-                RequiredOfficialLanguages.Add(language);
-        }
-
-        private static void LoadOfficialLanguages()
-        {
-            if (loadingLanguages)
+            if (loadingLanguages || language < Language.French || language > Language.ChineseTraditional)
             {
                 return;
             }
@@ -330,13 +478,7 @@ namespace SimplifiedChineseLanguagePack
             loadingLanguages = true;
             try
             {
-                // Load a native column before overriding it: the CSV reader uses
-                // Dictionary.Add. Unused languages can wait until requested,
-                // leaving more address space for the 32-bit game's resources.
-                foreach (Language language in RequiredOfficialLanguages.ToArray())
-                {
-                    Localization.TryLoadLanguage(language);
-                }
+                Localization.TryLoadLanguage(language);
             }
             finally
             {
@@ -351,10 +493,8 @@ namespace SimplifiedChineseLanguagePack
                 return;
             }
 
-            RememberOfficialLanguage(language);
-            // A table reset also discards columns used by earlier registrations.
-            // Restore those native columns before replaying their overrides.
-            LoadOfficialLanguages();
+            // A true table reset needs only the selected column before replay.
+            LoadOfficialLanguage(activeLanguage);
             EnsureCurrentIndex();
         }
 
@@ -363,10 +503,7 @@ namespace SimplifiedChineseLanguagePack
             foreach (Registration registration in Registrations)
             {
                 Localization.Translation translation = GetOrCreateTranslation(registration);
-                foreach (KeyValuePair<Language, string> value in registration.Values)
-                {
-                    translation.values[value.Key] = value.Value;
-                }
+                translation.values[registration.Language] = registration.Value;
             }
         }
 
@@ -375,7 +512,7 @@ namespace SimplifiedChineseLanguagePack
             List<Localization.Translation> translations = Localization.Translations;
             if (translations.Count == 0)
             {
-                LoadOfficialLanguages();
+                LoadOfficialLanguage(activeLanguage);
                 translations = Localization.Translations;
             }
             int version = TranslationListVersion == null ? translations.Count : (int)TranslationListVersion.GetValue(translations);
@@ -453,7 +590,8 @@ namespace SimplifiedChineseLanguagePack
             {
                 TranslationsById.TryGetValue(registration.Id, out translation);
             }
-            if (translation == null)
+            bool created = translation == null;
+            if (created)
             {
                 translation = new Localization.Translation
                 {
@@ -471,6 +609,12 @@ namespace SimplifiedChineseLanguagePack
 
             translation.values ??= new Dictionary<Language, string>();
             translation.femaleGenderValues ??= new Dictionary<Language, string>();
+            if (!ReferenceEquals(registration.Row, translation))
+            {
+                registration.Row = translation;
+                registration.CreatedRow = created;
+                registration.HadPreviousValue = translation.values.TryGetValue(registration.Language, out registration.PreviousValue);
+            }
             if (registration.EnglishStringFormatted != null)
             {
                 TranslationsByEnglish[registration.EnglishStringFormatted] = translation;
@@ -495,12 +639,12 @@ namespace SimplifiedChineseLanguagePack
                 return true;
             }
 
-            if (language == Localization.CurrentLanguage) EnsureLanguage(language);
+            if (language == Localization.CurrentLanguage) EnsureSelectedLanguage();
 
             string formatted = englishText == null ? null : Localization.FormatString(englishText);
             string lookupId = englishText == null ? id : null;
             Registration registration = FindRegistration(formatted, lookupId);
-            if (registration == null || !registration.Values.ContainsKey(language))
+            if (registration == null || registration.Language != language)
             {
                 if (TryTranslateCardAbilityText(language, englishText, formatted, out string abilityText))
                 {
@@ -600,7 +744,7 @@ namespace SimplifiedChineseLanguagePack
                     string template = text.Substring(0, start) + "{0}" + pattern.Suffix;
                     string templateKey = Localization.FormatString(template);
                     Registration registration = FindRegistration(templateKey, null);
-                    if (registration == null || !registration.Values.ContainsKey(language)) continue;
+                    if (registration == null || registration.Language != language) continue;
 
                     EnsureCurrentIndex();
                     // An explicit sentence supplied (or cleared) by another mod

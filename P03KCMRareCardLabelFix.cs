@@ -30,8 +30,7 @@ namespace SimplifiedChineseLanguagePack
         public const string Name = "P03KCMRareCardLabelFix";
         private const string Version = "1.1.0";
 
-        private static readonly HashSet<string> RegisteredMycoCardNames = new();
-        private static readonly HashSet<TMP_FontAsset> ReportedLabelFonts = new();
+        private static readonly HashSet<int> ReportedLabelFonts = new();
         private static readonly HashSet<string> ReportedLabelErrors = new();
 
         private void Awake()
@@ -130,7 +129,7 @@ namespace SimplifiedChineseLanguagePack
             // before RenderCard queues the render. Keep P03's colors and shaders.
             fontMaterial.mainTexture = atlas;
             rendererMaterial.mainTexture = atlas;
-            if (ReportedLabelFonts.Add(font))
+            if (ReportedLabelFonts.Add(font.GetInstanceID()))
             {
                 string message = Localization.CurrentLanguage == Language.ChineseSimplified
                     ? "P03稀有卡名称中文显示修复成功！"
@@ -158,66 +157,12 @@ namespace SimplifiedChineseLanguagePack
             {
                 string nameReplacement = card.mods[i]?.nameReplacement;
                 if (string.IsNullOrEmpty(nameReplacement)) continue;
-                if (RegisteredMycoCardNames.Contains(nameReplacement)) return;
-                if (TryTranslateMycoCardName(nameReplacement, out string translatedName))
-                {
-                    RegisterMycoCardTranslations(nameReplacement, translatedName);
-                    MultilingualTranslationRuntime.RegisterGeneratedCardName(nameReplacement);
-                    return;
-                }
+                // Each language validates the parts in its own callback. The
+                // bounded runtime cache can recreate an evicted saved fusion.
+                if (nameReplacement.IndexOf('-') <= 0) continue;
+                if (MultilingualTranslationRuntime.RegisterGeneratedCardName(nameReplacement)) return;
             }
         }
 
-        private static bool TryTranslateMycoCardName(string name, out string translatedName)
-        {
-            translatedName = null;
-            int separator = name.IndexOf('-');
-            if (separator <= 0 || separator >= name.Length - 1)
-            {
-                return false;
-            }
-
-            string left = name.Substring(0, separator);
-            string right = name.Substring(separator + 1);
-            if (!P03InKayceesModMod.CardParts.TryGetValue(left, out string translatedLeft) ||
-                !P03InKayceesModMod.CardParts.TryGetValue(right, out string translatedRight))
-            {
-                return false;
-            }
-
-            translatedName = translatedLeft + translatedRight;
-            return true;
-        }
-
-        private static void RegisterMycoCardTranslations(string name, string translatedName)
-        {
-            if (!RegisteredMycoCardNames.Add(name))
-            {
-                return;
-            }
-
-            TranslateCardName(name, translatedName);
-            if (name.ToLowerInvariant().Contains("skel-e"))
-            {
-                TranslateCardName("Skel-E-" + name.Replace(" ", "-"), translatedName + "骷髅");
-            }
-            else
-            {
-                TranslateCardName("Skele " + name, translatedName + "外骨骼");
-            }
-            TranslateCardName("Beta " + name, translatedName + "测试版");
-            TranslateCardName("Lesser " + name, "幼小" + translatedName);
-            TranslateCardName("Elder " + name, "长老" + translatedName);
-            for (int score = 0; score <= 100; score++)
-            {
-                string suffix = score.ToString() + ".0";
-                TranslateCardName(name + " " + suffix, translatedName + " " + suffix);
-            }
-        }
-
-        private static void TranslateCardName(string name, string translatedName)
-        {
-            SimplifiedChineseLanguagePackPlugin.Translate(SimplifiedChineseLanguagePackPlugin.GUID, null, name, translatedName, Language.ChineseSimplified);
-        }
     }
 }
