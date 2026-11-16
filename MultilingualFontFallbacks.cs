@@ -15,7 +15,7 @@ namespace SimplifiedChineseLanguagePack
     {
         private static readonly Dictionary<Language, Dictionary<(TMP_FontAsset Source, TMP_FontAsset Primary), TMP_FontAsset>> LocalizedFonts = new();
         private static readonly Dictionary<Font, TMP_FontAsset> DynamicFonts = new();
-        private static readonly ConditionalWeakTable<TMP_FontAsset, FontSource> SourceFonts = new();
+        private static readonly Dictionary<int, FontSource> SourceFonts = new();
         private static readonly Dictionary<TMP_FontAsset, TMP_FontAsset> PixelFallbacks = new();
         private static readonly Dictionary<TMP_FontAsset, TMP_FontAsset> WesternSansFallbacks = new();
         private static readonly Dictionary<TMP_FontAsset, TMP_FontAsset> SymbolFallbacks = new();
@@ -28,14 +28,44 @@ namespace SimplifiedChineseLanguagePack
 
         private sealed class FontSource
         {
+            internal System.WeakReference<TMP_FontAsset> Localized;
             internal TMP_FontAsset Font;
+        }
+
+        private static void RememberSource(TMP_FontAsset localized, TMP_FontAsset source)
+        {
+            // Unity 2019's unused-asset scan treats a ConditionalWeakTable's
+            // native font keys as roots. Use an instance ID and an actual weak
+            // reference so retired wrappers do not keep themselves alive.
+            SourceFonts[localized.GetInstanceID()] = new FontSource
+            {
+                Localized = new System.WeakReference<TMP_FontAsset>(localized),
+                Font = source
+            };
+        }
+
+        private static bool TryGetSource(TMP_FontAsset localized, out TMP_FontAsset source)
+        {
+            source = null;
+            if (localized == null || !SourceFonts.TryGetValue(localized.GetInstanceID(), out FontSource entry) ||
+                !entry.Localized.TryGetTarget(out TMP_FontAsset cached) || cached != localized) return false;
+            source = entry.Font;
+            return source != null;
+        }
+
+        internal static void ReleaseUnusedSources()
+        {
+            var expired = new List<int>();
+            foreach (var pair in SourceFonts)
+                if (!pair.Value.Localized.TryGetTarget(out TMP_FontAsset font) || font == null) expired.Add(pair.Key);
+            foreach (int id in expired) SourceFonts.Remove(id);
         }
 
         internal static void ReleaseLanguageCaches()
         {
-            // Live text components retain the fonts they still use. Weak source
-            // mappings continue to restore their original face during a switch.
-            // Once those components disappear, Unity can reclaim the old fonts.
+            // Live text components retain the fonts they still use. Source
+            // mappings do not root wrappers, and survive until those wrappers
+            // are reclaimed so inactive text can still change language safely.
             LocalizedFonts.Clear();
             DynamicFonts.Clear();
             PixelFallbacks.Clear();
@@ -60,9 +90,9 @@ namespace SimplifiedChineseLanguagePack
             // A component can ask to localize its already localized font when
             // the player changes languages. Resolve our clone to its original
             // source before the game's normal language selection runs.
-            if (fontToReplace != null && SourceFonts.TryGetValue(fontToReplace, out FontSource source))
+            if (TryGetSource(fontToReplace, out TMP_FontAsset source))
             {
-                fontToReplace = source.Font;
+                fontToReplace = source;
             }
         }
 
@@ -171,7 +201,7 @@ namespace SimplifiedChineseLanguagePack
             }
             fonts.Add(key, localized);
             fonts.Add((fontToReplace, localized), localized);
-            SourceFonts.Add(localized, new FontSource { Font = fontToReplace });
+            RememberSource(localized, fontToReplace);
             __result = localized;
         }
 

@@ -25,7 +25,7 @@ namespace SimplifiedChineseLanguagePack
     {
         public const string GUID = "miemiemethod.inscryption.mods_simplified_chinese_language_pack";
         public const string Name = "SimplifiedChineseLanguagePack";
-        private const string Version = "1.7.6";
+        private const string Version = "1.7.7";
 
         public static bool FontLoaded = false;
         private static float nextFontRetryTime;
@@ -107,6 +107,7 @@ namespace SimplifiedChineseLanguagePack
             fontCleanupPending = false;
             GC.Collect();
             yield return Resources.UnloadUnusedAssets();
+            MultilingualFontFallbacks.ReleaseUnusedSources();
             fontCleanupRunning = false;
             if (fontCleanupPending) StartCoroutine(ReleaseUnusedLanguageAssets());
         }
