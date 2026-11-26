@@ -644,7 +644,9 @@ namespace SimplifiedChineseLanguagePack
 
             if (!ChineseFontReplacements.ContainsKey(replacement))
                 ChineseFontReplacements.Add(replacement, (replacement.TMPFont, fontAsset));
-            MultilingualFontAssets.RepairMaterialShader(fontAsset, replacement.TMPFont, "TextMeshPro/Distance Field (Surface)");
+            // Unlit SDF: the baked SC materials use the plain Distance Field
+            // shader; the lit Surface variant goes dark in P03's dim scenes.
+            MultilingualFontAssets.RepairMaterialShader(fontAsset, replacement.TMPFont, "TextMeshPro/Distance Field");
             field.SetValue(replacement, fontAsset);
             Debug.Log($"成功替换{replacement.name}的TMP字体为{fontAsset.name}");
             return true;
