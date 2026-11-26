@@ -22,28 +22,85 @@ namespace SimplifiedChineseLanguagePack
                 return null;
             }
             string name = original.name;
-            string path;
-            switch (name)
+            if (!TryGetOfficialPath(name, out string path))
             {
-                case "DAGGERSQUARE": case "GARBAGESCHRIFT": case "HEAVYWEIGHT": case "VICIOUSHUNGER":
-                    path = "fonts/3d scene fonts/" + name;
-                    break;
-                case "NotoSans_JP": case "NotoSans_KR": case "NotoSans_TC":
-                case "NotoSerif_TC": case "ShipporiMincho_JP": case "Stylish_KR":
-                    path = "fonts/3d scene fonts/altlanguage/" + name;
-                    break;
-                case "LiberationSans SDF":
-                    path = "fonts & materials/" + name;
-                    break;
-                case "MINECRAFT":
-                    path = "fonts/pixel art fonts/" + name;
-                    break;
-                default:
-                    return null;
+                return null;
             }
             // A mod's custom font may reuse an official name. Its glyph layout
             // and material are not interchangeable with the official asset.
             return Resources.Load<TMP_FontAsset>(path) == original ? Get(name) : null;
+        }
+
+        private static bool TryGetOfficialPath(string name, out string path)
+        {
+            switch (name)
+            {
+                case "DAGGERSQUARE": case "GARBAGESCHRIFT": case "HEAVYWEIGHT": case "VICIOUSHUNGER":
+                    path = "fonts/3d scene fonts/" + name;
+                    return true;
+                case "NotoSans_JP": case "NotoSans_KR": case "NotoSans_TC":
+                case "NotoSerif_TC": case "ShipporiMincho_JP": case "Stylish_KR":
+                    path = "fonts/3d scene fonts/altlanguage/" + name;
+                    return true;
+                case "LiberationSans SDF":
+                    path = "fonts & materials/" + name;
+                    return true;
+                case "MINECRAFT":
+                    path = "fonts/pixel art fonts/" + name;
+                    return true;
+                default:
+                    path = null;
+                    return false;
+            }
+        }
+
+        // AssetBundle shaders carry bytecode only for the bundle's build
+        // platform. On other platforms the shader still reports isSupported
+        // (its subshader matches the GPU) but the local compiler platform is
+        // missing from the blob, so every glyph draws as a solid magenta quad.
+        // Never trust the bundled shader: always use the game-built one.
+        internal static void RepairMaterialShader(TMP_FontAsset font, TMP_FontAsset reference, string preferredShaderName = null)
+        {
+            if (font == null)
+            {
+                return;
+            }
+            Material material = font.material;
+            if (material == null)
+            {
+                return;
+            }
+            Shader current = material.shader;
+            Shader shader = null;
+            if (preferredShaderName != null)
+            {
+                shader = Shader.Find(preferredShaderName);
+            }
+            if (shader == null && reference != null && reference.material != null)
+            {
+                shader = reference.material.shader;
+            }
+            if (shader == null || !shader.isSupported || shader.name == "Hidden/InternalErrorShader")
+            {
+                // Keep the shader family of the bundled material: bitmap faces
+                // need a bitmap shader, lit 3D faces the surface variant.
+                string currentName = current != null ? current.name : string.Empty;
+                string fallbackName = currentName.Contains("Bitmap") ? "TextMeshPro/Bitmap"
+                    : currentName.Contains("Surface") ? "TextMeshPro/Distance Field (Surface)"
+                    : "TextMeshPro/Distance Field";
+                shader = Shader.Find(fallbackName) ?? Shader.Find("TextMeshPro/Distance Field");
+            }
+            if (shader == null || !shader.isSupported || shader == current)
+            {
+                return;
+            }
+            material.shader = shader;
+            if (material.GetTexture("_MainTex") == null && font.atlasTextures.Length > 0 && font.atlasTextures[0] != null)
+            {
+                material.mainTexture = font.atlasTextures[0];
+            }
+            var atlas = material.GetTexture("_MainTex") as Texture2D;
+            Debug.Log($"[FontShader] {font.name}: {current?.name ?? "null"} -> {shader.name}; atlas={(atlas != null ? atlas.format.ToString() : "null")}");
         }
 
         internal static TMP_FontAsset Get(string originalName)
@@ -69,6 +126,8 @@ namespace SimplifiedChineseLanguagePack
                 return null;
             }
             font.ReadFontAssetDefinition();
+            TryGetOfficialPath(originalName, out string officialPath);
+            RepairMaterialShader(font, officialPath == null ? null : Resources.Load<TMP_FontAsset>(officialPath));
             ReleaseStaticAtlasCopies(font);
             Fonts[originalName] = new WeakReference<TMP_FontAsset>(font);
             return font;
@@ -103,16 +162,35 @@ namespace SimplifiedChineseLanguagePack
             if (!searched)
             {
                 searched = true;
-                foreach (string path in Directory.GetFiles(Paths.PluginPath, "multilingual_fonts", SearchOption.AllDirectories))
+                foreach (string name in BundleSearchNames("multilingual_fonts"))
                 {
-                    bundle = AssetBundle.LoadFromFile(path);
+                    foreach (string path in Directory.GetFiles(Paths.PluginPath, name, SearchOption.AllDirectories))
+                    {
+                        bundle = AssetBundle.LoadFromFile(path);
+                        if (bundle != null)
+                        {
+                            Debug.Log("Loaded font bundle: " + path);
+                            break;
+                        }
+                        Debug.LogWarning("Could not load expanded font assets: " + path);
+                    }
                     if (bundle != null)
                     {
                         break;
                     }
-                    Debug.LogWarning("Could not load expanded font assets: " + path);
                 }
             }
+        }
+
+        // Platform-specific bundles ship beside the Windows ones with an _osx
+        // suffix; fall back to the plain name when the native one is absent.
+        internal static IEnumerable<string> BundleSearchNames(string baseName)
+        {
+            if (Application.platform == RuntimePlatform.OSXPlayer)
+            {
+                yield return baseName + "_osx";
+            }
+            yield return baseName;
         }
     }
 }
