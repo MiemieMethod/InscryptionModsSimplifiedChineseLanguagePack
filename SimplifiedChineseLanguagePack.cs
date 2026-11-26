@@ -95,6 +95,10 @@ namespace SimplifiedChineseLanguagePack
         private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
         {
             if (fontCleanupPending && !fontCleanupRunning) StartCoroutine(ReleaseUnusedLanguageAssets());
+            // FontReplacementData.Initialize can run before our patches exist;
+            // scene load is a reliable second chance to apply the SC faces.
+            if (Localization.CurrentLanguage == Language.ChineseSimplified && !FontLoaded)
+                FontLoaded = FixSimplifiedChineseFonts();
         }
 
         private System.Collections.IEnumerator ReleaseUnusedLanguageAssets()
@@ -586,19 +590,25 @@ namespace SimplifiedChineseLanguagePack
             FontReplacement MISC3DReplacement = Resources.Load<FontReplacement>("data/localization/fontreplacement/MISC3D_to_SC-SCRIPT");
             if (FontBundle == null)
             {
-                string[] foundBundles = Directory.GetFiles(Paths.PluginPath, "chinese_font", SearchOption.AllDirectories);
-                if (foundBundles.Length > 0)
+                foreach (string name in MultilingualFontAssets.BundleSearchNames("chinese_font"))
                 {
-                    string bundlePath = foundBundles[0];
-                    var bundle = AssetBundle.LoadFromFile(bundlePath);
-                    if (bundle == null)
+                    foreach (string bundlePath in Directory.GetFiles(Paths.PluginPath, name, SearchOption.AllDirectories))
                     {
-                        Debug.LogError("字体AssetBundle加载失败！");
-                        return false;
+                        var bundle = AssetBundle.LoadFromFile(bundlePath);
+                        if (bundle != null)
+                        {
+                            Debug.Log("Loaded SC font bundle: " + bundlePath);
+                            FontBundle = bundle;
+                            break;
+                        }
+                        Debug.LogError("字体AssetBundle加载失败！" + bundlePath);
                     }
-                    FontBundle = bundle;
+                    if (FontBundle != null)
+                    {
+                        break;
+                    }
                 }
-                else
+                if (FontBundle == null)
                 {
                     Debug.LogError("字体AssetBundle加载失败！");
                     return false;
@@ -634,6 +644,9 @@ namespace SimplifiedChineseLanguagePack
 
             if (!ChineseFontReplacements.ContainsKey(replacement))
                 ChineseFontReplacements.Add(replacement, (replacement.TMPFont, fontAsset));
+            // Unlit SDF: the baked SC materials use the plain Distance Field
+            // shader; the lit Surface variant goes dark in P03's dim scenes.
+            MultilingualFontAssets.RepairMaterialShader(fontAsset, replacement.TMPFont, "TextMeshPro/Distance Field");
             field.SetValue(replacement, fontAsset);
             Debug.Log($"成功替换{replacement.name}的TMP字体为{fontAsset.name}");
             return true;
